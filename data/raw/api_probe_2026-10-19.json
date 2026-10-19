@@ -1,0 +1,1181 @@
+{
+  "date": "2026-10-19",
+  "python": "3.14.8",
+  "base_url": "https://data.gov.gr",
+  "status_show": {
+    "url": "https://data.gov.gr/api/3/action/status_show",
+    "params": {},
+    "final_url": "https://data.gov.gr/api/3/action/status_show",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "size_bytes": 1343,
+    "json": {
+      "help": "https://data.gov.gr/api/3/action/help_show?name=status_show",
+      "success": true,
+      "result": {
+        "site_title": "data.gov.gr",
+        "site_description": "",
+        "site_url": "https://data.gov.gr",
+        "error_emails_to": "",
+        "locale_default": "el",
+        "extensions": [
+          "orgreport",
+          "testexception",
+          "tables",
+          "logs",
+          "harvest",
+          "attica_opendata_harvester",
+          "bank_of_greece_harvester",
+          "apd_kritis_harvester",
+          "ekan_dcat_harvester",
+          "dkan_ckan_harvester",
+          "core_ckan_harvester",
+          "custom_dcat_harvester",
+          "announcements",
+          "dsaudit",
+          "activity",
+          "pdf_view",
+          "cloudstorage",
+          "azurefilestore",
+          "azure_translator",
+          "excelforms",
+          "tabledesigner",
+          "datatables_view",
+          "datastore",
+          "showcase",
+          "report",
+          "tagless_report",
+          "qa",
+          "archiver",
+          "dcat",
+          "relationships",
+          "pages",
+          "hvd_validator",
+          "data_gov_gr",
+          "enrich_search_capabilities",
+          "data_gov_gr_spatial",
+          "scheming_datasets",
+          "keycloak",
+          "scheming_organizations",
+          "fluent",
+          "vocabulary_admin",
+          "spatial_metadata",
+          "spatial_query",
+          "csw_harvester",
+          "xloader",
+          "downloadall",
+          "barchart",
+          "piechart",
+          "charts_view",
+          "stats",
+          "tracking",
+          "resource_proxy",
+          "matomo",
+          "geojson_view",
+          "geo_view",
+          "sdgmap_view",
+          "ktimatologio_view",
+          "contact",
+          "comments",
+          "image_view",
+          "video_view",
+          "audio_view",
+          "webpage_view",
+          "csvinvite",
+          "manage_tags",
+          "wms_capabilities_harvester",
+          "oai_pmh_dcat_harvester"
+        ],
+        "ckan_version": "2.11.3"
+      }
+    }
+  },
+  "package_search_one": {
+    "url": "https://data.gov.gr/api/3/action/package_search",
+    "params": {
+      "rows": 1
+    },
+    "final_url": "https://data.gov.gr/api/3/action/package_search?rows=1",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "size_bytes": 18393,
+    "json": {
+      "help": "https://data.gov.gr/api/3/action/help_show?name=package_search",
+      "success": true,
+      "result": {
+        "count": 22787,
+        "facets": {},
+        "results": [
+          {
+            "access_rights": "http://publications.europa.eu/resource/authority/access-right/PUBLIC",
+            "applicable_legislation": [
+              "https://eur-lex.europa.eu/eli/dir/2019/1024/oj/eng"
+            ],
+            "author": null,
+            "author_email": null,
+            "creator_user_id": "96d5c689-9e7c-4063-a623-ae13ff1975db",
+            "dcat_type": [
+              "http://publications.europa.eu/resource/authority/dataset-type/HVD"
+            ],
+            "frequency": "http://publications.europa.eu/resource/authority/frequency/IRREG",
+            "hvd_category": [],
+            "id": "edb15e50-7355-41f9-bdb4-c2dc0fdc5243",
+            "isopen": false,
+            "landing_page": [
+              "https://www.nafpaktos.gr/el/syllogoi"
+            ],
+            "language_options": [
+              "http://publications.europa.eu/resource/authority/language/ELL"
+            ],
+            "license_id": null,
+            "license_title": null,
+            "maintainer": null,
+            "maintainer_email": null,
+            "metadata_created": "2026-06-15T08:20:13.617961",
+            "metadata_modified": "2026-10-19T06:53:54.010679",
+            "name": "https-www-nafpaktos-gr-el-syllogoi",
+            "notes": "Μητρώο και στοιχεία επικοινωνίας των πολιτιστικών, αθλητικών και κοινωνικών συλλόгов που δραστηριοποιούνται στον Δήμο Ναυπακτίας",
+            "notes_translated": {
+              "el": "Μητρώο και στοιχεία επικοινωνίας των πολιτιστικών, αθλητικών και κοινωνικών συλλόгов που δραστηριοποιούνται στον Δήμο Ναυπακτίας",
+              "en": "SYLLOGOI"
+            },
+            "num_resources": 3,
+            "num_tags": 1,
+            "organization": {
+              "id": "a0ac072e-4001-460b-83c3-f36c410398c4",
+              "name": "nafpaktos",
+              "title": "Δήμος Ναυπακτίας",
+              "type": "organization",
+              "description": "Ο Δήμος Ναυπακτίας είναι δήμος της Περιφέρειας Δυτικής Ελλάδας που συστάθηκε με το Πρόγραμμα Καλλικράτης από τη συνένωση των προϋπαρχόντων «καποδιστριακών» δήμων Αντιρρίου, Αποδοτίας, Ναυπάκτου, Πλατάνου, Πυλλήνης, Χάλκειας και αποτελεί μέρος της Περιφερειακής Ενότητας Αιτωλοακαρνανίας. Τα όριά του συμπίπτουν με την πρώην Επαρχία Ναυπακτίας, μαζί με τα χωριά Περιθωρίου και Γαλατά της πρώην Επαρχίας Μεσολογγίου. Ο δήμος βρίσκεται στο νοτιοανατολικό, σε μέρος του ανατολικού και του νότιου τμήματος της Αιτωλοακαρνανίας, ενώ στα βόρεια του περιλαμβάνει και την περιοχή των Κραβάρων.\r\n\r\nΗ έκταση του νέου δήμου ανέρχεται σε 870,38 τ.χλμ. και ο πληθυσμός του ανέρχεται σε 27.800 κατοίκους, σύμφωνα με την Απογραφή του 2011.",
+              "image_url": "2025-11-17-102544.449365logo.png",
+              "created": "2025-11-17T10:25:44.063150",
+              "is_organization": true,
+              "approval_status": "approved",
+              "state": "active"
+            },
+            "owner_org": "a0ac072e-4001-460b-83c3-f36c410398c4",
+            "private": false,
+            "state": "active",
+            "theme": [
+              "http://publications.europa.eu/resource/authority/data-theme/SOCI"
+            ],
+            "title": "ΣΥΛΛΟΓΟΙ",
+            "title_translated": {
+              "el": "ΣΥΛΛΟΓΟΙ",
+              "en": "SYLLOGOI"
+            },
+            "type": "dataset",
+            "url": null,
+            "version": "1.0",
+            "contact": [
+              {
+                "email": "tpaliatsas@nafpaktos.gr",
+                "name": "ΘΕΟΔΩΡΟΣ ΠΑΛΙΑΤΣΑΣ",
+                "uri": "https://data.gov.gr",
+                "url": "https://www.nafpaktos.gr/el/syllogoi"
+              }
+            ],
+            "creator": [
+              {
+                "description": "",
+                "email": "tpaliatsas@nafpaktos.gr",
+                "identifier": "ΔΗΜΟΣ ΝΑΥΠΑΚΤΙΑΣ",
+                "name": "ΔΗΜΟΣ ΝΑΥΠΑΚΤΙΑΣ",
+                "type": "http://purl.org/adms/publishertype/LocalAuthority",
+                "uri": "https://data.gov.gr",
+                "url": "https://www.nafpaktos.gr/el/syllogoi"
+              }
+            ],
+            "publisher": [
+              {
+                "description": "",
+                "email": "tpaliatsas@nafpaktos.gr",
+                "identifier": "ΔΗΜΟΣ ΝΑΥΠΑΚΤΙΑΣ",
+                "name": "ΔΗΜΟΣ ΝΑΥΠΑΚΤΙΑΣ",
+                "type": "http://purl.org/adms/publishertype/LocalAuthority",
+                "uri": "https://data.gov.gr",
+                "url": "https://www.nafpaktos.gr/el/syllogoi"
+              }
+            ],
+            "relationships_as_subject": [
+              {
+                "__extras": {
+                  "subject_package_id": "edb15e50-7355-41f9-bdb4-c2dc0fdc5243",
+                  "object_package_id": null
+                },
+                "comment": "https://www.nafpaktos.gr/el/syllogoi",
+                "id": "f7c63d36-b1a3-4f14-9cd5-6922dd833537",
+                "type": "References"
+              }
+            ],
+            "resources": [
+              {
+                "access_url": "dummy-value",
+                "applicable_legislation": [],
+                "archiver": {
+                  "resource_timestamp": null,
+                  "status_id": 21,
+                  "is_broken": null,
+                  "reason": "Resource is a Download All ZIP resource",
+                  "url_redirected_to": null,
+                  "cache_filepath": null,
+                  "cache_url": null,
+                  "size": 0,
+                  "mimetype": null,
+                  "hash": null,
+                  "etag": null,
+                  "last_modified": null,
+                  "first_failure": "2026-06-24T12:35:19.498824",
+                  "last_success": null,
+                  "failure_count": 28,
+                  "created": "2026-06-24T12:35:19.501968",
+                  "updated": "2026-10-14T12:16:50.159954",
+                  "status": "Chose not to download",
+                  "is_broken_printable": "Not sure if broken"
+                },
+                "cache_last_updated": null,
+                "cache_url": null,
+                "created": "2026-06-18T01:44:05.005144",
+                "datastore_active": false,
+                "datastore_contains_all_records_of_source_file": false,
+                "description": "",
+                "description_translated": {},
+                "download_url": "dummy-value",
+                "downloadall_datapackage_hash": "d15f8e3c1413df32a6b2e32988c207a1",
+                "downloadall_metadata_modified": "2026-07-10T11:10:48.921586",
+                "format": "ZIP",
+                "hash": "",
+                "id": "bc4ab4a3-0f65-42f3-b37a-0025bc44161f",
+                "language_options": [],
+                "last_modified": "2026-07-10T11:14:23.112247",
+                "metadata_modified": "2026-10-19T06:53:54.014813",
+                "mimetype_inner": null,
+                "name": "Όλα τα δεδομένα πόρων",
+                "name_translated": {
+                  "en": "All resource data",
+                  "el": "Όλα τα δεδομένα πόρων"
+                },
+                "package_id": "edb15e50-7355-41f9-bdb4-c2dc0fdc5243",
+                "position": 0,
+                "qa": {
+                  "resource_timestamp": null,
+                  "archival_timestamp": "2026-07-15T06:48:03.479037",
+                  "openness_score": 0,
+                  "openness_score_reason": "License not open",
+                  "format": "ZIP",
+                  "mqa_score": "97.5",
+                  "mqa_findability_score": 100,
+                  "mqa_accessibility_score": "100.0",
+                  "mqa_interoperability_score": "100.0",
+                  "mqa_reusability_score": "75.0",
+                  "mqa_contextuality_score": "20.0",
+                  "created": "2026-06-25T12:05:17.040522",
+                  "updated": "2026-10-19T06:53:56.115157"
+                },
+                "resource_type": null,
+                "size": 21642,
+                "state": "active",
+                "tracking_summary": {
+                  "total": 0,
+                  "recent": 0
+                },
+                "url": "https://data.gov.gr/dataset/edb15e50-7355-41f9-bdb4-c2dc0fdc5243/resource/bc4ab4a3-0f65-42f3-b37a-0025bc44161f/download/https-www-nafpaktos-gr-el-syllogoi-oik84f7z.zip",
+                "url_type": "upload"
+              },
+              {
+                "access_url": "https://www.nafpaktos.gr/el/syllogoi",
+                "applicable_legislation": [
+                  "https://eur-lex.europa.eu/eli/dir/2019/1024/oj/eng"
+                ],
+                "archiver": {
+                  "resource_timestamp": null,
+                  "status_id": 0,
+                  "is_broken": false,
+                  "reason": "",
+                  "url_redirected_to": "https://min01rg96sablob01.blob.core.windows.net/new-opendata/resources/5a56acc5-0d86-45a8-be64-4f48fb8606c9/syllogoi.csv?se=2026-10-14T13%3A16%3A50Z&sp=r&sv=2024-08-04&sr=b&sig=gWDbvlafCrRDJ0Su3iomQiiyO7D0WCO/lWfTrHQuzUs%3D",
+                  "cache_filepath": "syllogoi.csv",
+                  "cache_url": "https://data.gov.gr/cached/5a/5a56acc5-0d86-45a8-be64-4f48fb8606c9/syllogoi.csv",
+                  "size": 1788,
+                  "mimetype": "application/octet-stream",
+                  "hash": "6a425e437e553f723df9d04d578d2fd28b732cef",
+                  "etag": null,
+                  "last_modified": null,
+                  "first_failure": null,
+                  "last_success": "2026-10-14T12:16:50.483019",
+                  "failure_count": 0,
+                  "created": "2026-09-30T16:12:24.367147",
+                  "updated": "2026-10-14T12:16:50.483019",
+                  "status": "Archived successfully",
+                  "is_broken_printable": "Downloaded OK"
+                },
+                "availability": "http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE",
+                "cache_last_updated": null,
+                "cache_url": null,
+                "created": "2026-08-11T07:05:27.227061",
+                "datastore_active": true,
+                "datastore_contains_all_records_of_source_file": false,
+                "description": "ΣΥΛΛΟΓΟΙ ΔΗΜΟΥ ΝΑΥΠΑΚΤΙΑΣ",
+                "description_translated": {
+                  "el": "ΣΥΛΛΟΓΟΙ ΔΗΜΟΥ ΝΑΥΠΑΚΤΙΑΣ",
+                  "en": ""
+                },
+                "download_url": "https://www.nafpaktos.gr/el/syllogoi",
+                "format": "CSV",
+                "hash": "a97cc3c4707d0795718516d8269bd8df",
+                "id": "5a56acc5-0d86-45a8-be64-4f48fb8606c9",
+                "language_options": [
+                  "http://publications.europa.eu/resource/authority/language/ELL"
+                ],
+                "last_modified": "2026-08-11T07:05:27.178163",
+                "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+                "metadata_modified": "2026-10-19T06:53:54.014888",
+                "mimetype": "https://www.iana.org/assignments/media-types/text/csv",
+                "mimetype_inner": null,
+                "name": "ΣΥΛΛΟΓΟΙ ΔΗΜΟΥ ΝΑΥΠΑΚΤΙΑΣ",
+                "name_translated": {
+                  "el": "ΣΥΛΛΟΓΟΙ ΔΗΜΟΥ ΝΑΥΠΑΚΤΙΑΣ",
+                  "en": ""
+                },
+                "package_id": "edb15e50-7355-41f9-bdb4-c2dc0fdc5243",
+                "position": 1,
+                "resource_type": null,
+                "rights": "Τα δεδομένα διατίθενται υπό την άδεια : Creative Commons Attribution 4.0 International",
+                "size": 1787,
+                "state": "active",
+                "tracking_summary": {
+                  "total": 1,
+                  "recent": 1
+                },
+                "url": "https://data.gov.gr/dataset/edb15e50-7355-41f9-bdb4-c2dc0fdc5243/resource/5a56acc5-0d86-45a8-be64-4f48fb8606c9/download/syllogoi.csv",
+                "url_type": "upload",
+                "access_services": [
+                  {
+                    "uri": "https://www.nafpaktos.gr/el/home"
+                  }
+                ]
+              },
+              {
+                "access_url": "https://www.nafpaktos.gr/el/syllogoi",
+                "applicable_legislation": [],
+                "archiver": {
+                  "resource_timestamp": null,
+                  "status_id": 0,
+                  "is_broken": false,
+                  "reason": "",
+                  "url_redirected_to": "https://min01rg96sablob01.blob.core.windows.net/new-opendata/resources/b3ac5263-e5c1-4905-a1d2-121125aa157d/syllogoi.xlsx?se=2026-10-14T13%3A16%3A50Z&sp=r&sv=2024-08-04&sr=b&sig=pHi6goIpkmEsjoWUDowagbWt9R5JWGZwSFz%2BUx3LaFA%3D",
+                  "cache_filepath": "syllogoi.xlsx",
+                  "cache_url": "https://data.gov.gr/cached/b3/b3ac5263-e5c1-4905-a1d2-121125aa157d/syllogoi.xlsx",
+                  "size": 19274,
+                  "mimetype": "application/octet-stream",
+                  "hash": "edba833fa0ec579b8f7556625620542b29529b5d",
+                  "etag": null,
+                  "last_modified": null,
+                  "first_failure": null,
+                  "last_success": "2026-10-14T12:16:50.862622",
+                  "failure_count": 0,
+                  "created": "2026-09-30T16:12:24.706275",
+                  "updated": "2026-10-14T12:16:50.862622",
+                  "status": "Archived successfully",
+                  "is_broken_printable": "Downloaded OK"
+                },
+                "availability": "http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE",
+                "cache_last_updated": null,
+                "cache_url": null,
+                "ckan_url": "https://data.gov.gr",
+                "created": "2026-08-11T07:07:35.870852",
+                "datastore_active": true,
+                "datastore_contains_all_records_of_source_file": true,
+                "description": "ΣΥΛΛΟΓΟΙ ΔΗΜΟΥ ΝΑΥΠΑΚΤΙΑΣ",
+                "description_translated": {
+                  "el": "ΣΥΛΛΟΓΟΙ ΔΗΜΟΥ ΝΑΥΠΑΚΤΙΑΣ",
+                  "en": ""
+                },
+                "download_url": "https://www.nafpaktos.gr/el/syllogoi",
+                "format": "XLS",
+                "hash": "58f81dedd81fcc6b27b2c811eacf2bdb",
+                "id": "b3ac5263-e5c1-4905-a1d2-121125aa157d",
+                "ignore_hash": false,
+                "language_options": [
+                  "http://publications.europa.eu/resource/authority/language/ELL"
+                ],
+                "last_modified": "2026-08-11T07:07:35.815203",
+                "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+                "metadata_modified": "2026-10-19T06:53:54.014963",
+                "mimetype": "https://www.iana.org/assignments/media-types/application/vnd.ms-excel",
+                "mimetype_inner": null,
+                "name": "ΣΥΛΛΟΓΟΙ ΔΗΜΟΥ ΝΑΥΠΑΚΤΙΑΣ",
+                "name_translated": {
+                  "el": "ΣΥΛΛΟΓΟΙ ΔΗΜΟΥ ΝΑΥΠΑΚΤΙΑΣ",
+                  "en": ""
+                },
+                "original_url": "https://data.gov.gr/dataset/edb15e50-7355-41f9-bdb4-c2dc0fdc5243/resource/b3ac5263-e5c1-4905-a1d2-121125aa157d/download/syllogoi.xlsx",
+                "package_id": "edb15e50-7355-41f9-bdb4-c2dc0fdc5243",
+                "position": 2,
+                "resource_id": "b3ac5263-e5c1-4905-a1d2-121125aa157d",
+                "resource_type": null,
+                "rights": "Τα δεδομένα διατίθενται υπό την άδεια : Creative Commons Attribution 4.0 International",
+                "set_url_type": false,
+                "size": 19274,
+                "state": "active",
+                "task_created": "2026-08-11 07:08:12.233912",
+                "tracking_summary": {
+                  "total": 0,
+                  "recent": 0
+                },
+                "url": "https://data.gov.gr/dataset/edb15e50-7355-41f9-bdb4-c2dc0fdc5243/resource/b3ac5263-e5c1-4905-a1d2-121125aa157d/download/syllogoi.xlsx",
+                "url_type": "upload",
+                "access_services": [
+                  {
+                    "uri": "https://www.nafpaktos.gr/el/home"
+                  }
+                ]
+              }
+            ],
+            "spatial_coverage": [
+              {
+                "bbox": "{\"type\": \"Polygon\", \"coordinates\": [[[21.808467509903483, 38.37675272079763], [21.808467509903483, 38.40658127920236], [21.846532490096518, 38.40658127920236], [21.846532490096518, 38.37675272079763], [21.808467509903483, 38.37675272079763]]]}",
+                "centroid": "{\"type\":\"Point\",\"coordinates\":[\"21.8275\",\"38.39167\"]}",
+                "geom": "{\"type\":\"Point\",\"coordinates\":[\"21.8275\",\"38.39167\"]}",
+                "text": "Ναύπακτος",
+                "uri": "http://sws.geonames.org/256639/"
+              }
+            ],
+            "tags": [
+              {
+                "display_name": "ΣΥΛΛΟΓΟΙ",
+                "id": "b3a855da-5247-472f-aead-b2d2efc057e5",
+                "name": "ΣΥΛΛΟΓΟΙ",
+                "state": "active",
+                "vocabulary_id": null
+              }
+            ],
+            "temporal_coverage": [
+              {
+                "end": "2026-01-01",
+                "start": "2026-01-01"
+              }
+            ],
+            "groups": [],
+            "relationships_as_object": [],
+            "organization_card": {
+              "title": "Δήμος Ναυπακτίας",
+              "name": "nafpaktos",
+              "type": "organization",
+              "is_linkable": true
+            },
+            "tracking_summary": {
+              "total": 32,
+              "recent": 1
+            }
+          }
+        ],
+        "sort": "score desc, metadata_modified desc",
+        "search_facets": {}
+      }
+    }
+  },
+  "facets": {
+    "url": "https://data.gov.gr/api/3/action/package_search",
+    "params": {
+      "rows": 0,
+      "facet.field": "[\"organization\", \"license_id\", \"res_format\"]",
+      "facet.limit": 15
+    },
+    "final_url": "https://data.gov.gr/api/3/action/package_search?rows=0&facet.field=%5B%22organization%22%2C+%22license_id%22%2C+%22res_format%22%5D&facet.limit=15",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "size_bytes": 7007,
+    "json": {
+      "help": "https://data.gov.gr/api/3/action/help_show?name=package_search",
+      "success": true,
+      "result": {
+        "count": 22787,
+        "facets": {
+          "organization": {
+            "chania": 2224,
+            "cityofagrinio": 1197,
+            "crete-2026": 948,
+            "heraklion-2026": 937,
+            "gak": 889,
+            "maroussi": 880,
+            "kalamata": 806,
+            "keratsini-drapetsona": 785,
+            "ypen-2026": 720,
+            "dimos-iliou": 603,
+            "cityofathens": 535,
+            "patt-2026": 478,
+            "minedu-2026": 447,
+            "dimos-oraiokastrou": 390,
+            "minedu": 373
+          },
+          "license_id": {
+            "notspecified": 3640,
+            "other-open": 1595,
+            "other-nc": 925,
+            "odc-odbl": 525,
+            "cc-by": 457,
+            "cc-by-sa": 134,
+            "other-pd": 118,
+            "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0": 53,
+            "cc-nc": 38,
+            "gfdl": 17,
+            "other-at": 16,
+            "odc-by": 12,
+            "other-closed": 7,
+            "odc-pddl": 2,
+            "CC_BY_4_0": 1
+          },
+          "res_format": {
+            "XML": 12195,
+            "WMS": 11883,
+            "PNG": 7677,
+            "CSV": 5623,
+            "GeoJSON": 4408,
+            "SHAPE-ZIP": 4300,
+            "KML": 4292,
+            "XLS": 2728,
+            "XLSX": 2272,
+            "PDF": 1136,
+            "JSON": 445,
+            "ZIP": 444,
+            "DOC": 197,
+            "ASHX": 195,
+            "RAR": 185
+          }
+        },
+        "results": [],
+        "sort": "score desc, metadata_modified desc",
+        "search_facets": {
+          "organization": {
+            "title": "organization",
+            "items": [
+              {
+                "name": "ypen-2026",
+                "display_name": "Υπουργείο Περιβάλλοντος και Ενέργειας",
+                "count": 720
+              },
+              {
+                "name": "minedu-2026",
+                "display_name": "Υπουργείο Παιδείας, Θρησκευμάτων και Αθλητισμού",
+                "count": 447
+              },
+              {
+                "name": "minedu",
+                "display_name": "ΥΠΟΥΡΓΕΙΟ ΠΑΙΔΕΙΑΣ, ΕΡΕΥΝΑΣ ΚΑΙ ΘΡΗΣΚΕΥΜΑΤΩΝ",
+                "count": 373
+              },
+              {
+                "name": "crete-2026",
+                "display_name": "Περιφέρεια Κρήτης",
+                "count": 948
+              },
+              {
+                "name": "patt-2026",
+                "display_name": "Περιφέρεια Αττικής",
+                "count": 478
+              },
+              {
+                "name": "dimos-oraiokastrou",
+                "display_name": "Δήμος Ωραιοκάστρου",
+                "count": 390
+              },
+              {
+                "name": "chania",
+                "display_name": "Δήμος Χανίων",
+                "count": 2224
+              },
+              {
+                "name": "keratsini-drapetsona",
+                "display_name": "Δήμος Κερατσινίου – Δραπετσώνας",
+                "count": 785
+              },
+              {
+                "name": "kalamata",
+                "display_name": "Δήμος Καλαμάτας",
+                "count": 806
+              },
+              {
+                "name": "dimos-iliou",
+                "display_name": "Δήμος Ιλίου",
+                "count": 603
+              },
+              {
+                "name": "heraklion-2026",
+                "display_name": "Δήμος Ηρακλείου Κρήτης",
+                "count": 937
+              },
+              {
+                "name": "maroussi",
+                "display_name": "Δήμος Αμαρουσίου",
+                "count": 880
+              },
+              {
+                "name": "cityofathens",
+                "display_name": "Δήμος Αθηναίων",
+                "count": 535
+              },
+              {
+                "name": "cityofagrinio",
+                "display_name": "Δήμος Αγρινίου",
+                "count": 1197
+              },
+              {
+                "name": "gak",
+                "display_name": "Γενικά Αρχεία Κράτους (ΓΑΚ)",
+                "count": 889
+              }
+            ]
+          },
+          "license_id": {
+            "title": "license_id",
+            "items": [
+              {
+                "name": "notspecified",
+                "display_name": "Η άδεια δεν έχει καθοριστεί",
+                "count": 3640
+              },
+              {
+                "name": "other-at",
+                "display_name": "Άλλο (Χαρακτηριστικό)",
+                "count": 16
+              },
+              {
+                "name": "other-nc",
+                "display_name": "Άλλο (Μη εμπορικό)",
+                "count": 925
+              },
+              {
+                "name": "other-closed",
+                "display_name": "Άλλο (Κλειστό)",
+                "count": 7
+              },
+              {
+                "name": "other-pd",
+                "display_name": "Άλλο (Δημόσιο Πεδίο)",
+                "count": 118
+              },
+              {
+                "name": "other-open",
+                "display_name": "Άλλο (Ανοιχτό)",
+                "count": 1595
+              },
+              {
+                "name": "gfdl",
+                "display_name": "Άδεια Ελεύθερης Τεκμηρίωσης GNU",
+                "count": 17
+              },
+              {
+                "name": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+                "display_name": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+                "count": 53
+              },
+              {
+                "name": "odc-pddl",
+                "display_name": "Open Data Commons Public Domain Dedication and License (PDDL)",
+                "count": 2
+              },
+              {
+                "name": "odc-odbl",
+                "display_name": "Open Data Commons Open Database License (ODbL)",
+                "count": 525
+              },
+              {
+                "name": "odc-by",
+                "display_name": "Open Data Commons Attribution License",
+                "count": 12
+              },
+              {
+                "name": "cc-nc",
+                "display_name": "Creative Commons Μη Εμπορική Χρήση",
+                "count": 38
+              },
+              {
+                "name": "cc-by-sa",
+                "display_name": "Creative Commons Αναφορά - Παρόμοια διανομή",
+                "count": 134
+              },
+              {
+                "name": "cc-by",
+                "display_name": "Creative Commons Αναφορά",
+                "count": 457
+              },
+              {
+                "name": "CC_BY_4_0",
+                "display_name": "CC_BY_4_0",
+                "count": 1
+              }
+            ]
+          },
+          "res_format": {
+            "title": "res_format",
+            "items": [
+              {
+                "name": "ZIP",
+                "display_name": "ZIP",
+                "count": 444
+              },
+              {
+                "name": "XML",
+                "display_name": "XML",
+                "count": 12195
+              },
+              {
+                "name": "XLSX",
+                "display_name": "XLSX",
+                "count": 2272
+              },
+              {
+                "name": "XLS",
+                "display_name": "XLS",
+                "count": 2728
+              },
+              {
+                "name": "WMS",
+                "display_name": "WMS",
+                "count": 11883
+              },
+              {
+                "name": "SHAPE-ZIP",
+                "display_name": "SHAPE-ZIP",
+                "count": 4300
+              },
+              {
+                "name": "RAR",
+                "display_name": "RAR",
+                "count": 185
+              },
+              {
+                "name": "PNG",
+                "display_name": "PNG",
+                "count": 7677
+              },
+              {
+                "name": "PDF",
+                "display_name": "PDF",
+                "count": 1136
+              },
+              {
+                "name": "KML",
+                "display_name": "KML",
+                "count": 4292
+              },
+              {
+                "name": "JSON",
+                "display_name": "JSON",
+                "count": 445
+              },
+              {
+                "name": "GeoJSON",
+                "display_name": "GeoJSON",
+                "count": 4408
+              },
+              {
+                "name": "DOC",
+                "display_name": "DOC",
+                "count": 197
+              },
+              {
+                "name": "CSV",
+                "display_name": "CSV",
+                "count": 5623
+              },
+              {
+                "name": "ASHX",
+                "display_name": "ASHX",
+                "count": 195
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "package_show_tracking": {
+    "url": "https://data.gov.gr/api/3/action/package_show",
+    "params": {
+      "id": "https-www-nafpaktos-gr-el-syllogoi",
+      "include_tracking": "true"
+    },
+    "final_url": "https://data.gov.gr/api/3/action/package_show?id=https-www-nafpaktos-gr-el-syllogoi&include_tracking=true",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "size_bytes": 18529,
+    "tracking_summary": {
+      "total": 32,
+      "recent": 1
+    }
+  },
+  "sort_by_views": {
+    "url": "https://data.gov.gr/api/3/action/package_search",
+    "params": {
+      "rows": 5,
+      "sort": "views_recent desc",
+      "include_tracking": "true"
+    },
+    "final_url": "https://data.gov.gr/api/3/action/package_search?rows=5&sort=views_recent+desc&include_tracking=true",
+    "status": 400,
+    "content_type": "application/json;charset=utf-8",
+    "size_bytes": 226
+  },
+  "croissant": {
+    "url": "https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-syllogoi/croissant.jsonld",
+    "params": {},
+    "final_url": "https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-syllogoi/croissant.jsonld",
+    "status": 404,
+    "content_type": "text/html; charset=utf-8",
+    "size_bytes": 31067,
+    "text_start": "<!DOCTYPE html>\n<!--[if IE 9]> <html lang=\"el\" class=\"ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html lang=\"el\"  > <!--<![endif]-->\n  <head>\n    \n  <meta charset=\"utf-8\" />\n      <meta name=\"csrf_field_name\" content=\"_csrf_token\" />\n      <meta name=\"_csrf_token\" content=\"IjUzMTdlNjJiZjAyOTcwNzU3MWFjODliNzE4NDAxZTkxN2U1Zjc4Nzgi.atW-iw.m1wwY0w1fYNmS9ajkLx6CPLShQM\" />\n\n      <meta name=\"generator\" content=\"ckan 2.11.3\" />\n      <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  \n\n    <title>Σφάλμα 404 - data.gov.gr</title>\n\n    \n    <link rel=\"shortcut icon\" href=\"/images/gov_logos-08_16x16_favicon.ico\" />\n    \n    \n  \n  \n  \n    \n  \n  \n    \n      \n      \n      \n    \n    \n    \n\n  \n\n  <!--Σελίδα προσθήκης asset του scheming-->\n  <!--Σελίδα προσθήκης asset του scheming-->\n\n<!-- Scheming  CSS Bundle -->\n\n\n    \n\n  \n\n  \n\n  \n  \n\n    \n\n\n    \n    <link href=\"/webassets/base/51d427fe_main.css\" rel=\"stylesheet\"/>\n<link href=\"/webassets/ckanext-geoview/f197a782_geo-resource-sty"
+  },
+  "dcat_jsonld": {
+    "url": "https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-syllogoi.jsonld",
+    "params": {},
+    "final_url": "https://data.gov.gr/dataset_series/https-www-nafpaktos-gr-el-syllogoi.jsonld",
+    "status": 200,
+    "content_type": "application/ld+json",
+    "size_bytes": 11026,
+    "json": {
+      "@context": {
+        "adms": "http://www.w3.org/ns/adms#",
+        "brick": "https://brickschema.org/schema/Brick#",
+        "cnt": "http://www.w3.org/2011/content#",
+        "cr": "http://mlcommons.org/croissant/",
+        "csvw": "http://www.w3.org/ns/csvw#",
+        "dc": "http://purl.org/dc/elements/1.1/",
+        "dcam": "http://purl.org/dc/dcam/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "dcatap": "http://data.europa.eu/r5r/",
+        "dcatus": "http://resources.data.gov/ontology/dcat-us#",
+        "dcmitype": "http://purl.org/dc/dcmitype/",
+        "dct": "http://purl.org/dc/terms/",
+        "doap": "http://usefulinc.com/ns/doap#",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "gsp": "http://www.opengis.net/ont/geosparql#",
+        "locn": "http://www.w3.org/ns/locn#",
+        "odrl": "http://www.w3.org/ns/odrl/2/",
+        "org": "http://www.w3.org/ns/org#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prof": "http://www.w3.org/ns/dx/prof/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qb": "http://purl.org/linked-data/cube#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "https://schema.org/",
+        "schema1": "http://schema.org/",
+        "sh": "http://www.w3.org/ns/shacl#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "spdx": "http://spdx.org/rdf/terms#",
+        "ssn": "http://www.w3.org/ns/ssn/",
+        "time": "http://www.w3.org/2006/time#",
+        "vann": "http://purl.org/vocab/vann/",
+        "vcard": "http://www.w3.org/2006/vcard/ns#",
+        "void": "http://rdfs.org/ns/void#",
+        "wgs": "https://www.w3.org/2003/01/geo/wgs84_pos#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      },
+      "@graph": [
+        {
+          "@id": "https://www.nafpaktos.gr/el/syllogoi",
+          "@type": [
+            "foaf:Document",
+            "rdfs:Resource"
+          ]
+        },
+        {
+          "@id": "https://data.gov.gr/dataset/edb15e50-7355-41f9-bdb4-c2dc0fdc5243/resource/5a56acc5-0d86-45a8-be64-4f48fb8606c9",
+          "@type": "dcat:Distribution",
+          "dcat:accessService": {
+            "@id": "https://www.nafpaktos.gr/el/home"
+          },
+          "dcat:accessURL": {
+            "@id": "https://www.nafpaktos.gr/el/syllogoi"
+          },
+          "dcat:byteSize": {
+            "@type": "xsd:nonNegativeInteger",
+            "@value": "1787"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://www.nafpaktos.gr/el/syllogoi"
+          },
+          "dcat:mediaType": {
+            "@id": "https://www.iana.org/assignments/media-types/text/csv"
+          },
+          "dcatap:applicableLegislation": {
+            "@id": "https://eur-lex.europa.eu/eli/dir/2019/1024/oj/eng"
+          },
+          "dcatap:availability": {
+            "@id": "http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE"
+          },
+          "dct:description": [
+            {
+              "@language": "en",
+              "@value": ""
+            },
+            {
+              "@language": "el",
+              "@value": "ΣΥΛΛΟΓΟΙ ΔΗΜΟΥ ΝΑΥΠΑΚΤΙΑΣ"
+            }
+          ],
+          "dct:format": "CSV",
+          "dct:issued": {
+            "@type": "xsd:dateTime",
+            "@value": "2026-08-11T07:05:27.227061"
+          },
+          "dct:license": {
+            "@id": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0"
+          },
+          "dct:modified": {
+            "@type": "xsd:dateTime",
+            "@value": "2026-10-19T06:53:54.014888"
+          },
+          "dct:rights": {
+            "@id": "_:Ne21283adf027415e9f527e603be5134a"
+          },
+          "dct:title": [
+            {
+              "@language": "en",
+              "@value": ""
+            },
+            {
+              "@language": "el",
+              "@value": "ΣΥΛΛΟΓΟΙ ΔΗΜΟΥ ΝΑΥΠΑΚΤΙΑΣ"
+            }
+          ],
+          "spdx:checksum": {
+            "@id": "_:N9c8bb90631e34cd28e691e14bfb6286c"
+          }
+        },
+        {
+          "@id": "_:N9c8bb90631e34cd28e691e14bfb6286c",
+          "@type": "spdx:Checksum",
+          "spdx:checksumValue": {
+            "@type": "xsd:hexBinary",
+            "@value": "a97cc3c4707d0795718516d8269bd8df"
+          }
+        },
+        {
+          "@id": "_:Ne21283adf027415e9f527e603be5134a",
+          "@type": "dct:RightsStatement",
+          "rdfs:label": "Τα δεδομένα διατίθενται υπό την άδεια : Creative Commons Attribution 4.0 International"
+        },
+        {
+          "@id": "http://publications.europa.eu/resource/authority/frequency/IRREG",
+          "@type": "dct:Frequency"
+        },
+        {
+          "@id": "https://www.iana.org/assignments/media-types/application/vnd.ms-excel",
+          "@type": "dct:MediaType"
+        },
+        {
+          "@id": "https://data.gov.gr/dataset/edb15e50-7355-41f9-bdb4-c2dc0fdc5243",
+          "@type": "dcat:Dataset",
+          "dcat:contactPoint": {
+            "@id": "https://data.gov.gr"
+          },
+          "dcat:distribution": [
+            {
+              "@id": "https://data.gov.gr/dataset/edb15e50-7355-41f9-bdb4-c2dc0fdc5243/resource/b3ac5263-e5c1-4905-a1d2-121125aa157d"
+            },
+            {
+              "@id": "https://data.gov.gr/dataset/edb15e50-7355-41f9-bdb4-c2dc0fdc5243/resource/5a56acc5-0d86-45a8-be64-4f48fb8606c9"
+            }
+          ],
+          "dcat:keyword": "ΣΥΛΛΟΓΟΙ",
+          "dcat:landingPage": {
+            "@id": "https://www.nafpaktos.gr/el/syllogoi"
+          },
+          "dcat:theme": {
+            "@id": "http://publications.europa.eu/resource/authority/data-theme/SOCI"
+          },
+          "dcatap:applicableLegislation": {
+            "@id": "https://eur-lex.europa.eu/eli/dir/2019/1024/oj/eng"
+          },
+          "dct:accessRights": {
+            "@id": "http://publications.europa.eu/resource/authority/access-right/PUBLIC"
+          },
+          "dct:accrualPeriodicity": {
+            "@id": "http://publications.europa.eu/resource/authority/frequency/IRREG"
+          },
+          "dct:creator": {
+            "@id": "https://data.gov.gr"
+          },
+          "dct:description": [
+            {
+              "@language": "en",
+              "@value": "SYLLOGOI"
+            },
+            {
+              "@language": "el",
+              "@value": "Μητρώο και στοιχεία επικοινωνίας των πολιτιστικών, αθλητικών και κοινωνικών συλλόгов που δραστηριοποιούνται στον Δήμο Ναυπακτίας"
+            }
+          ],
+          "dct:identifier": "edb15e50-7355-41f9-bdb4-c2dc0fdc5243",
+          "dct:issued": {
+            "@type": "xsd:dateTime",
+            "@value": "2026-06-15T08:20:13.617961"
+          },
+          "dct:modified": {
+            "@type": "xsd:dateTime",
+            "@value": "2026-10-19T06:53:54.010679"
+          },
+          "dct:publisher": {
+            "@id": "https://data.gov.gr"
+          },
+          "dct:spatial": {
+            "@id": "http://sws.geonames.org/256639/"
+          },
+          "dct:temporal": {
+            "@id": "_:N34a1fad4d4bb4ea69ccdd2daac8852fd"
+          },
+          "dct:title": [
+            {
+              "@language": "el",
+              "@value": "ΣΥΛΛΟΓΟΙ"
+            },
+            {
+              "@language": "en",
+              "@value": "SYLLOGOI"
+            }
+          ],
+          "dct:type": {
+            "@id": "http://publications.europa.eu/resource/authority/dataset-type/HVD"
+          },
+          "owl:versionInfo": "1.0"
+        },
+        {
+          "@id": "_:N34a1fad4d4bb4ea69ccdd2daac8852fd",
+          "@type": "dct:PeriodOfTime",
+          "dcat:endDate": {
+            "@type": "xsd:date",
+            "@value": "2026-01-01"
+          },
+          "dcat:startDate": {
+            "@type": "xsd:date",
+            "@value": "2026-01-01"
+          }
+        },
+        {
+          "@id": "https://eur-lex.europa.eu/eli/dir/2019/1024/oj/eng",
+          "@type": "http://data.europa.eu/eli/ontology#LegalResource"
+        },
+        {
+          "@id": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+          "@type": "dct:LicenseDocument"
+        },
+        {
+          "@id": "https://data.gov.gr",
+          "@type": [
+            "vcard:Kind",
+            "foaf:Agent"
+          ],
+          "dct:identifier": "ΔΗΜΟΣ ΝΑΥΠΑΚΤΙΑΣ",
+          "dct:type": {
+            "@id": "http://purl.org/adms/publishertype/LocalAuthority"
+          },
+          "foaf:homepage": {
+            "@id": "https://www.nafpaktos.gr/el/syllogoi"
+          },
+          "foaf:name": "ΔΗΜΟΣ ΝΑΥΠΑΚΤΙΑΣ",
+          "vcard:fn": "ΘΕΟΔΩΡΟΣ ΠΑΛΙΑΤΣΑΣ",
+          "vcard:hasEmail": {
+            "@id": "mailto:tpaliatsas@nafpaktos.gr"
+          },
+          "vcard:hasURL": {
+            "@id": "https://www.nafpaktos.gr/el/syllogoi"
+          }
+        },
+        {
+          "@id": "https://data.gov.gr/dataset/edb15e50-7355-41f9-bdb4-c2dc0fdc5243/resource/b3ac5263-e5c1-4905-a1d2-121125aa157d",
+          "@type": "dcat:Distribution",
+          "dcat:accessService": {
+            "@id": "https://www.nafpaktos.gr/el/home"
+          },
+          "dcat:accessURL": {
+            "@id": "https://www.nafpaktos.gr/el/syllogoi"
+          },
+          "dcat:byteSize": {
+            "@type": "xsd:nonNegativeInteger",
+            "@value": "19274"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://www.nafpaktos.gr/el/syllogoi"
+          },
+          "dcat:mediaType": {
+            "@id": "https://www.iana.org/assignments/media-types/application/vnd.ms-excel"
+          },
+          "dcatap:availability": {
+            "@id": "http://publications.europa.eu/resource/authority/planned-availability/AVAILABLE"
+          },
+          "dct:description": [
+            {
+              "@language": "en",
+              "@value": ""
+            },
+            {
+              "@language": "el",
+              "@value": "ΣΥΛΛΟΓΟΙ ΔΗΜΟΥ ΝΑΥΠΑΚΤΙΑΣ"
+            }
+          ],
+          "dct:format": "XLS",
+          "dct:issued": {
+            "@type": "xsd:dateTime",
+            "@value": "2026-08-11T07:07:35.870852"
+          },
+          "dct:license": {
+            "@id": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0"
+          },
+          "dct:modified": {
+            "@type": "xsd:dateTime",
+            "@value": "2026-10-19T06:53:54.014963"
+          },
+          "dct:rights": {
+            "@id": "_:Nd446ffd914614ce98b64401bb424d3ff"
+          },
+          "dct:title": [
+            {
+              "@language": "en",
+              "@value": ""
+            },
+            {
+              "@language": "el",
+              "@value": "ΣΥΛΛΟΓΟΙ ΔΗΜΟΥ ΝΑΥΠΑΚΤΙΑΣ"
+            }
+          ],
+          "spdx:checksum": {
+            "@id": "_:N1d654c2f38954d9887069076dea23e92"
+          }
+        },
+        {
+          "@id": "_:Nd446ffd914614ce98b64401bb424d3ff",
+          "@type": "dct:RightsStatement",
+          "rdfs:label": "Τα δεδομένα διατίθενται υπό την άδεια : Creative Commons Attribution 4.0 International"
+        },
+        {
+          "@id": "_:N1d654c2f38954d9887069076dea23e92",
+          "@type": "spdx:Checksum",
+          "spdx:checksumValue": {
+            "@type": "xsd:hexBinary",
+            "@value": "58f81dedd81fcc6b27b2c811eacf2bdb"
+          }
+        },
+        {
+          "@id": "https://www.iana.org/assignments/media-types/text/csv",
+          "@type": "dct:MediaType"
+        },
+        {
+          "@id": "http://sws.geonames.org/256639/",
+          "@type": "dct:Location",
+          "dcat:bbox": {
+            "@type": "gsp:wktLiteral",
+            "@value": "POLYGON ((21.8085 38.3768, 21.8085 38.4066, 21.8465 38.4066, 21.8465 38.3768, 21.8085 38.3768))"
+          },
+          "skos:prefLabel": "Ναύπακτος"
+        },
+        {
+          "@id": "http://publications.europa.eu/resource/authority/access-right/PUBLIC",
+          "@type": "dct:RightsStatement"
+        }
+      ]
+    }
+  }
+}

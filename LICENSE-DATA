@@ -1,0 +1,24 @@
+ΑΔΕΙΑ ΓΙΑ ΤΑ ΔΕΔΟΜΕΝΑ
+
+Τα δεδομένα και τα αποτελέσματα που παράγει αυτό το έργο (φάκελοι data/processed/ και outputs/) διατίθενται με την άδεια:
+
+    Creative Commons Αναφορά 4.0 Διεθνής (CC BY 4.0)
+    https://creativecommons.org/licenses/by/4.0/
+    Πλήρες νομικό κείμενο: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Μπορείτε να τα χρησιμοποιείτε, να τα αλλάζετε και να τα διανέμετε, και για εμπορικούς σκοπούς, αρκεί να αναφέρετε την πηγή, για παράδειγμα:
+
+    Σκανδαλίδης, Μ. (2026). Ποιότητα και ετοιμότητα για ΤΝ των ανοιχτών δεδομένων του data.gov.gr.
+    Πρακτική άσκηση, ΠΜΣ Ηλεκτρονική Διακυβέρνηση, Πανεπιστήμιο Αιγαίου / ΕΕΛΛΑΚ.
+
+Τα αρχεία στο data/raw/ είναι αντίγραφα δημόσιων μεταδεδομένων του data.gov.gr. Τα κρατάμε για διαφάνεια και επαναληψιμότητα και ισχύουν γι' αυτά οι όροι της πύλης. Τα αρχικά σύνολα δεδομένων ανήκουν στους φορείς που τα δημοσιεύουν και διέπονται από τις δικές τους άδειες.
+
+Ο κώδικας του έργου διατίθεται με άδεια EUPL-1.2 (αρχείο LICENSE).
+
+---
+
+DATA LICENCE (English)
+
+The data and results produced by this project (folders data/processed/ and outputs/) are licensed under Creative Commons Attribution 4.0 International (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+Files in data/raw/ are copies of public metadata from data.gov.gr, kept for transparency and reproducibility; the portal's terms apply to them. The original datasets belong to their publishers and remain under their own licences. The code is licensed under the EUPL-1.2 (file LICENSE).
