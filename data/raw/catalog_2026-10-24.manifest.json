@@ -1,0 +1,30 @@
+{
+  "snapshot_date": "2026-10-24",
+  "started_utc": "2026-10-24T13:40:41+00:00",
+  "finished_utc": "2026-10-24T13:45:19+00:00",
+  "source": "https://data.gov.gr/api/3/action/package_search",
+  "parameters": {
+    "rows_per_page": 1000,
+    "sort": "metadata_created asc, id asc",
+    "limit": null
+  },
+  "ckan_version": "2.11.3",
+  "reported_count_at_start": 22993,
+  "reported_count_at_end": 22993,
+  "records_written": 22993,
+  "duplicates_skipped": 0,
+  "records_by_type": {
+    "dataset": 22805,
+    "data-service": 127,
+    "decision": 61
+  },
+  "file": "catalog_2026-10-24.jsonl.gz",
+  "file_size_bytes": 29538711,
+  "sha256": "e6045f3c3af83b61b1b18a64215ae73bbd37e52e4ee8a6c34ef85859bcf7ae4c",
+  "format": "JSON Lines: μία εγγραφή του CKAN API ανά γραμμή, χωρίς αλλαγές· συμπίεση gzip· UTF-8",
+  "software": {
+    "script": "scripts/01_snapshot.py",
+    "python": "3.14.8",
+    "requests": "2.34.2"
+  }
+}

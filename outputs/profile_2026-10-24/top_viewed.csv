@@ -1,0 +1,51 @@
+﻿name,title,organization_title,views_total,views_recent,is_hvd,hvd_categories,formats
+geotemachia-oria-kai-kaek-ton-periochon-toy-leitoyrgoyntos-ktimatologioy,"Γεωτεμάχια (όρια και ΚΑΕΚ) των περιοχών του ""Λειτουργούντος Κτηματολογίου""",Ελληνικό Κτηματολόγιο,3078,365,True,c_ac64a52d,SHP
+thesmothetimenes-perioches-natura-2000,Θεσμοθετημένες περιοχές NATURA 2000,Ελληνικό Κτηματολόγιο,1392,160,True,c_ac64a52d,SHP
+parabaseis-troxaias,Παραβάσεις Τροχαίας,Υπουργείο Προστασίας του Πολίτη,1160,149,False,,XL;XLS;XLSX
+polygona-oria-kai-charaktirismoi-ton-dasikon-charton-ana-perifereia,Πολύγωνα (όρια και χαρακτηρισμοί) των Δασικών Χαρτών ανά Περιφέρεια,Ελληνικό Κτηματολόγιο,883,95,True,c_ac64a52d,SHP
+gis-ypen-wfd-wms-kallikratikoi_dimoi,Καλλικρατικοί Δήμοι,Υπουργείο Περιβάλλοντος και Ενέργειας,768,136,False,,CSV;GEOJSON;KML;SHAPE-ZIP;WMS;XML
+public-administration-evaluation,Αξιολόγηση Δημόσιας Διοίκησης,Υπουργείο Εσωτερικών,749,58,False,,CSV
+troxaia-atyxhmata,Τροχαία ατυχήματα,Υπουργείο Προστασίας του Πολίτη,653,19,True,c_e1da4e07,XL;XLS;XLSX;XLX
+e8niko-mhtrwo-asfalishs-asfalistikhs-ikanothtas-atlas,Εθνικό Μητρώο Ασφάλισης-Ασφαλιστικής Ικανότητας «ΑΤΛΑΣ»,Ηλεκτρονική Διακυβέρνηση Κοινωνικής Ασφάλισης (ΗΔΙΚΑ) Α.Ε.,643,39,False,,ASPX
+dromologia-statheron-sygkoinonion-metro-isap-tram,"Δρομολόγια Σταθερών Συγκοινωνιών (ΜΕΤΡΟ, ΗΣΑΠ, ΤΡΑΜ)",Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ),616,51,True,c_ac64a52d,RAR
+dromologia-odikon-sygkoinonion-leoforeia-trolei,"Δρομολόγια Οδικών Συγκοινωνιών (Λεωφορεία, Τρόλεϊ)",Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ),592,47,True,c_b79e35eb,RAR.
+diacheirisi-stoicheion-paragogis-nopoy-galaktos,Διαχείριση Στοιχείων Παραγωγής Νωπού Γάλακτος,"Ελληνικός Γεωργικός Οργανισμός (ΕΛΓΟ)- ""ΔΗΜΗΤΡΑ""",575,31,True,c_e1da4e07,CSV
+simeia-ydrolipsias-tis-geovasis-emsy-ethniko-mitroo-simeion-ydrolipsias-periochi-anatolikis-makedoni,Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης,Αποκεντρωμένη Διοίκηση Μακεδονίας - Θράκης,549,71,True,c_ac64a52d,SHP ZIP;XLS
+dedomena-astikon-sygkoinonion-p-e-thessalonikis,Δεδομένα αστικών συγκοινωνιών Π.Ε. Θεσσαλονίκης,Οργανισμός Συγκοινωνιακού Έργου Θεσαλλονίκης - ΟΣΕΘ ΑΕ,501,54,True,c_b79e35eb,ZIP
+statistika-vathmon-ypopsifion-gel-epal-stis-panelladikes-exetaseis-2025,Στατιστικά Βαθμών Υποψηφίων ΓΕΛ &  ΕΠΑΛ στις Πανελλαδικές Εξετάσεις 2025.,"Υπουργείο Παιδείας, Θρησκευμάτων και Αθλητισμού",490,4,False,,ZIP
+arithmos-ekpaideytikon-deyterovathmia-eidikotita-schesi-ergasias-2025,"""ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ ΔΗΜΟΣΙΑΣ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ ΔΙΕΥΘΥΝΣΗ ΕΚΠΑΙΔΕΥΣΗΣ ΓΙΑ ΤΟ ΣΧΟΛΙΚΟ ΕΤΟΣ 2024-2025 ""","Υπουργείο Παιδείας, Θρησκευμάτων και Αθλητισμού",482,3,True,c_e1da4e07,XLSX
+attica-43-lista-me-monades-frontidas-hlikiwmenwn,Λίστα με Μονάδες Φροντίδας Ηλικιωμένων,Περιφέρεια Αττικής,458,19,True,c_ac64a52d,URL
+attica-92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020,Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής,Περιφέρεια Αττικής,448,55,True,c_e1da4e07,XLS
+stoicheia-odon-diloseon-ellinikoy-ktimatologioy,Στοιχεία οδών δηλώσεων Ελληνικού Κτηματολογίου,Ελληνικό Κτηματολόγιο,410,35,True,c_ac64a52d,SHP
+road_traffic_attica,Κυκλοφορία δρόμων στην Αττική,Περιφέρεια Αττικής,373,52,False,,CSV
+gis-ypen-wfd-wms-oikismoi,Οικισμοί,Υπουργείο Περιβάλλοντος και Ενέργειας,360,55,False,,CSV;GEOJSON;KML;SHAPE-ZIP;WMS;XML
+statistika-stoixeia-egklhmatikothtas,Στατιστικά στοιχεία εγκληματικότητας,Υπουργείο Προστασίας του Πολίτη,335,18,False,,XLS;XLSX
+telephonikos-katalogos-ton-uperesion-tou-demou-thessalonikes,Τηλεφωνικός κατάλογος των Υπηρεσιών του Δήμου Θεσσαλονίκης,Δήμος Θεσσαλονίκης,300,43,False,,DOC
+oasth-gtfs,Σύνολα Δεδομένων Οργανισμού Αστικών Συγκοινωνιών - GTFS,Οργανισμός Αστικών Συγκοινωνιών Θεσσαλονίκης (ΟΑΣΘ),299,44,True,c_b79e35eb,CSV
+bank-of-greece-bulletin-of-prices-of-gold-bars-and-gold-coins-from-2001-to-present,Δελτίο τιμών χρυσού και χρυσών νομισμάτων από το 2001 μέχρι και σήμερα,Τράπεζα της Ελλάδος,294,32,False,,XLSX
+parathrhthrio-timwn-ygrwn-kaysimwn,Παρατηρητήριο Τιμών Υγρών Καυσίμων,ΥΠΟΥΡΓΕΙΟ ΟΙΚΟΝΟΜΙΑΣ & ΑΝΑΠΤΥΞΗΣ,286,30,False,,
+arithmos-ekpaideytikon-protovathmia-eidikotita-schesi-ergasias-2025,"""ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ ΔΗΜΟΣΙΑΣ ΠΡΩΤΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ ΔΙΕΥΘΥΝΣΗ ΕΚΠΑΙΔΕΥΣΗΣ ΓΙΑ ΤΟ ΣΧΟΛΙΚΟ ΕΤΟΣ 2024-2025 ""","Υπουργείο Παιδείας, Θρησκευμάτων και Αθλητισμού",277,4,False,,XLSX
+data-nap-gov-gr-latest-open-street-map-objects-for-greece,Latest Open Street Map Objects for Greece,National Access Point,255,31,False,,PBF;SHP
+apd-kritis-harv2-__,Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ,Αποκεντρωμένη Διοίκηση Κρήτης,249,2,True,c_dd313021;c_ac64a52d,ESRI REST;XLS
+cityofathens-4fc4a0c4-bdbb-4cc0-97e7-5cc2811565e4,Ζώνες Ελεγχόμενης  Στάθμευσης,Δήμος Αθηναίων,220,79,False,,HTML;PNG
+8eseis-sta8meyshs,Θέσεις Στάθμευσης,Δήμος Χανίων,220,19,False,,HTML
+bank-of-greece-payments-statistics,Στατιστικές πληρωμών,Τράπεζα της Ελλάδος,215,4,False,,XLSX
+arkheio-bebaiomenon-parabaseon-kodika-odikes-kuklophorias-apo-te-demotike-astunomia-tou-demou,Αρχείο βεβαιωμένων παραβάσεων Κώδικα Οδικής Κυκλοφορίας από τη Δημοτική Αστυνομία του Δήμου Θεσσαλονίκης,Δήμος Θεσσαλονίκης,210,21,False,,CSV;XLS
+diacheirisi-stoicheion-diakinisis-kreatos,Διαχείριση Στοιχείων Διακίνησης Κρέατος,"Ελληνικός Γεωργικός Οργανισμός (ΕΛΓΟ)- ""ΔΗΜΗΤΡΑ""",196,18,False,,CSV
+proslhpseis-apo-diagwnismoys-asep-me-seira-proteraiothtas-ana-prokhry3h,Προσλήψεις από διαγωνισμούς ΑΣΕΠ με σειρά προτεραιότητας ανά προκήρυξη,Ανώτατο Συμβούλιο Επιλογής Προσωπικού (ΑΣΕΠ),193,26,False,,XLS
+ethniko-geografiko-lexiko-gys-stoicheia-toponymion,Εθνικό Γεωγραφικό Λεξικό (ΓΥΣ) - Στοιχεία τοπωνυμίων,Ελληνικό Κτηματολόγιο,177,17,True,c_ac64a52d,
+morfes-kalypsis-chriseon-gis-corine-corine-land-cover,Μορφές Κάλυψης Χρήσεων Γης CORINE (Corine Land Cover),Ελληνικό Κτηματολόγιο,176,26,True,c_ac64a52d,SHP
+anaprosarmogi-2021-geochoriki-apeikonisi-zonon-systimatos-antikeimenikoy-prosdiorismoy-axion-akinito,(αναπροσαρμογή 2021) Γεωχωρική Απεικόνιση Ζωνών συστήματος Αντικειμενικού Προσδιορισμού Αξιών Ακινήτων σε χάρτη και Υπολογισμός Αντικειμενικής Αξίας Ακινήτου,Υπουργείο Εθνικής Οικονομίας και Οικονομικών,171,4,True,c_ac64a52d,HTML;SHAPE-ZIP
+oasa_ridership,Επιβατικό κοινό στον ΟΑΣΑ,Οργανισμός Αστικών Συγκοινωνιών Αθηνών (ΟΑΣΑ),169,5,False,,CSV
+mcp_traffic_violations,Τροχαίες Παραβάσεις,Υπουργείο Προστασίας του Πολίτη,169,15,False,,CSV
+emy-station-189,Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ,Εθνική Μετεωρολογική Υπηρεσία (ΕΜΥ),169,36,True,c_164e0bf5,CSV
+emy-station-233,Μετεωρολογικά Δεδομένα σταθμού ΤΡΙΚΑΛΑ(ΘΕΣΣΑΛΙΑΣ),Εθνική Μετεωρολογική Υπηρεσία (ΕΜΥ),165,21,True,c_164e0bf5,CSV
+cityofathens-a36a37d9-716c-442a-b2ed-e77a4605887c,Νοσοκομεία στο Δήμο Αθηναίων,Δήμος Αθηναίων,165,25,False,,CSV;GEOJSON;GML;JPEG;PDF;PNG;UNKNOWN;WFS;WMS;XLS;ZIP
+dimosios-prosvasima-simeia-fortisis,Δημοσίως προσβάσιμα σημεία φόρτισης,Υπουργείο Υποδομών και Μεταφορών,159,8,False,,ZIP
+troxaia-atyxhmata-kai-pa8ontes-ana-genikh-astynomikh-diey8ynsh,Τροχαία ατυχήματα και παθόντες ανά Γενική Αστυνομική Διεύθυνση,Υπουργείο Προστασίας του Πολίτη,157,7,True,c_e1da4e07,XL;XLS;XLSX;XLXS
+roes-misthotis-apascholisis-ston-idiotiko-tomea-2025,ΡΟΕΣ ΜΙΣΘΩΤΗΣ ΑΠΑΣΧΟΛΗΣΗΣ ΣΤΟΝ ΙΔΙΩΤΙΚΟ ΤΟΜΕΑ 2025,Υπουργείο Εργασίας & Κοινωνικής Ασφάλισης,155,2,False,,PDF
+gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012_2018,Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018,Δήμος Σύρου Ερμούπολης,154,6,False,,CSV;GEOJSON;KML;SHAPE-ZIP;WMS;XML
+apd-kritis-harv2-2025,2025 – Αποτελέσματα παρακολούθησης της ποιότητας των Υδάτων Κολύμβησης Κρήτης,Αποκεντρωμένη Διοίκηση Κρήτης,154,11,True,c_dd313021,CSV;XLSX
+enarmonismenos-deiktis-timon-katanaloti-endtk,ΕΝΑΡΜΟΝΙΣΜΕΝΟΣ ΔΕΙΚΤΗΣ ΤΙΜΩΝ ΚΑΤΑΝΑΛΩΤΗ (ΕνΔΤΚ),Ελληνική Στατιστική Αρχή (ΕΛΣΤΑΤ),151,13,True,c_e1da4e07,CSV
+emporopanigyri-naypaktoy-2026,ΕΜΠΟΡΟΠΑΝΗΓΥΡΗ ΝΑΥΠΑΚΤΟΥ 2026,Δήμος Ναυπακτίας,149,111,False,,CSV;PDF
+psifiako-archeio-apofaseon-kiryxis-anaklisis-kai-arsis-apallotriosis-kai-ktimatologikon-pinakon,"Ψηφιακό αρχείο αποφάσεων κήρυξης, ανάκλησης και άρσης απαλλοτρίωσης και κτηματολογικών πινάκων",Υπουργείο Εθνικής Οικονομίας και Οικονομικών,148,20,False,,
