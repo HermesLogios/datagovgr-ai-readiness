@@ -22,7 +22,7 @@ The methodology and every decision are recorded in this repository, so that the 
 | `scripts/` | The scripts, numbered in the order they run (`00_`, `01_`, ...) |
 | `data/raw/` | Raw data downloaded from the portal, unmodified |
 | `data/processed/` | Processed tables and scores |
-| `criteria/` | Assessment criteria (`criteria.csv`) |
+| `criteria/` | Assessment criteria (`criteria.csv`) and manual classification of high-value content (`hvd_by_content.csv`) |
 | `outputs/` | Tables, charts, Croissant files, RAG collection |
 | `DECISIONS.md` | Decision log, with date and rationale |
 | `requirements.txt` | Python libraries, with pinned versions |
@@ -41,6 +41,16 @@ python scripts\00_check_setup.py
 
 On Linux or macOS use `python3 -m venv .venv` and `source .venv/bin/activate`; the other commands are the same.
 
+The published results can be reproduced from the stored snapshot. `01_snapshot.py` is skipped, because it downloads a new snapshot of the current catalogue:
+
+```powershell
+python scripts\02_catalog_profile.py --snapshot data\raw\catalog_2026-10-24.jsonl.gz
+python scripts\03_sample.py --flat data\processed\catalog_flat_2026-10-24.csv --force
+git status
+```
+
+If the results are identical to the published ones, `git status` shows no changed files.
+
 ## Licences
 
 - **Code:** EUPL-1.2 (file `LICENSE`).
@@ -49,10 +59,11 @@ On Linux or macOS use `python3 -m venv .venv` and `source .venv/bin/activate`; t
 
 ## Status
 
-Phase 1: catalogue snapshot and first profile (October 2026).
+Phases 1 and 2: catalogue snapshot, first profile and selection of the sample (October 2026).
 
 | Script | Function | Output |
 | --- | --- | --- |
 | `00_check_setup.py` | Environment check and first exploration of the API | `data/raw/api_probe_YYYY-MM-DD.json` |
 | `01_snapshot.py` | Snapshot of the complete catalogue | `data/raw/catalog_YYYY-MM-DD.jsonl.gz` and `.manifest.json` |
 | `02_catalog_profile.py` | Catalogue profile: one row per dataset and summary tables | `data/processed/catalog_flat_YYYY-MM-DD.csv` and `outputs/profile_YYYY-MM-DD/` |
+| `03_sample.py` | Selection of the 36 datasets of the sample: 24 high-value, 12 for comparison | `data/processed/sample.csv`, `sample_reserves.csv` and `outputs/sample_YYYY-MM-DD/` |
