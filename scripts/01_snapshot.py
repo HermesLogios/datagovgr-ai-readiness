@@ -1,30 +1,30 @@
 r"""
 01_snapshot.py
-Φάση 1: στιγμιότυπο ολόκληρου του καταλόγου του data.gov.gr.
+Phase 1: snapshot of the complete data.gov.gr catalogue.
 
-Λειτουργία, με τη σειρά:
-  1. Ανάγνωση του πλήθους των εγγραφών του καταλόγου (package_search με rows=0).
-  2. Λήψη όλων των εγγραφών σε σελίδες των 1.000, με σταθερή ταξινόμηση κατά ημερομηνία
-     δημιουργίας και αναγνωριστικό. Με αυτή τη σειρά, όσες εγγραφές προστίθενται κατά τη
-     διάρκεια της λήψης εμφανίζονται στο τέλος και δεν μετατοπίζουν τις προηγούμενες σελίδες.
-  3. Αποθήκευση κάθε εγγραφής, ακριβώς όπως την επιστρέφει το API, σε μία γραμμή JSON
-     (μορφή JSON Lines), σε συμπιεσμένο αρχείο: data/raw/catalog_ΕΕΕΕ-ΜΜ-ΗΗ.jsonl.gz.
-  4. Παράλειψη τυχόν διπλοεγγραφών (ίδιο αναγνωριστικό), που μπορεί να προκύψουν από
-     μεταβολές του καταλόγου κατά τη λήψη.
-  5. Σύνταξη αρχείου τεκμηρίωσης (manifest): data/raw/catalog_ΕΕΕΕ-ΜΜ-ΗΗ.manifest.json,
-     με χρόνους λήψης, παραμέτρους, πλήθη ανά τύπο εγγραφής και αποτύπωμα SHA-256 του αρχείου.
+What it does, in order:
+  1. Reads the number of records in the catalogue (package_search with rows=0).
+  2. Downloads all records in pages of 1,000, with a stable sort order (creation date, then id).
+     With this order, records added while the download runs appear at the end and do not
+     shift the pages already downloaded.
+  3. Stores every record exactly as the API returns it, one JSON object per line
+     (JSON Lines), in a compressed file: data/raw/catalog_YYYY-MM-DD.jsonl.gz.
+  4. Skips duplicate records (same id), which can appear if the catalogue changes during
+     the download.
+  5. Writes a manifest file, data/raw/catalog_YYYY-MM-DD.manifest.json, with the download
+     times, the parameters, the number of records per type and the SHA-256 checksum of the file.
 
-Το στιγμιότυπο περιλαμβάνει όλους τους τύπους εγγραφών της πύλης: σύνολα δεδομένων
-(dataset), υπηρεσίες δεδομένων (data-service) και αποφάσεις διάθεσης (decision).
+The snapshot includes every record type of the portal: datasets (dataset), data services
+(data-service) and data availability decisions (decision).
 
-Εκτέλεση (από τον κεντρικό φάκελο του έργου, με ενεργό το .venv):
+Usage (from the project root, with the .venv activated):
     python scripts\01_snapshot.py
-Δοκιμαστική εκτέλεση με περιορισμένο πλήθος εγγραφών (δεν προορίζεται για το αποθετήριο):
+Test run with a limited number of records (not meant for the repository):
     python scripts\01_snapshot.py --limit 2000
 
-Διάρκεια πλήρους λήψης: περίπου 5 λεπτά. Μέγεθος αρχείου: περίπου 45 MB.
-Το script εκτελεί μόνο αναγνώσεις και δεν μεταβάλλει δεδομένα στην πύλη.
-Άδεια κώδικα: EUPL-1.2
+A full download takes about 5 minutes and produces a file of about 30 MB.
+The script only reads from the portal; it never modifies anything there.
+Code licence: EUPL-1.2
 """
 
 from __future__ import annotations
@@ -45,7 +45,7 @@ import requests
 from tqdm import tqdm
 
 # ---------------------------------------------------------------------------
-# Ρυθμίσεις
+# Settings
 # ---------------------------------------------------------------------------
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -55,23 +55,23 @@ BASE_URL = os.environ.get("DATAGOVGR_BASE_URL", "https://data.gov.gr").rstrip("/
 API_URL = BASE_URL + "/api/3/action/"
 HEADERS = {"User-Agent": "datagovgr-ai-readiness/0.1 (research project; GFOSS internship)"}
 
-PAGE_SIZE = 1000                              # μέγιστο πλήθος εγγραφών ανά κλήση στο CKAN
-SORT_ORDER = "metadata_created asc, id asc"   # σταθερή σειρά· οι νέες εγγραφές μπαίνουν στο τέλος
-PAUSE_SECONDS = 1.0                           # παύση πριν από κάθε κλήση, για περιορισμό του φόρτου
-TIMEOUT_SECONDS = 180                         # μέγιστος χρόνος αναμονής για μία σελίδα
-MAX_ATTEMPTS = 4                              # προσπάθειες ανά κλήση σε προσωρινό σφάλμα
+PAGE_SIZE = 1000                              # maximum number of records per CKAN call
+SORT_ORDER = "metadata_created asc, id asc"   # stable order; new records are appended at the end
+PAUSE_SECONDS = 1.0                           # pause before every call, to keep the load low
+TIMEOUT_SECONDS = 180                         # maximum wait for one page
+MAX_ATTEMPTS = 4                              # attempts per call on a temporary error
 
 
 # ---------------------------------------------------------------------------
-# Βοηθητικές συναρτήσεις
+# Helpers
 # ---------------------------------------------------------------------------
 
 def api_get(session: requests.Session, action: str, params: dict) -> dict:
-    """Κλήση μιας ενέργειας (action) του CKAN API.
+    """Calls one CKAN API action.
 
-    Σε προσωρινά σφάλματα (δίκτυο, HTTP 429 ή 5xx, ελλιπής απάντηση) η κλήση επαναλαμβάνεται
-    με αυξανόμενη αναμονή. Σε μόνιμα σφάλματα (π.χ. HTTP 400 ή 404) η εκτέλεση διακόπτεται.
-    Επιστρέφει το περιεχόμενο «result» της απάντησης.
+    Temporary errors (network, HTTP 429 or 5xx, incomplete response) are retried with an
+    increasing wait. Permanent errors (e.g. HTTP 400 or 404) stop the run.
+    Returns the 'result' part of the response.
     """
     url = API_URL + action
     for attempt in range(1, MAX_ATTEMPTS + 1):
@@ -80,23 +80,23 @@ def api_get(session: requests.Session, action: str, params: dict) -> dict:
             if response.status_code == 429 or response.status_code >= 500:
                 raise requests.HTTPError(f"HTTP {response.status_code}")
             if response.status_code >= 400:
-                raise RuntimeError(f"HTTP {response.status_code} από {response.url}: {response.text[:300]}")
+                raise RuntimeError(f"HTTP {response.status_code} from {response.url}: {response.text[:300]}")
             data = response.json()
         except (requests.RequestException, ValueError) as error:
             if attempt == MAX_ATTEMPTS:
-                raise RuntimeError(f"Αποτυχία μετά από {MAX_ATTEMPTS} προσπάθειες ({url}): {error}") from error
+                raise RuntimeError(f"Failed after {MAX_ATTEMPTS} attempts ({url}): {error}") from error
             wait = 10 * attempt
-            tqdm.write(f"  Προσωρινό σφάλμα ({error}). Νέα προσπάθεια σε {wait} δευτερόλεπτα.")
+            tqdm.write(f"  Temporary error ({error}). Retrying in {wait} seconds.")
             time.sleep(wait)
             continue
         if not data.get("success"):
-            raise RuntimeError(f"Η πύλη επέστρεψε σφάλμα: {data.get('error')}")
+            raise RuntimeError(f"The portal returned an error: {data.get('error')}")
         return data["result"]
-    raise RuntimeError("Μη αναμενόμενη ροή εκτέλεσης.")  # δεν φτάνει ποτέ εδώ
+    raise RuntimeError("Unexpected control flow.")  # never reached
 
 
 def sha256_of(path: Path) -> str:
-    """Αποτύπωμα SHA-256 ενός αρχείου: επιτρέπει σε τρίτους να επαληθεύσουν ότι έχουν το ίδιο αρχείο."""
+    """SHA-256 checksum of a file: lets others verify that they hold the identical file."""
     digest = hashlib.sha256()
     with path.open("rb") as handle:
         for block in iter(lambda: handle.read(1 << 20), b""):
@@ -105,18 +105,18 @@ def sha256_of(path: Path) -> str:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Στιγμιότυπο του καταλόγου του data.gov.gr.")
+    parser = argparse.ArgumentParser(description="Snapshot of the data.gov.gr catalogue.")
     parser.add_argument(
         "--limit",
         type=int,
         default=None,
-        help="Μέγιστο πλήθος εγγραφών, για δοκιμαστική εκτέλεση.",
+        help="Maximum number of records, for a test run.",
     )
     return parser.parse_args()
 
 
 # ---------------------------------------------------------------------------
-# Κύριο πρόγραμμα
+# Main program
 # ---------------------------------------------------------------------------
 
 def main() -> int:
@@ -128,12 +128,12 @@ def main() -> int:
     today = dt.date.today().isoformat()
     suffix = "" if args.limit is None else f"_test{args.limit}"
     out_file = RAW_DIR / f"catalog_{today}{suffix}.jsonl.gz"
-    part_file = out_file.with_name(out_file.name + ".part")   # προσωρινό όνομα μέχρι την ολοκλήρωση
+    part_file = out_file.with_name(out_file.name + ".part")   # temporary name until the download completes
     manifest_file = RAW_DIR / f"catalog_{today}{suffix}.manifest.json"
 
     started = dt.datetime.now(dt.timezone.utc)
-    print(f"Στιγμιότυπο καταλόγου: {BASE_URL}")
-    print(f"Έναρξη: {started:%Y-%m-%d %H:%M:%S} UTC")
+    print(f"Catalogue snapshot: {BASE_URL}")
+    print(f"Started: {started:%Y-%m-%d %H:%M:%S} UTC")
 
     written = 0
     duplicates = 0
@@ -146,11 +146,11 @@ def main() -> int:
             time.sleep(PAUSE_SECONDS)
             reported_start = api_get(session, "package_search", {"rows": 0})["count"]
             target = reported_start if args.limit is None else min(args.limit, reported_start)
-            print(f"Εγγραφές στον κατάλογο: {reported_start}. Προς λήψη: {target}.")
+            print(f"Records in the catalogue: {reported_start}. To download: {target}.")
 
             start = 0
             with gzip.open(part_file, "wt", encoding="utf-8", newline="\n") as handle, \
-                    tqdm(total=target, desc="Λήψη", unit=" εγγρ.") as bar:
+                    tqdm(total=target, desc="Download", unit=" rec") as bar:
                 while True:
                     rows = PAGE_SIZE if args.limit is None else min(PAGE_SIZE, args.limit - written)
                     if rows <= 0:
@@ -168,20 +168,20 @@ def main() -> int:
                             duplicates += 1
                             continue
                         seen_ids.add(record_id)
-                        by_type[record.get("type") or "(χωρίς τύπο)"] += 1
+                        by_type[record.get("type") or "(no type)"] += 1
                         handle.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
                         written += 1
                         bar.update(1)
                     start += len(batch)
-                    if len(batch) < rows:   # τελευταία σελίδα
+                    if len(batch) < rows:   # last page
                         break
 
             time.sleep(PAUSE_SECONDS)
             reported_end = api_get(session, "package_search", {"rows": 0})["count"]
     except (Exception, KeyboardInterrupt) as error:
         if part_file.exists():
-            part_file.unlink()   # δεν διατηρείται μισό αρχείο
-        print(f"\nΗ λήψη διακόπηκε: {error}")
+            part_file.unlink()   # no half-written file is kept
+        print(f"\nThe download was interrupted: {error}")
         return 1
 
     part_file.replace(out_file)
@@ -202,7 +202,7 @@ def main() -> int:
         "file": out_file.name,
         "file_size_bytes": out_file.stat().st_size,
         "sha256": sha256_of(out_file),
-        "format": "JSON Lines: μία εγγραφή του CKAN API ανά γραμμή, χωρίς αλλαγές· συμπίεση gzip· UTF-8",
+        "format": "JSON Lines: one CKAN API record per line, unmodified; gzip compression; UTF-8",
         "software": {
             "script": "scripts/01_snapshot.py",
             "python": platform.python_version(),
@@ -212,17 +212,18 @@ def main() -> int:
     manifest_file.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print()
-    print("Η λήψη ολοκληρώθηκε.")
-    print(f"  Εγγραφές: {written} (διπλοεγγραφές που παραλείφθηκαν: {duplicates})")
+    print("Download complete.")
+    print(f"  Records: {written} (duplicates skipped: {duplicates})")
     for record_type, count in by_type.most_common():
         print(f"    {record_type}: {count}")
-    print(f"  Αρχείο: {out_file.relative_to(ROOT)} ({out_file.stat().st_size / 1e6:.1f} MB)")
-    print(f"  Τεκμηρίωση: {manifest_file.relative_to(ROOT)}")
-    print(f"  Διάρκεια: {(finished - started).total_seconds() / 60:.1f} λεπτά")
+    print(f"  File: {out_file.relative_to(ROOT)} ({out_file.stat().st_size / 1e6:.1f} MB)")
+    print(f"  Manifest: {manifest_file.relative_to(ROOT)}")
+    print(f"  Duration: {(finished - started).total_seconds() / 60:.1f} minutes")
     if args.limit is None and written != reported_end:
         print(
-            f"  [!] Οι εγγραφές ({written}) διαφέρουν από το πλήθος που δήλωνε η πύλη στο τέλος "
-            f"({reported_end}), λόγω μεταβολών κατά τη λήψη. Η διαφορά καταγράφεται στο manifest."
+            f"  [!] The records written ({written}) differ from the count reported by the portal "
+            f"at the end ({reported_end}), because the catalogue changed during the download. "
+            f"Both numbers are recorded in the manifest."
         )
     return 0
 

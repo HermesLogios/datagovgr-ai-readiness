@@ -1,25 +1,25 @@
-# Αρχεία που δεν περιλαμβάνονται στο αποθετήριο
+# Files that are not part of the repository
 
-# Εικονικό περιβάλλον Python (αναδημιουργείται από το requirements.txt)
+# Python virtual environment (recreated from requirements.txt)
 .venv/
 __pycache__/
 *.pyc
 
-# Διαπιστευτήρια, π.χ. κλειδιά API
+# Credentials, e.g. API keys
 .env
 
-# Αρχεία δεδομένων των φορέων: μπορεί να είναι μεγάλα και ανήκουν στους φορείς.
-# Στο αποθετήριο διατηρούνται μόνο οι σύνδεσμοί τους, μέσα στα μεταδεδομένα.
+# Data files of the publishing organisations: they can be large and belong to them.
+# Only their links, inside the metadata, are kept in the repository.
 data/raw/resources/
 
-# Δοκιμαστικά στιγμιότυπα (εκτέλεση με --limit) και προσωρινά αρχεία λήψης
+# Test snapshots (runs with --limit) and temporary download files
 data/raw/*_test*
 *.part
 
-# Αρχεία καταγραφής εκτελέσεων
+# Run logs
 *.log
 
-# Αρχεία λειτουργικών συστημάτων και επεξεργαστών κώδικα
+# Files created by operating systems and code editors
 Thumbs.db
 desktop.ini
 .DS_Store

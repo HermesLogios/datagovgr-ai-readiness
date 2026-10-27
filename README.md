@@ -1,36 +1,36 @@
 # datagovgr-ai-readiness
 
-Ποιότητα και ετοιμότητα για Τεχνητή Νοημοσύνη (ΤΝ) των ανοιχτών δεδομένων του [data.gov.gr](https://data.gov.gr/).
+Quality and AI-readiness assessment of the open datasets published on [data.gov.gr](https://data.gov.gr/), Greece's national open data portal.
 
-Πρακτική άσκηση του ΠΜΣ «Ηλεκτρονική Διακυβέρνηση» του Πανεπιστημίου Αιγαίου στον Οργανισμό Ανοιχτών Τεχνολογιών (ΕΕΛΛΑΚ / GFOSS), υπό την επίβλεψη του κ. Αλέξανδρου Μελίδη. Οκτώβριος – Δεκέμβριος 2026.
+Internship project of the MSc in Electronic Governance (University of the Aegean) at the Open Technologies Alliance (GFOSS / ΕΕΛΛΑΚ), supervised by Mr Alexandros Melidis. October – December 2026.
 
-> **English:** Quality and AI-readiness assessment of the open datasets published on data.gov.gr, Greece's national open data portal. Internship project at the Open Technologies Alliance (GFOSS), October–December 2026.
+> **Περίληψη στα ελληνικά.** Μελέτη της ποιότητας και της ετοιμότητας για τεχνητή νοημοσύνη (ΤΝ) των ανοιχτών δεδομένων του data.gov.gr, στο πλαίσιο πρακτικής άσκησης του ΠΜΣ «Ηλεκτρονική Διακυβέρνηση» του Πανεπιστημίου Αιγαίου στην ΕΕΛΛΑΚ. Αξιολογούνται 36 σύνολα δεδομένων σε τρία επίπεδα (ποιότητα, μεταδεδομένα και νομικό καθεστώς, ετοιμότητα για ΤΝ), ελέγχεται η συμμόρφωση των συνόλων υψηλής αξίας με τον Κανονισμό (ΕΕ) 2023/138 και εντοπίζονται τα σύνολα που γίνονται «έτοιμα για ΤΝ» με μικρή προσπάθεια. Ο κώδικας, τα δεδομένα και κάθε απόφαση καταγράφονται σε αυτό το αποθετήριο, ώστε η εργασία να μπορεί να επαναληφθεί. Τα παραδοτέα προς τον επιβλέποντα συντάσσονται στα ελληνικά· το αποθετήριο τηρείται στα αγγλικά.
 
-## Αντικείμενο
+## Scope
 
-- Αξιολόγηση δείγματος 36 συνόλων δεδομένων του data.gov.gr σε τρία επίπεδα: ποιότητα, μεταδεδομένα και νομικό καθεστώς, ετοιμότητα για ΤΝ.
-- Έλεγχος της συμμόρφωσης των συνόλων υψηλής αξίας με τον Εκτελεστικό Κανονισμό (ΕΕ) 2023/138.
-- Εντοπισμός των συνόλων που μπορούν να γίνουν «έτοιμα για ΤΝ» με μικρή προσπάθεια, καθώς και των δεδομένων που απουσιάζουν από την πύλη.
-- Ανάπτυξη ανοιχτού εργαλείου ελέγχου (web app) που εφαρμόζει τα ίδια κριτήρια σε οποιοδήποτε σύνολο.
+- Assessment of a sample of 36 data.gov.gr datasets on three levels: data quality; metadata and legal status; AI-readiness.
+- Compliance check of the high-value datasets against Implementing Regulation (EU) 2023/138.
+- Identification of the datasets that can become "AI-ready" with little effort, and of the data missing from the portal.
+- An open assessment tool (web app) that applies the same criteria to any dataset.
 
-Η μεθοδολογία και κάθε απόφαση καταγράφονται στο αποθετήριο, ώστε η εργασία να μπορεί να επαναληφθεί ή να συνεχιστεί από τρίτους.
+The methodology and every decision are recorded in this repository, so that the work can be reproduced or continued by others.
 
-## Δομή φακέλων
+## Repository layout
 
-| Φάκελος ή αρχείο | Περιεχόμενο |
+| Folder or file | Content |
 | --- | --- |
-| `scripts/` | Τα scripts, αριθμημένα κατά σειρά εκτέλεσης (`00_`, `01_`, …) |
-| `data/raw/` | Αρχικά δεδομένα από την πύλη, χωρίς επεξεργασία |
-| `data/processed/` | Επεξεργασμένα αρχεία και βαθμολογίες |
-| `criteria/` | Κριτήρια αξιολόγησης (`criteria.csv`) |
-| `outputs/` | Πίνακες, γραφήματα, αρχεία Croissant, συλλογή RAG |
-| `DECISIONS.md` | Αρχείο αποφάσεων, με ημερομηνία και αιτιολόγηση |
-| `requirements.txt` | Βιβλιοθήκες Python, με καθορισμένες εκδόσεις |
+| `scripts/` | The scripts, numbered in the order they run (`00_`, `01_`, ...) |
+| `data/raw/` | Raw data downloaded from the portal, unmodified |
+| `data/processed/` | Processed tables and scores |
+| `criteria/` | Assessment criteria (`criteria.csv`) |
+| `outputs/` | Tables, charts, Croissant files, RAG collection |
+| `DECISIONS.md` | Decision log, with date and rationale |
+| `requirements.txt` | Python libraries, with pinned versions |
 
-## Εκτέλεση (Windows, PowerShell)
+## How to run (Windows, PowerShell)
 
 ```powershell
-git clone <διεύθυνση του αποθετηρίου>
+git clone <repository address>
 cd datagovgr-ai-readiness
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -39,20 +39,20 @@ $env:PYTHONUTF8 = "1"
 python scripts\00_check_setup.py
 ```
 
-Σε Linux ή macOS χρησιμοποιούνται οι εντολές `python3 -m venv .venv` και `source .venv/bin/activate`· οι υπόλοιπες παραμένουν ίδιες.
+On Linux or macOS use `python3 -m venv .venv` and `source .venv/bin/activate`; the other commands are the same.
 
-## Άδειες
+## Licences
 
-- **Κώδικας:** EUPL-1.2 (αρχείο `LICENSE`).
-- **Δεδομένα και αποτελέσματα του έργου:** CC BY 4.0 (αρχείο `LICENSE-DATA`).
-- Τα αρχικά σύνολα δεδομένων του data.gov.gr ανήκουν στους φορείς που τα δημοσιεύουν και διέπονται από τις δικές τους άδειες.
+- **Code:** EUPL-1.2 (file `LICENSE`).
+- **Data and results produced by the project:** CC BY 4.0 (file `LICENSE-DATA`).
+- The original data.gov.gr datasets belong to the organisations that publish them and remain under their own licences.
 
-## Κατάσταση
+## Status
 
-Φάση 1: στιγμιότυπο του καταλόγου και πρώτη περιγραφή του (Οκτώβριος 2026).
+Phase 1: catalogue snapshot and first profile (October 2026).
 
-| Script | Λειτουργία | Αποτέλεσμα |
+| Script | Function | Output |
 | --- | --- | --- |
-| `00_check_setup.py` | Έλεγχος περιβάλλοντος και πρώτη διερεύνηση του API | `data/raw/api_probe_ΕΕΕΕ-ΜΜ-ΗΗ.json` |
-| `01_snapshot.py` | Στιγμιότυπο ολόκληρου του καταλόγου | `data/raw/catalog_ΕΕΕΕ-ΜΜ-ΗΗ.jsonl.gz` και `.manifest.json` |
-| `02_catalog_profile.py` | Περιγραφή του καταλόγου: μία γραμμή ανά σύνολο και συγκεντρωτικοί πίνακες | `data/processed/catalog_flat_ΕΕΕΕ-ΜΜ-ΗΗ.csv` και `outputs/profile_ΕΕΕΕ-ΜΜ-ΗΗ/` |
+| `00_check_setup.py` | Environment check and first exploration of the API | `data/raw/api_probe_YYYY-MM-DD.json` |
+| `01_snapshot.py` | Snapshot of the complete catalogue | `data/raw/catalog_YYYY-MM-DD.jsonl.gz` and `.manifest.json` |
+| `02_catalog_profile.py` | Catalogue profile: one row per dataset and summary tables | `data/processed/catalog_flat_YYYY-MM-DD.csv` and `outputs/profile_YYYY-MM-DD/` |

@@ -1,14 +1,14 @@
 ﻿theme,datasets,label,share
-REGI,14468,Περιφέρειες και πόλεις,0.6344
-GOVE,4715,Κυβέρνηση και δημόσιος τομέας,0.2068
-ENVI,1703,Περιβάλλον,0.0747
-EDUC,1550,"Εκπαίδευση, πολιτισμός και αθλητισμός",0.068
-ECON,1320,Οικονομία και χρηματοοικονομικά,0.0579
-HEAL,1082,Υγεία,0.0474
-SOCI,886,Πληθυσμός και κοινωνία,0.0389
-AGRI,824,"Γεωργία, αλιεία, δασοκομία και τρόφιμα",0.0361
-TECH,673,Επιστήμη και τεχνολογία,0.0295
-TRAN,560,Μεταφορές,0.0246
-ENER,534,Ενέργεια,0.0234
-INTR,352,Διεθνή θέματα,0.0154
-JUST,160,"Δικαιοσύνη, νομικό σύστημα και δημόσια ασφάλεια",0.007
+REGI,14468,Regions and cities,0.6344
+GOVE,4715,Government and public sector,0.2068
+ENVI,1703,Environment,0.0747
+EDUC,1550,"Education, culture and sport",0.068
+ECON,1320,Economy and finance,0.0579
+HEAL,1082,Health,0.0474
+SOCI,886,Population and society,0.0389
+AGRI,824,"Agriculture, fisheries, forestry and food",0.0361
+TECH,673,Science and technology,0.0295
+TRAN,560,Transport,0.0246
+ENER,534,Energy,0.0234
+INTR,352,International issues,0.0154
+JUST,160,"Justice, legal system and public safety",0.007

@@ -21,7 +21,7 @@
   "file": "catalog_2026-10-24.jsonl.gz",
   "file_size_bytes": 29538711,
   "sha256": "e6045f3c3af83b61b1b18a64215ae73bbd37e52e4ee8a6c34ef85859bcf7ae4c",
-  "format": "JSON Lines: μία εγγραφή του CKAN API ανά γραμμή, χωρίς αλλαγές· συμπίεση gzip· UTF-8",
+  "format": "JSON Lines: one CKAN API record per line, unmodified; gzip compression; UTF-8",
   "software": {
     "script": "scripts/01_snapshot.py",
     "python": "3.14.8",

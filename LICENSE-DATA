@@ -1,24 +1,24 @@
-ΑΔΕΙΑ ΓΙΑ ΤΑ ΔΕΔΟΜΕΝΑ
+DATA LICENCE
 
-Τα δεδομένα και τα αποτελέσματα του έργου (φάκελοι data/processed/ και outputs/) διατίθενται με την άδεια:
+The data and results produced by this project (folders data/processed/ and outputs/) are licensed under:
 
-    Creative Commons Αναφορά 4.0 Διεθνής (CC BY 4.0)
+    Creative Commons Attribution 4.0 International (CC BY 4.0)
     https://creativecommons.org/licenses/by/4.0/
-    Πλήρες νομικό κείμενο: https://creativecommons.org/licenses/by/4.0/legalcode
+    Full legal text: https://creativecommons.org/licenses/by/4.0/legalcode
 
-Επιτρέπεται η χρήση, η τροποποίηση και η διανομή τους, και για εμπορικούς σκοπούς, με την προϋπόθεση αναφοράς της πηγής, για παράδειγμα:
+They may be used, modified and redistributed, including for commercial purposes, provided that the source is credited, for example:
 
-    Σκανδαλίδης, Μ. (2026). Ποιότητα και ετοιμότητα για ΤΝ των ανοιχτών δεδομένων του data.gov.gr.
-    Πρακτική άσκηση, ΠΜΣ Ηλεκτρονική Διακυβέρνηση, Πανεπιστήμιο Αιγαίου / ΕΕΛΛΑΚ.
+    Skandalidis, M. (2026). Quality and AI-readiness of the open data of data.gov.gr.
+    Internship project, MSc in Electronic Governance, University of the Aegean / GFOSS.
 
-Τα αρχεία του φακέλου data/raw/ είναι αντίγραφα δημόσιων μεταδεδομένων του data.gov.gr. Διατηρούνται για λόγους διαφάνειας και επαναληψιμότητας και για αυτά ισχύουν οι όροι της πύλης. Τα αρχικά σύνολα δεδομένων ανήκουν στους φορείς που τα δημοσιεύουν και διέπονται από τις δικές τους άδειες.
+The files in data/raw/ are copies of public metadata from data.gov.gr. They are kept for transparency and reproducibility, and the portal's terms apply to them. The original datasets belong to the organisations that publish them and remain under their own licences.
 
-Ο κώδικας του έργου διατίθεται με την άδεια EUPL-1.2 (αρχείο LICENSE).
+The project's code is licensed under the EUPL-1.2 (file LICENSE).
 
 ---
 
-DATA LICENCE (English)
+ΑΔΕΙΑ ΓΙΑ ΤΑ ΔΕΔΟΜΕΝΑ (ελληνικά)
 
-The data and results produced by this project (folders data/processed/ and outputs/) are licensed under Creative Commons Attribution 4.0 International (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+Τα δεδομένα και τα αποτελέσματα του έργου (φάκελοι data/processed/ και outputs/) διατίθενται με την άδεια Creative Commons Αναφορά 4.0 Διεθνής (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
 
-Files in data/raw/ are copies of public metadata from data.gov.gr, kept for transparency and reproducibility; the portal's terms apply to them. The original datasets belong to their publishers and remain under their own licences. The code is licensed under the EUPL-1.2 (file LICENSE).
+Τα αρχεία του φακέλου data/raw/ είναι αντίγραφα δημόσιων μεταδεδομένων του data.gov.gr. Διατηρούνται για λόγους διαφάνειας και επαναληψιμότητας και για αυτά ισχύουν οι όροι της πύλης. Τα αρχικά σύνολα δεδομένων ανήκουν στους φορείς που τα δημοσιεύουν και διέπονται από τις δικές τους άδειες. Ο κώδικας διατίθεται με την άδεια EUPL-1.2 (αρχείο LICENSE).
