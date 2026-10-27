@@ -19,7 +19,7 @@ The methodology and every decision are recorded in this repository, so that the 
 
 | Folder or file | Content |
 | --- | --- |
-| `scripts/` | The scripts, numbered in the order they run (`00_`, `01_`, ...) |
+| `scripts/` | The scripts of the analysis, numbered in the order they run (`00_`, `01_`, ...), and helper scripts without a number |
 | `data/raw/` | Raw data downloaded from the portal, unmodified |
 | `data/processed/` | Processed tables and scores |
 | `criteria/` | Assessment criteria (`criteria.csv`) and manual classification of high-value content (`hvd_by_content.csv`) |
@@ -67,3 +67,4 @@ Phases 1 and 2: catalogue snapshot, first profile and selection of the sample (O
 | `01_snapshot.py` | Snapshot of the complete catalogue | `data/raw/catalog_YYYY-MM-DD.jsonl.gz` and `.manifest.json` |
 | `02_catalog_profile.py` | Catalogue profile: one row per dataset and summary tables | `data/processed/catalog_flat_YYYY-MM-DD.csv` and `outputs/profile_YYYY-MM-DD/` |
 | `03_sample.py` | Selection of the 36 datasets of the sample: 24 high-value, 12 for comparison | `data/processed/sample.csv`, `sample_reserves.csv` and `outputs/sample_YYYY-MM-DD/` |
+| `criteria_views.py` | Readable versions of the assessment criteria; run whenever `criteria/criteria.csv` changes | `criteria/criteria.xlsx` and `criteria/criteria.md` |

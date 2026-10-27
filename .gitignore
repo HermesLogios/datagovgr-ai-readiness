@@ -19,6 +19,9 @@ data/raw/*_test*
 # Run logs
 *.log
 
+# Temporary lock files of Excel and Word, present while a file is open
+~$*
+
 # Files created by operating systems and code editors
 Thumbs.db
 desktop.ini

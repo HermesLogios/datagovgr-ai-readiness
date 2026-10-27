@@ -5,3 +5,4 @@
 requests==2.34.2   # calls to the data.gov.gr API
 pandas==3.0.6      # processing of data tables
 tqdm==4.70.1       # progress bar for large downloads
+openpyxl==3.1.5    # Excel workbooks (criteria, manual assessment)
