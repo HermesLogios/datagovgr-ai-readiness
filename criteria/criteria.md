@@ -2,41 +2,43 @@
 
 > Generated from `criteria.csv` by `scripts/criteria_views.py`. Changes are made in `criteria.csv`; this file is not edited by hand.
 
-Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core criteria (Q1, Q6, M1, M4, AI1, AI2) decide the group of each dataset; the rules are in [README.md](README.md).
+Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core criteria (Q1, Q6, M1, M4, AI1, AI2) decide the group of each dataset; the rules are in [README.md](README.md). The column Instruction gives the point of the written instructions of the supervisor that each criterion implements; 'Addition' marks a criterion added to those points, followed by its source. MQA names the indicators of the Metadata Quality Assessment that check the same aspect, in the previous methodology, applied by data.gov.gr, and in the current methodology of data.europa.eu; 'None' marks a criterion that no indicator covers.
 
 ## Overview
 
-| ID | Criterion | Level | Core | Method |
-| --- | --- | --- | --- | --- |
-| [Q1](#q1-availability) | Availability | Quality | yes | automatic, confirmed manually |
-| [Q2](#q2-completeness) | Completeness | Quality |  | automatic for machine-readable files; manual otherwise |
-| [Q3](#q3-consistency) | Consistency | Quality |  | semi-automatic |
-| [Q4](#q4-plausibility-of-values) | Plausibility of values | Quality |  | semi-automatic |
-| [Q5](#q5-timeliness) | Timeliness | Quality |  | semi-automatic |
-| [Q6](#q6-format-5-star-scale) | Format (5-star scale) | Quality | yes | automatic, confirmed manually |
-| [M1](#m1-mandatory-metadata) | Mandatory metadata | Metadata and legal status | yes | automatic, confirmed manually |
-| [M2](#m2-recommended-metadata) | Recommended metadata | Metadata and legal status |  | automatic |
-| [M3](#m3-controlled-vocabularies) | Controlled vocabularies | Metadata and legal status |  | automatic |
-| [M4](#m4-licence) | Licence | Metadata and legal status | yes | automatic, confirmed manually |
-| [M5](#m5-free-access) | Free access | Metadata and legal status |  | manual |
-| [M6](#m6-mode-of-distribution) | Mode of distribution | Metadata and legal status |  | automatic, confirmed manually |
-| [M7](#m7-persistent-identifier) | Persistent identifier | Metadata and legal status |  | automatic, confirmed manually |
-| [M8](#m8-personal-data) | Personal data | Metadata and legal status |  | manual |
-| [M9](#m9-high-value-designation) | High-value designation | Metadata and legal status |  | automatic |
-| [M10](#m10-api-and-bulk-download) | API and bulk download | Metadata and legal status |  | semi-automatic |
-| [AI1](#ai1-machine-readable-structure) | Machine-readable structure | AI-readiness | yes | semi-automatic |
-| [AI2](#ai2-documentation-of-the-structure) | Documentation of the structure | AI-readiness | yes | manual |
-| [AI3](#ai3-historical-depth) | Historical depth | AI-readiness |  | manual |
-| [AI4](#ai4-description-in-croissant-or-a-datasheet) | Description in Croissant or a datasheet | AI-readiness |  | semi-automatic |
-| [AI5](#ai5-suitability-for-retrieval-rag) | Suitability for retrieval (RAG) | AI-readiness |  | manual |
-| [AI6](#ai6-linkage-through-common-identifiers) | Linkage through common identifiers | AI-readiness |  | semi-automatic |
-| [AI7](#ai7-declared-limitations) | Declared limitations | AI-readiness |  | manual |
+| ID | Criterion | Level | Core | Method | Instruction |
+| --- | --- | --- | --- | --- | --- |
+| [Q1](#q1-availability) | Availability | Quality | yes | automatic, confirmed manually | Addition: ISO/IEC 25012 (availability) |
+| [Q2](#q2-completeness) | Completeness | Quality |  | automatic for machine-readable files; manual otherwise | Level (a): completeness |
+| [Q3](#q3-consistency) | Consistency | Quality |  | semi-automatic | Level (a): consistency |
+| [Q4](#q4-plausibility-of-values) | Plausibility of values | Quality |  | semi-automatic | Addition: ISO/IEC 25012 (accuracy) |
+| [Q5](#q5-timeliness) | Timeliness | Quality |  | semi-automatic | Level (a): timeliness |
+| [Q6](#q6-format-5-star-scale) | Format (5-star scale) | Quality | yes | automatic, confirmed manually | Level (a): format; 5-star scale |
+| [M1](#m1-mandatory-metadata) | Mandatory metadata | Metadata and legal status | yes | automatic, confirmed manually | Level (b): DCAT-AP (mandatory properties) |
+| [M2](#m2-recommended-metadata) | Recommended metadata | Metadata and legal status |  | automatic | Level (b): DCAT-AP (recommended properties) |
+| [M3](#m3-controlled-vocabularies) | Controlled vocabularies | Metadata and legal status |  | automatic | Level (b): DCAT-AP (controlled vocabularies) |
+| [M4](#m4-licence) | Licence | Metadata and legal status | yes | automatic, confirmed manually | Level (b): clarity of the licence; CC BY 4.0 or a more permissive licence |
+| [M5](#m5-free-access) | Free access | Metadata and legal status |  | manual | Level (b): free of charge |
+| [M6](#m6-mode-of-distribution) | Mode of distribution | Metadata and legal status |  | automatic, confirmed manually | Addition: Ministerial Decision 11654/2026, Art. 5 |
+| [M7](#m7-persistent-identifier) | Persistent identifier | Metadata and legal status |  | automatic, confirmed manually | Addition: FAIR F1; W3C Data on the Web Best Practices, BP9 and BP10 |
+| [M8](#m8-personal-data) | Personal data | Metadata and legal status |  | manual | Addition: legal status (GDPR; Directive (EU) 2019/1024) |
+| [M9](#m9-high-value-designation) | High-value designation | Metadata and legal status |  | automatic | Addition: Regulation (EU) 2023/138, Art. 3(5) |
+| [M10](#m10-api-and-bulk-download) | API and bulk download | Metadata and legal status |  | semi-automatic | Level (b): API and bulk download |
+| [AI1](#ai1-machine-readable-structure) | Machine-readable structure | AI-readiness | yes | semi-automatic | Level (c): machine readability |
+| [AI2](#ai2-documentation-of-the-structure) | Documentation of the structure | AI-readiness | yes | manual | Level (c): schema documentation |
+| [AI3](#ai3-historical-depth) | Historical depth | AI-readiness |  | manual | Level (c): historical series |
+| [AI4](#ai4-description-in-croissant-or-a-datasheet) | Description in Croissant or a datasheet | AI-readiness |  | semi-automatic | Level (c): description with Croissant or Datasheets |
+| [AI5](#ai5-suitability-for-retrieval-rag) | Suitability for retrieval (RAG) | AI-readiness |  | manual | Level (c): suitability for RAG |
+| [AI6](#ai6-linkage-through-common-identifiers) | Linkage through common identifiers | AI-readiness |  | semi-automatic | Addition: FAIR I3; W3C Data on the Web Best Practices, BP10 and BP15 |
+| [AI7](#ai7-declared-limitations) | Declared limitations | AI-readiness |  | manual | Addition: Datasheets for Datasets; GDS (2026) |
 
 ## Quality
 
 ### Q1 Availability
 
 *Level: Quality · core criterion · applies to all datasets*
+
+**Instruction.** Addition: ISO/IEC 25012 (availability)
 
 **Question.** Can the dataset's own resources be downloaded and opened?
 
@@ -52,9 +54,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** ISO/IEC 25012:2008 (availability) · **FAIR:** A1
 
+**MQA (data.gov.gr).** Accessibility: access URL accessibility; download URL accessibility
+
+**MQA (data.europa.eu).** Distribution: access URL accessibility test; download URL accessibility test
+
 ### Q2 Completeness
 
 *Level: Quality · applies to all datasets*
+
+**Instruction.** Level (a): completeness
 
 **Question.** How many values are missing?
 
@@ -69,11 +77,17 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Typical fix.** Medium: complete the file or state why values are missing.
 
-**Sources.** ISO/IEC 25012:2008 (completeness) · **FAIR:** R1
+**Sources.** ISO/IEC 25012:2008 (completeness); Publications Office of the EU (2021), data.europa.eu data quality guidelines, section 1.1.1.2 · **FAIR:** R1
+
+**MQA (data.gov.gr).** None
+
+**MQA (data.europa.eu).** None
 
 ### Q3 Consistency
 
 *Level: Quality · applies to all datasets*
+
+**Instruction.** Level (a): consistency
 
 **Question.** Are the values recorded in the same way throughout the dataset?
 
@@ -88,11 +102,17 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Typical fix.** Medium: harmonise the files.
 
-**Sources.** ISO/IEC 25012:2008 (consistency); W3C Data on the Web Best Practices (2017), BP13 · **FAIR:** R1.3
+**Sources.** ISO/IEC 25012:2008 (consistency); W3C Data on the Web Best Practices (2017), BP13; Publications Office of the EU (2021), data.europa.eu data quality guidelines, sections 1.1.3.1, 1.2.1.5 and 1.2.1.6 · **FAIR:** R1.3
+
+**MQA (data.gov.gr).** None
+
+**MQA (data.europa.eu).** None
 
 ### Q4 Plausibility of values
 
 *Level: Quality · applies to all datasets*
+
+**Instruction.** Addition: ISO/IEC 25012 (accuracy)
 
 **Question.** Are the values plausible?
 
@@ -109,9 +129,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** ISO/IEC 25012:2008 (accuracy) · **FAIR:** R1
 
+**MQA (data.gov.gr).** None
+
+**MQA (data.europa.eu).** None
+
 ### Q5 Timeliness
 
 *Level: Quality · applies to all datasets*
+
+**Instruction.** Level (a): timeliness
 
 **Question.** Is the dataset updated as often as its metadata declare?
 
@@ -127,9 +153,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** ISO/IEC 25012:2008 (currentness); W3C Data on the Web Best Practices (2017), BP21; DCAT-AP 3.0.1 (frequency) · **FAIR:** R1
 
+**MQA (data.gov.gr).** Contextuality: date of issue; modification date (presence only)
+
+**MQA (data.europa.eu).** Dataset and distribution: modification date; date of issue (presence only)
+
 ### Q6 Format (5-star scale)
 
 *Level: Quality · core criterion · applies to all datasets*
+
+**Instruction.** Level (a): format; 5-star scale
 
 **Question.** What is the most open format in which the data are offered?
 
@@ -143,13 +175,19 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Typical fix.** Medium: publish an open format next to the existing one.
 
-**Sources.** 5-star Open Data (Berners-Lee); W3C Data on the Web Best Practices (2017), BP12 and BP14; Directive (EU) 2019/1024, Art. 5 · **FAIR:** I1
+**Sources.** 5-star Open Data (Berners-Lee); W3C Data on the Web Best Practices (2017), BP12 and BP14; Directive (EU) 2019/1024, Art. 5; Circular 24849/2026, section 1.5 · **FAIR:** I1
+
+**MQA (data.gov.gr).** Interoperability: format; machine readable; non-proprietary
+
+**MQA (data.europa.eu).** Distribution: non-proprietary; machine readable
 
 ## Metadata and legal status
 
 ### M1 Mandatory metadata
 
 *Level: Metadata and legal status · core criterion · applies to all datasets*
+
+**Instruction.** Level (b): DCAT-AP (mandatory properties)
 
 **Question.** Are the metadata that DCAT-AP makes mandatory present and meaningful?
 
@@ -165,9 +203,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** DCAT-AP 3.0.1 (mandatory properties of Dataset and Distribution); Ministerial Decision 11654/2026 · **FAIR:** F2
 
+**MQA (data.gov.gr).** Interoperability: DCAT-AP compliance
+
+**MQA (data.europa.eu).** Dataset: title; description. Distribution: access URL
+
 ### M2 Recommended metadata
 
 *Level: Metadata and legal status · applies to all datasets*
+
+**Instruction.** Level (b): DCAT-AP (recommended properties)
 
 **Question.** How many of seven descriptive metadata are present: keyword, theme, publisher, contact point, geographical coverage, temporal coverage, update frequency?
 
@@ -177,15 +221,21 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 | 1 | Three to five. |
 | 2 | Six or seven. |
 
-**How to check** (automatic). Portal metadata (fact sheet). The first six are recommended properties of DCAT-AP; the update frequency is optional in DCAT-AP and is checked because the assessment of timeliness (Q5) depends on it.
+**How to check** (automatic). Portal metadata (fact sheet). The first six are recommended properties of DCAT-AP; the update frequency is optional in DCAT-AP and is checked because the assessment of timeliness (Q5) depends on it. Geographical coverage is the area to which the data refer; for national data, the country (Greece) is sufficient. A property counts as present whenever it holds a value, including a broad, default or erroneous one (e.g. the whole of Greece for local data, a temporal coverage from 1900 to 2099, a bounding box of the whole world or outside Greece).
 
 **Typical fix.** Low: complete the metadata.
 
 **Sources.** DCAT-AP 3.0.1; W3C Data on the Web Best Practices (2017), BP1 and BP2; Circular 24849/2026 · **FAIR:** F2
 
+**MQA (data.gov.gr).** Findability: keyword usage; categories; geo search; time-based search. Reusability: contact point; publisher
+
+**MQA (data.europa.eu).** Dataset: keyword usage; categories; geo search; temporal coverage; publisher; contact point
+
 ### M3 Controlled vocabularies
 
 *Level: Metadata and legal status · applies to all datasets*
+
+**Instruction.** Level (b): DCAT-AP (controlled vocabularies)
 
 **Question.** Are theme, file format and update frequency given with terms of the controlled vocabularies?
 
@@ -201,9 +251,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** DCAT-AP 3.0.1 (controlled vocabularies); W3C Data on the Web Best Practices (2017), BP15 · **FAIR:** I2
 
+**MQA (data.gov.gr).** Interoperability: format or media type from vocabulary
+
+**MQA (data.europa.eu).** Distribution: format from vocabulary; media type from vocabulary
+
 ### M4 Licence
 
 *Level: Metadata and legal status · core criterion · applies to all datasets*
+
+**Instruction.** Level (b): clarity of the licence; CC BY 4.0 or a more permissive licence
 
 **Question.** Is an open licence declared clearly for all resources?
 
@@ -219,9 +275,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** Directive (EU) 2019/1024, Art. 8; Regulation (EU) 2023/138, Art. 4; Ministerial Decision 11654/2026, Art. 8; W3C Data on the Web Best Practices (2017), BP4 · **FAIR:** R1.1
 
+**MQA (data.gov.gr).** Reusability: licence information; licence vocabulary
+
+**MQA (data.europa.eu).** Distribution: license information; license vocabulary
+
 ### M5 Free access
 
 *Level: Metadata and legal status · applies to all datasets*
+
+**Instruction.** Level (b): free of charge
 
 **Question.** Can the data be obtained free of charge and without registration?
 
@@ -237,9 +299,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** Directive (EU) 2019/1024, Art. 6 and Art. 14; Ministerial Decision 11654/2026, Art. 8 · **FAIR:** A1
 
+**MQA (data.gov.gr).** Reusability: access restrictions; access restrictions vocabulary (declaration only)
+
+**MQA (data.europa.eu).** Dataset: access rights; access rights vocabulary (declaration only)
+
 ### M6 Mode of distribution
 
 *Level: Metadata and legal status · applies to all datasets*
+
+**Instruction.** Addition: Ministerial Decision 11654/2026, Art. 5
 
 **Question.** How are the data made available, in the order of preference of the Ministerial Decision: API, direct link, structured file, unstructured file?
 
@@ -255,9 +323,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** Ministerial Decision 11654/2026, Art. 5; W3C Data on the Web Best Practices (2017), BP17 and BP23 · **FAIR:** A1
 
+**MQA (data.gov.gr).** Accessibility: download URL (presence only)
+
+**MQA (data.europa.eu).** Distribution: download URL (presence only)
+
 ### M7 Persistent identifier
 
 *Level: Metadata and legal status · applies to all datasets*
+
+**Instruction.** Addition: FAIR F1; W3C Data on the Web Best Practices, BP9 and BP10
 
 **Question.** Do the dataset and its resources have stable identifiers?
 
@@ -273,9 +347,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** W3C Data on the Web Best Practices (2017), BP9 and BP10; DCAT-AP 3.0.1 (identifier) · **FAIR:** F1
 
+**MQA (data.gov.gr).** None
+
+**MQA (data.europa.eu).** Dataset: identifier (dct:identifier; adms:identifier) (presence only)
+
 ### M8 Personal data
 
 *Level: Metadata and legal status · applies to all datasets*
+
+**Instruction.** Addition: legal status (GDPR; Directive (EU) 2019/1024)
 
 **Question.** Does the dataset avoid exposing personal data?
 
@@ -291,9 +371,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** Regulation (EU) 2016/679 (GDPR); Directive (EU) 2019/1024, Art. 1(4); Ministerial Decision 11654/2026, Art. 7
 
+**MQA (data.gov.gr).** None
+
+**MQA (data.europa.eu).** None
+
 ### M9 High-value designation
 
 *Level: Metadata and legal status · applies to high-value datasets only*
+
+**Instruction.** Addition: Regulation (EU) 2023/138, Art. 3(5)
 
 **Question.** Do the metadata mark the dataset as high-value?
 
@@ -310,9 +396,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** Regulation (EU) 2023/138, Art. 3; DCAT-AP HVD · **FAIR:** F2
 
+**MQA (data.gov.gr).** None
+
+**MQA (data.europa.eu).** Dataset: applicable legislation (presence only)
+
 ### M10 API and bulk download
 
 *Level: Metadata and legal status · applies to high-value datasets only*
+
+**Instruction.** Level (b): API and bulk download
 
 **Question.** Is the dataset available both through an API and as a bulk download, as the Regulation requires?
 
@@ -323,17 +415,23 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 | 2 | An API with public documentation and terms of use, and a bulk download of the complete dataset. |
 | n/a | Datasets of the comparison group. |
 
-**How to check** (semi-automatic). Data services of the portal linked to the dataset (access_services), services of the publisher, and download links of the complete data.
+**How to check** (semi-automatic). Data services of the portal linked to the dataset (access_services), services of the publisher, and download links of the complete data. Exceptions of the Annex of the Regulation: numerical weather prediction (NWP) model data are required only through an API (point 3.2(a)), and historical versions of Earth observation and environment datasets through an API or a bulk download (point 2.2(a)); in these cases the required means of access alone scores 2.
 
 **Typical fix.** Medium: publish a complete download. High: build an API.
 
-**Sources.** Regulation (EU) 2023/138, Art. 3 and Annex; W3C Data on the Web Best Practices (2017), BP17, BP23 and BP25 · **FAIR:** A1
+**Sources.** Regulation (EU) 2023/138, Art. 3(1) to 3(4) and Annex (exceptions in points 2.2(a) and 3.2(a)); W3C Data on the Web Best Practices (2017), BP17, BP23 and BP25 · **FAIR:** A1
+
+**MQA (data.gov.gr).** None
+
+**MQA (data.europa.eu).** Data service: endpoint URL; endpoint description; serves dataset. Distribution: download URL
 
 ## AI-readiness
 
 ### AI1 Machine-readable structure
 
 *Level: AI-readiness · core criterion · applies to all datasets*
+
+**Instruction.** Level (c): machine readability
 
 **Question.** Can a program read the data directly, without manual cleaning?
 
@@ -347,11 +445,17 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Typical fix.** Medium: restructure the file.
 
-**Sources.** W3C Data on the Web Best Practices (2017), BP12; GDS (2026), Guidelines and best practices for making government datasets ready for AI; Wickham (2014), Tidy Data · **FAIR:** I1
+**Sources.** W3C Data on the Web Best Practices (2017), BP12; GDS (2026), Guidelines and best practices for making government datasets ready for AI; Wickham (2014), Tidy Data; Publications Office of the EU (2021), data.europa.eu data quality guidelines, sections 1.2.1.2 to 1.2.1.4 · **FAIR:** I1
+
+**MQA (data.gov.gr).** None
+
+**MQA (data.europa.eu).** None
 
 ### AI2 Documentation of the structure
 
 *Level: AI-readiness · core criterion · applies to all datasets*
+
+**Instruction.** Level (c): schema documentation
 
 **Question.** Is the meaning, type and unit of every field documented (data dictionary)?
 
@@ -365,11 +469,17 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Typical fix.** Low: write a data dictionary.
 
-**Sources.** W3C Data on the Web Best Practices (2017), BP3; GDS (2026), Guidelines and best practices for making government datasets ready for AI; Gebru et al. (2021), Datasheets for Datasets; MLCommons Croissant 1.0 (RecordSet, Field) · **FAIR:** R1
+**Sources.** W3C Data on the Web Best Practices (2017), BP3; GDS (2026), Guidelines and best practices for making government datasets ready for AI; Gebru et al. (2021), Datasheets for Datasets; MLCommons Croissant 1.0 (RecordSet, Field); Regulation (EU) 2023/138, Annex, points 2.2(c), 3.2(c), 4.2(c), 5.2(b) and 6.2(c) · **FAIR:** R1
+
+**MQA (data.gov.gr).** None
+
+**MQA (data.europa.eu).** Distribution: documentation (presence only)
 
 ### AI3 Historical depth
 
 *Level: AI-readiness · applies to all datasets*
+
+**Instruction.** Level (c): historical series
 
 **Question.** Are earlier periods or versions of the data available?
 
@@ -386,9 +496,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** W3C Data on the Web Best Practices (2017), BP7 and BP8; GDS (2026), Guidelines and best practices for making government datasets ready for AI · **FAIR:** R1
 
+**MQA (data.gov.gr).** None
+
+**MQA (data.europa.eu).** None
+
 ### AI4 Description in Croissant or a datasheet
 
 *Level: AI-readiness · applies to all datasets*
+
+**Instruction.** Level (c): description with Croissant or Datasheets
 
 **Question.** Can the dataset be described in Croissant, or with a datasheet, from the information available?
 
@@ -404,9 +520,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** MLCommons Croissant 1.0; Gebru et al. (2021), Datasheets for Datasets · **FAIR:** R1.3
 
+**MQA (data.gov.gr).** None
+
+**MQA (data.europa.eu).** None
+
 ### AI5 Suitability for retrieval (RAG)
 
 *Level: AI-readiness · applies to all datasets*
+
+**Instruction.** Level (c): suitability for RAG
 
 **Question.** Can the content be split into self-contained pieces that an AI system can retrieve and cite?
 
@@ -422,9 +544,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** GDS (2026), Guidelines and best practices for making government datasets ready for AI (unstructured data); W3C Data on the Web Best Practices (2017), BP10 · **FAIR:** F1
 
+**MQA (data.gov.gr).** None
+
+**MQA (data.europa.eu).** None
+
 ### AI6 Linkage through common identifiers
 
 *Level: AI-readiness · applies to all datasets*
+
+**Instruction.** Addition: FAIR I3; W3C Data on the Web Best Practices, BP10 and BP15
 
 **Question.** Can the data be joined with other datasets through common codes or coordinates?
 
@@ -440,9 +568,15 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 
 **Sources.** W3C Data on the Web Best Practices (2017), BP10 and BP15; FAIR I3 · **FAIR:** I3
 
+**MQA (data.gov.gr).** None
+
+**MQA (data.europa.eu).** None
+
 ### AI7 Declared limitations
 
 *Level: AI-readiness · applies to all datasets*
+
+**Instruction.** Addition: Datasheets for Datasets; GDS (2026)
 
 **Question.** Do the metadata or the documentation state the known limitations of the data?
 
@@ -457,3 +591,7 @@ Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). The core 
 **Typical fix.** Low: add a short note on limitations.
 
 **Sources.** Gebru et al. (2021), Datasheets for Datasets; GDS (2026), Guidelines and best practices for making government datasets ready for AI; W3C Data on the Web Best Practices (2017), BP6 · **FAIR:** R1.2
+
+**MQA (data.gov.gr).** None
+
+**MQA (data.europa.eu).** Dataset: provenance (presence only)

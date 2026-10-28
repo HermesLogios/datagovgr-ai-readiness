@@ -48,8 +48,9 @@ MD_FILE = CRITERIA_DIR / "criteria.md"
 
 # Columns of criteria.csv.
 SOURCE_COLUMNS = [
-    "id", "level", "name", "question", "score_0", "score_1", "score_2", "not_applicable",
-    "method", "how_to_check", "core", "applies_to", "typical_fix", "sources", "fair",
+    "id", "level", "name", "instruction", "question", "score_0", "score_1", "score_2",
+    "not_applicable", "method", "how_to_check", "core", "applies_to", "typical_fix", "sources",
+    "fair", "mqa_datagovgr", "mqa_dataeuropa",
 ]
 
 # Columns of the workbook: (column of criteria.csv, heading, width in Excel units).
@@ -58,6 +59,7 @@ SHEET_COLUMNS = [
     ("level", "Level", 14),
     ("name", "Criterion", 22),
     ("core", "Core", 7),
+    ("instruction", "Instruction", 30),
     ("question", "Question", 34),
     ("score_0", "Score 0", 40),
     ("score_1", "Score 1", 40),
@@ -69,6 +71,8 @@ SHEET_COLUMNS = [
     ("typical_fix", "Typical fix", 28),
     ("sources", "Sources", 36),
     ("fair", "FAIR", 7),
+    ("mqa_datagovgr", "MQA (data.gov.gr)", 34),
+    ("mqa_dataeuropa", "MQA (data.europa.eu)", 34),
 ]
 FROZEN_CELL = "E2"          # the heading row and the columns ID to Core stay visible
 
@@ -103,7 +107,8 @@ def load_criteria(path: Path) -> list[dict]:
     if frame["id"].duplicated().any():
         problems.append("repeated IDs: " + ", ".join(frame.loc[frame["id"].duplicated(), "id"]))
     for row in frame.to_dict("records"):
-        for column in ["id", "level", "name", "question", "score_0", "score_1", "score_2", "core", "applies_to"]:
+        for column in ["id", "level", "name", "instruction", "question", "score_0", "score_1", "score_2",
+                       "core", "applies_to", "mqa_datagovgr", "mqa_dataeuropa"]:
             if not row[column].strip():
                 problems.append(f"{row['id'] or '(no ID)'}: empty {column}")
         if row["core"] not in ("yes", "no"):
@@ -173,6 +178,11 @@ def write_about_sheet(sheet, criteria: list[dict]) -> None:
         (f"Core criteria (rows shaded in yellow): {core}. They decide the group of each dataset: "
          "Ready when all core criteria score 2; Almost ready when every core criterion below 2 can "
          "be fixed with low effort; Not yet in all other cases.", False),
+        ("Instruction: the point of the written instructions of the supervisor that the criterion "
+         "implements. 'Addition' marks a criterion added to those points, followed by its source.", False),
+        ("MQA: the indicators of the Metadata Quality Assessment that check the same aspect as the "
+         "criterion, in the previous methodology, applied by data.gov.gr, and in the current methodology "
+         "of data.europa.eu. 'None' marks a criterion that no indicator covers.", False),
         ("Effort of a fix: low (metadata and documentation only), medium (a change in the file "
          "itself), high (a change in a system or in the source of the data).", False),
         ("Full rules: criteria/README.md.", False),
@@ -237,16 +247,22 @@ def build_markdown(criteria: list[dict]) -> str:
         "",
         "Each criterion is scored 0 (not met), 1 (partly met) or 2 (fully met). "
         f"The core criteria ({core}) decide the group of each dataset; the rules are in "
-        "[README.md](README.md).",
+        "[README.md](README.md). The column Instruction gives the point of the written instructions "
+        "of the supervisor that each criterion implements; 'Addition' marks a criterion added to "
+        "those points, followed by its source. MQA names the indicators of the Metadata Quality "
+        "Assessment that check the same aspect, in the previous methodology, applied by data.gov.gr, "
+        "and in the current methodology of data.europa.eu; 'None' marks a criterion that no indicator "
+        "covers.",
         "",
         "## Overview",
         "",
-        "| ID | Criterion | Level | Core | Method |",
-        "| --- | --- | --- | --- | --- |",
+        "| ID | Criterion | Level | Core | Method | Instruction |",
+        "| --- | --- | --- | --- | --- | --- |",
     ]
     for c in criteria:
         lines.append(f"| [{c['id']}](#{anchor(c)}) | {md_text(c['name'])} | {md_text(c['level'])} | "
-                     f"{'yes' if c['core'] == 'yes' else ''} | {md_text(c['method'])} |")
+                     f"{'yes' if c['core'] == 'yes' else ''} | {md_text(c['method'])} | "
+                     f"{md_text(c['instruction'])} |")
 
     previous_level = None
     for c in criteria:
@@ -263,6 +279,8 @@ def build_markdown(criteria: list[dict]) -> str:
             f"### {c['id']} {c['name']}",
             "",
             f"*{' · '.join(tags)}*",
+            "",
+            f"**Instruction.** {md_text(c['instruction'])}",
             "",
             f"**Question.** {md_text(c['question'])}",
             "",
@@ -281,6 +299,10 @@ def build_markdown(criteria: list[dict]) -> str:
             f"**Typical fix.** {md_text(c['typical_fix'])}",
             "",
             f"**Sources.** {md_text(c['sources'])}" + (f" · **FAIR:** {md_text(c['fair'])}" if c["fair"].strip() else ""),
+            "",
+            f"**MQA (data.gov.gr).** {md_text(c['mqa_datagovgr'])}",
+            "",
+            f"**MQA (data.europa.eu).** {md_text(c['mqa_dataeuropa'])}",
         ]
     return "\n".join(lines) + "\n"
 
@@ -295,7 +317,7 @@ def main() -> int:
 
     criteria = load_criteria(SOURCE_FILE)
     write_xlsx(XLSX_FILE, criteria)
-    MD_FILE.write_text(build_markdown(criteria), encoding="utf-8")
+    MD_FILE.write_text(build_markdown(criteria), encoding="utf-8", newline="\n")   # same file on every system
 
     levels = pd.Series([c["level"] for c in criteria]).value_counts(sort=False)
     print(f"Criteria read from {relative(SOURCE_FILE)}: {len(criteria)} "
