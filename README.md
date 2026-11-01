@@ -46,6 +46,7 @@ The published results can be reproduced from the stored snapshot. `01_snapshot.p
 ```powershell
 python scripts\02_catalog_profile.py --snapshot data\raw\catalog_2026-10-24.jsonl.gz
 python scripts\03_sample.py --flat data\processed\catalog_flat_2026-10-24.csv --force
+python scripts\04_metadata_checks.py --snapshot data\raw\catalog_2026-10-24.jsonl.gz
 git status
 ```
 
@@ -59,7 +60,7 @@ If the results are identical to the published ones, `git status` shows no change
 
 ## Status
 
-Phases 1 and 2: catalogue snapshot, first profile and selection of the sample (October 2026).
+Phases 1 and 2 (catalogue snapshot, first profile, selection of the sample and assessment criteria) are complete. Phase 3, the automated checks, is in progress: the checks are added to `04_metadata_checks.py` one criterion at a time, as the rule of each criterion is approved (October–November 2026).
 
 | Script | Function | Output |
 | --- | --- | --- |
@@ -67,4 +68,5 @@ Phases 1 and 2: catalogue snapshot, first profile and selection of the sample (O
 | `01_snapshot.py` | Snapshot of the complete catalogue | `data/raw/catalog_YYYY-MM-DD.jsonl.gz` and `.manifest.json` |
 | `02_catalog_profile.py` | Catalogue profile: one row per dataset and summary tables | `data/processed/catalog_flat_YYYY-MM-DD.csv` and `outputs/profile_YYYY-MM-DD/` |
 | `03_sample.py` | Selection of the 36 datasets of the sample: 24 high-value, 12 for comparison | `data/processed/sample.csv`, `sample_reserves.csv` and `outputs/sample_YYYY-MM-DD/` |
+| `04_metadata_checks.py` | Automated checks of the metadata on the whole catalogue, with a proposed score and the reason for every dataset (M1 so far) | `data/processed/metadata_checks_YYYY-MM-DD.csv` and `outputs/checks_YYYY-MM-DD/` |
 | `criteria_views.py` | Readable versions of the assessment criteria; run whenever `criteria/criteria.csv` changes | `criteria/criteria.xlsx` and `criteria/criteria.md` |

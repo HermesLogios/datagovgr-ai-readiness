@@ -1,0 +1,328 @@
+r"""
+04_metadata_checks.py
+Phase 3: automated checks of the metadata, on the whole catalogue.
+
+What it does, in order:
+  1. Reads the catalogue snapshot (data/raw/catalog_YYYY-MM-DD.jsonl.gz, the newest one or the
+     one given with --snapshot) and the sample (data/processed/sample.csv).
+  2. Applies to every dataset the checks of the criteria that can be measured from the metadata.
+     Each check records what it measured, a proposed score (0, 1 or 2) and the reason, following
+     the rules of criteria/criteria.csv. The proposed scores of the 36 datasets of the sample are
+     confirmed or corrected in the manual assessment; the scores of the rest of the catalogue are
+     indicative and place the sample in the picture of the whole portal.
+  3. Writes:
+        data/processed/metadata_checks_YYYY-MM-DD.csv   one row per dataset: measurements, proposed
+                                                         score and reason of every check
+        outputs/checks_YYYY-MM-DD/summary.md            distribution of the proposed scores in the
+                                                         catalogue, per check
+        outputs/checks_YYYY-MM-DD/sample.md             the sample with links, proposed scores and
+                                                         reasons, for the review of each dataset
+
+Checks implemented so far:
+  M1  Mandatory metadata (DCAT-AP): title, description, access URL of every resource.
+  The other checks of the metadata (M2, M3, M4, M9, M7, M6, Q6 and the metadata part of Q5) are
+  added one by one, as the rule of each criterion is approved.
+
+Method notes:
+  - The automatic "download all" ZIP bundle that the portal generates for every dataset is not a
+    resource of the publisher and is ignored, as in 02_catalog_profile.py (DECISIONS.md #14).
+  - M1. The description is measured as visible text: HTML tags are removed and runs of white
+    space are collapsed. It "repeats the title" when the two are identical after lower-casing and
+    removal of punctuation and extra spaces. A resource has an access URL when its url or
+    access_url is filled, or when it is an active DataStore table of the portal, which the DCAT
+    export of the portal publishes with an access URL and an access service. A dataset without
+    resources is judged on its title and description only; the absence of resources is scored
+    by Q1 (availability).
+
+Usage (from the project root, with the .venv activated):
+    python scripts\04_metadata_checks.py
+    python scripts\04_metadata_checks.py --snapshot data\raw\catalog_2026-10-24.jsonl.gz
+
+Code licence: EUPL-1.2
+"""
+
+from __future__ import annotations
+
+import argparse
+import gzip
+import html
+import json
+import re
+import sys
+from collections import Counter
+from pathlib import Path
+
+import pandas as pd
+
+# ---------------------------------------------------------------------------
+# Settings
+# ---------------------------------------------------------------------------
+
+ROOT = Path(__file__).resolve().parent.parent
+RAW_DIR = ROOT / "data" / "raw"
+PROCESSED_DIR = ROOT / "data" / "processed"
+OUT_DIR = ROOT / "outputs"
+SAMPLE_FILE = PROCESSED_DIR / "sample.csv"
+DATASET_URL = "https://data.gov.gr/dataset/"
+
+MIN_DESCRIPTION_CHARS = 100     # M1: shortest description that counts as meaningful (criteria.csv)
+
+TAG = re.compile(r"<[^>]+>")
+NOT_WORD = re.compile(r"[\W_]+", re.UNICODE)
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def fmt_int(n) -> str:
+    """Number with a thousands separator."""
+    return f"{int(n):,}"
+
+
+def fmt_pct(part, whole) -> str:
+    return f"{100 * part / whole:.1f}%" if whole else "n/a"
+
+
+def relative(path: Path) -> str:
+    return str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
+
+
+def newest_snapshot() -> Path:
+    candidates = sorted(p for p in RAW_DIR.glob("catalog_*.jsonl.gz") if "_test" not in p.name)
+    if not candidates:
+        raise SystemExit("No snapshot found in data/raw. Run 01_snapshot.py first.")
+    return candidates[-1]
+
+
+def snapshot_date(path: Path) -> str:
+    match = re.search(r"(\d{4}-\d{2}-\d{2})", path.name)
+    if not match:
+        raise SystemExit(f"The file name {path.name} does not contain a date (YYYY-MM-DD).")
+    return match.group(1)
+
+
+def visible_text(value) -> str:
+    """Text as a reader sees it: without HTML tags, entities decoded, white space collapsed."""
+    text = html.unescape(TAG.sub(" ", str(value or "")))
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def normalised(text: str) -> str:
+    """Lower case, punctuation removed, single spaces: for comparing a description with a title."""
+    return NOT_WORD.sub(" ", text.lower()).strip()
+
+
+def is_bundle(resource: dict) -> bool:
+    """The automatic "download all" ZIP bundle generated by the portal (same rule as 02_catalog_profile.py)."""
+    return bool(resource.get("downloadall_datapackage_hash"))
+
+
+def own_resources(dataset: dict) -> list[dict]:
+    resources = [r for r in dataset.get("resources") or [] if isinstance(r, dict)]
+    return [r for r in resources if not is_bundle(r)]
+
+
+def has_access_url(resource: dict) -> bool:
+    """A resource can be reached: a URL, an access URL, or an active DataStore table of the portal."""
+    url = str(resource.get("url") or "").strip()
+    access_url = str(resource.get("access_url") or "").strip()
+    return bool(url or access_url or resource.get("datastore_active"))
+
+
+def md_cell(text) -> str:
+    """Text safe for a cell of a Markdown table."""
+    return str(text).replace("|", "/").replace("\n", " ").strip()
+
+
+def link(title: str, name: str) -> str:
+    label = md_cell(title).replace("[", "(").replace("]", ")")
+    return f"[{label}]({DATASET_URL}{name})"
+
+
+# ---------------------------------------------------------------------------
+# Checks: one function per criterion. Each returns the measurements, the proposed
+# score ("<id>_score") and the reason ("<id>_reason"), with the criterion id as prefix.
+# ---------------------------------------------------------------------------
+
+def check_m1(dataset: dict) -> dict:
+    """M1 Mandatory metadata: title, meaningful description, access URL of every resource."""
+    title = visible_text(dataset.get("title"))
+    description = visible_text(dataset.get("notes"))
+    resources = own_resources(dataset)
+    without_url = [r for r in resources if not has_access_url(r)]
+    repeats_title = bool(description) and normalised(description) == normalised(title)
+
+    if not title:
+        score, reason = 0, "no title"
+    elif not description:
+        score, reason = 0, "no description"
+    elif without_url:
+        names = "; ".join(visible_text(r.get("name")) or "(unnamed)" for r in without_url[:3])
+        more = f" and {len(without_url) - 3} more" if len(without_url) > 3 else ""
+        score = 0
+        reason = (f"{len(without_url)} of {len(resources)} resources without an access URL: "
+                  f"{names}{more}")
+    elif repeats_title:
+        score, reason = 1, "description repeats the title"
+    elif len(description) < MIN_DESCRIPTION_CHARS:
+        score, reason = 1, f"description of {len(description)} characters (minimum {MIN_DESCRIPTION_CHARS})"
+    else:
+        score, reason = 2, "title, description and access URLs present"
+    if not resources:
+        reason += "; no resources (scored by Q1)"
+
+    return {
+        "m1_title_chars": len(title),
+        "m1_description_chars": len(description),
+        "m1_description_repeats_title": repeats_title,
+        "m1_resources": len(resources),
+        "m1_resources_without_url": len(without_url),
+        "m1_score": score,
+        "m1_reason": reason,
+    }
+
+
+# (criterion id, criterion name, function); the order is the order of the reports.
+CHECKS = [
+    ("M1", "Mandatory metadata", check_m1),
+]
+
+
+# ---------------------------------------------------------------------------
+# Reading
+# ---------------------------------------------------------------------------
+
+def load_sample(path: Path) -> dict[str, dict]:
+    """The sample as {dataset id: row}; empty if the sample has not been drawn yet."""
+    if not path.exists():
+        print(f"Note: {relative(path)} not found; the sample report is skipped.")
+        return {}
+    frame = pd.read_csv(path, encoding="utf-8-sig", dtype=str, keep_default_na=False)
+    return {row["id"]: row for row in frame.to_dict("records")}
+
+
+def read_datasets(snapshot: Path):
+    """Yields the datasets of the snapshot (data services and other record types are skipped)."""
+    with gzip.open(snapshot, "rt", encoding="utf-8") as handle:
+        for line in handle:
+            if not line.strip():
+                continue
+            record = json.loads(line)
+            if (record.get("type") or "dataset") == "dataset":
+                yield record
+
+
+# ---------------------------------------------------------------------------
+# Reports
+# ---------------------------------------------------------------------------
+
+def build_summary(frame: pd.DataFrame, date: str, snapshot_name: str) -> str:
+    n = len(frame)
+    lines = [
+        f"# Automated metadata checks: snapshot of {date}",
+        "",
+        f"Source: {snapshot_name}. Datasets: {fmt_int(n)}. Proposed scores follow the rules of "
+        "`criteria/criteria.csv`; the scores of the sample are confirmed or corrected in the manual assessment.",
+    ]
+    for code, name, _ in CHECKS:
+        key = code.lower()
+        scores = frame[f"{key}_score"].value_counts()
+        lines += ["", f"## {code} {name}", "", "| Proposed score | Datasets | Share |", "| --- | ---: | ---: |"]
+        for score in (2, 1, 0):
+            count = int(scores.get(score, 0))
+            lines.append(f"| {score} | {fmt_int(count)} | {fmt_pct(count, n)} |")
+        # Reasons, without the dataset-specific details (resource names, character counts).
+        general = (frame[f"{key}_reason"].str.replace(r":.*$", "", regex=True)
+                   .str.replace(r"\d+ of \d+ resources", "resources", regex=True)
+                   .str.replace(r"description of \d+ characters \(minimum \d+\)",
+                                f"description shorter than {MIN_DESCRIPTION_CHARS} characters", regex=True)
+                   .str.replace("; no resources (scored by Q1)", "", regex=False))
+        lines += ["", "| Reason | Datasets |", "| --- | ---: |"]
+        for reason, count in general.value_counts().items():
+            lines.append(f"| {md_cell(reason)} | {fmt_int(count)} |")
+    return "\n".join(lines) + "\n"
+
+
+def build_sample_report(frame: pd.DataFrame, sample: dict[str, dict], date: str) -> str:
+    rows = frame[frame["sample_id"] != ""].sort_values("sample_id")
+    missing = sorted(set(r["sample_id"] for r in sample.values()) - set(rows["sample_id"]))
+    lines = [
+        f"# Automated metadata checks on the sample: snapshot of {date}",
+        "",
+        "Proposed scores and the reason of each one, for the review of every dataset. A proposed "
+        "score is confirmed or corrected in the manual assessment, with the reason of the correction.",
+    ]
+    if missing:
+        lines += ["", f"Not found in the snapshot: {', '.join(missing)}."]
+    for code, name, _ in CHECKS:
+        key = code.lower()
+        lines += ["", f"## {code} {name}", "", "| ID | Dataset | Proposed | Reason |", "| --- | --- | ---: | --- |"]
+        for row in rows.to_dict("records"):
+            lines.append(f"| {row['sample_id']} | {link(row['title'], row['name'])} | "
+                         f"{row[f'{key}_score']} | {md_cell(row[f'{key}_reason'])} |")
+        counts = rows[f"{key}_score"].value_counts()
+        lines += ["", "Sample: " + ", ".join(f"{fmt_int(counts.get(s, 0))} datasets with {s}" for s in (2, 1, 0)) + "."]
+    return "\n".join(lines) + "\n"
+
+
+# ---------------------------------------------------------------------------
+# Main program
+# ---------------------------------------------------------------------------
+
+def main() -> int:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+    parser = argparse.ArgumentParser(description="Automated checks of the metadata, on the whole catalogue.")
+    parser.add_argument("--snapshot", type=Path, default=None,
+                        help="catalogue snapshot (default: the newest in data/raw)")
+    parser.add_argument("--sample", type=Path, default=SAMPLE_FILE,
+                        help="sample file (default: data/processed/sample.csv)")
+    args = parser.parse_args()
+
+    snapshot = args.snapshot or newest_snapshot()
+    if not snapshot.exists():
+        raise SystemExit(f"{relative(snapshot)} not found.")
+    date = snapshot_date(snapshot)
+    sample = load_sample(args.sample)
+    print(f"Snapshot: {relative(snapshot)}")
+    print("Checks: " + ", ".join(f"{code} {name}" for code, name, _ in CHECKS))
+
+    rows = []
+    for dataset in read_datasets(snapshot):
+        organization = dataset.get("organization") or {}
+        row = {
+            "id": dataset.get("id"),
+            "name": dataset.get("name"),
+            "title": visible_text(dataset.get("title")),
+            "organization_title": organization.get("title") or "",
+            "sample_id": sample.get(dataset.get("id"), {}).get("sample_id", ""),
+        }
+        for _, _, check in CHECKS:
+            row.update(check(dataset))
+        rows.append(row)
+    frame = pd.DataFrame(rows).sort_values("id").reset_index(drop=True)
+
+    PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    out_dir = OUT_DIR / f"checks_{date}"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    checks_file = PROCESSED_DIR / f"metadata_checks_{date}.csv"
+    frame.to_csv(checks_file, index=False, encoding="utf-8-sig", lineterminator="\n")
+    (out_dir / "summary.md").write_text(build_summary(frame, date, snapshot.name), encoding="utf-8", newline="\n")
+    if sample:
+        (out_dir / "sample.md").write_text(build_sample_report(frame, sample, date), encoding="utf-8", newline="\n")
+
+    print(f"Datasets checked: {fmt_int(len(frame))}; in the sample: {fmt_int((frame['sample_id'] != '').sum())}")
+    for code, name, _ in CHECKS:
+        counts = frame[f"{code.lower()}_score"].value_counts()
+        print(f"  {code} {name}: " + ", ".join(f"score {s}: {fmt_int(counts.get(s, 0))}" for s in (2, 1, 0)))
+    print("Files:")
+    for path in (checks_file, out_dir / "summary.md", out_dir / "sample.md"):
+        if path.exists():
+            print(f"  {relative(path)}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
