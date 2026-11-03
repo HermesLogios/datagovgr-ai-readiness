@@ -9,11 +9,17 @@ Internship project of the MSc in Electronic Governance (University of the Aegean
 ## Scope
 
 - Assessment of a sample of 36 data.gov.gr datasets on three levels: data quality; metadata and legal status; AI-readiness.
-- Compliance check of the high-value datasets against Implementing Regulation (EU) 2023/138.
+- Compliance check of the high-value datasets against Implementing Regulation (EU) 2023/138, reported separately from the scores as a compliance table (yes or no for each requirement).
 - Identification of the datasets that can become "AI-ready" with little effort, and of the data missing from the portal.
-- An open assessment tool (web app) that applies the same criteria to any dataset.
+- An open assessment tool that applies the same criteria to any dataset: at minimum a command-line run for one dataset; a web application if time allows.
 
 The methodology and every decision are recorded in this repository, so that the work can be reproduced or continued by others.
+
+## Limitations
+
+- The sample is selected by page views, so it leans towards the better-maintained datasets and its picture of the portal is likely more favourable than the whole catalogue. The automated checks on the whole catalogue are reported next to the sample as the counterweight (DECISIONS.md #27).
+- The results describe the catalogue at the dates of the snapshots (24 October and 25 November 2026); the base figure is the 22,805 datasets of the first snapshot (DECISIONS.md #26).
+- Datasets that appear to contain personal data are recorded as findings without reproducing any record (DECISIONS.md #29).
 
 ## Repository layout
 
@@ -22,6 +28,7 @@ The methodology and every decision are recorded in this repository, so that the 
 | `scripts/` | The scripts of the analysis, numbered in the order they run (`00_`, `01_`, ...), and helper scripts without a number |
 | `data/raw/` | Raw data downloaded from the portal, unmodified |
 | `data/processed/` | Processed tables and scores |
+| `data/reference/` | Reference lists used by the checks, e.g. the EU file-type vocabulary, with their source and date |
 | `criteria/` | Assessment criteria (`criteria.csv`) and manual classification of high-value content (`hvd_by_content.csv`) |
 | `outputs/` | Tables, charts, Croissant files, RAG collection |
 | `DECISIONS.md` | Decision log, with date and rationale |
@@ -68,5 +75,5 @@ Phases 1 and 2 (catalogue snapshot, first profile, selection of the sample and a
 | `01_snapshot.py` | Snapshot of the complete catalogue | `data/raw/catalog_YYYY-MM-DD.jsonl.gz` and `.manifest.json` |
 | `02_catalog_profile.py` | Catalogue profile: one row per dataset and summary tables | `data/processed/catalog_flat_YYYY-MM-DD.csv` and `outputs/profile_YYYY-MM-DD/` |
 | `03_sample.py` | Selection of the 36 datasets of the sample: 24 high-value, 12 for comparison | `data/processed/sample.csv`, `sample_reserves.csv` and `outputs/sample_YYYY-MM-DD/` |
-| `04_metadata_checks.py` | Automated checks of the metadata on the whole catalogue, with a proposed score and the reason for every dataset (M1 so far) | `data/processed/metadata_checks_YYYY-MM-DD.csv` and `outputs/checks_YYYY-MM-DD/` |
+| `04_metadata_checks.py` | Automated checks of the metadata on the whole catalogue, with a proposed score and the reason for every dataset (M1, M2, M3, M4, M7 and M9 so far) | `data/processed/metadata_checks_YYYY-MM-DD.csv` and `outputs/checks_YYYY-MM-DD/` |
 | `criteria_views.py` | Readable versions of the assessment criteria; run whenever `criteria/criteria.csv` changes | `criteria/criteria.xlsx` and `criteria/criteria.md` |

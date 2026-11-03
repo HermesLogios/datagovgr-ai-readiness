@@ -1,0 +1,234 @@
+﻿code,label_en,uri
+7Z,7z,http://publications.europa.eu/resource/authority/file-type/7Z
+AAB,AAB,http://publications.europa.eu/resource/authority/file-type/AAB
+AAC,AAC,http://publications.europa.eu/resource/authority/file-type/AAC
+AKN4EU,AKN4EU file,http://publications.europa.eu/resource/authority/file-type/AKN4EU
+AKN4EU_LEG,AKN4EU LEG,http://publications.europa.eu/resource/authority/file-type/AKN4EU_LEG
+AKN4EU_ZIP,AKN4EU ZIP,http://publications.europa.eu/resource/authority/file-type/AKN4EU_ZIP
+APK,APK,http://publications.europa.eu/resource/authority/file-type/APK
+APPX,AppX,http://publications.europa.eu/resource/authority/file-type/APPX
+APRX,APRX,http://publications.europa.eu/resource/authority/file-type/APRX
+ARC,ARC,http://publications.europa.eu/resource/authority/file-type/ARC
+ARCINFO_COV,ArcInfo coverage,http://publications.europa.eu/resource/authority/file-type/ARCINFO_COV
+ARC_GZ,ARC GZ,http://publications.europa.eu/resource/authority/file-type/ARC_GZ
+ARFF,ARFF,http://publications.europa.eu/resource/authority/file-type/ARFF
+ARJ,ARJ,http://publications.europa.eu/resource/authority/file-type/ARJ
+ARROW_FILE,Arrow file,http://publications.europa.eu/resource/authority/file-type/ARROW_FILE
+ARROW_STREAM,Arrow stream,http://publications.europa.eu/resource/authority/file-type/ARROW_STREAM
+ATOM,Atom Feed,http://publications.europa.eu/resource/authority/file-type/ATOM
+AZW,Amazon Kindle eBook,http://publications.europa.eu/resource/authority/file-type/AZW
+BIN,Binary Data,http://publications.europa.eu/resource/authority/file-type/BIN
+BITS,BITS XML,http://publications.europa.eu/resource/authority/file-type/BITS
+BMP,Bitmap Image File,http://publications.europa.eu/resource/authority/file-type/BMP
+BWF,BWF,http://publications.europa.eu/resource/authority/file-type/BWF
+BZIP2,bzip2,http://publications.europa.eu/resource/authority/file-type/BZIP2
+COG,COG,http://publications.europa.eu/resource/authority/file-type/COG
+CSS,CSS,http://publications.europa.eu/resource/authority/file-type/CSS
+CSV,CSV,http://publications.europa.eu/resource/authority/file-type/CSV
+DAPK,DAPK,http://publications.europa.eu/resource/authority/file-type/DAPK
+DBF,DBF,http://publications.europa.eu/resource/authority/file-type/DBF
+DCR,DCR File,http://publications.europa.eu/resource/authority/file-type/DCR
+DEB,deb,http://publications.europa.eu/resource/authority/file-type/DEB
+DGN,DGN,http://publications.europa.eu/resource/authority/file-type/DGN
+DMG,DMG,http://publications.europa.eu/resource/authority/file-type/DMG
+DMP,Oracle Dump,http://publications.europa.eu/resource/authority/file-type/DMP
+DOC,Word DOC,http://publications.europa.eu/resource/authority/file-type/DOC
+DOCX,Word DOCX,http://publications.europa.eu/resource/authority/file-type/DOCX
+DTD_SGML,SGML DTD,http://publications.europa.eu/resource/authority/file-type/DTD_SGML
+DTD_XML,XML DTD,http://publications.europa.eu/resource/authority/file-type/DTD_XML
+DWCA,DwC-A,http://publications.europa.eu/resource/authority/file-type/DWCA
+DWG,DWG,http://publications.europa.eu/resource/authority/file-type/DWG
+DXF,DXF,http://publications.europa.eu/resource/authority/file-type/DXF
+E00,E00,http://publications.europa.eu/resource/authority/file-type/E00
+EAR,EAR,http://publications.europa.eu/resource/authority/file-type/EAR
+ECW,ECW,http://publications.europa.eu/resource/authority/file-type/ECW
+EFORMS_XML,eForms XML,http://publications.europa.eu/resource/authority/file-type/EFORMS_XML
+EPS,Encapsulated Postscript,http://publications.europa.eu/resource/authority/file-type/EPS
+EPUB,EPUB,http://publications.europa.eu/resource/authority/file-type/EPUB
+ETSI_TSL,ETSI TSL,http://publications.europa.eu/resource/authority/file-type/ETSI_TSL
+ETSI_XML,ETSI signature validation report,http://publications.europa.eu/resource/authority/file-type/ETSI_XML
+EXE,EXE,http://publications.europa.eu/resource/authority/file-type/EXE
+FIWARE-CB,fiware_cb,http://publications.europa.eu/resource/authority/file-type/FIWARE-CB
+FMX2,Formex 2,http://publications.europa.eu/resource/authority/file-type/FMX2
+FMX3,Formex 3,http://publications.europa.eu/resource/authority/file-type/FMX3
+FMX4,Formex 4,http://publications.europa.eu/resource/authority/file-type/FMX4
+FMX4_ZIP,FMX4 ZIP,http://publications.europa.eu/resource/authority/file-type/FMX4_ZIP
+GDB,Esri File Geodatabase,http://publications.europa.eu/resource/authority/file-type/GDB
+GEOJSON,GeoJSON,http://publications.europa.eu/resource/authority/file-type/GEOJSON
+GEOPARQUET,GeoParquet,http://publications.europa.eu/resource/authority/file-type/GEOPARQUET
+GEOTIFF,GeoTIFF,http://publications.europa.eu/resource/authority/file-type/GEOTIFF
+GIF,GIF,http://publications.europa.eu/resource/authority/file-type/GIF
+GML,GML,http://publications.europa.eu/resource/authority/file-type/GML
+GMZ,Zipped GML,http://publications.europa.eu/resource/authority/file-type/GMZ
+GPKG,GeoPackage,http://publications.europa.eu/resource/authority/file-type/GPKG
+GPX,GPX,http://publications.europa.eu/resource/authority/file-type/GPX
+GRID,Esri binary grid,http://publications.europa.eu/resource/authority/file-type/GRID
+GRID_ASCII,Esri ASCII grid,http://publications.europa.eu/resource/authority/file-type/GRID_ASCII
+GTFS,GTFS,http://publications.europa.eu/resource/authority/file-type/GTFS
+GZIP,GNU zip,http://publications.europa.eu/resource/authority/file-type/GZIP
+HDF,HDF,http://publications.europa.eu/resource/authority/file-type/HDF
+HDT,HDT,http://publications.europa.eu/resource/authority/file-type/HDT
+HTML,HTML,http://publications.europa.eu/resource/authority/file-type/HTML
+HTML5,HTML5,http://publications.europa.eu/resource/authority/file-type/HTML5
+HTML_SIMPL,HTML simplified,http://publications.europa.eu/resource/authority/file-type/HTML_SIMPL
+ICS,ICalendar,http://publications.europa.eu/resource/authority/file-type/ICS
+IMMC_XML,IMMC XML message,http://publications.europa.eu/resource/authority/file-type/IMMC_XML
+INDD,INDD,http://publications.europa.eu/resource/authority/file-type/INDD
+IPA,IPA,http://publications.europa.eu/resource/authority/file-type/IPA
+ISO,ISO image,http://publications.europa.eu/resource/authority/file-type/ISO
+ISO_ZIP,Zipped ISO image,http://publications.europa.eu/resource/authority/file-type/ISO_ZIP
+JAR,JAR,http://publications.europa.eu/resource/authority/file-type/JAR
+JATS,JATS XML,http://publications.europa.eu/resource/authority/file-type/JATS
+JPEG,JPEG,http://publications.europa.eu/resource/authority/file-type/JPEG
+JPEG2000,JPEG 2000,http://publications.europa.eu/resource/authority/file-type/JPEG2000
+JS,JavaScript,http://publications.europa.eu/resource/authority/file-type/JS
+JSON,JSON,http://publications.europa.eu/resource/authority/file-type/JSON
+JSON_LD,JSON-LD,http://publications.europa.eu/resource/authority/file-type/JSON_LD
+KML,KML,http://publications.europa.eu/resource/authority/file-type/KML
+KMZ,KMZ,http://publications.europa.eu/resource/authority/file-type/KMZ
+LAS,LASer file,http://publications.europa.eu/resource/authority/file-type/LAS
+LAZ,Compressed LAS file,http://publications.europa.eu/resource/authority/file-type/LAZ
+LEG,LEG,http://publications.europa.eu/resource/authority/file-type/LEG
+LEGALHTML,LegalHTML,http://publications.europa.eu/resource/authority/file-type/LEGALHTML
+LHA,LHA,http://publications.europa.eu/resource/authority/file-type/LHA
+LPK,Layer package,http://publications.europa.eu/resource/authority/file-type/LPK
+LZIP,lzip,http://publications.europa.eu/resource/authority/file-type/LZIP
+LZMA,lzma,http://publications.europa.eu/resource/authority/file-type/LZMA
+LZO,lzo,http://publications.europa.eu/resource/authority/file-type/LZO
+MAP_PRVW,ArcGIS Map Preview,http://publications.europa.eu/resource/authority/file-type/MAP_PRVW
+MAP_SRVC,ArcGIS Map Service,http://publications.europa.eu/resource/authority/file-type/MAP_SRVC
+MARKDOWN,Markdown,http://publications.europa.eu/resource/authority/file-type/MARKDOWN
+MATHML,MathML,http://publications.europa.eu/resource/authority/file-type/MATHML
+MATLAB_MAT,MATLAB MAT,http://publications.europa.eu/resource/authority/file-type/MATLAB_MAT
+MBOX,MBOX,http://publications.europa.eu/resource/authority/file-type/MBOX
+MDB,MDB,http://publications.europa.eu/resource/authority/file-type/MDB
+METS,METS XML,http://publications.europa.eu/resource/authority/file-type/METS
+METS_ZIP,METS package,http://publications.europa.eu/resource/authority/file-type/METS_ZIP
+MHTML,MHTML,http://publications.europa.eu/resource/authority/file-type/MHTML
+MIF_MID,MIF/MID,http://publications.europa.eu/resource/authority/file-type/MIF_MID
+MOBI,Mobipocket eBook,http://publications.europa.eu/resource/authority/file-type/MOBI
+MOP,MOP,http://publications.europa.eu/resource/authority/file-type/MOP
+MOV,MOV,http://publications.europa.eu/resource/authority/file-type/MOV
+MP3,MP3,http://publications.europa.eu/resource/authority/file-type/MP3
+MPEG2,MPEG-2,http://publications.europa.eu/resource/authority/file-type/MPEG2
+MPEG4,MPEG-4,http://publications.europa.eu/resource/authority/file-type/MPEG4
+MPEG4_AVC,MPEG-4 AVC,http://publications.europa.eu/resource/authority/file-type/MPEG4_AVC
+MRSID,MrSID,http://publications.europa.eu/resource/authority/file-type/MRSID
+MSG_HTTP,HTTP Message,http://publications.europa.eu/resource/authority/file-type/MSG_HTTP
+MSI,MSI,http://publications.europa.eu/resource/authority/file-type/MSI
+MXD,MXD,http://publications.europa.eu/resource/authority/file-type/MXD
+N3,N3,http://publications.europa.eu/resource/authority/file-type/N3
+NETCDF,NetCDF,http://publications.europa.eu/resource/authority/file-type/NETCDF
+OAPK,OAPK,http://publications.europa.eu/resource/authority/file-type/OAPK
+OCTET,Octet Stream,http://publications.europa.eu/resource/authority/file-type/OCTET
+ODB,OpenDocument Database,http://publications.europa.eu/resource/authority/file-type/ODB
+ODC,OpenDocument Chart,http://publications.europa.eu/resource/authority/file-type/ODC
+ODF,ODF,http://publications.europa.eu/resource/authority/file-type/ODF
+ODG,OpenDocument Image,http://publications.europa.eu/resource/authority/file-type/ODG
+ODP,ODP,http://publications.europa.eu/resource/authority/file-type/ODP
+ODS,ODS,http://publications.europa.eu/resource/authority/file-type/ODS
+ODT,ODT,http://publications.europa.eu/resource/authority/file-type/ODT
+OGCFEAT,OGCFeat,http://publications.europa.eu/resource/authority/file-type/OGCFEAT
+OP_DATPRO,Provisional data,http://publications.europa.eu/resource/authority/file-type/OP_DATPRO
+OVF,OVF,http://publications.europa.eu/resource/authority/file-type/OVF
+OWL,OWL,http://publications.europa.eu/resource/authority/file-type/OWL
+PARQUET,Parquet,http://publications.europa.eu/resource/authority/file-type/PARQUET
+PDF,PDF,http://publications.europa.eu/resource/authority/file-type/PDF
+PDF1X,PDF1X,http://publications.europa.eu/resource/authority/file-type/PDF1X
+PDFA1A,PDF/A-1a,http://publications.europa.eu/resource/authority/file-type/PDFA1A
+PDFA1B,PDF/A-1b,http://publications.europa.eu/resource/authority/file-type/PDFA1B
+PDFA2A,PDF/A-2a,http://publications.europa.eu/resource/authority/file-type/PDFA2A
+PDFA2B,PDF/A-2b,http://publications.europa.eu/resource/authority/file-type/PDFA2B
+PDFA3,PDF/A-3,http://publications.europa.eu/resource/authority/file-type/PDFA3
+PDFA3A,PDF/A-3a,http://publications.europa.eu/resource/authority/file-type/PDFA3A
+PDFA3B,PDF/A-3b,http://publications.europa.eu/resource/authority/file-type/PDFA3B
+PDFA3U,PDF/A-3u,http://publications.europa.eu/resource/authority/file-type/PDFA3U
+PDFUA,PDF/UA,http://publications.europa.eu/resource/authority/file-type/PDFUA
+PDFX,PDF/X,http://publications.europa.eu/resource/authority/file-type/PDFX
+PDFX1A,PDF/X-1a,http://publications.europa.eu/resource/authority/file-type/PDFX1A
+PDFX2A,PDF/X-2a,http://publications.europa.eu/resource/authority/file-type/PDFX2A
+PDFX4,PDF/X-4,http://publications.europa.eu/resource/authority/file-type/PDFX4
+PL,Perl script,http://publications.europa.eu/resource/authority/file-type/PL
+PNG,PNG,http://publications.europa.eu/resource/authority/file-type/PNG
+PPS,PowerPoint Slide Show,http://publications.europa.eu/resource/authority/file-type/PPS
+PPSX,PowerPoint PPSX,http://publications.europa.eu/resource/authority/file-type/PPSX
+PPT,PowerPoint PPT,http://publications.europa.eu/resource/authority/file-type/PPT
+PPTX,PowerPoint PPTX,http://publications.europa.eu/resource/authority/file-type/PPTX
+PS,PS,http://publications.europa.eu/resource/authority/file-type/PS
+PSD,PSD,http://publications.europa.eu/resource/authority/file-type/PSD
+PWP,PWP,http://publications.europa.eu/resource/authority/file-type/PWP
+QGS,QGS,http://publications.europa.eu/resource/authority/file-type/QGS
+RAR,RAR,http://publications.europa.eu/resource/authority/file-type/RAR
+RDATA,RData,http://publications.europa.eu/resource/authority/file-type/RDATA
+RDF,RDF,http://publications.europa.eu/resource/authority/file-type/RDF
+RDFA,RDFa,http://publications.europa.eu/resource/authority/file-type/RDFA
+RDF_N_QUADS,RDF N-Quads,http://publications.europa.eu/resource/authority/file-type/RDF_N_QUADS
+RDF_N_TRIPLES,RDF N-Triples,http://publications.europa.eu/resource/authority/file-type/RDF_N_TRIPLES
+RDF_THRIFT,RDF Thrift,http://publications.europa.eu/resource/authority/file-type/RDF_THRIFT
+RDF_TRIG,RDF TriG,http://publications.europa.eu/resource/authority/file-type/RDF_TRIG
+RDF_TRIX,RDF TriX,http://publications.europa.eu/resource/authority/file-type/RDF_TRIX
+RDF_TURTLE,RDF Turtle,http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE
+RDF_XML,RDF XML,http://publications.europa.eu/resource/authority/file-type/RDF_XML
+REST,Esri REST,http://publications.europa.eu/resource/authority/file-type/REST
+RPM,RPM,http://publications.europa.eu/resource/authority/file-type/RPM
+RSS,RSS feed,http://publications.europa.eu/resource/authority/file-type/RSS
+RTF,RTF,http://publications.europa.eu/resource/authority/file-type/RTF
+SAS,SAS,http://publications.europa.eu/resource/authority/file-type/SAS
+SB3,sb3,http://publications.europa.eu/resource/authority/file-type/SB3
+SCH,Schematron,http://publications.europa.eu/resource/authority/file-type/SCH
+SCHEMA_XML,XML schema,http://publications.europa.eu/resource/authority/file-type/SCHEMA_XML
+SDMX,SDMX,http://publications.europa.eu/resource/authority/file-type/SDMX
+SGML,SGML,http://publications.europa.eu/resource/authority/file-type/SGML
+SHP,Esri Shape,http://publications.europa.eu/resource/authority/file-type/SHP
+SKOS_XML,SKOS,http://publications.europa.eu/resource/authority/file-type/SKOS_XML
+SPARQLQ,SPARQL,http://publications.europa.eu/resource/authority/file-type/SPARQLQ
+SPARQLQRES,SPARQL results,http://publications.europa.eu/resource/authority/file-type/SPARQLQRES
+SPSS_SAV,SPSS SAV,http://publications.europa.eu/resource/authority/file-type/SPSS_SAV
+SQL,SQL,http://publications.europa.eu/resource/authority/file-type/SQL
+STATA_DTA,Stata DTA,http://publications.europa.eu/resource/authority/file-type/STATA_DTA
+STL,StL,http://publications.europa.eu/resource/authority/file-type/STL
+SVG,SVG,http://publications.europa.eu/resource/authority/file-type/SVG
+SWM,SWM,http://publications.europa.eu/resource/authority/file-type/SWM
+TAB,MapInfo TAB file,http://publications.europa.eu/resource/authority/file-type/TAB
+TAB_RSTR,MapInfo TAB raster file,http://publications.europa.eu/resource/authority/file-type/TAB_RSTR
+TAR,TAR,http://publications.europa.eu/resource/authority/file-type/TAR
+TAR_GZ,TAR GZ,http://publications.europa.eu/resource/authority/file-type/TAR_GZ
+TAR_XZ,TAR XZ,http://publications.europa.eu/resource/authority/file-type/TAR_XZ
+THRIFT_BINARY,Thrift binary,http://publications.europa.eu/resource/authority/file-type/THRIFT_BINARY
+THRIFT_COMPACT,Thrift compact,http://publications.europa.eu/resource/authority/file-type/THRIFT_COMPACT
+THRIFT_JSON,Thrift JSON,http://publications.europa.eu/resource/authority/file-type/THRIFT_JSON
+TIFF,TIFF,http://publications.europa.eu/resource/authority/file-type/TIFF
+TIFF_FX,TIFF FX,http://publications.europa.eu/resource/authority/file-type/TIFF_FX
+TMX,TMX,http://publications.europa.eu/resource/authority/file-type/TMX
+TSV,TSV,http://publications.europa.eu/resource/authority/file-type/TSV
+TXT,Plain text,http://publications.europa.eu/resource/authority/file-type/TXT
+UNGEN,Ungen,http://publications.europa.eu/resource/authority/file-type/UNGEN
+VCF,VCF,http://publications.europa.eu/resource/authority/file-type/VCF
+WAR,WAR,http://publications.europa.eu/resource/authority/file-type/WAR
+WARC,WARC,http://publications.europa.eu/resource/authority/file-type/WARC
+WARC_GZ,WARC GZ,http://publications.europa.eu/resource/authority/file-type/WARC_GZ
+WAV,WAV,http://publications.europa.eu/resource/authority/file-type/WAV
+WCS_SRVC,WCS,http://publications.europa.eu/resource/authority/file-type/WCS_SRVC
+WEBP,WebP,http://publications.europa.eu/resource/authority/file-type/WEBP
+WFS_SRVC,WFS,http://publications.europa.eu/resource/authority/file-type/WFS_SRVC
+WIM,WIM,http://publications.europa.eu/resource/authority/file-type/WIM
+WMS_SRVC,WMS,http://publications.europa.eu/resource/authority/file-type/WMS_SRVC
+WMTS_SRVC,WMTS,http://publications.europa.eu/resource/authority/file-type/WMTS_SRVC
+WORLD,World file,http://publications.europa.eu/resource/authority/file-type/WORLD
+XHTML,XHTML,http://publications.europa.eu/resource/authority/file-type/XHTML
+XHTML5,XHTML5,http://publications.europa.eu/resource/authority/file-type/XHTML5
+XHTML_SIMPL,XHTML simplified,http://publications.europa.eu/resource/authority/file-type/XHTML_SIMPL
+XLIFF,XLIFF,http://publications.europa.eu/resource/authority/file-type/XLIFF
+XLS,Excel XLS,http://publications.europa.eu/resource/authority/file-type/XLS
+XLSB,XLSB,http://publications.europa.eu/resource/authority/file-type/XLSB
+XLSM,XLSM,http://publications.europa.eu/resource/authority/file-type/XLSM
+XLSX,Excel XLSX,http://publications.europa.eu/resource/authority/file-type/XLSX
+XML,XML,http://publications.europa.eu/resource/authority/file-type/XML
+XSLFO,XSL-FO,http://publications.europa.eu/resource/authority/file-type/XSLFO
+XSLT,XSLT,http://publications.europa.eu/resource/authority/file-type/XSLT
+XYZ,XYZ Chemical File,http://publications.europa.eu/resource/authority/file-type/XYZ
+XZ,xz,http://publications.europa.eu/resource/authority/file-type/XZ
+YAML,YAML,http://publications.europa.eu/resource/authority/file-type/YAML
+Z,Z,http://publications.europa.eu/resource/authority/file-type/Z
+ZARR,Zarr,http://publications.europa.eu/resource/authority/file-type/ZARR
+ZIP,ZIP,http://publications.europa.eu/resource/authority/file-type/ZIP

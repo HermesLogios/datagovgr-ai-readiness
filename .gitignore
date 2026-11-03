@@ -19,6 +19,10 @@ data/raw/*_test*
 # Run logs
 *.log
 
+# Working notes of the review of the automated checks (one Excel workbook per criterion).
+# The confirmed scores are published in the assessment workbook.
+review/
+
 # Temporary lock files of Excel and Word, present while a file is open
 ~$*
 
