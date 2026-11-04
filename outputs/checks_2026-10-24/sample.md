@@ -174,6 +174,49 @@ Sample: 31 datasets with 2, 4 datasets with 1, 1 dataset with 0.
 
 Sample: 30 datasets with 2, 0 datasets with 1, 6 datasets with 0.
 
+## M6 Mode of distribution
+
+| ID | Dataset | Proposed | Reason |
+| --- | --- | ---: | --- |
+| S01 | [Γεωτεμάχια (όρια και ΚΑΕΚ) των περιοχών του "Λειτουργούντος Κτηματολογίου"](https://data.gov.gr/dataset/geotemachia-oria-kai-kaek-ton-periochon-toy-leitoyrgoyntos-ktimatologioy) | 2 | direct link to a file: 13 files |
+| S02 | [Καλλικρατικοί Δήμοι](https://data.gov.gr/dataset/gis-ypen-wfd-wms-kallikratikoi_dimoi) | 2 | API or data service: 5 API, 2 map views |
+| S03 | [Δρομολόγια Σταθερών Συγκοινωνιών (ΜΕΤΡΟ, ΗΣΑΠ, ΤΡΑΜ)](https://data.gov.gr/dataset/dromologia-statheron-sygkoinonion-metro-isap-tram) | 2 | direct link to a file: 1 file |
+| S04 | [Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης](https://data.gov.gr/dataset/simeia-ydrolipsias-tis-geovasis-emsy-ethniko-mitroo-simeion-ydrolipsias-periochi-anatolikis-makedoni) | 2 | direct link to a file: 4 files |
+| S05 | [Λίστα με Μονάδες Φροντίδας Ηλικιωμένων](https://data.gov.gr/dataset/attica-43-lista-me-monades-frontidas-hlikiwmenwn) | 1 | only web pages: 2 web pages |
+| S06 | [Τροχαία ατυχήματα](https://data.gov.gr/dataset/troxaia-atyxhmata) | 2 | direct link to a file: 12 files |
+| S07 | [Διαχείριση Στοιχείων Παραγωγής Νωπού Γάλακτος](https://data.gov.gr/dataset/diacheirisi-stoicheion-paragogis-nopoy-galaktos) | 2 | API or data service: 1 API |
+| S08 | ["ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ ΔΗΜΟΣΙΑΣ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ ΔΙΕΥΘΥΝΣΗ ΕΚΠΑΙΔΕΥΣΗΣ ΓΙΑ ΤΟ ΣΧΟΛΙΚΟ ΕΤΟΣ 2024-2025 "](https://data.gov.gr/dataset/arithmos-ekpaideytikon-deyterovathmia-eidikotita-schesi-ergasias-2025) | 2 | direct link to a file: 1 file |
+| S09 | [Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής](https://data.gov.gr/dataset/attica-92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020) | 2 | direct link to a file: 6 files |
+| S10 | [ΕΝΑΡΜΟΝΙΣΜΕΝΟΣ ΔΕΙΚΤΗΣ ΤΙΜΩΝ ΚΑΤΑΝΑΛΩΤΗ (ΕνΔΤΚ)](https://data.gov.gr/dataset/enarmonismenos-deiktis-timon-katanaloti-endtk) | 2 | direct link to a file: 1 file |
+| S11 | [Δρομολόγια Οδικών Συγκοινωνιών (Λεωφορεία, Τρόλεϊ)](https://data.gov.gr/dataset/dromologia-odikon-sygkoinonion-leoforeia-trolei) | 2 | direct link to a file: 1 file |
+| S12 | [Δεδομένα αστικών συγκοινωνιών Π.Ε. Θεσσαλονίκης](https://data.gov.gr/dataset/dedomena-astikon-sygkoinonion-p-e-thessalonikis) | 2 | direct link to a file: 12 files, 1 without an address |
+| S13 | [Σύνολα Δεδομένων Οργανισμού Αστικών Συγκοινωνιών - GTFS](https://data.gov.gr/dataset/oasth-gtfs) | 2 | direct link to a file: 1 file |
+| S14 | [Υπηρεσίες Δήμου Πατρέων](https://data.gov.gr/dataset/ypiresies-dimoy-patreon) | 2 | direct link to a file: 131 files, 1 without an address |
+| S15 | [ΧΩΡΟΙ - ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ](https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-prosvasi) | 2 | direct link to a file: 3 files |
+| S16 | [Θεσμοθετημένες περιοχές NATURA 2000](https://data.gov.gr/dataset/thesmothetimenes-perioches-natura-2000) | 2 | direct link to a file: 1 file |
+| S17 | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) | 2 | direct link to a file: 1 file, 1 web page |
+| S18 | [Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018](https://data.gov.gr/dataset/gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012_2018) | 2 | API or data service: 5 API, 2 map views |
+| S19 | [Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ](https://data.gov.gr/dataset/emy-station-189) | 2 | direct link to a file: 1 file |
+| S20 | [Ημερήσιες μετεωρολογικές παράμετροι για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς](https://data.gov.gr/dataset/stations-data) | 2 | direct link to a file: 1 file |
+| S21 | [Βροχομετρικά στοιχεία 56 σταθμών της Νήσου Κρήτης](https://data.gov.gr/dataset/apd-kritis-harv2-56) | 2 | direct link to a file: 5 files, 1 web page |
+| S22 | [Προσωρινοί πίνακες κατάταξης - Γ.Πρ. 21487- 13-03-2024 - Έκδοση προσωρινού πίνακα κατάταξης επενδυτικών σχεδίων που υποβλήθηκαν προς υπαγωγή στο καθεστώς ενίσχυσης "Ενίσχυση Τουριστικών Επενδύσεων" (β΄ κύκλος) στο Υπουργείο Ανάπτυξης](https://data.gov.gr/dataset/prosorinoi-pinakes-katataxis-g-pr-21487-13-03-2024-ekdosi-prosorinoy-pinaka-katataxis-ependytikon-sc) | 2 | direct link to a file: 1 file |
+| S23 | [Athens Business Open Data - STIRData model](https://data.gov.gr/dataset/athens-business-open-data-stirdata-model) | 2 | direct link to a file: 1 file |
+| S24 | [ΑΠΟΦΑΣΕΙΣ ΕΓΚΡΙΣΗΣ ΠΕΡΙΒΑΛΛΟΝΤΙΚΩΝ ΟΡΩΝ (ΛΕΣΒΟΣ-ΛΗΜΝΟΣ)](https://data.gov.gr/dataset/apofaseis-egkrisis-perivallontikon-oron-lesvos-limnos) | 2 | direct link to a file: 7 files |
+| S25 | [ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΦΕΒΡΟΥΑΡΙΟΥ 2017](https://data.gov.gr/dataset/statistika-diatrofhs-febroyarioy-2017) | 2 | direct link to a file: 1 file |
+| S26 | [ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΜΑΡΤΙΟΣ 2020](https://data.gov.gr/dataset/statistika-ix8yoskalas-8essalonikhs-martios-2020) | 2 | direct link to a file: 1 file |
+| S27 | [ΤΡΟΠΟΠΟΙΗΣΗ ΡΥΜΟΤΟΜΙΚΟΥ (ΦΕΚ 463/Δ/1998-07-03)](https://data.gov.gr/dataset/gis-agrinio-wms-only-agriniotrm-trm_ras_123107fs000463_1998_geo) | 1 | only a map view (WMS): 3 map views |
+| S28 | [Σχέδιο ΠΕ περιοχής Ατσαλένιο / Μωσαϊκό](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliopef-pef_ras_atsalenio_mosaic_geo) | 1 | only a map view (WMS): 3 map views |
+| S29 | [ΠΙΝΑΚΕΣ ΤΙΜΟΛΗΨΙΩΝ ΣΥΡΟΥ](https://data.gov.gr/dataset/pinakes-timolhpsiwn-syroy) | 2 | direct link to a file: 1 file |
+| S30 | [Διάγραμμα Τροποποιήσεως του Ρυμοτομικού Σχεδίου της Πόλης Χανίων](https://data.gov.gr/dataset/gis-chania-wms-only-chaniatsp-tsp_ras_fek_2003_739_d_200_geo) | 1 | only a map view (WMS): 3 map views |
+| S31 | [ΠΡΟΓΡΑΜΜΑΤΙΚΕΣ ΣΥΜΒΑΣΕΙΣ ΠΕΡΙΦΕΡΕΙΑΣ ΑΤΤΙΚΗΣ](https://data.gov.gr/dataset/programmatikes-symbaseis-perifereias-attikhs) | 2 | direct link to a file: 3 files |
+| S32 | [Περιβαλλοντικοί έλεγχοι έτους 2014 από τη Δ/νση Περιβάλλοντος & Χωρικού Σχεδιασμού Π.Δ.Ε.](https://data.gov.gr/dataset/periballontikoi-elegxoi-etoys-2014-apo-th-d-nsh-periballontos-and-xwrikoy-sxediasmoy-p-d-e) | 2 | direct link to a file: 2 files |
+| S33 | [Διάγραμμα - ΦΕΚ 130/Δ/2001-02-21](https://data.gov.gr/dataset/gis-maroussi-wms-only-maroussirym-rym_015784fs000130_2001e) | 1 | only a map view (WMS): 3 map views |
+| S34 | [Αποθετήριο ΤΕΧΝΗ](https://data.gov.gr/dataset/ekt-searchculture-dataset-__-15) | 2 | API or data service: 1 API |
+| S35 | [Συνεδριάσεις Επιτροπής Αθλητισμού & Παιδείας Περιφέρειας Αττικής](https://data.gov.gr/dataset/attica-443-synedriaseis-epitrophs-athlhtismoy-paideias-perifereias-attikhs) | 1 | only web pages: 1 web page |
+| S36 | [Διάγραμμα Τροποποίησης - T1936A404_69912_500_01](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliotsp-t1936a404_69912_500_01) | 1 | only a map view (WMS): 3 map views |
+
+Sample: 29 datasets with 2, 7 datasets with 1, 0 datasets with 0.
+
 ## M7 Persistent identifier
 
 | ID | Dataset | Proposed | Reason |
@@ -259,3 +302,89 @@ Sample: 33 datasets with 2, 3 datasets with 1, 0 datasets with 0.
 | S36 | [Διάγραμμα Τροποποίησης - T1936A404_69912_500_01](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliotsp-t1936a404_69912_500_01) | n/a | comparison group |
 
 Sample: 21 datasets with 2, 0 datasets with 1, 3 datasets with 0.
+
+## Q5 Timeliness (metadata part)
+
+| ID | Dataset | Proposed | Reason |
+| --- | --- | ---: | --- |
+| S01 | [Γεωτεμάχια (όρια και ΚΑΕΚ) των περιοχών του "Λειτουργούντος Κτηματολογίου"](https://data.gov.gr/dataset/geotemachia-oria-kai-kaek-ton-periochon-toy-leitoyrgoyntos-ktimatologioy) | 1 | no period declared (IRREG): last upload 1 day ago |
+| S02 | [Καλλικρατικοί Δήμοι](https://data.gov.gr/dataset/gis-ypen-wfd-wms-kallikratikoi_dimoi) | n/d | no period declared (none): no upload date on the portal, not measurable from the metadata |
+| S03 | [Δρομολόγια Σταθερών Συγκοινωνιών (ΜΕΤΡΟ, ΗΣΑΠ, ΤΡΑΜ)](https://data.gov.gr/dataset/dromologia-statheron-sygkoinonion-metro-isap-tram) | 2 | ANNUAL_3: last upload 18 days ago, 0.1 periods |
+| S04 | [Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης](https://data.gov.gr/dataset/simeia-ydrolipsias-tis-geovasis-emsy-ethniko-mitroo-simeion-ydrolipsias-periochi-anatolikis-makedoni) | 1 | no period declared (none): last upload 107 days ago |
+| S05 | [Λίστα με Μονάδες Φροντίδας Ηλικιωμένων](https://data.gov.gr/dataset/attica-43-lista-me-monades-frontidas-hlikiwmenwn) | n/d | no period declared (none): no upload date on the portal, not measurable from the metadata |
+| S06 | [Τροχαία ατυχήματα](https://data.gov.gr/dataset/troxaia-atyxhmata) | 1 | NOT_PLANNED: declared as not updated without a stated period: last upload 201 days ago (original upload date for 6 files copied by the migration) |
+| S07 | [Διαχείριση Στοιχείων Παραγωγής Νωπού Γάλακτος](https://data.gov.gr/dataset/diacheirisi-stoicheion-paragogis-nopoy-galaktos) | 2 | MONTHLY: last upload 2 days ago, 0.1 periods |
+| S08 | ["ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ ΔΗΜΟΣΙΑΣ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ ΔΙΕΥΘΥΝΣΗ ΕΚΠΑΙΔΕΥΣΗΣ ΓΙΑ ΤΟ ΣΧΟΛΙΚΟ ΕΤΟΣ 2024-2025 "](https://data.gov.gr/dataset/arithmos-ekpaideytikon-deyterovathmia-eidikotita-schesi-ergasias-2025) | 1 | no period declared (none): last upload 178 days ago |
+| S09 | [Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής](https://data.gov.gr/dataset/attica-92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020) | n/d | no period declared (none): no upload date on the portal, not measurable from the metadata |
+| S10 | [ΕΝΑΡΜΟΝΙΣΜΕΝΟΣ ΔΕΙΚΤΗΣ ΤΙΜΩΝ ΚΑΤΑΝΑΛΩΤΗ (ΕνΔΤΚ)](https://data.gov.gr/dataset/enarmonismenos-deiktis-timon-katanaloti-endtk) | 0 | MONTHLY: last upload 219 days ago, 7.2 periods |
+| S11 | [Δρομολόγια Οδικών Συγκοινωνιών (Λεωφορεία, Τρόλεϊ)](https://data.gov.gr/dataset/dromologia-odikon-sygkoinonion-leoforeia-trolei) | 1 | no period declared (none): last upload 79 days ago |
+| S12 | [Δεδομένα αστικών συγκοινωνιών Π.Ε. Θεσσαλονίκης](https://data.gov.gr/dataset/dedomena-astikon-sygkoinonion-p-e-thessalonikis) | 1 | no period declared (AS_NEEDED): last upload 9 days ago |
+| S13 | [Σύνολα Δεδομένων Οργανισμού Αστικών Συγκοινωνιών - GTFS](https://data.gov.gr/dataset/oasth-gtfs) | 2 | ANNUAL: last upload 205 days ago, 0.6 periods |
+| S14 | [Υπηρεσίες Δήμου Πατρέων](https://data.gov.gr/dataset/ypiresies-dimoy-patreon) | 1 | NOT_PLANNED: declared as not updated without a stated period: last upload 192 days ago |
+| S15 | [ΧΩΡΟΙ - ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ](https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-prosvasi) | 1 | no period declared (IRREG): last upload 75 days ago |
+| S16 | [Θεσμοθετημένες περιοχές NATURA 2000](https://data.gov.gr/dataset/thesmothetimenes-perioches-natura-2000) | 1 | no period declared (UNKNOWN): last upload 180 days ago |
+| S17 | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) | n/d | no period declared (none): no upload date on the portal, not measurable from the metadata |
+| S18 | [Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018](https://data.gov.gr/dataset/gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012_2018) | n/d | no period declared (none): no upload date on the portal, not measurable from the metadata |
+| S19 | [Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ](https://data.gov.gr/dataset/emy-station-189) | 2 | CONT: last upload 1 day ago, 1.0 periods |
+| S20 | [Ημερήσιες μετεωρολογικές παράμετροι για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς](https://data.gov.gr/dataset/stations-data) | 1 | no period declared (none): last upload 208 days ago |
+| S21 | [Βροχομετρικά στοιχεία 56 σταθμών της Νήσου Κρήτης](https://data.gov.gr/dataset/apd-kritis-harv2-56) | n/d | no period declared (none): no upload date on the portal, not measurable from the metadata |
+| S22 | [Προσωρινοί πίνακες κατάταξης - Γ.Πρ. 21487- 13-03-2024 - Έκδοση προσωρινού πίνακα κατάταξης επενδυτικών σχεδίων που υποβλήθηκαν προς υπαγωγή στο καθεστώς ενίσχυσης "Ενίσχυση Τουριστικών Επενδύσεων" (β΄ κύκλος) στο Υπουργείο Ανάπτυξης](https://data.gov.gr/dataset/prosorinoi-pinakes-katataxis-g-pr-21487-13-03-2024-ekdosi-prosorinoy-pinaka-katataxis-ependytikon-sc) | 1 | no period declared (AS_NEEDED): last upload 163 days ago |
+| S23 | [Athens Business Open Data - STIRData model](https://data.gov.gr/dataset/athens-business-open-data-stirdata-model) | n/d | NOT_PLANNED: declared as not updated without a stated period: no upload date on the portal, not measurable from the metadata |
+| S24 | [ΑΠΟΦΑΣΕΙΣ ΕΓΚΡΙΣΗΣ ΠΕΡΙΒΑΛΛΟΝΤΙΚΩΝ ΟΡΩΝ (ΛΕΣΒΟΣ-ΛΗΜΝΟΣ)](https://data.gov.gr/dataset/apofaseis-egkrisis-perivallontikon-oron-lesvos-limnos) | 1 | NOT_PLANNED: declared as not updated without a stated period: last upload 180 days ago |
+| S25 | [ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΦΕΒΡΟΥΑΡΙΟΥ 2017](https://data.gov.gr/dataset/statistika-diatrofhs-febroyarioy-2017) | 2 | NOT_PLANNED: declared as not updated, and the title or description states the period of the data (original upload date for 1 file copied by the migration) |
+| S26 | [ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΜΑΡΤΙΟΣ 2020](https://data.gov.gr/dataset/statistika-ix8yoskalas-8essalonikhs-martios-2020) | 2 | NOT_PLANNED: declared as not updated, and the title or description states the period of the data |
+| S27 | [ΤΡΟΠΟΠΟΙΗΣΗ ΡΥΜΟΤΟΜΙΚΟΥ (ΦΕΚ 463/Δ/1998-07-03)](https://data.gov.gr/dataset/gis-agrinio-wms-only-agriniotrm-trm_ras_123107fs000463_1998_geo) | n/d | no period declared (none): no upload date on the portal, not measurable from the metadata |
+| S28 | [Σχέδιο ΠΕ περιοχής Ατσαλένιο / Μωσαϊκό](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliopef-pef_ras_atsalenio_mosaic_geo) | n/d | no period declared (none): no upload date on the portal, not measurable from the metadata |
+| S29 | [ΠΙΝΑΚΕΣ ΤΙΜΟΛΗΨΙΩΝ ΣΥΡΟΥ](https://data.gov.gr/dataset/pinakes-timolhpsiwn-syroy) | 2 | NOT_PLANNED: declared as not updated, and the title or description states the period of the data (original upload date for 1 file copied by the migration) |
+| S30 | [Διάγραμμα Τροποποιήσεως του Ρυμοτομικού Σχεδίου της Πόλης Χανίων](https://data.gov.gr/dataset/gis-chania-wms-only-chaniatsp-tsp_ras_fek_2003_739_d_200_geo) | n/d | no period declared (none): no upload date on the portal, not measurable from the metadata |
+| S31 | [ΠΡΟΓΡΑΜΜΑΤΙΚΕΣ ΣΥΜΒΑΣΕΙΣ ΠΕΡΙΦΕΡΕΙΑΣ ΑΤΤΙΚΗΣ](https://data.gov.gr/dataset/programmatikes-symbaseis-perifereias-attikhs) | 0 | NOT_PLANNED: declared as not updated without a stated period: last upload 2348 days ago (original upload date for 3 files copied by the migration) |
+| S32 | [Περιβαλλοντικοί έλεγχοι έτους 2014 από τη Δ/νση Περιβάλλοντος & Χωρικού Σχεδιασμού Π.Δ.Ε.](https://data.gov.gr/dataset/periballontikoi-elegxoi-etoys-2014-apo-th-d-nsh-periballontos-and-xwrikoy-sxediasmoy-p-d-e) | 2 | NOT_PLANNED: declared as not updated, and the title or description states the period of the data (original upload date for 2 files copied by the migration) |
+| S33 | [Διάγραμμα - ΦΕΚ 130/Δ/2001-02-21](https://data.gov.gr/dataset/gis-maroussi-wms-only-maroussirym-rym_015784fs000130_2001e) | n/d | no period declared (none): no upload date on the portal, not measurable from the metadata |
+| S34 | [Αποθετήριο ΤΕΧΝΗ](https://data.gov.gr/dataset/ekt-searchculture-dataset-__-15) | n/d | no period declared (IRREG): no upload date on the portal, not measurable from the metadata |
+| S35 | [Συνεδριάσεις Επιτροπής Αθλητισμού & Παιδείας Περιφέρειας Αττικής](https://data.gov.gr/dataset/attica-443-synedriaseis-epitrophs-athlhtismoy-paideias-perifereias-attikhs) | n/d | no period declared (none): no upload date on the portal, not measurable from the metadata |
+| S36 | [Διάγραμμα Τροποποίησης - T1936A404_69912_500_01](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliotsp-t1936a404_69912_500_01) | n/d | no period declared (none): no upload date on the portal, not measurable from the metadata |
+
+Sample: 8 datasets with 2, 12 datasets with 1, 2 datasets with 0, 14 not determined.
+
+## Q6 Format (5-star scale)
+
+| ID | Dataset | Proposed | Reason |
+| --- | --- | ---: | --- |
+| S01 | [Γεωτεμάχια (όρια και ΚΑΕΚ) των περιοχών του "Λειτουργούντος Κτηματολογίου"](https://data.gov.gr/dataset/geotemachia-oria-kai-kaek-ton-periochon-toy-leitoyrgoyntos-ktimatologioy) | 1 | 2 stars: vendor-specific structured format: 13 at 2 stars |
+| S02 | [Καλλικρατικοί Δήμοι](https://data.gov.gr/dataset/gis-ypen-wfd-wms-kallikratikoi_dimoi) | 2 | 3 stars or more: open structured format: 4 at 3 stars, 1 at 2 stars, 2 at 1 star |
+| S03 | [Δρομολόγια Σταθερών Συγκοινωνιών (ΜΕΤΡΟ, ΗΣΑΠ, ΤΡΑΜ)](https://data.gov.gr/dataset/dromologia-statheron-sygkoinonion-metro-isap-tram) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
+| S04 | [Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης](https://data.gov.gr/dataset/simeia-ydrolipsias-tis-geovasis-emsy-ethniko-mitroo-simeion-ydrolipsias-periochi-anatolikis-makedoni) | 1 | 2 stars: vendor-specific structured format: 4 at 2 stars |
+| S05 | [Λίστα με Μονάδες Φροντίδας Ηλικιωμένων](https://data.gov.gr/dataset/attica-43-lista-me-monades-frontidas-hlikiwmenwn) | 0 | 1 star: unstructured format or map view: 2 at 1 star |
+| S06 | [Τροχαία ατυχήματα](https://data.gov.gr/dataset/troxaia-atyxhmata) | 1 | 2 stars: vendor-specific structured format: 12 at 2 stars |
+| S07 | [Διαχείριση Στοιχείων Παραγωγής Νωπού Γάλακτος](https://data.gov.gr/dataset/diacheirisi-stoicheion-paragogis-nopoy-galaktos) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
+| S08 | ["ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ ΔΗΜΟΣΙΑΣ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ ΔΙΕΥΘΥΝΣΗ ΕΚΠΑΙΔΕΥΣΗΣ ΓΙΑ ΤΟ ΣΧΟΛΙΚΟ ΕΤΟΣ 2024-2025 "](https://data.gov.gr/dataset/arithmos-ekpaideytikon-deyterovathmia-eidikotita-schesi-ergasias-2025) | 1 | 2 stars: vendor-specific structured format: 1 at 2 stars |
+| S09 | [Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής](https://data.gov.gr/dataset/attica-92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020) | 1 | 2 stars: vendor-specific structured format: 6 at 2 stars |
+| S10 | [ΕΝΑΡΜΟΝΙΣΜΕΝΟΣ ΔΕΙΚΤΗΣ ΤΙΜΩΝ ΚΑΤΑΝΑΛΩΤΗ (ΕνΔΤΚ)](https://data.gov.gr/dataset/enarmonismenos-deiktis-timon-katanaloti-endtk) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
+| S11 | [Δρομολόγια Οδικών Συγκοινωνιών (Λεωφορεία, Τρόλεϊ)](https://data.gov.gr/dataset/dromologia-odikon-sygkoinonion-leoforeia-trolei) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
+| S12 | [Δεδομένα αστικών συγκοινωνιών Π.Ε. Θεσσαλονίκης](https://data.gov.gr/dataset/dedomena-astikon-sygkoinonion-p-e-thessalonikis) | 2 | 3 stars or more: open structured format: 12 at 3 stars |
+| S13 | [Σύνολα Δεδομένων Οργανισμού Αστικών Συγκοινωνιών - GTFS](https://data.gov.gr/dataset/oasth-gtfs) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
+| S14 | [Υπηρεσίες Δήμου Πατρέων](https://data.gov.gr/dataset/ypiresies-dimoy-patreon) | 2 | 3 stars or more: open structured format: 131 at 3 stars |
+| S15 | [ΧΩΡΟΙ - ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ](https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-prosvasi) | 2 | 3 stars or more: open structured format: 2 at 3 stars, 1 at 2 stars |
+| S16 | [Θεσμοθετημένες περιοχές NATURA 2000](https://data.gov.gr/dataset/thesmothetimenes-perioches-natura-2000) | 1 | 2 stars: vendor-specific structured format: 1 at 2 stars |
+| S17 | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) | 1 | 2 stars: vendor-specific structured format: 1 at 2 stars, 1 at 1 star |
+| S18 | [Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018](https://data.gov.gr/dataset/gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012_2018) | 2 | 3 stars or more: open structured format: 4 at 3 stars, 1 at 2 stars, 2 at 1 star |
+| S19 | [Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ](https://data.gov.gr/dataset/emy-station-189) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
+| S20 | [Ημερήσιες μετεωρολογικές παράμετροι για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς](https://data.gov.gr/dataset/stations-data) | n/d | undetermined: 1 archive(s) or resource(s) without a known format |
+| S21 | [Βροχομετρικά στοιχεία 56 σταθμών της Νήσου Κρήτης](https://data.gov.gr/dataset/apd-kritis-harv2-56) | 0 | 1 star: unstructured format or map view: 2 at 1 star; provisional, 4 archive(s) with unknown content could raise it |
+| S22 | [Προσωρινοί πίνακες κατάταξης - Γ.Πρ. 21487- 13-03-2024 - Έκδοση προσωρινού πίνακα κατάταξης επενδυτικών σχεδίων που υποβλήθηκαν προς υπαγωγή στο καθεστώς ενίσχυσης "Ενίσχυση Τουριστικών Επενδύσεων" (β΄ κύκλος) στο Υπουργείο Ανάπτυξης](https://data.gov.gr/dataset/prosorinoi-pinakes-katataxis-g-pr-21487-13-03-2024-ekdosi-prosorinoy-pinaka-katataxis-ependytikon-sc) | 0 | 1 star: unstructured format or map view: 1 at 1 star |
+| S23 | [Athens Business Open Data - STIRData model](https://data.gov.gr/dataset/athens-business-open-data-stirdata-model) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
+| S24 | [ΑΠΟΦΑΣΕΙΣ ΕΓΚΡΙΣΗΣ ΠΕΡΙΒΑΛΛΟΝΤΙΚΩΝ ΟΡΩΝ (ΛΕΣΒΟΣ-ΛΗΜΝΟΣ)](https://data.gov.gr/dataset/apofaseis-egkrisis-perivallontikon-oron-lesvos-limnos) | 2 | 3 stars or more: open structured format: 7 at 3 stars |
+| S25 | [ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΦΕΒΡΟΥΑΡΙΟΥ 2017](https://data.gov.gr/dataset/statistika-diatrofhs-febroyarioy-2017) | 1 | 2 stars: vendor-specific structured format: 1 at 2 stars |
+| S26 | [ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΜΑΡΤΙΟΣ 2020](https://data.gov.gr/dataset/statistika-ix8yoskalas-8essalonikhs-martios-2020) | 1 | 2 stars: vendor-specific structured format: 1 at 2 stars |
+| S27 | [ΤΡΟΠΟΠΟΙΗΣΗ ΡΥΜΟΤΟΜΙΚΟΥ (ΦΕΚ 463/Δ/1998-07-03)](https://data.gov.gr/dataset/gis-agrinio-wms-only-agriniotrm-trm_ras_123107fs000463_1998_geo) | 0 | 1 star: unstructured format or map view: 3 at 1 star |
+| S28 | [Σχέδιο ΠΕ περιοχής Ατσαλένιο / Μωσαϊκό](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliopef-pef_ras_atsalenio_mosaic_geo) | 0 | 1 star: unstructured format or map view: 3 at 1 star |
+| S29 | [ΠΙΝΑΚΕΣ ΤΙΜΟΛΗΨΙΩΝ ΣΥΡΟΥ](https://data.gov.gr/dataset/pinakes-timolhpsiwn-syroy) | 1 | 2 stars: vendor-specific structured format: 1 at 2 stars |
+| S30 | [Διάγραμμα Τροποποιήσεως του Ρυμοτομικού Σχεδίου της Πόλης Χανίων](https://data.gov.gr/dataset/gis-chania-wms-only-chaniatsp-tsp_ras_fek_2003_739_d_200_geo) | 0 | 1 star: unstructured format or map view: 3 at 1 star |
+| S31 | [ΠΡΟΓΡΑΜΜΑΤΙΚΕΣ ΣΥΜΒΑΣΕΙΣ ΠΕΡΙΦΕΡΕΙΑΣ ΑΤΤΙΚΗΣ](https://data.gov.gr/dataset/programmatikes-symbaseis-perifereias-attikhs) | 1 | 2 stars: vendor-specific structured format: 3 at 2 stars |
+| S32 | [Περιβαλλοντικοί έλεγχοι έτους 2014 από τη Δ/νση Περιβάλλοντος & Χωρικού Σχεδιασμού Π.Δ.Ε.](https://data.gov.gr/dataset/periballontikoi-elegxoi-etoys-2014-apo-th-d-nsh-periballontos-and-xwrikoy-sxediasmoy-p-d-e) | 1 | 2 stars: vendor-specific structured format: 2 at 2 stars |
+| S33 | [Διάγραμμα - ΦΕΚ 130/Δ/2001-02-21](https://data.gov.gr/dataset/gis-maroussi-wms-only-maroussirym-rym_015784fs000130_2001e) | 0 | 1 star: unstructured format or map view: 3 at 1 star |
+| S34 | [Αποθετήριο ΤΕΧΝΗ](https://data.gov.gr/dataset/ekt-searchculture-dataset-__-15) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
+| S35 | [Συνεδριάσεις Επιτροπής Αθλητισμού & Παιδείας Περιφέρειας Αττικής](https://data.gov.gr/dataset/attica-443-synedriaseis-epitrophs-athlhtismoy-paideias-perifereias-attikhs) | 0 | 1 star: unstructured format or map view: 1 at 1 star |
+| S36 | [Διάγραμμα Τροποποίησης - T1936A404_69912_500_01](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliotsp-t1936a404_69912_500_01) | 0 | 1 star: unstructured format or map view: 3 at 1 star |
+
+Sample: 14 datasets with 2, 12 datasets with 1, 9 datasets with 0, 1 not determined.

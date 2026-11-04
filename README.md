@@ -67,7 +67,7 @@ If the results are identical to the published ones, `git status` shows no change
 
 ## Status
 
-Phases 1 and 2 (catalogue snapshot, first profile, selection of the sample and assessment criteria) are complete. Phase 3, the automated checks, is in progress: the checks are added to `04_metadata_checks.py` one criterion at a time, as the rule of each criterion is approved (October–November 2026).
+Phases 1 and 2 (catalogue snapshot, first profile, selection of the sample and assessment criteria) are complete. Phase 3, the assessment, is in progress: the automated checks of the metadata are complete for the whole catalogue (`04_metadata_checks.py`, all the criteria that the metadata allow, each rule approved and its proposed scores examined on the 36 datasets of the sample); the checks of the files of the sample and the manual criteria follow (November 2026).
 
 | Script | Function | Output |
 | --- | --- | --- |
@@ -75,5 +75,5 @@ Phases 1 and 2 (catalogue snapshot, first profile, selection of the sample and a
 | `01_snapshot.py` | Snapshot of the complete catalogue | `data/raw/catalog_YYYY-MM-DD.jsonl.gz` and `.manifest.json` |
 | `02_catalog_profile.py` | Catalogue profile: one row per dataset and summary tables | `data/processed/catalog_flat_YYYY-MM-DD.csv` and `outputs/profile_YYYY-MM-DD/` |
 | `03_sample.py` | Selection of the 36 datasets of the sample: 24 high-value, 12 for comparison | `data/processed/sample.csv`, `sample_reserves.csv` and `outputs/sample_YYYY-MM-DD/` |
-| `04_metadata_checks.py` | Automated checks of the metadata on the whole catalogue, with a proposed score and the reason for every dataset (M1, M2, M3, M4, M7 and M9 so far) | `data/processed/metadata_checks_YYYY-MM-DD.csv` and `outputs/checks_YYYY-MM-DD/` |
+| `04_metadata_checks.py` | Automated checks of the metadata on the whole catalogue, with a proposed score and the reason for every dataset (M1, M2, M3, M4, M6, M7, M9, Q6 and the metadata part of Q5) | `data/processed/metadata_checks_YYYY-MM-DD.csv` and `outputs/checks_YYYY-MM-DD/` |
 | `criteria_views.py` | Readable versions of the assessment criteria; run whenever `criteria/criteria.csv` changes | `criteria/criteria.xlsx` and `criteria/criteria.md` |

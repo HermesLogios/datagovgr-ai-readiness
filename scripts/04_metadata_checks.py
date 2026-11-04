@@ -25,11 +25,16 @@ Checks implemented so far:
   M3  Controlled vocabularies: theme, update frequency and the format of every resource given
       with terms of the EU vocabularies (data-theme, frequency, file-type) or the IANA media types.
   M4  Licence: an open licence declared clearly for every resource.
+  M6  Mode of distribution: API, direct link to a file, map view or web page.
   M7  Persistent identifier: a permanent identifier for the dataset and stable addresses for its
       resources.
   M9  High-value designation: the marking of a dataset as high-value in its metadata.
-  The other checks of the metadata (M6, Q6 and the metadata part of Q5) are added one by one, as
-  the rule of each criterion is approved.
+  Q5  Timeliness, metadata part: the declared update frequency against the last change known to the
+      portal; the final score of the sample comes from the dates inside the data and the second
+      snapshot.
+  Q6  Format (5-star scale): the most open format among the resources, from the declared formats.
+  These are all the checks that the metadata allow; the other criteria are assessed on the files of
+  the sample (05_resource_profile.py) and by hand.
 
 Method notes:
   - The automatic "download all" ZIP bundle that the portal generates for every dataset is not a
@@ -72,6 +77,21 @@ Method notes:
     portal neither shows nor exports, does not count: most of its values come from the migration from
     the previous portal, the rest from automated publication. It is recorded in m4_dataset_field, and
     a contradiction with the licences of the resources is recorded in m4_dataset_field_conflict.
+  - M6. The mode of access of each resource is read from its address, its declared format and the
+    result of the portal's own link checker (DECISIONS.md #34): an API or data service (a WFS, WCS
+    or OAI-PMH request, an ArcGIS REST endpoint, an active DataStore table of the portal, a link to
+    a data service of the portal); a direct link to a file (a file uploaded on the portal, an
+    address ending in a file extension, an address that the link checker downloaded as a file, or,
+    without any such sign, a declared file format, which is recorded as not verified); a map view (a
+    WMS request or endpoint); a web page (an address that the link checker received as HTML, a
+    declared format URL, HTML or LINK or no format, a service format declared on an address that is
+    not a service endpoint, a dynamic page address such as .php or .aspx); or no address. The
+    dataset scores the best mode of its resources: an API or a direct file link scores 2, only map
+    views or web pages score 1, no address on any resource or no resources scores 0. Whether a link
+    delivers the complete data, whether a dataset is split into arbitrary parts, whether a web page
+    offers a download, and whether the links work are verified by the download test of the sample
+    (Q1), which can lower the score; the links of the Region of Attica with a token (?fdl=...) count
+    as direct file links here, since the link delivers the file (their persistence is scored by M7).
   - M7. The portal gives every dataset a permanent identifier (UUID) and a URI built on it
     (https://data.gov.gr/dataset/<uuid>), both exported in DCAT-AP (dct:identifier and the URI of
     the dataset), and every resource a URI of its own; a renamed dataset keeps them. The criterion
@@ -99,6 +119,41 @@ Method notes:
     publisher, which the portal accepts without validation: whether the declared category is the
     right one, and whether a marked dataset belongs to the Annex of the Regulation at all, is judged
     by hand, in the compliance table of the high-value datasets (#28).
+  - Q5. The declared frequency (frequency, a term of the EU frequency vocabulary) is read in three
+    groups (DECISIONS.md #36): a periodic frequency (annual, monthly, daily..., with its period in
+    days; continuous counts with a period of one day), "not updated" (not planned, never) and no
+    usable period (no frequency, unknown as decided in #24, irregular, as needed, other). The last
+    change is the newest upload date of a resource (last_modified). The migration from the previous
+    portal (November 2025) copied the files and wrote the date of the copy into last_modified, while
+    keeping the original upload date in created: for a resource created before its dataset was
+    created on the portal and modified within a day of that creation, the upload date is its created
+    date. When no resource was uploaded, only the date of the resource record or of the metadata
+    exists, which is the history of the portal and not of the data, and the dataset is not measurable
+    from the metadata. With an upload date, a periodic frequency scores 2 within two periods (the
+    declared one plus one of tolerance), 1 up to four periods and 0 beyond; no usable period scores 1
+    within 12 months and 0 beyond. A dataset declared as not updated scores 2 when its title or
+    description states the past period of its data (a year or a date, numbers of laws and decisions
+    such as 4727/2020 excluded); otherwise the declaration is not supported and the no-period rule
+    applies. Almost every "not planned" in the catalogue is the default value written by the
+    migration (keyword "Από μετάπτωση"), recorded in q5_migrated. The final score of the sample uses
+    the newest date inside the data (Step 2) and the changes between the two snapshots.
+  - Q6. Each resource is placed on the 5-star scale from what the metadata say (DECISIONS.md #35):
+    a map view (WMS) or a web page is 1 star; a WFS request is rated by its outputFormat (CSV,
+    JSON, KML, GML 3 stars; shape-zip, Excel 2 stars), a WFS service, a DataStore table or an
+    OAI-PMH request 3 stars, an ArcGIS REST service 2 stars; a file is rated by its declared format
+    (open structured formats such as CSV, JSON, GeoJSON, XML, GML, KML, GeoPackage, GeoTIFF,
+    NetCDF, RDF, ODS 3 stars; vendor-specific structured formats such as XLS, XLSX, SHP, MDB, DWG
+    2 stars; unstructured formats such as PDF, DOC, TXT, images, HTML 1 star), failing that by the
+    extension of its address, failing that by the media type that the portal's link checker
+    received. A compressed archive (ZIP, RAR, GZ) is rated only when its name says what it holds
+    (GTFS, shapefile, CSV...); otherwise it is undetermined, and so is a resource without any
+    format. The dataset scores its best resource: 3 stars or more scores 2, 2 stars scores 1,
+    1 star scores 0; a dataset whose resources are all undetermined has no proposed score, and a
+    score that undetermined archives could raise is marked provisional. The declared format is
+    verified against the content of the files in the download test of the sample (Step 2), which
+    can change the score in either direction: a file declared CSV that is a PDF counts as PDF, a
+    TXT file that holds a delimited table counts as CSV, a TIFF with georeferencing counts as
+    GeoTIFF.
 
 Usage (from the project root, with the .venv activated):
     python scripts\04_metadata_checks.py
@@ -116,6 +171,7 @@ import json
 import re
 import sys
 from collections import Counter
+from datetime import date, datetime
 from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
@@ -193,6 +249,99 @@ LICENCE_FAMILIES = {
     "odc-odbl": "odbl", "ODC_BL": "odbl", "gfdl": "gfdl", "GFDL": "gfdl",
     "cc-nc": "nc", "other-nc": "nc", "other-closed": "closed",
 }
+
+# M6: mode of distribution. The mode of each resource is read from its address, its declared
+# format and the result of the portal's link checker (DECISIONS.md #34).
+FILE_EXTENSIONS = {
+    "csv", "tsv", "txt", "json", "geojson", "topojson", "xml", "gml", "kml", "kmz", "gpkg", "rdf", "ttl", "nt",
+    "jsonld", "xls", "xlsx", "xlsm", "xlsb", "ods", "doc", "docx", "odt", "pdf", "rtf", "zip", "gz", "7z", "rar",
+    "tar", "tgz", "shp", "dbf", "shx", "prj", "tif", "tiff", "img", "nc", "hdf", "las", "laz", "dxf", "dwg",
+    "mdb", "accdb", "sql", "sqlite", "db", "parquet", "jpg", "jpeg", "png", "gif", "svg", "mp4", "mp3", "wav",
+    "xsd", "ppt", "pptx", "epub", "ics", "osm", "pbf", "dat", "sav", "dta", "cif",
+}
+PAGE_EXTENSIONS = {"html", "htm", "php", "asp", "aspx", "ashx", "jsp", "jspx", "cfm", "do", "action", "cgi"}
+PAGE_FORMATS = {"", "HTML", "URL", "LINK", "WEB", "WEBPAGE", "WEB PAGE", "UNKNOWN", "ΙΣΤΟΣΕΛΙΔΑ", "TASK-FLOW", "RSS"}
+MAP_FORMATS = {"WMS", "WMTS", "TMS", "XYZ"}
+SERVICE_FORMATS = {"WFS", "WCS", "API", "REST", "ESRI REST", "ARCGIS", "ARCGIS GEOSERVICES REST API", "ARCGIS REST",
+                   "OGC API", "SPARQL", "OAI-PMH", "ODATA", "JSON API", "GEOSERVICES"}
+DATA_SERVICE_URI = "data-service"           # a link to a data service record of the portal
+HTML_MEDIA_TYPES = {"text/html", "application/xhtml+xml"}
+# mode of access: (score when it is the best mode of the dataset, column of the CSV, name in the reports)
+MODES = {
+    "api": (2, "m6_api", "API or data service (WFS, DataStore, OAI-PMH, ArcGIS REST, data service of the portal)"),
+    "file": (2, "m6_file", "direct link to a file"),
+    "map": (1, "m6_map", "map view (WMS)"),
+    "page": (1, "m6_page", "web page"),
+    "none": (0, "m6_without_address", "no address"),
+}
+MODE_WORDS = {   # singular and plural, for the reason of each dataset
+    "api": ("API", "API"), "file": ("file", "files"), "map": ("map view", "map views"),
+    "page": ("web page", "web pages"), "none": ("without an address", "without an address"),
+}
+
+# Q5: timeliness, metadata part (DECISIONS.md #36). Period of the EU frequency codes, in days.
+FREQUENCY_PERIOD_DAYS = {
+    "1MIN": 1 / 1440, "5MIN": 5 / 1440, "10MIN": 10 / 1440, "15MIN": 15 / 1440, "30MIN": 30 / 1440,
+    "HOURLY": 1 / 24, "BIHOURLY": 2 / 24, "TRIHOURLY": 3 / 24, "DAILY": 1, "DAILY_2": 0.5,
+    "WEEKLY": 7, "WEEKLY_2": 3.5, "WEEKLY_3": 7 / 3, "BIWEEKLY": 14,
+    "MONTHLY": 30.44, "MONTHLY_2": 15.22, "MONTHLY_3": 10.15, "BIMONTHLY": 60.88, "QUARTERLY": 91.31,
+    "ANNUAL": 365.25, "ANNUAL_2": 182.63, "ANNUAL_3": 121.75, "BIENNIAL": 730.5, "TRIENNIAL": 1095.75,
+    "QUADRENNIAL": 1461, "QUINQUENNIAL": 1826.25, "DECENNIAL": 3652.5, "BIDECENNIAL": 7305, "TRIDECENNIAL": 10957.5,
+    "CONT": 1, "UPDATE_CONT": 1,      # continuous: the data should be current within a day
+}
+FREQUENCY_NOT_UPDATED = {"NOT_PLANNED", "NEVER"}
+MIGRATION_KEYWORD = "Από μετάπτωση"   # keyword of the datasets migrated from the previous portal
+MIGRATION_COPY_SECONDS = 86400        # a file modified within a day of the creation of its dataset was copied
+PERIOD_YEAR = re.compile(r"(?<![\d/])(19[5-9]\d|20[0-2]\d)(?!\d)")   # a year from 1950 to 2029
+ACT_NUMBER = re.compile(r"\d+\s*/\s*(?:19|20)\d\d")                  # numbers of laws and decisions, e.g. 4727/2020
+Q5_WITHIN_PERIODS = 2      # the declared period plus one period of tolerance
+Q5_LATE_PERIODS = 4        # one to three periods late
+Q5_NO_PERIOD_DAYS = 365    # no usable period: updated in the last 12 months
+REFERENCE_DATE: date | None = None   # the date of the snapshot, set by main()
+
+# Q6: format on the 5-star scale, from the declared formats (DECISIONS.md #35). Formats are compared
+# in upper case, without surrounding dots.
+OPEN_FORMATS = {           # 3 stars or more: open, non-proprietary, structured
+    "CSV", "TSV", "JSON", "GEOJSON", "TOPOJSON", "XML", "GML", "GML2", "GML3", "KML", "KMZ", "GPKG", "GEOPACKAGE",
+    "GEOTIFF", "NETCDF", "HDF5", "RDF", "RDF_XML", "RDF_TURTLE", "RDF_TTL", "RDF_N_TRIPLES", "N_TRIPLES", "RDF_N_QUADS",
+    "TURTLE", "TTL", "N3", "JSON_LD", "JSONLD", "ODS", "PARQUET", "SQLITE", "SQL", "ATOM", "RSS", "GRIB", "LAS", "LAZ",
+    "ICS", "OSM", "PBF", "GTFS", "GPX", "CIF", "YAML", "WFS", "WCS", "CSW", "API", "REST", "JSON API", "ODATA", "SPARQL",
+    "OAI-PMH",
+}
+PROPRIETARY_FORMATS = {    # 2 stars: structured, but vendor-specific
+    "XLS", "XLSX", "XLSM", "XLSB", "EXCEL", "SHP", "SHAPE-ZIP", "SHAPEZIP", "SHP ZIP", "SHP-ZIP", "ZIP SHP", "SHAPEFILE",
+    "ESRI SHAPEFILE", "DBF", "SHX",
+    "PRJ", "SBN", "SBX", "MDB", "ACCDB", "DWG", "DXF", "DGN", "GDB", "FILEGDB", "E00", "SAV", "DTA", "MXD", "TAB", "MIF",
+    "ECW", "IMG", "LYR", "QGS", "SLD", "SXC", "WK1", "NUMBERS", "ESRI REST", "ARCGIS", "ARCGIS REST",
+    "ARCGIS GEOSERVICES REST API", "GEOSERVICES",
+}
+UNSTRUCTURED_FORMATS = {   # 1 star
+    "PDF", "DOC", "DOCX", "ODT", "RTF", "TXT", "MD", "MARKDOWN", "LOG", "HTML", "HTM", "URL", "LINK", "WEB", "WEBPAGE",
+    "WEB PAGE", "ΙΣΤΟΣΕΛΙΔΑ", "TASK-FLOW", "JPEG", "JPG", "PNG", "GIF", "BMP", "TIF", "TIFF", "SVG", "PPT", "PPTX",
+    "ODP", "MP4", "MP3", "WAV", "AVI", "WMS", "WMTS", "EPUB", "XPS", "MSG", "EML", "PHP", "ASHX", "ASPX", "JSP",
+}
+ARCHIVE_FORMATS = {"ZIP", "RAR", "7Z", "GZ", "GZIP", "TAR", "TGZ", "TAR.GZ", "BZ2"}
+WFS_OUTPUT_STARS = {       # outputFormat of a WFS GetFeature request
+    "csv": 3, "text/csv": 3, "json": 3, "application/json": 3, "geojson": 3, "kml": 3, "gml2": 3, "gml3": 3,
+    "gml32": 3, "application/vnd.google-earth.kml+xml": 3, "shape-zip": 2, "shapezip": 2, "excel": 2, "excel2007": 2,
+}
+MEDIA_TYPE_STARS = {       # media type received by the portal's link checker, when nothing else is known
+    "text/csv": 3, "application/json": 3, "application/geo+json": 3, "application/xml": 3, "text/xml": 3,
+    "application/gml+xml": 3, "application/vnd.google-earth.kml+xml": 3, "application/rdf+xml": 3,
+    "application/vnd.oasis.opendocument.spreadsheet": 3, "application/vnd.ms-excel": 2,
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": 2, "application/pdf": 1, "text/html": 1,
+    "application/msword": 1, "application/vnd.openxmlformats-officedocument.wordprocessingml.document": 1,
+    "image/jpeg": 1, "image/png": 1, "image/tiff": 1,
+}
+NAME_HINTS = [             # a format named in the resource name or at the end of its address (archives, no format)
+    ("gtfs", 3, "GTFS (zipped CSV)"), ("turtle", 3, "RDF Turtle"), ("ttl", 3, "RDF Turtle"), ("rdf", 3, "RDF"),
+    ("geojson", 3, "GeoJSON"), ("json", 3, "JSON"), ("csv", 3, "CSV"), ("xml", 3, "XML"), ("kml", 3, "KML"),
+    ("shapefile", 2, "shapefile"), ("shape", 2, "shapefile"), ("shp", 2, "shapefile"), ("xlsx", 2, "Excel"),
+    ("xls", 2, "Excel"), ("excel", 2, "Excel"), ("pdf", 1, "PDF"),
+]
+STARS = {3: "3 stars or more: open structured format", 2: "2 stars: vendor-specific structured format",
+         1: "1 star: unstructured format or map view", 0: "undetermined"}
+Q6_SCORE = {3: 2, 2: 1, 1: 0}
 
 # M7: persistent identifiers. The portal gives every dataset and resource a permanent identifier
 # and URI; the criterion is decided by the addresses of the resources (DECISIONS.md #33).
@@ -400,6 +549,194 @@ def address_kind(resource: dict) -> str:
     return "external"
 
 
+def distribution_mode(resource: dict) -> tuple[str, str, bool]:
+    """The mode of access of a resource, for M6: (mode, how it was decided, verified).
+
+    Verified is False when the mode rests on the declared format alone, without a sign in the
+    address or a result of the portal's link checker."""
+    kind = address_kind(resource)
+    if kind == "none":
+        return "none", "no address", True
+    if kind == "datastore":
+        return "api", "DataStore table of the portal (API and download)", True
+    url = str(resource.get("url") or "").strip()
+    parts = urlsplit(url)
+    path = parts.path.lower()
+    query = {key: values[0] for key, values in parse_qs(parts.query.lower(), keep_blank_values=True).items()}
+    declared = str(resource.get("format") or "").strip().upper()
+    for service in resource.get("access_services") or []:
+        if DATA_SERVICE_URI in str((service or {}).get("uri") or ""):
+            return "api", "linked to a data service of the portal", True
+    service = query.get("service", "")
+    if service in ("wfs", "wcs", "sos", "wps") or "verb" in query:
+        return "api", f"{service.upper() or 'OAI-PMH'} request", True
+    if service in ("wms", "wmts"):
+        return "map", f"{service.upper()} request ({query.get('request', '') or 'no request'})", True
+    if service == "csw":
+        return "page", "catalogue service (CSW), metadata not data", True
+    if path.rstrip("/").endswith(("/wfs", "/wcs")) or "/featureserver" in path or "/mapserver" in path \
+            or "/arcgis/rest/" in path:
+        return "api", "service endpoint in the address", True
+    if path.rstrip("/").endswith(("/wms", "/wmts")) or declared in MAP_FORMATS:
+        return "map", "map service endpoint", True
+    if kind == "portal":
+        return "file", "uploaded on the portal", True
+    if declared in SERVICE_FORMATS:
+        return "page", f"declared as a service ({declared}) on an address that is not a service endpoint", True
+    last = path.rsplit("/", 1)[-1]
+    extension = last.rsplit(".", 1)[-1] if "." in last else ""
+    archiver = resource.get("archiver") or {}
+    media = ""
+    if archiver.get("status") == "Archived successfully":
+        media = str(archiver.get("mimetype") or "").split(";")[0].strip().lower()
+    if extension in FILE_EXTENSIONS:
+        return "file", f"file extension (.{extension})", True
+    if media:
+        if media in HTML_MEDIA_TYPES:
+            return "page", "the link checker of the portal received a web page", True
+        return "file", f"the link checker of the portal downloaded a file ({media})", True
+    if extension in PAGE_EXTENSIONS:
+        return "page", f"dynamic page address (.{extension}), not verified", False
+    if declared in PAGE_FORMATS:
+        return "page", f"declared as a page ({declared or 'no format'}), not verified", False
+    return "file", f"declared format {declared}, not verified", False
+
+
+def parse_date(value) -> date | None:
+    """The date of an ISO timestamp of the portal (None when absent or malformed)."""
+    text = str(value or "").strip()
+    if not text:
+        return None
+    try:
+        return datetime.fromisoformat(text[:19]).date()
+    except ValueError:
+        return None
+
+
+def parse_timestamp(value) -> datetime | None:
+    text = str(value or "").strip()
+    if not text:
+        return None
+    try:
+        return datetime.fromisoformat(text[:26])
+    except ValueError:
+        return None
+
+
+def upload_date(resource: dict, dataset_created: datetime | None) -> tuple[date | None, bool]:
+    """The date of the last upload of a resource and whether it was corrected for the migration copy."""
+    modified = parse_timestamp(resource.get("last_modified"))
+    if not modified:
+        return None, False
+    created = parse_timestamp(resource.get("created"))
+    if created and dataset_created and created < dataset_created \
+            and abs((modified - dataset_created).total_seconds()) < MIGRATION_COPY_SECONDS:
+        return created.date(), True
+    return modified.date(), False
+
+
+def last_change(dataset: dict, resources: list[dict]) -> tuple[date | None, str, int]:
+    """The last change known to the portal: (date, source, files corrected for the migration copy).
+
+    The source is "upload", "record", "metadata" or ""."""
+    dataset_created = parse_timestamp(dataset.get("metadata_created"))
+    uploads = [upload_date(r, dataset_created) for r in resources]
+    dates = [d for d, _ in uploads if d]
+    copies = sum(1 for d, corrected in uploads if d and corrected)
+    if dates:
+        return max(dates), "upload", copies
+    records = [d for d in (parse_date(r.get("created")) for r in resources) if d]
+    if records:
+        return max(records), "record", 0
+    modified = parse_date(dataset.get("metadata_modified"))
+    return (modified, "metadata", 0) if modified else (None, "", 0)
+
+
+def period_stated(dataset: dict) -> bool:
+    """The title or the description states a year or a date (numbers of laws and decisions excluded)."""
+    text = f"{visible_text(dataset.get('title'))} {visible_text(dataset.get('notes'))}"
+    return bool(PERIOD_YEAR.search(ACT_NUMBER.sub(" ", text)))
+
+
+def declared_format(resource: dict) -> str:
+    return str(resource.get("format") or "").strip().upper().strip(".")
+
+
+def format_hint(resource: dict) -> tuple[int, str] | None:
+    """A format named in the resource name or at the end of its address (for archives and empty formats)."""
+    name = f"{resource.get('name') or ''} {resource.get('format') or ''}".lower()
+    words = set(re.split(r"[\s()\[\]_.,;:/-]+", name))
+    last = urlsplit(str(resource.get("url") or "").strip()).path.lower().rstrip("/").rsplit("/", 1)[-1]
+    for word, level, label in NAME_HINTS:
+        if word in words or last == word:
+            return level, label
+    return None
+
+
+def format_stars(resource: dict) -> tuple[int, str]:
+    """The level of a resource on the 5-star scale, from the metadata: (3, 2, 1 or 0 = undetermined, reason)."""
+    mode, _, _ = distribution_mode(resource)
+    if mode == "none":
+        return 0, "no address"
+    if mode == "map":
+        return 1, "map view (WMS): a picture of the map, not the data"
+    if mode == "page":
+        return 1, "web page"
+    url = str(resource.get("url") or "").strip()
+    parts = urlsplit(url)
+    path = parts.path.lower()
+    query = {key: values[0] for key, values in parse_qs(parts.query.lower(), keep_blank_values=True).items()}
+    declared = declared_format(resource)
+    if query.get("service") == "wfs":
+        output = query.get("outputformat", "").split(";")[0].strip()
+        if output:
+            return WFS_OUTPUT_STARS.get(output, 3), f"WFS download in {output}"
+        return 3, "WFS service (GML or GeoJSON on request)"
+    if mode == "api":
+        if "verb" in query:
+            return 3, "OAI-PMH request (XML)"
+        if address_kind(resource) == "datastore":
+            return 3, "DataStore table of the portal (CSV and JSON through the API)"
+        if "/arcgis/rest/" in path or "/featureserver" in path or "/mapserver" in path:
+            return 2, "ArcGIS REST service (vendor-specific)"
+        return 3, "data service"
+    if declared in ARCHIVE_FORMATS:
+        hint = format_hint(resource)
+        if hint:
+            return hint[0], f"archive ({declared}) named as {hint[1]}"
+        return 0, f"archive ({declared}) with unknown content"
+    if declared in OPEN_FORMATS:
+        return 3, f"open format {declared}"
+    if declared in PROPRIETARY_FORMATS:
+        return 2, f"vendor-specific format {declared}"
+    if declared in UNSTRUCTURED_FORMATS:
+        return 1, f"unstructured format {declared}"
+    last = path.rsplit("/", 1)[-1]
+    extension = last.rsplit(".", 1)[-1].upper() if "." in last else ""
+    if extension in ARCHIVE_FORMATS:
+        hint = format_hint(resource)
+        if hint:
+            return hint[0], f"archive (.{extension.lower()}) named as {hint[1]}"
+        return 0, f"archive (.{extension.lower()}) with unknown content"
+    if extension in OPEN_FORMATS:
+        return 3, f"open format .{extension.lower()} (address)"
+    if extension in PROPRIETARY_FORMATS:
+        return 2, f"vendor-specific format .{extension.lower()} (address)"
+    if extension in UNSTRUCTURED_FORMATS:
+        return 1, f"unstructured format .{extension.lower()} (address)"
+    archiver = resource.get("archiver") or {}
+    if archiver.get("status") == "Archived successfully":
+        media = str(archiver.get("mimetype") or "").split(";")[0].strip().lower()
+        if media in MEDIA_TYPE_STARS:
+            return MEDIA_TYPE_STARS[media], f"media type received by the portal's link checker: {media}"
+    hint = format_hint(resource)
+    if hint:
+        return hint[0], f"no format declared, named as {hint[1]}"
+    if declared:
+        return 0, f"format {declared} not classed"
+    return 0, "no format declared"
+
+
 def address_host(resource: dict) -> str:
     host = urlsplit(str(resource.get("url") or "").strip()).netloc.lower().rsplit("@", 1)[-1].split(":")[0]
     return host[4:] if host.startswith("www.") else host
@@ -596,6 +933,42 @@ def check_m4(dataset: dict) -> dict:
     }
 
 
+def check_m6(dataset: dict) -> dict:
+    """M6 Mode of distribution: the best mode of access among the resources."""
+    resources = own_resources(dataset)
+    modes = [distribution_mode(resource) for resource in resources]
+    counts = Counter(mode for mode, _, _ in modes)
+    unverified = sum(1 for _, _, verified in modes if not verified)
+    order = list(MODES)
+    best = min((mode for mode, _, _ in modes), key=order.index, default="none")
+    summary = ", ".join(f"{count} {MODE_WORDS[mode][count != 1]}" for mode, count in counts.most_common())
+
+    if not resources:
+        score, reason = 0, "no resources: no access"
+    elif best == "none":
+        score, reason = 0, "no address on any resource"
+    elif best == "api":
+        score, reason = 2, f"API or data service: {summary}"
+    elif best == "file":
+        score, reason = 2, f"direct link to a file: {summary}"
+    elif best == "map":
+        score, reason = 1, f"only a map view (WMS): {summary}"
+    else:
+        score, reason = 1, f"only web pages: {summary}"
+    if unverified and score == 2 and counts["api"] == 0 and counts["file"] == unverified:
+        reason += " (declared format only, not verified)"
+
+    row = {"m6_resources": len(resources)}
+    row.update({column: counts[mode] for mode, (_, column, _) in MODES.items()})
+    row.update({
+        "m6_unverified": unverified,
+        "m6_best_mode": best if resources else "",
+        "m6_score": score,
+        "m6_reason": reason,
+    })
+    return row
+
+
 def check_m7(dataset: dict) -> dict:
     """M7 Persistent identifier: a permanent identifier for the dataset, stable addresses for its resources."""
     resources = own_resources(dataset)
@@ -662,14 +1035,106 @@ def check_m9(dataset: dict) -> dict:
     }
 
 
+def check_q5(dataset: dict) -> dict:
+    """Q5 Timeliness, metadata part: declared frequency against the last upload known to the portal."""
+    resources = own_resources(dataset)
+    code = str(dataset.get("frequency") or "").strip().rstrip("/").rsplit("/", 1)[-1].upper()
+    period = FREQUENCY_PERIOD_DAYS.get(code)
+    group = "periodic" if period else "not updated" if code in FREQUENCY_NOT_UPDATED else "no period"
+    stated = period_stated(dataset) if group == "not updated" else None
+    changed, source, copies = last_change(dataset, resources)
+    age = (REFERENCE_DATE - changed).days if (changed and REFERENCE_DATE) else None
+    periods = round(age / period, 1) if (period and age is not None) else None
+    declared = code or "none"
+    days = f"{age} day{'s' if age != 1 else ''}" if age is not None else ""
+    tags = {str(tag.get("name") or "").strip() for tag in dataset.get("tags") or [] if isinstance(tag, dict)}
+
+    if not resources:
+        score, reason = None, "no resources: nothing to measure"
+    elif group == "not updated" and stated:
+        score, reason = 2, f"{declared}: declared as not updated, and the title or description states the period of the data"
+    elif group == "periodic" and source == "upload":
+        score = 2 if periods <= Q5_WITHIN_PERIODS else 1 if periods <= Q5_LATE_PERIODS else 0
+        reason = f"{declared}: last upload {days} ago, {periods} periods"
+    elif source != "upload":
+        prefix = (f"{declared}" if group == "periodic" else
+                  f"{declared}: declared as not updated without a stated period" if group == "not updated" else
+                  f"no period declared ({declared})")
+        score, reason = None, f"{prefix}: no upload date on the portal, not measurable from the metadata"
+    else:
+        score = 1 if age <= Q5_NO_PERIOD_DAYS else 0
+        prefix = (f"{declared}: declared as not updated without a stated period" if group == "not updated"
+                  else f"no period declared ({declared})")
+        reason = f"{prefix}: last upload {days} ago"
+    if copies and resources:
+        reason += f" (original upload date for {copies} file{'s' if copies != 1 else ''} copied by the migration)"
+
+    return {
+        "q5_frequency": code,
+        "q5_frequency_group": group if resources else "",
+        "q5_period_days": round(period, 2) if period else None,
+        "q5_period_stated": stated,
+        "q5_migrated": MIGRATION_KEYWORD in tags,
+        "q5_last_change": changed.isoformat() if changed else "",
+        "q5_last_change_source": source,
+        "q5_migration_copies": copies,
+        "q5_age_days": age,
+        "q5_periods": periods,
+        "q5_score": score,
+        "q5_reason": reason,
+    }
+
+
+def check_q6(dataset: dict) -> dict:
+    """Q6 Format (5-star scale): the most open format among the resources, from the declared formats."""
+    resources = own_resources(dataset)
+    levels = [format_stars(resource) for resource in resources]
+    counts = Counter(level for level, _ in levels)
+    undetermined = sum(1 for (level, reason) in levels if level == 0 and reason != "no address")
+    known = [level for level, _ in levels if level]
+    best = max(known, default=0)
+    formats = sorted({declared_format(resource) or "(none)" for resource in resources})
+    provisional = bool(undetermined) and best < 3
+
+    if not resources:
+        score, reason = None, "no resources: nothing to rate"
+    elif best == 0:
+        score, reason = None, (f"undetermined: {undetermined} archive(s) or resource(s) without a known format"
+                               if undetermined else "undetermined: no resource with an address")
+    else:
+        score, reason = Q6_SCORE[best], STARS[best]
+        details = ", ".join(f"{counts[level]} at {level} star{'s' if level != 1 else ''}" for level in (3, 2, 1) if counts[level])
+        reason += f": {details}"
+        if provisional:
+            reason += f"; provisional, {undetermined} archive(s) with unknown content could raise it"
+
+    grouped = Counter(reason for _, reason in levels)
+    return {
+        "q6_resources": len(resources),
+        "q6_levels": "; ".join(f"{count} {reason}" for reason, count in grouped.most_common()),
+        "q6_stars_3": counts[3],
+        "q6_stars_2": counts[2],
+        "q6_stars_1": counts[1],
+        "q6_undetermined": undetermined,
+        "q6_best_stars": best,
+        "q6_provisional": provisional,
+        "q6_formats": "; ".join(formats),
+        "q6_score": score,
+        "q6_reason": reason,
+    }
+
+
 # (criterion id, criterion name, function); the order is the order of the reports.
 CHECKS = [
     ("M1", "Mandatory metadata", check_m1),
     ("M2", "Recommended metadata", check_m2),
     ("M3", "Controlled vocabularies", check_m3),
     ("M4", "Licence", check_m4),
+    ("M6", "Mode of distribution", check_m6),
     ("M7", "Persistent identifier", check_m7),
     ("M9", "High-value designation", check_m9),
+    ("Q5", "Timeliness (metadata part)", check_q5),
+    ("Q6", "Format (5-star scale)", check_q6),
 ]
 
 
@@ -701,6 +1166,18 @@ def read_datasets(snapshot: Path):
 # Reports
 # ---------------------------------------------------------------------------
 
+def q5_general_reason(row) -> str:
+    """The reason of a Q5 score without the dataset-specific details, for the summary."""
+    group, score = row["q5_frequency_group"], row["q5_score"]
+    if group == "periodic":
+        return {2: "periodic frequency, upload within two periods", 1: "periodic frequency, two to four periods late",
+                0: "periodic frequency, more than four periods late"}[int(score)]
+    if group == "not updated" and row["q5_period_stated"] == True:  # noqa: E712
+        return "declared as not updated, period of the data stated"
+    prefix = "declared as not updated without a stated period" if group == "not updated" else "no usable period"
+    return f"{prefix}, " + ("upload in the last 12 months" if int(score) == 1 else "no upload for more than 12 months")
+
+
 def build_summary(frame: pd.DataFrame, date: str, snapshot_name: str) -> str:
     n = len(frame)
     lines = [
@@ -720,6 +1197,38 @@ def build_summary(frame: pd.DataFrame, date: str, snapshot_name: str) -> str:
                       f"{fmt_int(len(subset))} datasets that carry any high-value marking; the other "
                       f"{fmt_int(unmarked)} datasets are not marked, and whether they are high-value by content "
                       "is judged by hand (in the sample: the high-value group only)."]
+        if code == "Q5":
+            subset = frame[frame["q5_score"].notna()]
+            groups = frame["q5_frequency_group"].value_counts()
+            not_updated = frame[frame["q5_frequency_group"] == "not updated"]
+            migrated_default = int((not_updated["q5_migrated"] == True).sum())  # noqa: E712
+            uploads = int((frame["q5_last_change_source"] == "upload").sum())
+            corrected = int((frame["q5_migration_copies"] > 0).sum())
+            no_resources = int((frame["q5_frequency_group"] == "").sum())
+            not_measurable = n - len(subset) - no_resources
+            lines += ["", "Metadata part only: the declared frequency against the last upload known to the portal. "
+                      f"Declared frequency: periodic {fmt_int(int(groups.get('periodic', 0)))} datasets (continuous "
+                      f"counted with a period of one day), not updated {fmt_int(int(groups.get('not updated', 0)))} (of "
+                      f"which {fmt_int(migrated_default)} carry the keyword of the migration from the previous portal, "
+                      "whose default value it is), no usable period "
+                      f"{fmt_int(int(groups.get('no period', 0)))}. An upload date exists for {fmt_int(uploads)} datasets; "
+                      f"in {fmt_int(corrected)} of them the date written by the migration copy is replaced by the original "
+                      "upload date. The others carry only the date of their portal record, which is the history of the "
+                      "portal and not of the data. A dataset declared as not updated scores 2 when its title or description "
+                      "states the period of its data; otherwise the rule of no period applies. Counted over the "
+                      f"{fmt_int(len(subset))} measurable datasets; {fmt_int(not_measurable)} datasets are not measurable "
+                      f"from the metadata and {fmt_int(no_resources)} have no resources. The final scores of the sample "
+                      "come from the dates inside the data and from the second snapshot."]
+        if code == "Q6":
+            subset = frame[frame["q6_score"].notna()]
+            no_resources = int((frame["q6_resources"] == 0).sum())
+            undetermined = n - len(subset) - no_resources
+            provisional = int(frame["q6_provisional"].sum())
+            lines += ["", f"Rated from the declared formats, pending the content check of the sample. Counted over the "
+                      f"{fmt_int(len(subset))} datasets whose best resource has a known level; {fmt_int(undetermined)} "
+                      "datasets are undetermined (compressed archives whose content is not named, or no format) and "
+                      f"{fmt_int(no_resources)} have no resources. {fmt_int(provisional)} of the rated datasets are "
+                      "provisional: an archive with unknown content could raise their level."]
         total = len(subset)
         scores = subset[f"{key}_score"].value_counts()
         lines += ["", "| Proposed score | Datasets | Share |", "| --- | ---: | ---: |"]
@@ -734,6 +1243,8 @@ def build_summary(frame: pd.DataFrame, date: str, snapshot_name: str) -> str:
                                 f"description shorter than {MIN_DESCRIPTION_CHARS} characters", regex=True)
                    .str.replace("; no resources (scored by Q1)", "", regex=False)
                    .str.replace(r"; missing .*$", "", regex=True))
+        if code == "Q5":
+            general = subset.apply(q5_general_reason, axis=1)
         lines += ["", "| Reason | Datasets |", "| --- | ---: |"]
         for reason, count in general.value_counts().items():
             lines.append(f"| {md_cell(reason)} | {fmt_int(count)} |")
@@ -779,6 +1290,26 @@ def build_summary(frame: pd.DataFrame, date: str, snapshot_name: str) -> str:
                       f"not scored): filled in {fmt_int(with_field)} datasets ({fmt_pct(with_field, n)}); "
                       f"it contradicts the licences of the resources in {fmt_int(conflicts)} datasets "
                       f"({fmt_pct(conflicts, n)})."]
+        if code == "M6":
+            unverified = int(frame["m6_unverified"].sum())
+            lines += ["", "Mode of access of the resources, read from the address, the declared format and the result "
+                      f"of the portal's link checker; {fmt_int(unverified)} resources are classed from the declared "
+                      "format alone (not verified). The dataset scores its best mode.",
+                      "", "| Mode of access | Score as best mode | Resources | Datasets |", "| --- | ---: | ---: | ---: |"]
+            for mode, (score, column, label) in MODES.items():
+                lines.append(f"| {label} | {score} | {fmt_int(int(frame[column].sum()))} | "
+                             f"{fmt_int(int((frame[column] > 0).sum()))} |")
+            lines += ["", "| Best mode of the dataset | Datasets | Share |", "| --- | ---: | ---: |"]
+            best = frame["m6_best_mode"].value_counts()
+            for mode, (_, _, label) in MODES.items():
+                count = int(best.get(mode, 0))
+                lines.append(f"| {label.split(' (')[0]} | {fmt_int(count)} | {fmt_pct(count, n)} |")
+            lines += ["", "| Organisation with the most datasets offered only as a map view | Datasets | Of its datasets |",
+                      "| --- | ---: | ---: |"]
+            map_only = frame[frame["m6_best_mode"] == "map"]["organization_title"].value_counts()
+            totals = frame["organization_title"].value_counts()
+            for organisation, count in map_only.head(10).items():
+                lines.append(f"| {md_cell(organisation)} | {fmt_int(count)} | {fmt_pct(count, totals.get(organisation, 0))} |")
         if code == "M7":
             lines += ["", "The portal gives every dataset a permanent identifier (UUID) and a URI built on it, both "
                       "exported in DCAT-AP, and every resource a URI of its own; the criterion is decided by the "
@@ -794,6 +1325,47 @@ def build_summary(frame: pd.DataFrame, date: str, snapshot_name: str) -> str:
             lines += ["", "| Site of the changing addresses (most frequent) | Datasets |", "| --- | ---: |"]
             for value, count in hosts.most_common(10):
                 lines.append(f"| {md_cell(value)} | {fmt_int(count)} |")
+        if code == "Q5":
+            lines += ["", "| Declared frequency (EU vocabulary) | Group | Datasets | Share |", "| --- | --- | ---: | ---: |"]
+            for value, count in frame["q5_frequency"].replace("", "(none)").value_counts().head(20).items():
+                group = ("periodic" if value in FREQUENCY_PERIOD_DAYS else "not updated" if value in FREQUENCY_NOT_UPDATED
+                         else "no period")
+                lines.append(f"| {value} | {group} | {fmt_int(int(count))} | {fmt_pct(int(count), n)} |")
+            lines += ["", "| Last change known to the portal | Datasets |", "| --- | ---: |"]
+            for value, label in (("upload", "upload date of a resource (measurable)"),
+                                 ("record", "date of the resource record only (history of the portal)"),
+                                 ("metadata", "date of the metadata only"), ("", "none (no resources)")):
+                count = int((frame["q5_last_change_source"] == value).sum())
+                lines.append(f"| {label} | {fmt_int(count)} |")
+            lines += ["", "| Group | Score 2 | Score 1 | Score 0 | Not measurable |", "| --- | ---: | ---: | ---: | ---: |"]
+            parts = (("periodic", frame["q5_frequency_group"] == "periodic"),
+                     ("not updated, period stated", (frame["q5_frequency_group"] == "not updated") & (frame["q5_period_stated"] == True)),  # noqa: E712
+                     ("not updated, no period stated", (frame["q5_frequency_group"] == "not updated") & (frame["q5_period_stated"] != True)),  # noqa: E712
+                     ("no usable period", frame["q5_frequency_group"] == "no period"))
+            for label, mask in parts:
+                part = frame[mask]
+                counts = part["q5_score"].value_counts()
+                lines.append(f"| {label} | {fmt_int(int(counts.get(2, 0)))} | {fmt_int(int(counts.get(1, 0)))} | "
+                             f"{fmt_int(int(counts.get(0, 0)))} | {fmt_int(int(part['q5_score'].isna().sum()))} |")
+        if code == "Q6":
+            lines += ["", "| Level of the resources | Resources | Datasets with at least one |", "| --- | ---: | ---: |"]
+            for level, column in ((3, "q6_stars_3"), (2, "q6_stars_2"), (1, "q6_stars_1"), (0, "q6_undetermined")):
+                lines.append(f"| {STARS[level]} | {fmt_int(int(frame[column].sum()))} | "
+                             f"{fmt_int(int((frame[column] > 0).sum()))} |")
+            lines += ["", "| Best level of the dataset | Datasets | Share |", "| --- | ---: | ---: |"]
+            best = frame[frame["q6_resources"] > 0]["q6_best_stars"].value_counts()
+            for level in (3, 2, 1, 0):
+                count = int(best.get(level, 0))
+                lines.append(f"| {STARS[level]} | {fmt_int(count)} | {fmt_pct(count, n)} |")
+            lines.append(f"| no resources | {fmt_int(no_resources)} | {fmt_pct(no_resources, n)} |")
+            decided = Counter()
+            for text in frame["q6_levels"]:
+                for part in filter(None, (part.strip() for part in str(text).split(";"))):
+                    count, _, reason = part.partition(" ")
+                    decided[reason] += int(count)
+            lines += ["", "| How the level of the resources was decided (most frequent) | Resources |", "| --- | ---: |"]
+            for reason, count in decided.most_common(25):
+                lines.append(f"| {md_cell(reason)} | {fmt_int(count)} |")
         if code == "M9":
             lines += ["", "| Marking | Datasets |", "| --- | ---: |"]
             for label, mask in (("category and Regulation 2023/138", subset["m9_category"] & subset["m9_regulation"]),
@@ -831,11 +1403,15 @@ def build_sample_report(frame: pd.DataFrame, sample: dict[str, dict], date: str)
             if code == "M9" and row["sample_group"] != "high-value":
                 lines.append(f"| {row['sample_id']} | {link(row['title'], row['name'])} | n/a | comparison group |")
                 continue
+            score = row[f"{key}_score"]
+            shown = "n/d" if pd.isna(score) else int(score)
             lines.append(f"| {row['sample_id']} | {link(row['title'], row['name'])} | "
-                         f"{row[f'{key}_score']} | {md_cell(row[f'{key}_reason'])} |")
+                         f"{shown} | {md_cell(row[f'{key}_reason'])} |")
         counts = applicable[f"{key}_score"].value_counts()
+        undetermined = int(applicable[f"{key}_score"].isna().sum())
         lines += ["", "Sample: " + ", ".join(
-            f"{fmt_int(counts.get(s, 0))} dataset{'s' if counts.get(s, 0) != 1 else ''} with {s}" for s in (2, 1, 0)) + "."]
+            f"{fmt_int(counts.get(s, 0))} dataset{'s' if counts.get(s, 0) != 1 else ''} with {s}" for s in (2, 1, 0))
+            + (f", {undetermined} not determined" if undetermined else "") + "."]
     return "\n".join(lines) + "\n"
 
 
@@ -858,6 +1434,8 @@ def main() -> int:
     if not snapshot.exists():
         raise SystemExit(f"{relative(snapshot)} not found.")
     date = snapshot_date(snapshot)
+    global REFERENCE_DATE
+    REFERENCE_DATE = datetime.strptime(date, "%Y-%m-%d").date()
     sample = load_sample(args.sample)
     FILE_TYPES.update(load_file_types())
     print(f"Snapshot: {relative(snapshot)}")
@@ -893,6 +1471,10 @@ def main() -> int:
         subset = frame[frame["m9_marked"]] if code == "M9" else frame
         counts = subset[f"{code.lower()}_score"].value_counts()
         note = " (marked datasets only)" if code == "M9" else ""
+        if code == "Q6":
+            note = f", not determined: {fmt_int(int(subset['q6_score'].isna().sum()))}"
+        if code == "Q5":
+            note = f", not measurable: {fmt_int(int(subset['q5_score'].isna().sum()))}"
         print(f"  {code} {name}: " + ", ".join(f"score {s}: {fmt_int(counts.get(s, 0))}" for s in (2, 1, 0)) + note)
     print("Files:")
     for path in (checks_file, out_dir / "summary.md", out_dir / "sample.md"):

@@ -124,6 +124,54 @@ Resources with a format or media type: 83,949. With a vocabulary term (format or
 
 Generic dataset-level licence field of CKAN (not shown on the portal, not exported, not scored): filled in 7,535 datasets (33.0%); it contradicts the licences of the resources in 1,650 datasets (7.2%).
 
+## M6 Mode of distribution
+
+| Proposed score | Datasets | Share |
+| --- | ---: | ---: |
+| 2 | 13,974 | 61.3% |
+| 1 | 8,732 | 38.3% |
+| 0 | 99 | 0.4% |
+
+| Reason | Datasets |
+| --- | ---: |
+| direct link to a file | 9,067 |
+| only a map view (WMS) | 7,616 |
+| API or data service | 4,907 |
+| only web pages | 1,116 |
+| no resources | 73 |
+| no address on any resource | 26 |
+
+Mode of access of the resources, read from the address, the declared format and the result of the portal's link checker; 1,049 resources are classed from the declared format alone (not verified). The dataset scores its best mode.
+
+| Mode of access | Score as best mode | Resources | Datasets |
+| --- | ---: | ---: | ---: |
+| API or data service (WFS, DataStore, OAI-PMH, ArcGIS REST, data service of the portal) | 2 | 22,430 | 4,907 |
+| direct link to a file | 2 | 30,681 | 9,139 |
+| map view (WMS) | 1 | 31,713 | 12,003 |
+| web page | 1 | 1,895 | 1,434 |
+| no address | 0 | 63 | 60 |
+
+| Best mode of the dataset | Datasets | Share |
+| --- | ---: | ---: |
+| API or data service | 4,907 | 21.5% |
+| direct link to a file | 9,067 | 39.8% |
+| map view | 7,616 | 33.4% |
+| web page | 1,116 | 4.9% |
+| no address | 26 | 0.1% |
+
+| Organisation with the most datasets offered only as a map view | Datasets | Of its datasets |
+| --- | ---: | ---: |
+| Δήμος Χανίων | 1,811 | 81.4% |
+| Δήμος Αγρινίου | 944 | 78.9% |
+| Δήμος Αμαρουσίου | 783 | 89.0% |
+| Δήμος Ηρακλείου Κρήτης | 783 | 83.6% |
+| Δήμος Καλαμάτας | 675 | 83.7% |
+| Δήμος Κερατσινίου – Δραπετσώνας | 583 | 74.3% |
+| Δήμος Ιλίου | 467 | 77.4% |
+| Περιφέρεια Κρήτης | 302 | 31.9% |
+| Δήμος Ωραιοκάστρου | 226 | 57.9% |
+| Υπουργείο Περιβάλλοντος και Ενέργειας | 224 | 36.7% |
+
 ## M7 Persistent identifier
 
 | Proposed score | Datasets | Share |
@@ -200,3 +248,120 @@ The criterion applies to the high-value datasets. In the catalogue it is counted
 | Earth observation and environment | 209 |
 | Meteorological | 129 |
 | Companies and company ownership | 30 |
+
+## Q5 Timeliness (metadata part)
+
+Metadata part only: the declared frequency against the last upload known to the portal. Declared frequency: periodic 1,283 datasets (continuous counted with a period of one day), not updated 7,483 (of which 7,368 carry the keyword of the migration from the previous portal, whose default value it is), no usable period 13,966. An upload date exists for 7,286 datasets; in 5,853 of them the date written by the migration copy is replaced by the original upload date. The others carry only the date of their portal record, which is the history of the portal and not of the data. A dataset declared as not updated scores 2 when its title or description states the period of its data; otherwise the rule of no period applies. Counted over the 7,828 measurable datasets; 14,904 datasets are not measurable from the metadata and 73 have no resources. The final scores of the sample come from the dates inside the data and from the second snapshot.
+
+| Proposed score | Datasets | Share |
+| --- | ---: | ---: |
+| 2 | 3,520 | 45.0% |
+| 1 | 900 | 11.5% |
+| 0 | 3,408 | 43.5% |
+
+| Reason | Datasets |
+| --- | ---: |
+| declared as not updated without a stated period, no upload for more than 12 months | 3,241 |
+| declared as not updated, period of the data stated | 3,159 |
+| no usable period, upload in the last 12 months | 750 |
+| periodic frequency, upload within two periods | 361 |
+| declared as not updated without a stated period, upload in the last 12 months | 145 |
+| no usable period, no upload for more than 12 months | 133 |
+| periodic frequency, more than four periods late | 34 |
+| periodic frequency, two to four periods late | 5 |
+
+| Declared frequency (EU vocabulary) | Group | Datasets | Share |
+| --- | --- | ---: | ---: |
+| (none) | no period | 13,572 | 59.5% |
+| NOT_PLANNED | not updated | 7,485 | 32.8% |
+| ANNUAL | periodic | 349 | 1.5% |
+| MONTHLY | periodic | 343 | 1.5% |
+| DAILY | periodic | 251 | 1.1% |
+| IRREG | no period | 236 | 1.0% |
+| AS_NEEDED | no period | 197 | 0.9% |
+| CONT | periodic | 102 | 0.4% |
+| QUARTERLY | periodic | 84 | 0.4% |
+| HOURLY | periodic | 79 | 0.3% |
+| BIENNIAL | periodic | 28 | 0.1% |
+| UPDATE_CONT | periodic | 20 | 0.1% |
+| TRIENNIAL | periodic | 11 | 0.0% |
+| NEVER | not updated | 8 | 0.0% |
+| OTHER | no period | 8 | 0.0% |
+| ANNUAL_3 | periodic | 7 | 0.0% |
+| UNKNOWN | no period | 6 | 0.0% |
+| ANNUAL_2 | periodic | 6 | 0.0% |
+| QUINQUENNIAL | periodic | 4 | 0.0% |
+| BIMONTHLY | periodic | 3 | 0.0% |
+
+| Last change known to the portal | Datasets |
+| --- | ---: |
+| upload date of a resource (measurable) | 7,286 |
+| date of the resource record only (history of the portal) | 15,446 |
+| date of the metadata only | 73 |
+| none (no resources) | 0 |
+
+| Group | Score 2 | Score 1 | Score 0 | Not measurable |
+| --- | ---: | ---: | ---: | ---: |
+| periodic | 361 | 5 | 34 | 883 |
+| not updated, period stated | 3,159 | 0 | 0 | 0 |
+| not updated, no period stated | 0 | 145 | 3,241 | 938 |
+| no usable period | 0 | 750 | 133 | 13,083 |
+
+## Q6 Format (5-star scale)
+
+Rated from the declared formats, pending the content check of the sample. Counted over the 22,172 datasets whose best resource has a known level; 560 datasets are undetermined (compressed archives whose content is not named, or no format) and 73 have no resources. 647 of the rated datasets are provisional: an archive with unknown content could raise their level.
+
+| Proposed score | Datasets | Share |
+| --- | ---: | ---: |
+| 2 | 6,605 | 29.8% |
+| 1 | 5,324 | 24.0% |
+| 0 | 10,243 | 46.2% |
+
+| Reason | Datasets |
+| --- | ---: |
+| 1 star | 10,243 |
+| 3 stars or more | 6,605 |
+| 2 stars | 5,324 |
+
+| Level of the resources | Resources | Datasets with at least one |
+| --- | ---: | ---: |
+| 3 stars or more: open structured format | 21,603 | 6,605 |
+| 2 stars: vendor-specific structured format | 22,034 | 9,928 |
+| 1 star: unstructured format or map view | 41,315 | 15,072 |
+| undetermined | 1,767 | 734 |
+
+| Best level of the dataset | Datasets | Share |
+| --- | ---: | ---: |
+| 3 stars or more: open structured format | 6,605 | 29.0% |
+| 2 stars: vendor-specific structured format | 5,324 | 23.3% |
+| 1 star: unstructured format or map view | 10,243 | 44.9% |
+| undetermined | 560 | 2.5% |
+| no resources | 73 | 0.3% |
+
+| How the level of the resources was decided (most frequent) | Resources |
+| --- | ---: |
+| map view (WMS): a picture of the map, not the data | 31,713 |
+| vendor-specific format XLSX | 9,812 |
+| vendor-specific format XLS | 6,524 |
+| unstructured format PDF | 5,361 |
+| WFS download in csv | 4,343 |
+| WFS download in shape-zip | 4,321 |
+| WFS service (GML or GeoJSON on request) | 4,302 |
+| WFS download in application/json | 4,300 |
+| WFS download in kml | 4,219 |
+| open format CSV | 2,100 |
+| web page | 1,895 |
+| archive (ZIP) with unknown content | 1,279 |
+| unstructured format DOC | 621 |
+| vendor-specific format .xls (address) | 591 |
+| open format ODS | 525 |
+| vendor-specific format .xlsx (address) | 443 |
+| unstructured format JPEG | 369 |
+| unstructured format DOCX | 348 |
+| unstructured format .pdf (address) | 335 |
+| data service | 332 |
+| archive (RAR) with unknown content | 303 |
+| open format JSON | 278 |
+| open format XML | 267 |
+| unstructured format TXT | 178 |
+| OAI-PMH request (XML) | 156 |
