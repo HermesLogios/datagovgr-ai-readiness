@@ -19,7 +19,8 @@ data/raw/*_test*
 # Run logs
 *.log
 
-# Working notes of the review of the automated checks (one Excel workbook per criterion).
+# Working notes of the review of the automated checks (one Excel workbook per criterion) and the local file with a
+# random sample of records of every dataset (06_file_checks.py): they hold records of the data, so they stay local.
 # The confirmed scores are published in the assessment workbook.
 review/
 

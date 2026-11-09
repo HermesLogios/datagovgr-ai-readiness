@@ -1,0 +1,1219 @@
+﻿sample_id,where,format,column,name,kind,key,evidence
+S01,r001 Periferia_Anatolikis_Makedonias_kai_Thrakis_20261029.shp,shapefile,1,KAEK,standard code,KAEK cadastral code,"2,000 of 2,000 values tested follow the usual form"
+S01,r001 Periferia_Anatolikis_Makedonias_kai_Thrakis_20261029.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"1,343,363 geometries in a declared reference system"
+S01,r002 Periferia_Attikis_20261029.shp,shapefile,1,KAEK,standard code,KAEK cadastral code,"2,000 of 2,000 values tested follow the usual form"
+S01,r002 Periferia_Attikis_20261029.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"1,464,584 geometries in a declared reference system"
+S01,r003 Periferia_Ditikis_Elladas_20261029.shp,shapefile,1,KAEK,standard code,KAEK cadastral code,"2,000 of 2,000 values tested follow the usual form"
+S01,r003 Periferia_Ditikis_Elladas_20261029.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"1,142,825 geometries in a declared reference system"
+S01,r004 Periferia_Ditikis_Makedonias_20261029.shp,shapefile,1,KAEK,standard code,KAEK cadastral code,"1,967 of 2,000 values tested follow the usual form"
+S01,r004 Periferia_Ditikis_Makedonias_20261029.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"871,750 geometries in a declared reference system"
+S01,r005 Periferia_Ionion_Nison_20261029.shp,shapefile,1,KAEK,standard code,KAEK cadastral code,"2,000 of 2,000 values tested follow the usual form"
+S01,r005 Periferia_Ionion_Nison_20261029.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"173,288 geometries in a declared reference system"
+S01,r006 Periferia_Ipirou_20261029.shp,shapefile,1,KAEK,standard code,KAEK cadastral code,"2,000 of 2,000 values tested follow the usual form"
+S01,r006 Periferia_Ipirou_20261029.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"717,914 geometries in a declared reference system"
+S01,r007 Periferia_Kentrikis_Makedonias_20261029.shp,shapefile,1,KAEK,standard code,KAEK cadastral code,"2,000 of 2,000 values tested follow the usual form"
+S01,r007 Periferia_Kentrikis_Makedonias_20261029.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"2,302,723 geometries in a declared reference system"
+S01,r008 Periferia_Kritis_20261029.shp,shapefile,1,KAEK,standard code,KAEK cadastral code,"2,000 of 2,000 values tested follow the usual form"
+S01,r008 Periferia_Kritis_20261029.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"1,308,685 geometries in a declared reference system"
+S01,r009 Periferia_Notiou_Egaiou_20261029.shp,shapefile,1,KAEK,standard code,KAEK cadastral code,"2,000 of 2,000 values tested follow the usual form"
+S01,r009 Periferia_Notiou_Egaiou_20261029.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"194,080 geometries in a declared reference system"
+S01,r009 Periferia_Notiou_Egaiou_Kastelorizo_20261029.shp,shapefile,1,KAEK,standard code,KAEK cadastral code,"1,758 of 1,803 values tested follow the usual form"
+S01,r009 Periferia_Notiou_Egaiou_Kastelorizo_20261029.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"1,803 geometries in a declared reference system"
+S01,r010 Periferia_Peloponnisou_20261029.shp,shapefile,1,KAEK,standard code,KAEK cadastral code,"2,000 of 2,000 values tested follow the usual form"
+S01,r010 Periferia_Peloponnisou_20261029.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"1,909,312 geometries in a declared reference system"
+S01,r011 Periferia_Stereas_Elladas_20261029.shp,shapefile,1,KAEK,standard code,KAEK cadastral code,"2,000 of 2,000 values tested follow the usual form"
+S01,r011 Periferia_Stereas_Elladas_20261029.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"1,335,670 geometries in a declared reference system"
+S01,r012 Periferia_Thessalias_20261029.shp,shapefile,1,KAEK,standard code,KAEK cadastral code,"2,000 of 2,000 values tested follow the usual form"
+S01,r012 Periferia_Thessalias_20261029.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"1,056,898 geometries in a declared reference system"
+S01,r013 Periferia_Voriou_Egaiou_20261029.shp,shapefile,1,KAEK,standard code,KAEK cadastral code,"2,000 of 2,000 values tested follow the usual form"
+S01,r013 Periferia_Voriou_Egaiou_20261029.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"164,259 geometries in a declared reference system"
+S02,r002,geojson,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S02,r002,geojson,2,objectid,internal code,code of the publisher,identifier without a known standard behind it
+S02,r002,geojson,3,kalcode,standard code,Kallikratis code,326 of 326 values tested follow the usual form
+S02,r002,geojson,4,lektiko,name,name,"names of places, bodies or stations"
+S02,r002,geojson,,(geometry),geometry (declared system),urn:ogc:def:crs:EPSG::2100,326 geometries in a declared reference system
+S02,r003,csv,1,FID,internal code,code of the publisher,identifier without a known standard behind it
+S02,r003,csv,2,id,internal code,code of the publisher,identifier without a known standard behind it
+S02,r003,csv,4,objectid,internal code,code of the publisher,identifier without a known standard behind it
+S02,r003,csv,5,kalcode,standard code,Kallikratis code,326 of 326 values tested follow the usual form
+S02,r003,csv,6,lektiko,name,name,"names of places, bodies or stations"
+S02,r004 kallikratikoi_dimoi.shp,shapefile,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S02,r004 kallikratikoi_dimoi.shp,shapefile,2,objectid,internal code,code of the publisher,identifier without a known standard behind it
+S02,r004 kallikratikoi_dimoi.shp,shapefile,3,kalcode,standard code,Kallikratis code,326 of 326 values tested follow the usual form
+S02,r004 kallikratikoi_dimoi.shp,shapefile,4,lektiko,name,name,"names of places, bodies or stations"
+S02,r004 kallikratikoi_dimoi.shp,shapefile,,(geometry),geometry (declared system),GGRS87 / Greek Grid,326 geometries in a declared reference system
+S02,r005,kml,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S02,r005,kml,2,objectid,internal code,code of the publisher,identifier without a known standard behind it
+S02,r005,kml,3,kalcode,standard code,Kallikratis code,326 of 326 values tested follow the usual form
+S02,r005,kml,4,lektiko,name,name,"names of places, bodies or stations"
+S02,r005,kml,,(geometry),geometry (declared system),"WGS84, the system of KML",326 geometries in a declared reference system
+S03,r001 agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S03,r001 agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S03,r001 calendar_dates.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S03,r001 routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S03,r001 routes.txt,gtfs,2,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S03,r001 routes.txt,gtfs,3,route_short_name,name,name,"names of places, bodies or stations"
+S03,r001 routes.txt,gtfs,4,route_long_name,name,name,"names of places, bodies or stations"
+S03,r001 stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S03,r001 stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S03,r001 stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S03,r001 stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S03,r001 stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S03,r001 stops.txt,gtfs,5,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S03,r001 stops.txt,gtfs,6,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S03,r001 stops.txt,gtfs,7,zone_id,internal code,code of the publisher,identifier without a known standard behind it
+S03,r001 stops.txt,gtfs,10,parent_station,name,name,"names of places, bodies or stations"
+S03,r001 trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S03,r001 trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S03,r001 trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S03,r001 trips.txt,gtfs,5,trip_short_name,name,name,"names of places, bodies or stations"
+S03,r001 trips.txt,gtfs,6,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S03,r001 trips.txt,gtfs,7,block_id,internal code,code of the publisher,identifier without a known standard behind it
+S03,r001 trips.txt,gtfs,8,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S04,r001 EMSY_15.01.2025_AMTH/ΓΔΥ_ΕΜΣΥ_15.01.2025_AMTH.shp,shapefile,1,OBJECTID,internal code,code of the publisher,identifier without a known standard behind it
+S04,r001 EMSY_15.01.2025_AMTH/ΓΔΥ_ΕΜΣΥ_15.01.2025_AMTH.shp,shapefile,2,X_EGSA87,coordinates (declared system),"EGSA87, named in the column",the name of the column states the system
+S04,r001 EMSY_15.01.2025_AMTH/ΓΔΥ_ΕΜΣΥ_15.01.2025_AMTH.shp,shapefile,3,Y_EGSA87,coordinates (declared system),"EGSA87, named in the column",the name of the column states the system
+S04,r001 EMSY_15.01.2025_AMTH/ΓΔΥ_ΕΜΣΥ_15.01.2025_AMTH.shp,shapefile,7,PERIFEREIA,name,name,"names of places, bodies or stations"
+S04,r001 EMSY_15.01.2025_AMTH/ΓΔΥ_ΕΜΣΥ_15.01.2025_AMTH.shp,shapefile,8,PERIFERE_1,name,name,"names of places, bodies or stations"
+S04,r001 EMSY_15.01.2025_AMTH/ΓΔΥ_ΕΜΣΥ_15.01.2025_AMTH.shp,shapefile,9,DHMOS_KALL,name,name,"names of places, bodies or stations"
+S04,r001 EMSY_15.01.2025_AMTH/ΓΔΥ_ΕΜΣΥ_15.01.2025_AMTH.shp,shapefile,11,KOINOTHTA,name,name,"names of places, bodies or stations"
+S04,r001 EMSY_15.01.2025_AMTH/ΓΔΥ_ΕΜΣΥ_15.01.2025_AMTH.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"13,682 geometries in a declared reference system"
+S04,"r002 sheet ""Φύλλο1""",spreadsheet,1,OBJECTID,internal code,code of the publisher,identifier without a known standard behind it
+S04,"r002 sheet ""Φύλλο1""",spreadsheet,2,X_EGSA87,coordinates (declared system),"EGSA87, named in the column",the name of the column states the system
+S04,"r002 sheet ""Φύλλο1""",spreadsheet,3,Y_EGSA87,coordinates (declared system),"EGSA87, named in the column",the name of the column states the system
+S04,"r002 sheet ""Φύλλο1""",spreadsheet,7,PERIFEREIA,name,name,"names of places, bodies or stations"
+S04,"r002 sheet ""Φύλλο1""",spreadsheet,8,PERIFEREIAKH_ENOTHTA,name,name,"names of places, bodies or stations"
+S04,"r002 sheet ""Φύλλο1""",spreadsheet,9,DHMOS_KALLIKRATH,name,name,"names of places, bodies or stations"
+S04,"r002 sheet ""Φύλλο1""",spreadsheet,11,KOINOTHTA,name,name,"names of places, bodies or stations"
+S04,"r002 sheet ""Φύλλο1""",spreadsheet,14,KWDIKOS_EMSY,standard code,EMSY registry code,recognised by the name of the column
+S04,r003 EMSY_23.06.2026_AMTH/ΓΔΥ_ΕΜΣΥ_23.06.2026_AMTH.shp,shapefile,1,OBJECTID,internal code,code of the publisher,identifier without a known standard behind it
+S04,r003 EMSY_23.06.2026_AMTH/ΓΔΥ_ΕΜΣΥ_23.06.2026_AMTH.shp,shapefile,2,X_EGSA87,coordinates (declared system),"EGSA87, named in the column",the name of the column states the system
+S04,r003 EMSY_23.06.2026_AMTH/ΓΔΥ_ΕΜΣΥ_23.06.2026_AMTH.shp,shapefile,3,Y_EGSA87,coordinates (declared system),"EGSA87, named in the column",the name of the column states the system
+S04,r003 EMSY_23.06.2026_AMTH/ΓΔΥ_ΕΜΣΥ_23.06.2026_AMTH.shp,shapefile,7,PERIFEREIA,name,name,"names of places, bodies or stations"
+S04,r003 EMSY_23.06.2026_AMTH/ΓΔΥ_ΕΜΣΥ_23.06.2026_AMTH.shp,shapefile,8,PERIFERE_1,name,name,"names of places, bodies or stations"
+S04,r003 EMSY_23.06.2026_AMTH/ΓΔΥ_ΕΜΣΥ_23.06.2026_AMTH.shp,shapefile,9,DHMOS_KALL,name,name,"names of places, bodies or stations"
+S04,r003 EMSY_23.06.2026_AMTH/ΓΔΥ_ΕΜΣΥ_23.06.2026_AMTH.shp,shapefile,11,KOINOTHTA,name,name,"names of places, bodies or stations"
+S04,r003 EMSY_23.06.2026_AMTH/ΓΔΥ_ΕΜΣΥ_23.06.2026_AMTH.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,"14,439 geometries in a declared reference system"
+S04,"r004 sheet ""Φύλλο1""",spreadsheet,1,OBJECTID,internal code,code of the publisher,identifier without a known standard behind it
+S04,"r004 sheet ""Φύλλο1""",spreadsheet,2,X_EGSA87,coordinates (declared system),"EGSA87, named in the column",the name of the column states the system
+S04,"r004 sheet ""Φύλλο1""",spreadsheet,3,Y_EGSA87,coordinates (declared system),"EGSA87, named in the column",the name of the column states the system
+S04,"r004 sheet ""Φύλλο1""",spreadsheet,7,PERIFEREIA,name,name,"names of places, bodies or stations"
+S04,"r004 sheet ""Φύλλο1""",spreadsheet,8,PERIFEREIAKH_ENOTHTA,name,name,"names of places, bodies or stations"
+S04,"r004 sheet ""Φύλλο1""",spreadsheet,9,DHMOS_KALLIKRATH,name,name,"names of places, bodies or stations"
+S04,"r004 sheet ""Φύλλο1""",spreadsheet,11,KOINOTHTA,name,name,"names of places, bodies or stations"
+S04,"r004 sheet ""Φύλλο1""",spreadsheet,14,KWDIKOS_EMSY,standard code,EMSY registry code,recognised by the name of the column
+S05,"r001_manual sheet ""Sheet1""",spreadsheet,1,#,internal code,code of the publisher,identifier without a known standard behind it
+S05,"r001_manual sheet ""Sheet1""",spreadsheet,3,Ονομασία,name,name,"names of places, bodies or stations"
+S05,"r001_manual sheet ""Sheet1""",spreadsheet,4,Διεύθυνση,name,name,"names of places, bodies or stations"
+S05,"r001_manual sheet ""Sheet1""",spreadsheet,9,Δήμος,name,name,"names of places, bodies or stations"
+S05,"r001_manual sheet ""Sheet1""",spreadsheet,10,Ενότητα,name,name,"names of places, bodies or stations"
+S05,"r002_manual sheet ""Sheet1""",spreadsheet,1,#,internal code,code of the publisher,identifier without a known standard behind it
+S05,"r002_manual sheet ""Sheet1""",spreadsheet,3,Ονομασία,name,name,"names of places, bodies or stations"
+S05,"r002_manual sheet ""Sheet1""",spreadsheet,4,Φορέας,name,name,"names of places, bodies or stations"
+S05,"r002_manual sheet ""Sheet1""",spreadsheet,8,Διεύθυνση,name,name,"names of places, bodies or stations"
+S05,"r002_manual sheet ""Sheet1""",spreadsheet,12,Δήμος,name,name,"names of places, bodies or stations"
+S05,"r002_manual sheet ""Sheet1""",spreadsheet,13,Ενότητα,name,name,"names of places, bodies or stations"
+S07,r001,csv,2,Μήνας ID,internal code,code of the publisher,identifier without a known standard behind it
+S07,r001,csv,4,Περιφερειακή Ενότητα,name,name,"names of places, bodies or stations"
+S07,r001,csv,5,Είδος Γάλακτος ID,internal code,code of the publisher,identifier without a known standard behind it
+S08,"r001 sheet ""ΔΕ ΕΚΠΑΙΔ τελικό""",spreadsheet,1,Περιφέρεια,name,name,"names of places, bodies or stations"
+S08,"r001 sheet ""ΔΕ ΕΚΠΑΙΔ τελικό""",spreadsheet,2,Κωδ. Ειδικότητας,standard code,teacher specialty code,recognised by the name of the column; 738 of 852 values tested follow the usual form
+S09,"r001 sheet ""Φύλλο 1""",spreadsheet,1,ΝΟΣΟΚΟΜΕΙΟ,name,name,"names of places, bodies or stations"
+S09,"r001 sheet ""2025""",spreadsheet,1,ΝΟΣΟΚΟΜΕΙΟ,name,name,"names of places, bodies or stations"
+S09,"r001 sheet ""2026""",spreadsheet,1,ΝΟΣΟΚΟΜΕΙΟ,name,name,"names of places, bodies or stations"
+S09,"r002 sheet ""Φύλλο1""",spreadsheet,1,ΝΟΣΟΚΟΜΕΙΟ,name,name,"names of places, bodies or stations"
+S09,"r003 sheet ""Φύλλο1""",spreadsheet,1,ΝΟΣΟΚΟΜΕΙΟ,name,name,"names of places, bodies or stations"
+S09,"r004 sheet ""Φύλλο1""",spreadsheet,1,ΝΟΣΟΚΟΜΕΙΟ,name,name,"names of places, bodies or stations"
+S09,"r005 sheet ""Φύλλο1""",spreadsheet,1,ΝΟΣΟΚΟΜΕΙΟ,name,name,"names of places, bodies or stations"
+S09,"r006 sheet ""Φύλλο1""",spreadsheet,1,ΝΟΣΟΚΟΜΕΙΟ,name,name,"names of places, bodies or stations"
+S10,r001,csv,1,CODE,standard code,COICOP code,498 of 511 values tested follow the usual form
+S11,r001 osy_gtfs/agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S11,r001 osy_gtfs/agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S11,r001 osy_gtfs/calendar.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S11,r001 osy_gtfs/calendar_dates.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S11,r001 osy_gtfs/routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S11,r001 osy_gtfs/routes.txt,gtfs,2,route_short_name,name,name,"names of places, bodies or stations"
+S11,r001 osy_gtfs/routes.txt,gtfs,3,route_long_name,name,name,"names of places, bodies or stations"
+S11,r001 osy_gtfs/shapes.txt,gtfs,1,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S11,r001 osy_gtfs/shapes.txt,gtfs,2,shape_pt_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S11,r001 osy_gtfs/shapes.txt,gtfs,3,shape_pt_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S11,r001 osy_gtfs/stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S11,r001 osy_gtfs/stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S11,r001 osy_gtfs/stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S11,r001 osy_gtfs/stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S11,r001 osy_gtfs/stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S11,r001 osy_gtfs/stops.txt,gtfs,4,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S11,r001 osy_gtfs/stops.txt,gtfs,5,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S11,r001 osy_gtfs/trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S11,r001 osy_gtfs/trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S11,r001 osy_gtfs/trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S11,r001 osy_gtfs/trips.txt,gtfs,5,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S11,r001 osy_gtfs/trips.txt,gtfs,6,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S12,r001 calendar_dates.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 feed_info.txt,gtfs,1,feed_publisher_name,name,name,"names of places, bodies or stations"
+S12,r001 routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 routes.txt,gtfs,2,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 routes.txt,gtfs,3,route_short_name,name,name,"names of places, bodies or stations"
+S12,r001 routes.txt,gtfs,4,route_long_name,name,name,"names of places, bodies or stations"
+S12,r001 shapes.txt,gtfs,1,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 shapes.txt,gtfs,2,shape_pt_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r001 shapes.txt,gtfs,3,shape_pt_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r001 stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S12,r001 stops.txt,gtfs,5,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r001 stops.txt,gtfs,6,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r001 stops.txt,gtfs,7,zone_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 stops.txt,gtfs,10,parent_station,name,name,"names of places, bodies or stations"
+S12,r001 trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 trips.txt,gtfs,5,trip_short_name,name,name,"names of places, bodies or stations"
+S12,r001 trips.txt,gtfs,6,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 trips.txt,gtfs,7,block_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r001 trips.txt,gtfs,8,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S12,r002 calendar_dates.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 feed_info.txt,gtfs,1,feed_publisher_name,name,name,"names of places, bodies or stations"
+S12,r002 routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 routes.txt,gtfs,2,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 routes.txt,gtfs,3,route_short_name,name,name,"names of places, bodies or stations"
+S12,r002 routes.txt,gtfs,4,route_long_name,name,name,"names of places, bodies or stations"
+S12,r002 shapes.txt,gtfs,1,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 shapes.txt,gtfs,2,shape_pt_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r002 shapes.txt,gtfs,3,shape_pt_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r002 stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S12,r002 stops.txt,gtfs,5,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r002 stops.txt,gtfs,6,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r002 stops.txt,gtfs,7,zone_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 stops.txt,gtfs,10,parent_station,name,name,"names of places, bodies or stations"
+S12,r002 translations.txt,gtfs,1,table_name,name,name,"names of places, bodies or stations"
+S12,r002 translations.txt,gtfs,2,field_name,name,name,"names of places, bodies or stations"
+S12,r002 translations.txt,gtfs,5,record_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 translations.txt,gtfs,6,record_sub_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 trips.txt,gtfs,5,trip_short_name,name,name,"names of places, bodies or stations"
+S12,r002 trips.txt,gtfs,6,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 trips.txt,gtfs,7,block_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r002 trips.txt,gtfs,8,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S12,r003 calendar_dates.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 feed_info.txt,gtfs,1,feed_publisher_name,name,name,"names of places, bodies or stations"
+S12,r003 routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 routes.txt,gtfs,2,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 routes.txt,gtfs,3,route_short_name,name,name,"names of places, bodies or stations"
+S12,r003 routes.txt,gtfs,4,route_long_name,name,name,"names of places, bodies or stations"
+S12,r003 shapes.txt,gtfs,1,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 shapes.txt,gtfs,2,shape_pt_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r003 shapes.txt,gtfs,3,shape_pt_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r003 stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S12,r003 stops.txt,gtfs,5,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r003 stops.txt,gtfs,6,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r003 stops.txt,gtfs,7,zone_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 stops.txt,gtfs,10,parent_station,name,name,"names of places, bodies or stations"
+S12,r003 translations.txt,gtfs,1,table_name,name,name,"names of places, bodies or stations"
+S12,r003 translations.txt,gtfs,2,field_name,name,name,"names of places, bodies or stations"
+S12,r003 translations.txt,gtfs,5,record_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 translations.txt,gtfs,6,record_sub_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 trips.txt,gtfs,5,trip_short_name,name,name,"names of places, bodies or stations"
+S12,r003 trips.txt,gtfs,6,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 trips.txt,gtfs,7,block_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r003 trips.txt,gtfs,8,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S12,r004 calendar_dates.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 feed_info.txt,gtfs,1,feed_publisher_name,name,name,"names of places, bodies or stations"
+S12,r004 routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 routes.txt,gtfs,2,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 routes.txt,gtfs,3,route_short_name,name,name,"names of places, bodies or stations"
+S12,r004 routes.txt,gtfs,4,route_long_name,name,name,"names of places, bodies or stations"
+S12,r004 shapes.txt,gtfs,1,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 shapes.txt,gtfs,2,shape_pt_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r004 shapes.txt,gtfs,3,shape_pt_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r004 stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S12,r004 stops.txt,gtfs,5,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r004 stops.txt,gtfs,6,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r004 stops.txt,gtfs,7,zone_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 stops.txt,gtfs,10,parent_station,name,name,"names of places, bodies or stations"
+S12,r004 translations.txt,gtfs,1,table_name,name,name,"names of places, bodies or stations"
+S12,r004 translations.txt,gtfs,2,field_name,name,name,"names of places, bodies or stations"
+S12,r004 translations.txt,gtfs,5,record_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 translations.txt,gtfs,6,record_sub_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 trips.txt,gtfs,5,trip_short_name,name,name,"names of places, bodies or stations"
+S12,r004 trips.txt,gtfs,6,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 trips.txt,gtfs,7,block_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r004 trips.txt,gtfs,8,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S12,r006 calendar_dates.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 feed_info.txt,gtfs,1,feed_publisher_name,name,name,"names of places, bodies or stations"
+S12,r006 routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 routes.txt,gtfs,2,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 routes.txt,gtfs,3,route_short_name,name,name,"names of places, bodies or stations"
+S12,r006 routes.txt,gtfs,4,route_long_name,name,name,"names of places, bodies or stations"
+S12,r006 shapes.txt,gtfs,1,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 shapes.txt,gtfs,2,shape_pt_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r006 shapes.txt,gtfs,3,shape_pt_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r006 stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S12,r006 stops.txt,gtfs,5,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r006 stops.txt,gtfs,6,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r006 stops.txt,gtfs,7,zone_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 stops.txt,gtfs,10,parent_station,name,name,"names of places, bodies or stations"
+S12,r006 translations.txt,gtfs,1,table_name,name,name,"names of places, bodies or stations"
+S12,r006 translations.txt,gtfs,2,field_name,name,name,"names of places, bodies or stations"
+S12,r006 translations.txt,gtfs,5,record_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 translations.txt,gtfs,6,record_sub_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 trips.txt,gtfs,5,trip_short_name,name,name,"names of places, bodies or stations"
+S12,r006 trips.txt,gtfs,6,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 trips.txt,gtfs,7,block_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r006 trips.txt,gtfs,8,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S12,r007 calendar_dates.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 feed_info.txt,gtfs,1,feed_publisher_name,name,name,"names of places, bodies or stations"
+S12,r007 routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 routes.txt,gtfs,2,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 routes.txt,gtfs,3,route_short_name,name,name,"names of places, bodies or stations"
+S12,r007 routes.txt,gtfs,4,route_long_name,name,name,"names of places, bodies or stations"
+S12,r007 shapes.txt,gtfs,1,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 shapes.txt,gtfs,2,shape_pt_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r007 shapes.txt,gtfs,3,shape_pt_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r007 stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S12,r007 stops.txt,gtfs,5,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r007 stops.txt,gtfs,6,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r007 stops.txt,gtfs,7,zone_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 stops.txt,gtfs,10,parent_station,name,name,"names of places, bodies or stations"
+S12,r007 translations.txt,gtfs,1,table_name,name,name,"names of places, bodies or stations"
+S12,r007 translations.txt,gtfs,2,field_name,name,name,"names of places, bodies or stations"
+S12,r007 translations.txt,gtfs,5,record_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 translations.txt,gtfs,6,record_sub_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 trips.txt,gtfs,5,trip_short_name,name,name,"names of places, bodies or stations"
+S12,r007 trips.txt,gtfs,6,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 trips.txt,gtfs,7,block_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r007 trips.txt,gtfs,8,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S12,r008 calendar_dates.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 feed_info.txt,gtfs,1,feed_publisher_name,name,name,"names of places, bodies or stations"
+S12,r008 routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 routes.txt,gtfs,2,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 routes.txt,gtfs,3,route_short_name,name,name,"names of places, bodies or stations"
+S12,r008 routes.txt,gtfs,4,route_long_name,name,name,"names of places, bodies or stations"
+S12,r008 shapes.txt,gtfs,1,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 shapes.txt,gtfs,2,shape_pt_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r008 shapes.txt,gtfs,3,shape_pt_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r008 stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S12,r008 stops.txt,gtfs,5,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r008 stops.txt,gtfs,6,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r008 stops.txt,gtfs,7,zone_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 stops.txt,gtfs,10,parent_station,name,name,"names of places, bodies or stations"
+S12,r008 translations.txt,gtfs,1,table_name,name,name,"names of places, bodies or stations"
+S12,r008 translations.txt,gtfs,2,field_name,name,name,"names of places, bodies or stations"
+S12,r008 translations.txt,gtfs,5,record_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 translations.txt,gtfs,6,record_sub_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 trips.txt,gtfs,5,trip_short_name,name,name,"names of places, bodies or stations"
+S12,r008 trips.txt,gtfs,6,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 trips.txt,gtfs,7,block_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r008 trips.txt,gtfs,8,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S12,r009 calendar_dates.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 feed_info.txt,gtfs,1,feed_publisher_name,name,name,"names of places, bodies or stations"
+S12,r009 routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 routes.txt,gtfs,2,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 routes.txt,gtfs,3,route_short_name,name,name,"names of places, bodies or stations"
+S12,r009 routes.txt,gtfs,4,route_long_name,name,name,"names of places, bodies or stations"
+S12,r009 shapes.txt,gtfs,1,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 shapes.txt,gtfs,2,shape_pt_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r009 shapes.txt,gtfs,3,shape_pt_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r009 stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S12,r009 stops.txt,gtfs,5,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r009 stops.txt,gtfs,6,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r009 stops.txt,gtfs,7,zone_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 stops.txt,gtfs,10,parent_station,name,name,"names of places, bodies or stations"
+S12,r009 translations.txt,gtfs,1,table_name,name,name,"names of places, bodies or stations"
+S12,r009 translations.txt,gtfs,2,field_name,name,name,"names of places, bodies or stations"
+S12,r009 translations.txt,gtfs,5,record_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 translations.txt,gtfs,6,record_sub_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 trips.txt,gtfs,5,trip_short_name,name,name,"names of places, bodies or stations"
+S12,r009 trips.txt,gtfs,6,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 trips.txt,gtfs,7,block_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r009 trips.txt,gtfs,8,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S12,r010 calendar_dates.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 feed_info.txt,gtfs,1,feed_publisher_name,name,name,"names of places, bodies or stations"
+S12,r010 routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 routes.txt,gtfs,2,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 routes.txt,gtfs,3,route_short_name,name,name,"names of places, bodies or stations"
+S12,r010 routes.txt,gtfs,4,route_long_name,name,name,"names of places, bodies or stations"
+S12,r010 shapes.txt,gtfs,1,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 shapes.txt,gtfs,2,shape_pt_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r010 shapes.txt,gtfs,3,shape_pt_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r010 stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S12,r010 stops.txt,gtfs,5,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r010 stops.txt,gtfs,6,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r010 stops.txt,gtfs,7,zone_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 stops.txt,gtfs,10,parent_station,name,name,"names of places, bodies or stations"
+S12,r010 translations.txt,gtfs,1,table_name,name,name,"names of places, bodies or stations"
+S12,r010 translations.txt,gtfs,2,field_name,name,name,"names of places, bodies or stations"
+S12,r010 translations.txt,gtfs,5,record_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 translations.txt,gtfs,6,record_sub_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 trips.txt,gtfs,5,trip_short_name,name,name,"names of places, bodies or stations"
+S12,r010 trips.txt,gtfs,6,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 trips.txt,gtfs,7,block_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r010 trips.txt,gtfs,8,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S12,r011 calendar_dates.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 feed_info.txt,gtfs,1,feed_publisher_name,name,name,"names of places, bodies or stations"
+S12,r011 routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 routes.txt,gtfs,2,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 routes.txt,gtfs,3,route_short_name,name,name,"names of places, bodies or stations"
+S12,r011 routes.txt,gtfs,4,route_long_name,name,name,"names of places, bodies or stations"
+S12,r011 shapes.txt,gtfs,1,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 shapes.txt,gtfs,2,shape_pt_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r011 shapes.txt,gtfs,3,shape_pt_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r011 stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S12,r011 stops.txt,gtfs,5,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r011 stops.txt,gtfs,6,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r011 stops.txt,gtfs,7,zone_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 stops.txt,gtfs,10,parent_station,name,name,"names of places, bodies or stations"
+S12,r011 translations.txt,gtfs,1,table_name,name,name,"names of places, bodies or stations"
+S12,r011 translations.txt,gtfs,2,field_name,name,name,"names of places, bodies or stations"
+S12,r011 translations.txt,gtfs,5,record_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 translations.txt,gtfs,6,record_sub_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 trips.txt,gtfs,5,trip_short_name,name,name,"names of places, bodies or stations"
+S12,r011 trips.txt,gtfs,6,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 trips.txt,gtfs,7,block_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r011 trips.txt,gtfs,8,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S12,r012 calendar_dates.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 feed_info.txt,gtfs,1,feed_publisher_name,name,name,"names of places, bodies or stations"
+S12,r012 routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 routes.txt,gtfs,2,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 routes.txt,gtfs,3,route_short_name,name,name,"names of places, bodies or stations"
+S12,r012 routes.txt,gtfs,4,route_long_name,name,name,"names of places, bodies or stations"
+S12,r012 shapes.txt,gtfs,1,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 shapes.txt,gtfs,2,shape_pt_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r012 shapes.txt,gtfs,3,shape_pt_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r012 stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S12,r012 stops.txt,gtfs,5,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r012 stops.txt,gtfs,6,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r012 stops.txt,gtfs,7,zone_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 stops.txt,gtfs,10,parent_station,name,name,"names of places, bodies or stations"
+S12,r012 translations.txt,gtfs,1,table_name,name,name,"names of places, bodies or stations"
+S12,r012 translations.txt,gtfs,2,field_name,name,name,"names of places, bodies or stations"
+S12,r012 translations.txt,gtfs,5,record_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 translations.txt,gtfs,6,record_sub_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 trips.txt,gtfs,5,trip_short_name,name,name,"names of places, bodies or stations"
+S12,r012 trips.txt,gtfs,6,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 trips.txt,gtfs,7,block_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r012 trips.txt,gtfs,8,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S12,r013 calendar_dates.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 feed_info.txt,gtfs,1,feed_publisher_name,name,name,"names of places, bodies or stations"
+S12,r013 routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 routes.txt,gtfs,2,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 routes.txt,gtfs,3,route_short_name,name,name,"names of places, bodies or stations"
+S12,r013 routes.txt,gtfs,4,route_long_name,name,name,"names of places, bodies or stations"
+S12,r013 shapes.txt,gtfs,1,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 shapes.txt,gtfs,2,shape_pt_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r013 shapes.txt,gtfs,3,shape_pt_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r013 stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S12,r013 stops.txt,gtfs,5,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r013 stops.txt,gtfs,6,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S12,r013 stops.txt,gtfs,7,zone_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 stops.txt,gtfs,10,parent_station,name,name,"names of places, bodies or stations"
+S12,r013 translations.txt,gtfs,1,table_name,name,name,"names of places, bodies or stations"
+S12,r013 translations.txt,gtfs,2,field_name,name,name,"names of places, bodies or stations"
+S12,r013 translations.txt,gtfs,5,record_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 translations.txt,gtfs,6,record_sub_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 trips.txt,gtfs,5,trip_short_name,name,name,"names of places, bodies or stations"
+S12,r013 trips.txt,gtfs,6,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 trips.txt,gtfs,7,block_id,internal code,code of the publisher,identifier without a known standard behind it
+S12,r013 trips.txt,gtfs,8,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S13,r001 agency.txt,gtfs,1,agency_id,internal code,code of the publisher,identifier without a known standard behind it
+S13,r001 agency.txt,gtfs,2,agency_name,name,name,"names of places, bodies or stations"
+S13,r001 calendar.txt,gtfs,1,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S13,r001 routes.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S13,r001 routes.txt,gtfs,2,route_short_name,name,name,"names of places, bodies or stations"
+S13,r001 routes.txt,gtfs,3,route_long_name,name,name,"names of places, bodies or stations"
+S13,r001 shapes.txt,gtfs,1,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S13,r001 shapes.txt,gtfs,2,shape_pt_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S13,r001 shapes.txt,gtfs,3,shape_pt_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S13,r001 stop_times.txt,gtfs,1,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S13,r001 stop_times.txt,gtfs,4,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S13,r001 stops.txt,gtfs,1,stop_id,internal code,code of the publisher,identifier without a known standard behind it
+S13,r001 stops.txt,gtfs,2,stop_code,internal code,code of the publisher,identifier without a known standard behind it
+S13,r001 stops.txt,gtfs,3,stop_name,name,name,"names of places, bodies or stations"
+S13,r001 stops.txt,gtfs,4,stop_lat,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S13,r001 stops.txt,gtfs,5,stop_lon,coordinates (declared system),"degrees, WGS84 by the GTFS reference","stop_lat, stop_lon, shape_pt_lat and shape_pt_lon are WGS84 by the GTFS reference"
+S13,r001 trips.txt,gtfs,1,route_id,internal code,code of the publisher,identifier without a known standard behind it
+S13,r001 trips.txt,gtfs,2,service_id,internal code,code of the publisher,identifier without a known standard behind it
+S13,r001 trips.txt,gtfs,3,trip_id,internal code,code of the publisher,identifier without a known standard behind it
+S13,r001 trips.txt,gtfs,5,direction_id,internal code,code of the publisher,identifier without a known standard behind it
+S13,r001 trips.txt,gtfs,6,shape_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r002,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r002,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r002,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r002,json,10,parameter_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r002,json,11,sensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r003,json,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r003,json,2,SerialNumber,internal code,code of the publisher,identifier without a known standard behind it
+S14,r003,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r003,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r003,json,15,kind_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r004,json,2,Id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r004,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r004,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r006,json,1,index_name,name,name,"names of places, bodies or stations"
+S14,r007,json,1,index_name,name,name,"names of places, bodies or stations"
+S14,r008,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r008,json,2,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r008,json,3,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r008,json,5,sensor_address,name,name,"names of places, bodies or stations"
+S14,r008,json,6,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r008,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r008,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r008,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r008,json,11,location_name,name,name,"names of places, bodies or stations"
+S14,r008,json,12,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r008,json,13,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r008,json,14,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r009,json,1,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r009,json,2,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r010,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r010,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r010,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r010,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r010,json,7,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r010,json,8,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r010,json,9,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r010,json,10,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r010,json,12,location_name,name,name,"names of places, bodies or stations"
+S14,r010,json,13,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r010,json,14,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r010,json,15,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r011,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r011,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r011,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r014,json,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r014,json,2,SerialNumber,internal code,code of the publisher,identifier without a known standard behind it
+S14,r014,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r014,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r014,json,15,kind_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r015,json,2,Id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r015,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r015,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r016,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r016,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r016,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r016,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r016,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r016,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r016,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r017,json,1,index_name,name,name,"names of places, bodies or stations"
+S14,r019,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r019,json,2,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r019,json,3,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r019,json,5,sensor_address,name,name,"names of places, bodies or stations"
+S14,r019,json,6,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r019,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r019,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r019,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r019,json,11,location_name,name,name,"names of places, bodies or stations"
+S14,r019,json,12,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r019,json,13,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r019,json,14,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r020,json,1,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r020,json,2,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r021,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r021,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r021,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r021,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r021,json,7,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r021,json,8,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r021,json,9,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r021,json,10,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r021,json,12,location_name,name,name,"names of places, bodies or stations"
+S14,r021,json,13,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r021,json,14,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r021,json,15,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r022,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r022,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r022,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r024,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r024,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r024,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r024,json,10,parameter_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r024,json,11,sensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r025,json,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r025,json,2,SerialNumber,internal code,code of the publisher,identifier without a known standard behind it
+S14,r025,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r025,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r025,json,15,kind_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r026,json,2,Id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r026,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r026,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r027,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r027,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r027,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r027,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r027,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r027,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r027,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r028,json,1,index_name,name,name,"names of places, bodies or stations"
+S14,r030,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r030,json,2,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r030,json,3,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r030,json,5,sensor_address,name,name,"names of places, bodies or stations"
+S14,r030,json,6,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r030,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r030,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r030,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r030,json,11,location_name,name,name,"names of places, bodies or stations"
+S14,r030,json,12,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r030,json,13,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r030,json,14,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r031,json,1,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r031,json,2,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r032,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r032,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r032,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r032,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r032,json,7,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r032,json,8,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r032,json,9,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r032,json,10,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r032,json,12,location_name,name,name,"names of places, bodies or stations"
+S14,r032,json,13,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r032,json,14,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r032,json,15,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r033,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r033,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r033,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r035,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r035,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r035,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r035,json,10,parameter_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r035,json,11,sensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r036,json,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r036,json,2,SerialNumber,internal code,code of the publisher,identifier without a known standard behind it
+S14,r036,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r036,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r036,json,15,kind_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r037,json,2,Id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r037,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r037,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r038,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r038,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r038,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r038,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r038,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r038,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r038,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r039,json,1,index_name,name,name,"names of places, bodies or stations"
+S14,r041,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r041,json,2,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r041,json,3,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r041,json,5,sensor_address,name,name,"names of places, bodies or stations"
+S14,r041,json,6,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r041,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r041,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r041,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r041,json,11,location_name,name,name,"names of places, bodies or stations"
+S14,r041,json,12,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r041,json,13,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r041,json,14,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r042,json,1,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r042,json,2,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r043,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r043,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r043,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r043,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r043,json,7,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r043,json,8,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r043,json,9,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r043,json,10,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r043,json,12,location_name,name,name,"names of places, bodies or stations"
+S14,r043,json,13,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r043,json,14,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r043,json,15,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r044,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r044,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r044,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r046,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r046,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r046,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r046,json,10,parameter_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r046,json,11,sensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r047,json,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r047,json,2,SerialNumber,internal code,code of the publisher,identifier without a known standard behind it
+S14,r047,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r047,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r047,json,15,kind_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r048,json,2,Id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r048,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r048,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r049,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r049,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r049,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r049,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r049,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r049,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r049,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r050,json,1,index_name,name,name,"names of places, bodies or stations"
+S14,r052,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r052,json,2,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r052,json,3,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r052,json,5,sensor_address,name,name,"names of places, bodies or stations"
+S14,r052,json,6,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r052,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r052,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r052,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r052,json,11,location_name,name,name,"names of places, bodies or stations"
+S14,r052,json,12,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r052,json,13,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r052,json,14,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r053,json,1,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r053,json,2,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r054,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r054,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r054,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r054,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r054,json,7,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r054,json,8,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r054,json,9,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r054,json,10,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r054,json,12,location_name,name,name,"names of places, bodies or stations"
+S14,r054,json,13,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r054,json,14,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r054,json,15,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r055,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r055,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r055,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r057,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r057,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r057,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r057,json,10,parameter_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r057,json,11,sensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r058,json,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r058,json,2,SerialNumber,internal code,code of the publisher,identifier without a known standard behind it
+S14,r058,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r058,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r058,json,15,kind_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r059,json,2,Id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r059,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r059,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r060,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r060,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r060,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r060,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r060,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r060,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r060,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r061,json,1,index_name,name,name,"names of places, bodies or stations"
+S14,r063,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r063,json,2,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r063,json,3,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r063,json,5,sensor_address,name,name,"names of places, bodies or stations"
+S14,r063,json,6,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r063,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r063,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r063,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r063,json,11,location_name,name,name,"names of places, bodies or stations"
+S14,r063,json,12,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r063,json,13,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r063,json,14,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r064,json,1,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r064,json,2,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r065,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r065,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r065,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r065,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r065,json,7,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r065,json,8,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r065,json,9,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r065,json,10,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r065,json,12,location_name,name,name,"names of places, bodies or stations"
+S14,r065,json,13,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r065,json,14,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r065,json,15,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r066,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r066,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r066,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r068,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r068,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r068,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r068,json,10,parameter_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r068,json,11,sensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r069,json,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r069,json,2,SerialNumber,internal code,code of the publisher,identifier without a known standard behind it
+S14,r069,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r069,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r069,json,15,kind_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r070,json,2,Id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r070,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r070,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r071,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r071,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r071,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r071,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r071,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r071,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r071,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r072,json,1,index_name,name,name,"names of places, bodies or stations"
+S14,r074,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r074,json,2,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r074,json,3,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r074,json,5,sensor_address,name,name,"names of places, bodies or stations"
+S14,r074,json,6,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r074,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r074,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r074,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r074,json,11,location_name,name,name,"names of places, bodies or stations"
+S14,r074,json,12,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r074,json,13,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r074,json,14,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r075,json,1,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r075,json,2,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r076,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r076,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r076,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r076,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r076,json,7,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r076,json,8,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r076,json,9,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r076,json,10,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r076,json,12,location_name,name,name,"names of places, bodies or stations"
+S14,r076,json,13,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r076,json,14,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r076,json,15,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r077,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r077,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r077,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r079,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r079,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r079,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r079,json,10,parameter_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r079,json,11,sensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r080,json,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r080,json,2,SerialNumber,internal code,code of the publisher,identifier without a known standard behind it
+S14,r080,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r080,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r080,json,15,kind_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r081,json,2,Id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r081,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r081,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r082,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r082,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r082,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r082,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r082,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r082,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r082,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r083,json,1,index_name,name,name,"names of places, bodies or stations"
+S14,r085,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r085,json,2,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r085,json,3,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r085,json,5,sensor_address,name,name,"names of places, bodies or stations"
+S14,r085,json,6,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r085,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r085,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r085,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r085,json,11,location_name,name,name,"names of places, bodies or stations"
+S14,r085,json,12,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r085,json,13,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r085,json,14,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r086,json,1,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r086,json,2,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r087,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r087,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r087,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r087,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r087,json,7,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r087,json,8,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r087,json,9,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r087,json,10,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r087,json,12,location_name,name,name,"names of places, bodies or stations"
+S14,r087,json,13,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r087,json,14,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r087,json,15,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r088,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r088,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r088,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r090,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r090,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r090,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r090,json,10,parameter_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r090,json,11,sensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r091,json,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r091,json,2,SerialNumber,internal code,code of the publisher,identifier without a known standard behind it
+S14,r091,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r091,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r091,json,15,kind_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r092,json,2,Id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r092,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r092,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r093,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r093,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r093,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r093,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r093,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r093,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r093,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r094,json,1,index_name,name,name,"names of places, bodies or stations"
+S14,r096,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r096,json,2,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r096,json,3,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r096,json,5,sensor_address,name,name,"names of places, bodies or stations"
+S14,r096,json,6,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r096,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r096,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r096,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r096,json,11,location_name,name,name,"names of places, bodies or stations"
+S14,r096,json,12,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r096,json,13,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r096,json,14,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r097,json,1,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r097,json,2,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r098,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r098,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r098,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r098,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r098,json,7,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r098,json,8,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r098,json,9,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r098,json,10,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r098,json,12,location_name,name,name,"names of places, bodies or stations"
+S14,r098,json,13,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r098,json,14,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r098,json,15,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r099,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r099,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r099,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r101,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r101,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r101,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r101,json,10,parameter_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r101,json,11,sensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r102,json,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r102,json,2,SerialNumber,internal code,code of the publisher,identifier without a known standard behind it
+S14,r102,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r102,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r102,json,15,kind_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r103,json,2,Id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r103,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r103,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r104,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r104,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r104,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r104,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r104,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r104,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r104,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r105,json,1,index_name,name,name,"names of places, bodies or stations"
+S14,r107,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r107,json,2,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r107,json,3,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r107,json,5,sensor_address,name,name,"names of places, bodies or stations"
+S14,r107,json,6,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r107,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r107,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r107,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r107,json,11,location_name,name,name,"names of places, bodies or stations"
+S14,r107,json,12,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r107,json,13,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r107,json,14,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r108,json,1,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r108,json,2,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r109,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r109,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r109,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r109,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r109,json,7,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r109,json,8,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r109,json,9,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r109,json,10,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r109,json,12,location_name,name,name,"names of places, bodies or stations"
+S14,r109,json,13,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r109,json,14,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r109,json,15,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r110,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r110,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r110,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r112,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r112,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r112,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r112,json,10,parameter_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r112,json,11,sensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r113,json,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r113,json,2,SerialNumber,internal code,code of the publisher,identifier without a known standard behind it
+S14,r113,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r113,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r113,json,15,kind_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r114,json,2,Id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r114,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r114,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r115,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r115,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r115,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r115,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r115,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r115,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r115,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r116,json,1,index_name,name,name,"names of places, bodies or stations"
+S14,r118,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r118,json,2,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r118,json,3,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r118,json,5,sensor_address,name,name,"names of places, bodies or stations"
+S14,r118,json,6,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r118,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r118,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r118,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r118,json,11,location_name,name,name,"names of places, bodies or stations"
+S14,r118,json,12,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r118,json,13,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r118,json,14,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r119,json,1,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r119,json,2,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r120,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r120,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r120,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r120,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r120,json,7,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r120,json,8,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r120,json,9,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r120,json,10,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r120,json,12,location_name,name,name,"names of places, bodies or stations"
+S14,r120,json,13,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r120,json,14,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r120,json,15,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r121,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r121,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r121,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r123,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r123,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r123,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r123,json,10,parameter_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r123,json,11,sensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r124,json,1,id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r124,json,2,SerialNumber,internal code,code of the publisher,identifier without a known standard behind it
+S14,r124,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r124,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r124,json,15,kind_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r125,json,2,Id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r125,json,6,Lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r125,json,7,Lon,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r126,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r126,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r126,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r126,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r126,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r126,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r126,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r127,json,1,index_name,name,name,"names of places, bodies or stations"
+S14,r129,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r129,json,2,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r129,json,3,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r129,json,5,sensor_address,name,name,"names of places, bodies or stations"
+S14,r129,json,6,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r129,json,7,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r129,json,8,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r129,json,9,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r129,json,11,location_name,name,name,"names of places, bodies or stations"
+S14,r129,json,12,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r129,json,13,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r129,json,14,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r130,json,1,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r130,json,2,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r131,json,1,mysensor_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r131,json,3,ref_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r131,json,4,mysensor_name,name,name,"names of places, bodies or stations"
+S14,r131,json,6,sensor_address,name,name,"names of places, bodies or stations"
+S14,r131,json,7,location_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r131,json,8,sensortype_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r131,json,9,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r131,json,10,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r131,json,12,location_name,name,name,"names of places, bodies or stations"
+S14,r131,json,13,location_lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r131,json,14,location_lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r131,json,15,sensortype_name,name,name,"names of places, bodies or stations"
+S14,r132,json,1,sensorvar_id,internal code,code of the publisher,identifier without a known standard behind it
+S14,r132,json,7,lat,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S14,r132,json,8,lng,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S15,r001,csv,1,address,name,name,"names of places, bodies or stations"
+S15,r001,csv,2,latitude,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S15,r001,csv,3,longitude,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S15,"r002 sheet ""Βιβλίο1""",spreadsheet,1,address,name,name,"names of places, bodies or stations"
+S15,"r002 sheet ""Βιβλίο1""",spreadsheet,2,latitude,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S15,"r002 sheet ""Βιβλίο1""",spreadsheet,3,longitude,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S15,r003,geojson,1,address,name,name,"names of places, bodies or stations"
+S15,r003,geojson,2,latitude,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S15,r003,geojson,3,longitude,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S15,r003,geojson,,(geometry),geometry (declared system),"WGS84, the default of GeoJSON",11 geometries in a declared reference system
+S16,r001 gr_natura_v31_union_final.shp,shapefile,1,OBJECTID_1,internal code,code of the publisher,identifier without a known standard behind it
+S16,r001 gr_natura_v31_union_final.shp,shapefile,2,SITECODE,standard code,Natura 2000 site code,593 of 593 values tested follow the usual form
+S16,r001 gr_natura_v31_union_final.shp,shapefile,4,SITECODE_1,standard code,Natura 2000 site code,195 of 195 values tested follow the usual form
+S16,r001 gr_natura_v31_union_final.shp,shapefile,8,SITE_NAME_,name,name,"names of places, bodies or stations"
+S16,r001 gr_natura_v31_union_final.shp,shapefile,9,SITE_NAME1,name,name,"names of places, bodies or stations"
+S16,r001 gr_natura_v31_union_final.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,593 geometries in a declared reference system
+S18,r002,geojson,1,cid,internal code,code of the publisher,identifier without a known standard behind it
+S18,r002,geojson,2,objectid_1,internal code,code of the publisher,identifier without a known standard behind it
+S18,r002,geojson,3,objectid,internal code,code of the publisher,identifier without a known standard behind it
+S18,r002,geojson,5,code_12,standard code,Corine Land Cover code,2 of 2 values tested follow the usual form
+S18,r002,geojson,6,code_18,standard code,Corine Land Cover code,2 of 2 values tested follow the usual form
+S18,r002,geojson,,(geometry),geometry (declared system),urn:ogc:def:crs:EPSG::2100,2 geometries in a declared reference system
+S18,r003,csv,1,FID,internal code,code of the publisher,identifier without a known standard behind it
+S18,r003,csv,2,cid,internal code,code of the publisher,identifier without a known standard behind it
+S18,r003,csv,4,objectid_1,internal code,code of the publisher,identifier without a known standard behind it
+S18,r003,csv,5,objectid,internal code,code of the publisher,identifier without a known standard behind it
+S18,r003,csv,7,code_12,standard code,Corine Land Cover code,2 of 2 values tested follow the usual form
+S18,r003,csv,8,code_18,standard code,Corine Land Cover code,2 of 2 values tested follow the usual form
+S18,r004 lcv_pol_corine_land_cover_2012_2018.shp,shapefile,1,cid,internal code,code of the publisher,identifier without a known standard behind it
+S18,r004 lcv_pol_corine_land_cover_2012_2018.shp,shapefile,2,objectid_1,internal code,code of the publisher,identifier without a known standard behind it
+S18,r004 lcv_pol_corine_land_cover_2012_2018.shp,shapefile,3,objectid,internal code,code of the publisher,identifier without a known standard behind it
+S18,r004 lcv_pol_corine_land_cover_2012_2018.shp,shapefile,5,code_12,standard code,Corine Land Cover code,2 of 2 values tested follow the usual form
+S18,r004 lcv_pol_corine_land_cover_2012_2018.shp,shapefile,6,code_18,standard code,Corine Land Cover code,2 of 2 values tested follow the usual form
+S18,r004 lcv_pol_corine_land_cover_2012_2018.shp,shapefile,,(geometry),geometry (declared system),GGRS87 / Greek Grid,2 geometries in a declared reference system
+S18,r005,kml,1,cid,internal code,code of the publisher,identifier without a known standard behind it
+S18,r005,kml,2,objectid_1,internal code,code of the publisher,identifier without a known standard behind it
+S18,r005,kml,3,objectid,internal code,code of the publisher,identifier without a known standard behind it
+S18,r005,kml,5,code_12,standard code,Corine Land Cover code,2 of 2 values tested follow the usual form
+S18,r005,kml,6,code_18,standard code,Corine Land Cover code,2 of 2 values tested follow the usual form
+S18,r005,kml,,(geometry),geometry (declared system),"WGS84, the system of KML",2 geometries in a declared reference system
+S20,r001 stations_list.csv,csv,1,stations,name,name,"names of places, bodies or stations"
+S20,r001 stations_list.csv,csv,2,latitude,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S20,r001 stations_list.csv,csv,3,longitude,coordinates (system not declared),degrees without a declared datum,latitude and longitude in degrees; no reference system is declared in the file or in the metadata
+S23,r001,rdf,4,auxiliaryActivity,standard code,KAD/NACE activity code,recognised by the name of the column
+S23,r001,rdf,6,code,internal code,code of the publisher,identifier without a known standard behind it
+S23,r001,rdf,7,companyActivity,standard code,KAD/NACE activity code,recognised by the name of the column
+S23,r001,rdf,11,fullAddress,name,name,"names of places, bodies or stations"
+S23,r001,rdf,13,legalIdentifier,standard code,GEMI number,recognised by the name of the column
+S23,r001,rdf,18,naceDataset,standard code,KAD/NACE activity code,recognised by the name of the column
+S23,r001,rdf,20,postCode,standard code,postal code,recognised by the name of the column
+S23,r001,rdf,22,primaryActivity,standard code,KAD/NACE activity code,recognised by the name of the column
+S23,r001,rdf,24,registeredAddress,name,name,"names of places, bodies or stations"
+S23,r001,rdf,27,secondaryActivity,standard code,KAD/NACE activity code,recognised by the name of the column
+S24,r001,csv,1,column 1,internal code,code of the publisher,identifier without a known standard behind it
+S24,r001,csv,2,column 2,name,name,"names of places, bodies or stations"
+S24,r001,csv,3,column 3,name,name,"names of places, bodies or stations"
+S24,r001,csv,5,column 5,internal code,code of the publisher,identifier without a known standard behind it
+S24,r002,csv,1,column 1,internal code,code of the publisher,identifier without a known standard behind it
+S24,r002,csv,3,column 3,name,name,"names of places, bodies or stations"
+S24,r002,csv,4,column 4,name,name,"names of places, bodies or stations"
+S24,r002,csv,6,column 6,internal code,code of the publisher,identifier without a known standard behind it
+S24,r003,csv,1,column 1,internal code,code of the publisher,identifier without a known standard behind it
+S24,r003,csv,3,column 3,name,name,"names of places, bodies or stations"
+S24,r003,csv,4,column 4,name,name,"names of places, bodies or stations"
+S24,r003,csv,6,column 6,internal code,code of the publisher,identifier without a known standard behind it
+S24,r004,csv,1,column 1,internal code,code of the publisher,identifier without a known standard behind it
+S24,r004,csv,3,column 3,name,name,"names of places, bodies or stations"
+S24,r004,csv,4,column 4,name,name,"names of places, bodies or stations"
+S24,r004,csv,6,column 6,internal code,code of the publisher,identifier without a known standard behind it
+S24,r005,csv,1,column 1,internal code,code of the publisher,identifier without a known standard behind it
+S24,r005,csv,2,column 2,name,name,"names of places, bodies or stations"
+S24,r005,csv,3,column 3,name,name,"names of places, bodies or stations"
+S24,r005,csv,5,column 5,internal code,code of the publisher,identifier without a known standard behind it
+S24,r006,csv,1,column 1,name,name,"names of places, bodies or stations"
+S24,r006,csv,4,column 4,internal code,code of the publisher,identifier without a known standard behind it
+S24,r007,csv,2,column 2,name,name,"names of places, bodies or stations"
+S24,r007,csv,3,column 3,name,name,"names of places, bodies or stations"
+S24,r007,csv,5,column 5,internal code,code of the publisher,identifier without a known standard behind it
+S25,"r001 sheet ""ΙΑΝΟΥΑΡΙΟΣ - ΦΕΒΡΟΥΑΡΙΟΣ 2017""",spreadsheet,1,ΦΟΡΕΑΣ ΥΓΕΙΑΣ,name,name,"names of places, bodies or stations"
+S26,"r001 sheet ""Εγχώρια""",spreadsheet,1,Κωδικ.,internal code,code of the publisher,identifier without a known standard behind it
+S26,"r001 sheet ""Ευρωπαϊκής Ένωσης""",spreadsheet,1,Κωδικ.,internal code,code of the publisher,identifier without a known standard behind it
+S26,"r001 sheet ""Τρίτων Χωρών""",spreadsheet,1,Κωδικ.,internal code,code of the publisher,identifier without a known standard behind it
+S29,"r001 sheet ""ΠΙΝΑΚΑΣ ΤΙΜΟΛΗΨΙΩΝ 18-01-2016"" table 1",spreadsheet,2,column 2,name,name,"names of places, bodies or stations"
+S31,"r003 sheet ""ΥΠΟΓΕΓΡΑΜΜΕΝΕΣ ΣΥΜΒΑΣΕΙΣ (ΝΕΕΣ)""",spreadsheet,1,α/α,internal code,code of the publisher,identifier without a known standard behind it
+S31,"r003 sheet ""ΥΠΟΓΕΓΡΑΜΜΕΝΕΣ ΣΥΜΒΑΣΕΙΣ (ΝΕΕΣ)""",spreadsheet,3,ΚΑΕ,standard code,KAE budget code,43 of 43 values tested follow the usual form
+S31,"r003 sheet ""ΥΠΟΓΕΓΡΑΜΜΕΝΕΣ ΣΥΜΒΑΣΕΙΣ (ΝΕΕΣ)""",spreadsheet,5,ΠΕΡΙΦΕΡΕΙΑΚΗ ΕΝΟΤΗΤΑ ΕΡΓΟΥ,name,name,"names of places, bodies or stations"
+S31,"r003 sheet ""ΥΠΟΓΕΓΡΑΜΜΕΝΕΣ ΣΥΜΒΑΣΕΙΣ (ΝΕΕΣ)""",spreadsheet,8,ΦΟΡΕΑΣ ΧΡΗΜΑΤΟΔΟΤΗΣΗΣ,name,name,"names of places, bodies or stations"
+S32,"r001 sheet ""Π.Ε. Αχαϊας""",spreadsheet,2,ΑΡΙΘΜ. ΠΡΩΤ.,internal code,code of the publisher,identifier without a known standard behind it
+S32,"r002 sheet ""Π.Ε. Αχαϊας""",spreadsheet,2,ΑΡΙΘΜ. ΠΡΩΤ.,internal code,code of the publisher,identifier without a known standard behind it
+S32,"r002 sheet ""Π.Ε. Ηλείας""",spreadsheet,2,ΑΡ. ΠΡΩΤ.,internal code,code of the publisher,identifier without a known standard behind it

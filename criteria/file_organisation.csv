@@ -1,0 +1,37 @@
+sample_id,organisation,examined,combine,note,no_data_file,tables
+S01,parts,all,worst,"one shapefile per region, all with the same reference date (22/10/2026)",,
+S02,formats,r002 r003 r004 r005,best,"the same layer as GeoJSON, CSV, shapefile and KML through WFS; the map view (r001) and the capabilities documents (r006, r007) are not data files",,
+S03,single,r001,one,"GTFS feed in a ZIP archive, declared as RAR",,file name
+S04,series,r003 r004,best,"two editions (reference dates 15-01-2025 and 23-06-2026), each as shapefile and as Excel file; the latest edition is examined",,
+S05,parts,r001_manual r002_manual,worst,"the two lists of the application, exported to Excel by hand on 2026-11-05, since both resources are web pages",,resource
+S06,series,r012,one,"one file per year, 2014 to 2025; the latest year is examined",,
+S07,single,r001,one,one CSV file,,
+S08,single,r001,one,one Excel file,,
+S09,series,r001,one,"one list per year, 2020 to 2024, and the current list uploaded on 2026-03-12, which is examined",,
+S10,single,r001,one,one CSV file,,
+S11,single,r001,one,GTFS feed in a RAR archive,,file name
+S12,series,r013,one,one GTFS feed per period; the latest period (09/10/2026 to 25/10/2026) is examined,,file name
+S13,single,r001,one,"GTFS feed in a ZIP archive, declared as CSV",,file name
+S14,series,r122-r132,worst,"daily extracts of 11 kinds of data, from 20-11-2025 to 1-12-2025; the 11 files of the latest day are examined",,cycle 11
+S15,formats,all,best,"the same data as CSV, Excel and GeoJSON",,
+S16,single,r001,one,one shapefile,,
+S17,none,,none,no data file available: the Excel file returns HTTP 404 and the other resource is a web page (Q1),unavailable,
+S18,formats,r002 r003 r004 r005,best,"the same layer as GeoJSON, CSV, shapefile and KML through WFS; the map view (r001) and the capabilities documents (r006, r007) are not data files",,
+S19,single,r001,one,one CSV file,,
+S20,single,r001,one,"one ZIP archive, whose files are examined",,one; apart stations_list.csv
+S21,parts,r002 r003 r004 r005,worst,rainfall data in one ZIP archive per prefecture; r001 is a PDF report and r006 a web page that is not available (Q1),,
+S22,none,,none,PDF document only,documents,
+S23,single,r001,one,RDF in Turtle,,
+S24,parts,all,worst,one CSV file per category of activity,,
+S25,single,r001,one,one Excel file,,
+S26,single,r001,one,one Excel file,,
+S27,none,,none,"map view (WMS), map image (PNG) and capabilities document only",map images,
+S28,none,,none,"map view (WMS), map image (PNG) and capabilities document only, none of them available (Q1)",map images,
+S29,single,r001,one,one Excel file,,
+S30,none,,none,"map view (WMS), map image (PNG) and capabilities document only",map images,
+S31,series,r003,one,"one file per year, 2017 to 2019; the latest year is examined",,
+S32,series,r002,one,"two files for 2014, uploaded on 2016-11-16 and 2016-12-22; the later and larger file is examined",,
+S33,none,,none,"map view (WMS), map image (PNG) and capabilities document only",map images,
+S34,none,,none,the OAI-PMH service answers with an empty list (Q1),unavailable,
+S35,none,,none,web page leading to one PDF document per decision,documents,
+S36,none,,none,"map view (WMS), map image (PNG) and capabilities document only, none of them available (Q1)",map images,

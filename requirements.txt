@@ -6,3 +6,7 @@ requests==2.34.2   # calls to the data.gov.gr API
 pandas==3.0.6      # processing of data tables
 tqdm==4.70.1       # progress bar for large downloads
 openpyxl==3.1.5    # Excel workbooks (criteria, manual assessment)
+truststore==0.10.5 # certificates of web servers checked through the trust store of the operating system, as browsers do
+xlrd==2.0.2        # older Excel files (.xls) of the sample, read with their merged cells
+pyshp==3.1.6       # shapefiles of the sample
+rdflib==7.6.0      # RDF files of the sample (Turtle)
