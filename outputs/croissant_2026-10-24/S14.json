@@ -1,0 +1,2763 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Υπηρεσίες Δήμου Πατρέων",
+  "description": "Δημιουργήθηκε από το API της υπηρεσίας SmartISCity",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Κέντρο Διαλειτουργικότητας Δήμου Πατρέων"
+  },
+  "dateModified": "2026-05-11",
+  "datePublished": "2026-04-08",
+  "keywords": [
+    "Δήμος Πατρέων",
+    "Επιχειρήσεις",
+    "Μεταφορές",
+    "Οικονομία",
+    "Πάρκινγκ",
+    "Στάθμευση",
+    "Συγκοινωνίες",
+    "Υπηρεσίες",
+    "Υποδομές"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/ypiresies-dimoy-patreon",
+  "version": "1.0",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Μετεωρολογικά Δεδομένα (20-11-2025)",
+      "description": "Μετεωρολογικά δεδομένα Πάτρας (20-11-2025)",
+      "contentSize": "2323 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/d96fc6bc-e3fa-46a1-8ddc-0d44c225992d/download/dotsoft_datameteo20-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "f37b6881c9ade3c61b6c198956d0ec5e0d0b3de6cf8bcb5b0a9693c17f3c124a"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r002",
+      "name": "Περιβαλλοντικά Δεδομένα (20-11-2025)",
+      "description": "Περιβαλλοντικά Δεδομένα Πάτρας (20-11-2025)",
+      "contentSize": "115701 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/e1d50e26-6a72-4565-9c1c-91de9225e256/download/dotsoft_dataenvi20-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "bb6ce4d5e63553dcd79e0f1211bb3360802e365f201340cf0ee4500c1c2b943c"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r003",
+      "name": "Δεδομένα Θέσεων Στάθμευσης (20-11-2025)",
+      "description": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης",
+      "contentSize": "350774 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/7ea00a2b-5084-4566-9fc0-1770c249a412/download/dotsoft_dataparkingall20-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "bc0e13d4855ff309f2fc152b6c94fe7f796d57c795098ca803f63be89ee33f08"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r004",
+      "name": "Δεδομένα στάθμευσης ανά περιοχή (20-11-2025)",
+      "description": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή",
+      "contentSize": "240 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/d08834c9-641a-428a-90c1-d4fd469bfe47/download/dotsoft_dataparking20-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "0a71d9dd10105682391a454c83c18d3565931598aa2ce70a52f02f285b042296"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r006",
+      "name": "Περιβαλλοντικοί δείκτες & ποιότητα ζωής (20-11-2025)",
+      "description": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής",
+      "contentSize": "2181 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/f9b93681-716a-47de-9df4-ef5f824ae1b1/download/dotsoft_dataindexes20-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "7da8fe463417d539ae955c31a8865a4dc4c27de1a08c0e2b193dbc4f9c06587b"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r007",
+      "name": "Μετεωρολογική πρόγνωση Πάτρας (20-11-2025)",
+      "description": "Μετεωρολογική πρόγνωση Πάτρας",
+      "contentSize": "2181 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/12139db3-3e53-4a7c-98e1-24cdcdd0187c/download/dotsoft_dataparkingall20-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "7da8fe463417d539ae955c31a8865a4dc4c27de1a08c0e2b193dbc4f9c06587b"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r008",
+      "name": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας (20-11-2025)",
+      "description": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας",
+      "contentSize": "46739 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/5d31b52a-afac-4a68-9de1-9971a46152c8/download/dotsoft_dataallsensors20-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "e4d4b1e1c42296fd3a87082d1f83b1530ed1804c3810facdf218fca3e131f101"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r009",
+      "name": "Τύποι αισθητήρων και έξυπνης υποδομής (20-11-2025)",
+      "description": "Τύποι αισθητήρων και έξυπνης υποδομής",
+      "contentSize": "3325 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/1e1075b2-0a25-43b6-894c-df235ca1860c/download/dotsoft_datasensortypes20-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "787e195c4ec25500d55661c128e0db8ddbece17d68345c6f4d104f4c37b57cbd"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r010",
+      "name": "Δεδομένα δικτύου mesh και συνάθροισης κοινού (20-11-2025)",
+      "description": "Δεδομένα δικτύου mesh και συνάθροισης κοινού",
+      "contentSize": "2804 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/14ab97ac-fcd5-468f-9f39-7c27c4c3603a/download/dotsoft_datamesh20-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "11120d26bfaad658abb9e1e2e38d9fe4d5c467a56033984d2b0e8cc98027cdc1"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r011",
+      "name": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης (20-11-2025)",
+      "description": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης",
+      "contentSize": "43541 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/ecc346d1-af85-49e6-9780-6282f9fd472a/download/dotsoft_datawaterq20-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "4d9439c7b8439450639d3aaf2406224421edb9eae0d24c8d434b1033171b8453"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r012",
+      "name": "Μετεωρολογικά δεδομένα Πάτρας (21-11-2025)",
+      "description": "Μετεωρολογικά δεδομένα Πάτρας",
+      "contentSize": "2250 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/d543f32d-a0ba-4832-8449-9f47bcfaf9b8/download/meteo21-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "ac90d1f44b6ccee68a73fc00b6929ebbeb10d04eb561af607edbbd9b6a4c8806"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r014",
+      "name": "Δεδομένα Θέσεων Στάθμευσης (21-11-2025)",
+      "description": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης",
+      "contentSize": "337303 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/7285deba-93e1-4e5d-bffd-5fed51d2fd98/download/parkingall21-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "d9dad5ccf922d9ca6d0463e73119083aaf96e8849ac9b1bf6c36b4099fb367a2"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r015",
+      "name": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή (21-11-2025)",
+      "description": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή",
+      "contentSize": "228 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/3423f952-24c8-486f-a17c-bbf7030edb81/download/parking21-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "0abf05831a080e7d20330ebe055b07d98c16e46cb814f5d3af7d4e728e420e6d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r016",
+      "name": "Δεδομένα δημόσιων χώρων στάθμευσης (21-11-2025)",
+      "description": "Δεδομένα δημόσιων χώρων στάθμευσης",
+      "contentSize": "1817 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/a807c8ba-fcfd-4885-9b25-cd8129612d4f/download/publicparking21-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a1f31a5358d6890540027a87740d5453748028817abe76820d5beeeeed6e8245"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r017",
+      "name": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής (21-11-2025)",
+      "description": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής",
+      "contentSize": "2299 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/660095f1-6e35-486f-901a-322c34a15748/download/indexes21-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "72b20af3cbd7f62a81aee40db93ed54628d73579d4c4b3a3a8443bb19bf32e4b"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r018",
+      "name": "Μετεωρολογική πρόγνωση Πάτρας (21-11-2025)",
+      "description": "Μετεωρολογική πρόγνωση Πάτρας",
+      "contentSize": "440 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/aaaa5ea8-6452-44e8-83ef-1919599af7c1/download/forecast21-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "018eed0fcd421bd64e71595bb08b5f604b075a2ec7820ea40646edcca2938ed5"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r019",
+      "name": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας (21-11-2025)",
+      "description": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας",
+      "contentSize": "45446 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/61254b1a-8b81-49d5-b45b-3534c992531b/download/allsensors21-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "2f37989d8bc150a01f9f6427cabf4bdc0cb05c1a49f149464a4f1bfba7e33581"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r020",
+      "name": "Τύποι αισθητήρων και έξυπνης υποδομής (21-11-2025)",
+      "description": "Τύποι αισθητήρων και έξυπνης υποδομής",
+      "contentSize": "3244 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/d65839c4-be3b-475c-839e-9b55801f941b/download/sensortypes21-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "8146bdce2874f99c4855ef979e2a7874c86d14452c14fab174511b35890674cf"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r021",
+      "name": "Δεδομένα δικτύου mesh και συνάθροισης κοινού (21-11-2025)",
+      "description": "Δεδομένα δικτύου mesh και συνάθροισης κοινού",
+      "contentSize": "2731 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/89d4df04-2e29-4055-9bec-1a06866cd6f1/download/mesh21-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "603416c79f07c530b7ed7913d7ad271eb376691988a99445ef8b8d390af1e0a6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r022",
+      "name": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης (21-11-2025)",
+      "description": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης",
+      "contentSize": "42262 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/93717593-2a86-4fa4-a7c9-e46c3026b90d/download/waterq21-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "04fd40ed240dd795f7d9d8fbd6fd6c00dc498c99868ba61c8e35a862c8ed06f9"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r023",
+      "name": "Μετεωρολογικά δεδομένα Πάτρας (22-11-2025)",
+      "description": "Μετεωρολογικά δεδομένα Πάτρας",
+      "contentSize": "2251 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/a6da63d5-a035-4893-b26e-8a1a73b7a998/download/meteo22-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "0e39a2862bd65f90e877855d92adbeb9ea146e4b23993608e6f621c7fc90b90e"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r024",
+      "name": "Περιβαλλοντικά δεδομένα Πάτρας (22-11-2025)",
+      "description": "Περιβαλλοντικά δεδομένα Πάτρας",
+      "contentSize": "112061 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/8fa212cb-e88a-4562-bacb-cc04ae6d1a20/download/envi22-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "80814d8cef6bdaa31f1804f3f2bdd926825d6003e9f6712d2a8d5868c31c5cba"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r025",
+      "name": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης (22-11-2025)",
+      "description": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης",
+      "contentSize": "337296 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/7125476b-887c-442a-859d-0277631f747f/download/parkingall22-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "e5549acd132df3db840891f921a11417fb044e14997c72115aba1f8344b7e3b3"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r026",
+      "name": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή (22-11-2025)",
+      "description": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή",
+      "contentSize": "228 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/d5d5f7ed-72f1-439a-a434-af9cc6912458/download/parking22-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "b37be12026b297c96f3a0b75d577bc18406e6c85d6707262c6ed83b2ba822aba"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r027",
+      "name": "Δεδομένα δημόσιων χώρων στάθμευσης (22-11-2025)",
+      "description": "Δεδομένα δημόσιων χώρων στάθμευσης",
+      "contentSize": "1817 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/30625f1b-0fb5-44ce-8484-b67664409ed7/download/publicparking22-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a1f31a5358d6890540027a87740d5453748028817abe76820d5beeeeed6e8245"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r028",
+      "name": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής (22-11-2025)",
+      "description": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής",
+      "contentSize": "2446 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/8fb47ca7-a8fc-47dc-89ca-5ae2f024d136/download/indexes22-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "bb5c437801b6d300fb6a794313a9b1c174ba7c209a42abb94e2e2c9f7874afa7"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r029",
+      "name": "Μετεωρολογική πρόγνωση Πάτρας (22-11-2025)",
+      "description": "Μετεωρολογική πρόγνωση Πάτρας",
+      "contentSize": "444 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/ecf67a1c-b2cc-41a9-9147-0e5766df9ece/download/forecast22-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "9df13d8c0848bdc542ffca9d3f55a3b181d1256e9c9f841edda3837eb8f99f09"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r030",
+      "name": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας (22-11-2025)",
+      "description": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας",
+      "contentSize": "45446 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/f0f535f2-0dc7-4d61-a437-a89c4ebf7d86/download/allsensors22-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "6af9bd93b17753b4adcf775d5cb5c9da88c271414710c2e9255d05808490b7e3"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r031",
+      "name": "Τύποι αισθητήρων και έξυπνης υποδομής (22-11-2025)",
+      "description": "Τύποι αισθητήρων και έξυπνης υποδομής",
+      "contentSize": "3244 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/fd164284-a5e7-45a0-baad-874dd0ac289b/download/sensortypes22-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "8146bdce2874f99c4855ef979e2a7874c86d14452c14fab174511b35890674cf"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r032",
+      "name": "Δεδομένα δικτύου mesh και συνάθροισης κοινού (22-11-2025)",
+      "description": "Δεδομένα δικτύου mesh και συνάθροισης κοινού",
+      "contentSize": "2731 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/3325ddc9-4315-4f93-a274-db7a187f260a/download/mesh22-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "603416c79f07c530b7ed7913d7ad271eb376691988a99445ef8b8d390af1e0a6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r033",
+      "name": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης (22-11-2025)",
+      "description": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης",
+      "contentSize": "42261 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/fa713b29-30f4-407d-aead-477b068851b5/download/waterq22-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "f796cacf3562e13432f1cc0e9eb9a4365f177dcf712d7d57e3c6d0787fc75695"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r034",
+      "name": "Μετεωρολογικά δεδομένα Πάτρας (23-11-2025)",
+      "description": "Μετεωρολογικά δεδομένα Πάτρας",
+      "contentSize": "2251 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/5ae08946-47c2-4ea1-8486-5d38d1dd2b4c/download/meteo23-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "07abec7b529f7c253b986c3eadab3d1611fbd7460b2e4289a01d35ea4ad10f5f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r035",
+      "name": "Περιβαλλοντικά δεδομένα Πάτρας (23-11-2025)",
+      "description": "Περιβαλλοντικά δεδομένα Πάτρας",
+      "contentSize": "112068 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/12df9f2a-e9a0-4aac-84f4-a7c44b190a8c/download/envi23-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "c3b84d08289d7d71b86d55ee520932f74ed9c5468887a4f5e88db088d8d4f843"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r036",
+      "name": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης (23-11-2025)",
+      "description": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης",
+      "contentSize": "337283 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/ea3dfa96-a79a-4cae-b988-79982081d811/download/parkingall23-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "33e0ccb1cd4193eb38ae2adb0e92170498254f8b592a8b28b346f857b7967d14"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r037",
+      "name": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή (23-11-2025)",
+      "description": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή",
+      "contentSize": "228 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/b8fc82aa-1f98-4060-b9af-c9a65613248a/download/parking23-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a11905000bc3bc19b541e194ecf7c4d1f9c5039a7f763f0552aa5090cc76d4f1"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r038",
+      "name": "Δεδομένα δημόσιων χώρων στάθμευσης (23-11-2025)",
+      "description": "Δεδομένα δημόσιων χώρων στάθμευσης",
+      "contentSize": "1817 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/55480739-17ca-46ca-942f-f5bed72e5480/download/publicparking23-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a1f31a5358d6890540027a87740d5453748028817abe76820d5beeeeed6e8245"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r039",
+      "name": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής (23-11-2025)",
+      "description": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής",
+      "contentSize": "2297 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/1badd6db-c92b-4e23-99fe-673ab8e70ee4/download/indexes23-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "69967922bddae077b47cc06e6ef75dc83bfcab41aafbb5bdbefb442251397615"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r040",
+      "name": "Μετεωρολογική πρόγνωση Πάτρας (23-11-2025)",
+      "description": "Μετεωρολογική πρόγνωση Πάτρας",
+      "contentSize": "437 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/d3fb429b-b58d-4a56-82d2-534417c7fcd9/download/forecast23-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "3b53bb106f9a0e7ceb2932167a5c70538ff125aec119cfe87ab0a7db254c6caa"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r041",
+      "name": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας (23-11-2025)",
+      "description": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας",
+      "contentSize": "45446 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/932f8aec-5d0e-487f-8fe1-8f6e427d4bab/download/allsensors23-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "1c55fc9ddc8128f3d35cc6e0b2ef6af16755e70b28adad658770c2b736c29464"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r042",
+      "name": "Τύποι αισθητήρων και έξυπνης υποδομής (23-11-2025)",
+      "description": "Τύποι αισθητήρων και έξυπνης υποδομής",
+      "contentSize": "3244 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/7823b7e2-1179-4027-ad74-e54911290cda/download/sensortypes23-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "8146bdce2874f99c4855ef979e2a7874c86d14452c14fab174511b35890674cf"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r043",
+      "name": "Δεδομένα δικτύου mesh και συνάθροισης κοινού (23-11-2025)",
+      "description": "Δεδομένα δικτύου mesh και συνάθροισης κοινού",
+      "contentSize": "2731 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/056fa806-46da-47ac-bd87-e5c1d771984d/download/mesh23-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "603416c79f07c530b7ed7913d7ad271eb376691988a99445ef8b8d390af1e0a6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r044",
+      "name": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης (23-11-2025)",
+      "description": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης",
+      "contentSize": "42261 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/34e4d0e5-71e7-44fb-ad05-66fc45ea98c4/download/waterq23-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "3d2c64d7725e813f0b218a04fd627d3743cdfbb0ecd2d64c39a6a182250a1daa"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r045",
+      "name": "Μετεωρολογικά δεδομένα Πάτρας (24-11-2025)",
+      "description": "Μετεωρολογικά δεδομένα Πάτρας",
+      "contentSize": "2251 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/644125c1-bd7a-412e-a850-dae1a03e9e9d/download/meteo24-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "df3b3ee91b5884ae657e9a1c42041b5e7200375036c1f1a37258801beb87f1f3"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r046",
+      "name": "Περιβαλλοντικά δεδομένα Πάτρας (24-11-2025)",
+      "description": "Περιβαλλοντικά δεδομένα Πάτρας",
+      "contentSize": "112039 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/5106e119-2ef3-495d-b3a1-76872027d498/download/envi24-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "61f8ab9cc511136e7e43c56145ae7d25d296dd95764c693e4d81552434ab6877"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r047",
+      "name": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης (24-11-2025)",
+      "description": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης",
+      "contentSize": "337330 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/b7551bd8-8a34-4cc8-a29f-fe0dee938911/download/parkingall24-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "d9dff4de504a4f598d57c8537ebdf690770f93c10b72dce856b139f340822df7"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r048",
+      "name": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή (24-11-2025)",
+      "description": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή",
+      "contentSize": "228 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/03d9a8d2-c489-47ca-88e4-5aa8a4350d01/download/parking24-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "0276d7e4dcbf595e4cacf60176efa39ee14871bffce59a958ea95d8f0326abea"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r049",
+      "name": "Δεδομένα δημόσιων χώρων στάθμευσης (24-11-2025)",
+      "description": "Δεδομένα δημόσιων χώρων στάθμευσης",
+      "contentSize": "1817 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/8b253074-b10a-40f6-9b4b-c4865e4821e0/download/publicparking24-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a1f31a5358d6890540027a87740d5453748028817abe76820d5beeeeed6e8245"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r050",
+      "name": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής (24-11-2025)",
+      "description": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής",
+      "contentSize": "2165 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/f46cb8af-86bb-42df-8942-3d9d2313d7be/download/indexes24-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "5032a142d032c7f41655006e065e61d7af59fc77a86d54712dd7f62e431c2f07"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r051",
+      "name": "Μετεωρολογική πρόγνωση Πάτρας (24-11-2025)",
+      "description": "Μετεωρολογική πρόγνωση Πάτρας",
+      "contentSize": "429 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/506be7c8-c026-4f6f-ac77-7227b961c793/download/forecast24-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "ca7cb64485a59d88d3fd7739dd9f180f4706d0bd0a8d0bc9d5bca2a440929ac5"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r052",
+      "name": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας (24-11-2025)",
+      "description": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας",
+      "contentSize": "45446 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/be60df08-e150-4828-80c7-ef53be116f1e/download/allsensors24-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "fd5a38e0b80b3416ea9abd06e0c68425f83d59f438bd52d737f34044dce3c8be"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r053",
+      "name": "Τύποι αισθητήρων και έξυπνης υποδομής (24-11-2025)",
+      "description": "Τύποι αισθητήρων και έξυπνης υποδομής",
+      "contentSize": "3244 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/bce96c88-300e-4315-8d92-620a2a0ef7fb/download/sensortypes24-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "8146bdce2874f99c4855ef979e2a7874c86d14452c14fab174511b35890674cf"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r054",
+      "name": "Δεδομένα δικτύου mesh και συνάθροισης κοινού (24-11-2025)",
+      "description": "Δεδομένα δικτύου mesh και συνάθροισης κοινού",
+      "contentSize": "2731 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/49af0291-4135-40a7-9805-900266aaee73/download/mesh24-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "603416c79f07c530b7ed7913d7ad271eb376691988a99445ef8b8d390af1e0a6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r055",
+      "name": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης (24-11-2025)",
+      "description": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης",
+      "contentSize": "42262 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/3f9c3714-a330-4e97-aabf-b0dd91a84f0e/download/waterq24-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "e5b239c3e0cd19c51805b6ce5a17192d787e6115f43e11df173007ec36f958f9"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r056",
+      "name": "Μετεωρολογικά δεδομένα Πάτρας (25-11-2025)",
+      "description": "Μετεωρολογικά δεδομένα Πάτρας",
+      "contentSize": "2251 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/6d919992-82e9-4767-bbbb-a319a5c90b2e/download/meteo25-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "1da5ece7e6387571d9895837e55c17daa7c4a5d97a9f2234e982ff6f437eff8c"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r057",
+      "name": "Περιβαλλοντικά δεδομένα Πάτρας (25-11-2025)",
+      "description": "Περιβαλλοντικά δεδομένα Πάτρας",
+      "contentSize": "112029 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/7b9057d9-7696-4ffb-acbd-13e85d22c29e/download/envi25-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "2317c6f4fe4384e92fdbdced3d0884bf6a019c08be2f8cb9c8bae4bf262b25be"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r058",
+      "name": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης (25-11-2025)",
+      "description": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης",
+      "contentSize": "337337 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/df6266d3-ffde-4141-ac03-e90db94db4c6/download/parkingall25-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "93e1e2f5c4f8b0bad3998083b141f976e974b50eeb8a2c4dc14ffe61f00a259f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r059",
+      "name": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή (25-11-2025)",
+      "description": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή",
+      "contentSize": "228 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/856734bf-1161-4b99-a9dc-a0468fe9318c/download/parking25-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "1d2ba6401eb25b16d42fc7d04c7ab8bb658b3ca7660900f3ce82d54e49e5d75b"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r060",
+      "name": "Δεδομένα δημόσιων χώρων στάθμευσης (25-11-2025)",
+      "description": "Δεδομένα δημόσιων χώρων στάθμευσης",
+      "contentSize": "1817 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/d17c30ce-3950-46f2-8858-f8d2ceacb9a5/download/publicparking25-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a1f31a5358d6890540027a87740d5453748028817abe76820d5beeeeed6e8245"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r061",
+      "name": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής (25-11-2025)",
+      "description": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής",
+      "contentSize": "2165 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/c79b5b30-1a3e-4d3b-a88d-5e328abfa924/download/indexes25-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "f8734fa28e119fc66143f06cd4d8b60051e5392c26f784ab80405d8f2dfe68be"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r062",
+      "name": "Μετεωρολογική πρόγνωση Πάτρας (25-11-2025)",
+      "description": "Μετεωρολογική πρόγνωση Πάτρας",
+      "contentSize": "435 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/0c45e5a2-d433-4806-9610-d30f63cabbea/download/forecast25-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "73f68176c101b2658fc94e9533cc77c740acef040447470924c38e9947e5d72c"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r063",
+      "name": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας (25-11-2025)",
+      "description": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας",
+      "contentSize": "45446 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/b6513377-b203-494b-9252-5e9b41bd643a/download/allsensors25-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "0e39c94169d58446547e4c9edb19b323b0447fe6d2afadd03a3c11dae66e017a"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r064",
+      "name": "Τύποι αισθητήρων και έξυπνης υποδομής (25-11-2025)",
+      "description": "Τύποι αισθητήρων και έξυπνης υποδομής",
+      "contentSize": "3244 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/f5f40013-739d-40b9-86f8-b3e70f2239ed/download/sensortypes25-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "8146bdce2874f99c4855ef979e2a7874c86d14452c14fab174511b35890674cf"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r065",
+      "name": "Δεδομένα δικτύου mesh και συνάθροισης κοινού (25-11-2025)",
+      "description": "Δεδομένα δικτύου mesh και συνάθροισης κοινού",
+      "contentSize": "2731 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/cf3fd76e-29d5-42a5-a350-c6f672779594/download/mesh25-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "603416c79f07c530b7ed7913d7ad271eb376691988a99445ef8b8d390af1e0a6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r066",
+      "name": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης (25-11-2025)",
+      "description": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης",
+      "contentSize": "42259 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/a850dfb7-e6fc-453c-baa4-6d2726b60b6a/download/waterq25-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "1067f470f0b224244dd0812704c49cc03a0bb183dc1dc8fd84ed888cb69fbb06"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r067",
+      "name": "Μετεωρολογικά δεδομένα Πάτρας (26-11-2025)",
+      "description": "Μετεωρολογικά δεδομένα Πάτρας",
+      "contentSize": "2251 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/e92958a1-a652-4c32-a761-33bbe03521e7/download/meteo26-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "024951879bb5833f876c9d6964e01a87c705e006776155809215b07fdd50b9d0"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r068",
+      "name": "Περιβαλλοντικά δεδομένα Πάτρας (26-11-2025)",
+      "description": "Περιβαλλοντικά δεδομένα Πάτρας",
+      "contentSize": "112062 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/c8a16989-2f68-4904-817f-08ac3535f405/download/envi26-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "8598230ea3a5daff639e7d470e0e9517173afefecffbc3b9cdc95c43d7a9231a"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r069",
+      "name": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης (26-11-2025)",
+      "description": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης",
+      "contentSize": "337345 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/60906ca1-297d-4ae7-839d-a9917ebda1d8/download/parkingall26-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "9a44461ceeb682dd5fc98c64d027ea924fc7e062ac97877bbe9898175bde0494"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r070",
+      "name": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή (26-11-2025)",
+      "description": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή",
+      "contentSize": "228 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/cb66e1a5-432f-421c-a671-e3412fff809a/download/parking26-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "8d56574a368c1a51a4d21dbe6651225739c9d0d95ecdda82d0cc9f513a3d5db2"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r071",
+      "name": "Δεδομένα δημόσιων χώρων στάθμευσης (26-11-2025)",
+      "description": "Δεδομένα δημόσιων χώρων στάθμευσης",
+      "contentSize": "1817 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/9f873511-fc92-41b0-853b-794a627225ba/download/publicparking26-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a1f31a5358d6890540027a87740d5453748028817abe76820d5beeeeed6e8245"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r072",
+      "name": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής (26-11-2025)",
+      "description": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής",
+      "contentSize": "2299 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/1efa7889-94fc-4c11-9fc1-3eb5a028951a/download/indexes26-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "e5ae3ec80f51598b2888e4506f9cf853b425422a9a136cc678930edec76cbe2d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r073",
+      "name": "Μετεωρολογική πρόγνωση Πάτρας (26-11-2025)",
+      "description": "Μετεωρολογική πρόγνωση Πάτρας",
+      "contentSize": "448 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/222b9271-deb1-4013-a328-775563c31c9e/download/forecast26-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "552c4e24b5681fe8e9f0c67ee249fda27d0010663e920a1cadabcaf6e2075f8d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r074",
+      "name": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας (26-11-2025)",
+      "description": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας",
+      "contentSize": "45446 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/db51ccf8-32c8-49bb-a6af-530313efd23f/download/allsensors26-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "ec6794ae3f6e4f2ca1d8ddd4594ffda5ac749465f84650dd5bb7182274be11c4"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r075",
+      "name": "Τύποι αισθητήρων και έξυπνης υποδομής (26-11-2025)",
+      "description": "Τύποι αισθητήρων και έξυπνης υποδομής",
+      "contentSize": "3244 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/fabe3a6d-1125-4262-8573-f785936ddb2c/download/sensortypes26-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "8146bdce2874f99c4855ef979e2a7874c86d14452c14fab174511b35890674cf"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r076",
+      "name": "Δεδομένα δικτύου mesh και συνάθροισης κοινού (26-11-2025)",
+      "description": "Δεδομένα δικτύου mesh και συνάθροισης κοινού",
+      "contentSize": "2731 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/9a8093cd-fccd-4d62-a0dd-7163f2f6741e/download/mesh26-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "603416c79f07c530b7ed7913d7ad271eb376691988a99445ef8b8d390af1e0a6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r077",
+      "name": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης (26-11-2025)",
+      "description": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης",
+      "contentSize": "42261 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/a8c70ad2-1147-4233-bbdd-aaae9c362df3/download/waterq26-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a3207c710f2ed0598ed778d7fb92116494c0e02f14ff22507235c0766fc45b36"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r078",
+      "name": "Μετεωρολογικά δεδομένα Πάτρας (27-11-2025)",
+      "description": "Μετεωρολογικά δεδομένα Πάτρας",
+      "contentSize": "2249 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/dbf593db-48e3-42a6-af66-369c60658606/download/meteo27-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "cecf3916b079eb3949cdd676042f5b55e62c518e4a8969784a1b6c74396cce73"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r079",
+      "name": "Περιβαλλοντικά δεδομένα Πάτρας (27-11-2025)",
+      "description": "Περιβαλλοντικά δεδομένα Πάτρας",
+      "contentSize": "112050 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/53684ab4-5924-4078-a1c2-bad967c1e441/download/envi27-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "ef7c54c814eb5262b1523e5b2513b6829834dfb79b64254dbd5830ebdf0b707e"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r080",
+      "name": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης (27-11-2025)",
+      "description": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης",
+      "contentSize": "337332 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/e936d336-0f8f-4db5-8307-d5a66826049b/download/parkingall27-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "6106a8e22603435f9705d417202558f4cb8318d2c1a724d3cf72df73934b356b"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r081",
+      "name": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή (27-11-2025)",
+      "description": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή",
+      "contentSize": "228 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/d4eea29e-20de-4c92-9d8c-fb6bc8db70cd/download/parking27-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "fbaf03ab9350af83a24e095aa401b571c8a5fd009a6b757c2904534afb3df6bd"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r082",
+      "name": "Δεδομένα δημόσιων χώρων στάθμευσης (27-11-2025)",
+      "description": "Δεδομένα δημόσιων χώρων στάθμευσης",
+      "contentSize": "1817 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/2649fb02-4058-4daf-b254-d2defef2aaf9/download/publicparking27-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a1f31a5358d6890540027a87740d5453748028817abe76820d5beeeeed6e8245"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r083",
+      "name": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής (27-11-2025)",
+      "description": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής",
+      "contentSize": "2446 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/94e9fce2-8f41-4169-94a9-95a07ed80771/download/indexes27-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "d5a2a40bc46543570b17d272e578cead17b011042538ba1f3be334038526f73f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r084",
+      "name": "Μετεωρολογική πρόγνωση Πάτρας (27-11-2025)",
+      "description": "Μετεωρολογική πρόγνωση Πάτρας",
+      "contentSize": "442 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/40e1521d-4fbd-4c3c-b16e-0ca40ccad4c1/download/forecast27-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "9beb0cae1aced9d39de5662e194d05fc7b1462c8cbb8f40cbcfcfad255f0cfd3"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r085",
+      "name": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας (27-11-2025)",
+      "description": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας",
+      "contentSize": "45446 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/d1d7ee42-716e-4683-a8c9-5f4fa969dbbf/download/allsensors27-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "abdac63ad565e3007bafd20d2c220ba63467547d7c2da9de34e63a2a5cda09a7"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r086",
+      "name": "Τύποι αισθητήρων και έξυπνης υποδομής (27-11-2025)",
+      "description": "Τύποι αισθητήρων και έξυπνης υποδομής",
+      "contentSize": "3244 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/52bdbc01-7cad-4025-9378-1773469a41a9/download/sensortypes27-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "8146bdce2874f99c4855ef979e2a7874c86d14452c14fab174511b35890674cf"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r087",
+      "name": "Δεδομένα δικτύου mesh και συνάθροισης κοινού (27-11-2025)",
+      "description": "Δεδομένα δικτύου mesh και συνάθροισης κοινού",
+      "contentSize": "2731 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/9dba273d-1276-49d0-8b71-42a06642ba06/download/mesh27-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "603416c79f07c530b7ed7913d7ad271eb376691988a99445ef8b8d390af1e0a6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r088",
+      "name": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης (27-11-2025)",
+      "description": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης",
+      "contentSize": "42261 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/3b544114-9c1a-4887-9917-2068460470f3/download/waterq27-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "f796d34255d7b36cc2bc4aeec6bb49b5d8d7eb35739942c214206425e7660081"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r089",
+      "name": "Μετεωρολογικά δεδομένα Πάτρας (28-11-2025)",
+      "description": "Μετεωρολογικά δεδομένα Πάτρας",
+      "contentSize": "2250 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/f5520c0a-9e8f-460d-9231-6321a9094335/download/meteo28-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "49b9e7643dab324d6928928b09520346f976b03c2c47f1dd9d25db0e88cdfe0d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r090",
+      "name": "Περιβαλλοντικά δεδομένα Πάτρας (28-11-2025)",
+      "description": "Περιβαλλοντικά δεδομένα Πάτρας",
+      "contentSize": "112060 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/31b1086e-4c28-40f9-94de-7134d01aa2ab/download/envi28-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "27fa4aebeafa9756b4427927d2f24e2d1801d12cbc10cd700f776584aa9638f2"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r091",
+      "name": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης (28-11-2025)",
+      "description": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης",
+      "contentSize": "337342 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/68207a11-8c02-439b-9aac-7958cd3048f3/download/parkingall28-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "d245beac6f5d628e1fb3a873530c29a61007ee3f85221a75f44084b79699f6bd"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r092",
+      "name": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή (28-11-2025)",
+      "description": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή",
+      "contentSize": "228 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/cf011d60-b69c-420f-bc1b-40891b2686c4/download/parking28-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "df846d5d93ea4f269f18092429e9202ae24b80f6a7adfa23ac1ca4f81b9a7493"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r093",
+      "name": "Δεδομένα δημόσιων χώρων στάθμευσης (28-11-2025)",
+      "description": "Δεδομένα δημόσιων χώρων στάθμευσης",
+      "contentSize": "1817 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/5434a9f1-293d-41ab-86e0-2b85eb9843fa/download/publicparking28-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a1f31a5358d6890540027a87740d5453748028817abe76820d5beeeeed6e8245"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r094",
+      "name": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής (28-11-2025)",
+      "description": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής",
+      "contentSize": "2165 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/c87b5f3e-105e-4b58-951a-99d6fe021fd9/download/indexes28-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "ceb7bdbb34c66461859ffc4b2b9bdd37811ddb0d3cd3dbf2ceb5343816522dbb"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r095",
+      "name": "Μετεωρολογική πρόγνωση Πάτρας (28-11-2025)",
+      "description": "Μετεωρολογική πρόγνωση Πάτρας",
+      "contentSize": "429 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/8a731735-6ff7-446f-b7a9-12dd9f47b8e0/download/forecast28-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "40bf0cb692cc5817a77d59c16507e610f0909f59ce03c18d154bb509595328be"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r096",
+      "name": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας (28-11-2025)",
+      "description": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας",
+      "contentSize": "45446 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/bee98caf-eaf0-47a6-8fb4-44f626854226/download/allsensors28-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "ded931245300ffaa9b9a71ce38491fab51bec1592fb038d878b5d3e067ebc021"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r097",
+      "name": "Τύποι αισθητήρων και έξυπνης υποδομής (28-11-2025)",
+      "description": "Τύποι αισθητήρων και έξυπνης υποδομής",
+      "contentSize": "3244 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/a52f811c-26fa-4abb-9ae1-33694beca45f/download/sensortypes28-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "8146bdce2874f99c4855ef979e2a7874c86d14452c14fab174511b35890674cf"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r098",
+      "name": "Δεδομένα δικτύου mesh και συνάθροισης κοινού (28-11-2025)",
+      "description": "Δεδομένα δικτύου mesh και συνάθροισης κοινού",
+      "contentSize": "2731 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/472736e5-2e0a-49e6-9c52-849bac325c29/download/mesh28-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "603416c79f07c530b7ed7913d7ad271eb376691988a99445ef8b8d390af1e0a6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r099",
+      "name": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης (28-11-2025)",
+      "description": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης",
+      "contentSize": "42260 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/b7cce931-7898-420d-88ce-999efaa32034/download/waterq28-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "66dff07a3ec65f75d1044eaa439200140de903854dccff5d3b4845fe652c997f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r100",
+      "name": "Μετεωρολογικά δεδομένα Πάτρας (29-11-2025)",
+      "description": "Μετεωρολογικά δεδομένα Πάτρας",
+      "contentSize": "2249 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/c03be387-308d-4a6a-a181-07b431463daa/download/meteo29-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "2b286cb7f4a4850242b66baaa8b2ed00bc1a13eb7ec20c04f915fe7bf1a2ea72"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r101",
+      "name": "Περιβαλλοντικά δεδομένα Πάτρας (29-11-2025)",
+      "description": "Περιβαλλοντικά δεδομένα Πάτρας",
+      "contentSize": "112047 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/b56a1f0c-f4bf-4e8c-bb06-31ed70388e3b/download/envi29-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a027d8cd92edd82aab453432685ad1264f3d82300f2daa9f869315ec20b6a866"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r102",
+      "name": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης (29-11-2025)",
+      "description": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης",
+      "contentSize": "337293 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/298776c5-e186-466b-a7ee-3435312643a1/download/parkingall29-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "92667f01807184683c66ef18fc0fa23547e78be3534abc761a486df16f568882"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r103",
+      "name": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή (29-11-2025)",
+      "description": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή",
+      "contentSize": "228 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/d8cf62b7-da4a-464e-8eb3-b7b5ccade83c/download/parking29-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "cf0e18f9631acf557abdc44ef65dea060acbd5341b5867098019fb6b7c2cc5a6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r104",
+      "name": "Δεδομένα δημόσιων χώρων στάθμευσης (29-11-2025)",
+      "description": "Δεδομένα δημόσιων χώρων στάθμευσης",
+      "contentSize": "1817 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/60e334be-d377-4720-9ad7-ba3569277212/download/publicparking29-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a1f31a5358d6890540027a87740d5453748028817abe76820d5beeeeed6e8245"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r105",
+      "name": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής (29-11-2025)",
+      "description": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής",
+      "contentSize": "2165 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/19e763ed-f7cd-4c44-86d8-1b97d782dc66/download/indexes29-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "85a6ec6b29e8472df8cd52c6fe0024eba0c0e728a940ca5e9c7876ac419959bb"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r106",
+      "name": "Μετεωρολογική πρόγνωση Πάτρας (29-11-2025)",
+      "description": "Μετεωρολογική πρόγνωση Πάτρας",
+      "contentSize": "435 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/365152fc-2579-47ee-892f-1aaa61d7ceed/download/forecast29-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "59dadb9444fe03a100340f58a715a58e3d7e7cbd4ef9000fe1c9f0ba61dd8297"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r107",
+      "name": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας (29-11-2025)",
+      "description": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας",
+      "contentSize": "45446 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/3a1fd777-73f3-40d1-9f21-a7d63f442877/download/allsensors29-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "d6848aeb2c818b5ec46a719bc327b74deceada89d892d68e9d8a4c093fd7a3ff"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r108",
+      "name": "Τύποι αισθητήρων και έξυπνης υποδομής (29-11-2025)",
+      "description": "Τύποι αισθητήρων και έξυπνης υποδομής",
+      "contentSize": "3244 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/ed08e6f4-0d1b-4138-a0a2-a49c390bab6e/download/sensortypes29-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "8146bdce2874f99c4855ef979e2a7874c86d14452c14fab174511b35890674cf"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r109",
+      "name": "Δεδομένα δικτύου mesh και συνάθροισης κοινού (29-11-2025)",
+      "description": "Δεδομένα δικτύου mesh και συνάθροισης κοινού",
+      "contentSize": "2731 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/dbcde42f-8d50-472e-a888-21cc1f6c040a/download/mesh29-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "603416c79f07c530b7ed7913d7ad271eb376691988a99445ef8b8d390af1e0a6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r110",
+      "name": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης (29-11-2025)",
+      "description": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης",
+      "contentSize": "42261 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/a7088cff-a44d-44f1-8b7d-5051d83a43ed/download/waterq29-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "38cb7cad107a7c0309d5cc164be512ae7b11c995399f0907c7a590202b81dd9d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r111",
+      "name": "Μετεωρολογικά δεδομένα Πάτρας (30-11-2025)",
+      "description": "Μετεωρολογικά δεδομένα Πάτρας",
+      "contentSize": "2251 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/1ab2dc99-38a1-4e20-9bf2-fb2f6bcc5013/download/meteo30-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "974960b735e91e2b79356126c1bcc54087cbd32fed4251e648c78529a90cce80"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r112",
+      "name": "Περιβαλλοντικά δεδομένα Πάτρας (30-11-2025)",
+      "description": "Περιβαλλοντικά δεδομένα Πάτρας",
+      "contentSize": "112039 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/c939f208-7470-48d0-ad2c-a34eaa29574d/download/envi30-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a178eed7d2dba0aa0f95f53b3933f12be9c3ce6f997bdd16392d87aaf877cec0"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r113",
+      "name": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης (30-11-2025)",
+      "description": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης",
+      "contentSize": "337279 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/4a070769-d2b9-4351-ac5c-fe1ad5e6c9d5/download/parkingall30-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "706a6a83d6ed99dbeb05c205ce7bb40caceb6825216bfe530c430997ed79ded9"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r114",
+      "name": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή (30-11-2025)",
+      "description": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή",
+      "contentSize": "228 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/ef3b0c2d-de8c-4eec-80b8-70403d522c02/download/parking30-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "40c2b612e693d02d9528719b7090faa6bb94056883b9f96e197d01bcd5789547"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r115",
+      "name": "Δεδομένα δημόσιων χώρων στάθμευσης (30-11-2025)",
+      "description": "Δεδομένα δημόσιων χώρων στάθμευσης",
+      "contentSize": "1817 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/fbca3b03-6937-40c2-ad01-979761d202bf/download/publicparking30-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a1f31a5358d6890540027a87740d5453748028817abe76820d5beeeeed6e8245"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r116",
+      "name": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής (30-11-2025)",
+      "description": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής",
+      "contentSize": "2165 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/cf2f48e4-cfa8-4a0c-ba1d-de38b5c6caf9/download/indexes30-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "34a1c0840a0825fcb1142ac67ded46f09d5f0df03535c965af6b179a71006a96"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r117",
+      "name": "Μετεωρολογική πρόγνωση Πάτρας (30-11-2025)",
+      "description": "Μετεωρολογική πρόγνωση Πάτρας",
+      "contentSize": "415 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/6754891b-502f-4991-9a61-89f51427a627/download/forecast30-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "f2bcc8c8f135a1a9486e73dc23c878f276e3211b11040244de7fea93b008af77"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r118",
+      "name": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας (30-11-2025)",
+      "description": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας",
+      "contentSize": "45446 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/87b7824b-f0e3-4622-a00d-462db60123c0/download/allsensors30-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "322482f444da028ee09e23187b2c7ee1353b88a31e5336ef40be21121243ab16"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r119",
+      "name": "Τύποι αισθητήρων και έξυπνης υποδομής (30-11-2025)",
+      "description": "Τύποι αισθητήρων και έξυπνης υποδομής",
+      "contentSize": "3244 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/1ef23b38-9d48-49f2-bad8-82a05c4eb489/download/sensortypes30-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "8146bdce2874f99c4855ef979e2a7874c86d14452c14fab174511b35890674cf"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r120",
+      "name": "Δεδομένα δικτύου mesh και συνάθροισης κοινού (30-11-2025)",
+      "description": "Δεδομένα δικτύου mesh και συνάθροισης κοινού",
+      "contentSize": "2731 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/2b0f6ad8-242c-42c0-b3c5-b468e69e60a9/download/mesh30-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "603416c79f07c530b7ed7913d7ad271eb376691988a99445ef8b8d390af1e0a6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r121",
+      "name": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης (30-11-2025)",
+      "description": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης",
+      "contentSize": "42257 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/14c8e12e-20f9-4d74-97fa-bb7dae624587/download/waterq30-11-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "7d9bb39947202d694ffaaf96b10f23bfdf2176090e4ae2b5c1a2956096463c60"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r122",
+      "name": "Μετεωρολογικά δεδομένα Πάτρας (1-12-2025)",
+      "description": "Μετεωρολογικά δεδομένα Πάτρας",
+      "contentSize": "1836 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/1243733d-aef6-44db-905c-162c507ec2e6/download/meteo1-12-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "296d4ebdbd4b5b2bc8d4bd58c800cbe6e8ffea71da0e09256b5b4673b4f813cc"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r123",
+      "name": "Περιβαλλοντικά δεδομένα Πάτρας (1-12-2025)",
+      "description": "Περιβαλλοντικά δεδομένα Πάτρας",
+      "contentSize": "112058 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/1aa338b4-9c11-4eb0-ab3f-e8495ce50af7/download/envi1-12-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "e0710b38a919639ef888070f1315559138bad5634205abb45df3bb76e6cec084"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r124",
+      "name": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης (1-12-2025)",
+      "description": "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης",
+      "contentSize": "337304 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/7d4ca1b1-c008-4c99-bd3a-3af2f7ed2cf2/download/parkingall1-12-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "7f70970734f9519d1ccdc6c61093b013f117022bf468a47cba93594eb411c703"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r125",
+      "name": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή (1-12-2025)",
+      "description": "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή",
+      "contentSize": "228 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/f6458117-fe73-471a-8f39-a03e8668c77c/download/parking1-12-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "25d1cd5cc3de1351ab0483fc14c0c77a953e7b402bb0df3c0a1279ff9dbe6a61"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r126",
+      "name": "Δεδομένα δημόσιων χώρων στάθμευσης (1-12-2025)",
+      "description": "Δεδομένα δημόσιων χώρων στάθμευσης",
+      "contentSize": "1817 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/aaf8360a-0bf6-4f9b-8380-8bf53fa7e487/download/publicparking1-12-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "a1f31a5358d6890540027a87740d5453748028817abe76820d5beeeeed6e8245"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r127",
+      "name": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής (1-12-2025)",
+      "description": "Περιβαλλοντικοί δείκτες και ποιότητα ζωής",
+      "contentSize": "2165 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/4392fe87-a4c2-4d51-9892-655939595179/download/indexes1-12-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "f8734fa28e119fc66143f06cd4d8b60051e5392c26f784ab80405d8f2dfe68be"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r128",
+      "name": "Μετεωρολογική πρόγνωση Πάτρας (1-12-2025)",
+      "description": "Μετεωρολογική πρόγνωση Πάτρας",
+      "contentSize": "419 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/6aecf410-aa2e-4128-8cd8-a059a9886295/download/forecast1-12-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "d750febeed1b3c54e4f947eabef971792f2e368d89f857d3fce49707efbe1342"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r129",
+      "name": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας (1-12-2025)",
+      "description": "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας",
+      "contentSize": "45446 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/fdcd9a4e-e1a1-419f-be0b-0e7bb24edfa6/download/allsensors1-12-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "79e9bddd068e219bebbb5d15073567e90ad053ead2a1359aa3c13ca97f4b1498"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r130",
+      "name": "Τύποι αισθητήρων και έξυπνης υποδομής (1-12-2025)",
+      "description": "Τύποι αισθητήρων και έξυπνης υποδομής",
+      "contentSize": "3244 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/aa182240-3af6-4255-a775-9f0a1833a7f9/download/sensortypes1-12-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "8146bdce2874f99c4855ef979e2a7874c86d14452c14fab174511b35890674cf"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r131",
+      "name": "Δεδομένα δικτύου mesh και συνάθροισης κοινού (1-12-2025)",
+      "description": "Δεδομένα δικτύου mesh και συνάθροισης κοινού",
+      "contentSize": "2731 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/36277804-bf92-4b27-afb4-c16f6479a132/download/mesh1-12-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "603416c79f07c530b7ed7913d7ad271eb376691988a99445ef8b8d390af1e0a6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r132",
+      "name": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης (1-12-2025)",
+      "description": "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης",
+      "contentSize": "42259 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8e8d502-6875-4d67-b51d-1632c9f082dd/resource/2471e5ec-95da-44a7-84ba-3e1b260a586d/download/waterq1-12-2025.json",
+      "encodingFormat": "application/json",
+      "sha256": "3bca877ed286a9616bec5953b49c9347356fb828b13dabc005ee5b2f5438d02d"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_01",
+      "name": "records_01",
+      "description": "Columns of the table examined for the assessment (r122).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c001",
+          "name": "sensorvar_description",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r122"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c002",
+          "name": "sensorvar_icon",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r122"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c003",
+          "name": "measurement",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r122"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c004",
+          "name": "sensorvar_dec",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r122"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c005",
+          "name": "sensorvar_unit",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r122"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_02",
+      "name": "records_02",
+      "description": "Columns of the table examined for the assessment (r123).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c001",
+          "name": "sensorvar_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r123"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c002",
+          "name": "sensorvar_description",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r123"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c003",
+          "name": "sensorvar_icon",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r123"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c004",
+          "name": "measurement",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r123"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c005",
+          "name": "sensorvar_dec",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r123"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c006",
+          "name": "sensorvar_unit",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r123"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c007",
+          "name": "lat",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r123"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c008",
+          "name": "lng",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r123"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c009",
+          "name": "valid",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r123"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c010",
+          "name": "parameter_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r123"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c011",
+          "name": "sensor_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r123"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c012",
+          "name": "group",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r123"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c013",
+          "name": "date_insert",
+          "dataType": "sc:DateTime",
+          "source": {
+            "fileObject": {
+              "@id": "r123"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_03",
+      "name": "records_03",
+      "description": "Columns of the table examined for the assessment (r124).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c001",
+          "name": "id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c002",
+          "name": "SerialNumber",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c003",
+          "name": "IsOccupied",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c004",
+          "name": "OccupiedFrom",
+          "dataType": "sc:Time",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c005",
+          "name": "Type",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c006",
+          "name": "Lat",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c007",
+          "name": "Lon",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c008",
+          "name": "LabelOnStreet",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c009",
+          "name": "IsAmea",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c010",
+          "name": "OverStay",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c011",
+          "name": "IsMilitary",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c012",
+          "name": "AllowParking",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c013",
+          "name": "icon",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c014",
+          "name": "image",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c015",
+          "name": "kind_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r124"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_04",
+      "name": "records_04",
+      "description": "Columns of the table examined for the assessment (r125).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_04/c001",
+          "name": "IsOnStreet",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "r125"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_04/c002",
+          "name": "Id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r125"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_04/c003",
+          "name": "ParkingName",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r125"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_04/c004",
+          "name": "Places",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r125"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_04/c005",
+          "name": "PlacesOccupied",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r125"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_04/c006",
+          "name": "Lat",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r125"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_04/c007",
+          "name": "Lon",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r125"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_04/c008",
+          "name": "EnParkingName",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r125"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_04/c009",
+          "name": "IsValid",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "r125"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_05",
+      "name": "records_05",
+      "description": "Columns of the table examined for the assessment (r126).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c001",
+          "name": "mysensor_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r126"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c002",
+          "name": "tooltip",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r126"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c003",
+          "name": "ref_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r126"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c004",
+          "name": "mysensor_name",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r126"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c005",
+          "name": "sensor_description",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r126"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c006",
+          "name": "sensor_address",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r126"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c007",
+          "name": "sensortype_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r126"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c008",
+          "name": "lat",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r126"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c009",
+          "name": "lng",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r126"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c010",
+          "name": "available_slots",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r126"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c011",
+          "name": "total_slots",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r126"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c012",
+          "name": "date_insert",
+          "dataType": "sc:DateTime",
+          "source": {
+            "fileObject": {
+              "@id": "r126"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_06",
+      "name": "records_06",
+      "description": "Columns of the table examined for the assessment (r127).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_06/c001",
+          "name": "index_name",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r127"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_06/c002",
+          "name": "tooltip",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r127"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_06/c003",
+          "name": "details",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r127"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_07",
+      "name": "records_07",
+      "description": "Columns of the table examined for the assessment (r128).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c001",
+          "name": "tooltip",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r128"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c002",
+          "name": "curr_icon",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r128"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c003",
+          "name": "curr_description",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r128"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c004",
+          "name": "curr_title",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r128"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c005",
+          "name": "curr_val",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r128"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c006",
+          "name": "next_icon",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r128"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c007",
+          "name": "next_description",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r128"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c008",
+          "name": "next_title",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r128"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c009",
+          "name": "next_val",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r128"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_08",
+      "name": "records_08",
+      "description": "Columns of the table examined for the assessment (r129).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c001",
+          "name": "mysensor_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c002",
+          "name": "ref_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c003",
+          "name": "mysensor_name",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c004",
+          "name": "sensor_description",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c005",
+          "name": "sensor_address",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c006",
+          "name": "location_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c007",
+          "name": "sensortype_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c008",
+          "name": "lat",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c009",
+          "name": "lng",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c010",
+          "name": "latlng",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c011",
+          "name": "location_name",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c012",
+          "name": "location_lat",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c013",
+          "name": "location_lng",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c014",
+          "name": "sensortype_name",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c015",
+          "name": "sensortype_color",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c016",
+          "name": "sensortype_icon",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c017",
+          "name": "sensortype_description",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_08/c018",
+          "name": "metrics",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r129"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_09",
+      "name": "records_09",
+      "description": "Columns of the table examined for the assessment (r130).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_09/c001",
+          "name": "sensortype_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r130"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_09/c002",
+          "name": "sensortype_name",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r130"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_09/c003",
+          "name": "sensortype_color",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r130"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_09/c004",
+          "name": "sensortype_icon",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r130"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_09/c005",
+          "name": "tooltip",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r130"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_09/c006",
+          "name": "description",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r130"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_10",
+      "name": "records_10",
+      "description": "Columns of the table examined for the assessment (r131).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c001",
+          "name": "mysensor_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c002",
+          "name": "tooltip",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c003",
+          "name": "ref_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c004",
+          "name": "mysensor_name",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c005",
+          "name": "sensor_description",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c006",
+          "name": "sensor_address",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c007",
+          "name": "location_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c008",
+          "name": "sensortype_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c009",
+          "name": "lat",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c010",
+          "name": "lng",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c011",
+          "name": "latlng",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c012",
+          "name": "location_name",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c013",
+          "name": "location_lat",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c014",
+          "name": "location_lng",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c015",
+          "name": "sensortype_name",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c016",
+          "name": "sensortype_color",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c017",
+          "name": "sensortype_icon",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c018",
+          "name": "sensortype_description",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_10/c019",
+          "name": "details",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r131"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_11",
+      "name": "records_11",
+      "description": "Columns of the table examined for the assessment (r132).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_11/c001",
+          "name": "sensorvar_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r132"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_11/c002",
+          "name": "sensorvar_description",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r132"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_11/c003",
+          "name": "sensorvar_icon",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r132"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_11/c004",
+          "name": "measurement",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r132"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_11/c005",
+          "name": "sensorvar_dec",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r132"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_11/c006",
+          "name": "sensorvar_unit",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r132"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_11/c007",
+          "name": "lat",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r132"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_11/c008",
+          "name": "lng",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r132"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_11/c009",
+          "name": "date_insert",
+          "dataType": "sc:DateTime",
+          "source": {
+            "fileObject": {
+              "@id": "r132"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

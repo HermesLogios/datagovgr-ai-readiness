@@ -1,0 +1,307 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Βροχομετρικά στοιχεία 56 σταθμών της Νήσου Κρήτης",
+  "description": "Ιστορικά Μετεωρολογικά Δεδομένα της Νήσου Κρήτης περιέχουν βροχομετρικά στοιχεία 56 σταθμών της Νήσου Κρήτης από την ίδρυση των σταθμών της Υπηρεσίας Εγγείων Βελτιώσεων από της ιδρύσεως των σταθμών μέχρι το υδρολογικό έτος 1998-1999. Το έργο είχε την ονομασία Πρόγραμμα Υδρολογικής Έρευνας Κρήτης και χρηματοδοτήθηκε από τις πιστώσεις των Δημοσίων Επενδύσεων με κωδικό αριθμό 7681700. Τα συμπιεσμένα αρχεία περιέχουν αρχεία excel ανά σταθμό. Χάρτης στη Γεωπύλη Εφαρμογή στη Γεωπύλη",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Αποκεντρωμένη Διοίκηση Κρήτης"
+  },
+  "dateModified": "2026-10-19",
+  "datePublished": "2026-03-14",
+  "keywords": [
+    "ESRI REST API",
+    "High Value Dataset",
+    "Ύδατα",
+    "Υδρολογικά Δεδομένα"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/apd-kritis-harv2-56",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Υδρολογικά Στοιχεία της Νήσου Κρήτης",
+      "description": "Το τεύχος αυτό περιλαμβάνει τα υδρομετεωρολογικά στοιχεία από την ίδρυση των σταθμών μέχρι το υδρολογικό έτος 1998-1999.",
+      "contentSize": "326466 B",
+      "contentUrl": "https://data.apdkritis.gov.gr/sites/default/files/ydrologika_stoiheia_nisoy_kritis.pdf",
+      "encodingFormat": "application/pdf",
+      "sha256": "0f0214500ff7a81bcb6168241ff88bbe3ce3e42182ce5610f8ed27ad034c6dbe"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r002",
+      "name": "Βροχομετρικά Στοιχεία Νομού Ηρακλείου",
+      "description": "Βροχομετρικά στοιχεία των σταθμών του Νομού Ηρακλείου από την ίδρυση των σταθμών μέχρι το υδρολογικό έτος 1998-1999.",
+      "contentSize": "355885 B",
+      "contentUrl": "https://data.apdkritis.gov.gr/sites/default/files/n._irakleioy.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "f782846b063c6e71e376c0ee78953062b4830a4621c9ed1c63f0d1e0161560ab"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r003",
+      "name": "Βροχομετρικά Στοιχεία Νομού Λασιθίου",
+      "description": "Βροχομετρικά στοιχεία των σταθμών του Νομού Λασιθίου από την ίδρυση των σταθμών μέχρι το υδρολογικό έτος 1998-1999.",
+      "contentSize": "240391 B",
+      "contentUrl": "https://data.apdkritis.gov.gr/sites/default/files/n._lasithioy.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "bd39fadbfe368ee6b5f4c10a1d45e75e043ee5b02463694ecb5916c6c6dc8c2e"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r004",
+      "name": "Βροχομετρικά Στοιχεία Νομού Ρεθύμνου",
+      "description": "Βροχομετρικά στοιχεία των σταθμών του Νομού Ρεθύμνου από την ίδρυση των σταθμών μέχρι το υδρολογικό έτος 1998-1999.",
+      "contentSize": "162436 B",
+      "contentUrl": "https://data.apdkritis.gov.gr/sites/default/files/n._rethymnis.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "9254ebf2a10ed6677ae0fd27f63d111548379354a06cd1a6fbe4cd7755e632e0"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r005",
+      "name": "Βροχομετρικά Στοιχεία Νομού Χανίων",
+      "description": "Βροχομετρικά στοιχεία των σταθμών του Νομού Χανίων από την ίδρυση των σταθμών μέχρι το υδρολογικό έτος 1998-1999.",
+      "contentSize": "129014 B",
+      "contentUrl": "https://data.apdkritis.gov.gr/sites/default/files/n._hanion.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "423556e310e67ddfe047263890392e74b114b7d624c89edca58b77a44f8912a0"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r002_m01",
+      "name": "Αβδού Ηρακλείου 02.xls",
+      "contentUrl": "Ν. ΗΡΑΚΛΕΙΟΥ/Αβδού Ηρακλείου 02.xls",
+      "cr:containedIn": {
+        "@id": "r002"
+      },
+      "encodingFormat": "application/vnd.ms-excel"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records",
+      "name": "records",
+      "description": "Columns of the table examined for the assessment (r002, file Ν. ΗΡΑΚΛΕΙΟΥ/Αβδού Ηρακλείου 02.xls, sheet \"ΑΒΔΟΥ\"). The same columns are found in 56 of the examined tables of the dataset.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records/c001",
+          "name": "ΥΔΡ.ΕΤΟΣ",
+          "description": "Υδρολογικό έτος: αρχίζει την 1/9 και τελειώνει την 31/8 του επόμενου έτους.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r002_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c002",
+          "name": "ΣΕΠ.",
+          "description": "Μηνιαίο ύψος βροχής του Σεπτεμβρίου, σε χιλιοστά (ΜΜ).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c003",
+          "name": "ΟΚΤ.",
+          "description": "Μηνιαίο ύψος βροχής του Οκτωβρίου, σε χιλιοστά (ΜΜ).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c004",
+          "name": "ΝΟΕ.",
+          "description": "Μηνιαίο ύψος βροχής του Νοεμβρίου, σε χιλιοστά (ΜΜ).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c005",
+          "name": "ΔΕΚ.",
+          "description": "Μηνιαίο ύψος βροχής του Δεκεμβρίου, σε χιλιοστά (ΜΜ).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c006",
+          "name": "ΙΑΝ.",
+          "description": "Μηνιαίο ύψος βροχής του Ιανουαρίου, σε χιλιοστά (ΜΜ).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c007",
+          "name": "ΦΕΒ.",
+          "description": "Μηνιαίο ύψος βροχής του Φεβρουαρίου, σε χιλιοστά (ΜΜ).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c008",
+          "name": "ΜΑΡ.",
+          "description": "Μηνιαίο ύψος βροχής του Μαρτίου, σε χιλιοστά (ΜΜ).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c009",
+          "name": "ΑΠΡ.",
+          "description": "Μηνιαίο ύψος βροχής του Απριλίου, σε χιλιοστά (ΜΜ).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c010",
+          "name": "ΜΑΙ.",
+          "description": "Μηνιαίο ύψος βροχής του Μαΐου, σε χιλιοστά (ΜΜ).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c011",
+          "name": "ΙΟΥΝ.",
+          "description": "Μηνιαίο ύψος βροχής του Ιουνίου, σε χιλιοστά (ΜΜ).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c012",
+          "name": "ΙΟΥΛ.",
+          "description": "Μηνιαίο ύψος βροχής του Ιουλίου, σε χιλιοστά (ΜΜ).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c013",
+          "name": "ΑΥΓ",
+          "description": "Μηνιαίο ύψος βροχής του Αυγούστου, σε χιλιοστά (ΜΜ).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c014",
+          "name": "ΣΥΝ.",
+          "description": "Ετήσιο ύψος βροχής του υδρολογικού έτους, σε χιλιοστά (ΜΜ).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002_m01"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

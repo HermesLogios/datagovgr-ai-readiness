@@ -35,7 +35,10 @@ What it does, in order:
      their number. The local review file in the folder review holds a random sample of the
      records of every dataset and the rows that show the findings of Q3 and Q4, for the manual look: the folder is
      ignored by git (.gitignore), so these records never enter the repository; for the datasets that seem to
-     contain personal data it holds the row numbers only.
+     contain personal data it holds the row numbers only. The same holds for the datasets whose records identify
+     natural persons although their column names say nothing personal (DECISIONS.md #43): their column names are
+     written as usual, their records nowhere, and the local review file leaves out the identifiers of their
+     records too.
 
 Rules of AI1 (DECISIONS.md #38):
   - The files that are judged are named in criteria/file_organisation.csv: the single data file; the best one of
@@ -253,6 +256,11 @@ DATASET_URL = "https://data.gov.gr/dataset/"
 # Datasets that seem to contain personal data (DECISIONS.md #29, #36, #38 and #40): their column names are not written
 # (S24: names of owners; S29: the columns are named after shops, some after their owners).
 PERSONAL_DATA_SUSPECTED = {"S24", "S29"}
+# Datasets whose records identify natural persons although their column names do not (DECISIONS.md #43): the column
+# names are written, but the local review file holds neither the records nor their identifiers (S23: a register of
+# legal entities that includes sole proprietorships, with the name and the tax number of the person; the records of
+# an RDF file are told apart by their identifier, not by a row number).
+RECORDS_WITHHELD = {"S23"}
 
 TABLE_TYPES = {"text", "xlsx", "ole2"}
 PARSED_TYPES = {"json", "xml", "turtle", "kmz"}
@@ -275,6 +283,8 @@ DELIMITERS = ",;\t|"
 CODE_PAGES = {"utf-8": "utf-8", "utf8": "utf-8", "1253": "cp1253", "cp1253": "cp1253", "ansi 1253": "cp1253",
               "windows-1253": "cp1253", "8859_7": "iso-8859-7", "iso-8859-7": "iso-8859-7", "iso88597": "iso-8859-7",
               "737": "cp737", "cp737": "cp737", "1252": "cp1252", "ansi 1252": "cp1252", "cp1252": "cp1252"}
+# How the text of the exception of pyshp begins when a text field of an attribute table cannot be decoded.
+UNDECODED_FIELD = "Could not decode"
 
 TOTAL_WORDS = re.compile(r"^(γενικο\s+|γεν\.\s*)?(συνολ|αθροισμα)|^(grand\s+)?total\b|^ολικο\b")
 SUMMARY_LABELS = re.compile(r"(μεγ(ιστ[οηα])?|ελ(αχιστ[οηα])?)( υψοσ| τιμη)?|μ ο|μεσ(οσ οροσ|η τιμη)|average|mean"
@@ -3406,6 +3416,13 @@ def examine_shapefiles(folder: Path, prefix: str = "") -> list[dict]:
                 break
             except UnicodeDecodeError:
                 continue
+            except shapefile.dbfFileException as error:
+                # pyshp reports with this exception a text field that the encoding cannot decode, and the text
+                # of the exception quotes the bytes of the value: the next encoding is tried, and of any other
+                # failure of the attribute table only the kind is kept.
+                if not str(error).startswith(UNDECODED_FIELD):
+                    error_text = type(error).__name__
+                continue
             except Exception as error:      # pyshp raises generic exceptions on damaged files
                 error_text = f"{type(error).__name__}: {str(error)[:120]}"
                 break
@@ -4270,7 +4287,9 @@ def write_review_sample(path: Path, datasets: dict[str, dict], partial: bool) ->
     """The local review file of Q3 and Q4 (DECISIONS.md #40, rule E): one sheet per dataset with its random sample of
     records and up to three rows for every finding of Q3. It contains records of the data, so it is written to the
     folder review, which git ignores, and never to data/ or outputs/. For the datasets that seem to contain personal
-    data only the row numbers are written. A partial run replaces the sheets of its datasets only."""
+    data only the row numbers are written, and for the datasets whose records are withheld (RECORDS_WITHHELD) not
+    even those, because their records are told apart by an identifier. A partial run replaces the sheets of its
+    datasets only."""
     path.parent.mkdir(parents=True, exist_ok=True)
     if partial and path.exists():
         workbook = openpyxl.load_workbook(path)
@@ -4283,6 +4302,7 @@ def write_review_sample(path: Path, datasets: dict[str, dict], partial: bool) ->
     for sample_id in sorted(datasets):
         data = datasets[sample_id]
         personal = data["personal"]
+        locators = data.get("locators", True)
         sheet = workbook.create_sheet(sample_id)
         sheet.column_dimensions["A"].width = 34
         sheet.column_dimensions["B"].width = 34
@@ -4290,9 +4310,12 @@ def write_review_sample(path: Path, datasets: dict[str, dict], partial: bool) ->
         sheet_value(sheet, 2, 1, f"Random sample of {Q3_SAMPLE} records of the dataset, the same in every run, for the "
                                  "manual look of Q3 and Q4, and rows that show the findings of Q3 and Q4. Local "
                                  "review file: it contains records of the data and is not part of the repository.")
-        if personal:
+        if personal and locators:
             sheet_value(sheet, 3, 1, "The dataset may contain personal data: only the row numbers are written; the "
                                      "records are looked at in the file itself.")
+        elif personal:
+            sheet_value(sheet, 3, 1, "The records of the dataset identify natural persons: neither the records nor "
+                                     "their identifiers are written, only how many were drawn.")
         line = 5
         if not data["sections"]:
             sheet_value(sheet, line, 1, f"No records to draw: {data['reason']}")
@@ -4304,8 +4327,8 @@ def write_review_sample(path: Path, datasets: dict[str, dict], partial: bool) ->
                 for column, name in enumerate(section["names"], start=2):
                     sheet_value(sheet, line, column, name or f"(column {column - 1})", bold=True)
             line += 1
-            for row, values in section["rows"]:
-                sheet_value(sheet, line, 1, row)
+            for number, (row, values) in enumerate(section["rows"], start=1):
+                sheet_value(sheet, line, 1, row if locators else f"record {number}")
                 if not personal:
                     for column, value in enumerate(values, start=2):
                         sheet_value(sheet, line, column, value)
@@ -4324,7 +4347,7 @@ def write_review_sample(path: Path, datasets: dict[str, dict], partial: bool) ->
                 sheet_value(sheet, line, 1, item["finding"])
                 sheet_value(sheet, line, 2, item["column"])
                 sheet_value(sheet, line, 3, item["where"])
-                sheet_value(sheet, line, 4, item["row"])
+                sheet_value(sheet, line, 4, item["row"] if locators else "not written")
                 if not personal:
                     sheet_value(sheet, line, 5, item["values"])
                 line += 1
@@ -4492,7 +4515,9 @@ def main() -> int:
         structure_rows += [dict(row, sample_id=sample_id) for row in q3["found"]["structures"]]
         plausibility_rows_all += [dict(row, sample_id=sample_id) for row in q4["columns"]]
         key_rows_all += [dict(row, sample_id=sample_id) for row in ai6["found"]]
-        review[sample_id] = {"title": titles.get(sample_id, name), "personal": personal, "reason": q3["reason"],
+        review[sample_id] = {"title": titles.get(sample_id, name),
+                             "personal": personal or sample_id in RECORDS_WITHHELD,
+                             "locators": sample_id not in RECORDS_WITHHELD, "reason": q3["reason"],
                              "sections": q3["sample"], "findings": review_findings(q3) + review_findings_q4(q4)}
         for label, _, units in files:
             if label not in examined:

@@ -1,0 +1,5169 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "ΕΝΑΡΜΟΝΙΣΜΕΝΟΣ ΔΕΙΚΤΗΣ ΤΙΜΩΝ ΚΑΤΑΝΑΛΩΤΗ (ΕνΔΤΚ)",
+  "description": "Ο Εναρμονισμένος Δείκτης Τιμών Καταναλωτή (ΕνΔΤΚ) είναι ένας δείκτης τιμών καταναλωτή (ΔΤΚ) που υπολογίζεται σύμφωνα με μια κοινή προσέγγιση. Μετρά με την πάροδο του χρόνου τις μεταβολές των τιμών των καταναλωτικών αγαθών και υπηρεσιών που αποκτώνται από τα νοικοκυριά. Λόγω της κοινής μεθοδολογίας, οι ΕνΔΤΚ των χωρών και των ευρωπαϊκών συγκεντρωτικών στοιχείων μπορούν να συγκριθούν άμεσα.",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "ΕΛΛΗΝΙΚΗ ΣΤΑΤΙΣΤΙΚΗ ΑΡΧΗ - Διεύθυνση Στατιστικών Πληθυσμού, Απασχόλησης και Κόστους Ζωής - Τμήμα Δεικτών Λιανικών Τιμών"
+  },
+  "dateModified": "2026-05-11",
+  "datePublished": "2026-03-19",
+  "keywords": [
+    "ΔΕΙΚΤΕΣ",
+    "ΔΕΙΚΤΗΣ ΤΙΜΩΝ ΚΑΤΑΝΑΛΩΤΗ",
+    "ΣΤΑΤΙΣΤΙΚΕΣ"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/enarmonismenos-deiktis-timon-katanaloti-endtk",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Εναρμονισμένος Δείκτης Τιμών Καταναλωτή (ΕνΔΤΚ)",
+      "contentSize": "887415 B",
+      "contentUrl": "https://data.gov.gr/dataset/18f134e5-9e77-4b1b-874b-386bfeac17f9/resource/0a6ab0e6-8de1-4bc9-9daa-586ac4329168/download/hicp-indices_1996-2025-coicop18.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "f5cb4371ba7b85a4a252215ef06ecd5967fc4e2420234d1813e7dbbd4b90a9d1"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records",
+      "name": "records",
+      "description": "Columns of the table examined for the assessment (r001).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records/c001",
+          "name": "CODE",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "CODE"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c002",
+          "name": "COICOP2018 ΠΕΡΙΓΡΑΦΗ",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "COICOP2018 ΠΕΡΙΓΡΑΦΗ"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c003",
+          "name": "1995-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1995-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c004",
+          "name": "1996-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1996-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c005",
+          "name": "1996-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1996-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c006",
+          "name": "1996-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1996-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c007",
+          "name": "1996-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1996-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c008",
+          "name": "1996-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1996-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c009",
+          "name": "1996-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1996-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c010",
+          "name": "1996-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1996-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c011",
+          "name": "1996-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1996-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c012",
+          "name": "1996-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1996-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c013",
+          "name": "1996-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1996-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c014",
+          "name": "1996-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1996-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c015",
+          "name": "1996-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1996-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c016",
+          "name": "1997-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1997-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c017",
+          "name": "1997-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1997-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c018",
+          "name": "1997-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1997-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c019",
+          "name": "1997-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1997-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c020",
+          "name": "1997-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1997-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c021",
+          "name": "1997-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1997-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c022",
+          "name": "1997-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1997-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c023",
+          "name": "1997-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1997-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c024",
+          "name": "1997-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1997-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c025",
+          "name": "1997-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1997-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c026",
+          "name": "1997-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1997-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c027",
+          "name": "1997-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1997-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c028",
+          "name": "1998-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1998-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c029",
+          "name": "1998-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1998-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c030",
+          "name": "1998-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1998-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c031",
+          "name": "1998-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1998-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c032",
+          "name": "1998-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1998-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c033",
+          "name": "1998-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1998-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c034",
+          "name": "1998-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1998-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c035",
+          "name": "1998-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1998-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c036",
+          "name": "1998-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1998-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c037",
+          "name": "1998-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1998-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c038",
+          "name": "1998-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1998-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c039",
+          "name": "1998-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1998-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c040",
+          "name": "1999-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1999-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c041",
+          "name": "1999-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1999-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c042",
+          "name": "1999-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1999-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c043",
+          "name": "1999-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1999-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c044",
+          "name": "1999-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1999-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c045",
+          "name": "1999-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1999-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c046",
+          "name": "1999-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1999-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c047",
+          "name": "1999-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1999-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c048",
+          "name": "1999-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1999-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c049",
+          "name": "1999-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1999-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c050",
+          "name": "1999-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1999-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c051",
+          "name": "1999-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "1999-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c052",
+          "name": "2000-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2000-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c053",
+          "name": "2000-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2000-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c054",
+          "name": "2000-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2000-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c055",
+          "name": "2000-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2000-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c056",
+          "name": "2000-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2000-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c057",
+          "name": "2000-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2000-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c058",
+          "name": "2000-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2000-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c059",
+          "name": "2000-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2000-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c060",
+          "name": "2000-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2000-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c061",
+          "name": "2000-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2000-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c062",
+          "name": "2000-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2000-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c063",
+          "name": "2000-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2000-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c064",
+          "name": "2001-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2001-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c065",
+          "name": "2001-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2001-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c066",
+          "name": "2001-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2001-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c067",
+          "name": "2001-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2001-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c068",
+          "name": "2001-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2001-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c069",
+          "name": "2001-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2001-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c070",
+          "name": "2001-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2001-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c071",
+          "name": "2001-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2001-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c072",
+          "name": "2001-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2001-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c073",
+          "name": "2001-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2001-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c074",
+          "name": "2001-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2001-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c075",
+          "name": "2001-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2001-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c076",
+          "name": "2002-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2002-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c077",
+          "name": "2002-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2002-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c078",
+          "name": "2002-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2002-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c079",
+          "name": "2002-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2002-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c080",
+          "name": "2002-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2002-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c081",
+          "name": "2002-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2002-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c082",
+          "name": "2002-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2002-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c083",
+          "name": "2002-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2002-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c084",
+          "name": "2002-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2002-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c085",
+          "name": "2002-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2002-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c086",
+          "name": "2002-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2002-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c087",
+          "name": "2002-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2002-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c088",
+          "name": "2003-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2003-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c089",
+          "name": "2003-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2003-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c090",
+          "name": "2003-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2003-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c091",
+          "name": "2003-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2003-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c092",
+          "name": "2003-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2003-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c093",
+          "name": "2003-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2003-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c094",
+          "name": "2003-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2003-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c095",
+          "name": "2003-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2003-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c096",
+          "name": "2003-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2003-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c097",
+          "name": "2003-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2003-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c098",
+          "name": "2003-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2003-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c099",
+          "name": "2003-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2003-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c100",
+          "name": "2004-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2004-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c101",
+          "name": "2004-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2004-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c102",
+          "name": "2004-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2004-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c103",
+          "name": "2004-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2004-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c104",
+          "name": "2004-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2004-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c105",
+          "name": "2004-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2004-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c106",
+          "name": "2004-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2004-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c107",
+          "name": "2004-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2004-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c108",
+          "name": "2004-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2004-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c109",
+          "name": "2004-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2004-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c110",
+          "name": "2004-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2004-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c111",
+          "name": "2004-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2004-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c112",
+          "name": "2005-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2005-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c113",
+          "name": "2005-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2005-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c114",
+          "name": "2005-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2005-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c115",
+          "name": "2005-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2005-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c116",
+          "name": "2005-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2005-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c117",
+          "name": "2005-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2005-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c118",
+          "name": "2005-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2005-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c119",
+          "name": "2005-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2005-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c120",
+          "name": "2005-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2005-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c121",
+          "name": "2005-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2005-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c122",
+          "name": "2005-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2005-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c123",
+          "name": "2005-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2005-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c124",
+          "name": "2006-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2006-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c125",
+          "name": "2006-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2006-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c126",
+          "name": "2006-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2006-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c127",
+          "name": "2006-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2006-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c128",
+          "name": "2006-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2006-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c129",
+          "name": "2006-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2006-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c130",
+          "name": "2006-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2006-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c131",
+          "name": "2006-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2006-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c132",
+          "name": "2006-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2006-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c133",
+          "name": "2006-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2006-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c134",
+          "name": "2006-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2006-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c135",
+          "name": "2006-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2006-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c136",
+          "name": "2007-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2007-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c137",
+          "name": "2007-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2007-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c138",
+          "name": "2007-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2007-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c139",
+          "name": "2007-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2007-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c140",
+          "name": "2007-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2007-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c141",
+          "name": "2007-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2007-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c142",
+          "name": "2007-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2007-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c143",
+          "name": "2007-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2007-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c144",
+          "name": "2007-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2007-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c145",
+          "name": "2007-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2007-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c146",
+          "name": "2007-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2007-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c147",
+          "name": "2007-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2007-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c148",
+          "name": "2008-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2008-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c149",
+          "name": "2008-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2008-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c150",
+          "name": "2008-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2008-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c151",
+          "name": "2008-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2008-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c152",
+          "name": "2008-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2008-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c153",
+          "name": "2008-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2008-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c154",
+          "name": "2008-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2008-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c155",
+          "name": "2008-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2008-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c156",
+          "name": "2008-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2008-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c157",
+          "name": "2008-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2008-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c158",
+          "name": "2008-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2008-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c159",
+          "name": "2008-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2008-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c160",
+          "name": "2009-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2009-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c161",
+          "name": "2009-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2009-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c162",
+          "name": "2009-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2009-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c163",
+          "name": "2009-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2009-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c164",
+          "name": "2009-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2009-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c165",
+          "name": "2009-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2009-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c166",
+          "name": "2009-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2009-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c167",
+          "name": "2009-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2009-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c168",
+          "name": "2009-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2009-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c169",
+          "name": "2009-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2009-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c170",
+          "name": "2009-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2009-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c171",
+          "name": "2009-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2009-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c172",
+          "name": "2010-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2010-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c173",
+          "name": "2010-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2010-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c174",
+          "name": "2010-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2010-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c175",
+          "name": "2010-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2010-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c176",
+          "name": "2010-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2010-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c177",
+          "name": "2010-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2010-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c178",
+          "name": "2010-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2010-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c179",
+          "name": "2010-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2010-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c180",
+          "name": "2010-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2010-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c181",
+          "name": "2010-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2010-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c182",
+          "name": "2010-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2010-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c183",
+          "name": "2010-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2010-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c184",
+          "name": "2011-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2011-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c185",
+          "name": "2011-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2011-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c186",
+          "name": "2011-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2011-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c187",
+          "name": "2011-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2011-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c188",
+          "name": "2011-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2011-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c189",
+          "name": "2011-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2011-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c190",
+          "name": "2011-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2011-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c191",
+          "name": "2011-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2011-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c192",
+          "name": "2011-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2011-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c193",
+          "name": "2011-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2011-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c194",
+          "name": "2011-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2011-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c195",
+          "name": "2011-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2011-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c196",
+          "name": "2012-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2012-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c197",
+          "name": "2012-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2012-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c198",
+          "name": "2012-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2012-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c199",
+          "name": "2012-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2012-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c200",
+          "name": "2012-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2012-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c201",
+          "name": "2012-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2012-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c202",
+          "name": "2012-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2012-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c203",
+          "name": "2012-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2012-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c204",
+          "name": "2012-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2012-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c205",
+          "name": "2012-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2012-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c206",
+          "name": "2012-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2012-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c207",
+          "name": "2012-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2012-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c208",
+          "name": "2013-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2013-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c209",
+          "name": "2013-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2013-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c210",
+          "name": "2013-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2013-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c211",
+          "name": "2013-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2013-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c212",
+          "name": "2013-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2013-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c213",
+          "name": "2013-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2013-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c214",
+          "name": "2013-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2013-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c215",
+          "name": "2013-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2013-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c216",
+          "name": "2013-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2013-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c217",
+          "name": "2013-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2013-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c218",
+          "name": "2013-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2013-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c219",
+          "name": "2013-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2013-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c220",
+          "name": "2014-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2014-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c221",
+          "name": "2014-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2014-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c222",
+          "name": "2014-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2014-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c223",
+          "name": "2014-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2014-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c224",
+          "name": "2014-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2014-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c225",
+          "name": "2014-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2014-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c226",
+          "name": "2014-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2014-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c227",
+          "name": "2014-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2014-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c228",
+          "name": "2014-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2014-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c229",
+          "name": "2014-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2014-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c230",
+          "name": "2014-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2014-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c231",
+          "name": "2014-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2014-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c232",
+          "name": "2015-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2015-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c233",
+          "name": "2015-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2015-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c234",
+          "name": "2015-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2015-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c235",
+          "name": "2015-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2015-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c236",
+          "name": "2015-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2015-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c237",
+          "name": "2015-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2015-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c238",
+          "name": "2015-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2015-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c239",
+          "name": "2015-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2015-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c240",
+          "name": "2015-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2015-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c241",
+          "name": "2015-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2015-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c242",
+          "name": "2015-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2015-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c243",
+          "name": "2015-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2015-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c244",
+          "name": "2016-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2016-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c245",
+          "name": "2016-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2016-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c246",
+          "name": "2016-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2016-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c247",
+          "name": "2016-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2016-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c248",
+          "name": "2016-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2016-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c249",
+          "name": "2016-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2016-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c250",
+          "name": "2016-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2016-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c251",
+          "name": "2016-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2016-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c252",
+          "name": "2016-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2016-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c253",
+          "name": "2016-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2016-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c254",
+          "name": "2016-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2016-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c255",
+          "name": "2016-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2016-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c256",
+          "name": "2017-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2017-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c257",
+          "name": "2017-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2017-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c258",
+          "name": "2017-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2017-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c259",
+          "name": "2017-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2017-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c260",
+          "name": "2017-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2017-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c261",
+          "name": "2017-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2017-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c262",
+          "name": "2017-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2017-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c263",
+          "name": "2017-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2017-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c264",
+          "name": "2017-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2017-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c265",
+          "name": "2017-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2017-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c266",
+          "name": "2017-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2017-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c267",
+          "name": "2017-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2017-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c268",
+          "name": "2018-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2018-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c269",
+          "name": "2018-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2018-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c270",
+          "name": "2018-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2018-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c271",
+          "name": "2018-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2018-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c272",
+          "name": "2018-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2018-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c273",
+          "name": "2018-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2018-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c274",
+          "name": "2018-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2018-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c275",
+          "name": "2018-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2018-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c276",
+          "name": "2018-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2018-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c277",
+          "name": "2018-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2018-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c278",
+          "name": "2018-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2018-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c279",
+          "name": "2018-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2018-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c280",
+          "name": "2019-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2019-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c281",
+          "name": "2019-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2019-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c282",
+          "name": "2019-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2019-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c283",
+          "name": "2019-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2019-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c284",
+          "name": "2019-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2019-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c285",
+          "name": "2019-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2019-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c286",
+          "name": "2019-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2019-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c287",
+          "name": "2019-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2019-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c288",
+          "name": "2019-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2019-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c289",
+          "name": "2019-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2019-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c290",
+          "name": "2019-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2019-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c291",
+          "name": "2019-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2019-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c292",
+          "name": "2020-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2020-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c293",
+          "name": "2020-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2020-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c294",
+          "name": "2020-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2020-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c295",
+          "name": "2020-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2020-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c296",
+          "name": "2020-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2020-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c297",
+          "name": "2020-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2020-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c298",
+          "name": "2020-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2020-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c299",
+          "name": "2020-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2020-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c300",
+          "name": "2020-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2020-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c301",
+          "name": "2020-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2020-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c302",
+          "name": "2020-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2020-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c303",
+          "name": "2020-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2020-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c304",
+          "name": "2021-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2021-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c305",
+          "name": "2021-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2021-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c306",
+          "name": "2021-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2021-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c307",
+          "name": "2021-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2021-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c308",
+          "name": "2021-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2021-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c309",
+          "name": "2021-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2021-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c310",
+          "name": "2021-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2021-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c311",
+          "name": "2021-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2021-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c312",
+          "name": "2021-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2021-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c313",
+          "name": "2021-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2021-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c314",
+          "name": "2021-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2021-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c315",
+          "name": "2021-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2021-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c316",
+          "name": "2022-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2022-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c317",
+          "name": "2022-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2022-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c318",
+          "name": "2022-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2022-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c319",
+          "name": "2022-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2022-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c320",
+          "name": "2022-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2022-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c321",
+          "name": "2022-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2022-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c322",
+          "name": "2022-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2022-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c323",
+          "name": "2022-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2022-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c324",
+          "name": "2022-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2022-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c325",
+          "name": "2022-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2022-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c326",
+          "name": "2022-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2022-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c327",
+          "name": "2022-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2022-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c328",
+          "name": "2023-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2023-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c329",
+          "name": "2023-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2023-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c330",
+          "name": "2023-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2023-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c331",
+          "name": "2023-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2023-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c332",
+          "name": "2023-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2023-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c333",
+          "name": "2023-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2023-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c334",
+          "name": "2023-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2023-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c335",
+          "name": "2023-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2023-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c336",
+          "name": "2023-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2023-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c337",
+          "name": "2023-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2023-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c338",
+          "name": "2023-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2023-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c339",
+          "name": "2023-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2023-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c340",
+          "name": "2024-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2024-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c341",
+          "name": "2024-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2024-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c342",
+          "name": "2024-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2024-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c343",
+          "name": "2024-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2024-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c344",
+          "name": "2024-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2024-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c345",
+          "name": "2024-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2024-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c346",
+          "name": "2024-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2024-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c347",
+          "name": "2024-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2024-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c348",
+          "name": "2024-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2024-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c349",
+          "name": "2024-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2024-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c350",
+          "name": "2024-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2024-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c351",
+          "name": "2024-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2024-12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c352",
+          "name": "2025-01",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2025-01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c353",
+          "name": "2025-02",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2025-02"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c354",
+          "name": "2025-03",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2025-03"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c355",
+          "name": "2025-04",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2025-04"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c356",
+          "name": "2025-05",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2025-05"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c357",
+          "name": "2025-06",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2025-06"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c358",
+          "name": "2025-07",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2025-07"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c359",
+          "name": "2025-08",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2025-08"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c360",
+          "name": "2025-09",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2025-09"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c361",
+          "name": "2025-10",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2025-10"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c362",
+          "name": "2025-11",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2025-11"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c363",
+          "name": "2025-12",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "2025-12"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

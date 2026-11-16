@@ -1,0 +1,101 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Διάγραμμα Τροποποιήσεως του Ρυμοτομικού Σχεδίου της Πόλης Χανίων",
+  "description": "Διάγραμμα Τροποποιήσεως του Ρυμοτομικού Σχεδίου της Πόλης Χανίων σε κλίμακα 1:200",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Δήμος Χανίων"
+  },
+  "dateModified": "2026-08-04",
+  "datePublished": "2026-05-22",
+  "keywords": [
+    "chania",
+    "geotiff",
+    "gis",
+    "inspire",
+    "wcs",
+    "wms-only",
+    "γεωχωρικά"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/gis-chania-wms-only-chaniatsp-tsp_ras_fek_2003_739_d_200_geo",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Προεπισκόπηση WMS layer - chaniatsp:tsp_ras_FEK_2003_739_D_200_geo",
+      "description": "Προεπισκόπηση του WMS layer chaniatsp:tsp_ras_FEK_2003_739_D_200_geo.",
+      "contentSize": "1384811 B",
+      "contentUrl": "https://gisservices.chania.gr/geoserver/chaniatsp/wms#tsp_ras_FEK_2003_739_D_200_geo",
+      "encodingFormat": "application/xml",
+      "sha256": "9d0a6bd72ec279cc793ec9e0f2f21fef0bfa0cf582b2cadca3b8fd834091a623"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r002",
+      "name": "Λήψη εικόνας PNG - chaniatsp:tsp_ras_FEK_2003_739_D_200_geo",
+      "contentSize": "4867115 B",
+      "contentUrl": "https://gisservices.chania.gr/geoserver/wms?service=WMS&version=1.3.0&request=GetMap&layers=chaniatsp%3Atsp_ras_FEK_2003_739_D_200_geo&styles=&crs=CRS%3A84&bbox=24.028132103597752%2C35.50383059105635%2C24.029444998431618%2C35.504592992375194&width=2048&height=2048&format=image%2Fpng&transparent=true",
+      "encodingFormat": "image/png",
+      "sha256": "f8ae96afa7299f3dd80106192c7ccc51c7458cc60c43f47e1cfe2df7697b90a3"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r003",
+      "name": "WMS capabilities document - chaniatsp:tsp_ras_FEK_2003_739_D_200_geo",
+      "description": "WMS GetCapabilities document που περιγράφει και το layer chaniatsp:tsp_ras_FEK_2003_739_D_200_geo.",
+      "contentSize": "10867772 B",
+      "contentUrl": "https://gisservices.chania.gr/geoserver/wms?service=WMS&request=GetCapabilities&version=1.3.0",
+      "encodingFormat": "application/xml",
+      "sha256": "6b676fc71bff6f3f7e4d0d32bb53f738ba2b126cb2a72893248f840aa3f66489"
+    }
+  ]
+}

@@ -1,0 +1,435 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης",
+  "description": "Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Αποκεντρωμένη Διοίκηση Μακεδονίας-Θράκης | Γενική Διεύθυνση Χωροταξικής Περιβαλλοντικής και Αγροτικής Πολιτικής | Διεύθυνση Υδάτων Ανατολικής Μακεδονίας–Θράκης"
+  },
+  "dateModified": "2026-07-09",
+  "datePublished": "2026-07-01",
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/simeia-ydrolipsias-tis-geovasis-emsy-ethniko-mitroo-simeion-ydrolipsias-periochi-anatolikis-makedoni",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης (ημερομηνία αναφοράς 15-01-2025)",
+      "contentSize": "766866 B",
+      "contentUrl": "https://data.gov.gr/dataset/050c321c-446a-4877-9775-181841496cd3/resource/23eea12b-24e9-4fbc-bee5-b9b28834ae84/download/emsy_15.01.2025_amth.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "77f861197a1199a609f4c0a1a64067c0235f7f1c510e1c405e2465f66dff1eff"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r002",
+      "name": "Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης (ημερομηνία αναφοράς 15-01-2025)",
+      "contentSize": "3076608 B",
+      "contentUrl": "https://data.gov.gr/dataset/050c321c-446a-4877-9775-181841496cd3/resource/c92cc81b-211b-45fa-951e-bf60bf37f3a9/download/emsy_15.01.2025_amth.xls",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "0b9bc390bf4553341d2926e0291282abf848e865933375299cfeb6aafc66e50f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r003",
+      "name": "Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης (ημερομηνία αναφοράς 23-06-2026)",
+      "contentSize": "795280 B",
+      "contentUrl": "https://data.gov.gr/dataset/050c321c-446a-4877-9775-181841496cd3/resource/49de9b3a-9dbc-4637-b70d-32446241bae3/download/emsy_23.06.2026_amth.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "309224caa6e8ca775285b4859d3af25a82872c73679d18f17909747c8d3d9ae5"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r004",
+      "name": "Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης (ημερομηνία αναφοράς 23-06-2026)",
+      "contentSize": "3245056 B",
+      "contentUrl": "https://data.gov.gr/dataset/050c321c-446a-4877-9775-181841496cd3/resource/1132e6b5-77b2-4fe4-aaa9-d46096f17524/download/gdy_emsy_23.06.2026_amth.xls",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "a476366d690d52090ad56dd8bce137b0da42db60bc3bce4212a2c43eeada429d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r003_m01",
+      "name": "ΓΔΥ_ΕΜΣΥ_23.06.2026_AMTH.shp",
+      "contentUrl": "EMSY_23.06.2026_AMTH/ΓΔΥ_ΕΜΣΥ_23.06.2026_AMTH.shp",
+      "cr:containedIn": {
+        "@id": "r003"
+      },
+      "encodingFormat": "application/vnd.shp"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_01",
+      "name": "records_01",
+      "description": "Columns of the table examined for the assessment (r003, file EMSY_23.06.2026_AMTH/ΓΔΥ_ΕΜΣΥ_23.06.2026_AMTH.shp).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c001",
+          "name": "OBJECTID",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c002",
+          "name": "X_EGSA87",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r003_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c003",
+          "name": "Y_EGSA87",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r003_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c004",
+          "name": "IDIOKTHSIA",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c005",
+          "name": "KATHESTWS_",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c006",
+          "name": "EIDOS_SY",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c007",
+          "name": "PERIFEREIA",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c008",
+          "name": "PERIFERE_1",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c009",
+          "name": "DHMOS_KALL",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c010",
+          "name": "DHMOTIKH_E",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c011",
+          "name": "KOINOTHTA",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c012",
+          "name": "YDATIKO_DI",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r003_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c013",
+          "name": "LEKANH_APO",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c014",
+          "name": "KWDIKOS_EM",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003_m01"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_02",
+      "name": "records_02",
+      "description": "Columns of the table examined for the assessment (r004, sheet \"Φύλλο1\").",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c001",
+          "name": "OBJECTID",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r004"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c002",
+          "name": "X_EGSA87",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r004"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c003",
+          "name": "Y_EGSA87",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r004"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c004",
+          "name": "IDIOKTHSIAKO_KATHESTWS",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r004"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c005",
+          "name": "KATHESTWS_XRHSHS",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r004"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c006",
+          "name": "EIDOS_SY",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r004"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c007",
+          "name": "PERIFEREIA",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r004"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c008",
+          "name": "PERIFEREIAKH_ENOTHTA",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r004"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c009",
+          "name": "DHMOS_KALLIKRATH",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r004"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c010",
+          "name": "DHMOTIKH_ENOTHTA",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r004"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c011",
+          "name": "KOINOTHTA",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r004"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c012",
+          "name": "YDATIKO_DIAMERISMA",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r004"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c013",
+          "name": "LEKANH_APORROHS",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r004"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c014",
+          "name": "KWDIKOS_EMSY",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r004"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

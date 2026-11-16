@@ -1,0 +1,176 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΦΕΒΡΟΥΑΡΙΟΥ 2017",
+  "description": "Εξαγωγές αποθήκης τροφήμων Φεβρουαρίου 2017",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Γενικό Νοσοκομείο Καβάλας"
+  },
+  "dateModified": "2026-02-22",
+  "datePublished": "2025-11-18",
+  "keywords": [
+    "repository.data.gov.gr",
+    "Από μετάπτωση",
+    "Στατιστικά"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/statistika-diatrofhs-febroyarioy-2017",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΦΕΒΡΟΥΑΡΙΟΥ 2017",
+      "description": "Εξαγωγές αποθήκης τροφίμων Φεβρουαρίου 2017",
+      "contentSize": "46080 B",
+      "contentUrl": "https://data.gov.gr/dataset/a7a059c9-fe6a-4bac-8a7f-aeca6957a072/resource/ae28ad34-d0d1-4eba-b621-509f1f210db1/download/02-2017.xls",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "f4d310a2c59171351827ff6e8b72ca029f8912c2990d9843f8c4be417fabdd58"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records",
+      "name": "records",
+      "description": "Columns of the table examined for the assessment (r001, sheet \"ΙΑΝΟΥΑΡΙΟΣ - ΦΕΒΡΟΥΑΡΙΟΣ 2017\").",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records/c001",
+          "name": "ΦΟΡΕΑΣ ΥΓΕΙΑΣ",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c002",
+          "name": "ΜΗΝΑΣ ΚΑΤΑΧΩΡΗΣΗΣ",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c003",
+          "name": "ΠΕΡΙΓΡΑΦΗ ΕΙΔΟΥΣ",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c004",
+          "name": "ΜΟΝ. ΜΕΤ",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c005",
+          "name": "ΠΟΣΟΤΗΤΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c006",
+          "name": "ΑΞΙΑ ΜΕ ΦΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c007",
+          "name": "ΑΞΙΑ ΧΩΡΙΣ ΦΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c008",
+          "name": "ΦΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -15,7 +15,7 @@ S13,single,r001,one,"GTFS feed in a ZIP archive, declared as CSV",,file name
 S14,series,r122-r132,worst,"daily extracts of 11 kinds of data, from 20-11-2025 to 1-12-2025; the 11 files of the latest day are examined",,cycle 11
 S15,formats,all,best,"the same data as CSV, Excel and GeoJSON",,
 S16,single,r001,one,one shapefile,,
-S17,none,,none,no data file available: the Excel file returns HTTP 404 and the other resource is a web page (Q1),unavailable,
+S17,formats,r002_csv_manual r002_geojson_manual,best,"the list of the application linked in the description, exported by hand on 2026-11-15 (CSV and GeoJSON; JSON not judged): the JSON export holds the same records in the nested layout of the ArcGIS REST API; the Excel file returns HTTP 404 and the page of the other resource asks for sign-in (Q1)",,
 S18,formats,r002 r003 r004 r005,best,"the same layer as GeoJSON, CSV, shapefile and KML through WFS; the map view (r001) and the capabilities documents (r006, r007) are not data files",,
 S19,single,r001,one,one CSV file,,
 S20,single,r001,one,"one ZIP archive, whose files are examined",,one; apart stations_list.csv

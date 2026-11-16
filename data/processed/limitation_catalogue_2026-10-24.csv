@@ -1,0 +1,17 @@
+﻿measure,count,of,share,note
+datasets of the catalogue,22805,,,
+datasets without a description,711,22805,3.1,
+datasets whose description only repeats the title,7097,22805,31.1,"the description adds fewer than 25 letters to the title, as in 08_documentation_checks.py; 04_metadata_checks.py counts the descriptions equal to the title"
+datasets whose description says more than the title,14997,22805,65.8,
+datasets whose description says more than the title in at least 100 characters,9072,22805,39.8,
+datasets whose description says more than the title in at least 300 characters,1973,22805,8.7,
+"datasets whose description says more than the title in at least 1,000 characters",296,22805,1.3,
+datasets with a word about what is missing in a description,74,22805,0.3,indicator: the words are sought in the description of the dataset and of its resources; whether a statement is made is judged only in the sample
+datasets with a word about the source or the method in a description,1881,22805,8.2,indicator: the words are sought in the description of the dataset and of its resources; whether a statement is made is judged only in the sample
+datasets with a word about accuracy or errors in a description,181,22805,0.8,indicator: the words are sought in the description of the dataset and of its resources; whether a statement is made is judged only in the sample
+datasets with a word of at least one of the three kinds in a description,2023,22805,8.9,indicator: the words are sought in the description of the dataset and of its resources; whether a statement is made is judged only in the sample
+datasets with the phrase that the data are given as they are or that no liability is accepted,6,22805,0.0,indicator: the words are sought in the description of the dataset and of its resources; whether a statement is made is judged only in the sample
+datasets that fill a field for the provenance of the data (provenance),0,22805,0.0,no record of the catalogue has a field of this name
+datasets that fill the notes on the version (version_info),47,22805,0.2,
+datasets with the lineage of an ISO 19115 record among the additional metadata (iso_lineage),52,22805,0.2,
+datasets whose type is declared as synthetic data (SYNTHETIC_DATA),119,22805,0.5,"13 publishers: minfin-2026, esr-2026, apdaigaiou-2026, apdattikis, larissa-dimos, and 8 more"

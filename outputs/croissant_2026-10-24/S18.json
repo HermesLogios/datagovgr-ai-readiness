@@ -1,0 +1,507 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018",
+  "description": "Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018, σύμφωνα με τα παραδοτέα του προγράμματος CORINE της Ευρωπαϊκής Ένωσης. Τα στοιχεία του επιθέματος (Version 20) απεικονίζουν τις μεταβολές που καταγράφηκαν στην κάλυψη γης μεταξύ των δύο χρονολογιών. Έγινε ανάκτηση των στοιχείων από το site του Προγράμματος Copernicus, μετασχηματισμός τους στο ΕΓΣΑ 87 και αποκοπή τους στα όρια της Ελληνικής Επικράτειας. Τελ. Ενημέρωση 13/12/2022.",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Δήμος Σύρου Ερμούπολης"
+  },
+  "dateModified": "2026-05-22",
+  "datePublished": "2026-05-21",
+  "keywords": [
+    "features",
+    "gis",
+    "inspire",
+    "syros",
+    "γεωχωρικά"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012_2018",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Προεπισκόπηση WMS layer - syros:lcv_pol_corine_land_cover_2012_2018",
+      "description": "Προεπισκόπηση του WMS layer syros:lcv_pol_corine_land_cover_2012_2018.",
+      "contentSize": "586120 B",
+      "contentUrl": "https://syros.getmap.gr/geoserver/wms#syros:lcv_pol_corine_land_cover_2012_2018",
+      "encodingFormat": "application/xml",
+      "sha256": "8da08514a5f641f247560bd196261decb92cdf7877720142ebdf7ab2d988a368"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r002",
+      "name": "Λήψη GeoJSON - syros:lcv_pol_corine_land_cover_2012_2018",
+      "contentSize": "9836 B",
+      "contentUrl": "https://syros.getmap.gr/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=syros%3Alcv_pol_corine_land_cover_2012_2018&outputFormat=application%2Fjson",
+      "encodingFormat": "application/geo+json",
+      "sha256": "f20b55500b60f7da4ce4a6de086f4365b5dc85599c54eeab8d90b362569aa88c"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r003",
+      "name": "Λήψη CSV - syros:lcv_pol_corine_land_cover_2012_2018",
+      "contentSize": "8929 B",
+      "contentUrl": "https://syros.getmap.gr/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=syros%3Alcv_pol_corine_land_cover_2012_2018&outputFormat=csv",
+      "encodingFormat": "text/csv",
+      "sha256": "c42ba891d8ea0dece4d5c33a84dd64a5fde8e79b98b42e10b3261f1b275b77bc"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r004",
+      "name": "Λήψη SHAPE-ZIP - syros:lcv_pol_corine_land_cover_2012_2018",
+      "contentSize": "5533 B",
+      "contentUrl": "https://syros.getmap.gr/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=syros%3Alcv_pol_corine_land_cover_2012_2018&outputFormat=SHAPE-ZIP",
+      "encodingFormat": "application/zip",
+      "sha256": "9bdd21090df9a46b3d47473a4f01dadc169bd11331dc79ebbbae8c9597d52d51"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r005",
+      "name": "Λήψη KML - syros:lcv_pol_corine_land_cover_2012_2018",
+      "contentSize": "16244 B",
+      "contentUrl": "https://syros.getmap.gr/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=syros%3Alcv_pol_corine_land_cover_2012_2018&outputFormat=KML",
+      "encodingFormat": "application/vnd.google-earth.kml+xml",
+      "sha256": "665e0e46c03809f1258902df15f908962fec5da0fb532ef752ad42b8043150c2"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r006",
+      "name": "WMS capabilities document - syros:lcv_pol_corine_land_cover_2012_2018",
+      "description": "WMS GetCapabilities document που περιγράφει και το layer syros:lcv_pol_corine_land_cover_2012_2018.",
+      "contentSize": "586120 B",
+      "contentUrl": "https://syros.getmap.gr/geoserver/wms?service=WMS&request=GetCapabilities&version=1.3.0",
+      "encodingFormat": "application/xml",
+      "sha256": "8da08514a5f641f247560bd196261decb92cdf7877720142ebdf7ab2d988a368"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r007",
+      "name": "WFS capabilities document - syros:lcv_pol_corine_land_cover_2012_2018",
+      "description": "WFS GetCapabilities document που μπορεί να χρησιμοποιηθεί για αναζήτηση του layer syros:lcv_pol_corine_land_cover_2012_2018.",
+      "contentSize": "313724 B",
+      "contentUrl": "https://syros.getmap.gr/geoserver/wfs?service=WFS&request=GetCapabilities&version=2.0.0",
+      "encodingFormat": "application/xml",
+      "sha256": "d68213f5636d2d5a9be17adb83f422042af71ea24b13a077849cacc55dcdd7a0"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_01",
+      "name": "records_01",
+      "description": "Columns of the table examined for the assessment (r002). The same columns are found in 2 of the examined tables of the dataset.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c001",
+          "name": "cid",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c002",
+          "name": "objectid_1",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r002"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c003",
+          "name": "objectid",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r002"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c004",
+          "name": "change",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r002"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c005",
+          "name": "code_12",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r002"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c006",
+          "name": "code_18",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r002"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c007",
+          "name": "chtype",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r002"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c008",
+          "name": "remark",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r002"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c009",
+          "name": "area_ha",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c010",
+          "name": "shape_leng",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c011",
+          "name": "shape_area",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r002"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c012",
+          "name": "desc",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r002"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c013",
+          "name": "c_desc",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r002"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_02",
+      "name": "records_02",
+      "description": "Columns of the table examined for the assessment (r003).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c001",
+          "name": "FID",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "FID"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c002",
+          "name": "cid",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "cid"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c003",
+          "name": "geom",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "geom"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c004",
+          "name": "objectid_1",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "objectid_1"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c005",
+          "name": "objectid",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "objectid"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c006",
+          "name": "change",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "change"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c007",
+          "name": "code_12",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "code_12"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c008",
+          "name": "code_18",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "code_18"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c009",
+          "name": "chtype",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "chtype"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c010",
+          "name": "remark",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "remark"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c011",
+          "name": "area_ha",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "area_ha"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c012",
+          "name": "shape_leng",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "shape_leng"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c013",
+          "name": "shape_area",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "shape_area"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c014",
+          "name": "desc",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "desc"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c015",
+          "name": "c_desc",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            },
+            "extract": {
+              "column": "c_desc"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

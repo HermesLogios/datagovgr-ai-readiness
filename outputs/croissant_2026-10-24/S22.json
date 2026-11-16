@@ -1,0 +1,86 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Προσωρινοί πίνακες κατάταξης - Γ.Πρ. 21487- 13-03-2024 - Έκδοση προσωρινού πίνακα κατάταξης επενδυτικών σχεδίων που υποβλήθηκαν προς υπαγωγή στο καθεστώς ενίσχυσης \"Ενίσχυση Τουριστικών Επενδύσεων\" (β΄ κύκλος) στο Υπουργείο Ανάπτυξης",
+  "description": "Προσωρινοί πίνακες κατάταξης - Προσωρινός Πίνακας Κατάταξης, κατά φθίνουσα σειρά βαθμολογίας, επενδυτικών σχεδίων που υποβλήθηκαν προς υπαγωγή στο εκάστοτε καθεστώς ενίσχυσης του Αναπτυξιακού Νόμου 4887/2022. (ΕΙΔΙΚΟΤΕΡΑ ΜΕΤΑΠΟΙΗΣΗ – ΕΦΟΔΙΑΣΤΙΚΗ ΑΛΥΣΙΔΑ (Β ΚΥΚΛΟΣ) ΕΝΙΣΧΥΣΗ ΤΟΥΡΙΣΤΙΚΩΝ ΕΠΕΝΔΥΣΕΩΝ (Β ΚΥΚΛΟΣ) - Έκδοση προσωρινού πίνακα κατάταξης επενδυτικών σχεδίων που υποβλήθηκαν προς υπαγωγή στο καθεστώς ενίσχυσης \"Ενίσχυση Τουριστικών Επενδύσεων\" (β΄ κύκλος) στο Υπουργείο Ανάπτυξης",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Υπουργείο Ανάπτυξης"
+  },
+  "dateModified": "2026-05-14",
+  "datePublished": "2026-05-14",
+  "keywords": [
+    "ΑΝΑΠΤΥΞΙΑΚΟΣ ΝΟΜΟΣ 4887-2022",
+    "ΕΝΙΣΧΥΣΗ",
+    "ΕΠΕΝΔΥΣΕΩΝ",
+    "ΕΠΕΝΔΥΤΙΚΩΝ ΣΧΕΔΙΩΝ",
+    "ΕΦΟΔΙΑΣΤΙΚΗ ΑΛΥΣΙΔΑ",
+    "ΚΑΘΕΣΤΩΣ ΕΝΙΣΧΥΣΗΣ",
+    "ΚΑΤΑΤΑΞΗΣ",
+    "ΜΕΤΑΠΟΙΗΣΗ",
+    "ΠΙΝΑΚΑΣ",
+    "ΠΡΟΣΩΡΙΝΟΣ",
+    "ΤΟΥΡΙΣΤΙΚΩΝ",
+    "ΥΠΑΓΩΓΗ"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/prosorinoi-pinakes-katataxis-g-pr-21487-13-03-2024-ekdosi-prosorinoy-pinaka-katataxis-ependytikon-sc",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Προσωρινοί πίνακες κατάταξης - Γ.Πρ. 21487- 13-03-2024 - Έκδοση προσωρινού πίνακα κατάταξης επενδυτικών σχεδίων που υποβλήθηκαν προς υπαγωγή στο καθεστώς ενίσχυσης \"Ενίσχυση Τουριστικών Επενδύσεων\" (β΄ κύκλος) στο Υπουργείο Ανάπτυξης",
+      "contentSize": "558005 B",
+      "contentUrl": "https://data.gov.gr/dataset/9e3d5d98-4c73-4762-b1c1-59f1fdcd965c/resource/43d38b6c-1a35-4022-ac56-895e08cde745/download/0.prosorinos-pinakas-apotelesmaton-tourismos-2os-kiklos.pdf",
+      "encodingFormat": "application/pdf",
+      "sha256": "c0f2f9810f4b442dbd0197910892eb165504e88f1425de01d3fb75e24a19e4d8"
+    }
+  ]
+}

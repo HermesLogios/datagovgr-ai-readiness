@@ -1,0 +1,204 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής",
+  "description": "Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": [
+    {
+      "@type": "sc:Organization",
+      "name": "Γενική Διεύθυνση Δημόσιας Υγείας & Κοινωνικής Μέριμνας"
+    },
+    {
+      "@type": "sc:Organization",
+      "name": "Διεύθυνση Δημόσιας Υγείας"
+    }
+  ],
+  "dateModified": "2026-10-17",
+  "datePublished": "2025-11-24",
+  "keywords": [
+    "Ανοικτά Δεδομένα",
+    "Γενική Διεύθυνση Δημόσιας Υγείας Κοινωνικής Μέριμνας",
+    "Διεύθυνση Δημόσιας Υγείας",
+    "Περιφέρεια Αττικής",
+    "Στατιστικές",
+    "Υγεία Κοινωνική Μέριμνα",
+    "Ψηφιακή Ενημέρωση Εξυπηρέτηση"
+  ],
+  "url": "https://data.gov.gr/dataset/attica-92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Λίστα ιατρών για ειδίκευση στα νοσοκομεία Αττικής",
+      "contentSize": "38400 B",
+      "contentUrl": "https://opendata.attica.gov.gr/content/genikh-dieythynsh-dhmosias-ygeias-kai-koinwnikhs-merimnas/d-nsh-dhmosias-ygeias/92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020?fdl=azVnQmk4U1VGZCtzTE5lK3NwUnRsaCtLQ3lKQ2x1dkpnYmRqQmNqNG16eE5VVkgxODlteTlETFNJVkpNNlR1ZVJIVjFhV3hyV2twM00yZFdhamt6Tm5GTWRFWmphVkFyWjJkT2NqRkhUbFZoT1dRdmR6QlBhVkp6TkQwPQ",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "01154eff9fd576296bc5bee054b3f1731d18338cb9ef29ca2bd49529e1030e2c"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r002",
+      "name": "Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής 2024",
+      "contentSize": "17408 B",
+      "contentUrl": "https://opendata.attica.gov.gr/content/genikh-dieythynsh-dhmosias-ygeias-kai-koinwnikhs-merimnas/d-nsh-dhmosias-ygeias/92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020?fdl=czNYaHpaYXU5djd0RXNGRllkWWUrV2h6c0QycmlubWE4c2VjOFY2VjlURVNvRGdLLzdoNTBXWW5Mamxwc0FJTGVWazNUazVvUW13MGRsWTRhV051VkVFMmNrOXZRVDA5",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "ec74adbfb742f15be7a10b837a2f98fe87d89a29a2ff9e15ca3492bf5b4b5882"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r003",
+      "name": "Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής 2023",
+      "contentSize": "17920 B",
+      "contentUrl": "https://opendata.attica.gov.gr/content/genikh-dieythynsh-dhmosias-ygeias-kai-koinwnikhs-merimnas/d-nsh-dhmosias-ygeias/92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020?fdl=UUFhYTVBdHYyZHFodUY1RGxPS1kyL29QQWZ0c0c4bStRT25zdEl6RWoxaFBvMWEyK2NZZzJHMGppRDZ1SFJlVWNrWkdiMFpQYWsxMFNIWllZbmhtTkM5V1JFSm5VVDA5",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "b1a6fea51c426e41c5e7e957f23198cd33154f741a5fa3813ed97c8fc71c50c6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r004",
+      "name": "Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής 2022",
+      "contentSize": "29696 B",
+      "contentUrl": "https://opendata.attica.gov.gr/content/genikh-dieythynsh-dhmosias-ygeias-kai-koinwnikhs-merimnas/d-nsh-dhmosias-ygeias/92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020?fdl=aktscW5CZ3laSDFUQU9NeTRpWVJHRi9CRml2WkhMVE1IT0JtYXg4UHRGRUwrWUVYaXQwK04rbXNIVzV5OGhUbWJVNWtaMVo2TjBadEwxZHZiRmRZTkcxTVdFTktRVDA5",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "0f819f1fa63ccb16e55772949febdb425a0d7d8811cbbe877ca92b4cb9f9a49f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r005",
+      "name": "Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής 2021",
+      "contentSize": "28672 B",
+      "contentUrl": "https://opendata.attica.gov.gr/content/genikh-dieythynsh-dhmosias-ygeias-kai-koinwnikhs-merimnas/d-nsh-dhmosias-ygeias/92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020?fdl=SWlHUG1zcFdFNk9TMjdjaldzaWdHOWFCL1BaajhGcjk2dFFqTmIxcW03K09tQjJwV05hWTRUZWpML1JOWmhtaFRVTlBSVzQwYlZOV00zY3dTazF4Ykd4UlZtOXBVVDA5",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "13fe03cbc4d1d93dfed41b16bba31388620a213097b280d2e81c201c09671711"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r006",
+      "name": "Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής 2020",
+      "contentSize": "28672 B",
+      "contentUrl": "https://opendata.attica.gov.gr/content/genikh-dieythynsh-dhmosias-ygeias-kai-koinwnikhs-merimnas/d-nsh-dhmosias-ygeias/92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020?fdl=WE9GMmhVK3h2ZlpBaFNYQ0RTYXd4THlEM29lVGVBbGZ2cTdUNmZXUGxxTS94Q0RPeXlEdWtRb2F1N0ZjNzgwRllrOHJXa3BqU2pZMU4zQnRlRkJqTlhkT1VVeHBkejA5",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "00950862e6def057158b555cdd8ef3a367ff869801d50f13cd545e9160d2217c"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_01",
+      "name": "records_01",
+      "description": "Columns of the table examined for the assessment (r001, sheet \"Φύλλο 1\"). The same columns are found in 2 of the examined tables of the dataset.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c001",
+          "name": "ΝΟΣΟΚΟΜΕΙΟ",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c002",
+          "name": "ΛΙΣΤΑ ΑΝΑΜΟΝΗΣ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_02",
+      "name": "records_02",
+      "description": "Columns of the table examined for the assessment (r001, sheet \"2025\").",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c001",
+          "name": "ΝΟΣΟΚΟΜΕΙΟ",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c002",
+          "name": "ΛΙΣΤΑ ΑΝΑΜΟΝΗΣ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c003",
+          "name": "ΛΙΣΤΑ ΑΝΑΜΟΝΗΣ 2024",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

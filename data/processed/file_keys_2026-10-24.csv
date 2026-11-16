@@ -1143,6 +1143,22 @@ S16,r001 gr_natura_v31_union_final.shp,shapefile,4,SITECODE_1,standard code,Natu
 S16,r001 gr_natura_v31_union_final.shp,shapefile,8,SITE_NAME_,name,name,"names of places, bodies or stations"
 S16,r001 gr_natura_v31_union_final.shp,shapefile,9,SITE_NAME1,name,name,"names of places, bodies or stations"
 S16,r001 gr_natura_v31_union_final.shp,shapefile,,(geometry),geometry (declared system),Greek_Grid,593 geometries in a declared reference system
+S17,r002_csv_manual,csv,1,objectid,internal code,code of the publisher,identifier without a known standard behind it
+S17,r002_csv_manual,csv,2,Α/Α,internal code,code of the publisher,identifier without a known standard behind it
+S17,r002_csv_manual,csv,3,Μοναδικός Αριθμός Σταθμου,name,name,"names of places, bodies or stations"
+S17,r002_csv_manual,csv,4,Περιφερειακή Ενότητα,name,name,"names of places, bodies or stations"
+S17,r002_csv_manual,csv,5,Δήμος,name,name,"names of places, bodies or stations"
+S17,r002_csv_manual,csv,6,Δημοτική Ενότητα,name,name,"names of places, bodies or stations"
+S17,r002_csv_manual,csv,7,Τοποθεσία/Θέση,name,name,"names of places, bodies or stations"
+S17,r002_csv_manual,csv,14,x,coordinates (system not declared),X/Y without a declared system,"accepted by the range of the values (Q4), no system declared"
+S17,r002_csv_manual,csv,15,y,coordinates (system not declared),X/Y without a declared system,"accepted by the range of the values (Q4), no system declared"
+S17,r002_geojson_manual,geojson,1,OBJECTID,internal code,code of the publisher,identifier without a known standard behind it
+S17,r002_geojson_manual,geojson,2,objectid_1,internal code,code of the publisher,identifier without a known standard behind it
+S17,r002_geojson_manual,geojson,5,p_enotita,name,name,"names of places, bodies or stations"
+S17,r002_geojson_manual,geojson,7,d_enotita,name,name,"names of places, bodies or stations"
+S17,r002_geojson_manual,geojson,9,x,coordinates (system not declared),X/Y without a declared system,"accepted by the range of the values (Q4), no system declared"
+S17,r002_geojson_manual,geojson,10,y,coordinates (system not declared),X/Y without a declared system,"accepted by the range of the values (Q4), no system declared"
+S17,r002_geojson_manual,geojson,,(geometry),geometry (declared system),EPSG:2100,45 geometries in a declared reference system
 S18,r002,geojson,1,cid,internal code,code of the publisher,identifier without a known standard behind it
 S18,r002,geojson,2,objectid_1,internal code,code of the publisher,identifier without a known standard behind it
 S18,r002,geojson,3,objectid,internal code,code of the publisher,identifier without a known standard behind it

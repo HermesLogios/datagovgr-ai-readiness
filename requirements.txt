@@ -1,6 +1,6 @@
 # Python libraries of the project.
 # Versions are pinned so that every run gives the same results.
-# New libraries (e.g. mlcroissant, streamlit) are added as the project progresses.
+# New libraries (e.g. streamlit) are added as the project progresses.
 
 requests==2.34.2   # calls to the data.gov.gr API
 pandas==3.0.6      # processing of data tables
@@ -10,3 +10,5 @@ truststore==0.10.5 # certificates of web servers checked through the trust store
 xlrd==2.0.2        # older Excel files (.xls) of the sample, read with their merged cells
 pyshp==3.1.6       # shapefiles of the sample
 rdflib==7.6.0      # RDF files of the sample (Turtle)
+mlcroissant==1.1.1 # Croissant descriptions of the datasets of the sample and their validation
+pypdf==6.21.4      # text of the PDF documents of the sample, extracted to test whether they hold text or scanned images

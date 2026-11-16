@@ -1,0 +1,2 @@
+﻿sample_id,dataset,address,tested_on,http_status,answer,validator_errors,validator_warnings,licence,record_sets,file
+,,https://data.gov.gr/api/3/action/status_show,2026-11-11,200,"CKAN 2.11.3, 66 extensions; dcat plugin: yes; croissant plugin: no",,,,,

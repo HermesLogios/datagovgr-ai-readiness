@@ -1,0 +1,70 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Διάγραμμα Τροποποίησης - T1936A404_69912_500_01",
+  "description": "Το διάγραμμα αφορά σε τροποποίηση του Σχεδίου Πόλης. Η ονοματολογία έχει τη μορφή Χ(ΧΧ)ΥΥΥΥΤΝΝΝ, όπου Χ(ΧΧ) λαμβάνει τιμές T: τελικό σχέδιο, Tan: τελικό σχέδιο ανάρτησης, TF: Τελικό σχέδιο ταυτόσημο με αυτό του ΦΕΚ, YYYY: έτος ΦΕΚ, Τ: τεύχος ΦΕΚ, NNN: αριθμός απόφασης του ΦΕΚ.",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Δήμος Ηρακλείου Κρήτης"
+  },
+  "dateModified": "2026-07-30",
+  "datePublished": "2026-05-22",
+  "keywords": [
+    "geotiff",
+    "gis",
+    "heraklion",
+    "inspire",
+    "wcs",
+    "wms-only",
+    "γεωχωρικά"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliotsp-t1936a404_69912_500_01"
+}

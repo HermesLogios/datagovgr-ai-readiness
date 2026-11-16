@@ -1,0 +1,927 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Σύνολα Δεδομένων Οργανισμού Αστικών Συγκοινωνιών - GTFS",
+  "description": "Περιλαμβάνει τα GTFS αρχεία του Οργανισμού Αστικών Συγκοινωνιών που αποστέλλονται για τη χρήση των υπηρεσιών της Google",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Οργανισμός Αστικών Συγκοινωνιών Θεσσαλονίκης (ΟΑΣΘ)"
+  },
+  "dateModified": "2026-05-11",
+  "datePublished": "2026-04-02",
+  "keywords": [
+    "gtfs",
+    "public transportation",
+    "thessaloniki",
+    "urban transportation"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/oasth-gtfs",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "GTFS δεδομένα του Οργανισμού Αστικών Συγκοινωνιών Θεσσαλονίκης",
+      "description": "Περιλαμβάνει τα GTFS αρχεία του Οργανισμού Αστικών Συγκοινωνιών που αποστέλλονται για τη χρήση των υπηρεσιών της Google",
+      "contentSize": "13167488 B",
+      "contentUrl": "https://data.gov.gr/dataset/87f127e9-9d06-42b8-8793-029761e28bce/resource/4d2d57e3-de31-4d44-b8b9-98ae605c6bcd/download/oasth.gtfs.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "300f4f94cda3c528a3ce816899d827b746cac00a9af630b159013f5fede1d0c6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001_m01",
+      "name": "agency.txt",
+      "contentUrl": "agency.txt",
+      "cr:containedIn": {
+        "@id": "r001"
+      },
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001_m02",
+      "name": "calendar.txt",
+      "contentUrl": "calendar.txt",
+      "cr:containedIn": {
+        "@id": "r001"
+      },
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001_m03",
+      "name": "routes.txt",
+      "contentUrl": "routes.txt",
+      "cr:containedIn": {
+        "@id": "r001"
+      },
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001_m04",
+      "name": "shapes.txt",
+      "contentUrl": "shapes.txt",
+      "cr:containedIn": {
+        "@id": "r001"
+      },
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001_m05",
+      "name": "stop_times.txt",
+      "contentUrl": "stop_times.txt",
+      "cr:containedIn": {
+        "@id": "r001"
+      },
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001_m06",
+      "name": "stops.txt",
+      "contentUrl": "stops.txt",
+      "cr:containedIn": {
+        "@id": "r001"
+      },
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001_m07",
+      "name": "trips.txt",
+      "contentUrl": "trips.txt",
+      "cr:containedIn": {
+        "@id": "r001"
+      },
+      "encodingFormat": "text/csv"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_01",
+      "name": "records_01",
+      "description": "Columns of the table examined for the assessment (r001, file agency.txt).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c001",
+          "name": "agency_id",
+          "description": "Field agency_id of agency.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "agency_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c002",
+          "name": "agency_name",
+          "description": "Field agency_name of agency.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "agency_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c003",
+          "name": "agency_url",
+          "description": "Field agency_url of agency.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "agency_url"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c004",
+          "name": "agency_timezone",
+          "description": "Field agency_timezone of agency.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "agency_timezone"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c005",
+          "name": "agency_phone",
+          "description": "Field agency_phone of agency.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "agency_phone"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c006",
+          "name": "agency_lang",
+          "description": "Field agency_lang of agency.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "agency_lang"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c007",
+          "name": "agency_email",
+          "description": "Field agency_email of agency.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "agency_email"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c008",
+          "name": "agency_fare_url",
+          "description": "Field agency_fare_url of agency.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "agency_fare_url"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_02",
+      "name": "records_02",
+      "description": "Columns of the table examined for the assessment (r001, file calendar.txt).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c001",
+          "name": "service_id",
+          "description": "Field service_id of calendar.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m02"
+            },
+            "extract": {
+              "column": "service_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c002",
+          "name": "monday",
+          "description": "Field monday of calendar.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m02"
+            },
+            "extract": {
+              "column": "monday"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c003",
+          "name": "tuesday",
+          "description": "Field tuesday of calendar.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m02"
+            },
+            "extract": {
+              "column": "tuesday"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c004",
+          "name": "wednesday",
+          "description": "Field wednesday of calendar.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m02"
+            },
+            "extract": {
+              "column": "wednesday"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c005",
+          "name": "thursday",
+          "description": "Field thursday of calendar.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m02"
+            },
+            "extract": {
+              "column": "thursday"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c006",
+          "name": "friday",
+          "description": "Field friday of calendar.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m02"
+            },
+            "extract": {
+              "column": "friday"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c007",
+          "name": "saturday",
+          "description": "Field saturday of calendar.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m02"
+            },
+            "extract": {
+              "column": "saturday"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c008",
+          "name": "sunday",
+          "description": "Field sunday of calendar.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m02"
+            },
+            "extract": {
+              "column": "sunday"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c009",
+          "name": "start_date",
+          "description": "Field start_date of calendar.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Date",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m02"
+            },
+            "extract": {
+              "column": "start_date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c010",
+          "name": "end_date",
+          "description": "Field end_date of calendar.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Date",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m02"
+            },
+            "extract": {
+              "column": "end_date"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_03",
+      "name": "records_03",
+      "description": "Columns of the table examined for the assessment (r001, file routes.txt).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c001",
+          "name": "route_id",
+          "description": "Field route_id of routes.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m03"
+            },
+            "extract": {
+              "column": "route_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c002",
+          "name": "route_short_name",
+          "description": "Field route_short_name of routes.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m03"
+            },
+            "extract": {
+              "column": "route_short_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c003",
+          "name": "route_long_name",
+          "description": "Field route_long_name of routes.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m03"
+            },
+            "extract": {
+              "column": "route_long_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c004",
+          "name": "route_type",
+          "description": "Field route_type of routes.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m03"
+            },
+            "extract": {
+              "column": "route_type"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c005",
+          "name": "route_color",
+          "description": "Field route_color of routes.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m03"
+            },
+            "extract": {
+              "column": "route_color"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_03/c006",
+          "name": "route_text_color",
+          "description": "Field route_text_color of routes.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m03"
+            },
+            "extract": {
+              "column": "route_text_color"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_04",
+      "name": "records_04",
+      "description": "Columns of the table examined for the assessment (r001, file shapes.txt).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_04/c001",
+          "name": "shape_id",
+          "description": "Field shape_id of shapes.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m04"
+            },
+            "extract": {
+              "column": "shape_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_04/c002",
+          "name": "shape_pt_lat",
+          "description": "Field shape_pt_lat of shapes.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m04"
+            },
+            "extract": {
+              "column": "shape_pt_lat"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_04/c003",
+          "name": "shape_pt_lon",
+          "description": "Field shape_pt_lon of shapes.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m04"
+            },
+            "extract": {
+              "column": "shape_pt_lon"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_04/c004",
+          "name": "shape_pt_sequence",
+          "description": "Field shape_pt_sequence of shapes.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m04"
+            },
+            "extract": {
+              "column": "shape_pt_sequence"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_04/c005",
+          "name": "shape_dist_traveled",
+          "description": "Field shape_dist_traveled of shapes.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m04"
+            },
+            "extract": {
+              "column": "shape_dist_traveled"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_05",
+      "name": "records_05",
+      "description": "Columns of the table examined for the assessment (r001, file stop_times.txt).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c001",
+          "name": "trip_id",
+          "description": "Field trip_id of stop_times.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m05"
+            },
+            "extract": {
+              "column": "trip_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c002",
+          "name": "arrival_time",
+          "description": "Field arrival_time of stop_times.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m05"
+            },
+            "extract": {
+              "column": "arrival_time"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c003",
+          "name": "departure_time",
+          "description": "Field departure_time of stop_times.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m05"
+            },
+            "extract": {
+              "column": "departure_time"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c004",
+          "name": "stop_id",
+          "description": "Field stop_id of stop_times.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m05"
+            },
+            "extract": {
+              "column": "stop_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c005",
+          "name": "stop_sequence",
+          "description": "Field stop_sequence of stop_times.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m05"
+            },
+            "extract": {
+              "column": "stop_sequence"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c006",
+          "name": "pickup_type",
+          "description": "Field pickup_type of stop_times.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m05"
+            },
+            "extract": {
+              "column": "pickup_type"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_05/c007",
+          "name": "drop_off_type",
+          "description": "Field drop_off_type of stop_times.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m05"
+            },
+            "extract": {
+              "column": "drop_off_type"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_06",
+      "name": "records_06",
+      "description": "Columns of the table examined for the assessment (r001, file stops.txt).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_06/c001",
+          "name": "stop_id",
+          "description": "Field stop_id of stops.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m06"
+            },
+            "extract": {
+              "column": "stop_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_06/c002",
+          "name": "stop_code",
+          "description": "Field stop_code of stops.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m06"
+            },
+            "extract": {
+              "column": "stop_code"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_06/c003",
+          "name": "stop_name",
+          "description": "Field stop_name of stops.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m06"
+            },
+            "extract": {
+              "column": "stop_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_06/c004",
+          "name": "stop_lat",
+          "description": "Field stop_lat of stops.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m06"
+            },
+            "extract": {
+              "column": "stop_lat"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_06/c005",
+          "name": "stop_lon",
+          "description": "Field stop_lon of stops.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m06"
+            },
+            "extract": {
+              "column": "stop_lon"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_06/c006",
+          "name": "stop_url",
+          "description": "Field stop_url of stops.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m06"
+            },
+            "extract": {
+              "column": "stop_url"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_07",
+      "name": "records_07",
+      "description": "Columns of the table examined for the assessment (r001, file trips.txt).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c001",
+          "name": "route_id",
+          "description": "Field route_id of trips.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m07"
+            },
+            "extract": {
+              "column": "route_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c002",
+          "name": "service_id",
+          "description": "Field service_id of trips.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m07"
+            },
+            "extract": {
+              "column": "service_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c003",
+          "name": "trip_id",
+          "description": "Field trip_id of trips.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m07"
+            },
+            "extract": {
+              "column": "trip_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c004",
+          "name": "trip_headsign",
+          "description": "Field trip_headsign of trips.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m07"
+            },
+            "extract": {
+              "column": "trip_headsign"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c005",
+          "name": "direction_id",
+          "description": "Field direction_id of trips.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m07"
+            },
+            "extract": {
+              "column": "direction_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_07/c006",
+          "name": "shape_id",
+          "description": "Field shape_id of trips.txt, defined in the GTFS Schedule Reference (https://gtfs.org/documentation/schedule/reference/).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m07"
+            },
+            "extract": {
+              "column": "shape_id"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

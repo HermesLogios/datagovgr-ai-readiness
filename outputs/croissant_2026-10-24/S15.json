@@ -1,0 +1,149 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "ΧΩΡΟΙ - ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ",
+  "description": "Καταγραφή και γεωγραφικές τοποθεσίες των ελεύθερων, δημοτικών και οργανωμένων χώρων στάθμευσης οχημάτων εντός των ορίων του Δήμου Ναυπακτίας",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "ΔΗΜΟΣ ΝΑΥΠΑΚΤΙΑΣ"
+  },
+  "dateModified": "2026-09-16",
+  "datePublished": "2026-06-15",
+  "keywords": [
+    "Parking",
+    "ΠΡΟΣΒΑΣΗ",
+    "ΣΤΑΘΜΕΥΣΗ"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-prosvasi",
+  "version": "1.0",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "ΧΩΡΟΙ-ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ",
+      "contentSize": "1359 B",
+      "contentUrl": "https://data.gov.gr/dataset/96ec2d39-3a1b-4372-9614-d86dbd361415/resource/c9e00aa5-25a2-4fcd-8f5c-2985afce94e2/download/xoroi-theseis-stathmeysis.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "d9f6f71a5ad48fd8c8bbc5eaf15661a60b2725e348d63175823bc5c8360468d9"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r002",
+      "name": "ΧΩΡΟΙ-ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ",
+      "contentSize": "11268 B",
+      "contentUrl": "https://data.gov.gr/dataset/96ec2d39-3a1b-4372-9614-d86dbd361415/resource/8cb46c5a-1d3f-4ab2-bc2b-85875e8f8631/download/xoroi-theseis-stathmeysis.xlsx",
+      "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "29e654ad40f8ae3384062013f1b721b2988d2d7745dd32b73225a95b67c1d02e"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r003",
+      "name": "ΧΩΡΟΙ-ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ",
+      "description": "Διαδραστικός Χάρτης Χώρων Στάθμευσης (GeoJSON)",
+      "contentSize": "3080 B",
+      "contentUrl": "https://data.gov.gr/dataset/96ec2d39-3a1b-4372-9614-d86dbd361415/resource/ba05d007-1428-4074-b532-21c3a48ed5c3/download/xoroi-theseis-stathmeysis.geojson",
+      "encodingFormat": "application/geo+json",
+      "sha256": "ff5dbcde21df101a4fa50edd42ce47092837f2ecef0e3f8532bf535b63ee3c8d"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records",
+      "name": "records",
+      "description": "Columns of the table examined for the assessment (r001). The same columns are found in 3 of the examined tables of the dataset.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records/c001",
+          "name": "address",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "address"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c002",
+          "name": "latitude",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "latitude"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c003",
+          "name": "longitude",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "longitude"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

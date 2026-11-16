@@ -1,0 +1,70 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Αποθετήριο ΤΕΧΝΗ",
+  "description": "Σύνολο από εγγραφές μεταδεδομένων σε σχήμα EDM των τεκμηρίων της συλλογής \"Αποθετήριο ΤΕΧΝΗ\" που διέθεσε ο φορέας \"Μακεδονική Καλλιτεχνική Εταιρεία ΤΕΧΝΗ\" στο SearchCulture.gr. Η ψηφιακή συλλογή της Μακεδονικής Καλλιτεχνικής Εταιρείας ΤΕΧΝΗ αναδεικνύει την πολιτιστική παραγωγή της πόλης διαμέσου του λόγου και του έργου πρωτοπόρων της πολιτιστικής ζωής. Τα τεκμήρια, πολυσήμαντα και πυκνά για ορισμένες περιόδους, φωτίζουν την πνευματική ζωή της Θεσσαλονίκης τις τελευταίες 6 δεκαετίες και τα πρόσωπα που δραστηριοποιήθηκαν για τη δημιουργία θεσμών πολιτισμού που χαρακτήρισαν και ακόμα χαρακτηρίζουν την πόλη. Περιλαμβάνονται τεκμήρια που σχετίζονται με το θέατρο, τα εικαστικά, τη μουσική και την αρχιτεκτονική υποδεικνύοντας τη συγκρότηση μιας δυναμικής πολιτιστικής πρωτοπορίας όπως διαμορφώθηκε στη μεταπολεμική Θεσσαλονίκη και έπειτα.",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Μακεδονική Καλλιτεχνική Εταιρεία ΤΕΧΝΗ"
+  },
+  "dateModified": "2026-10-19",
+  "datePublished": "2026-05-05",
+  "keywords": [
+    "Cultural events",
+    "EDUC",
+    "Literary Culture",
+    "Visual Arts",
+    "Γράμματα και λογοτεχνία",
+    "Εικαστικές Τέχνες",
+    "Πολιτιστικές εκδηλώσεις"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC0",
+  "url": "https://data.gov.gr/dataset/ekt-searchculture-dataset-__-15"
+}

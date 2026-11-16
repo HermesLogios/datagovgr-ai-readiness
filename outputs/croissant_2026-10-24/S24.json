@@ -1,0 +1,140 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "ΑΠΟΦΑΣΕΙΣ ΕΓΚΡΙΣΗΣ ΠΕΡΙΒΑΛΛΟΝΤΙΚΩΝ ΟΡΩΝ (ΛΕΣΒΟΣ-ΛΗΜΝΟΣ)",
+  "description": "Αποφάσεις έγκρισης Περιβαλλοντικών Όρων (Ξυλουργεία, Βιοτεχνίες, Αποθήκες καυσίμων, Οικοδομικά Υλικά, Τυροκομεία, Ελαιοτριβεία, Βιοτεχνίες Τροφίμων και Ποτών)",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Περιφέρεια Βορείου Αιγαίου"
+  },
+  "dateModified": "2026-05-19",
+  "datePublished": "2025-11-18",
+  "keywords": [
+    "repository.data.gov.gr",
+    "Βιομηχανία",
+    "Βιοτεχνία",
+    "Περιβάλλον",
+    "Περιβαλλοντικοι οροι"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/apofaseis-egkrisis-perivallontikon-oron-lesvos-limnos",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Κατηγορία: ΞΥΛΟΥΡΓΕΙΑ",
+      "description": "Μητρώο Αποφάσεων Έγκρισης Περιβαλλοντικών Όρων για την Κατηγορία: Ξυλουργεία",
+      "contentSize": "20561 B",
+      "contentUrl": "https://data.gov.gr/dataset/46fb11ea-e352-42fc-b5a8-90f058faed2a/resource/e0b2dc29-476b-454a-bb8b-0e5fbfa231cf/download/xiloyrgeio.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "8eec046935a66adc507331da613ddec01736b045ade676d10c7659243c621d12"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r002",
+      "name": "Κατηγορία: διάφορες Βιοτεχνίες",
+      "description": "Μητρώο Αποφάσεων Έγκρισης Περιβαλλοντικών Όρων για την Κατηγορία: διάφορες Βιοτεχνίες",
+      "contentSize": "45639 B",
+      "contentUrl": "https://data.gov.gr/dataset/46fb11ea-e352-42fc-b5a8-90f058faed2a/resource/3cc5780f-e59e-463f-b681-cababae6a612/download/diafores-bio.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "9a90cf75c7fbe9aeff96d33c5b6233f17f4d3d6827753822ff6ee75e19a847b8"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r003",
+      "name": "Κατηγορία: Αποθήκες Καυσίμων",
+      "description": "Μητρώο Αποφάσεων Έγκρισης Περιβαλλοντικών Όρων για την Κατηγορία: Αποθήκες Καυσίμων",
+      "contentSize": "4313 B",
+      "contentUrl": "https://data.gov.gr/dataset/46fb11ea-e352-42fc-b5a8-90f058faed2a/resource/359c780e-ab45-45f2-85a2-c828cac0bb9a/download/kafsimon.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "4f8ec414dbac99268a0b9d1e9963fe183d980a124c3391de5a7630d1e00b9c4b"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r004",
+      "name": "Κατηγορία: Οικοδομικά Υλικά",
+      "description": "Μητρώο Αποφάσεων Έγκρισης Περιβαλλοντικών Όρων για την Κατηγορία: Οικοδομικά Υλικά",
+      "contentSize": "15713 B",
+      "contentUrl": "https://data.gov.gr/dataset/46fb11ea-e352-42fc-b5a8-90f058faed2a/resource/c9f233f8-0dd6-46d0-af69-724fc33c2f68/download/oikodomikon.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "49fc18b61d16fd58cccd89f3e0c71a00f6f0c350e67d59a8a0f1ac22bf32c67f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r005",
+      "name": "Κατηγορία: Τυροκομεία",
+      "description": "Μητρώο Αποφάσεων Έγκρισης Περιβαλλοντικών Όρων για την Κατηγορία: Τυροκομεία",
+      "contentSize": "5328 B",
+      "contentUrl": "https://data.gov.gr/dataset/46fb11ea-e352-42fc-b5a8-90f058faed2a/resource/f220f0fa-c602-4b66-b07c-606986e53235/download/tirokomeia.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "0fa6957ebf04a912a88205cbc3f40db5cbf7d5898975edf20b03c5dd0ecb51c4"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r006",
+      "name": "Κατηγορία: Ελαιοτριβεία",
+      "description": "Μητρώο Αποφάσεων Έγκρισης Περιβαλλοντικών Όρων για την Κατηγορία: Ελαιοτριβεία",
+      "contentSize": "19521 B",
+      "contentUrl": "https://data.gov.gr/dataset/46fb11ea-e352-42fc-b5a8-90f058faed2a/resource/4d208ac4-5108-45a4-af6f-218e3a840812/download/elaiotriveia.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "c2d390cc0a8546ad52104afb4e7351ba52a77f031de33a845f8e6a2b022b97b0"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r007",
+      "name": "Κατηγορία: Βιοτεχνίες Τροφίμων και Ποτών",
+      "description": "Μητρώο Αποφάσεων Έγκρισης Περιβαλλοντικών Όρων για την Κατηγορία: Βιοτεχνίες Τροφίμων και Ποτών",
+      "contentSize": "40097 B",
+      "contentUrl": "https://data.gov.gr/dataset/46fb11ea-e352-42fc-b5a8-90f058faed2a/resource/9b94288a-231b-436d-a34e-35fb8ed1915a/download/trof-pota.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "6961f0eac2091d40c3516ccabe828ab0571f06c22e463df3ec9027fb58340101"
+    }
+  ]
+}

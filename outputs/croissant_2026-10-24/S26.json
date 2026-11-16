@@ -1,0 +1,186 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΜΑΡΤΙΟΣ 2020",
+  "description": "ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΜΑΡΤΙΟΣ 2020",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Οργανισμός Κεντρικών Αγορών και Αλιείας ΑΕ"
+  },
+  "dateModified": "2026-04-27",
+  "datePublished": "2025-11-18",
+  "keywords": [
+    "repository.data.gov.gr",
+    "Αλιεία",
+    "Από μετάπτωση"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/statistika-ix8yoskalas-8essalonikhs-martios-2020",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "ΣΤΑΤΙΣΤΙΚΟ ΔΕΛΤΙΟ",
+      "contentSize": "48640 B",
+      "contentUrl": "http://www.okaa.gr/files/1/ΟΚΑΑ/OPEN DATA/ΣΤΑΤΙΣΤΙΚΑ ΑΛΙΕΥΜΑΤΩΝ/ΘΕΣΣΑΛΟΝΙΚΗ/συγκεντρωτικό_ιχθυόσκαλας_θεσσαλονίκης_μάρτιος_2020.xls",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "3ffe00b4427c25d17af8d764ab909f5e49b938d1a798943f675f0f22e4602d4d"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records",
+      "name": "records",
+      "description": "Columns of the table examined for the assessment (r001, sheet \"Εγχώρια\"). The same columns are found in 3 of the examined tables of the dataset.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records/c001",
+          "name": "Κωδικ.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c002",
+          "name": "Περιγραφή",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c003",
+          "name": "Ιχθ/τια",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c004",
+          "name": "Σύν. Βάρος",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c005",
+          "name": "Σύν. Αξία",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c006",
+          "name": "Μέγ. Τιμή",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c007",
+          "name": "Ελάχ. Τιμή",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c008",
+          "name": "Μέση Τιμή",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c009",
+          "name": "Συναφή Είδη",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

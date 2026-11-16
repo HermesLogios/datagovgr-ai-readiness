@@ -421,6 +421,12 @@ S15,r003,geojson,3,longitude,longitude (degrees),11,21.821525 to 21.840297,0,,
 S15,r003,geojson,,(geometry),"geometry (WGS84, the default of GeoJSON)",11,,0,,
 S16,r001 gr_natura_v31_union_final.shp,shapefile,7,Shape_Area,non-negative quantity,593,"0.019749 to 2,365,643,037.83",0,,
 S16,r001 gr_natura_v31_union_final.shp,shapefile,,(geometry),geometry (Greek_Grid),593,,0,,
+S17,r002_csv_manual,csv,3,Μοναδικός Αριθμός Σταθμου,non-negative quantity,44,"20,010,618,014 to 20,110,520,002",0,,
+S17,r002_csv_manual,csv,14,x,x (system not declared),45,"462,021.91 to 703,327.817",0,,system not declared: values in the range of EGSA87 (45)
+S17,r002_csv_manual,csv,15,y,y (system not declared),45,"3,868,156.074 to 3,920,712.446",0,,system not declared: values in the range of EGSA87 (45)
+S17,r002_geojson_manual,geojson,9,x,x (system not declared),45,"462,291 to 703,327.818",0,,system not declared: values in the range of EGSA87 (45)
+S17,r002_geojson_manual,geojson,10,y,y (system not declared),45,"3,868,156.074 to 3,920,949.998",0,,system not declared: values in the range of EGSA87 (45)
+S17,r002_geojson_manual,geojson,,(geometry),geometry (EPSG:2100),45,,0,,
 S18,r002,geojson,9,area_ha,non-negative quantity,2,58.59 to 131.17,0,,
 S18,r002,geojson,11,shape_area,non-negative quantity,2,"585,908.49 to 1,311,691.91",0,,
 S18,r002,geojson,,(geometry),geometry (urn:ogc:def:crs:EPSG::2100),2,,0,,

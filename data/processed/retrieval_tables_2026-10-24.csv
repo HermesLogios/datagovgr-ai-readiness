@@ -1,0 +1,209 @@
+﻿sample_id,position,member,sheet,kind,encoding,layout,layout_defects,read,records,records_in_profile,columns,text_cells,greek_cells,damaged_cells,damaged_kinds,row_number_columns,measure_columns,geometry_columns,candidate_columns,columns_with_empty_cells,identifier,identifier_kind,identifier_source,other_unique_columns,unique_number_columns,nearest_column,nearest_column_repeats,repeating_records,resource_of_the_dataset,outcome,note
+S01,r001,Periferia_Anatolikis_Makedonias_kai_Thrakis_20261029.shp,,shapefile,utf-8,records,,yes,1343363,1343363,2,49967,49965,0,,,0,0,2,,,,,,,KAEK,1,1,yes,1,
+S01,r002,Periferia_Attikis_20261029.shp,,shapefile,utf-8,records,,yes,1464584,1464584,2,31685,31683,0,,,0,0,2,,KAEK,code,single column,,,,,,yes,2,
+S01,r003,Periferia_Ditikis_Elladas_20261029.shp,,shapefile,utf-8,records,,yes,1142825,1142825,2,56009,56007,0,,,0,0,2,,KAEK,code,single column,,,,,,yes,2,
+S01,r004,Periferia_Ditikis_Makedonias_20261029.shp,,shapefile,utf-8,records,,yes,871750,871750,2,34171,34169,0,,,0,0,2,,,,,,,KAEK,1,1,yes,1,
+S01,r005,Periferia_Ionion_Nison_20261029.shp,,shapefile,utf-8,records,,yes,173288,173288,2,5939,5937,0,,,0,0,2,,KAEK,code,single column,,,,,,yes,2,
+S01,r006,Periferia_Ipirou_20261029.shp,,shapefile,utf-8,records,,yes,717914,717914,2,30435,30433,0,,,0,0,2,,KAEK,code,single column,,,,,,yes,2,
+S01,r007,Periferia_Kentrikis_Makedonias_20261029.shp,,shapefile,utf-8,records,,yes,2302723,2302723,2,88951,88949,0,,,0,0,2,,KAEK,code,single column,,,,,,yes,2,
+S01,r008,Periferia_Kritis_20261029.shp,,shapefile,utf-8,records,,yes,1308685,1308685,2,22314,22312,0,,,0,0,2,,,,,,,KAEK,1,1,yes,1,
+S01,r009,Periferia_Notiou_Egaiou_20261029.shp,,shapefile,utf-8,records,,yes,194080,194080,2,6878,6876,0,,,0,0,2,,KAEK,code,single column,,,,,,yes,2,
+S01,r009,Periferia_Notiou_Egaiou_Kastelorizo_20261029.shp,,shapefile,utf-8,records,,yes,1803,1803,2,47,45,0,,,0,0,2,,KAEK,code,single column,,,,,,yes,2,
+S01,r010,Periferia_Peloponnisou_20261029.shp,,shapefile,utf-8,records,,yes,1909312,1909312,2,62038,62036,0,,,0,0,2,,,,,,,KAEK,1,1,yes,1,
+S01,r011,Periferia_Stereas_Elladas_20261029.shp,,shapefile,utf-8,records,,yes,1335670,1335670,2,42162,42160,0,,,0,0,2,,KAEK,code,single column,,,,,,yes,2,
+S01,r012,Periferia_Thessalias_20261029.shp,,shapefile,utf-8,records,,yes,1056898,1056898,2,36733,36731,0,,,0,0,2,,KAEK,code,single column,,,,,,yes,2,
+S01,r013,Periferia_Voriou_Egaiou_20261029.shp,,shapefile,utf-8,records,,yes,164259,164259,2,6524,6522,0,,,0,0,2,,KAEK,code,single column,,,,,,yes,2,
+S02,r002,,,geojson,utf-8-sig,records,,yes,326,326,6,332,326,0,,objectid,2,0,3,,id,code,single column,kalcode,,,,,yes,2,
+S02,r003,,,csv,utf-8-sig,records,,yes,326,326,8,986,326,0,,"FID, objectid",2,1,3,,id,code,single column,kalcode,,,,,yes,2,
+S02,r004,kallikratikoi_dimoi.shp,,shapefile,utf-8,records,,yes,326,326,6,332,0,326,question marks in the place of letters: 326,objectid,2,0,3,,id,code,single column,kalcode,,,,,yes,by hand,damaged text in 326 cells
+S02,r005,,,kml,,records,,no,,326,,,,,,,,,,,,,,,,,,,yes,,not read: no list of columns for the format kml
+S03,r001,agency.txt,,gtfs,utf-8-sig,records,,yes,1,1,7,11,0,0,,,0,0,0,,,,one record,,,,,,yes,2,
+S03,r001,calendar_dates.txt,,gtfs,utf-8-sig,records,,yes,46,46,3,3,0,0,,,2,0,2,,service_id + date,code,key of the GTFS reference,,,,,,yes,2,
+S03,r001,routes.txt,,gtfs,utf-8-sig,records,,yes,5,5,9,19,5,0,,,1,0,1,,route_id,code,key of the GTFS reference,,,,,,yes,2,
+S03,r001,stop_times.txt,,gtfs,utf-8-sig,records,,yes,1640361,1640361,10,10,0,0,,,4,0,2,,trip_id + stop_sequence,code,key of the GTFS reference,,,,,,yes,2,
+S03,r001,stops.txt,,gtfs,utf-8-sig,records,,yes,252,252,12,516,252,0,,,4,0,1,,stop_id,code,key of the GTFS reference,,,,,,yes,2,
+S03,r001,trips.txt,,gtfs,utf-8-sig,records,,yes,69845,69845,9,16881,16872,0,,,1,0,1,trip_headsign,trip_id,code,key of the GTFS reference,,,,,,yes,2,
+S04,r003,EMSY_23.06.2026_AMTH/ΓΔΥ_ΕΜΣΥ_23.06.2026_AMTH.shp,,shapefile,utf-8,records,,yes,14439,14439,14,106466,106450,0,,OBJECTID,3,0,6,"IDIOKTHSIA, KATHESTWS_, EIDOS_SY, KOINOTHTA",KWDIKOS_EM,code,single column,,,,,,yes,2,
+S04,r004,,Φύλλο1,xls,,rows that are not records,numbers stored as text in 1 column,no,,14439,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S05,r001_manual,,Sheet1,xlsx,,rows that are not records,1 title or note row above the header,no,,9,,,,,,,,,,,,,,,,,,,no,1,needs cleaning before it can be split into records
+S05,r002_manual,,Sheet1,xlsx,,rows that are not records,1 title or note row above the header,no,,143,,,,,,,,,,,,,,,,,,,no,1,needs cleaning before it can be split into records
+S06,r012,,Τροχαία ατυχήματα 2025,xls,,rows that are not records,4 title or note rows above the header; 1 empty row inside the table; 2 totals rows,no,,7,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S07,r001,,,csv,utf-8-sig,records,,yes,11490,11490,19,34489,34488,0,,_id,12,0,6,,Έτος + Μήνας ID + Περιφερειακή Ενότητα + Είδος Γάλακτος ID,"period, text, code",combination of 4 columns,,,,,,yes,2,
+S08,r001,,ΔΕ ΕΚΠΑΙΔ τελικό,xlsx,,rows that are not records,1 totals row,no,,852,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S09,r001,,Φύλλο 1,xls,,records,,yes,55,55,2,57,57,0,,,1,0,1,,ΝΟΣΟΚΟΜΕΙΟ,text,single column,,,,,,yes,2,
+S09,r001,,2025,xls,,records,,yes,55,55,4,58,58,0,,,2,0,1,,ΝΟΣΟΚΟΜΕΙΟ,text,single column,,,,,,yes,2,
+S09,r001,,2026,xls,,records,,yes,73,73,2,75,75,0,,,1,0,1,,,,,,,ΝΟΣΟΚΟΜΕΙΟ,10,10,yes,1,
+S10,r001,,,csv,utf-8-sig,records,,yes,511,511,363,514,506,0,,,361,0,2,,CODE,code,single column,,,,,,yes,2,
+S11,r001,osy_gtfs/agency.txt,,gtfs,utf-8-sig,records,,yes,1,1,8,15,0,0,,,0,0,0,,,,one record,,,,,,yes,2,
+S11,r001,osy_gtfs/calendar.txt,,gtfs,utf-8-sig,records,,yes,7,7,10,17,0,0,,,9,0,1,,service_id,code,key of the GTFS reference,,,,,,yes,2,
+S11,r001,osy_gtfs/calendar_dates.txt,,gtfs,utf-8-sig,records,,yes,2,2,3,5,0,0,,,2,0,2,,service_id + date,code,key of the GTFS reference,,,,,,yes,2,
+S11,r001,osy_gtfs/routes.txt,,gtfs,utf-8-sig,records,,yes,486,486,6,1506,551,0,,,1,0,1,,route_id,code,key of the GTFS reference,,,,,,yes,2,
+S11,r001,osy_gtfs/shapes.txt,,gtfs,utf-8-sig,records,,yes,79518,79518,5,5,0,0,,,4,0,2,,shape_id + shape_pt_sequence,code,key of the GTFS reference,,,,,,yes,2,
+S11,r001,osy_gtfs/stop_times.txt,,gtfs,utf-8-sig,records,,yes,4161107,4161107,7,4161114,0,0,,,3,0,2,,trip_id + stop_sequence,code,key of the GTFS reference,,,,,,yes,2,
+S11,r001,osy_gtfs/stops.txt,,gtfs,utf-8-sig,records,,yes,8172,8172,6,16351,8154,0,,,2,0,1,,stop_id,code,key of the GTFS reference,,,,,,yes,2,
+S11,r001,osy_gtfs/trips.txt,,gtfs,utf-8-sig,records,,yes,95304,95304,6,285918,95304,0,,,0,0,1,shape_id,trip_id,code,key of the GTFS reference,,,,,,yes,2,
+S12,r013,agency.txt,,gtfs,utf-8-sig,records,,yes,1,1,8,15,0,0,,,0,0,0,,,,one record,,,,,,yes,2,
+S12,r013,calendar_dates.txt,,gtfs,utf-8-sig,records,,yes,622,622,3,3,0,0,,,2,0,2,,service_id + date,code,key of the GTFS reference,,,,,,yes,2,
+S12,r013,feed_info.txt,,gtfs,utf-8-sig,records,,yes,1,1,6,9,0,0,,,0,0,0,,,,one record,,,,,,yes,2,
+S12,r013,routes.txt,,gtfs,utf-8-sig,records,,yes,385,385,9,1327,411,0,,,3,0,1,,route_id,code,key of the GTFS reference,,,,,,yes,2,
+S12,r013,shapes.txt,,gtfs,utf-8-sig,records,,yes,317972,317972,5,5,0,0,,,3,0,2,,shape_id + shape_pt_sequence,code,key of the GTFS reference,,,,,,yes,2,
+S12,r013,stop_times.txt,,gtfs,utf-8-sig,records,,yes,761461,761461,10,10,0,0,,,4,0,2,,trip_id + stop_sequence,code,key of the GTFS reference,,,,,,yes,2,
+S12,r013,stops.txt,,gtfs,utf-8-sig,records,,yes,3717,3717,13,7447,3679,0,,,3,0,1,,stop_id,code,key of the GTFS reference,,,,,,yes,2,
+S12,r013,translations.txt,,gtfs,utf-8-sig,records,,yes,4510,4510,7,22557,4494,0,,,0,0,6,,,,,,,,,2120,yes,1,"the key of the GTFS reference (table_name + field_name + language + record_id + record_sub_id + field_value) is met again in 2,196 records"
+S12,r013,trips.txt,,gtfs,utf-8-sig,records,,yes,23501,23501,13,30832,24111,0,,,2,0,1,,trip_id,code,key of the GTFS reference,,,,,,yes,2,
+S13,r001,agency.txt,,gtfs,utf-8-sig,records,,yes,1,1,8,15,0,0,,,0,0,0,,,,one record,,,,,,yes,2,
+S13,r001,calendar.txt,,gtfs,utf-8-sig,records,,yes,9,9,10,19,0,0,,,9,0,1,,service_id,code,key of the GTFS reference,,,,,,yes,2,
+S13,r001,routes.txt,,gtfs,utf-8-sig,records,,yes,245,245,6,923,420,0,,,1,0,1,,route_id,code,key of the GTFS reference,,,,,,yes,2,
+S13,r001,shapes.txt,,gtfs,utf-8-sig,records,,yes,53024,53024,5,5,0,0,,,4,0,2,,shape_id + shape_pt_sequence,code,key of the GTFS reference,,,,,,yes,2,
+S13,r001,stop_times.txt,,gtfs,utf-8-sig,records,,yes,1968689,1968689,7,1968696,0,0,,,3,0,2,,trip_id + stop_sequence,code,key of the GTFS reference,,,,,,yes,2,
+S13,r001,stops.txt,,gtfs,utf-8-sig,records,,yes,3684,3684,6,7374,3645,0,,,2,0,1,stop_code,stop_id,code,key of the GTFS reference,,,,,,yes,2,
+S13,r001,trips.txt,,gtfs,utf-8-sig,records,,yes,61221,61221,6,183669,61221,0,,,0,0,1,,trip_id,code,key of the GTFS reference,,,,,,yes,2,
+S14,r122,,,json,utf-8-sig,records,,yes,5,5,5,19,6,0,,,1,0,3,sensorvar_unit,sensorvar_description,text,single column,"sensorvar_icon, measurement",,,,,yes,2,
+S14,r123,,,json,utf-8-sig,records,,yes,29,29,13,99,30,0,,,5,0,8,,sensorvar_id,code,single column,"parameter_id, sensorvar_description, sensorvar_icon",,,,,yes,2,
+S14,r124,,,json,utf-8-sig,records,,yes,794,794,15,7223,865,0,,,2,0,13,,id,code,single column,"SerialNumber, LabelOnStreet",,,,,yes,2,
+S14,r125,,,json,utf-8-sig,records,,yes,1,1,9,13,1,0,,,4,0,0,,,,one record,,,,,,yes,2,
+S14,r126,,,json,utf-8-sig,records,,yes,5,5,12,17,5,0,,,4,0,5,,mysensor_id,code,single column,"ref_id, date_insert, mysensor_name",,,,,yes,2,
+S14,r127,,,json,utf-8-sig,records,,yes,4,4,3,11,8,0,,,0,1,2,,index_name,text,single column,tooltip,,,,,yes,2,
+S14,r128,,,json,utf-8-sig,records,,yes,1,1,9,16,4,0,,,2,0,0,,,,one record,,,,,,yes,2,
+S14,r129,,,json,utf-8-sig,records,,yes,64,64,18,388,202,0,,,2,1,8,"ref_id, sensortype_description",mysensor_id,code,single column,,,,,,yes,2,
+S14,r130,,,json,utf-8-sig,records,,yes,10,10,6,48,20,0,,,0,0,4,"tooltip, description",sensortype_id,code,single column,"sensortype_name, sensortype_icon",,,,,yes,2,
+S14,r131,,,json,utf-8-sig,records,,yes,2,2,19,33,10,0,,,2,1,11,,mysensor_id,code,single column,"ref_id, mysensor_name, sensor_address, latlng",,,,,yes,2,
+S14,r132,,,json,utf-8-sig,records,,yes,11,11,9,40,10,0,,,4,0,4,sensorvar_unit,sensorvar_id,code,single column,"sensorvar_description, sensorvar_icon",,,,,yes,2,
+S15,r001,,,csv,utf-8-sig,records,,yes,11,11,3,14,11,0,,,2,0,1,,address,text,single column,,,,,,yes,2,
+S15,r002,,Βιβλίο1,xlsx,,rows that are not records,numbers stored as text in 2 columns,no,,11,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S15,r003,,,geojson,utf-8-sig,records,,yes,11,11,3,14,11,0,,,2,0,1,,address,text,single column,,,,,,yes,2,
+S16,r001,gr_natura_v31_union_final.shp,,shapefile,utf-8,records,,yes,593,593,9,2373,788,0,,OBJECTID_1,2,0,3,"SITECODE_1, SITETYPE_1, SITE_NAME1",,,,,,SITECODE,165,0,yes,1,
+S17,r002_csv_manual,,,csv,utf-8-sig,records,,yes,45,45,15,240,237,0,,"objectid, Α/Α",5,0,7,,Συντεταγμένες Χ (ΕΓΣΑ),text,single column,Συντεταγμένες Ψ (ΕΓΣΑ),,,,,no,1,
+S17,r002_geojson_manual,,,geojson,utf-8-sig,records,,yes,45,45,14,239,225,0,,OBJECTID,6,0,5,,,,,,,topothesia,1,0,no,1,
+S18,r002,,,geojson,utf-8-sig,records,,yes,2,2,13,19,4,0,,"cid, objectid_1, objectid",3,0,6,,code_12,code,single column,"code_18, change, desc, c_desc",,,,,yes,2,
+S18,r003,,,csv,utf-8-sig,records,,yes,2,2,15,25,4,0,,"FID, cid, objectid_1, objectid",3,1,6,,code_12,code,single column,"code_18, change, desc, c_desc",,,,,yes,2,
+S18,r004,lcv_pol_corine_land_cover_2012_2018.shp,,shapefile,utf-8,records,,yes,2,2,13,19,0,4,question marks in the place of letters: 4,"cid, objectid_1, objectid",3,0,6,,code_12,code,single column,"code_18, change, desc, c_desc",,,,,yes,by hand,damaged text in 4 cells
+S18,r005,,,kml,,records,,no,,2,,,,,,,,,,,,,,,,,,,yes,,not read: no list of columns for the format kml
+S19,r001,,,csv,utf-8-sig,records,,yes,62437,62437,57,57,0,0,,,25,0,32,,yyyyMMddHHmm,period,single column,,,,,,yes,2,
+S20,r001,stations_data/aghiosnikolaos.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5054,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/alexandroupolis.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5119,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/amfiklia.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5081,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/argos.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,4156,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/arta.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,4960,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/athens.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5085,0,0,,,9,0,5,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/chania.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5084,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/dion.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5069,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/drama.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5096,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/florina.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5072,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/gavalou.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5070,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/grevena.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5064,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/heraclion.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5092,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/igoumenitsa.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5061,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/ioannina.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5066,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/ithaki.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,4879,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/karpenisitown.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,2072,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/kea.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5098,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/kerkyra.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5092,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/kilkis.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,4977,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/kyparissia.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,4074,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/larissa.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5035,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/lavrio.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5112,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/lefkada.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5124,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/lemnos.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5035,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/lindos.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,3528,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/livadeia.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5043,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/megalopoli.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5078,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/mornos1.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,4371,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/naousa.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5125,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/nemea.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5048,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/nevrokopi.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5095,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/notiopedio.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5068,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/orestiada.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5038,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/paros.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5120,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/patra.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5069,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/petrokefali.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5106,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/pirgos.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5056,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/polygyros.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5063,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/ptolemaida.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5073,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/rethymno.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5034,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/samos.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5074,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/samothraki.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,4971,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/skopelos.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5095,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/sparti.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5076,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/tanagra.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5108,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/thessaloniki.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,4336,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/tinos.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5071,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/trikala.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5116,0,0,,,6,0,8,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/tripoli.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5087,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/vatopedi.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,4976,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/veroia.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5015,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/volos.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5111,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_data/xanthi.csv,,csv,utf-8-sig,records,,yes,5113,5113,14,5046,0,0,,,0,0,14,,Date,period,single column,,,,,,yes,2,
+S20,r001,stations_list.csv,,csv,utf-8-sig,records,,yes,54,54,4,58,0,0,,,3,0,1,,stations,text,single column,,,,,,yes,2,
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Αβδού Ηρακλείου 02.xls,ΑΒΔΟΥ,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,41,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Αγ. Βαρβάρα Ηρακλείου 02.xls,ΑΓ. ΒΑΡΒΑΡΑ,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows; 1 sub-heading row inside the table,no,,40,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Αγ. Κύριλλος Ηρακλείου 02.xls,ΑΓΙΟΣ ΚΥΡΙΛΛΟΣ,xls,,rows that are not records,7 title or note rows above the header; 1 empty row inside the table; 3 totals rows,no,,44,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Αρμάχα Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,43,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Ασήμι 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 1 empty row inside the table; 3 totals rows,no,,43,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Αχεντριάς Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 empty rows inside the table; 3 totals rows,no,,36,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Βαγιωνιά Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 empty rows inside the table; 3 totals rows,no,,36,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Βορίζια Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 39 empty rows inside the table; 3 totals rows,no,,42,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Βόνη Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 1 empty row inside the table; 3 totals rows,no,,38,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Γέργερη Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,42,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Δεματιι Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,41,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Ζαρός Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 28 empty rows inside the table; 3 totals rows,no,,53,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Καλύβια Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 empty rows inside the table; 3 totals rows,no,,36,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Καπετανιανά Ηρακλείου            02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 empty rows inside the table; 3 totals rows,no,,36,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Κασσάνοι Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,43,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Καστέλι Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 12 empty rows inside the table; 3 totals rows,no,,69,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Καψάλοι 02.xls,ΚΑΨΑΛΟΙ,xls,,rows that are not records,7 title or note rows above the header; 19 empty rows inside the table; 3 totals rows,no,,20,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Κρουσώνας Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,41,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Λαγολιό 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 empty rows inside the table; 3 totals rows,no,,36,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Μεταξοχώρι Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 2 empty rows inside the table; 3 totals rows,no,,37,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Μορόνι  Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 empty rows inside the table; 3 totals rows,no,,36,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Παρτηρα Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 empty rows inside the table; 3 totals rows,no,,36,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Πραιτώρεια Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 1 empty row inside the table; 3 totals rows,no,,38,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Προφήτης Ηλίας 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,40,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Πόμπια 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 21 empty rows inside the table; 3 totals rows,no,,60,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Τεφελι Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 4 empty rows inside the table; 3 totals rows,no,,43,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Υ.Ε.Β. 02.xls,ΥΕΒ,xls,,rows that are not records,7 title or note rows above the header; 1 empty row inside the table; 3 totals rows,no,,30,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r002,Ν. ΗΡΑΚΛΕΙΟΥ/Φοινικιά Ηρακλείου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,39,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r003,Ν. ΛΑΣΙΘΙΟΥ/Αγιος Γεώργιος 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 empty rows inside the table; 3 totals rows,no,,36,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r003,Ν. ΛΑΣΙΘΙΟΥ/ΕΞΩ ΠΟΤΑΜΟΙ 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 12 empty rows inside the table; 3 totals rows,no,,70,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r003,Ν. ΛΑΣΙΘΙΟΥ/Καλό Χωριό Λασιθίου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 13 empty rows inside the table; 3 totals rows; 1 sub-heading row inside the table; numbers stored as text in 1 column,no,,67,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r003,Ν. ΛΑΣΙΘΙΟΥ/Κατσιδόνι 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,41,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r003,Ν. ΛΑΣΙΘΙΟΥ/Μάλλες Λασιθίου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 1 empty row inside the table; 3 totals rows,no,,42,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r003,Ν. ΛΑΣΙΘΙΟΥ/Μαρωνιά Λασιθίου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 7 empty rows inside the table; 3 totals rows,no,,68,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r003,Ν. ΛΑΣΙΘΙΟΥ/Μύθοι 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 1 empty row inside the table; 3 totals rows,no,,42,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r003,Ν. ΛΑΣΙΘΙΟΥ/Νεάπολη Λασιθίου 02.xls,AGGALI95 (2),xls,,rows that are not records,7 title or note rows above the header; 15 empty rows inside the table; 3 totals rows,no,,66,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r003,Ν. ΛΑΣΙΘΙΟΥ/Παλαιόκαστρο 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,41,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r003,Ν. ΛΑΣΙΘΙΟΥ/Παχειά Αμμος 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,42,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r003,Ν. ΛΑΣΙΘΙΟΥ/Σητεία Λασιθίου 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,84,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r003,Ν. ΛΑΣΙΘΙΟΥ/Σταυροχωρι 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows; 1 sub-heading row inside the table,no,,38,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r004,Ν. ΡΕΘΥΜΝΗΣ/Αγια Γαληνη  Ρεθύμνης 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 empty rows inside the table; 3 totals rows,no,,36,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r004,Ν. ΡΕΘΥΜΝΗΣ/Ανώγεια  Ρεθύμνης 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 empty rows inside the table; 3 totals rows,no,,78,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r004,Ν. ΡΕΘΥΜΝΗΣ/Βολεώνες Ρεθύμνης 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,40,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r004,Ν. ΡΕΘΥΜΝΗΣ/Βυζάρι  Ρεθύμνης 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 empty rows inside the table; 3 totals rows,no,,36,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r004,Ν. ΡΕΘΥΜΝΗΣ/Γαράζο  Ρεθύμνης 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 29 empty rows inside the table; 3 totals rows,no,,10,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r004,Ν. ΡΕΘΥΜΝΗΣ/Γερακάρι Ρεθύμνης 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 1 empty row inside the table; 3 totals rows,no,,38,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r004,Ν. ΡΕΘΥΜΝΗΣ/Καβούσι Ρεθύμνης 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 empty rows inside the table; 3 totals rows,no,,36,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r004,Ν. ΡΕΘΥΜΝΗΣ/Λευκόγεια Ρεθύμνης  02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,39,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r004,Ν. ΡΕΘΥΜΝΗΣ/Μέλαμπες  Ρεθύμνης 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,42,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r004,Ν. ΡΕΘΥΜΝΗΣ/Σπήλι  Ρεθύμνης 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 3 totals rows,no,,41,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r005,Ν. ΧΑΝΙΩΝ/Ασκύφου Χανίων 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 36 empty rows inside the table; 3 totals rows,no,,45,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r005,Ν. ΧΑΝΙΩΝ/Γαύδος  Χανίων 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 26 empty rows inside the table; 3 totals rows; 1 sub-heading row inside the table,no,,12,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r005,Ν. ΧΑΝΙΩΝ/Καλύβες Χανίων 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 7 empty rows inside the table; 3 totals rows,no,,32,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r005,Ν. ΧΑΝΙΩΝ/Μουρί Χανίων 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 4 empty rows inside the table; 3 totals rows,no,,42,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r005,Ν. ΧΑΝΙΩΝ/Παλαιά Ρούματα Χανίων 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 36 empty rows inside the table; 3 totals rows,no,,45,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S21,r005,Ν. ΧΑΝΙΩΝ/Πρασσές  Χανίων 02.xls,AGGALI95,xls,,rows that are not records,7 title or note rows above the header; 24 empty rows inside the table; 3 totals rows,no,,15,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S23,r001,,,rdf,,records,,yes,160554,160554,34,260708,127816,3,characters of another encoding (control characters): 3,,0,0,0,,URI of the subject,link,URI of the subject,,,,,,yes,by hand,"160,554 subjects with a URI; damaged text in 3 cells"
+S24,r001,,,csv,utf-8-sig,"records, with empty rows",1 empty row inside the table,yes,147,147,6,611,611,0,,,0,0,3,"column 1, column 5, column 6",,,,,,column 2,7,0,yes,1,
+S24,r002,,,csv,utf-8-sig,rows that are not records,3 empty rows inside the table; 2 note rows below the table,no,,255,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S24,r003,,,csv,utf-8-sig,records,,yes,28,28,7,105,104,0,,column 1,0,0,0,"column 2, column 3, column 4, column 5, and 2 more",,,,,,,,9,yes,1,
+S24,r004,,,csv,utf-8-sig,rows that are not records,2 note rows below the table,no,,70,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S24,r005,,,csv,utf-8-sig,records,,yes,47,47,6,146,146,0,,,0,0,0,"column 1, column 2, column 3, column 4, and 2 more",,,,,,,,0,yes,1,
+S24,r006,,,csv,utf-8-sig,records,,yes,115,115,7,461,457,0,,,0,0,2,"column 3, column 4, column 5, column 6, and 1 more",,,,,,column 1,1,0,yes,1,
+S24,r007,,,csv,utf-8-sig,"records, with empty rows",8 empty rows inside the table,yes,250,250,6,1210,1209,0,,,0,0,3,"column 3, column 5, column 6",,,,,,column 2,14,0,yes,1,
+S25,r001,,ΙΑΝΟΥΑΡΙΟΣ - ΦΕΒΡΟΥΑΡΙΟΣ 2017,xls,,rows that are not records,1 title or note row above the header,no,,131,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S26,r001,,Εγχώρια,xls,,rows that are not records,5 title or note rows above the header; 6 totals rows; 6 sub-heading rows inside the table; 1 note row below the table; numbers stored as text in 1 column,no,,95,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S26,r001,,Ευρωπαϊκής Ένωσης,xls,,rows that are not records,5 title or note rows above the header; 5 totals rows; 5 sub-heading rows inside the table; 1 note row below the table,no,,18,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S26,r001,,Τρίτων Χωρών,xls,,rows that are not records,5 title or note rows above the header; 6 totals rows; 6 sub-heading rows inside the table; 1 note row below the table; numbers stored as text in 1 column,no,,49,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S29,r001,,ΠΙΝΑΚΑΣ ΤΙΜΟΛΗΨΙΩΝ 18-01-2016,xls,,rows that are not records,4 tables in one sheet; 7 title or note rows above the header; 5 sub-heading rows inside the table; 1 note row below the table,no,,24,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S31,r003,,ΥΠΟΓΕΓΡΑΜΜΕΝΕΣ ΣΥΜΒΑΣΕΙΣ (ΝΕΕΣ),xls,,rows that are not records,merged cells inside the data (6); 6 sub-heading rows inside the table; numbers stored as text in 1 column,no,,45,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S32,r002,,Π.Ε. Αχαϊας,xls,,rows that are not records,1 title or note row above the header,no,,126,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records
+S32,r002,,Π.Ε. Ηλείας,xls,,rows that are not records,1 title or note row above the header,no,,102,,,,,,,,,,,,,,,,,,,yes,1,needs cleaning before it can be split into records

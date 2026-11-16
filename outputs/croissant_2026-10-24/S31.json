@@ -1,0 +1,193 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "ΠΡΟΓΡΑΜΜΑΤΙΚΕΣ ΣΥΜΒΑΣΕΙΣ ΠΕΡΙΦΕΡΕΙΑΣ ΑΤΤΙΚΗΣ",
+  "description": "ΕΙΣΗΓΗΣΕΙΣ ΓΙΑ ΥΠΟΓΡΑΦΗ ΠΡΟΓΡΑΜΜΑΤΙΚΩΝ ΣΥΜΒΑΣΕΩΝ",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Περιφέρεια Αττικής"
+  },
+  "dateModified": "2026-02-24",
+  "datePublished": "2025-11-18",
+  "keywords": [
+    "repository.data.gov.gr",
+    "Από μετάπτωση",
+    "Εργα"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/programmatikes-symbaseis-perifereias-attikhs",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "ΕΙΣΗΓΗΣΕΙΣ ΓΙΑ ΥΠΟΓΡΑΦΗ ΠΡΟΓΡΑΜΜΑΤΙΚΩΝ ΣΥΜΒΑΣΕΩΝ ΕΤΟΥΣ 2017.",
+      "contentSize": "206371 B",
+      "contentUrl": "https://data.gov.gr/dataset/35499271-3a01-45b4-9365-c7ce24735919/resource/6413cd46-fcc4-4481-a18d-8a9bf8f0b953/download/82017.xlsx",
+      "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "98539514399c9cdcc2994547c21388f4792f52bb2f3d6f647fc5063b64e9014f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r002",
+      "name": "ΕΙΣΗΓΗΣΕΙΣ ΓΙΑ ΥΠΟΓΡΑΦΗ ΠΡΟΓΡΑΜΜΑΤΙΚΩΝ ΣΥΜΒΑΣΕΩΝ ΕΤΟΥΣ 2018.",
+      "contentSize": "199677 B",
+      "contentUrl": "https://data.gov.gr/dataset/35499271-3a01-45b4-9365-c7ce24735919/resource/3a9896d9-0ac8-4472-b58b-719c51002527/download/82018.xlsx",
+      "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "fec3f13b3b1ba9f41cf0f05f3a606f8d47d1cd6c9094687d0b8abf322cbad959"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r003",
+      "name": "ΕΙΣΗΓΗΣΕΙΣ ΓΙΑ ΥΠΟΓΡΑΦΗ ΠΡΟΓΡΑΜΜΑΤΙΚΩΝ ΣΥΜΒΑΣΕΩΝ ΕΤΟΥΣ 2019.",
+      "contentSize": "1531904 B",
+      "contentUrl": "https://data.gov.gr/dataset/35499271-3a01-45b4-9365-c7ce24735919/resource/78dd28a5-ddfc-4732-b7e6-5b543f9d9538/download/82019.xls",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "1d65f7224086e3f579790528347b285432f6895465ec6a5deb975a4fb232dede"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records",
+      "name": "records",
+      "description": "Columns of the table examined for the assessment (r003, sheet \"ΥΠΟΓΕΓΡΑΜΜΕΝΕΣ ΣΥΜΒΑΣΕΙΣ (ΝΕΕΣ)\").",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records/c001",
+          "name": "α/α",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c002",
+          "name": "ΤΙΤΛΟΣ ΕΡΓΟΥ Π.Σ.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c003",
+          "name": "ΚΑΕ",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c004",
+          "name": "ΑΝΤΙΣΥΜΒΑΛΛΟΜΕΝΟΙ",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c005",
+          "name": "ΠΕΡΙΦΕΡΕΙΑΚΗ ΕΝΟΤΗΤΑ ΕΡΓΟΥ",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c006",
+          "name": "ΕΙΔΟΣ ΕΡΓΟΥ",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c007",
+          "name": "ΠΡΟΫΠΟΛΟΓΙΣΜΟΣ (€)",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c008",
+          "name": "ΦΟΡΕΑΣ ΧΡΗΜΑΤΟΔΟΤΗΣΗΣ",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r003"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

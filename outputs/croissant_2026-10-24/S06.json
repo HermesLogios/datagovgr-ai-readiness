@@ -1,0 +1,224 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Τροχαία ατυχήματα",
+  "description": "Σύνολο θανατηφόρων, σοβαρών και ελαφρών τροχαίων ατυχημάτων- Σύνολο παθόντων",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Υπουργείο Προστασίας του Πολίτη"
+  },
+  "dateModified": "2026-05-11",
+  "datePublished": "2025-11-18",
+  "keywords": [
+    "repository.data.gov.gr",
+    "Από μετάπτωση",
+    "Αστυνομία",
+    "Τροχαία",
+    "Τροχαία ατυχήματα"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/troxaia-atyxhmata",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Τροχαία ατυχήματα 2014",
+      "description": "Σύνολο θανατηφόρων, σοβαρών και ελαφρών τροχαίων ατυχημάτων- Σύνολο παθόντων.",
+      "contentSize": "13223 B",
+      "contentUrl": "https://data.gov.gr/dataset/2778acd9-7e84-4712-a7a1-42419359a2ab/resource/b4532da9-b1d7-451a-a6ba-3f8bc7b2d4dc/download/2014.xlsx",
+      "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "5240f82ce8e5f23f045abe68edcbb994e26eb6a032c00d1941e17b1c2b2cd331"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r002",
+      "name": "Τροχαία ατυχήματα 2015",
+      "description": "Σύνολο θανατηφόρων, σοβαρών και ελαφρών τροχαίων ατυχημάτων- Σύνολο παθόντων.",
+      "contentSize": "13238 B",
+      "contentUrl": "https://data.gov.gr/dataset/2778acd9-7e84-4712-a7a1-42419359a2ab/resource/8492c390-d4eb-4c15-bfb4-4818967ac4b8/download/2015.xlsx",
+      "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "2988097a31e535a0b268cc50e9ff2f95335b58a3e6fafb7ead8575e200ee901e"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r003",
+      "name": "Τροχαία ατυχήματα 2016",
+      "description": "Σύνολο θανατηφόρων, σοβαρών και ελαφρών τροχαίων ατυχημάτων- Σύνολο παθόντων.",
+      "contentSize": "12940 B",
+      "contentUrl": "https://data.gov.gr/dataset/2778acd9-7e84-4712-a7a1-42419359a2ab/resource/2a2cdf3e-8e63-4dba-ac26-16c35d329282/download/2016.xlsx",
+      "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "98853e121563043d5ec09cfc72376a606d348961678fbadeecf87cad5f1aea04"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r004",
+      "name": "Τροχαία ατυχήματα 2017",
+      "description": "Σύνολο θανατηφόρων, σοβαρών και ελαφρών τροχαίων ατυχημάτων- Σύνολο παθόντων.",
+      "contentSize": "13883 B",
+      "contentUrl": "https://data.gov.gr/dataset/2778acd9-7e84-4712-a7a1-42419359a2ab/resource/f92c16a5-552e-41b9-b163-c68a257bc6f2/download/2017.xlsx",
+      "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "87b1e237d8d8523a8f395de0d7e2ea8b844aab0a5283108cb55ef6e68b4c53dd"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r005",
+      "name": "Τροχαία ατυχήματα 2018",
+      "description": "Σύνολο θανατηφόρων, σοβαρών και ελαφρών τροχαίων ατυχημάτων- Σύνολο παθόντων.",
+      "contentSize": "32256 B",
+      "contentUrl": "https://data.gov.gr/dataset/2778acd9-7e84-4712-a7a1-42419359a2ab/resource/733fdd50-56e3-4188-ac81-f7ed1ad72a1e/download/.xls",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "c5776853fb5b3283546f4bfb8fc39ccd7c74e1441fb1560bb055312fe1bbec9f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r006",
+      "name": "Τροχαία ατυχήματα 2019",
+      "description": "Σύνολο θανατηφόρων, σοβαρών και ελαφρών τροχαίων ατυχημάτων- Σύνολο παθόντων.",
+      "contentSize": "32256 B",
+      "contentUrl": "https://data.gov.gr/dataset/2778acd9-7e84-4712-a7a1-42419359a2ab/resource/365786d8-9dfd-4519-836c-0393399150d8/download/2019.xls",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "5ea79083864eec901b6faf4b9dcacba8ae3f0b2ac2455ed0c2504cc6bbb12982"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r007",
+      "name": "Τροχαία ατυχήματα 2020",
+      "description": "ΤΡΟΧΑΙΑ ΑΤΥΧΗΜΑΤΑ ΚΑΙ ΠΑΘΟΝΤΕΣ ΑΝΑ ΚΑΤΗΓΟΡΙΑ (ΘΑΝΑΤΗΦΟΡΑ ΑΤΥΧΗΜΑΤΑ-ΣΟΒΑΡΑ ΑΤΥΧΗΜΑΤΑ-ΕΛΕΦΡΑ ΑΤΥΧΗΜΑΤΑ-ΝΕΚΡΟΙ-ΒΑΡΙΑ ΤΡΑΥΜΑΤΙΕΣ-ΕΛΑΦΡΙΑ ΤΡΑΥΜΑΤΙΕΣ) ΓΙΑ ΤΟ ΕΤΟΣ 2020 ΣΤΗΝ ΕΛΛΗΝΙΚΗ ΕΠΙΚΡΑΤΕΙΑ",
+      "contentSize": "25600 B",
+      "contentUrl": "https://data.gov.gr/dataset/2778acd9-7e84-4712-a7a1-42419359a2ab/resource/b72e9001-efd4-439f-9b22-acf8800bec96/download/troxaia-atyximata-2020.xls",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "e85541c7aa5e10de85e732e3f2976a32e51a906a782cc19056e9667d322a38f7"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r008",
+      "name": "Τροχαία ατυχήματα 2021",
+      "description": "ΤΡΟΧΑΙΑ ΑΤΥΧΗΜΑΤΑ ΚΑΙ ΠΑΘΟΝΤΕΣ ΑΝΑ ΚΑΤΗΓΟΡΙΑ (ΘΑΝΑΤΗΦΟΡΑ ΑΤΥΧΗΜΑΤΑ-ΣΟΒΑΡΑ ΑΤΥΧΗΜΑΤΑ-ΕΛΕΦΡΑ ΑΤΥΧΗΜΑΤΑ-ΝΕΚΡΟΙ-ΒΑΡΙΑ ΤΡΑΥΜΑΤΙΕΣ-ΕΛΑΦΡΙΑ ΤΡΑΥΜΑΤΙΕΣ) ΓΙΑ ΤΟ ΕΤΟΣ 2020 ΣΤΗΝ ΕΛΛΗΝΙΚΗ ΕΠΙΚΡΑΤΕΙΑ",
+      "contentSize": "25600 B",
+      "contentUrl": "https://data.gov.gr/dataset/2778acd9-7e84-4712-a7a1-42419359a2ab/resource/d218b468-29e0-468d-a11b-7a351789090b/download/troxaia-atyximata-2021.xls",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "b3410dae861f0487727409aa5c13b809adacb5e4004fdb489be190367c004992"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r009",
+      "name": "Τροχαία ατυχήματα 2022",
+      "description": "ΤΡΟΧΑΙΑ ΑΤΥΧΗΜΑΤΑ ΚΑΙ ΠΑΘΟΝΤΕΣ ΑΝΑ ΚΑΤΗΓΟΡΙΑ (ΘΑΝΑΤΗΦΟΡΑ ΑΤΥΧΗΜΑΤΑ-ΣΟΒΑΡΑ ΑΤΥΧΗΜΑΤΑ-ΕΛΕΦΡΑ ΑΤΥΧΗΜΑΤΑ-ΝΕΚΡΟΙ-ΒΑΡΙΑ ΤΡΑΥΜΑΤΙΕΣ-ΕΛΑΦΡΙΑ ΤΡΑΥΜΑΤΙΕΣ) ΓΙΑ ΤΟ ΕΤΟΣ 2020 ΣΤΗΝ ΕΛΛΗΝΙΚΗ ΕΠΙΚΡΑΤΕΙΑ",
+      "contentSize": "25600 B",
+      "contentUrl": "https://data.gov.gr/dataset/2778acd9-7e84-4712-a7a1-42419359a2ab/resource/99a4e8b6-f47a-4dc3-ba41-c9c641b09cc9/download/troxaia-atyximata-2022.xls",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "36866f41e045ed161888a841812ae22377badfb565b41a763094705cc48973db"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r010",
+      "name": "Τροχαία ατυχήματα 2023",
+      "description": "ΤΡΟΧΑΙΑ ΑΤΥΧΗΜΑΤΑ ΚΑΙ ΠΑΘΟΝΤΕΣ ΑΝΑ ΚΑΤΗΓΟΡΙΑ (ΘΑΝΑΤΗΦΟΡΑ ΑΤΥΧΗΜΑΤΑ-ΣΟΒΑΡΑ ΑΤΥΧΗΜΑΤΑ-ΕΛΕΦΡΑ ΑΤΥΧΗΜΑΤΑ-ΝΕΚΡΟΙ-ΒΑΡΙΑ ΤΡΑΥΜΑΤΙΕΣ-ΕΛΑΦΡΙΑ ΤΡΑΥΜΑΤΙΕΣ) ΓΙΑ ΤΟ ΕΤΟΣ 2020 ΣΤΗΝ ΕΛΛΗΝΙΚΗ ΕΠΙΚΡΑΤΕΙΑ",
+      "contentSize": "25600 B",
+      "contentUrl": "https://data.gov.gr/dataset/2778acd9-7e84-4712-a7a1-42419359a2ab/resource/7f1643bd-9f3f-41ce-b241-3682b91d54e6/download/troxaia-atyximata-2023.xls",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "6938b5c8a4a9d459fa30a181fc1cc7a474e3b6c69f5e00a2bcd489a7968ff0da"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r011",
+      "name": "Τροχαία ατυχήματα 2024",
+      "description": "ΤΡΟΧΑΙΑ ΑΤΥΧΗΜΑΤΑ ΚΑΙ ΠΑΘΟΝΤΕΣ ΑΝΑ ΚΑΤΗΓΟΡΙΑ (ΘΑΝΑΤΗΦΟΡΑ ΑΤΥΧΗΜΑΤΑ-ΣΟΒΑΡΑ ΑΤΥΧΗΜΑΤΑ-ΕΛΕΦΡΑ ΑΤΥΧΗΜΑΤΑ-ΝΕΚΡΟΙ-ΒΑΡΙΑ ΤΡΑΥΜΑΤΙΕΣ-ΕΛΑΦΡΙΑ ΤΡΑΥΜΑΤΙΕΣ) ΓΙΑ ΤΟ ΕΤΟΣ 2020 ΣΤΗΝ ΕΛΛΗΝΙΚΗ ΕΠΙΚΡΑΤΕΙΑ",
+      "contentSize": "25600 B",
+      "contentUrl": "https://data.gov.gr/dataset/2778acd9-7e84-4712-a7a1-42419359a2ab/resource/e1340257-7396-4e86-a46e-6fcf33860a7e/download/troxaia-atyximata-2024.xls",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "21518dbbd7cc723cf2f313ccae6db8c2eba505754177c3af688f807015e67b8d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r012",
+      "name": "Τροχαία ατυχήματα 2025",
+      "description": "ΤΡΟΧΑΙΑ ΑΤΥΧΗΜΑΤΑ ΚΑΙ ΠΑΘΟΝΤΕΣ ΑΝΑ ΚΑΤΗΓΟΡΙΑ (ΘΑΝΑΤΗΦΟΡΑ ΑΤΥΧΗΜΑΤΑ-ΣΟΒΑΡΑ ΑΤΥΧΗΜΑΤΑ-ΕΛΕΦΡΑ ΑΤΥΧΗΜΑΤΑ-ΝΕΚΡΟΙ-ΒΑΡΙΑ ΤΡΑΥΜΑΤΙΕΣ-ΕΛΑΦΡΙΑ ΤΡΑΥΜΑΤΙΕΣ) ΓΙΑ ΤΟ ΕΤΟΣ 2020 ΣΤΗΝ ΕΛΛΗΝΙΚΗ ΕΠΙΚΡΑΤΕΙΑ",
+      "contentSize": "25600 B",
+      "contentUrl": "https://data.gov.gr/dataset/2778acd9-7e84-4712-a7a1-42419359a2ab/resource/accdb8ca-0f0e-4f47-b300-d0925bb1929f/download/troxaia-atyximata-2025.xls",
+      "encodingFormat": "application/vnd.ms-excel",
+      "sha256": "0f66d51651b77812438438673b6e3019fca0f22c92a1a1ea638d4cb2daa2cbe8"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records",
+      "name": "records",
+      "description": "Columns of the table examined for the assessment (r012, sheet \"Τροχαία ατυχήματα 2025\").",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records/c001",
+          "name": "ΑΤΥΧΗΜΑΤΑ",
+          "description": "Κατηγορία τροχαίων ατυχημάτων ή παθόντων: θανατηφόρα ατυχήματα, σοβαρά ατυχήματα, ελαφρά ατυχήματα, νεκροί, βαριά τραυματίες, ελαφρά τραυματίες.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r012"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c002",
+          "name": "2025",
+          "description": "Πλήθος των τροχαίων ατυχημάτων ή των παθόντων της κατηγορίας στην ελληνική επικράτεια, για το έτος της επικεφαλίδας της στήλης.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r012"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

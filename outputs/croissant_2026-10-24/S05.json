@@ -1,0 +1,96 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Λίστα με Μονάδες Φροντίδας Ηλικιωμένων",
+  "description": "Επικαιροποιημένη Λίστα Μονάδων Φροντίδας Ηλικιωμένων κερδοσκοπικού και μη χαρακτήρα που λειτουργούν στη χωρική μας αρμοδιότητα. Η λίστα είναι δυναμική.Μπορείτε να κατεβάσετε τη λίστα σε excell και pdf πατώντας \"Εμφάνιση σε λίστα\".Οι μονάδες φροντίδας ηλικιωμένων κερδοσκοπικού ή μη χαρακτήρα είναι οι μονάδες που φροντίζουν ηλικιωμένα άτομα αυτοεξυπηρετούμενα και μη. Οι μονάδες φροντίδας ηλικιωμένων εξασφαλίζουν στους φιλοξενούμενους υγιεινή και ασφαλή διαμονή, υγιεινή διατροφή, τακτική ιατρική παρακολούθηση, φυσικοθεραπεία, ψυχαγωγία, ψυχολογική υποστήριξη και γενικά σεβασμό και ενδιαφέρον στον περιθαλπόμενο, ανεξαρτήτως πνευματικής και σωματικής κατάστασης.",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": [
+    {
+      "@type": "sc:Organization",
+      "name": "Γενική Διεύθυνση Δημόσιας Υγείας & Κοινωνικής Μέριμνας"
+    },
+    {
+      "@type": "sc:Organization",
+      "name": "Διεύθυνση Κοινωνικής Μέριμνας"
+    }
+  ],
+  "dateModified": "2026-10-17",
+  "datePublished": "2025-11-24",
+  "keywords": [
+    "Ανοικτά Δεδομένα",
+    "Γενική Διεύθυνση Δημόσιας Υγείας Κοινωνικής Μέριμνας",
+    "Γεωχωρικά",
+    "Γεωχωρικές πληροφορίες",
+    "Διεύθυνση Κοινωνικής Μέριμνας",
+    "Περιφέρεια Αττικής",
+    "Υγεία Κοινωνική Μέριμνα",
+    "Ψηφιακή Ενημέρωση Εξυπηρέτηση"
+  ],
+  "url": "https://data.gov.gr/dataset/attica-43-lista-me-monades-frontidas-hlikiwmenwn",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Κέντρο Ημερήσιας Φροντίδας Ηλικιωμένων σε λίστα",
+      "contentSize": "21926 B",
+      "contentUrl": "https://map.social-network.gr/mapattica/map/Search?lista=1&typesselect=11&name=&tk=",
+      "encodingFormat": "text/html",
+      "sha256": "ad64b322513723322cc0e94112ef029622074f9536039ca468d72a13c92ef925"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r002",
+      "name": "Λίστα με Μονάδες Φροντίδας Ηλικιωμένων",
+      "contentSize": "281354 B",
+      "contentUrl": "http://map.social-network.gr/mapattica/map/Search?lista=0&typesselect=6&name=&tk=",
+      "encodingFormat": "text/html",
+      "sha256": "11504aea88a42873a8955d70cb77c49b605e85d8c6b07140029203051b73be7e"
+    }
+  ]
+}

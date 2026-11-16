@@ -1,0 +1,101 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "ΤΡΟΠΟΠΟΙΗΣΗ ΡΥΜΟΤΟΜΙΚΟΥ (ΦΕΚ 463/Δ/1998-07-03)",
+  "description": "Έγκριση Πολεοδομικής Μελέτης Αναθεώρησης του εγκεκριμένου ρυμοτομικού σχεδίου Δήμου Αγρινίου Ν. Αιτωλ/νίας των πινακίδων 15-16/15, 16-17/14, 16-17/16, 13-14/12, και 14-15/16",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Δήμος Αγρινίου"
+  },
+  "dateModified": "2026-08-02",
+  "datePublished": "2026-05-22",
+  "keywords": [
+    "agrinio",
+    "geotiff",
+    "gis",
+    "inspire",
+    "wcs",
+    "wms-only",
+    "γεωχωρικά"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/gis-agrinio-wms-only-agriniotrm-trm_ras_123107fs000463_1998_geo",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Προεπισκόπηση WMS layer - agriniotrm:trm_ras_123107FS000463_1998_geo",
+      "description": "Προεπισκόπηση του WMS layer agriniotrm:trm_ras_123107FS000463_1998_geo.",
+      "contentSize": "939288 B",
+      "contentUrl": "https://gis.agrinio.gov.gr/geoserver/agriniotrm/wms#trm_ras_123107FS000463_1998_geo",
+      "encodingFormat": "application/xml",
+      "sha256": "0f1bb2e4a591bb2d9fc35fe596f1f6ad2235c597c77421bed5157cb2d227e225"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r002",
+      "name": "Λήψη εικόνας PNG - agriniotrm:trm_ras_123107FS000463_1998_geo",
+      "contentSize": "4780880 B",
+      "contentUrl": "https://gis.agrinio.gov.gr/geoserver/wms?service=WMS&version=1.3.0&request=GetMap&layers=agriniotrm%3Atrm_ras_123107FS000463_1998_geo&styles=&crs=CRS%3A84&bbox=21.414254179771557%2C38.6210533558575%2C21.426338886376055%2C38.629848909686764&width=2048&height=2048&format=image%2Fpng&transparent=true",
+      "encodingFormat": "image/png",
+      "sha256": "e426a9c3aa98b54b2f99b2fb0ba5b739ac1fb21378f95b60bff731cd59c83915"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r003",
+      "name": "WMS capabilities document - agriniotrm:trm_ras_123107FS000463_1998_geo",
+      "description": "WMS GetCapabilities document που περιγράφει και το layer agriniotrm:trm_ras_123107FS000463_1998_geo.",
+      "contentSize": "2743903 B",
+      "contentUrl": "https://gis.agrinio.gov.gr/geoserver/wms?service=WMS&request=GetCapabilities&version=1.3.0",
+      "encodingFormat": "application/xml",
+      "sha256": "03f050203a4ca553b7d99d8ceeca00c33a44e961457b90cd0c6199da4f8ffa65"
+    }
+  ]
+}

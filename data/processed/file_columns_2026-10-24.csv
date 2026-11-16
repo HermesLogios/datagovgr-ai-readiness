@@ -797,6 +797,36 @@ S16,r001,gr_natura_v31_union_final.shp,,all properties and the geometry of the f
 S16,r001,gr_natura_v31_union_final.shp,,all properties and the geometry of the features,8,SITE_NAME_,593,0,0,0.00
 S16,r001,gr_natura_v31_union_final.shp,,all properties and the geometry of the features,9,SITE_NAME1,593,398,0,67.12
 S16,r001,gr_natura_v31_union_final.shp,,all properties and the geometry of the features,10,(geometry),593,0,0,0.00
+S17,r002_csv_manual,,,all columns of the records,1,objectid,45,0,0,0.00
+S17,r002_csv_manual,,,all columns of the records,2,Α/Α,45,1,0,2.22
+S17,r002_csv_manual,,,all columns of the records,3,Μοναδικός Αριθμός Σταθμου,45,1,0,2.22
+S17,r002_csv_manual,,,all columns of the records,4,Περιφερειακή Ενότητα,45,0,0,0.00
+S17,r002_csv_manual,,,all columns of the records,5,Δήμος,45,0,0,0.00
+S17,r002_csv_manual,,,all columns of the records,6,Δημοτική Ενότητα,45,0,0,0.00
+S17,r002_csv_manual,,,all columns of the records,7,Τοποθεσία/Θέση,45,0,0,0.00
+S17,r002_csv_manual,,,all columns of the records,8,Συντεταγμένες Χ (ΕΓΣΑ),45,0,0,0.00
+S17,r002_csv_manual,,,all columns of the records,9,Συντεταγμένες Ψ (ΕΓΣΑ),45,0,0,0.00
+S17,r002_csv_manual,,,all columns of the records,10,Τεχνολογία,45,0,0,0.00
+S17,r002_csv_manual,,,all columns of the records,11,Αρ. Μητρώου Άδειας Παραγωγής ΡΑΕ,45,45,0,100.00
+S17,r002_csv_manual,,,all columns of the records,12,Εγκατεστημένη Ισχύς (MW),45,0,0,0.00
+S17,r002_csv_manual,,,all columns of the records,13,Αποδιδόμενη Ισχύς (MW),45,0,0,0.00
+S17,r002_csv_manual,,,all columns of the records,14,x,45,0,0,0.00
+S17,r002_csv_manual,,,all columns of the records,15,y,45,0,0,0.00
+S17,r002_geojson_manual,,,all properties and the geometry of the features,1,OBJECTID,45,0,0,0.00
+S17,r002_geojson_manual,,,all properties and the geometry of the features,2,objectid_1,45,45,0,100.00
+S17,r002_geojson_manual,,,all properties and the geometry of the features,3,sn,45,1,0,2.22
+S17,r002_geojson_manual,,,all properties and the geometry of the features,4,monadikos_ar_stathmou,45,1,0,2.22
+S17,r002_geojson_manual,,,all properties and the geometry of the features,5,p_enotita,45,0,0,0.00
+S17,r002_geojson_manual,,,all properties and the geometry of the features,6,dimos,45,0,0,0.00
+S17,r002_geojson_manual,,,all properties and the geometry of the features,7,d_enotita,45,0,0,0.00
+S17,r002_geojson_manual,,,all properties and the geometry of the features,8,topothesia,45,0,0,0.00
+S17,r002_geojson_manual,,,all properties and the geometry of the features,9,x,45,0,0,0.00
+S17,r002_geojson_manual,,,all properties and the geometry of the features,10,y,45,0,0,0.00
+S17,r002_geojson_manual,,,all properties and the geometry of the features,11,technologia,45,0,0,0.00
+S17,r002_geojson_manual,,,all properties and the geometry of the features,12,adeia_rae,45,45,0,100.00
+S17,r002_geojson_manual,,,all properties and the geometry of the features,13,power_egk,45,0,0,0.00
+S17,r002_geojson_manual,,,all properties and the geometry of the features,14,power_apod,45,0,0,0.00
+S17,r002_geojson_manual,,,all properties and the geometry of the features,15,(geometry),45,0,0,0.00
 S18,r002,,,all properties and the geometry of the features,1,cid,2,0,0,0.00
 S18,r002,,,all properties and the geometry of the features,2,objectid_1,2,0,0,0.00
 S18,r002,,,all properties and the geometry of the features,3,objectid,2,0,0,0.00

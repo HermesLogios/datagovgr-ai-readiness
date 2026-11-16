@@ -1,0 +1,67 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ",
+  "description": "Οι Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ που έχουν λάβει άδεια εγκατάστασης – λειτουργίας από το Τμήμα Φυσικών Πόρων της Δ/νσης Τεχνικού Ελέγχου της Αποκεντρωμένης Διοίκησης Κρήτης. Ο χάρτης απεικονίζει, με διαδραστικό τρόπο, δεδομένα των σταθμών Ανανεώσιμων Πηγών Ενέργειας αρμοδιότητας Αποκεντρωμένης Διοίκησης Κρήτης, που προέρχονται από τη Γεωβάση που τηρείται από το Τμήμα Φυσικών Πόρων της Διεύθυνσης Τεχνικού Ελέγχου της Αποκεντρωμένης Διοίκησης Κρήτης, τα οποία είναι επικαιροποιημένα (up to date), καθώς και τη θέση τους σε χάρτη. Στο χάρτη περιέχονται τα παρακάτω επίπεδα: Αδειοδοτημένες Α.Π.Ε. Κρήτης Περιοχές Natura Όρια Δήμων Επισημαίνεται ότι στο χάρτη δεν εμφανίζονται τα σημεία εκείνα, για τα οποία εκκρεμεί ο έλεγχός τους από την αδειοδοτούσα αρχή (Τμήμα Φυσικών Πόρων/ΔΤΕ/ΑΔΚ) προκειμένου να εκδοθεί η διοικητική πράξη έγκρισης ή απόρριψης αιτήματος για τη χορήγηση της αντίστοιχης άδειας. Χάρτης στη Γεωπύλη Εφαρμογή στη Γεωπύλη",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Αποκεντρωμένη Διοίκηση Κρήτης"
+  },
+  "dateModified": "2026-10-19",
+  "datePublished": "2026-03-14",
+  "keywords": [
+    "ESRI REST API",
+    "High Value Dataset",
+    "ΑΠΕ",
+    "Ενέργεια και Φυσικοί Πόροι"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/apd-kritis-harv2-__"
+}

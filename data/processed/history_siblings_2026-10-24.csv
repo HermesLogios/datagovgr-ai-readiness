@@ -1,0 +1,252 @@
+﻿sample_id,level,dataset,title,period,resources
+S07,similar title,diacheirisi-stoicheion-diakinisis-kreatos,Διαχείριση Στοιχείων Διακίνησης Κρέατος,2020,2
+S07,similar title,diacheirisi-stoicheion-paragomenon-proionton,Διαχείριση Στοιχείων Παραγόμενων Προϊόντων,2020-2026,2
+S08,same title,arithmos-ekpaideytikon-dimosias-deyterovathmias-ekpaideysis-ana-eidikotita-kai-schesi-ergasias-ana-p,"""ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ ΔΗΜΟΣΙΑΣ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ ΔΙΕΥΘΥΝΣΗ ΕΚΠΑΙΔΕΥΣΗΣ ΓΙΑ ΤΟ ΣΧΟΛΙΚΟ ΕΤΟΣ 2023-2024 """,2023-2024,1
+S08,similar title,arithmos-ekpaideytikon-dimosias-protovathmias-ekpaideysis-ana-eidikotita-kai-schesi-ergasias-ana-per,"""ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ ΔΗΜΟΣΙΑΣ ΠΡΩΤΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ ΔΙΕΥΘΥΝΣΗ ΕΚΠΑΙΔΕΥΣΗΣ ΓΙΑ ΤΟ ΣΧΟΛΙΚΟ ΕΤΟΣ 2023-2024 """,2023-2024,1
+S08,similar title,arithmos-ekpaideytikon-protovathmia-eidikotita-schesi-ergasias-2025,"""ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ ΔΗΜΟΣΙΑΣ ΠΡΩΤΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ ΔΙΕΥΘΥΝΣΗ ΕΚΠΑΙΔΕΥΣΗΣ ΓΙΑ ΤΟ ΣΧΟΛΙΚΟ ΕΤΟΣ 2024-2025 """,2024-2025,1
+S18,same title,gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2000_2006,Κάλυψη γης - Μεταβολές Corine Land Cover 2000 - 2006,2000-2006,7
+S18,same title,gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2006_2012,Κάλυψη γης - Μεταβολές Corine Land Cover 2006 - 2012,2006-2012,7
+S18,similar title,gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2000,Κάλυψη Γης CORINE 2000,2000,7
+S18,similar title,gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2006,Κάλυψη Γης CORINE 2006,2006,7
+S18,similar title,gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012,Κάλυψη Γης CORINE 2012,2012,7
+S18,similar title,gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2018,Κάλυψη Γης CORINE 2018,2018,7
+S22,similar title,prosorinoi-pinakes-katataxis-g-pr-21488-13-03-2024-ekdosi-prosorinoy-pinaka-katataxis-ependytikon-sc,"Προσωρινοί πίνακες κατάταξης - Γ.Πρ. 21488 - 13-03-2024 - Έκδοση προσωρινού πίνακα κατάταξης επενδυτικών σχεδίων που υποβλήθηκαν προς υπαγωγή στο καθεστώς ενίσχυσης ""Μεταποίηση-Εφοδιαστική Αλυσίδα"" (β΄κύκλος) στo Υπουργείο Ανάπτυξης",2024-03-13,1
+S25,same title,statistika-diatrofhs-ianoyarioy-2017,ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΙΑΝΟΥΑΡΙΟΥ 2017,2017-01,1
+S25,same title,statistika-diatrofhs-martioy-2017,ΣΤΑΤΙΣΤΙΚΆ ΔΙΑΤΡΟΦΗΣ ΜΑΡΤΙΟΥ 2017,2017-03,1
+S25,same title,statistika-diatrofhs-aprilios-2017,ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΑΠΡΙΛΙΟΣ 2017,2017-04,1
+S25,same title,stati,ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΔΕΚΕΜΒΡΙΟΣ 2017,2017-12,1
+S25,same title,statistika-diatrofhs-dekembrioy-2017,ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΔΕΚΕΜΒΡΙΟΥ 2017,2017-12,1
+S25,same title,statistika-diatrofhs-ianoyarioy-2018,ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΙΑΝΟΥΑΡΙΟΥ 2018,2018-01,1
+S25,same title,statistika-diatrofhs-martioy-2018,ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΜΑΡΤΙΟΥ 2018,2018-03,1
+S25,same title,statistika-diatrofhs-aprilioy-2018,ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΑΠΡΙΛΙΟΥ 2018,2018-04,1
+S25,similar title,statistika-diatrofhs-maios-20217,ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΜΑΪΟΣ 20217,2017-05,1
+S25,similar title,statistika-diatrofhs-toyfebroyarioy-2018,ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ τουΦΕΒΡΟΥΑΡΙΟΥ 2018,2018,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-aprilios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΑΠΡΙΛΙΟΣ 2018,2018-04,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-maios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΜΑΪΟΣ 2018,2018-05,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-ioynios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΙΟΥΝΙΟΣ 2018,2018-06,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-ioylios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΙΟΥΛΙΟΣ 2018,2018-07,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-aygoystos-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΑΥΓΟΥΣΤΟΣ 2018,2018-08,1
+S26,same title,etatietika-ixoyoekaaae-oeeeaaonikhe-eetttembpioe-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΣΕΠΤΕΜΒΡΙΟΣ 2018,2018-09,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-oktwbrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΟΚΤΩΒΡΙΟΣ 2018,2018-10,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-noembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΝΟΕΜΒΡΙΟΣ 2018,2018-11,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-dekembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΔΕΚΕΜΒΡΙΟΣ 2018,2018-12,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-ianoyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΙΑΝΟΥΑΡΙΟΣ 2019,2019-01,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-febroyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΦΕΒΡΟΥΑΡΙΟΣ 2019,2019-02,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-martios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΜΑΡΤΙΟΣ 2019,2019-03,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-maios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΜΑΪΟΣ 2019,2019-05,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-ioynios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΙΟΥΝΙΟΣ 2019,2019-06,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-ioylios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΙΟΥΛΙΟΣ 2019,2019-07,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-aygoystos-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΑΥΓΟΥΣΤΟΣ 2019,2019-08,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-septembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΣΕΠΤΕΜΒΡΙΟΣ 2019,2019-09,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-oktwbrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΟΚΤΩΒΡΙΟΣ 2019,2019-10,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-noembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΝΟΕΜΒΡΙΟΣ 2019,2019-11,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-dekembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΔΕΚΕΜΒΡΙΟΣ 2019,2019-12,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-ianoyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΙΑΝΟΥΑΡΙΟΣ 2020,2020-01,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-febroyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΦΕΒΡΟΥΑΡΙΟΣ 2020,2020-02,1
+S26,same title,statistika-ix8yoskalas-8essalonikhs-aprilios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΑΠΡΙΛΙΟΣ 2020,2020-04,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-aprilios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΑΠΡΙΛΙΟΣ 2018,2018-04,1
+S26,similar title,statistika-ix8yoskalas-kabalas-aprilios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΑΠΡΙΛΙΟΣ 2018,2018-04,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-aprilios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΑΠΡΙΛΙΟΣ 2018,2018-04,1
+S26,similar title,statistika-ix8yoskalas-patras-aprilios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΑΠΡΙΛΙΟΣ 2018,2018-04,1
+S26,similar title,statistika-ix8yoskalas-peiraia-aprilios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΑΠΡΙΛΙΟΣ 2018,2018-04,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-aprilios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΑΠΡΙΛΙΟΣ 2018,2018-04,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-aprilios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΑΠΡΙΛΙΟΣ 2018,2018-04,1
+S26,similar title,statistika-ix8yoskalas-xioy-aprilios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΑΠΡΙΛΙΟΣ 2018,2018-04,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-maios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΜΑΪΟΣ 2018,2018-05,1
+S26,similar title,statistika-ix8yoskalas-kabalas-maios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΜΑΪΟΣ 2018,2018-05,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-maios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΜΑΪΟΣ 2018,2018-05,1
+S26,similar title,statistika-ix8yoskalas-patras-maios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΜΑΪΟΣ 2018,2018-05,1
+S26,similar title,statistika-ix8yoskalas-peiraia-maios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΜΑΪΟΣ 2018,2018-05,1
+S26,similar title,statistika-ix8yoskalas-prebezas-maios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΡΕΒΕΖΑΣ ΜΑΪΟΣ 2018,2018-05,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-maios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΜΑΪΟΣ 2018,2018-05,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-maios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΜΑΪΟΣ 2018,2018-05,1
+S26,similar title,statistika-ix8yoskalas-xioy-maios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΜΑΪΟΣ 2018,2018-05,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-ioynios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΙΟΥΝΙΟΣ 2018,2018-06,1
+S26,similar title,statistika-ix8yoskalas-kabalas-ioynios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΙΟΥΝΙΟΣ 2018,2018-06,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-ioynios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΙΟΥΝΙΟΣ 2018,2018-06,1
+S26,similar title,statistika-ix8yoskalas-patras-ioynios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΙΟΥΝΙΟΣ 2018,2018-06,1
+S26,similar title,statistika-ix8yoskalas-peiraia-ioynios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΙΟΥΝΙΟΣ 2018,2018-06,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-ioynios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΙΟΥΝΙΟΣ 2018,2018-06,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-ioynios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΙΟΥΝΙΟΣ 2018,2018-06,1
+S26,similar title,statistika-ix8yoskalas-xioy-ioynios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΙΟΥΝΙΟΣ 2018,2018-06,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-ioylios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΙΟΥΛΙΟΣ 2018,2018-07,1
+S26,similar title,statistika-ix8yoskalas-kabalas-ioylios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΙΟΥΛΙΟΣ 2018,2018-07,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-ioylios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΙΟΥΛΙΟΣ 2018,2018-07,1
+S26,similar title,statistika-ix8yoskalas-patras-ioylios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΙΟΥΛΙΟΣ 2018,2018-07,1
+S26,similar title,statistika-ix8yoskalas-peiraia-ioylios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΙΟΥΛΙΟΣ 2018,2018-07,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-ioylios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΙΟΥΛΙΟΣ 2018,2018-07,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-ioylios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΙΟΥΛΙΟΣ 2018,2018-07,1
+S26,similar title,statistika-ix8yoskalas-xioy-ioylios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΙΟΥΛΙΟΣ 2018,2018-07,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-aygoystos-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΑΥΓΟΥΣΤΟΣ 2018,2018-08,1
+S26,similar title,statistika-ix8yoskalas-kabalas-aygoystos-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΑΥΓΟΥΣΤΟΣ 2018,2018-08,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-aygoystos-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΑΥΓΟΥΣΤΟΣ 2018,2018-08,1
+S26,similar title,statistika-ix8yoskalas-patras-aygoystos-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΑΥΓΟΥΣΤΟΣ 2018,2018-08,1
+S26,similar title,statistika-ix8yoskalas-peiraia-aygoystos-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΑΥΓΟΥΣΤΟΣ 2018,2018-08,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-aygoystos-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΑΥΓΟΥΣΤΟΣ 2018,2018-08,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-aygoystos-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΑΥΓΟΥΣΤΟΣ 2018,2018-08,1
+S26,similar title,statistika-ix8yoskalas-xioy-aygoystos-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΑΥΓΟΥΣΤΟΣ 2018,2018-08,1
+S26,similar title,etatietika-ixoyoekaaae-aaeeanapoyttoahe-eetttembpioe-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΣΕΠΤΕΜΒΡΙΟΣ 2018,2018-09,1
+S26,similar title,etatietika-ixoyoekaaae-kabaaae-eetttembpioe-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΣΕΠΤΕΜΒΡΙΟΣ 2018,2018-09,1
+S26,similar title,etatietika-ixoyoekaaae-kaaymnoy-eetttembpioe-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΣΕΠΤΕΜΒΡΙΟΣ 2018,2018-09,1
+S26,similar title,etatietika-ixoyoekaaae-ttatpae-eetttembpioe-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΣΕΠΤΕΜΒΡΙΟΣ 2018,2018-09,1
+S26,similar title,statistika-ix8yoskalas-peiraia-septembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΣΕΠΤΕΜΒΡΙΟΣ 2018,2018-09,1
+S26,similar title,etatietika-ixoyoekaaae-xaakiaae-eetttembpioe-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΣΕΠΤΕΜΒΡΙΟΣ 2018,2018-09,1
+S26,similar title,etatietika-ixoyoekaaae-xanion-eetttembpioe-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΣΕΠΤΕΜΒΡΙΟΣ 2018,2018-09,1
+S26,similar title,etatietika-ixoyoekaaae-xioy-eetttembpioe-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΣΕΠΤΕΜΒΡΙΟΣ 2018,2018-09,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-oktwbrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΟΚΤΩΒΡΙΟΣ 2018,2018-10,1
+S26,similar title,statistika-ix8yoskalas-kabalas-oktwbrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΟΚΤΩΒΡΙΟΣ 2018,2018-10,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-oktwbrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΟΚΤΩΒΡΙΟΣ 2018,2018-10,1
+S26,similar title,statistika-ix8yoskalas-patras-oktwbrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΟΚΤΩΒΡΙΟΣ 2018,2018-10,1
+S26,similar title,statistika-ix8yoskalas-peiraia-oktwbrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΟΚΤΩΒΡΙΟΣ 2018,2018-10,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-oktwbrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΟΚΤΩΒΡΙΟΣ 2018,2018-10,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-oktwbrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΟΚΤΩΒΡΙΟΣ 2018,2018-10,1
+S26,similar title,statistika-ix8yoskalas-xioy-oktwbrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΟΚΤΩΒΡΙΟΣ 2018,2018-10,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-noembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΝΟΕΜΒΡΙΟΣ 2018,2018-11,1
+S26,similar title,statistika-ix8yoskalas-kabalas-noembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΝΟΕΜΒΡΙΟΣ 2018,2018-11,1
+S26,similar title,statistika-ix8yoskalas-patras-noembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΝΟΕΜΒΡΙΟΣ 2018,2018-11,1
+S26,similar title,statistika-ix8yoskalas-peiraia-noembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΝΟΕΜΒΡΙΟΣ 2018,2018-11,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-noembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΝΟΕΜΒΡΙΟΣ 2018,2018-11,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-noembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΝΟΕΜΒΡΙΟΣ 2018,2018-11,1
+S26,similar title,statistika-ix8yoskalas-xiou-noembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΝΟΕΜΒΡΙΟΣ 2018,2018-11,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-dekembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΔΕΚΕΜΒΡΙΟΣ 2018,2018-12,1
+S26,similar title,statistika-ix8yoskalas-kabalas-dekembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΔΕΚΕΜΒΡΙΟΣ 2018,2018-12,1
+S26,similar title,kaaymnoy-aekembpioe-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΔΕΚΕΜΒΡΙΟΣ 2018,2018-12,1
+S26,similar title,statistika-ix8yoskalas-patras-dekembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΔΕΚΕΜΒΡΙΟΣ 2018,2018-12,1
+S26,similar title,statistika-ix8yoskalas-peiraia-dekembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΔΕΚΕΜΒΡΙΟΣ 2018,2018-12,1
+S26,similar title,statistika-ix8yoskalas-prebezas-dekembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΡΕΒΕΖΑΣ ΔΕΚΕΜΒΡΙΟΣ 2018,2018-12,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-dekembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΔΕΚΕΜΒΡΙΟΣ 2018,2018-12,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-dekembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΔΕΚΕΜΒΡΙΟΣ 2018,2018-12,1
+S26,similar title,statistika-ix8yoskalas-xioy-dekembrios-2018,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΔΕΚΕΜΒΡΙΟΣ 2018,2018-12,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-ianoyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΙΑΝΟΥΑΡΙΟΣ 2019,2019-01,1
+S26,similar title,statistika-ix8yoskalas-kabalas-ianoyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΙΑΝΟΥΑΡΙΟΣ 2019,2019-01,1
+S26,similar title,statistika-ix8yoskalas-patras-ianoyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΙΑΝΟΥΑΡΙΟΣ 2019,2019-01,1
+S26,similar title,teipaiae-ianoyapioe-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΙΑΝΟΥΑΡΙΟΣ 2019,2019-01,1
+S26,similar title,statistika-ix8yoskalas-prebezas-ianoyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΡΕΒΕΖΑΣ ΙΑΝΟΥΑΡΙΟΣ 2019,2019-01,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-ianoyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΙΑΝΟΥΑΡΙΟΣ 2019,2019-01,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-ianoyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΙΑΝΟΥΑΡΙΟΣ 2019,2019-01,1
+S26,similar title,statistika-ix8yoskalas-xioy-ianoyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΙΑΝΟΥΑΡΙΟΣ 2019,2019-01,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-febroyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΦΕΒΡΟΥΑΡΙΟΣ 2019,2019-02,1
+S26,similar title,statistika-ix8yoskalas-kabalas-febroyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΦΕΒΡΟΥΑΡΙΟΣ 2019,2019-02,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-febroyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΦΕΒΡΟΥΑΡΙΟΣ 2019,2019-02,1
+S26,similar title,statistika-ix8yoskalas-patras-febroyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΦΕΒΡΟΥΑΡΙΟΣ 2019,2019-02,1
+S26,similar title,statistika-ix8yoskalas-peiraia-febroyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΦΕΒΡΟΥΑΡΙΟΣ 2019,2019-02,1
+S26,similar title,xaakiaae-oebpoyapioe-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΦΕΒΡΟΥΑΡΙΟΣ 2019,2019-02,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-febroyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΦΕΒΡΟΥΑΡΙΟΣ 2019,2019-02,1
+S26,similar title,statistika-ix8yoskalas-xioy-febroyarios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΦΕΒΡΟΥΑΡΙΟΣ 2019,2019-02,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-martioy-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΜΑΡΤΙΟΥ 2019,2019-03,1
+S26,similar title,statistika-ix8yoskalas-kabalas-martios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΜΑΡΤΙΟΣ 2019,2019-03,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-martios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΜΑΡΤΙΟΣ 2019,2019-03,1
+S26,similar title,statistika-ix8yoskalas-patras-martios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΜΑΡΤΙΟΣ 2019,2019-03,1
+S26,similar title,statistika-ix8yoskalas-peiraia-martios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΜΑΡΤΙΟΣ 2019,2019-03,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-martios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΜΑΡΤΙΟΣ 2019,2019-03,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-martios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΜΑΡΤΙΟΣ 2019,2019-03,1
+S26,similar title,statistika-ix8yoskalas-xioy-martios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΜΑΡΤΙΟΣ 2019,2019-03,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-aprilios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΑΠΡΙΛΙΟΣ 2019,2019-04,1
+S26,similar title,statistika-ix8yoskalas-8es-nikhs-aprilios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣ/ΝΙΚΗΣ ΑΠΡΙΛΙΟΣ 2019,2019-04,1
+S26,similar title,statistika-ix8yoskalas-kabalas-aprilios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΑΠΡΙΛΙΟΣ 2019,2019-04,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-aprilios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΑΠΡΙΛΙΟΣ 2019,2019-04,1
+S26,similar title,statistika-ix8yoskalas-patras-aprilios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΑΠΡΙΛΙΟΣ 2019,2019-04,1
+S26,similar title,statistika-ix8yoskalas-peiraia-aprilios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΑΠΡΙΛΙΟΣ 2019,2019-04,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-aprilios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΑΠΡΙΛΙΟΣ 2019,2019-04,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-aprilios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΑΠΡΙΛΙΟΣ 2019,2019-04,1
+S26,similar title,statistika-ix8yoskalas-xioy-aprilios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΑΠΡΙΛΙΟΣ 2019,2019-04,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-maios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΜΑΪΟΣ 2019,2019-05,1
+S26,similar title,kavala-statistika-ix8yoskalas-kabalas-aprilios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΜΑΪΟΣ 2019,2019-05,1
+S26,similar title,kaaymnos-statistika-ix8yoskalas-kalymnoy-aprilios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΜΑΪΟΣ 2019,2019-05,1
+S26,similar title,statistika-ix8yoskalas-patras-maios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΜΑΪΟΣ 2019,2019-05,1
+S26,similar title,piraia-statistika-ix8yoskalas-kabalas-aprilios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΜΑΪΟΣ 2019,2019-05,1
+S26,similar title,statistika-ix8yoskalas-prebezas-maios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΡΕΒΕΖΑΣ ΜΑΪΟΣ 2019,2019-05,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-maios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΜΑΪΟΣ 2019,2019-05,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-maios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΜΑΪΟΣ 2019,2019-05,1
+S26,similar title,statistika-ix8yoskalas-xioy-maios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΜΑΪΟΣ 2019,2019-05,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-ioynios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΙΟΥΝΙΟΣ 2019,2019-06,1
+S26,similar title,statistika-ix8yoskalas-kabalas-ioynios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΙΟΥΝΙΟΣ 2019,2019-06,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-ioynios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΙΟΥΝΙΟΣ 2019,2019-06,1
+S26,similar title,statistika-ix8yoskalas-patras-ioynios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΙΟΥΝΙΟΣ 2019,2019-06,1
+S26,similar title,statistika-ix8yoskalas-peiraia-ioynios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΙΟΥΝΙΟΣ 2019,2019-06,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-ioynios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΙΟΥΝΙΟΣ 2019,2019-06,1
+S26,similar title,xania,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΙΟΥΝΙΟΣ 2019,2019-06,1
+S26,similar title,statistika-ix8yoskalas-xioy-ioynios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΙΟΥΝΙΟΣ 2019,2019-06,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-ioylios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΙΟΥΛΙΟΣ 2019,2019-07,1
+S26,similar title,statistika-ix8yoskalas-kabalas-ioylios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΙΟΥΛΙΟΣ 2019,2019-07,1
+S26,similar title,statistika-ix8yoskalas-patras-ioylios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΙΟΥΛΙΟΣ 2019,2019-07,1
+S26,similar title,statistika-ix8yoskalas-peiraia-ioylios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΙΟΥΛΙΟΣ 2019,2019-07,1
+S26,similar title,statistika-ix8yoskalas-prebezas-ioylios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΡΕΒΕΖΑΣ ΙΟΥΛΙΟΣ 2019,2019-07,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-ioylios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΙΟΥΛΙΟΣ 2019,2019-07,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-ioylios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΙΟΥΛΙΟΣ 2019,2019-07,1
+S26,similar title,statistika-ix8yoskalas-xioy-ioylios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΙΟΥΛΙΟΣ 2019,2019-07,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-aygoystos-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΑΥΓΟΥΣΤΟΣ 2019,2019-08,1
+S26,similar title,statistika-ix8yoskalas-kabalas-aygoystos-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΑΥΓΟΥΣΤΟΣ 2019,2019-08,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-aygoystos-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΑΥΓΟΥΣΤΟΣ 2019,2019-08,1
+S26,similar title,statistika-ix8yoskalas-patras-aygoystos-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΑΥΓΟΥΣΤΟΣ 2019,2019-08,1
+S26,similar title,statistika-ix8yoskalas-peiraia-aygoystos-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΑΥΓΟΥΣΤΟΣ 2019,2019-08,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-aygoystos-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΑΥΓΟΥΣΤΟΣ 2019,2019-08,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-aygoystos-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΑΥΓΟΥΣΤΟΣ 2019,2019-08,1
+S26,similar title,statistika-ix8yoskalas-xioy-aygoystos-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΑΥΓΟΥΣΤΟΣ 2019,2019-08,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-septembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΣΕΠΤΕΜΒΡΙΟΣ 2019,2019-09,1
+S26,similar title,statistika-ix8yoskalas-kabalas-septembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΣΕΠΤΕΜΒΡΙΟΣ 2019,2019-09,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-septembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΣΕΠΤΕΜΒΡΙΟΣ 2019,2019-09,1
+S26,similar title,statistika-ix8yoskalas-patras-septembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΣΕΠΤΕΜΒΡΙΟΣ 2019,2019-09,1
+S26,similar title,statistika-ix8yoskalas-peiraia-septembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΣΕΠΤΕΜΒΡΙΟΣ 2019,2019-09,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-septembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΣΕΠΤΕΜΒΡΙΟΣ 2019,2019-09,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-septembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΣΕΠΤΕΜΒΡΙΟΣ 2019,2019-09,1
+S26,similar title,statistika-ix8yoskalas-xioy-septembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΣΕΠΤΕΜΒΡΙΟΣ 2019,2019-09,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-oktwbrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΟΚΤΩΒΡΙΟΣ 2019,2019-10,1
+S26,similar title,statistika-ix8yoskalas-kabalas-oktwbrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΟΚΤΩΒΡΙΟΣ 2019,2019-10,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-oktwbrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΟΚΤΩΒΡΙΟΣ 2019,2019-10,1
+S26,similar title,statistika-ix8yoskalas-patras-oktwbrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΟΚΤΩΒΡΙΟΣ 2019,2019-10,1
+S26,similar title,statistika-ix8yoskalas-peiraia-oktwbrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΟΚΤΩΒΡΙΟΣ 2019,2019-10,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-oktwbrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΟΚΤΩΒΡΙΟΣ 2019,2019-10,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-oktwbrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΟΚΤΩΒΡΙΟΣ 2019,2019-10,1
+S26,similar title,statistika-ix8yoskalas-xioy-oktwbrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΟΚΤΩΒΡΙΟΣ 2019,2019-10,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-noembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΝΟΕΜΒΡΙΟΣ 2019,2019-11,1
+S26,similar title,statistika-ix8yoskalas-kabalas-noembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΝΟΕΜΒΡΙΟΣ 2019,2019-11,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-noembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΝΟΕΜΒΡΙΟΣ 2019,2019-11,1
+S26,similar title,statistika-ix8yoskalas-patras-noembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΝΟΕΜΒΡΙΟΣ 2019,2019-11,1
+S26,similar title,pireas-noembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΝΟΕΜΒΡΙΟΣ 2019,2019-11,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-noembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΝΟΕΜΒΡΙΟΣ 2019,2019-11,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-noembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΝΟΕΜΒΡΙΟΣ 2019,2019-11,1
+S26,similar title,statistika-ix8yoskalas-xioy-noembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΝΟΕΜΒΡΙΟΣ 2019,2019-11,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-dekembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΔΕΚΕΜΒΡΙΟΣ 2019,2019-12,1
+S26,similar title,statistika-ix8yoskalas-kabalas-dekembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΔΕΚΕΜΒΡΙΟΣ 2019,2019-12,1
+S26,similar title,statistika-ix8yoskalas-kalymnoy-dekembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΛΥΜΝΟΥ ΔΕΚΕΜΒΡΙΟΣ 2019,2019-12,1
+S26,similar title,statistika-ix8yoskalas-patras-dekembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΔΕΚΕΜΒΡΙΟΣ 2019,2019-12,1
+S26,similar title,statistika-ix8yoskalas-peiraia-dekembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΔΕΚΕΜΒΡΙΟΣ 2019,2019-12,1
+S26,similar title,statistika-ix8yoskalas-prebezas-dekembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΡΕΒΕΖΑΣ ΔΕΚΕΜΒΡΙΟΣ 2019,2019-12,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-dekembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΔΕΚΕΜΒΡΙΟΣ 2019,2019-12,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-dekembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΔΕΚΕΜΒΡΙΟΣ 2019,2019-12,1
+S26,similar title,statistika-ix8yoskalas-xioy-dekembrios-2019,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΔΕΚΕΜΒΡΙΟΣ 2019,2019-12,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-ianoyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΙΑΝΟΥΑΡΙΟΣ 2020,2020-01,1
+S26,similar title,statistika-ix8yoskalas-kabalas-ianoyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΙΑΝΟΥΑΡΙΟΣ 2020,2020-01,1
+S26,similar title,statistika-ix8yoskalas-patras-ianoyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΙΑΝΟΥΑΡΙΟΣ 2020,2020-01,1
+S26,similar title,statistika-ix8yoskalas-peiraia-ianoyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΙΑΝΟΥΑΡΙΟΣ 2020,2020-01,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-ianoyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΙΑΝΟΥΑΡΙΟΣ 2020,2020-01,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-ianoyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΙΑΝΟΥΑΡΙΟΣ 2020,2020-01,1
+S26,similar title,statistika-ix8yoskalas-xioy-ianoyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΙΑΝΟΥΑΡΙΟΣ 2020,2020-01,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-febroyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΦΕΒΡΟΥΑΡΙΟΣ 2020,2020-02,1
+S26,similar title,statistika-ix8yoskalas-kabalas-febroyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΦΕΒΡΟΥΑΡΙΟΣ 2020,2020-02,1
+S26,similar title,statistika-ix8yoskalas-patras-febroyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΦΕΒΡΟΥΑΡΙΟΣ 2020,2020-02,1
+S26,similar title,statistika-ix8yoskalas-peiraia-febroyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΦΕΒΡΟΥΑΡΙΟΣ 2020,2020-02,1
+S26,similar title,statistika-ix8yoskalas-prebezas-febroyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΡΕΒΕΖΑΣ ΦΕΒΡΟΥΑΡΙΟΣ 2020,2020-02,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-febroyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΦΕΒΡΟΥΑΡΙΟΣ 2020,2020-02,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-febroyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΦΕΒΡΟΥΑΡΙΟΣ 2020,2020-02,1
+S26,similar title,statistika-ix8yoskalas-xioy-febroyarios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΦΕΒΡΟΥΑΡΙΟΣ 2020,2020-02,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-martios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΜΑΡΤΙΟΣ 2020,2020-03,1
+S26,similar title,statistika-ix8yoskalas-kabalas-martios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΜΑΡΤΙΟΣ 2020,2020-03,1
+S26,similar title,statistika-ix8yoskalas-patras-martios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΜΑΡΤΙΟΣ 2020,2020-03,1
+S26,similar title,statistika-ix8yoskalas-peiraia-martios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΜΑΡΤΙΟΣ 2020,2020-03,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-martios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΜΑΡΤΙΟΣ 2020,2020-03,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-martios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΜΑΡΤΙΟΣ 2020,2020-03,1
+S26,similar title,statistika-ix8yoskalas-xioy-martios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΜΑΡΤΙΟΣ 2020,2020-03,1
+S26,similar title,statistika-ix8yoskalas-ale3androypolhs-aprilios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΑΛΕΞΑΝΔΡΟΥΠΟΛΗΣ ΑΠΡΙΛΙΟΣ 2020,2020-04,1
+S26,similar title,statistika-ix8yoskalas-kabalas-aprilios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΚΑΒΑΛΑΣ ΑΠΡΙΛΙΟΣ 2020,2020-04,1
+S26,similar title,statistika-ix8yoskalas-patras-aprilios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΑΤΡΑΣ ΑΠΡΙΛΙΟΣ 2020,2020-04,1
+S26,similar title,statistika-ix8yoskalas-peiraia-aprilios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΠΕΙΡΑΙΑ ΑΠΡΙΛΙΟΣ 2020,2020-04,1
+S26,similar title,statistika-ix8yoskalas-xalkidas-aprilios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΛΚΙΔΑΣ ΑΠΡΙΛΙΟΣ 2020,2020-04,1
+S26,similar title,statistika-ix8yoskalas-xaniwn-aprilios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΑΝΙΩΝ ΑΠΡΙΛΙΟΣ 2020,2020-04,1
+S26,similar title,statistika-ix8yoskalas-xioy-aprilios-2020,ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΧΙΟΥ ΑΠΡΙΛΙΟΣ 2020,2020-04,1
+S29,same title,pinakes-timolhpsiwn-30-11-15-syroy,ΠΙΝΑΚΕΣ ΤΙΜΟΛΗΨΙΩΝ 30-11-15 ΣΥΡΟΥ,2015-11-30,2
+S29,same title,pinakes-timolhpsiwn-syroy-15-02-2016,ΠΙΝΑΚΕΣ ΤΙΜΟΛΗΨΙΩΝ ΣΥΡΟΥ 15-02-2016,2016-02-15,1
+S29,similar title,pinakes-timolhpsiwn-p-n-a-p-e-syroy-kai-meses-times-proiontwn-stis,ΠΙΝΑΚΕΣ ΤΙΜΟΛΗΨΙΩΝ Π.Ν.Α - Π.Ε ΣΥΡΟΥ ΚΑΙ ΜΕΣΕΣ ΤΙΜΕΣ ΠΡΟΪΟΝΤΩΝ ΣΤΙΣ 18-01-2016,2016-01-18,1
+S29,similar title,ttinakee-timoahyion-eypoy-04-04-2015,ΠΙΝΑΚΕΣ ΤΙΜΟΛΗΨΙΩΝ ΣΥΡΟΥ 04-04-2016 ΜΕΣΕΣ ΤΙΜΕΣ ΠΡΟΪΟΝΤΩΝ,2016-04-04,2
+S32,similar title,periballontikoi-elegxoi-apo-th-d-pe-xw-sx-p-d-e,Περιβαλλοντικοί έλεγχοι από τη Δ.ΠΕ.ΧΩ.ΣΧ. Π.Δ.Ε.,"2015, 2016, 2017, 2018, 2019",5

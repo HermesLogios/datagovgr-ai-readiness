@@ -1,0 +1,369 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Διαχείριση Στοιχείων Παραγωγής Νωπού Γάλακτος",
+  "description": "Ο ΕΛΓΟ‑ΔΗΜΗΤΡΑ τηρεί μητρώο αγοραστών‑μεταποιητών, συνεταιρισμών συγκέντρωσης γάλακτος καθώς και μητρώο παραγωγών γάλακτος. Στο πλαίσιο αυτό συλλέγει, επεξεργάζεται και διαχειρίζεται στοιχεία που αφορούν την παραγωγή και διακίνηση του νωπού γάλακτος στην ελληνική Επικράτεια. Ο Οργανισμός μεριμνά για τη συστηματική δημοσιοποίηση των εν λόγω στοιχείων υπό μορφή στατιστικών δεδομένων, με σκοπό την έγκυρη πληροφόρηση των ενδιαφερόμενων μερών και την αντικειμενική αποτύπωση της δραστηριότητας στον γαλακτοκομικό τομέα",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "ΕΛΓΟ ΔΗΜΗΤΡΑ | Δ/νση Διαχείρισης Ελέγχων Γάλακτος & Κρέατος | Τμήμα Πληροφοριακών Υποδομών, Στατιστικής & Μηχ/κής Υποστήριξης"
+  },
+  "dateModified": "2026-10-22",
+  "datePublished": "2026-03-31",
+  "keywords": [
+    "Αγελαδινό",
+    "Βουβαλίσιο",
+    "Γάλα",
+    "Γίδινο",
+    "ΕΛΓΟ ΔΗΜΗΤΡΑ",
+    "Μέση τιμή νωπού γάλακτος",
+    "ΠΡΟΒΕΙΟ",
+    "Παραγωγή",
+    "Περιφερειακές Ενότητες",
+    "Ποσότητα γάλακτος",
+    "Πρόβειο",
+    "Στατιστικά γάλακτος",
+    "Τιμές"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/diacheirisi-stoicheion-paragogis-nopoy-galaktos",
+  "version": "1.0",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "ΕΛΛΑΔΑ – ΕΠΙΚΡΑΤΕΙΑ: Παραδοθείσες ποσότητες σε κιλά, μέση τιμή, αξία και πλήθος παραγωγών νωπού αγελαδινού, πρόβειου, γίδινου και βουβαλίσιου γάλακτος ανά Περιφερειακή Ενότητα και ανά μήνα, για τα έτη 2020 έως 2026",
+      "description": "Το παρόν σύνολο δεδομένων αφορά στην επίσημη μηνιαία στατιστική απεικόνιση της παραγωγής νωπού γάλακτος στην Ελλάδα, όπως αυτή προκύπτει από τις δηλώσεις παραλαβών που υποβάλλονται στον ΕΛΓΟ-ΔΗΜΗΤΡΑ Περιλαμβάνει στοιχεία για τα έτη 2020 έως σήμερα ανά Περιφερειακή Ενότητα και αφορά στα είδη γάλακτος: αγελαδινό, πρόβειο, γίδινο και βουβαλίσιο. Τα δεδομένα περιλαμβάνουν τις παραδοθείσες ποσότητες (Kg), τη μέση τιμή (€/Kg), τη συνολική αξία (€) και το πλήθος των παραγωγών. Η συλλογή και επεξεργασία των στοιχείων πραγματοποιείται από τη Διεύθυνση Διαχείρισης Ελέγχων Γάλακτος & Κρέατος του Οργανισμού, στο πλαίσιο της παρακολούθησης της εγχώριας παραγωγής και της ενημέρωσης των εμπλεκομένων στον τομέα της κτηνοτροφίας.",
+      "contentSize": "1545514 B",
+      "contentUrl": "https://data.gov.gr/datastore/dump/8a17d69a-9bae-4859-b55f-ce024be9196a?format=csv",
+      "encodingFormat": "text/csv",
+      "sha256": "e198b14325e6f416086208e7bfae6b7fb9707f947fc8961e458241b929d83c51"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records",
+      "name": "records",
+      "description": "Columns of the table examined for the assessment (r001).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records/c001",
+          "name": "Έτος",
+          "description": "Έτος αναφοράς των στοιχείων (από το 2020 έως σήμερα).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Έτος"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c002",
+          "name": "Μήνας ID",
+          "description": "Κωδικός του μήνα αναφοράς· η ονομασία του μήνα δίνεται στη στήλη «Μήνας».",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Μήνας ID"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c003",
+          "name": "Μήνας",
+          "description": "Μήνας αναφοράς των στοιχείων (μηνιαία στατιστική απεικόνιση).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Μήνας"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c004",
+          "name": "Περιφερειακή Ενότητα",
+          "description": "Περιφερειακή Ενότητα στην οποία αφορούν τα στοιχεία.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Περιφερειακή Ενότητα"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c005",
+          "name": "Είδος Γάλακτος ID",
+          "description": "Κωδικός του είδους γάλακτος· η ονομασία του δίνεται στη στήλη «Είδος Γάλακτος».",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Είδος Γάλακτος ID"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c006",
+          "name": "Είδος Γάλακτος",
+          "description": "Είδος γάλακτος: αγελαδινό, πρόβειο, γίδινο ή βουβαλίσιο.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Είδος Γάλακτος"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c007",
+          "name": "Πλήθος Παραγωγών Σύνολο",
+          "description": "Πλήθος των παραγωγών (σύνολο).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Πλήθος Παραγωγών Σύνολο"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c008",
+          "name": "Ποσότητα Σύνολο (Kg)",
+          "description": "Παραδοθείσες ποσότητες νωπού γάλακτος σε κιλά (Kg) (σύνολο).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Ποσότητα Σύνολο (Kg)"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c009",
+          "name": "Αξία Σύνολο (€)",
+          "description": "Συνολική αξία σε ευρώ (€) (σύνολο).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Αξία Σύνολο (€)"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c010",
+          "name": "Μέση τιμή Σύνολο (€/Kg)",
+          "description": "Μέση τιμή σε ευρώ ανά κιλό (€/Kg) (σύνολο).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Μέση τιμή Σύνολο (€/Kg)"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c011",
+          "name": "Πλήθος Παραγωγών Βιολογικό",
+          "description": "Πλήθος των παραγωγών (βιολογικό γάλα).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Πλήθος Παραγωγών Βιολογικό"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c012",
+          "name": "Ποσότητα Βιολογικό (Kg)",
+          "description": "Παραδοθείσες ποσότητες νωπού γάλακτος σε κιλά (Kg) (βιολογικό γάλα).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Ποσότητα Βιολογικό (Kg)"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c013",
+          "name": "Αξία Βιολογικό (€)",
+          "description": "Συνολική αξία σε ευρώ (€) (βιολογικό γάλα).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Αξία Βιολογικό (€)"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c014",
+          "name": "Μέση τιμή Βιολογικό (€/Kg)",
+          "description": "Μέση τιμή σε ευρώ ανά κιλό (€/Kg) (βιολογικό γάλα).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Μέση τιμή Βιολογικό (€/Kg)"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c015",
+          "name": "Πλήθος Παραγωγών Συμβατικό",
+          "description": "Πλήθος των παραγωγών (συμβατικό γάλα).",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Πλήθος Παραγωγών Συμβατικό"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c016",
+          "name": "Ποσότητα Συμβατικό (Kg)",
+          "description": "Παραδοθείσες ποσότητες νωπού γάλακτος σε κιλά (Kg) (συμβατικό γάλα).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Ποσότητα Συμβατικό (Kg)"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c017",
+          "name": "Αξία Συμβατικό (€)",
+          "description": "Συνολική αξία σε ευρώ (€) (συμβατικό γάλα).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Αξία Συμβατικό (€)"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c018",
+          "name": "Μέση τιμή Συμβατικό (€/Kg)",
+          "description": "Μέση τιμή σε ευρώ ανά κιλό (€/Kg) (συμβατικό γάλα).",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Μέση τιμή Συμβατικό (€/Kg)"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Ημερήσιες μετεωρολογικές παράμετροι για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς",
+  "description": "Το σύνολο των δεδομένων αφορά ημερήσιες μετεωρολογικές παραμέτρους για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς. Μπορείτε να δείτε οπτικοποιήσεις των δεδομένων αυτών των σταθμών στην σελίδα https://www.meteo.gr/climate/ Οι παράμετροι είναι θερμοκρασία (°C), σχετική υγρασία (%), πίεση (hPa), βροχόπτωση (mm), ταχύτητα (km/h), επικρατούσα διεύθυνση ανέμου και ριπή ανέμου(km/h). Οι μετρήσεις προέρχονται από το δίκτυο των αυτόματων μετεωρολογικών σταθμών του Εθνικού Αστεροσκοπείου Αθηνών/meteo.gr. Πληροφορίες για τους σταθμούς και για τυχόν δυσλειτουργίες δίνονται στο http://meteosearch.meteo.gr/ στην σελίδα του αντίστοιχου σταθμού. Αναφορά στο δίκτυο γίνεται μέσω της επιστημονικής δημοσίευσης https://rmets.onlinelibrary.wiley.com/doi/full/10.1002/gdj3.44",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Εθνικό Αστεροσκοπείο Αθηνών"
+  },
+  "dateModified": "2026-05-11",
+  "datePublished": "2026-03-30",
+  "keywords": [
+    "Εθνικό Αστεροσκοπείο Αθηνών",
+    "βροχόπτωση",
+    "ημερήσιες μετεωρολογικές παράμετροι",
+    "θερμοκρασία ημέρας",
+    "σχετική υγρασία"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/stations-data",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Ημερήσιες μετεωρολογικές παράμετροι για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς",
+      "contentSize": "5563399 B",
+      "contentUrl": "https://data.gov.gr/dataset/cee4f7c1-68b3-4014-b7c7-926584b7bfe5/resource/821a8238-cf34-4cd1-b6f0-8668e13b8299/download/meteo_datagov.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "e4742243958957fef469a6e0ad9d6cc1ccc793cffcfa38b36a0bb861341c7131"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001_m01",
+      "name": "aghiosnikolaos.csv",
+      "contentUrl": "stations_data/aghiosnikolaos.csv",
+      "cr:containedIn": {
+        "@id": "r001"
+      },
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001_m02",
+      "name": "stations_list.csv",
+      "contentUrl": "stations_list.csv",
+      "cr:containedIn": {
+        "@id": "r001"
+      },
+      "encodingFormat": "text/csv"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_01",
+      "name": "records_01",
+      "description": "Columns of the table examined for the assessment (r001, file stations_data/aghiosnikolaos.csv). The same columns are found in 54 of the examined tables of the dataset.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c001",
+          "name": "Date",
+          "dataType": "sc:Date",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "Date"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c002",
+          "name": "T_mean",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "T_mean"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c003",
+          "name": "T_max",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "T_max"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c004",
+          "name": "T_min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "T_min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c005",
+          "name": "RH_mean",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "RH_mean"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c006",
+          "name": "RH_max",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "RH_max"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c007",
+          "name": "RH_min",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "RH_min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c008",
+          "name": "Prs_mean",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "Prs_mean"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c009",
+          "name": "Prs_max",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "Prs_max"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c010",
+          "name": "Prs_min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "Prs_min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c011",
+          "name": "Ac_R",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "Ac_R"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c012",
+          "name": "WS_mean",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "WS_mean"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c013",
+          "name": "DWD",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "DWD"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_01/c014",
+          "name": "WG",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            },
+            "extract": {
+              "column": "WG"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records_02",
+      "name": "records_02",
+      "description": "Columns of the table examined for the assessment (r001, file stations_list.csv).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c001",
+          "name": "stations",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m02"
+            },
+            "extract": {
+              "column": "stations"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c002",
+          "name": "latitude",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m02"
+            },
+            "extract": {
+              "column": "latitude"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c003",
+          "name": "longitude",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m02"
+            },
+            "extract": {
+              "column": "longitude"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records_02/c004",
+          "name": "altitude",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m02"
+            },
+            "extract": {
+              "column": "altitude"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

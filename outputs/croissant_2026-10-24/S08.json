@@ -1,0 +1,401 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "\"ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ ΔΗΜΟΣΙΑΣ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ ΔΙΕΥΘΥΝΣΗ ΕΚΠΑΙΔΕΥΣΗΣ ΓΙΑ ΤΟ ΣΧΟΛΙΚΟ ΕΤΟΣ 2024-2025 \"",
+  "description": "\"ΔΕΥΤΕΡΟΒΑΘΜΙΑ ΔΗΜΟΣΙΑ ΕΚΠΑΙΔΕΥΣΗ - ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ Δ/ΝΣΗ ΕΚΠ/ΣΗΣ ΓΙΑ ΤΟ ΣΧ. ΕΤΟΣ 2024-2025 \"",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Τμήμα Στατιστικής και Ποιοτικής Επεξεργασίας Δεδομένων - Διεύθυνση Στρατηγικού Σχεδιασμού και Συντονισμού"
+  },
+  "dateModified": "2026-05-11",
+  "datePublished": "2026-04-29",
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/arithmos-ekpaideytikon-deyterovathmia-eidikotita-schesi-ergasias-2025",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "de_ekpaid_ana_perif_eidik_sxesh_ergasias_2024_2025.xlsx",
+      "contentSize": "97248 B",
+      "contentUrl": "https://data.gov.gr/dataset/a8c1bddf-6ae2-4b51-a079-4ac22fa84327/resource/5b79c9bc-62b5-43be-8997-c1af4ac124b7/download/de_ekpaid_ana_perif_eidik_sxesh_ergasias_2024_2025.xlsx",
+      "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "5c10a1c6cab2cd7d11deb1dcb0a9fa0b7f2e5ed3b95150db7a680244cb886666"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records",
+      "name": "records",
+      "description": "Columns of the table examined for the assessment (r001, sheet \"ΔΕ ΕΚΠΑΙΔ τελικό\").",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records/c001",
+          "name": "Περιφέρεια",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c002",
+          "name": "Κωδ. Ειδικότητας",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c003",
+          "name": "Ειδικότητα",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c004",
+          "name": "Αναπληρωτής",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c005",
+          "name": "Αναπληρωτής ΔΥΕΠ Μειωμένου Ωραρίου μέσω ΕΣΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c006",
+          "name": "Αναπληρωτής ΔΥΕΠ μέσω ΕΣΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c007",
+          "name": "Αναπληρωτής Ειδικής Μειωμένου Ωραρίου μέσω ΕΣΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c008",
+          "name": "Αναπληρωτής Ειδικής μέσω ΕΣΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c009",
+          "name": "Αναπληρωτής Ειδικής μέσω ΠΔΕ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c010",
+          "name": "Αναπληρωτής Ενισχυτικής Διδασκαλίας",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c011",
+          "name": "Αναπληρωτής ΖΕΠ Μειωμένου Ωραρίου μέσω ΕΣΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c012",
+          "name": "Αναπληρωτής ΖΕΠ Μειωμένου Ωραρίου μέσω ΠΔΕ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c013",
+          "name": "Αναπληρωτής Μαθητείας Μειωμένου Ωραρίου μέσω ΕΣΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c014",
+          "name": "Αναπληρωτής Μειωμένου Ωραρίου",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c015",
+          "name": "Αναπληρωτής Μειωμένου Ωραρίου μέσω ΕΣΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c016",
+          "name": "Αναπληρωτής μέσω ΕΣΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c017",
+          "name": "Αναπληρωτής ΜΝΑΕ Μειωμένου Ωραρίου μέσω ΕΣΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c018",
+          "name": "Αναπληρωτής ΜΝΑΕ μέσω ΕΣΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c019",
+          "name": "Αναπληρωτής Παράλληλης Στήριξης Μειωμένου Ωραρίου μέσω ΕΣΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c020",
+          "name": "Αναπληρωτής Παράλληλης Στήριξης μέσω ΕΣΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c021",
+          "name": "Αναπληρωτής ΠΔΕ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c022",
+          "name": "Αναπληρωτής ΠΔΕ Μειωμένου Ωραρίου",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c023",
+          "name": "Αναπληρωτής ΣΔΕΥ μέσω ΕΣΠΑ",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c024",
+          "name": "Ιδιωτικού Δικαίου Αορίστου Χρόνου (Ι.Δ.Α.Χ.)",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c025",
+          "name": "Μετακλητός",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c026",
+          "name": "Μόνιμος",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c027",
+          "name": "Ωρομίσθιος",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c028",
+          "name": "Ωρομίσθιος Ενισχυτικής Διδασκαλίας / Π.Δ.Σ.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c029",
+          "name": "Γενικό Άθροισμα",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

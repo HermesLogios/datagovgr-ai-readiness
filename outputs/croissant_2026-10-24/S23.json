@@ -1,0 +1,478 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Athens Business Open Data - STIRData model",
+  "description": "Athens Register open data provided by the Athens Chamber of Commerce and Industry according to the STIRData model.",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Εμπορικό και Βιομηχανικό Επιμελητήριο Αθηνών (ΕΒΕΑ)"
+  },
+  "dateModified": "2026-04-28",
+  "datePublished": "2025-11-17",
+  "keywords": [
+    "Acci",
+    "Athens",
+    "Athens chamber of commerce and industry",
+    "Chamber",
+    "Company",
+    "Company registry",
+    "Greece",
+    "Public authority",
+    "Registry",
+    "repository.data.gov.gr",
+    "Αθήνα",
+    "Από μετάπτωση",
+    "Δημόσια αρχή",
+    "Εβεα",
+    "Ελλάδα",
+    "Εμπορικό και βιομηχανικό επιμελητήριο αθηνών",
+    "Επιμελητήριο",
+    "Επιχειρήσεις",
+    "Μητρώο",
+    "Μητρώο επιχειρήσεων"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/athens-business-open-data-stirdata-model",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Turtle data",
+      "contentSize": "124391764 B",
+      "contentUrl": "https://stirdata-semantic.ails.ece.ntua.gr/api/content/el/distribution/ttl",
+      "encodingFormat": "text/turtle",
+      "sha256": "89d610f756e048aa78f5f160a5181bed15f24d29d1c2575963722b942af9eee5"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records",
+      "name": "records",
+      "description": "Columns of the table examined for the assessment (r001).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records/c001",
+          "name": "adminUnit",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c002",
+          "name": "adminUnitL1",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c003",
+          "name": "adminUnitL2",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c004",
+          "name": "auxiliaryActivity",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c005",
+          "name": "chamberIdentifier",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c006",
+          "name": "code",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c007",
+          "name": "companyActivity",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c008",
+          "name": "companyStatus",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c009",
+          "name": "companyType",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c010",
+          "name": "creator",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c011",
+          "name": "fullAddress",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c012",
+          "name": "issued",
+          "dataType": "sc:Date",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c013",
+          "name": "legalIdentifier",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c014",
+          "name": "legalName",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c015",
+          "name": "level",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c016",
+          "name": "locatorDesignator",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c017",
+          "name": "modified",
+          "dataType": "sc:DateTime",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c018",
+          "name": "naceDataset",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c019",
+          "name": "notation",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c020",
+          "name": "postCode",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c021",
+          "name": "postName",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c022",
+          "name": "primaryActivity",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c023",
+          "name": "racCode",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c024",
+          "name": "registeredAddress",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c025",
+          "name": "registrationDate",
+          "dataType": "sc:Date",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c026",
+          "name": "sameAs",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c027",
+          "name": "secondaryActivity",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c028",
+          "name": "source",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c029",
+          "name": "spatial",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c030",
+          "name": "taxIdentifier",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c031",
+          "name": "thoroughfare",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c032",
+          "name": "title",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c033",
+          "name": "type",
+          "dataType": "sc:URL",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c034",
+          "name": "url",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

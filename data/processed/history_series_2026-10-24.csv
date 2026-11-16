@@ -1,0 +1,128 @@
+﻿sample_id,source,where,column,unit,periods,first,last,expected,missing,missing_periods,records,records_per_period,rows_without_values,periods_not_read,notes
+S04,resources,,,dated edition,2,2025-01-15,2026-06-23,,,no regular step,,,,,"editions: 2025-01-15, 2026-06-23; 2 resources per period"
+S06,resources,,,year,12,2014,2025,12,0,none,,,,,1 resource per period
+S07,table,r001,Έτος and Μήνας ID,month,80,2020-01,2026-08,80,0,none,11490,136 to 149,0,0,
+S08,catalogue,αριθμος εκπαιδευτικων δημοσιας δευτεροβαθμιας εκπαιδευσης ανα ειδικοτητα και σχεση εργασιας ανα περιφερειακη διευθυνση εκπαιδευσης για το σχολικο ετος,,range of years,2,2023-2024,2024-2025,2,0,none,,,,,1 other dataset of the publisher with the same title
+S09,resources,,,year,7,2020,2026,7,0,none,,,,,1 resource per period
+S10,header,r001,,month,361,1995-12,2025-12,361,0,none,,,,,the periods are the names of columns
+S12,resources,,,range of days,13,2026-03-05,2026-10-25,235,81,"2026-04-28 to 2026-06-18 (52), 2026-08-04 to 2026-08-05 (2), 2026-08-18 to 2026-09-03 (17), 2026-09-22 to 2026-10-01 (10)",,,,,81 of the 235 days between the first and the last are covered by no file obtained (61 by no resource listed); no file obtained for 2026-04-27 to 2026-05-17; 1 resource per period
+S14,resources,,,day,12,2025-11-20,2025-12-01,12,0,none,,,,,11 resources per period; 31 files identical to the file of an earlier period; 1 file identical to another file of the same period
+S18,catalogue,καλυψη γης μεταβολες corine land cover,,range of years,3,2000,2018,19,0,none,,,,,2 other datasets of the publisher with the same title
+S19,table,r001,yyyyMMddHHmm,day,217,2026-04-01,2026-11-03,217,0,none,62437,268 to 288,0,0,"readings every 5 minutes; 56 of 62,493 readings missing between the first and the last; longest interruption 105 minutes"
+S20,table,r001 stations_data/aghiosnikolaos.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/alexandroupolis.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/amfiklia.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/argos.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/arta.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/athens.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/chania.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/dion.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/drama.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/florina.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/gavalou.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/grevena.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/heraclion.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/igoumenitsa.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/ioannina.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/ithaki.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/karpenisitown.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/kea.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/kerkyra.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/kilkis.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/kyparissia.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/larissa.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/lavrio.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/lefkada.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/lemnos.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/lindos.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/livadeia.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/megalopoli.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/mornos1.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/naousa.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/nemea.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/nevrokopi.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/notiopedio.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/orestiada.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/paros.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/patra.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/petrokefali.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/pirgos.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/polygyros.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/ptolemaida.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/rethymno.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/samos.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/samothraki.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/skopelos.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/sparti.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/tanagra.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/thessaloniki.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/tinos.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/trikala.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/tripoli.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/vatopedi.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/veroia.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/volos.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S20,table,r001 stations_data/xanthi.csv,Date,day,5113,2010-01-01,2023-12-31,5113,0,none,5113,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Αβδού Ηρακλείου 02.xls sheet ""ΑΒΔΟΥ""",ΥΔΡ.ΕΤΟΣ,year label,41,1964-65,2004-05,41,0,none,41,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Αγ. Βαρβάρα Ηρακλείου 02.xls sheet ""ΑΓ. ΒΑΡΒΑΡΑ""",ΥΔΡ.ΕΤΟΣ,year label,40,1965-66,2004-05,40,0,none,40,1,1,0,1 period with a row that holds no value: 2005-06
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Αγ. Κύριλλος Ηρακλείου 02.xls sheet ""ΑΓΙΟΣ ΚΥΡΙΛΛΟΣ""",ΥΔΡ.ΕΤΟΣ,year label,44,1961-62,2004-05,44,0,none,44,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Αρμάχα Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,43,1962-63,2004-05,43,0,none,43,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Ασήμι 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,43,1961-62,2003-04,43,0,none,43,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Αχεντριάς Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,36,1969-70,2004-05,36,0,none,36,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Βαγιωνιά Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,36,1969-70,2004-05,36,0,none,36,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Βορίζια Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,42,1963-64,2004-05,42,0,none,42,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Βόνη Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,38,1967-68,2004-05,38,0,none,38,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Γέργερη Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,42,1963-64,2004-05,42,0,none,42,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Δεματιι Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,41,1964-65,2004-05,41,0,none,41,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Ζαρός Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,53,1952-53,2004-05,53,0,none,53,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Καλύβια Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,36,1969-70,2004-05,36,0,none,36,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Καπετανιανά Ηρακλείου            02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,36,1969-70,2004-05,36,0,none,36,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Κασσάνοι Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,43,1962-63,2004-05,43,0,none,43,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Καστέλι Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,69,1931-32,2004-05,74,5,1943-44 to 1947-48 (5),69,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Καψάλοι 02.xls sheet ""ΚΑΨΑΛΟΙ""",ΥΔΡ.ΕΤΟΣ,year label,20,1987-88,2006-07,20,0,none,20,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Κρουσώνας Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,41,1964-65,2004-05,41,0,none,41,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Λαγολιό 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,36,1969-70,2004-05,36,0,none,36,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Μεταξοχώρι Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,37,1968-69,2004-05,37,0,none,37,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Μορόνι  Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,36,1969-70,2004-05,36,0,none,36,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Παρτηρα Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,36,1969-70,2004-05,36,0,none,36,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Πραιτώρεια Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,38,1967-68,2004-05,38,0,none,38,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Προφήτης Ηλίας 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,40,1965-66,2004-05,40,0,none,40,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Πόμπια 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,60,1945-46,2004-05,60,0,none,60,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Τεφελι Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,43,1962-63,2004-05,43,0,none,43,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Υ.Ε.Β. 02.xls sheet ""ΥΕΒ""",ΥΔΡ.ΕΤΟΣ,year label,30,1975-76,2004-05,30,0,none,30,1,0,0,
+S21,table,"r002 Ν. ΗΡΑΚΛΕΙΟΥ/Φοινικιά Ηρακλείου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,39,1966-67,2004-05,39,0,none,39,1,0,0,
+S21,table,"r003 Ν. ΛΑΣΙΘΙΟΥ/Αγιος Γεώργιος 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,36,1965-66,2000-01,36,0,none,36,1,0,0,
+S21,table,"r003 Ν. ΛΑΣΙΘΙΟΥ/ΕΞΩ ΠΟΤΑΜΟΙ 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,70,1930-31,2004-05,75,5,1941-42 to 1945-46 (5),70,1,0,0,
+S21,table,"r003 Ν. ΛΑΣΙΘΙΟΥ/Καλό Χωριό Λασιθίου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,67,1937-38,2004-05,68,1,1948-49,67,1,1,0,1 period with a row that holds no value: 1948-49
+S21,table,"r003 Ν. ΛΑΣΙΘΙΟΥ/Κατσιδόνι 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,41,1964-65,2004-05,41,0,none,41,1,0,0,
+S21,table,"r003 Ν. ΛΑΣΙΘΙΟΥ/Μάλλες Λασιθίου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,42,1963-64,2004-05,42,0,none,42,1,0,0,
+S21,table,"r003 Ν. ΛΑΣΙΘΙΟΥ/Μαρωνιά Λασιθίου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,68,1932-33,2004-05,73,5,1941-42 to 1945-46 (5),68,1,0,0,
+S21,table,"r003 Ν. ΛΑΣΙΘΙΟΥ/Μύθοι 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,42,1963-64,2004-05,42,0,none,42,1,0,0,
+S21,table,"r003 Ν. ΛΑΣΙΘΙΟΥ/Νεάπολη Λασιθίου 02.xls sheet ""AGGALI95 (2)""",ΥΔΡ.ΕΤΟΣ,year label,66,1931-32,2004-05,74,8,1941-42 to 1948-49 (8),66,1,0,0,
+S21,table,"r003 Ν. ΛΑΣΙΘΙΟΥ/Παλαιόκαστρο 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,41,1964-65,2004-05,41,0,none,41,1,0,0,
+S21,table,"r003 Ν. ΛΑΣΙΘΙΟΥ/Παχειά Αμμος 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,42,1963-64,2004-05,42,0,none,42,1,0,0,
+S21,table,"r003 Ν. ΛΑΣΙΘΙΟΥ/Σητεία Λασιθίου 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,84,1915-16,2004-05,90,6,"1944-45 to 1945-46 (2), 1956-57 to 1959-60 (4)",84,1,0,0,
+S21,table,"r003 Ν. ΛΑΣΙΘΙΟΥ/Σταυροχωρι 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,38,1966-67,2003-04,38,0,none,38,1,1,0,1 period with a row that holds no value: 2004-05
+S21,table,"r004 Ν. ΡΕΘΥΜΝΗΣ/Αγια Γαληνη  Ρεθύμνης 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,36,1969-70,2004-05,36,0,none,36,1,0,0,
+S21,table,"r004 Ν. ΡΕΘΥΜΝΗΣ/Ανώγεια  Ρεθύμνης 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,76,1918-19,2000-01,83,7,"1937-38, 1944-45 to 1948-49 (5), 1963-64",77,1 to 2,0,1,1 period carried by more than one record: 1993-94; 1 record with a period that could not be read
+S21,table,"r004 Ν. ΡΕΘΥΜΝΗΣ/Βολεώνες Ρεθύμνης 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,40,1965-66,2004-05,40,0,none,40,1,0,0,
+S21,table,"r004 Ν. ΡΕΘΥΜΝΗΣ/Βυζάρι  Ρεθύμνης 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,36,1969-70,2004-05,36,0,none,36,1,0,0,
+S21,table,"r004 Ν. ΡΕΘΥΜΝΗΣ/Γαράζο  Ρεθύμνης 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,10,1995-96,2004-05,10,0,none,10,1,0,0,
+S21,table,"r004 Ν. ΡΕΘΥΜΝΗΣ/Γερακάρι Ρεθύμνης 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,38,1967-68,2004-05,38,0,none,38,1,0,0,
+S21,table,"r004 Ν. ΡΕΘΥΜΝΗΣ/Καβούσι Ρεθύμνης 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,36,1969-70,2004-05,36,0,none,36,1,0,0,
+S21,table,"r004 Ν. ΡΕΘΥΜΝΗΣ/Λευκόγεια Ρεθύμνης  02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,39,1966-67,2004-05,39,0,none,39,1,0,0,
+S21,table,"r004 Ν. ΡΕΘΥΜΝΗΣ/Μέλαμπες  Ρεθύμνης 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,41,1964-65,2004-05,41,0,none,42,1 to 2,0,0,1 period carried by more than one record: 1993-94
+S21,table,"r004 Ν. ΡΕΘΥΜΝΗΣ/Σπήλι  Ρεθύμνης 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,40,1964-65,2004-05,41,1,2001-02,40,1,0,1,1 record with a period that could not be read
+S21,table,"r005 Ν. ΧΑΝΙΩΝ/Ασκύφου Χανίων 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,45,1960-61,2004-05,45,0,none,45,1,0,0,
+S21,table,"r005 Ν. ΧΑΝΙΩΝ/Γαύδος  Χανίων 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,12,1991-92,2002-03,12,0,none,12,1,1,0,1 period with a row that holds no value: 2003-04
+S21,table,"r005 Ν. ΧΑΝΙΩΝ/Καλύβες Χανίων 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,32,1973-74,2004-05,32,0,none,32,1,0,0,
+S21,table,"r005 Ν. ΧΑΝΙΩΝ/Μουρί Χανίων 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,42,1963-64,2004-05,42,0,none,42,1,0,0,
+S21,table,"r005 Ν. ΧΑΝΙΩΝ/Παλαιά Ρούματα Χανίων 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,45,1960-61,2004-05,45,0,none,45,1,0,0,
+S21,table,"r005 Ν. ΧΑΝΙΩΝ/Πρασσές  Χανίων 02.xls sheet ""AGGALI95""",ΥΔΡ.ΕΤΟΣ,year label,15,1990-91,2004-05,15,0,none,15,1,0,0,
+S25,catalogue,στατιστικα διατροφης,,month,8,2017-01,2018-04,16,8,"2017-05 to 2017-11 (7), 2018-02",,,,,8 other datasets of the publisher with the same title; 1 period carried by more than one dataset
+S26,catalogue,στατιστικα ιχθυοσκαλας θεσσαλονικης,,month,24,2018-04,2020-04,25,1,2019-04,,,,,23 other datasets of the publisher with the same title
+S29,catalogue,πινακες τιμοληψιων συρου,,dated edition,3,2015-02-01,2016-02-15,,,no regular step,,,,,2 other datasets of the publisher with the same title
+S31,resources,,,year,3,2017,2019,3,0,none,,,,,1 resource per period
+S32,table,"r001 sheet ""Π.Ε. Αχαϊας""",ΗΜΕΡΟΜΗΝΙΑ,month,12,2014-01,2014-12,12,0,none,126,3 to 16,0,0,dates on 85 of the 350 days between the first and the last
+S32,table,"r002 sheet ""Π.Ε. Αχαϊας""",ΗΜΕΡΟΜΗΝΙΑ,month,12,2014-01,2014-12,12,0,none,126,3 to 16,0,0,dates on 85 of the 350 days between the first and the last
+S32,table,"r002 sheet ""Π.Ε. Ηλείας""",ΗΜΕΡΟΜΗΝΙΑ,month,12,2014-01,2014-12,12,0,none,102,4 to 14,0,0,dates on 78 of the 361 days between the first and the last

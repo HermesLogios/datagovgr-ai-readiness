@@ -1,0 +1,29 @@
+﻿level,property,filled_from,count,of,share,note
+dataset,name,title,22805,22805,100.0,required
+dataset,description,description (notes),22094,22805,96.9,required
+dataset,license,licence term on every resource,22150,22805,97.1,required; the licence of a dataset is that of its resources (DECISIONS.md #31)
+dataset,license,"licence field of the dataset (license_url, license_title)",7535,22805,33.0,"the generic licence field of the software of the portal, which the Croissant profile of ckanext-dcat reads and the portal neither displays nor exports (DECISIONS.md #31)"
+dataset,license,"the same field, other than ""License not specified""",3895,22805,17.1,"the entry ""License not specified"" would be written as the licence"
+dataset,creator,"creator field of the dataset, otherwise its organisation",22805,22805,100.0,required
+dataset,creator,creator field of the dataset with at least one name,1899,22805,8.3,what the Croissant profile of ckanext-dcat writes as the creator
+dataset,creator,creator field filled without any name,278,22805,1.2,the profile would write a creator without a name; the organisation is written here
+dataset,datePublished,"issued, otherwise the date of the record (metadata_created)",22805,22805,100.0,required
+dataset,datePublished,issued,0,22805,0.0,the field of the date of publication itself
+dataset,keywords,tags,22456,22805,98.5,recommended
+dataset,version,version,226,22805,1.0,recommended
+dataset,inLanguage,language of the dataset,0,22805,0.0,recommended
+dataset,distribution,at least one resource,22732,22805,99.7,
+dataset,contentUrl,every resource with an address (url),22669,22805,99.4,
+dataset,encodingFormat,every resource with a media type (mimetype),2034,22805,8.9,
+dataset,md5 or sha256,every resource with a checksum of 32 or 64 characters (hash),6539,22805,28.7,the validator asks for a checksum of every file
+dataset,recordSet,at least one resource in the DataStore,1114,22805,4.9,the columns that the portal knows already
+dataset,all the required properties,the licence read from the resources,21446,22805,94.0,"name, description, licence, creator and date; the address of the page always exists"
+dataset,all the required properties,the licence read from the field of the dataset,6825,22805,29.9,what the Croissant profile of ckanext-dcat would write from the metadata as they are
+dataset,all the required properties,"the same field, other than ""License not specified""",3640,22805,16.0,
+resource,name,name of the resource,86061,86782,99.2,
+resource,md5,checksum of 32 characters (hash),17846,86782,20.6,
+resource,sha256,checksum of 64 characters (hash),0,86782,0.0,
+resource,checksum of another kind,checksum of another length (hash),897,86782,1.0,"for example SHA-1, which a Croissant description does not accept"
+resource,no checksum,empty hash,68039,86782,78.4,
+resource,encodingFormat,media type (mimetype),46869,86782,54.0,
+resource,recordSet,resource in the DataStore,1633,86782,1.9,

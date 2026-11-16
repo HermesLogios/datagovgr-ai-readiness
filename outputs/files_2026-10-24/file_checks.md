@@ -22,7 +22,7 @@ Criteria AI1 (a structure that a program can read without manual cleaning, DECIS
 | [S14](factsheets/S14.md) | [Υπηρεσίες Δήμου Πατρέων](https://data.gov.gr/dataset/ypiresies-dimoy-patreon) | series | r122-r132 | 2 | worst of 11 parts, r122: JSON parsed without error |
 | [S15](factsheets/S15.md) | [ΧΩΡΟΙ - ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ](https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-prosvasi) | formats | all | 2 | best of 3 formats, r001: one header row, one record per row |
 | [S16](factsheets/S16.md) | [Θεσμοθετημένες περιοχές NATURA 2000](https://data.gov.gr/dataset/thesmothetimenes-perioches-natura-2000) | single | r001 | 2 | r001 gr_natura_v31_union_final.shp: shapefile (polygon) read without error |
-| [S17](factsheets/S17.md) | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) | none | - | 0 | no data file: no data file available: the Excel file returns HTTP 404 and the other resource is a web page (Q1) |
+| [S17](factsheets/S17.md) | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) | formats | r002_csv_manual r002_geojson_manual | 2 | best of 2 formats, r002_csv_manual: one header row, one record per row |
 | [S18](factsheets/S18.md) | [Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018](https://data.gov.gr/dataset/gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012_2018) | formats | r002 r003 r004 r005 | 2 | best of 4 formats, r002: GeoJSON parsed without error |
 | [S19](factsheets/S19.md) | [Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ](https://data.gov.gr/dataset/emy-station-189) | single | r001 | 2 | r001: one header row, one record per row |
 | [S20](factsheets/S20.md) | [Ημερήσιες μετεωρολογικές παράμετροι για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς](https://data.gov.gr/dataset/stations-data) | single | r001 | 2 | r001: all 55 tables or files: one header row, one record per row |
@@ -43,7 +43,7 @@ Criteria AI1 (a structure that a program can read without manual cleaning, DECIS
 | [S35](factsheets/S35.md) | [Συνεδριάσεις Επιτροπής Αθλητισμού & Παιδείας Περιφέρειας Αττικής](https://data.gov.gr/dataset/attica-443-synedriaseis-epitrophs-athlhtismoy-paideias-perifereias-attikhs) | none | - | 0 | no data file: web page leading to one PDF document per decision |
 | [S36](factsheets/S36.md) | [Διάγραμμα Τροποποίησης - T1936A404_69912_500_01](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliotsp-t1936a404_69912_500_01) | none | - | 0 | no data file: map view (WMS), map image (PNG) and capabilities document only, none of them available (Q1) |
 
-Proposed scores of AI1: 0: 11, 1: 8, 2: 17.
+Proposed scores of AI1: 0: 10, 1: 8, 2: 18.
 
 ## Q2: completeness
 
@@ -65,7 +65,7 @@ Proposed scores of AI1: 0: 11, 1: 8, 2: 17.
 | [S14](factsheets/S14.md) | [Υπηρεσίες Δήμου Πατρέων](https://data.gov.gr/dataset/ypiresies-dimoy-patreon) | 13751 | 465 | 3.38 | 5 | 1 | all 11 parts together (r122 to r132): 3.38% of 13,751 cells empty; 5 columns without any value: sensor_description, location_id, location_name, location_lat, location_lng |
 | [S15](factsheets/S15.md) | [ΧΩΡΟΙ - ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ](https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-prosvasi) | 33 | 0 | 0.00 | 0 | 2 | most complete of 3 formats, r001: 0.00% of 33 cells empty; no column without any value |
 | [S16](factsheets/S16.md) | [Θεσμοθετημένες περιοχές NATURA 2000](https://data.gov.gr/dataset/thesmothetimenes-perioches-natura-2000) | 5930 | 1194 | 20.13 | 0 | 0 | r001 gr_natura_v31_union_final.shp, all properties and the geometry of the features: 20.13% of 5,930 cells empty; no column without any value |
-| [S17](factsheets/S17.md) | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) |  |  |  |  | 0 | no file can be opened: no data file available: the Excel file returns HTTP 404 and the other resource is a web page (Q1) |
+| [S17](factsheets/S17.md) | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) | 675 | 47 | 6.96 | 1 | 1 | most complete of 2 formats, r002_csv_manual: 6.96% of 675 cells empty; 1 column without any value: Αρ. Μητρώου Άδειας Παραγωγής ΡΑΕ |
 | [S18](factsheets/S18.md) | [Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018](https://data.gov.gr/dataset/gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012_2018) | 30 | 2 | 6.67 | 1 | 1 | most complete of 4 formats, r003: 6.67% of 30 cells empty; 1 column without any value: remark |
 | [S19](factsheets/S19.md) | [Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ](https://data.gov.gr/dataset/emy-station-189) | 3558909 | 1240108 | 34.85 | 18 | 0 | r001: 34.85% of 3,558,909 cells empty (1,240,108 of them placeholders: '/////' 624,373, '///' 322,608, '////' 168,253); 18 columns without any value: Prec_Sum_2_5min, Prec_Intensity_1min_2_Max_5min, Evap_Level_5min, Evap_Level_Avg_5min, Evap_Temp_5min, Temp_Soil_1_5min, Temp_Soil_2_5min, Temp_Soil_3_5min, … |
 | [S20](factsheets/S20.md) | [Ημερήσιες μετεωρολογικές παράμετροι για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς](https://data.gov.gr/dataset/stations-data) | 3865644 | 138278 | 3.58 | 0 | 2 | r001: 3.58% of 3,865,644 cells empty (138,278 of them placeholders: '---' 138,278); no column without any value |
@@ -86,7 +86,7 @@ Proposed scores of AI1: 0: 11, 1: 8, 2: 17.
 | [S35](factsheets/S35.md) | [Συνεδριάσεις Επιτροπής Αθλητισμού & Παιδείας Περιφέρειας Αττικής](https://data.gov.gr/dataset/attica-443-synedriaseis-epitrophs-athlhtismoy-paideias-perifereias-attikhs) |  |  |  |  | n/d | data published only as documents: the share of empty cells in their tables is estimated by inspection (not applicable when the documents hold no table) |
 | [S36](factsheets/S36.md) | [Διάγραμμα Τροποποίησης - T1936A404_69912_500_01](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliotsp-t1936a404_69912_500_01) |  |  |  |  | n/a | map images only: no records to count |
 
-Proposed scores of Q2: 0: 6, 1: 8, 2: 15, n/a: 5, n/d: 2.
+Proposed scores of Q2: 0: 5, 1: 9, 2: 15, n/a: 5, n/d: 2.
 
 ## Q3: consistency
 
@@ -108,7 +108,7 @@ Proposed scores of Q2: 0: 6, 1: 8, 2: 15, n/a: 5, n/d: 2.
 | [S14](factsheets/S14.md) | [Υπηρεσίες Δήμου Πατρέων](https://data.gov.gr/dataset/ypiresies-dimoy-patreon) | 0 | 21 | 1 | 129 files: numbers stored as text: kind 1 of 11: measurement, kind 1 of 11: sensorvar_dec, kind 2 of 11: measurement, kind 2 of 11: sensorvar_dec, kind 2 of 11: lat and 14 more; values that are not numbers in a column of numbers: kind 1 of 11: measurement, kind 2 of 11: measurement |
 | [S15](factsheets/S15.md) | [ΧΩΡΟΙ - ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ](https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-prosvasi) | 0 | 2 | 1 | 3 files: numbers stored as text: spreadsheet: latitude, spreadsheet: longitude |
 | [S16](factsheets/S16.md) | [Θεσμοθετημένες περιοχές NATURA 2000](https://data.gov.gr/dataset/thesmothetimenes-perioches-natura-2000) | 0 | 0 | 2 | 1 file (r001): one kind and one form of value in every column, and the same columns in the files of the same table |
-| [S17](factsheets/S17.md) | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) |  |  | 0 | no file can be opened: no data file available: the Excel file returns HTTP 404 and the other resource is a web page (Q1) |
+| [S17](factsheets/S17.md) | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) | 0 | 0 | 2 | 3 files: one kind and one form of value in every column, and the same columns in the files of the same table |
 | [S18](factsheets/S18.md) | [Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018](https://data.gov.gr/dataset/gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012_2018) | 0 | 0 | 2 | 4 files: one kind and one form of value in every column, and the same columns in the files of the same table |
 | [S19](factsheets/S19.md) | [Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ](https://data.gov.gr/dataset/emy-station-189) | 0 | 0 | 2 | 1 file (r001): one kind and one form of value in every column, and the same columns in the files of the same table |
 | [S20](factsheets/S20.md) | [Ημερήσιες μετεωρολογικές παράμετροι για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς](https://data.gov.gr/dataset/stations-data) | 0 | 0 | 2 | 1 file (r001): one kind and one form of value in every column, and the same columns in the files of the same table |
@@ -129,7 +129,7 @@ Proposed scores of Q2: 0: 6, 1: 8, 2: 15, n/a: 5, n/d: 2.
 | [S35](factsheets/S35.md) | [Συνεδριάσεις Επιτροπής Αθλητισμού & Παιδείας Περιφέρειας Αττικής](https://data.gov.gr/dataset/attica-443-synedriaseis-epitrophs-athlhtismoy-paideias-perifereias-attikhs) |  |  | n/d | data published only as documents: the consistency of their tables is estimated by inspection (not applicable when the documents hold no table) |
 | [S36](factsheets/S36.md) | [Διάγραμμα Τροποποίησης - T1936A404_69912_500_01](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliotsp-t1936a404_69912_500_01) |  |  | n/a | map images only: no values to examine |
 
-Proposed scores of Q3: 0: 2, 1: 11, 2: 16, n/a: 5, n/d: 2.
+Proposed scores of Q3: 0: 1, 1: 11, 2: 17, n/a: 5, n/d: 2.
 
 ## Q4: plausibility
 
@@ -151,7 +151,7 @@ Proposed scores of Q3: 0: 2, 1: 11, 2: 16, n/a: 5, n/d: 2.
 | [S14](factsheets/S14.md) | [Υπηρεσίες Δήμου Πατρέων](https://data.gov.gr/dataset/ypiresies-dimoy-patreon) | 11103 | 0 | 0.00 | 2 | 130 files: no implausible value in the range checks of 11,103 records |
 | [S15](factsheets/S15.md) | [ΧΩΡΟΙ - ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ](https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-prosvasi) | 33 | 21 | 63.64 | 0 | 3 files: systematic: 21 implausible of 33 records (63.64%): 41 coordinates outside Greece |
 | [S16](factsheets/S16.md) | [Θεσμοθετημένες περιοχές NATURA 2000](https://data.gov.gr/dataset/thesmothetimenes-perioches-natura-2000) | 593 | 0 | 0.00 | 2 | 1 file (r001): no implausible value in the range checks of 593 records |
-| [S17](factsheets/S17.md) | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) |  |  |  | 0 | no file can be opened: no data file available: the Excel file returns HTTP 404 and the other resource is a web page (Q1) |
+| [S17](factsheets/S17.md) | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) | 135 | 0 | 0.00 | 2 | 3 files: no implausible value in the range checks of 135 records |
 | [S18](factsheets/S18.md) | [Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018](https://data.gov.gr/dataset/gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012_2018) | 8 | 0 | 0.00 | 2 | 4 files: no implausible value in the range checks of 8 records |
 | [S19](factsheets/S19.md) | [Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ](https://data.gov.gr/dataset/emy-station-189) | 62437 | 0 | 0.00 | 2 | 1 file (r001): no implausible value in the range checks of 62,437 records |
 | [S20](factsheets/S20.md) | [Ημερήσιες μετεωρολογικές παράμετροι για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς](https://data.gov.gr/dataset/stations-data) | 276156 | 5 | 0.00 | 1 | 1 file (r001): isolated: 5 implausible of 276,156 records (0.00%): 6 values outside the physical range |
@@ -172,7 +172,7 @@ Proposed scores of Q3: 0: 2, 1: 11, 2: 16, n/a: 5, n/d: 2.
 | [S35](factsheets/S35.md) | [Συνεδριάσεις Επιτροπής Αθλητισμού & Παιδείας Περιφέρειας Αττικής](https://data.gov.gr/dataset/attica-443-synedriaseis-epitrophs-athlhtismoy-paideias-perifereias-attikhs) |  |  |  | n/d | data published only as documents: the plausibility of their values is estimated by inspection (not applicable when the documents hold no table) |
 | [S36](factsheets/S36.md) | [Διάγραμμα Τροποποίησης - T1936A404_69912_500_01](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliotsp-t1936a404_69912_500_01) |  |  |  | n/a | map images only: no values to examine |
 
-Proposed scores of Q4: 0: 4, 1: 3, 2: 22, n/a: 5, n/d: 2.
+Proposed scores of Q4: 0: 3, 1: 3, 2: 23, n/a: 5, n/d: 2.
 
 ## AI6: linkage through common identifiers
 
@@ -194,7 +194,7 @@ Proposed scores of Q4: 0: 4, 1: 3, 2: 22, n/a: 5, n/d: 2.
 | [S14](factsheets/S14.md) | [Υπηρεσίες Δήμου Πατρέων](https://data.gov.gr/dataset/ypiresies-dimoy-patreon) | 1 | 130 files: only internal code, coordinates (system not declared), name: no standard code | internal code: sensorvar_id, parameter_id, sensor_id, id and 7 more; coordinates (system not declared): lat, lng, Lat, Lon and 2 more; name: index_name, mysensor_name, sensor_address, location_name and 1 more |
 | [S15](factsheets/S15.md) | [ΧΩΡΟΙ - ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ](https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-prosvasi) | 2 | 3 files: standard identifiers or coordinates in a declared system: geometry (declared system) | name: address; coordinates (system not declared): latitude, longitude; geometry (declared system): (geometry) |
 | [S16](factsheets/S16.md) | [Θεσμοθετημένες περιοχές NATURA 2000](https://data.gov.gr/dataset/thesmothetimenes-perioches-natura-2000) | 2 | 1 file (r001): standard identifiers or coordinates in a declared system: Natura 2000 site code, geometry (declared system) | internal code: OBJECTID_1; Natura 2000 site code (standard code): SITECODE, SITECODE_1; name: SITE_NAME_, SITE_NAME1; geometry (declared system): (geometry) |
-| [S17](factsheets/S17.md) | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) | 0 | no file can be opened: no data file available: the Excel file returns HTTP 404 and the other resource is a web page (Q1) |  |
+| [S17](factsheets/S17.md) | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) | 2 | 3 files: standard identifiers or coordinates in a declared system: geometry (declared system) | internal code: objectid, Α/Α, OBJECTID, objectid_1; name: Μοναδικός Αριθμός Σταθμου, Περιφερειακή Ενότητα, Δήμος, Δημοτική Ενότητα and 3 more; coordinates (system not declared): x, y; geometry (declared system): (geometry) |
 | [S18](factsheets/S18.md) | [Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018](https://data.gov.gr/dataset/gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012_2018) | 2 | 4 files: standard identifiers or coordinates in a declared system: Corine Land Cover code, geometry (declared system) | internal code: cid, objectid_1, objectid, FID; Corine Land Cover code (standard code): code_12, code_18; geometry (declared system): (geometry); geometry (declared system): (geometry); geometry (declared system): (geometry) |
 | [S19](factsheets/S19.md) | [Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ](https://data.gov.gr/dataset/emy-station-189) | 0 | 1 file (r001): no identifier or location information that allows linkage |  |
 | [S20](factsheets/S20.md) | [Ημερήσιες μετεωρολογικές παράμετροι για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς](https://data.gov.gr/dataset/stations-data) | 1 | 1 file (r001): only name, coordinates (system not declared): no standard code | name: stations; coordinates (system not declared): latitude, longitude |
@@ -215,4 +215,4 @@ Proposed scores of Q4: 0: 4, 1: 3, 2: 22, n/a: 5, n/d: 2.
 | [S35](factsheets/S35.md) | [Συνεδριάσεις Επιτροπής Αθλητισμού & Παιδείας Περιφέρειας Αττικής](https://data.gov.gr/dataset/attica-443-synedriaseis-epitrophs-athlhtismoy-paideias-perifereias-attikhs) | n/d | data published only as documents: the identifiers in them (such as ADA codes, tax numbers or standard codes) are judged by inspection |  |
 | [S36](factsheets/S36.md) | [Διάγραμμα Τροποποίησης - T1936A404_69912_500_01](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliotsp-t1936a404_69912_500_01) | 0 | no available document declares a reference system: map view (WMS), map image (PNG) and capabilities document only, none of them available (Q1) |  |
 
-Proposed scores of AI6: 0: 7, 1: 10, 2: 17, n/d: 2.
+Proposed scores of AI6: 0: 6, 1: 10, 2: 18, n/d: 2.

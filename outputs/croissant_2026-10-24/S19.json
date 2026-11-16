@@ -1,0 +1,890 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ",
+  "description": "Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Εθνική Μετεωρολογική Υπηρεσία (ΕΜΥ)"
+  },
+  "dateModified": "2026-10-23",
+  "datePublished": "2026-05-13",
+  "keywords": [
+    "HNMS",
+    "meteorology",
+    "station",
+    "weather",
+    "ΕΜΥ",
+    "καιρός",
+    "μετεωρολογία",
+    "σταθμός"
+  ],
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/emy-station-189",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Δεδομένα σταθμού",
+      "contentSize": "20480393 B",
+      "contentUrl": "https://data.gov.gr/dataset/ee8e1c94-6c77-4ff0-a331-0c22e97dc780/resource/90382712-97cf-430b-82cd-f7bd7aaba052/download/station_189.dat",
+      "encodingFormat": "text/csv",
+      "sha256": "f6576b559ad4eb7cb7687beda376f7c0f7ed2ab8e28ebf99b19e5601ee2b62ea"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records",
+      "name": "records",
+      "description": "Columns of the table examined for the assessment (r001).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records/c001",
+          "name": "yyyyMMddHHmm",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "yyyyMMddHHmm"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c002",
+          "name": "Temp_Dry_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Temp_Dry_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c003",
+          "name": "Temp_Dry_Min_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Temp_Dry_Min_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c004",
+          "name": "Temp_Dry_Max_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Temp_Dry_Max_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c005",
+          "name": "Rel_Hum_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Rel_Hum_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c006",
+          "name": "Rel_Hum_Min_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Rel_Hum_Min_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c007",
+          "name": "Rel_Hum_Max_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Rel_Hum_Max_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c008",
+          "name": "Prec_Sum_1_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Prec_Sum_1_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c009",
+          "name": "Prec_Intensity_1min_1_Max_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Prec_Intensity_1min_1_Max_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c010",
+          "name": "Prec_Sum_2_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Prec_Sum_2_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c011",
+          "name": "Prec_Intensity_1min_2_Max_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Prec_Intensity_1min_2_Max_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c012",
+          "name": "Rad_Global_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Rad_Global_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c013",
+          "name": "Rad_Global_Min_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Rad_Global_Min_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c014",
+          "name": "Rad_Global_Max_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Rad_Global_Max_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c015",
+          "name": "Press_Barometer_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Press_Barometer_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c016",
+          "name": "Press_Barometer_Min_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Press_Barometer_Min_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c017",
+          "name": "Press_Barometer_Max_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Press_Barometer_Max_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c018",
+          "name": "Evap_Level_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Evap_Level_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c019",
+          "name": "Evap_Level_Avg_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Evap_Level_Avg_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c020",
+          "name": "Evap_Temp_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Evap_Temp_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c021",
+          "name": "Rad_PAR_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Rad_PAR_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c022",
+          "name": "Rad_PAR_Min_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Rad_PAR_Min_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c023",
+          "name": "Rad_PAR_Max_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Rad_PAR_Max_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c024",
+          "name": "Rad_UV_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Rad_UV_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c025",
+          "name": "Rad_UV_Min_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Rad_UV_Min_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c026",
+          "name": "Rad_UV_Max_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Rad_UV_Max_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c027",
+          "name": "Temp_Soil_1_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Temp_Soil_1_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c028",
+          "name": "Temp_Soil_2_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Temp_Soil_2_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c029",
+          "name": "Temp_Soil_3_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Temp_Soil_3_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c030",
+          "name": "Temp_Soil_4_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Temp_Soil_4_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c031",
+          "name": "Temp_Soil_5_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Temp_Soil_5_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c032",
+          "name": "Temp_Soil_6_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Temp_Soil_6_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c033",
+          "name": "Temp_Soil_7_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Temp_Soil_7_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c034",
+          "name": "Soil_Moist_1_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Soil_Moist_1_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c035",
+          "name": "Soil_Moist_2_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Soil_Moist_2_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c036",
+          "name": "Soil_Moist_3_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Soil_Moist_3_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c037",
+          "name": "CO2_5min",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "CO2_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c038",
+          "name": "Sun_Dur_Sum_5min",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Sun_Dur_Sum_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c039",
+          "name": "Wind_Speed_Avg_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Wind_Speed_Avg_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c040",
+          "name": "Wind_Speed_Max_5min",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Wind_Speed_Max_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c041",
+          "name": "Wind_Speed_Max_Dir_5min",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Wind_Speed_Max_Dir_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c042",
+          "name": "Wind_Speed_Max_Time_5min",
+          "dataType": "sc:Time",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Wind_Speed_Max_Time_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c043",
+          "name": "Wind_Dir_Avg_5min",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Wind_Dir_Avg_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c044",
+          "name": "Wind_Dir_Left_5min",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Wind_Dir_Left_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c045",
+          "name": "Wind_Dir_Right_5min",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Wind_Dir_Right_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c046",
+          "name": "Wind_Speed_2_Avg_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Wind_Speed_2_Avg_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c047",
+          "name": "Wind_Speed_2_Max_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Wind_Speed_2_Max_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c048",
+          "name": "Wind_Speed_2_Max_Dir_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Wind_Speed_2_Max_Dir_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c049",
+          "name": "Wind_Speed_2_Max_Time_5min",
+          "dataType": "sc:Time",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Wind_Speed_2_Max_Time_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c050",
+          "name": "Wind_Dir_2_Avg_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Wind_Dir_2_Avg_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c051",
+          "name": "Wind_Dir_2_Left_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Wind_Dir_2_Left_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c052",
+          "name": "Wind_Dir_2_Right_5min",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Wind_Dir_2_Right_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c053",
+          "name": "Dout3_State_5min",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Dout3_State_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c054",
+          "name": "Dout0_State_5min",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Dout0_State_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c055",
+          "name": "Dout1_State_5min",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Dout1_State_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c056",
+          "name": "Pwrout2_State_5min",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "Pwrout2_State_5min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c057",
+          "name": "cRH_5min",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "r001"
+            },
+            "extract": {
+              "column": "cRH_5min"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

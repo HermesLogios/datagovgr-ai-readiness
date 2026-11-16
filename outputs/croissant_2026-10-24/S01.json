@@ -1,0 +1,243 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Γεωτεμάχια (όρια και ΚΑΕΚ) των περιοχών του \"Λειτουργούντος Κτηματολογίου\"",
+  "description": "Γεωτεμάχια ή κτηματολογικά διαγράμματα του Ελληνικού Κτηματολογίου σε μορφότυπο shapefile (ΕΓΣΑ ’87) που τηρούνται στη βάση δεδομένων του ν.π.δ.δ. «Ελληνικό Κτηματολόγιο». Αφορούν στα γεωτεμάχια που έχουν ενταχθεί στο σύστημα του «Λειτουργούντος Κτηματολογίου». Για κάθε γεωτεμάχιο υπάρχει καταγεγραμένη η πληροφορία του ΚΑΕΚ (Κωδικός Αριθμός Εθνικού Κτηματολογίου) και η πιο πρόσφατη ημερομηνία ενημέρωσης.",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Ελληνικό Κτηματολόγιο"
+  },
+  "dateModified": "2026-10-23",
+  "datePublished": "2026-09-03",
+  "keywords": [
+    "SHP",
+    "Shapefile",
+    "ΓΕΩΤΕΜΑΧΙΑ",
+    "Διαγράμματα",
+    "Κτηματολόγιο"
+  ],
+  "url": "https://data.gov.gr/dataset/geotemachia-oria-kai-kaek-ton-periochon-toy-leitoyrgoyntos-ktimatologioy",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Γεωτεμάχια Περιφέρειας Ανατολικής Μακεδονίας και Θράκης | 22/10/2026",
+      "description": "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Ανατολικής Μακεδονίας και Θράκης ημερομηνίας 22/10/2026.",
+      "contentSize": "158348632 B",
+      "contentUrl": "https://data.gov.gr/dataset/17226281-9e0f-431f-b1a3-c9e807cdd3cd/resource/9f477757-921e-41c1-843f-a0b3738fb39c/download/periferia_anatolikis_makedonias_kai_thrakis.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "5280372b69d547498d377421432af1076d171e293a2f6eccc3fb73ecc8e568b2"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r002",
+      "name": "Γεωτεμάχια Περιφέρειας Αττικής | 22/10/2026",
+      "description": "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Αττικής ημερομηνίας 22/10/2026.",
+      "contentSize": "152984335 B",
+      "contentUrl": "https://data.gov.gr/dataset/17226281-9e0f-431f-b1a3-c9e807cdd3cd/resource/5c42296d-0413-4c6b-9f6a-0924837f35e9/download/periferia_attikis.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "4ce9005024d58f51bc5817eead0234a7494a28a7b4cbab49631d821a1ac3f343"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r003",
+      "name": "Γεωτεμάχια Περιφέρειας Δυτικής Ελλάδας | 22/10/2026",
+      "description": "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Δυτικής Ελλάδας ημερομηνίας 22/10/2026.",
+      "contentSize": "210129805 B",
+      "contentUrl": "https://data.gov.gr/dataset/17226281-9e0f-431f-b1a3-c9e807cdd3cd/resource/f8b80089-9db9-4176-8aa0-2edc69972e1d/download/periferia_ditikis_elladas.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "cb0290e39fcc9b27da0796137576616145b4bc64aa7702d8950c1741566ad775"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r004",
+      "name": "Γεωτεμάχια Περιφέρειας Δυτικής Μακεδονίας | 22/10/2026",
+      "description": "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Δυτικής Μακεδονίας ημερομηνίας 22/10/2026.",
+      "contentSize": "128610512 B",
+      "contentUrl": "https://data.gov.gr/dataset/17226281-9e0f-431f-b1a3-c9e807cdd3cd/resource/f8288aa0-1113-4e9d-8a83-cbba46edd5a2/download/periferia_ditikis_makedonias.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "56794fbc2cbeacb20c7128f3d63bad020a6d99d4de41d3e154781d351fbf6dc6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r005",
+      "name": "Γεωτεμάχια Περιφέρειας Ιονίων Νήσων | 22/10/2026",
+      "description": "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Ιονίων Νήσων ημερομηνίας 22/10/2026.",
+      "contentSize": "29339709 B",
+      "contentUrl": "https://data.gov.gr/dataset/17226281-9e0f-431f-b1a3-c9e807cdd3cd/resource/d56f6aa3-1aa7-42fc-ad0b-df47decf973e/download/periferia_ionion_nison.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "7c1cf0d175cdd0f3015d812c2e55858105d49cd51acdbdf6c2732fe03fad62bf"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r006",
+      "name": "Γεωτεμάχια Περιφέρειας Ηπείρου | 22/10/2026",
+      "description": "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Ηπείρου ημερομηνίας 22/10/2026.",
+      "contentSize": "129107480 B",
+      "contentUrl": "https://data.gov.gr/dataset/17226281-9e0f-431f-b1a3-c9e807cdd3cd/resource/5a361362-db88-4feb-ad32-7de6f8058d2b/download/periferia_ipirou.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "498e79ef222f3a0753654a4ab3fc042909c004d5088ec8764adf6d2c28a1328b"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r007",
+      "name": "Γεωτεμάχια Περιφέρειας Κεντρικής Μακεδονίας | 22/10/2026",
+      "description": "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Κεντρικής Μακεδονίας ημερομηνίας 22/10/2026.",
+      "contentSize": "255420631 B",
+      "contentUrl": "https://data.gov.gr/dataset/17226281-9e0f-431f-b1a3-c9e807cdd3cd/resource/a33716ac-1cfb-4730-b18c-0fd2d08fa723/download/periferia_kentrikis_makedonias.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "ac4fc4d8162a1443c8f72b41c23ddb2aa041d627ef02ca2f95672a4be875a566"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r008",
+      "name": "Γεωτεμάχια Περιφέρειας Κρήτης | 22/10/2026",
+      "description": "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Κρήτης ημερομηνίας 22/10/2026.",
+      "contentSize": "158135578 B",
+      "contentUrl": "https://data.gov.gr/dataset/17226281-9e0f-431f-b1a3-c9e807cdd3cd/resource/8f4bb768-c3f7-4358-8c8d-ea04c9f0cfb8/download/periferia_kritis.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "7fff453539037a80dbdef4b8aa9ea67ed3469e2057acccf2750abe6eba4736c4"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r009",
+      "name": "Γεωτεμάχια Περιφέρειας Νοτίου Αιγαίου | 22/10/2026",
+      "description": "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Νοτίου Αιγαίου ημερομηνίας 22/10/2026.",
+      "contentSize": "56250276 B",
+      "contentUrl": "https://data.gov.gr/dataset/17226281-9e0f-431f-b1a3-c9e807cdd3cd/resource/11723cd2-e6ca-44e2-882d-8c2bdec046d4/download/periferia_notiou_egaiou.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "e07ec2ed41495defb4c0cf45108d4c40bf74f702c46d8f582c1dc82352db51eb"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r010",
+      "name": "Γεωτεμάχια Περιφέρειας Πελοποννήσου | 22/10/2026",
+      "description": "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Πελοποννήσου ημερομηνίας 22/10/2026.",
+      "contentSize": "366455277 B",
+      "contentUrl": "https://data.gov.gr/dataset/17226281-9e0f-431f-b1a3-c9e807cdd3cd/resource/ebc9ae1c-4bf0-4bcd-a13a-a86a8e97bc08/download/periferia_peloponnisou.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "6d83585d8d37d7e099a2d093fa1db17ca7aa6c09c6789d9f9f8c5890bb172e79"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r011",
+      "name": "Γεωτεμάχια Περιφέρειας Στερεάς Ελλάδας | 22/10/2026",
+      "description": "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Στερεάς Ελλάδας ημερομηνίας 22/10/2026.",
+      "contentSize": "235698215 B",
+      "contentUrl": "https://data.gov.gr/dataset/17226281-9e0f-431f-b1a3-c9e807cdd3cd/resource/becf3c61-65ce-4212-909d-984630ea2e92/download/periferia_stereas_elladas.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "ac1264fc3a313681939187ef1a0aed1974be4b76230bb1f64f199437ed27ecf4"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r012",
+      "name": "Γεωτεμάχια Περιφέρειας Θεσσαλίας | 22/10/2026",
+      "description": "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Θεσσαλίας ημερομηνίας 22/10/2026.",
+      "contentSize": "149689945 B",
+      "contentUrl": "https://data.gov.gr/dataset/17226281-9e0f-431f-b1a3-c9e807cdd3cd/resource/a9a559ea-08d6-4fc3-96b8-428072132937/download/periferia_thessalias.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "24285f5333d18d55ddb6060f31c1a7fd8a10963988dfda2b3374e64eb1217e2d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r013",
+      "name": "Γεωτεμάχια Περιφέρειας Βορείου Αιγαίου | 22/10/2026",
+      "description": "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Βορείου Αιγαίου ημερομηνίας 22/10/2026.",
+      "contentSize": "24552233 B",
+      "contentUrl": "https://data.gov.gr/dataset/17226281-9e0f-431f-b1a3-c9e807cdd3cd/resource/f7ae8fc0-715f-45c1-86cb-5feb3b7377d0/download/periferia_voriou_egaiou.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "c1511ff94fa8eef469e6de9c78d261de6c72d5edef8400c3caa090fb9e1272b1"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001_m01",
+      "name": "Periferia_Anatolikis_Makedonias_kai_Thrakis_20261029.shp",
+      "contentUrl": "Periferia_Anatolikis_Makedonias_kai_Thrakis_20261029.shp",
+      "cr:containedIn": {
+        "@id": "r001"
+      },
+      "encodingFormat": "application/vnd.shp"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records",
+      "name": "records",
+      "description": "Columns of the table examined for the assessment (r001, file Periferia_Anatolikis_Makedonias_kai_Thrakis_20261029.shp). The same columns are found in 14 of the examined tables of the dataset.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records/c001",
+          "name": "KAEK",
+          "description": "Κωδικός Αριθμός Εθνικού Κτηματολογίου (ΚΑΕΚ) του γεωτεμαχίου.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c002",
+          "name": "bLfSpnVr",
+          "description": "Η πιο πρόσφατη ημερομηνία ενημέρωσης του γεωτεμαχίου.",
+          "dataType": "sc:Date",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

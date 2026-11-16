@@ -1,0 +1,194 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Θεσμοθετημένες περιοχές NATURA 2000",
+  "description": "Το δίκτυο Natura 2000 αποτελεί ένα Ευρωπαϊκό Οικολογικό Δίκτυο περιοχών, οι οποίες φιλοξενούν φυσικούς τύπους οικοτόπων και οικοτόπους ειδών. Οι περιοχές του δικτύου περιλαμβάνουν διάφορους τύπους φυσικών οικοσυστημάτων (πχ δασικά, λιμναία, υγροτοπικά, ποτάμια, παράκτια και θαλάσσια οικοσυστήματα). Το δίκτυο περιοχών επεκτείνεται σε ολόκληρη την ΕΕ. Η δημιουργία του δικτύου «Natura 2000» στοχεύει στην μακροπρόθεσμη διατήρηση των πιο πολύτιμων και των πλέον απειλούμενων ειδών χλωρίδας και πανίδας, σύμφωνα με την Οδηγία 92/43/ΕΟΚ αλλά και στην προστασία των πτηνών, σύμφωνα με την Οδηγία 79/409/ΕΟΚ της ΕΕ. Η συμβολή του Ελληνικού Κτηματολογίου Η αρχική καταγραφή των τύπων οικοτόπων πραγματοποιήθηκε στην Ελλάδα την περίοδο 1999 - 2001 από το ΥΠΕΧΩΔΕ και αποτέλεσε την πρώτη χαρτογράφηση αυτού του είδους, δημιουργώντας αντίστοιχους θεματικούς χάρτες. Το Ελληνικό Κτηματολόγιο, κατά την περίοδο 2013-2015, προχώρησε στον ακριβέστερο γεωχωρικό προσδιορισμό των εξωτερικών ορίων και στην επικαιροποίηση, περιγραφή και οριοθέτηση των χερσαίων τύπων οικοτόπων του δικτύου «Natura 2000», σε κλίμακα 1:5.000 με βάση τα ενιαία χαρτογραφικά υπόβαθρά του και δειγματοληψίες πεδίου, καθώς και στην ενημέρωση (συμπλήρωση και διόρθωση) της αρχικής βάσης δεδομένων. Το σχετικό έργο χαρτογράφησης «Ανάπτυξη υποδομής χωρικών δεδομένων μεγάλης κλίμακας (1:5000) για τις χερσαίες προστατευόμενες περιοχές του δικτύου «Νatura 2000» συγχρηματοδοτήθηκε από το ΕΣΠΑ 2014-20 στο Επιχειρησιακό Πρόγραμμα ΕΠανΕΚ. Στη συνέχεια παραδόθηκε στο ΥΠΕΝ και χρησιμοποιήθηκε στην αναθεώρηση του εθνικού καταλόγου των προστατευόμενων περιοχών του δικτύου «Natura 2000», ο οποίος θεσμοθετήθηκε με την υπ’ αριθμ. 50743 ΚΥΑ (ΦΕΚ 4432Β/15-12-2017).",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": {
+    "@type": "sc:Organization",
+    "name": "Ελληνικό Κτηματολόγιο"
+  },
+  "dateModified": "2026-05-11",
+  "datePublished": "2026-04-27",
+  "keywords": "NATURA 2000",
+  "license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+  "url": "https://data.gov.gr/dataset/thesmothetimenes-perioches-natura-2000",
+  "version": "31",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001",
+      "name": "Χάρτης θεσμοθετημένων περιοχών NATURA 2000",
+      "description": "Χάρτης των θεσμοθετημένων περιοχών NATURA 2000 σε μορφή shapefile",
+      "contentSize": "24178318 B",
+      "contentUrl": "https://data.gov.gr/dataset/ba30b9cd-e16b-4b6d-8f15-c558366864bf/resource/1a528314-6aa5-4679-9ca1-605b553323c3/download/gr_natura2000_v31.zip",
+      "encodingFormat": "application/zip",
+      "sha256": "496590cebc02d219af65ee21bbca9596a1309b4da4d802326abf7acef206af48"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "r001_m01",
+      "name": "gr_natura_v31_union_final.shp",
+      "contentUrl": "gr_natura_v31_union_final.shp",
+      "cr:containedIn": {
+        "@id": "r001"
+      },
+      "encodingFormat": "application/vnd.shp"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "records",
+      "name": "records",
+      "description": "Columns of the table examined for the assessment (r001, file gr_natura_v31_union_final.shp).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "records/c001",
+          "name": "OBJECTID_1",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c002",
+          "name": "SITECODE",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c003",
+          "name": "SITETYPE",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c004",
+          "name": "SITECODE_1",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c005",
+          "name": "SITETYPE_1",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c006",
+          "name": "Shape_Leng",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c007",
+          "name": "Shape_Area",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c008",
+          "name": "SITE_NAME_",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "records/c009",
+          "name": "SITE_NAME1",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "r001_m01"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
