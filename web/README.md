@@ -29,7 +29,9 @@ with Pyodide, so the scores are those of `scripts/04_metadata_checks.py`.
 | `shims/pandas.py` | reader of CSV tables that stands in for pandas inside the browser |
 | `assets/` | stylesheet, script, typeface and licence texts |
 | `example/` | catalogue record of the example, without contact details |
-| `functions/api/record.js` | relay to the catalogue, run by Cloudflare Pages |
+| `functions/api/record.js` | relay to the catalogue |
+| `worker.js` | entry of the site on Cloudflare Workers: the relay, and the files of the build for every other address |
+| `wrangler.jsonc` | settings of the Worker: its name, the folder of the build and the entry |
 
 ## Commands
 
@@ -38,24 +40,30 @@ python web/build.py
 python web/preview.py
 python -m unittest discover -s tests
 node --test tests/js/record_relay.test.mjs
+node --test tests/js/site_worker.test.mjs
 ```
 
 `preview.py` serves the site at http://localhost:8788. The build needs only the standard
-library of Python; the preview and the tests need the packages of `requirements.txt`.
+library of Python; the preview and the tests need the packages of `requirements.txt`. After a
+build, `npx wrangler dev` inside `web` serves the same files with the Worker of the relay.
 
-## Publishing on Cloudflare Pages
+## Publishing on Cloudflare
 
-Settings of the Pages project, with the repository connected through the Git integration:
+The site is published as a Cloudflare Worker with static assets, built from the repository by
+Workers Builds. `wrangler.jsonc` names the Worker, the folder of the build and the entry
+`worker.js`. Only the addresses under `/api/` reach the Worker; every other address is answered
+with the files of the build.
 
 | Setting | Value |
 | --- | --- |
-| Root directory | `web` |
+| Project name | `datagovgr-ai-readiness`, the name in `wrangler.jsonc` |
 | Build command | `python3 build.py` |
-| Build output directory | `dist` |
+| Deploy command | `npx wrangler deploy` |
+| Root directory | `web` |
 
-Every push to the production branch builds and publishes the site. Two environment variables
-change the build: `SITE_PUBLIC=1` lets search engines list the site (the default asks them not
-to), and `DATAGOVGR_BASE_URL` sets another address for the portal.
+Every push to the production branch builds and publishes the site. Two build variables change
+the build: `SITE_PUBLIC=1` lets search engines list the site (the default asks them not to),
+and `DATAGOVGR_BASE_URL` sets another address for the portal.
 
 ## Third-party components
 

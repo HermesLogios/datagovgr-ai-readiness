@@ -1,0 +1,12 @@
+{
+  // Settings of the site as a Cloudflare Worker: the files of the build, and the relay to the catalogue.
+  "name": "datagovgr-ai-readiness",
+  "main": "worker.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  }
+}
