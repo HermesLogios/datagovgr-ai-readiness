@@ -1,5 +1,5 @@
 {
-  // Settings of the site as a Cloudflare Worker: the files of the build, and the relay to the catalogue.
+  // Settings of the site as a Cloudflare Worker: the files of the build, and the two relays under /api/.
   "name": "datagovgr-ai-readiness",
   "main": "worker.js",
   "compatibility_date": "2026-11-01",
@@ -8,5 +8,12 @@
     "binding": "ASSETS",
     "not_found_handling": "404-page",
     "run_worker_first": ["/api/*"]
+  },
+  // No logs and no traces of the Worker are kept: a request of the second reading carries the key of a visitor.
+  "observability": {
+    "enabled": false,
+    "traces": {
+      "enabled": false
+    }
   }
 }

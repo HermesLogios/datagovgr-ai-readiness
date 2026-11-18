@@ -1,4 +1,4 @@
-"""HTML of the public pages: home, result of a check, guide and terms of use.
+"""HTML of the public pages: home, result of a check, second reading of a description, guide and terms of use.
 
 Every text is escaped before it enters the HTML: titles, publishers and values of the metadata
 come from the portal and are shown as plain text. A status is always given by a word, a shape
@@ -7,9 +7,11 @@ and a colour. The pages carry no inline script or style and load only files of t
 
 from html import escape
 
+from aiready import jev
 from aiready.plain_language import STATUS_KEYS, CheckExplanation, ChecklistItem, PageModel
+from aiready.second_reading import ReadingModel, ReadingRow, figure_of
 from aiready.texts import DEFAULT_LANGUAGE, LANGUAGES, Texts
-from web.icons import line_icon, mark_icon, status_icon
+from web.icons import SVG_ATTRIBUTES, band_icon, line_icon, mark_icon, status_icon
 
 REPOSITORY_URL = "https://github.com/HermesLogios/datagovgr-ai-readiness"
 PAGE_FOLDERS = {"home": "", "guide": "guide/", "terms": "terms/"}
@@ -18,13 +20,19 @@ MISSING_PAGE = "missing"
 COUNTED_STATUSES = ("met", "partly", "not_met", "not_measured", "not_judged")
 LEGEND_STATUSES = ("met", "partly", "not_met", "not_measured")
 STEPS = (1, 2, 3, 4)
-TERMS_SECTIONS = ("what", "result", "use", "data", "personal", "licences", "liability", "contact")
+TERMS_SECTIONS = ("what", "result", "use", "data", "reading", "personal", "licences", "liability", "contact")
 GLOSSARY = ("metadata", "format", "licence", "hvd")
 EFFORT_CLASSES = {"Low": "low", "Medium": "medium", "High": "high"}
 REPORT_FORMATS = (("xlsx", "download.excel", "file-spreadsheet"), ("md", "download.markdown", "file-text"),
                   ("json", "download.json", "braces"))
 NEW_TAB = 'target="_blank" rel="noopener noreferrer"'
 FONT_FILES = ("manrope-greek-wght-normal.woff2", "manrope-latin-wght-normal.woff2")
+READING_FACTS = ("sent", "key_use", "scores")
+# Messages that the script of the page shows next to the form of the second reading, by data attribute.
+READING_MESSAGES = (("waiting", "reading.waiting"), ("key-missing", "reading.error.key_missing"),
+                    ("key", "reading.error.key"), ("limit", "reading.error.limit"),
+                    ("service", "reading.error.service"), ("engine", "reading.error.engine"))
+METER_WIDTH = 100                                 # units of the drawing of a meter, from probability 0 to probability 1
 
 
 def page_path(page: str, language: str) -> str:
@@ -142,7 +150,8 @@ def index_html(model: PageModel, texts: Texts) -> str:
     )
     sections = "".join(
         f'<li><a href="#{target}">{escape(texts.text(key))}</a></li>'
-        for target, key in (("fixes", "fix.title"), ("checklist", "checklist.title"), ("report-files", "download.title"))
+        for target, key in (("fixes", "fix.title"), ("reading", "reading.title"), ("checklist", "checklist.title"),
+                            ("report-files", "download.title"))
     )
     title = escape(texts.text("index.title"))
     return (
@@ -225,7 +234,8 @@ def error_html(texts: Texts, code: str) -> str:
 
 
 def result_html(model: PageModel, texts: Texts, example: bool = False) -> str:
-    """Whole result of one dataset: who it is, the summary, the priorities, the checks, the checklist, the files."""
+    """Whole result of one dataset: who it is, the summary, the priorities, the checks, the offer of a second
+    reading, the checklist and the files."""
     facts = [("calendar-days", model.source_sentence), ("badge-check", model.marking_sentence)]
     if example:
         facts.append(("info", texts.text("result.example_note")))
@@ -241,7 +251,7 @@ def result_html(model: PageModel, texts: Texts, example: bool = False) -> str:
     )
     body = (
         f'<p class="group-note">{escape(model.group_note)}</p>{fixes_html(model, texts)}{checks_html(model, texts)}'
-        f"{checklist_html(model, texts)}{report_files_html(texts)}"
+        f"{reading_section_html(texts)}{checklist_html(model, texts)}{report_files_html(texts)}"
         f'<p class="result-disclaimer">{escape(texts.text("footer.disclaimer", criteria_version=model.criteria_version))}</p>'
     )
     return (
@@ -305,6 +315,96 @@ def check_html(check: CheckExplanation, texts: Texts) -> str:
     )
 
 
+def reading_head_html(texts: Texts, tag_key: str, source: str = "") -> str:
+    """Top line of the panel of the second reading: what the panel is and, for a reading, where it comes from."""
+    named = f'<span class="reading-source">{escape(source)}</span>' if source else ""
+    return (f'<div class="reading-head"><span class="reading-kind">{line_icon("text-search")}'
+            f"{escape(texts.text(tag_key))}</span>{named}</div>")
+
+
+def reading_offer_html(texts: Texts) -> str:
+    """Offer of a second reading: the field of the key, the button, and what is sent and what is not kept.
+
+    The script of the page sends the form itself. The method is POST so that, if the form were ever sent by
+    the browser, the key would not become part of an address.
+    """
+    messages = "".join(f' data-{name}="{escape(texts.text(key))}"' for name, key in READING_MESSAGES)
+    facts = "".join(
+        f'<li>{line_icon("check")}<span>{escape(texts.text(f"reading.offer.{fact}"))}</span></li>' for fact in READING_FACTS
+    )
+    return (
+        f'<div class="reading">{reading_head_html(texts, "reading.offer.tag")}'
+        f'<h3>{escape(texts.text("reading.offer.title"))}</h3>'
+        f'<p class="reading-lead">{escape(texts.text("reading.offer.lead"))}</p>'
+        f'<form class="reading-form" id="reading-form" method="post" novalidate{messages}>'
+        f'<label for="reading-key">{escape(texts.text("reading.offer.key"))}</label>'
+        f'<span class="reading-field">{line_icon("key-round")}'
+        f'<input id="reading-key" name="key" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" '
+        f'aria-describedby="reading-status">'
+        f'</span><button type="submit" class="button button--primary">{escape(texts.text("reading.offer.submit"))}</button>'
+        f'</form><p class="reading-status" id="reading-status" role="status"></p><ul class="reading-facts">{facts}</ul>'
+        f'<p class="reading-terms"><a href="{page_path("terms", texts.language)}#reading">'
+        f'{escape(texts.text("reading.offer.terms"))}</a></p></div>'
+    )
+
+
+def reading_section_html(texts: Texts) -> str:
+    """Section of the second reading inside a result; the script of the page puts the reading in the place of the offer."""
+    return (f'<section id="reading" class="block"><h2>{escape(texts.text("reading.title"))}</h2>'
+            f"{reading_offer_html(texts)}</section>")
+
+
+def reading_meter_html(probability: float) -> str:
+    """Bar of a probability on a track from 0 to 1, cut at the two limits of the bands.
+
+    The bar is an SVG drawing, because the pages carry no inline style that could give it a width. Its
+    value stands next to it as text, so the drawing is hidden from screen readers.
+    """
+    marks = "".join(
+        f'<line class="reading-mark" x1="{round(limit * METER_WIDTH)}" y1="-3" x2="{round(limit * METER_WIDTH)}" y2="13" />'
+        for limit in (jev.UNLIKELY, jev.LIKELY)
+    )
+    return (
+        f'<svg class="reading-meter" viewBox="0 0 {METER_WIDTH} 10" preserveAspectRatio="none" {SVG_ATTRIBUTES}>'
+        f'<line class="reading-track" x1="0" y1="5" x2="{METER_WIDTH}" y2="5" />'
+        f'<line class="reading-fill" x1="0" y1="5" x2="{round(probability * METER_WIDTH)}" y2="5" />{marks}</svg>'
+    )
+
+
+def reading_row_html(row: ReadingRow) -> str:
+    """One statement: its name, the band in words with its icon, the bar and the probability."""
+    return (
+        f'<li class="reading-row reading-row--{row.band}"><span class="reading-name">{escape(row.label)}</span>'
+        f'<span class="reading-band">{band_icon(row.band)}{escape(row.band_label)}</span>'
+        f'{reading_meter_html(row.probability)}<span class="reading-figure">{escape(row.figure)}</span></li>'
+    )
+
+
+def reading_result_html(model: ReadingModel, texts: Texts) -> str:
+    """Panel of a second reading: the statements under their criterion, what to add, and what the reading is not."""
+    groups = "".join(
+        f'<h4 class="reading-group">{escape(texts.text(f"reading.group.{criterion}"))}</h4><ul class="reading-rows">'
+        + "".join(reading_row_html(row) for row in model.rows if row.criterion == criterion)
+        + "</ul>"
+        for criterion in dict.fromkeys(row.criterion for row in model.rows)
+    )
+    scale = "".join(f"<span>{escape(texts.text(f'reading.band.{band}'))}</span>" for band in ("unlikely", "unsure", "likely"))
+    advice = [row.advice for row in model.rows if row.advice]
+    if advice:
+        items = "".join(f"<li>{escape(item)}</li>" for item in advice)
+        advice_box = f'<h4>{escape(texts.text("reading.advice.title"))}</h4><ul>{items}</ul>'
+    else:
+        advice_box = f'<p>{escape(texts.text("reading.advice.none"))}</p>'
+    notes = "".join(f'<p class="reading-note">{escape(texts.text(f"reading.note.{note}"))}</p>' for note in ("texts", "scores"))
+    return (
+        f'<div class="reading">{reading_head_html(texts, "reading.result.tag", model.source)}'
+        f'<h3 tabindex="-1">{escape(texts.text("reading.result.title"))}</h3>'
+        f'<p class="reading-lead">{escape(texts.text("reading.result.lead"))}</p>{groups}'
+        f'<p class="reading-scale" aria-hidden="true"><span class="reading-scale-bands">{scale}</span></p>'
+        f'<div class="reading-advice">{advice_box}</div>{notes}</div>'
+    )
+
+
 def checklist_group_html(legend: str, items: tuple[ChecklistItem, ...], texts: Texts) -> str:
     rows = "".join(
         f'<div class="tick"><input type="checkbox" id="tick-{escape(item.criterion_id)}">'
@@ -342,8 +442,8 @@ def report_files_html(texts: Texts) -> str:
 
 
 def guide_main_html(texts: Texts) -> str:
-    def paragraph(key: str) -> str:
-        return f"<p>{escape(texts.text(key))}</p>"
+    def paragraph(key: str, **values) -> str:
+        return f"<p>{escape(texts.text(key, **values))}</p>"
 
     def heading(key: str) -> str:
         return f"<h2>{escape(texts.text(key))}</h2>"
@@ -360,6 +460,9 @@ def guide_main_html(texts: Texts) -> str:
         f'{heading("guide.steps.title")}{steps_html(texts)}'
         f'{heading("guide.read.title")}{paragraph("guide.read.marks")}<div class="article-legend">{legend}</div>'
         f'{paragraph("guide.read.kinds")}{paragraph("guide.read.core")}{paragraph("guide.read.details")}'
+        f'{heading("guide.reading.title")}'
+        f'{paragraph("guide.reading.text", likely=figure_of(jev.LIKELY, texts), unlikely=figure_of(jev.UNLIKELY, texts))}'
+        f'{paragraph("guide.reading.trial")}'
         f'{heading("guide.after.title")}{paragraph("guide.after.text")}'
         f'{heading("guide.limits.title")}{paragraph("guide.limits.text")}'
         f'{heading("guide.words.title")}<ul class="glossary">{words}</ul></article>'
@@ -368,7 +471,8 @@ def guide_main_html(texts: Texts) -> str:
 
 def terms_main_html(texts: Texts) -> str:
     sections = "".join(
-        f'<h2>{escape(texts.text(f"terms.{section}.title"))}</h2><p>{escape(texts.text(f"terms.{section}.text"))}</p>'
+        f'<h2 id="{section}">{escape(texts.text(f"terms.{section}.title"))}</h2>'
+        f'<p>{escape(texts.text(f"terms.{section}.text"))}</p>'
         for section in TERMS_SECTIONS
     )
     return (f'<article class="wrap article"><h1>{escape(texts.text("terms.title"))}</h1>'

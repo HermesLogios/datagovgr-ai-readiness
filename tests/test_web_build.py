@@ -29,7 +29,8 @@ sys.path[:0] = [sys.argv[1] + "/web/shims", sys.argv[1]]
 from web import browser
 answer = json.loads(browser.assess_example(open(sys.argv[2], encoding="utf-8").read(), "el", "2026-10-24"))
 reader = sys.modules["pandas"].__file__.replace("\\\\", "/")
-print(answer["ok"], answer["title"], len(browser.report_text("md")) > 1000, reader.endswith("web/shims/pandas.py"))
+statements = json.loads(browser.reading_request())["questions"]
+print(answer["ok"], answer["title"], len(browser.report_text("md")) > 1000, reader.endswith("web/shims/pandas.py"), len(statements))
 """
 
 
@@ -99,7 +100,8 @@ class BuildTest(unittest.TestCase):
         home = self.text_of("index.html")
         self.assertIn('<template id="example-result"><article class="result"', home)
         for attribute in ('data-language="el"', 'data-portal="https://data.gov.gr"', 'data-proxy="/api/record"',
-                          f'data-engine="/engine/{build.ENGINE_VERSION}/"', 'data-example-date="2026-10-24"'):
+                          'data-reading="/api/reading"', f'data-engine="/engine/{build.ENGINE_VERSION}/"',
+                          'data-example-date="2026-10-24"'):
             self.assertIn(attribute, home)
         for name in ("progress-preparing", "progress-loading", "error-engine", "error-portal"):
             self.assertIn(f'<template id="{name}">', home)
@@ -125,11 +127,14 @@ class BuildTest(unittest.TestCase):
                 names = archive.namelist()
                 archive.extractall(folder)
             self.assertNotIn("aiready/portal.py", names)
+            self.assertNotIn("aiready/jev_trial.py", names)
+            for name in ("aiready/jev.py", "aiready/second_reading.py"):
+                self.assertIn(name, names)
             done = subprocess.run(
                 [sys.executable, "-S", "-X", "utf8", "-c", BARE_RUN, folder, str(build.EXAMPLE_RECORD)],
                 capture_output=True, text=True, encoding="utf-8",
             )
-        self.assertEqual(done.stdout.strip(), "True Τροχαία ατυχήματα True True", done.stderr)
+        self.assertEqual(done.stdout.strip(), "True Τροχαία ατυχήματα True True 5", done.stderr)
 
     def test_headers_allow_only_the_site_and_the_portal_and_keep_search_engines_out(self):
         headers = self.text_of("_headers")

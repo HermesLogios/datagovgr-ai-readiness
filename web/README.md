@@ -17,12 +17,31 @@ with Pyodide, so the scores are those of `scripts/04_metadata_checks.py`.
 - `pages.py` and `icons.py` produce all HTML. Every text comes from `aiready/locales`.
 - The site stores nothing: no cookies, no browser storage, no history of checks.
 
+## Second reading of the description
+
+Below the nine checks a visitor may ask Jev, a model of TypeSafe AI, to read the description of
+the dataset (`DECISIONS.md` #54). The reading is optional and needs a key of the visitor. It gives
+no score and changes none.
+
+- `aiready/jev.py` holds the five statements, selects the texts that are sent (the title, the
+  description and the descriptions of the resources that say more than a name) and reads the
+  reply. `aiready/second_reading.py` turns the probabilities into the rows of the page.
+- `browser.py` builds the request for the dataset on the page. `assets/app.js` sends it, with the
+  key that the visitor typed, in the body of a POST request to the relay
+  `functions/api/reading.js`. The address of the model does not accept calls from a web page.
+- The relay accepts only a request of the shape that the page sends, passes it on with the key in
+  the Authorization header and returns the reply. Any other field is dropped.
+- The key is kept nowhere: the page does not store it, it is never part of an address, the relay
+  writes nothing, and `wrangler.jsonc` switches off the logs and the traces of the Worker.
+- The model is named by its version (`jev-1.14.0`). `python -m aiready.jev_trial` repeats the
+  trial of the model on the 36 datasets of the sample before a new version is adopted.
+
 ## Files
 
 | File | Purpose |
 | --- | --- |
 | `build.py` | builds the site into `web/dist` |
-| `preview.py` | builds the site and serves it on this computer, relay included |
+| `preview.py` | builds the site and serves it on this computer, the two relays included |
 | `pages.py` | HTML of the home page, the result, the guide and the terms |
 | `icons.py` | status icons, line icons and the mark of the tool as inline SVG |
 | `browser.py` | entry points that the page calls inside the browser |
@@ -30,8 +49,9 @@ with Pyodide, so the scores are those of `scripts/04_metadata_checks.py`.
 | `assets/` | stylesheet, script, typeface and licence texts |
 | `example/` | catalogue record of the example, without contact details |
 | `functions/api/record.js` | relay to the catalogue |
-| `worker.js` | entry of the site on Cloudflare Workers: the relay, and the files of the build for every other address |
-| `wrangler.jsonc` | settings of the Worker: its name, the folder of the build and the entry |
+| `functions/api/reading.js` | relay to the model of the second reading |
+| `worker.js` | entry of the site on Cloudflare Workers: the two relays, and the files of the build for every other address |
+| `wrangler.jsonc` | settings of the Worker: its name, the folder of the build, the entry, and no logs |
 
 ## Commands
 
@@ -40,12 +60,15 @@ python web/build.py
 python web/preview.py
 python -m unittest discover -s tests
 node --test tests/js/record_relay.test.mjs
+node --test tests/js/reading_relay.test.mjs
 node --test tests/js/site_worker.test.mjs
 ```
 
 `preview.py` serves the site at http://localhost:8788. The build needs only the standard
 library of Python; the preview and the tests need the packages of `requirements.txt`. After a
-build, `npx wrangler dev` inside `web` serves the same files with the Worker of the relay.
+build, `npx wrangler dev` inside `web` serves the same files with the Worker of the relays.
+The preview and the Worker send a second reading to the address in the variable
+`TYPESAFE_API_URL` when it is set, and otherwise to the address of the model.
 
 ## Publishing on Cloudflare
 
@@ -65,6 +88,9 @@ Every push to the production branch builds and publishes the site. Two build var
 the build: `SITE_PUBLIC=1` lets search engines list the site (the default asks them not to),
 and `DATAGOVGR_BASE_URL` sets another address for the portal.
 
+The Worker keeps no logs and no traces (`observability` in `wrangler.jsonc`), because a request
+of the second reading carries the key of a visitor in its body.
+
 ## Third-party components
 
 | Component | Version | Licence | Source |
@@ -77,8 +103,15 @@ and `DATAGOVGR_BASE_URL` sets another address for the portal.
 
 Pyodide and the two libraries are fetched at build time and are not part of the repository.
 
+The page calls two outside services, and only when a visitor asks: the catalogue of data.gov.gr
+for the metadata of a dataset, and the model Jev of TypeSafe AI (api.typesafe.ai) for a second
+reading.
+
 ## Limits
 
-- The relay has no rate limit of its own.
+- The relays have no rate limit of their own.
+- The second reading is not part of the downloaded reports.
+- The model of the second reading is trained mainly on English; it was tried on the Greek
+  descriptions of the 36 datasets of the sample (`DECISIONS.md` #54).
 - The plain-language texts follow the wording of the reasons of `scripts/04_metadata_checks.py`;
   the tests of `tests/test_plain_language.py` show a change of that wording.

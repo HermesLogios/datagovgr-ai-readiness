@@ -1,7 +1,9 @@
 /* Script of the public page.
    Reads the address typed in the form, asks the catalogue of data.gov.gr for the metadata of the
    dataset and runs the checks of the study inside the browser, with the Python files of the
-   repository. Nothing is stored and nothing is sent anywhere but to the portal. */
+   repository. Nothing is stored. Nothing is sent anywhere but to the portal, with one exception:
+   when the visitor asks for the second reading of the description, the texts of the description
+   and the key that the visitor typed go to the relay of the site, which passes them to the model. */
 
 const settings = document.body.dataset;
 const region = document.getElementById("result");
@@ -10,6 +12,8 @@ const field = document.getElementById("dataset-address");
 const pageTitle = document.title;
 
 const PORTAL_TIMEOUT = 20000;   // milliseconds to wait for the portal, or for the relay of the site
+const READING_TIMEOUT = 45000;  // milliseconds to wait for the second reading, longer than the relay waits for the model
+const KEY_SHAPE = /^[\x21-\x7e]{8,300}$/;   // a key as the relay of the site accepts it: no space inside, 8 to 300 characters
 const EXCEL_TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 const TEXT_TYPES = { md: "text/markdown;charset=utf-8", json: "application/json" };
 
@@ -71,6 +75,18 @@ function loadedExcelLibrary(checks) {
     });
   }
   return excelLibrary;
+}
+
+/* The checks with the dataset of the page as the last one that was assessed. The example is shown
+   from the build, so it is assessed here the first time that a report or a reading asks for it. */
+async function assessedChecks(state) {
+  const checks = await loadedEngine();
+  if (state.example && !state.assessed) {
+    const record = await fetched(settings.exampleRecord);
+    checks.browser.assess_example(await record.text(), settings.language, settings.exampleDate);
+    state.assessed = true;
+  }
+  return checks;
 }
 
 /* Reply of the catalogue for one dataset, as text. The portal is called directly; when the
@@ -218,12 +234,7 @@ async function downloadReport(button) {
   status.classList.remove("is-error");
   status.textContent = buttons.dataset.preparing;
   try {
-    const checks = await loadedEngine();
-    if (state.example && !state.assessed) {
-      const record = await fetched(settings.exampleRecord);
-      checks.browser.assess_example(await record.text(), settings.language, settings.exampleDate);
-      state.assessed = true;
-    }
+    const checks = await assessedChecks(state);
     if (state !== shown) {
       return;
     }
@@ -233,6 +244,89 @@ async function downloadReport(button) {
   } catch (error) {
     status.classList.add("is-error");
     status.textContent = buttons.dataset.failed;
+  } finally {
+    button.disabled = false;
+  }
+}
+
+/* Puts the reading in the place of the offer and moves the focus to its heading. */
+function showReading(offer, html) {
+  const holder = document.createElement("template");
+  holder.innerHTML = html;
+  const reading = holder.content.firstElementChild;
+  offer.replaceWith(reading);
+  reading.querySelector("h3").focus();
+}
+
+/* Second reading of the description of the dataset on the page. The key that the visitor typed is
+   sent once, in the body of the request to the relay of the site, and is stored nowhere. The
+   messages of the form are data attributes written by the build. */
+async function readDescription(readingForm) {
+  const state = shown;
+  const offer = readingForm.closest(".reading");
+  const status = offer.querySelector(".reading-status");
+  const button = readingForm.querySelector("button");
+  const keyField = readingForm.elements.key;
+  const key = keyField.value.trim();
+  const report = (message, failed) => {
+    status.classList.toggle("is-error", failed);
+    status.textContent = message;
+  };
+  const refuseKey = (message) => {
+    report(message, true);
+    keyField.setAttribute("aria-invalid", "true");
+    keyField.focus();
+    keyField.select();
+  };
+  keyField.removeAttribute("aria-invalid");
+  if (!KEY_SHAPE.test(key)) {
+    refuseKey(readingForm.dataset[key ? "key" : "keyMissing"]);
+    return;
+  }
+  button.disabled = true;
+  report(readingForm.dataset.waiting, false);
+  let failure = "engine";
+  try {
+    const checks = await assessedChecks(state);
+    if (state !== shown) {
+      return;
+    }
+    const request = JSON.parse(checks.browser.reading_request());
+    failure = "service";
+    const reply = await fetch(settings.reading, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ key, request }),
+      cache: "no-store",
+      signal: AbortSignal.timeout(READING_TIMEOUT),
+    });
+    if (state !== shown) {
+      return;
+    }
+    if (reply.status === 401) {
+      refuseKey(readingForm.dataset.key);
+      return;
+    }
+    if (reply.status === 429) {
+      report(readingForm.dataset.limit, true);
+      return;
+    }
+    if (!reply.ok) {
+      throw new Error(`HTTP ${reply.status}`);
+    }
+    const text = await reply.text();
+    if (state !== shown) {
+      return;
+    }
+    const answer = JSON.parse(checks.browser.reading_result(text, settings.language, today()));
+    if (!answer.ok) {
+      throw new Error(answer.code);
+    }
+    showReading(offer, answer.html);
+  } catch (error) {
+    if (state === shown) {
+      report(readingForm.dataset[failure], true);
+    }
   } finally {
     button.disabled = false;
   }
@@ -253,6 +347,15 @@ if (form && region) {
     const button = event.target.closest("button[data-format]");
     if (button && shown) {
       downloadReport(button);
+    }
+  });
+  region.addEventListener("submit", (event) => {
+    const readingForm = event.target.closest("#reading-form");
+    if (readingForm) {
+      event.preventDefault();
+      if (shown) {
+        readDescription(readingForm);
+      }
     }
   });
   window.addEventListener("popstate", () => {

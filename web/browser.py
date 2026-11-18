@@ -1,13 +1,14 @@
 """Entry points of the checks for the page that runs them inside the browser.
 
 The script of the page fetches the reply of the catalogue and passes it here as text. Every
-answer is JSON text, so that only text crosses between the page and Python. The reports are
-those of the last dataset that was assessed.
+answer is JSON text, so that only text crosses between the page and Python. The reports and the
+request of a second reading are those of the last dataset that was assessed.
 """
 
 import json
 from datetime import date
 
+from aiready import jev
 from aiready.assessment import Assessment, Source, build_assessment
 from aiready.criteria import load_criteria
 from aiready.identifier import InvalidIdentifier, parse_dataset_identifier
@@ -15,6 +16,7 @@ from aiready.metadata_checks import run_metadata_checks
 from aiready.plain_language import PageModel, build_page_model
 from aiready.records import DatasetNotFound, NotADataset, dataset_in_records, records_in_reply
 from aiready.report import json_text, markdown_text
+from aiready.second_reading import build_reading_model
 from aiready.texts import Texts, load_texts
 from web import pages
 
@@ -60,7 +62,7 @@ def example_source(snapshot_date: str) -> Source:
 
 def result(record: dict, source: Source, language: str, example: bool) -> str:
     assessment, model, texts = explained(record, source, language)
-    _last.update(assessment=assessment, language=language)
+    _last.update(assessment=assessment, language=language, record=record)
     return json.dumps(
         {"ok": True, "name": model.name, "title": model.title, "html": pages.result_html(model, texts, example=example)},
         ensure_ascii=False,
@@ -85,6 +87,24 @@ def assess_reply(reply_text: str, requested: str, language: str, today: str) -> 
 def assess_example(record_text: str, language: str, snapshot_date: str) -> str:
     """Result for the example record, as it stood in the catalogue snapshot of the given day."""
     return result(json.loads(record_text), example_source(snapshot_date), language, example=True)
+
+
+def reading_request() -> str:
+    """Request to the model for the texts of the last dataset that was assessed, as JSON text."""
+    if "record" not in _last:
+        raise LookupError("no dataset has been assessed yet")
+    return json.dumps(jev.request_body(jev.publisher_texts(_last["record"])), ensure_ascii=False)
+
+
+def reading_result(reply_text: str, language: str, today: str) -> str:
+    """Panel of the second reading for the reply of the model, read on the given day (ISO date)."""
+    try:
+        reading = jev.reading_in_reply(json.loads(reply_text))
+    except ValueError:
+        return json.dumps({"ok": False, "code": "service"})
+    texts = load_texts(language)
+    model = build_reading_model(reading, texts, date.fromisoformat(today))
+    return json.dumps({"ok": True, "html": pages.reading_result_html(model, texts)}, ensure_ascii=False)
 
 
 def last_assessment() -> Assessment:

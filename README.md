@@ -77,6 +77,8 @@ The first command reads the metadata from the portal and prints the summary. `--
 
 The public page (`web/`) runs the same checks inside the browser of the visitor and explains every finding in plain Greek or English. `web/README.md` describes how the page is built and published; `python web\preview.py` serves it on the local computer. The tests of the tool run with `python -m unittest discover -s tests`.
 
+On the page a visitor may also ask for a second reading of the description of a dataset by Jev, a model of TypeSafe AI, with a key of their own. The model answers five statements on what the description says, one for M1 and four for AI7, each with a probability. The reading gives no score and changes none, and it is not used in the study (`DECISIONS.md` #54). `python -m aiready.jev_trial` repeats the trial of the model on the 36 datasets of the sample; the answers of the trial of 18 November 2026 are kept in `data/processed/jev_trial_2026-11-18.json`.
+
 ## Licences
 
 - **Code:** EUPL-1.2 (file `LICENSE`).

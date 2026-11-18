@@ -8,9 +8,11 @@ import json
 import unittest
 from datetime import date
 from pathlib import Path
+from unittest import mock
 
 import pandas
 
+from aiready import jev
 from aiready.assessment import Source, build_assessment
 from aiready.metadata_checks import run_metadata_checks
 from aiready.report import markdown_text
@@ -98,6 +100,45 @@ class TableReaderTest(unittest.TestCase):
         expected = pandas.read_csv(path, **options).to_dict("records")
         self.assertEqual(csv_tables.read_csv(path, **options).to_dict("records"), expected)
         self.assertGreater(len(expected), 100)
+
+
+class ReadingEntryTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.record = snapshot_record(EXAMPLE)
+        cls.reply = json.dumps({
+            "model": "jev-1.14.0",
+            "answers": {statement.key: {"type": "noul", "noul": 0.9} for statement in jev.STATEMENTS},
+            "usage": {"input_tokens": 1000},
+        })
+
+    def test_request_holds_the_texts_of_the_last_dataset_and_the_statements(self):
+        browser.assess_reply(found_reply([self.record]), EXAMPLE, "el", TODAY)
+        body = json.loads(browser.reading_request())
+        self.assertEqual(body, jev.request_body(jev.publisher_texts(self.record)))
+        self.assertEqual(body["state"]["title"], "Τροχαία ατυχήματα")
+
+    def test_request_follows_the_example_when_it_was_assessed_last(self):
+        browser.assess_example(json.dumps(self.record), "en", "2026-10-24")
+        self.assertEqual(json.loads(browser.reading_request())["state"]["title"], "Τροχαία ατυχήματα")
+
+    def test_request_before_any_check_is_an_error(self):
+        with mock.patch.dict(browser._last, clear=True):
+            with self.assertRaises(LookupError):
+                browser.reading_request()
+
+    def test_reading_of_a_reply_is_the_html_of_the_panel_in_the_language_asked(self):
+        greek = json.loads(browser.reading_result(self.reply, "el", TODAY))
+        self.assertTrue(greek["ok"])
+        self.assertEqual(greek["html"].count('class="reading-row reading-row--likely"'), 5)
+        self.assertIn("Μοντέλο jev-1.14.0, 17/11/2026", greek["html"])
+        self.assertIn("Model jev-1.14.0, 17 November 2026", json.loads(browser.reading_result(self.reply, "en", TODAY))["html"])
+
+    def test_reply_that_is_not_a_reading_is_refused(self):
+        out_of_range = json.dumps({"answers": {statement.key: {"type": "noul", "noul": 2} for statement in jev.STATEMENTS}})
+        for reply in ("not json", "{}", "[]", out_of_range):
+            with self.subTest(reply=reply[:20]):
+                self.assertEqual(json.loads(browser.reading_result(reply, "el", TODAY)), {"ok": False, "code": "service"})
 
 
 if __name__ == "__main__":

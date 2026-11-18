@@ -1,8 +1,9 @@
 """Drawings of the page as inline SVG.
 
 The line icons are those of the Lucide set (ISC licence, web/assets/icons-LICENSE.txt). The status
-icons and the mark of the tool are drawn here. Each status has its own shape, so that it is told
-apart without colour; the colour comes from the stylesheet through currentColor.
+icons, the icons of the bands of the second reading and the mark of the tool are drawn here. Each
+status and each band has its own shape, so that it is told apart without colour; the colour comes
+from the stylesheet through currentColor.
 """
 
 LINE_ICONS = {
@@ -18,6 +19,9 @@ LINE_ICONS = {
     "badge-check": '<path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="m16 9-5.5 5.5L8 12" />',
     "code-xml": '<path d="m18 16 4-4-4-4" /><path d="m6 8-4 4 4 4" /><path d="m14.5 4-5 16" />',
     "info": '<circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" />',
+    "check": '<path d="M20 6 9 17l-5-5" />',
+    "key-round": '<path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" /><circle cx="16.5" cy="7.5" r=".5" fill="currentColor" />',
+    "text-search": '<path d="M21 5H3" /><path d="M10 12H3" /><path d="M10 19H3" /><circle cx="17" cy="15" r="3" /><path d="m21 19-1.9-1.9" />',
 }
 
 WHITE_STROKE = 'fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"'
@@ -29,6 +33,15 @@ STATUS_DRAWINGS = {
     "not_measured": f'<circle {RING} stroke-dasharray="3.4 3.1" /><path d="M8.5 12h7" fill="none" stroke="currentColor" '
                     'stroke-width="2.2" stroke-linecap="round" />',
     "not_judged": f'<circle {RING} stroke-dasharray="3.4 3.1" /><circle cx="12" cy="12" r="2.3" fill="currentColor" />',
+}
+
+# Bands of the second reading, drawn on the dark panel: a full disc, a half disc and an empty ring.
+DARK_STROKE = 'fill="none" stroke="#0D1B3E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"'
+BAND_DRAWINGS = {
+    "likely": f'<circle cx="12" cy="12" r="10" fill="currentColor" /><path d="m7.4 12.5 3.1 3.1 6.1-6.7" {DARK_STROKE} />',
+    "unsure": f'<circle {RING} /><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" />',
+    "unlikely": f'<circle {RING} /><path d="M8.5 12h7" fill="none" stroke="currentColor" stroke-width="2.2" '
+                'stroke-linecap="round" />',
 }
 
 # Nine cells for the nine checks: five met, one partly met, three still to be read.
@@ -46,6 +59,12 @@ def status_icon(status_key: str) -> str:
     """Icon of a status; the word of the status always stands next to it."""
     return (f'<svg class="status-icon status-icon--{status_key}" viewBox="0 0 24 24" width="24" height="24" '
             f'{SVG_ATTRIBUTES}>{STATUS_DRAWINGS[status_key]}</svg>')
+
+
+def band_icon(band: str) -> str:
+    """Icon of a band of the second reading; the words of the band always stand next to it."""
+    return (f'<svg class="band-icon band-icon--{band}" viewBox="0 0 24 24" width="24" height="24" '
+            f'{SVG_ATTRIBUTES}>{BAND_DRAWINGS[band]}</svg>')
 
 
 def mark_cells() -> str:

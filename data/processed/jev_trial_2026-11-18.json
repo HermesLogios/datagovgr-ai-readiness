@@ -1,0 +1,2387 @@
+{
+  "date": "2026-11-18",
+  "model_asked": "jev-1.14.0",
+  "address": "https://api.typesafe.ai/v1/systemone",
+  "browser_access": "",
+  "threshold": 0.5,
+  "datasets": [
+    {
+      "sample_id": "S01",
+      "name": "geotemachia-oria-kai-kaek-ton-periochon-toy-leitoyrgoyntos-ktimatologioy",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Γεωτεμάχια (όρια και ΚΑΕΚ) των περιοχών του \"Λειτουργούντος Κτηματολογίου\"",
+          "description": "Γεωτεμάχια ή κτηματολογικά διαγράμματα του Ελληνικού Κτηματολογίου σε μορφότυπο shapefile (ΕΓΣΑ ’87) που τηρούνται στη βάση δεδομένων του ν.π.δ.δ. «Ελληνικό Κτηματολόγιο». Αφορούν στα γεωτεμάχια που έχουν ενταχθεί στο σύστημα του «Λειτουργούντος Κτηματολογίου». Για κάθε γεωτεμάχιο υπάρχει καταγεγραμένη η πληροφορία του ΚΑΕΚ (Κωδικός Αριθμός Εθνικού Κτηματολογίου) και η πιο πρόσφατη ημερομηνία ενημέρωσης.",
+          "resource_descriptions": [
+            "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Ανατολικής Μακεδονίας και Θράκης ημερομηνίας 22/10/2026.",
+            "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Αττικής ημερομηνίας 22/10/2026.",
+            "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Δυτικής Ελλάδας ημερομηνίας 22/10/2026.",
+            "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Δυτικής Μακεδονίας ημερομηνίας 22/10/2026.",
+            "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Ιονίων Νήσων ημερομηνίας 22/10/2026.",
+            "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Ηπείρου ημερομηνίας 22/10/2026.",
+            "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Κεντρικής Μακεδονίας ημερομηνίας 22/10/2026.",
+            "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Κρήτης ημερομηνίας 22/10/2026.",
+            "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Νοτίου Αιγαίου ημερομηνίας 22/10/2026.",
+            "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Πελοποννήσου ημερομηνίας 22/10/2026.",
+            "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Στερεάς Ελλάδας ημερομηνίας 22/10/2026.",
+            "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Θεσσαλίας ημερομηνίας 22/10/2026.",
+            "Περιέχει ένα αρχείο με τα γεωτεμάχια της Περιφέρειας Βορείου Αιγαίου ημερομηνίας 22/10/2026."
+          ]
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.96,
+        "coverage": 0.97,
+        "gaps": 0.05,
+        "collection": 0.76,
+        "errors": 0.04
+      },
+      "input_tokens": 2207,
+      "error": ""
+    },
+    {
+      "sample_id": "S02",
+      "name": "gis-ypen-wfd-wms-kallikratikoi_dimoi",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Καλλικρατικοί Δήμοι",
+          "description": "Πρόκειται για πολυγωνικό σύνολο δεδομένων που περιλαμβάνει τα όρια των δήμων για το σύνολο της χώρας, όπως προέκυψαν από τη διοικητική διαίρεση σύμφωνα με τη Νέα Αρχιτεκτονική της Αυτοδιοίκησης και της Αποκεντρωμένης Διοίκησης – Πρόγραμμα Καλλικράτης, Ν. 3852/2010 (ΦΕΚ 87Α). Πηγή: geodata.gov.gr.",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.97,
+        "coverage": 0.97,
+        "gaps": 0.05,
+        "collection": 0.94,
+        "errors": 0.18
+      },
+      "input_tokens": 1058,
+      "error": ""
+    },
+    {
+      "sample_id": "S03",
+      "name": "dromologia-statheron-sygkoinonion-metro-isap-tram",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Δρομολόγια Σταθερών Συγκοινωνιών (ΜΕΤΡΟ, ΗΣΑΠ, ΤΡΑΜ)",
+          "description": "Περιέχονται τα δρομολόγια Σταθερών Συγκοινωνιών για την Αθήνα. Τα δεδομένα περιλαμβάνουν τις στάσεις και τις διαδρομές για μετρό, τραμ και ηλεκτρικό σιδηρόδρομο. Τα δεδομένα προσφέρονται στο πρότυπο GTFS (General Transit Feed Specification). Τα δημοσιευόμενα δεδομένα απεικονίζουν, κατά προσέγγιση, τη λειτουργική κατάσταση του Δικτύου Αστικών Συγκοινωνιών της πρωτεύουσας κατά την αναφερόμενη ημερομηνία έκδοσής τους και μόνο. Αυτή είναι πιθανό να έχει μεταβληθεί ή να μεταβληθεί ανά πάσα χρονική στιγμή, χωρίς προειδοποίηση και χωρίς καμία ευθύνη των Συγκοινωνιών Αθηνών. H γεωγραφική ακρίβεια των δεδομένων είναι περιορισμένη, καθώς η ψηφιοποίηση δεν έχει γίνει με ακρίβεια τοπογραφικής αποτύπωσης, αλλά βάσει καθαρά περιγραφικών δεδομένων (π.χ. την πλευρά του Ο.Τ. στην οποία εγγράφεται μια στάση). Ως εκ τούτου, η ακρίβεια αποτύπωσης στάσεων μπορεί να είναι, ενδεικτικά, της τάξης των ±20 μέτρων στις αστικές περιοχές (όπου υπάρχουν σαφή και σχετικά μικρού μεγέθους Ο.Τ.) και άνω των ±50 μέτρων σε ημιαστικές περιοχές (όπου τα Ο.Τ. δεν είναι σαφή ή είναι πολύ μεγάλα). Ως εκ τούτου, τα δεδομένα αυτά μπορεί να μην είναι κατάλληλα για όλες τις εφαρμογές. Για τις γραμμές εξπρές ισχύουν περιορισμοί επιβίβασης-αποβίβασης σε ορισμένες στάσεις κατά μήκος της διαδρομής τους. Οι ενδιαφερόμενοι μπορούν να ανατρέχουν στον διαδικτυακό τόπο του ΟΑΣΑ (www.oasa.gr), στην εφαρμογή OASA Telematics (Μενού Νέα) ή/και να απευθύνονται στο Κέντρο Τηλεφωνικών Πληροφοριών του ΟΑΣΑ (τηλ. 11185) προκειμένου να ενημερώνονται για τυχόν τακτικές ή έκτακτες μεταβολές στη λειτουργία των αστικών συγκοινωνιών. Σε κάθε περίπτωση, το επίπεδο ακρίβειας των δεδομένων διαμορφώνεται από τις εκάστοτε ανάγκες και δυνατότητες των Συγκοινωνιών Αθηνών και είναι πιθανό να μην είναι κατάλληλο για τη χρήση τους από τρίτους για σκοπούς που δεν έχουν προβλέψει οι Συγκοινωνίες Αθηνών. Ως εκ τούτου, όλα τα υπόψη δεδομένα παρέχονται «ως έχουν», οι δε Συγκοινωνίες Αθηνών δε φέρουν ουδεμία ευθύνη για τα αποτελέσματα της οποιασδήποτε χρήσης τους από τρίτους.",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.96,
+        "coverage": 0.97,
+        "gaps": 0.24,
+        "collection": 0.87,
+        "errors": 0.99
+      },
+      "input_tokens": 2247,
+      "error": ""
+    },
+    {
+      "sample_id": "S04",
+      "name": "simeia-ydrolipsias-tis-geovasis-emsy-ethniko-mitroo-simeion-ydrolipsias-periochi-anatolikis-makedoni",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης",
+          "description": "Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.06,
+        "coverage": 0.4,
+        "gaps": 0.07,
+        "collection": 0.43,
+        "errors": 0.03
+      },
+      "input_tokens": 1003,
+      "error": ""
+    },
+    {
+      "sample_id": "S05",
+      "name": "attica-43-lista-me-monades-frontidas-hlikiwmenwn",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Λίστα με Μονάδες Φροντίδας Ηλικιωμένων",
+          "description": "Επικαιροποιημένη Λίστα Μονάδων Φροντίδας Ηλικιωμένων κερδοσκοπικού και μη χαρακτήρα που λειτουργούν στη χωρική μας αρμοδιότητα. Η λίστα είναι δυναμική.Μπορείτε να κατεβάσετε τη λίστα σε excell και pdf πατώντας \"Εμφάνιση σε λίστα\".Οι μονάδες φροντίδας ηλικιωμένων κερδοσκοπικού ή μη χαρακτήρα είναι οι μονάδες που φροντίζουν ηλικιωμένα άτομα αυτοεξυπηρετούμενα και μη. Οι μονάδες φροντίδας ηλικιωμένων εξασφαλίζουν στους φιλοξενούμενους υγιεινή και ασφαλή διαμονή, υγιεινή διατροφή, τακτική ιατρική παρακολούθηση, φυσικοθεραπεία, ψυχαγωγία, ψυχολογική υποστήριξη και γενικά σεβασμό και ενδιαφέρον στον περιθαλπόμενο, ανεξαρτήτως πνευματικής και σωματικής κατάστασης.",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.91,
+        "coverage": 0.92,
+        "gaps": 0.08,
+        "collection": 0.08,
+        "errors": 0.48
+      },
+      "input_tokens": 1391,
+      "error": ""
+    },
+    {
+      "sample_id": "S06",
+      "name": "troxaia-atyxhmata",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Τροχαία ατυχήματα",
+          "description": "Σύνολο θανατηφόρων, σοβαρών και ελαφρών τροχαίων ατυχημάτων- Σύνολο παθόντων",
+          "resource_descriptions": [
+            "ΤΡΟΧΑΙΑ ΑΤΥΧΗΜΑΤΑ ΚΑΙ ΠΑΘΟΝΤΕΣ ΑΝΑ ΚΑΤΗΓΟΡΙΑ (ΘΑΝΑΤΗΦΟΡΑ ΑΤΥΧΗΜΑΤΑ-ΣΟΒΑΡΑ ΑΤΥΧΗΜΑΤΑ-ΕΛΕΦΡΑ ΑΤΥΧΗΜΑΤΑ-ΝΕΚΡΟΙ-ΒΑΡΙΑ ΤΡΑΥΜΑΤΙΕΣ-ΕΛΑΦΡΙΑ ΤΡΑΥΜΑΤΙΕΣ) ΓΙΑ ΤΟ ΕΤΟΣ 2020 ΣΤΗΝ ΕΛΛΗΝΙΚΗ ΕΠΙΚΡΑΤΕΙΑ"
+          ]
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.87,
+        "coverage": 0.91,
+        "gaps": 0.04,
+        "collection": 0.06,
+        "errors": 0.04
+      },
+      "input_tokens": 1078,
+      "error": ""
+    },
+    {
+      "sample_id": "S07",
+      "name": "diacheirisi-stoicheion-paragogis-nopoy-galaktos",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Διαχείριση Στοιχείων Παραγωγής Νωπού Γάλακτος",
+          "description": "Ο ΕΛΓΟ‑ΔΗΜΗΤΡΑ τηρεί μητρώο αγοραστών‑μεταποιητών, συνεταιρισμών συγκέντρωσης γάλακτος καθώς και μητρώο παραγωγών γάλακτος. Στο πλαίσιο αυτό συλλέγει, επεξεργάζεται και διαχειρίζεται στοιχεία που αφορούν την παραγωγή και διακίνηση του νωπού γάλακτος στην ελληνική Επικράτεια. Ο Οργανισμός μεριμνά για τη συστηματική δημοσιοποίηση των εν λόγω στοιχείων υπό μορφή στατιστικών δεδομένων, με σκοπό την έγκυρη πληροφόρηση των ενδιαφερόμενων μερών και την αντικειμενική αποτύπωση της δραστηριότητας στον γαλακτοκομικό τομέα",
+          "resource_descriptions": [
+            "Το παρόν σύνολο δεδομένων αφορά στην επίσημη μηνιαία στατιστική απεικόνιση της παραγωγής νωπού γάλακτος στην Ελλάδα, όπως αυτή προκύπτει από τις δηλώσεις παραλαβών που υποβάλλονται στον ΕΛΓΟ-ΔΗΜΗΤΡΑ Περιλαμβάνει στοιχεία για τα έτη 2020 έως σήμερα ανά Περιφερειακή Ενότητα και αφορά στα είδη γάλακτος: αγελαδινό, πρόβειο, γίδινο και βουβαλίσιο. Τα δεδομένα περιλαμβάνουν τις παραδοθείσες ποσότητες (Kg), τη μέση τιμή (€/Kg), τη συνολική αξία (€) και το πλήθος των παραγωγών. Η συλλογή και επεξεργασία των στοιχείων πραγματοποιείται από τη Διεύθυνση Διαχείρισης Ελέγχων Γάλακτος & Κρέατος του Οργανισμού, στο πλαίσιο της παρακολούθησης της εγχώριας παραγωγής και της ενημέρωσης των εμπλεκομένων στον τομέα της κτηνοτροφίας."
+          ]
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.94,
+        "coverage": 0.99,
+        "gaps": 0.04,
+        "collection": 0.99,
+        "errors": 0.05
+      },
+      "input_tokens": 1788,
+      "error": ""
+    },
+    {
+      "sample_id": "S08",
+      "name": "arithmos-ekpaideytikon-deyterovathmia-eidikotita-schesi-ergasias-2025",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "\"ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ ΔΗΜΟΣΙΑΣ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ ΔΙΕΥΘΥΝΣΗ ΕΚΠΑΙΔΕΥΣΗΣ ΓΙΑ ΤΟ ΣΧΟΛΙΚΟ ΕΤΟΣ 2024-2025 \"",
+          "description": "\"ΔΕΥΤΕΡΟΒΑΘΜΙΑ ΔΗΜΟΣΙΑ ΕΚΠΑΙΔΕΥΣΗ - ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ Δ/ΝΣΗ ΕΚΠ/ΣΗΣ ΓΙΑ ΤΟ ΣΧ. ΕΤΟΣ 2024-2025 \"",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.09,
+        "coverage": 0.61,
+        "gaps": 0.04,
+        "collection": 0.03,
+        "errors": 0.03
+      },
+      "input_tokens": 1105,
+      "error": ""
+    },
+    {
+      "sample_id": "S09",
+      "name": "attica-92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής",
+          "description": "Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.04,
+        "coverage": 0.17,
+        "gaps": 0.12,
+        "collection": 0.03,
+        "errors": 0.03
+      },
+      "input_tokens": 921,
+      "error": ""
+    },
+    {
+      "sample_id": "S10",
+      "name": "enarmonismenos-deiktis-timon-katanaloti-endtk",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "ΕΝΑΡΜΟΝΙΣΜΕΝΟΣ ΔΕΙΚΤΗΣ ΤΙΜΩΝ ΚΑΤΑΝΑΛΩΤΗ (ΕνΔΤΚ)",
+          "description": "Ο Εναρμονισμένος Δείκτης Τιμών Καταναλωτή (ΕνΔΤΚ) είναι ένας δείκτης τιμών καταναλωτή (ΔΤΚ) που υπολογίζεται σύμφωνα με μια κοινή προσέγγιση. Μετρά με την πάροδο του χρόνου τις μεταβολές των τιμών των καταναλωτικών αγαθών και υπηρεσιών που αποκτώνται από τα νοικοκυριά. Λόγω της κοινής μεθοδολογίας, οι ΕνΔΤΚ των χωρών και των ευρωπαϊκών συγκεντρωτικών στοιχείων μπορούν να συγκριθούν άμεσα.",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.86,
+        "coverage": 0.71,
+        "gaps": 0.05,
+        "collection": 0.85,
+        "errors": 0.04
+      },
+      "input_tokens": 1152,
+      "error": ""
+    },
+    {
+      "sample_id": "S11",
+      "name": "dromologia-odikon-sygkoinonion-leoforeia-trolei",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Δρομολόγια Οδικών Συγκοινωνιών (Λεωφορεία, Τρόλεϊ)",
+          "description": "Περιέχονται τα δρομολόγια Αστικής Συγκοινωνίας για την Αθήνα. Τα δεδομένα περιλαμβάνουν τις στάσεις και τις διαδρομές για λεωφορεία και τρόλεϊ. Τα δεδομένα προσφέρονται στο πρότυπο GTFS (General Transit Feed Specification). Τα δημοσιευόμενα δεδομένα απεικονίζουν, κατά προσέγγιση, τη λειτουργική κατάσταση του Δικτύου Αστικών Συγκοινωνιών της πρωτεύουσας κατά την αναφερόμενη ημερομηνία έκδοσής τους και μόνο. Αυτή είναι πιθανό να έχει μεταβληθεί ή να μεταβληθεί ανά πάσα χρονική στιγμή, χωρίς προειδοποίηση και χωρίς καμία ευθύνη των Συγκοινωνιών Αθηνών. H γεωγραφική ακρίβεια των δεδομένων είναι περιορισμένη, καθώς η ψηφιοποίηση δεν έχει γίνει με ακρίβεια τοπογραφικής αποτύπωσης, αλλά βάσει καθαρά περιγραφικών δεδομένων (π.χ. την πλευρά του Ο.Τ. στην οποία εγγράφεται μια στάση). Ως εκ τούτου, η ακρίβεια αποτύπωσης στάσεων μπορεί να είναι, ενδεικτικά, της τάξης των ±20 μέτρων στις αστικές περιοχές (όπου υπάρχουν σαφή και σχετικά μικρού μεγέθους Ο.Τ.) και άνω των ±50 μέτρων σε ημιαστικές περιοχές (όπου τα Ο.Τ. δεν είναι σαφή ή είναι πολύ μεγάλα). Ως εκ τούτου, τα δεδομένα αυτά μπορεί να μην είναι κατάλληλα για όλες τις εφαρμογές. Για τις γραμμές εξπρές ισχύουν περιορισμοί επιβίβασης-αποβίβασης σε ορισμένες στάσεις κατά μήκος της διαδρομής τους. Οι ενδιαφερόμενοι μπορούν να ανατρέχουν στον διαδικτυακό τόπο των Συγκοινωνιών Αθηνών (www.oasa.gr), στην εφαρμογή OASA Telematics (Μενού Νέα) ή/και να απευθύνονται στο Κέντρο Τηλεφωνικών Πληροφοριών των Συγκοινωνιών Αθηνών (τηλ. 11185) προκειμένου να ενημερώνονται για τυχόν τακτικές ή έκτακτες μεταβολές στη λειτουργία των αστικών συγκοινωνιών. Σε κάθε περίπτωση, το επίπεδο ακρίβειας των δεδομένων διαμορφώνεται από τις εκάστοτε ανάγκες και δυνατότητες των Συγκοινωνιών Αθηνών και είναι πιθανό να μην είναι κατάλληλο για τη χρήση τους από τρίτους για σκοπούς που δεν έχουν προβλέψει οι Συγκοινωνίες Αθηνών. Ως εκ τούτου, όλα τα υπόψη δεδομένα παρέχονται «ως έχουν», οι δε Συγκοινωνίες Αθηνών δεν φέρουν ουδεμία ευθύνη για τα αποτελέσματα της οποιασδήποτε χρήσης τους από τρίτους.",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.97,
+        "coverage": 0.98,
+        "gaps": 0.24,
+        "collection": 0.88,
+        "errors": 0.99
+      },
+      "input_tokens": 2258,
+      "error": ""
+    },
+    {
+      "sample_id": "S12",
+      "name": "dedomena-astikon-sygkoinonion-p-e-thessalonikis",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Δεδομένα αστικών συγκοινωνιών Π.Ε. Θεσσαλονίκης",
+          "description": "Το παρόν σύνολο δεδομένων (dataset) περιλαμβάνει δεδομένα αστικών λεωφορείων της Περιφερειακής Ενότητας Θεσσαλονίκης σε μορφή GTFS (General Transit Feed Specification). Τα δεδομένα παρέχονται από τον Οργανισμό Συγκοινωνιακού Έργου Θεσσαλονίκης (ΟΣΕΘ) και περιλαμβάνουν πληροφορίες σχετικά με το δίκτυο αστικών λεωφορειακών συγκοινωνιών, όπως γραμμές, στάσεις, προγραμματισμένα δρομολόγια και γεωγραφικές διαδρομές. Τα δημοσιευόμενα δεδομένα αποτυπώνουν την προγραμματισμένη λειτουργία του δικτύου συγκοινωνιών κατά το χρονικό διάστημα στο οποίο αναφέρονται. Η λειτουργία του δικτύου ενδέχεται να μεταβάλλεται ανά πάσα στιγμή λόγω επιχειρησιακών αναγκών, κυκλοφοριακών συνθηκών, τεχνικών ή άλλων απρόβλεπτων παραγόντων. Η γεωγραφική αποτύπωση των στοιχείων είναι ενδεικτική και ενδέχεται να παρουσιάζει αποκλίσεις, καθώς δεν αποτελεί τοπογραφική αποτύπωση υψηλής ακρίβειας. Ως εκ τούτου, τα δεδομένα παρέχονται αποκλειστικά για ενημερωτικούς και αναπτυξιακούς σκοπούς και ενδέχεται να μην είναι κατάλληλα για όλες τις χρήσεις ή εφαρμογές. Τα δεδομένα παρέχονται «ως έχουν» και ενδέχεται να υπόκεινται σε αλλαγές χωρίς προηγούμενη ειδοποίηση. Ο ΟΣΕΘ δε φέρει ευθύνη για τυχόν συνέπειες που μπορεί να προκύψουν από τη χρήση τους από τρίτους. Για την πλέον πρόσφατη ενημέρωση σχετικά με τη λειτουργία του δικτύου συγκοινωνιών, οι ενδιαφερόμενοι μπορούν να ανατρέχουν στον επίσημο διαδικτυακό τόπο (oseth.com.gr) και τις ψηφιακές υπηρεσίες του οργανισμού (Oseth Bus App).",
+          "resource_descriptions": [
+            "GTFS αρχείο των αστικών λεωφορειακών γραμμών στην ΠΕ Θεσσαλονίκης για το χρονικό διάστημα 05/03/2026-18/03/2026",
+            "GTFS αρχείο των αστικών λεωφορειακών γραμμών στην ΠΕ Θεσσαλονίκης για το χρονικό διάστημα 11/03/2026-30/03/2026",
+            "GTFS αρχείο των αστικών λεωφορειακών γραμμών στην ΠΕ Θεσσαλονίκης για το χρονικό διάστημα 27/03/2026-13/04/2026",
+            "GTFS αρχείο των αστικών λεωφορειακών γραμμών στην ΠΕ Θεσσαλονίκης για το χρονικό διάστημα 07/04/2026-27/04/2026",
+            "GTFS αρχείο των αστικών λεωφορειακών γραμμών στην ΠΕ Θεσσαλονίκης για το χρονικό διάστημα 27/04/2026-17/05/2026",
+            "GTFS αρχείο των αστικών λεωφορειακών γραμμών στην ΠΕ Θεσσαλονίκης για το χρονικό διάστημα 19/06/2026-03/07/2026",
+            "GTFS αρχείο των αστικών λεωφορειακών γραμμών στην ΠΕ Θεσσαλονίκης για το χρονικό διάστημα 29/06/2026-10/07/2026",
+            "GTFS αρχείο των αστικών λεωφορειακών γραμμών στην ΠΕ Θεσσαλονίκης για το χρονικό διάστημα 03/07/2026-17/07/2026",
+            "GTFS αρχείο των αστικών λεωφορειακών γραμμών στην ΠΕ Θεσσαλονίκης για το χρονικό διάστημα 14/07/2026-03/08/2026",
+            "GTFS αρχείο των αστικών λεωφορειακών γραμμών στην ΠΕ Θεσσαλονίκης για το χρονικό διάστημα 06/08/2026-17/08/2026",
+            "GTFS αρχείο των αστικών λεωφορειακών γραμμών στην ΠΕ Θεσσαλονίκης για το χρονικό διάστημα 04/09/2026-21/09/2026",
+            "GTFS αρχείο των αστικών λεωφορειακών γραμμών στην ΠΕ Θεσσαλονίκης για το χρονικό διάστημα 02/10/2026-18/10/2026",
+            "GTFS αρχείο των αστικών λεωφορειακών γραμμών στην ΠΕ Θεσσαλονίκης για το χρονικό διάστημα 09/10/2026-25/10/2026"
+          ]
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.98,
+        "coverage": 0.99,
+        "gaps": 0.11,
+        "collection": 0.64,
+        "errors": 0.97
+      },
+      "input_tokens": 3121,
+      "error": ""
+    },
+    {
+      "sample_id": "S13",
+      "name": "oasth-gtfs",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Σύνολα Δεδομένων Οργανισμού Αστικών Συγκοινωνιών - GTFS",
+          "description": "Περιλαμβάνει τα GTFS αρχεία του Οργανισμού Αστικών Συγκοινωνιών που αποστέλλονται για τη χρήση των υπηρεσιών της Google",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.36,
+        "coverage": 0.09,
+        "gaps": 0.06,
+        "collection": 0.64,
+        "errors": 0.03
+      },
+      "input_tokens": 952,
+      "error": ""
+    },
+    {
+      "sample_id": "S14",
+      "name": "ypiresies-dimoy-patreon",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Υπηρεσίες Δήμου Πατρέων",
+          "description": "Δημιουργήθηκε από το API της υπηρεσίας SmartISCity",
+          "resource_descriptions": [
+            "Μετεωρολογικά δεδομένα Πάτρας (20-11-2025)",
+            "Περιβαλλοντικά Δεδομένα Πάτρας (20-11-2025)",
+            "Λεπτομερή δεδομένα όλων των θέσεων στάθμευσης",
+            "Συγκεντρωτικά δεδομένα στάθμευσης ανά περιοχή",
+            "Δεδομένα δημόσιων χώρων στάθμευσης",
+            "Περιβαλλοντικοί δείκτες και ποιότητα ζωής",
+            "Μετεωρολογική πρόγνωση Πάτρας",
+            "Όλοι οι αισθητήρες και έξυπνη υποδομή Πάτρας",
+            "Τύποι αισθητήρων και έξυπνης υποδομής",
+            "Δεδομένα δικτύου mesh και συνάθροισης κοινού",
+            "Δεδομένα ποιότητας υδάτων παράκτιας ζώνης",
+            "Μετεωρολογικά δεδομένα Πάτρας",
+            "Περιβαλλοντικά δεδομένα Πάτρας"
+          ]
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.09,
+        "coverage": 0.69,
+        "gaps": 0.04,
+        "collection": 0.82,
+        "errors": 0.03
+      },
+      "input_tokens": 1349,
+      "error": ""
+    },
+    {
+      "sample_id": "S15",
+      "name": "https-www-nafpaktos-gr-el-prosvasi",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "ΧΩΡΟΙ - ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ",
+          "description": "Καταγραφή και γεωγραφικές τοποθεσίες των ελεύθερων, δημοτικών και οργανωμένων χώρων στάθμευσης οχημάτων εντός των ορίων του Δήμου Ναυπακτίας",
+          "resource_descriptions": [
+            "Διαδραστικός Χάρτης Χώρων Στάθμευσης (GeoJSON)"
+          ]
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.9,
+        "coverage": 0.97,
+        "gaps": 0.04,
+        "collection": 0.23,
+        "errors": 0.03
+      },
+      "input_tokens": 1000,
+      "error": ""
+    },
+    {
+      "sample_id": "S16",
+      "name": "thesmothetimenes-perioches-natura-2000",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Θεσμοθετημένες περιοχές NATURA 2000",
+          "description": "Το δίκτυο Natura 2000 αποτελεί ένα Ευρωπαϊκό Οικολογικό Δίκτυο περιοχών, οι οποίες φιλοξενούν φυσικούς τύπους οικοτόπων και οικοτόπους ειδών. Οι περιοχές του δικτύου περιλαμβάνουν διάφορους τύπους φυσικών οικοσυστημάτων (πχ δασικά, λιμναία, υγροτοπικά, ποτάμια, παράκτια και θαλάσσια οικοσυστήματα). Το δίκτυο περιοχών επεκτείνεται σε ολόκληρη την ΕΕ. Η δημιουργία του δικτύου «Natura 2000» στοχεύει στην μακροπρόθεσμη διατήρηση των πιο πολύτιμων και των πλέον απειλούμενων ειδών χλωρίδας και πανίδας, σύμφωνα με την Οδηγία 92/43/ΕΟΚ αλλά και στην προστασία των πτηνών, σύμφωνα με την Οδηγία 79/409/ΕΟΚ της ΕΕ. Η συμβολή του Ελληνικού Κτηματολογίου Η αρχική καταγραφή των τύπων οικοτόπων πραγματοποιήθηκε στην Ελλάδα την περίοδο 1999 - 2001 από το ΥΠΕΧΩΔΕ και αποτέλεσε την πρώτη χαρτογράφηση αυτού του είδους, δημιουργώντας αντίστοιχους θεματικούς χάρτες. Το Ελληνικό Κτηματολόγιο, κατά την περίοδο 2013-2015, προχώρησε στον ακριβέστερο γεωχωρικό προσδιορισμό των εξωτερικών ορίων και στην επικαιροποίηση, περιγραφή και οριοθέτηση των χερσαίων τύπων οικοτόπων του δικτύου «Natura 2000», σε κλίμακα 1:5.000 με βάση τα ενιαία χαρτογραφικά υπόβαθρά του και δειγματοληψίες πεδίου, καθώς και στην ενημέρωση (συμπλήρωση και διόρθωση) της αρχικής βάσης δεδομένων. Το σχετικό έργο χαρτογράφησης «Ανάπτυξη υποδομής χωρικών δεδομένων μεγάλης κλίμακας (1:5000) για τις χερσαίες προστατευόμενες περιοχές του δικτύου «Νatura 2000» συγχρηματοδοτήθηκε από το ΕΣΠΑ 2014-20 στο Επιχειρησιακό Πρόγραμμα ΕΠανΕΚ. Στη συνέχεια παραδόθηκε στο ΥΠΕΝ και χρησιμοποιήθηκε στην αναθεώρηση του εθνικού καταλόγου των προστατευόμενων περιοχών του δικτύου «Natura 2000», ο οποίος θεσμοθετήθηκε με την υπ’ αριθμ. 50743 ΚΥΑ (ΦΕΚ 4432Β/15-12-2017).",
+          "resource_descriptions": [
+            "Χάρτης των θεσμοθετημένων περιοχών NATURA 2000 σε μορφή shapefile"
+          ]
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.77,
+        "coverage": 0.92,
+        "gaps": 0.06,
+        "collection": 0.97,
+        "errors": 0.88
+      },
+      "input_tokens": 2189,
+      "error": ""
+    },
+    {
+      "sample_id": "S17",
+      "name": "apd-kritis-harv2-__",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ",
+          "description": "Οι Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ που έχουν λάβει άδεια εγκατάστασης – λειτουργίας από το Τμήμα Φυσικών Πόρων της Δ/νσης Τεχνικού Ελέγχου της Αποκεντρωμένης Διοίκησης Κρήτης. Ο χάρτης απεικονίζει, με διαδραστικό τρόπο, δεδομένα των σταθμών Ανανεώσιμων Πηγών Ενέργειας αρμοδιότητας Αποκεντρωμένης Διοίκησης Κρήτης, που προέρχονται από τη Γεωβάση που τηρείται από το Τμήμα Φυσικών Πόρων της Διεύθυνσης Τεχνικού Ελέγχου της Αποκεντρωμένης Διοίκησης Κρήτης, τα οποία είναι επικαιροποιημένα (up to date), καθώς και τη θέση τους σε χάρτη. Στο χάρτη περιέχονται τα παρακάτω επίπεδα: Αδειοδοτημένες Α.Π.Ε. Κρήτης Περιοχές Natura Όρια Δήμων Επισημαίνεται ότι στο χάρτη δεν εμφανίζονται τα σημεία εκείνα, για τα οποία εκκρεμεί ο έλεγχός τους από την αδειοδοτούσα αρχή (Τμήμα Φυσικών Πόρων/ΔΤΕ/ΑΔΚ) προκειμένου να εκδοθεί η διοικητική πράξη έγκρισης ή απόρριψης αιτήματος για τη χορήγηση της αντίστοιχης άδειας. Χάρτης στη Γεωπύλη Εφαρμογή στη Γεωπύλη",
+          "resource_descriptions": [
+            "Ανανεώσιμες Πηγές Ενέργειας στην Περιφέρειας Κρήτης έως το 2008.",
+            "Το ESRI REST API υποστηρίζει την εξαγωγή δεδομένων σε διαφόρους μορφοτύπους."
+          ]
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.94,
+        "coverage": 0.95,
+        "gaps": 0.94,
+        "collection": 0.94,
+        "errors": 0.59
+      },
+      "input_tokens": 1696,
+      "error": ""
+    },
+    {
+      "sample_id": "S18",
+      "name": "gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012_2018",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018",
+          "description": "Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018, σύμφωνα με τα παραδοτέα του προγράμματος CORINE της Ευρωπαϊκής Ένωσης. Τα στοιχεία του επιθέματος (Version 20) απεικονίζουν τις μεταβολές που καταγράφηκαν στην κάλυψη γης μεταξύ των δύο χρονολογιών. Έγινε ανάκτηση των στοιχείων από το site του Προγράμματος Copernicus, μετασχηματισμός τους στο ΕΓΣΑ 87 και αποκοπή τους στα όρια της Ελληνικής Επικράτειας. Τελ. Ενημέρωση 13/12/2022.",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.83,
+        "coverage": 0.98,
+        "gaps": 0.05,
+        "collection": 0.97,
+        "errors": 0.08
+      },
+      "input_tokens": 1146,
+      "error": ""
+    },
+    {
+      "sample_id": "S19",
+      "name": "emy-station-189",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ",
+          "description": "Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.04,
+        "coverage": 0.03,
+        "gaps": 0.04,
+        "collection": 0.22,
+        "errors": 0.03
+      },
+      "input_tokens": 895,
+      "error": ""
+    },
+    {
+      "sample_id": "S20",
+      "name": "stations-data",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Ημερήσιες μετεωρολογικές παράμετροι για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς",
+          "description": "Το σύνολο των δεδομένων αφορά ημερήσιες μετεωρολογικές παραμέτρους για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς. Μπορείτε να δείτε οπτικοποιήσεις των δεδομένων αυτών των σταθμών στην σελίδα https://www.meteo.gr/climate/ Οι παράμετροι είναι θερμοκρασία (°C), σχετική υγρασία (%), πίεση (hPa), βροχόπτωση (mm), ταχύτητα (km/h), επικρατούσα διεύθυνση ανέμου και ριπή ανέμου(km/h). Οι μετρήσεις προέρχονται από το δίκτυο των αυτόματων μετεωρολογικών σταθμών του Εθνικού Αστεροσκοπείου Αθηνών/meteo.gr. Πληροφορίες για τους σταθμούς και για τυχόν δυσλειτουργίες δίνονται στο http://meteosearch.meteo.gr/ στην σελίδα του αντίστοιχου σταθμού. Αναφορά στο δίκτυο γίνεται μέσω της επιστημονικής δημοσίευσης https://rmets.onlinelibrary.wiley.com/doi/full/10.1002/gdj3.44",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.97,
+        "coverage": 0.99,
+        "gaps": 0.06,
+        "collection": 0.99,
+        "errors": 0.05
+      },
+      "input_tokens": 1441,
+      "error": ""
+    },
+    {
+      "sample_id": "S21",
+      "name": "apd-kritis-harv2-56",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Βροχομετρικά στοιχεία 56 σταθμών της Νήσου Κρήτης",
+          "description": "Ιστορικά Μετεωρολογικά Δεδομένα της Νήσου Κρήτης περιέχουν βροχομετρικά στοιχεία 56 σταθμών της Νήσου Κρήτης από την ίδρυση των σταθμών της Υπηρεσίας Εγγείων Βελτιώσεων από της ιδρύσεως των σταθμών μέχρι το υδρολογικό έτος 1998-1999. Το έργο είχε την ονομασία Πρόγραμμα Υδρολογικής Έρευνας Κρήτης και χρηματοδοτήθηκε από τις πιστώσεις των Δημοσίων Επενδύσεων με κωδικό αριθμό 7681700. Τα συμπιεσμένα αρχεία περιέχουν αρχεία excel ανά σταθμό. Χάρτης στη Γεωπύλη Εφαρμογή στη Γεωπύλη",
+          "resource_descriptions": [
+            "Το τεύχος αυτό περιλαμβάνει τα υδρομετεωρολογικά στοιχεία από την ίδρυση των σταθμών μέχρι το υδρολογικό έτος 1998-1999.",
+            "Βροχομετρικά στοιχεία των σταθμών του Νομού Ηρακλείου από την ίδρυση των σταθμών μέχρι το υδρολογικό έτος 1998-1999.",
+            "Βροχομετρικά στοιχεία των σταθμών του Νομού Λασιθίου από την ίδρυση των σταθμών μέχρι το υδρολογικό έτος 1998-1999.",
+            "Βροχομετρικά στοιχεία των σταθμών του Νομού Ρεθύμνου από την ίδρυση των σταθμών μέχρι το υδρολογικό έτος 1998-1999.",
+            "Βροχομετρικά στοιχεία των σταθμών του Νομού Χανίων από την ίδρυση των σταθμών μέχρι το υδρολογικό έτος 1998-1999.",
+            "Για τους πόρους του συνόλου δεδομένων δίνεται η δυνατότητα επερώτησης και εξαγωγής τους μέσω του ArcGIS REST GeoService API σε GeoJSON μορφή."
+          ]
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.83,
+        "coverage": 0.99,
+        "gaps": 0.05,
+        "collection": 0.85,
+        "errors": 0.03
+      },
+      "input_tokens": 1717,
+      "error": ""
+    },
+    {
+      "sample_id": "S22",
+      "name": "prosorinoi-pinakes-katataxis-g-pr-21487-13-03-2024-ekdosi-prosorinoy-pinaka-katataxis-ependytikon-sc",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Προσωρινοί πίνακες κατάταξης - Γ.Πρ. 21487- 13-03-2024 - Έκδοση προσωρινού πίνακα κατάταξης επενδυτικών σχεδίων που υποβλήθηκαν προς υπαγωγή στο καθεστώς ενίσχυσης \"Ενίσχυση Τουριστικών Επενδύσεων\" (β΄ κύκλος) στο Υπουργείο Ανάπτυξης",
+          "description": "Προσωρινοί πίνακες κατάταξης - Προσωρινός Πίνακας Κατάταξης, κατά φθίνουσα σειρά βαθμολογίας, επενδυτικών σχεδίων που υποβλήθηκαν προς υπαγωγή στο εκάστοτε καθεστώς ενίσχυσης του Αναπτυξιακού Νόμου 4887/2022. (ΕΙΔΙΚΟΤΕΡΑ ΜΕΤΑΠΟΙΗΣΗ – ΕΦΟΔΙΑΣΤΙΚΗ ΑΛΥΣΙΔΑ (Β ΚΥΚΛΟΣ) ΕΝΙΣΧΥΣΗ ΤΟΥΡΙΣΤΙΚΩΝ ΕΠΕΝΔΥΣΕΩΝ (Β ΚΥΚΛΟΣ) - Έκδοση προσωρινού πίνακα κατάταξης επενδυτικών σχεδίων που υποβλήθηκαν προς υπαγωγή στο καθεστώς ενίσχυσης \"Ενίσχυση Τουριστικών Επενδύσεων\" (β΄ κύκλος) στο Υπουργείο Ανάπτυξης",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.53,
+        "coverage": 0.78,
+        "gaps": 0.06,
+        "collection": 0.65,
+        "errors": 0.78
+      },
+      "input_tokens": 1427,
+      "error": ""
+    },
+    {
+      "sample_id": "S23",
+      "name": "athens-business-open-data-stirdata-model",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Athens Business Open Data - STIRData model",
+          "description": "Athens Register open data provided by the Athens Chamber of Commerce and Industry according to the STIRData model.",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.26,
+        "coverage": 0.28,
+        "gaps": 0.06,
+        "collection": 0.76,
+        "errors": 0.03
+      },
+      "input_tokens": 857,
+      "error": ""
+    },
+    {
+      "sample_id": "S24",
+      "name": "apofaseis-egkrisis-perivallontikon-oron-lesvos-limnos",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "ΑΠΟΦΑΣΕΙΣ ΕΓΚΡΙΣΗΣ ΠΕΡΙΒΑΛΛΟΝΤΙΚΩΝ ΟΡΩΝ (ΛΕΣΒΟΣ-ΛΗΜΝΟΣ)",
+          "description": "Αποφάσεις έγκρισης Περιβαλλοντικών Όρων (Ξυλουργεία, Βιοτεχνίες, Αποθήκες καυσίμων, Οικοδομικά Υλικά, Τυροκομεία, Ελαιοτριβεία, Βιοτεχνίες Τροφίμων και Ποτών)",
+          "resource_descriptions": [
+            "Μητρώο Αποφάσεων Έγκρισης Περιβαλλοντικών Όρων για την Κατηγορία: Ξυλουργεία",
+            "Μητρώο Αποφάσεων Έγκρισης Περιβαλλοντικών Όρων για την Κατηγορία: διάφορες Βιοτεχνίες",
+            "Μητρώο Αποφάσεων Έγκρισης Περιβαλλοντικών Όρων για την Κατηγορία: Αποθήκες Καυσίμων",
+            "Μητρώο Αποφάσεων Έγκρισης Περιβαλλοντικών Όρων για την Κατηγορία: Οικοδομικά Υλικά",
+            "Μητρώο Αποφάσεων Έγκρισης Περιβαλλοντικών Όρων για την Κατηγορία: Τυροκομεία",
+            "Μητρώο Αποφάσεων Έγκρισης Περιβαλλοντικών Όρων για την Κατηγορία: Ελαιοτριβεία",
+            "Μητρώο Αποφάσεων Έγκρισης Περιβαλλοντικών Όρων για την Κατηγορία: Βιοτεχνίες Τροφίμων και Ποτών"
+          ]
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.84,
+        "coverage": 0.53,
+        "gaps": 0.04,
+        "collection": 0.18,
+        "errors": 0.04
+      },
+      "input_tokens": 1521,
+      "error": ""
+    },
+    {
+      "sample_id": "S25",
+      "name": "statistika-diatrofhs-febroyarioy-2017",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΦΕΒΡΟΥΑΡΙΟΥ 2017",
+          "description": "Εξαγωγές αποθήκης τροφήμων Φεβρουαρίου 2017",
+          "resource_descriptions": [
+            "Εξαγωγές αποθήκης τροφίμων Φεβρουαρίου 2017"
+          ]
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.16,
+        "coverage": 0.83,
+        "gaps": 0.04,
+        "collection": 0.73,
+        "errors": 0.03
+      },
+      "input_tokens": 942,
+      "error": ""
+    },
+    {
+      "sample_id": "S26",
+      "name": "statistika-ix8yoskalas-8essalonikhs-martios-2020",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΜΑΡΤΙΟΣ 2020",
+          "description": "ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΜΑΡΤΙΟΣ 2020",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.03,
+        "coverage": 0.17,
+        "gaps": 0.04,
+        "collection": 0.03,
+        "errors": 0.04
+      },
+      "input_tokens": 915,
+      "error": ""
+    },
+    {
+      "sample_id": "S27",
+      "name": "gis-agrinio-wms-only-agriniotrm-trm_ras_123107fs000463_1998_geo",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "ΤΡΟΠΟΠΟΙΗΣΗ ΡΥΜΟΤΟΜΙΚΟΥ (ΦΕΚ 463/Δ/1998-07-03)",
+          "description": "Έγκριση Πολεοδομικής Μελέτης Αναθεώρησης του εγκεκριμένου ρυμοτομικού σχεδίου Δήμου Αγρινίου Ν. Αιτωλ/νίας των πινακίδων 15-16/15, 16-17/14, 16-17/16, 13-14/12, και 14-15/16",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.88,
+        "coverage": 0.8,
+        "gaps": 0.1,
+        "collection": 0.27,
+        "errors": 0.04
+      },
+      "input_tokens": 1023,
+      "error": ""
+    },
+    {
+      "sample_id": "S28",
+      "name": "gis-heraklion-wms-only-herakliopef-pef_ras_atsalenio_mosaic_geo",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Σχέδιο ΠΕ περιοχής Ατσαλένιο | Μωσαϊκό",
+          "description": "Μωσαϊκό πινακίδων Σχεδίου Πράξης Εφαρμογής περιοχής Ατσαλένιο",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.4,
+        "coverage": 0.3,
+        "gaps": 0.11,
+        "collection": 0.13,
+        "errors": 0.03
+      },
+      "input_tokens": 913,
+      "error": ""
+    },
+    {
+      "sample_id": "S29",
+      "name": "pinakes-timolhpsiwn-syroy",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "ΠΙΝΑΚΕΣ ΤΙΜΟΛΗΨΙΩΝ ΣΥΡΟΥ",
+          "description": "ΠΙΝΑΚΕΣ ΤΙΜΟΛΗΨΙΩΝ ΣΥΡΟΥ 01-02-2016",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.06,
+        "coverage": 0.42,
+        "gaps": 0.07,
+        "collection": 0.04,
+        "errors": 0.03
+      },
+      "input_tokens": 880,
+      "error": ""
+    },
+    {
+      "sample_id": "S30",
+      "name": "gis-chania-wms-only-chaniatsp-tsp_ras_fek_2003_739_d_200_geo",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Διάγραμμα Τροποποιήσεως του Ρυμοτομικού Σχεδίου της Πόλης Χανίων",
+          "description": "Διάγραμμα Τροποποιήσεως του Ρυμοτομικού Σχεδίου της Πόλης Χανίων σε κλίμακα 1:200",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.15,
+        "coverage": 0.34,
+        "gaps": 0.1,
+        "collection": 0.11,
+        "errors": 0.04
+      },
+      "input_tokens": 945,
+      "error": ""
+    },
+    {
+      "sample_id": "S31",
+      "name": "programmatikes-symbaseis-perifereias-attikhs",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "ΠΡΟΓΡΑΜΜΑΤΙΚΕΣ ΣΥΜΒΑΣΕΙΣ ΠΕΡΙΦΕΡΕΙΑΣ ΑΤΤΙΚΗΣ",
+          "description": "ΕΙΣΗΓΗΣΕΙΣ ΓΙΑ ΥΠΟΓΡΑΦΗ ΠΡΟΓΡΑΜΜΑΤΙΚΩΝ ΣΥΜΒΑΣΕΩΝ",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.35,
+        "coverage": 0.08,
+        "gaps": 0.08,
+        "collection": 0.03,
+        "errors": 0.03
+      },
+      "input_tokens": 910,
+      "error": ""
+    },
+    {
+      "sample_id": "S32",
+      "name": "periballontikoi-elegxoi-etoys-2014-apo-th-d-nsh-periballontos-and-xwrikoy-sxediasmoy-p-d-e",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Περιβαλλοντικοί έλεγχοι έτους 2014 από τη Δ/νση Περιβάλλοντος & Χωρικού Σχεδιασμού Π.Δ.Ε.",
+          "description": "Έλεγχοι για υποβάθμιση περιβάλλοντος κατά το έτος 2014, από τη Δ/νση Περιβάλλοντος & Χωρικού Σχεδιασμού Π.Δ.Ε.",
+          "resource_descriptions": [
+            "Έλεγχοι για υποβάθμιση περιβάλλοντος από τη Δ/νση Περιβάλλοντος & Χωρικού Σχεδιασμού Π.Δ.Ε., για το έτος 2014"
+          ]
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.34,
+        "coverage": 0.73,
+        "gaps": 0.04,
+        "collection": 0.7,
+        "errors": 0.03
+      },
+      "input_tokens": 1076,
+      "error": ""
+    },
+    {
+      "sample_id": "S33",
+      "name": "gis-maroussi-wms-only-maroussirym-rym_015784fs000130_2001e",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Διάγραμμα - ΦΕΚ 130/Δ/2001-02-21",
+          "description": "Τροποποίηση του εγκεκριμένου ρυμοτομικού σχεδίου, όρων δόμησης και χρήσεων γης του Δήμου Αμαρουσίου (Ν. Αττικής)",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.7,
+        "coverage": 0.35,
+        "gaps": 0.09,
+        "collection": 0.33,
+        "errors": 0.04
+      },
+      "input_tokens": 948,
+      "error": ""
+    },
+    {
+      "sample_id": "S34",
+      "name": "ekt-searchculture-dataset-__-15",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Αποθετήριο ΤΕΧΝΗ",
+          "description": "Σύνολο από εγγραφές μεταδεδομένων σε σχήμα EDM των τεκμηρίων της συλλογής \"Αποθετήριο ΤΕΧΝΗ\" που διέθεσε ο φορέας \"Μακεδονική Καλλιτεχνική Εταιρεία ΤΕΧΝΗ\" στο SearchCulture.gr. Η ψηφιακή συλλογή της Μακεδονικής Καλλιτεχνικής Εταιρείας ΤΕΧΝΗ αναδεικνύει την πολιτιστική παραγωγή της πόλης διαμέσου του λόγου και του έργου πρωτοπόρων της πολιτιστικής ζωής. Τα τεκμήρια, πολυσήμαντα και πυκνά για ορισμένες περιόδους, φωτίζουν την πνευματική ζωή της Θεσσαλονίκης τις τελευταίες 6 δεκαετίες και τα πρόσωπα που δραστηριοποιήθηκαν για τη δημιουργία θεσμών πολιτισμού που χαρακτήρισαν και ακόμα χαρακτηρίζουν την πόλη. Περιλαμβάνονται τεκμήρια που σχετίζονται με το θέατρο, τα εικαστικά, τη μουσική και την αρχιτεκτονική υποδεικνύοντας τη συγκρότηση μιας δυναμικής πολιτιστικής πρωτοπορίας όπως διαμορφώθηκε στη μεταπολεμική Θεσσαλονίκη και έπειτα.",
+          "resource_descriptions": [
+            "Σύνολο EDM ore:Aggregation εγγραφών σε μορφή RDF/XML, διατιθέμενο μέσω OAI-PMH ListRecords (metadataPrefix=edm, set=tehni_thes)."
+          ]
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.97,
+        "coverage": 0.98,
+        "gaps": 0.04,
+        "collection": 0.75,
+        "errors": 0.03
+      },
+      "input_tokens": 1554,
+      "error": ""
+    },
+    {
+      "sample_id": "S35",
+      "name": "attica-443-synedriaseis-epitrophs-athlhtismoy-paideias-perifereias-attikhs",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Συνεδριάσεις Επιτροπής Αθλητισμού & Παιδείας Περιφέρειας Αττικής",
+          "description": "Συνεδριάσεις Επιτροπής Αθλητισμού & Παιδείας Περιφέρειας Αττικής",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.05,
+        "coverage": 0.08,
+        "gaps": 0.08,
+        "collection": 0.05,
+        "errors": 0.03
+      },
+      "input_tokens": 941,
+      "error": ""
+    },
+    {
+      "sample_id": "S36",
+      "name": "gis-heraklion-wms-only-herakliotsp-t1936a404_69912_500_01",
+      "request": {
+        "model": "jev-1.14.0",
+        "state": {
+          "title": "Διάγραμμα Τροποποίησης - T1936A404_69912_500_01",
+          "description": "Το διάγραμμα αφορά σε τροποποίηση του Σχεδίου Πόλης. Η ονοματολογία έχει τη μορφή Χ(ΧΧ)ΥΥΥΥΤΝΝΝ, όπου Χ(ΧΧ) λαμβάνει τιμές T: τελικό σχέδιο, Tan: τελικό σχέδιο ανάρτησης, TF: Τελικό σχέδιο ταυτόσημο με αυτό του ΦΕΚ, YYYY: έτος ΦΕΚ, Τ: τεύχος ΦΕΚ, NNN: αριθμός απόφασης του ΦΕΚ.",
+          "resource_descriptions": []
+        },
+        "questions": {
+          "contents": {
+            "type": "noul",
+            "instructions": "The description of the dataset tells a reader what the data contain.",
+            "criteria": {
+              "true": "The field description names what is recorded in the data, in words that add information to the field title: for example the items, the measures or the attributes that the data hold.",
+              "false": "The field description is empty, repeats the title or says it in other words, or gives only a place, a date, a file format or the name of an organisation."
+            }
+          },
+          "coverage": {
+            "type": "noul",
+            "instructions": "The texts state what the data cover and how far they reach.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the extent of the data as information about them: the area, the period, the population or the cases that are included.",
+              "false": "The texts only name the dataset, with its subject, place, year or categories, as a title does, or they say nothing about the extent of the data."
+            }
+          },
+          "gaps": {
+            "type": "noul",
+            "instructions": "The texts state that something is missing from the data.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions says that some data are missing, incomplete, not included or not shown.",
+              "false": "No sentence says that data are missing. A sentence that only tells the users of a service about a restriction of the service is not such a statement."
+            }
+          },
+          "collection": {
+            "type": "noul",
+            "instructions": "The texts state where the data come from or how they were collected or produced.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions names the source of the data, or the way in which they were collected, measured, computed or produced.",
+              "false": "No sentence gives the source or the method. Naming the organisation that publishes the dataset as the provider of the data is not such a statement, and neither is the phrase that the data are provided as they are."
+            }
+          },
+          "errors": {
+            "type": "noul",
+            "instructions": "The texts state how accurate the data are, which errors they have, or that the method has changed.",
+            "criteria": {
+              "true": "A sentence in the field description or the field resource_descriptions gives the accuracy of the data, a known error or correction, a change of the method, or says that the data are provisional or indicative.",
+              "false": "No sentence speaks of accuracy, errors, corrections or changes of the method. A general statement that no liability is accepted is not such a statement."
+            }
+          }
+        }
+      },
+      "model": "jev-1.14.0",
+      "probabilities": {
+        "contents": 0.71,
+        "coverage": 0.2,
+        "gaps": 0.08,
+        "collection": 0.3,
+        "errors": 0.05
+      },
+      "input_tokens": 1074,
+      "error": ""
+    }
+  ]
+}

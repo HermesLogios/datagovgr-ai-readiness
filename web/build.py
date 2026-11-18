@@ -38,7 +38,8 @@ EXAMPLE_DATE = "2026-10-24"                       # day of the catalogue snapsho
 DEFAULT_PORTAL = "https://data.gov.gr"
 PORTAL_VARIABLE = "DATAGOVGR_BASE_URL"
 PUBLIC_VARIABLE = "SITE_PUBLIC"
-PROXY_PATH = "/api/record"
+PROXY_PATH = "/api/record"                        # relay of the site to the catalogue of the portal
+READING_PATH = "/api/reading"                     # relay of the site to the model of the second reading
 ENGINE_VERSION = "314.0.8"
 ENGINE_FILES = ("pyodide.mjs", "pyodide.asm.mjs", "pyodide.asm.wasm", "python_stdlib.zip", "pyodide-lock.json")
 USER_AGENT = "datagovgr-ai-readiness/0.1 (site build)"
@@ -48,9 +49,10 @@ LONG_CACHE = "public, max-age=31536000, immutable"
 
 # Files that the checks need inside the browser, with their place in the repository.
 CHECK_FILES = (
-    "aiready/__init__.py", "aiready/assessment.py", "aiready/criteria.py", "aiready/identifier.py",
+    "aiready/__init__.py", "aiready/assessment.py", "aiready/criteria.py", "aiready/identifier.py", "aiready/jev.py",
     "aiready/metadata_checks.py", "aiready/plain_language.py", "aiready/records.py", "aiready/report.py",
-    "aiready/report_excel.py", "aiready/texts.py", "aiready/locales/el.json", "aiready/locales/en.json",
+    "aiready/report_excel.py", "aiready/second_reading.py", "aiready/texts.py", "aiready/locales/el.json",
+    "aiready/locales/en.json",
     "scripts/04_metadata_checks.py", "criteria/criteria.csv", "data/reference/eu_file_type.csv",
     "web/__init__.py", "web/browser.py", "web/icons.py", "web/pages.py", "web/shims/pandas.py",
 )
@@ -219,7 +221,7 @@ def write_pages(output: Path, portal: str, indexing: bool, versions: dict[str, s
             f'<template id="{name}">{content}</template>' for name, content in templates.items()
         )
         settings = {
-            "language": language, "portal": portal, "proxy": PROXY_PATH,
+            "language": language, "portal": portal, "proxy": PROXY_PATH, "reading": READING_PATH,
             "engine": f"/engine/{ENGINE_VERSION}/",
             "checks": f"/engine/checks.zip?v={versions['checks']}",
             "excel": f"/engine/excel.zip?v={versions['excel']}",

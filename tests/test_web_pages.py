@@ -7,10 +7,14 @@ Usage:
 import dataclasses
 import re
 import unittest
+from datetime import date
+from html import escape
 
+from aiready import jev
+from aiready.second_reading import build_reading_model
 from aiready.texts import load_texts
 from sample_pages import EXAMPLE, UNMARKED, page_model
-from web import pages
+from web import icons, pages
 
 STATUS_ICON = 'class="status-icon status-icon--'
 
@@ -111,7 +115,7 @@ class ResultTest(unittest.TestCase):
         self.assertEqual(index.count(STATUS_ICON), 9 + 2)       # nine checks and the two counts above zero
         self.assertIn("<strong>5</strong> Εντάξει", index)
         self.assertIn("<strong>4</strong> Εν μέρει", index)
-        for target in ("fixes", "checklist", "report-files"):
+        for target in ("fixes", "reading", "checklist", "report-files"):
             self.assertIn(f'<a href="#{target}">', index)
             self.assertIn(f'id="{target}"', self.result)
 
@@ -255,7 +259,7 @@ class OtherPagesTest(unittest.TestCase):
             self.assertEqual(block(guide, '<ol class="steps">', "</ol>").count("<li"), 4)
             terms = pages.terms_main_html(texts)
             self.assertIn(texts.text("terms.liability.text"), terms)
-            self.assertEqual(terms.count("<h2>"), 8)
+            self.assertEqual(terms.count("<h2 id="), 9)
 
     def test_no_page_leaves_a_field_of_a_text_unfilled(self):
         for language in ("el", "en"):
@@ -266,6 +270,130 @@ class OtherPagesTest(unittest.TestCase):
             for part in parts:
                 document = pages.document_html("home", texts, part, criteria_version="1.2")
                 self.assertIsNone(re.search(r"\{[a-z_]+\}", document), language)
+
+
+class ReadingTest(unittest.TestCase):
+    PROBABILITIES = {"contents": 0.94, "coverage": 0.41, "gaps": 0.03, "collection": 0.7, "errors": 0.3}
+    DAY = date(2026, 11, 18)
+
+    @classmethod
+    def setUpClass(cls):
+        cls.texts = load_texts("el")
+        cls.result = pages.result_html(page_model(EXAMPLE), cls.texts)
+        cls.reading = cls.reading_html(jev.Reading("jev-1.14.0", cls.PROBABILITIES, 812))
+
+    @classmethod
+    def reading_html(cls, reading: jev.Reading) -> str:
+        return pages.reading_result_html(build_reading_model(reading, cls.texts, cls.DAY), cls.texts)
+
+    def test_result_offers_the_second_reading_between_the_checks_and_the_checklist(self):
+        positions = [self.result.index(f'<section id="{name}"') for name in ("checks", "reading", "checklist")]
+        self.assertEqual(positions, sorted(positions))
+        self.assertIn('<li><a href="#reading">Δεύτερη ανάγνωση της περιγραφής</a></li>', self.result)
+
+    def test_offer_has_a_labelled_field_for_the_key_that_browsers_do_not_fill(self):
+        form = block(self.result, '<form class="reading-form"', "</form>")
+        self.assertIn('<label for="reading-key">Το κλειδί σας για το Jev</label>', form)
+        self.assertIn('<input id="reading-key" name="key" type="password" autocomplete="off"', form)
+        self.assertEqual(form.count("<button"), 1)
+
+    def test_offer_carries_the_messages_of_the_script_and_says_what_is_sent(self):
+        opening = block(self.result, '<form class="reading-form"', ">")
+        for name, key in (("waiting", "reading.waiting"), ("key-missing", "reading.error.key_missing"),
+                          ("key", "reading.error.key"), ("limit", "reading.error.limit"),
+                          ("service", "reading.error.service"), ("engine", "reading.error.engine")):
+            self.assertIn(f'data-{name}="{escape(self.texts.text(key))}"', opening)
+        for fact in ("sent", "key_use", "scores"):
+            self.assertIn(escape(self.texts.text(f"reading.offer.{fact}")), self.result)
+        self.assertIn('<p class="reading-status" id="reading-status" role="status"></p>', self.result)
+        self.assertIn('aria-describedby="reading-status"', block(self.result, '<input id="reading-key"', ">"))
+
+    def test_form_of_the_key_would_never_put_the_key_in_an_address(self):
+        opening = block(self.result, '<form class="reading-form"', ">")
+        self.assertIn('method="post"', opening)
+        self.assertNotIn("action=", opening)
+        self.assertIn('<a href="/terms/#reading">', self.result)
+        self.assertIn('<a href="/en/terms/#reading">', pages.result_html(page_model(EXAMPLE, "en"), load_texts("en")))
+
+    def test_reading_has_one_row_per_statement_with_the_band_in_words_before_the_number(self):
+        rows = re.findall(r'<li class="reading-row reading-row--(\w+)">(.*?)</li>', self.reading)
+        self.assertEqual([band for band, _ in rows], ["likely", "unsure", "unlikely", "likely", "unlikely"])
+        first = rows[0][1]
+        self.assertIn('<span class="reading-name">Λέει τι περιέχουν τα δεδομένα</span>', first)
+        self.assertLess(first.index("Μάλλον ναι"), first.index("0,94"))
+        self.assertIn('<span class="reading-figure">0,94</span>', first)
+        self.assertIn('class="band-icon band-icon--likely"', first)
+
+    def test_every_band_has_its_own_drawing_hidden_from_screen_readers(self):
+        drawings = [icons.band_icon(band) for band in ("likely", "unsure", "unlikely")]
+        self.assertEqual(len(set(drawing.split(">", 1)[1] for drawing in drawings)), 3)
+        for drawing in drawings:
+            self.assertIn('aria-hidden="true"', drawing)
+        with self.assertRaises(KeyError):
+            icons.band_icon("certain")
+
+    def test_meter_is_drawn_without_inline_styles_and_its_value_stands_as_text(self):
+        self.assertNotIn("style=", self.reading)
+        self.assertNotIn("style=", block(self.result, '<section id="reading"', "</section>"))
+        self.assertIn('<line class="reading-fill" x1="0" y1="5" x2="94" y2="5" />', self.reading)
+        self.assertIn('<line class="reading-fill" x1="0" y1="5" x2="3" y2="5" />', self.reading)
+        meters = re.findall(r'<svg class="reading-meter"[^>]*>', self.reading)
+        self.assertEqual(len(meters), 5)
+        for meter in meters:
+            self.assertIn('aria-hidden="true"', meter)
+
+    def test_meter_is_cut_at_the_limits_of_the_bands(self):
+        meter = block(self.reading, '<svg class="reading-meter"', "</svg>")
+        self.assertEqual(re.findall(r'<line class="reading-mark" x1="(\d+)"', meter), ["30", "70"])
+        scale = block(self.reading, '<p class="reading-scale" aria-hidden="true">', "</p>")
+        self.assertEqual(re.findall(r"<span>([^<]+)</span>", scale), ["Μάλλον όχι", "Αβέβαιο", "Μάλλον ναι"])
+
+    def test_rows_stand_under_the_criterion_they_belong_to(self):
+        self.assertLess(self.reading.index("Τίτλος και περιγραφή"), self.reading.index("Λέει τι περιέχουν"))
+        self.assertLess(self.reading.index("Λέει τι περιέχουν"), self.reading.index("Περιορισμοί των δεδομένων"))
+        self.assertLess(self.reading.index("Περιορισμοί των δεδομένων"), self.reading.index("Αναφέρει περιοχή"))
+
+    def test_advice_lists_what_is_not_clearly_stated(self):
+        advice = block(self.reading, '<div class="reading-advice">', "</div>")
+        self.assertEqual(advice.count("<li>"), 3)
+        self.assertIn(f"<h4>{escape(self.texts.text('reading.advice.title'))}</h4>", advice)
+        self.assertIn(escape(self.texts.text("reading.advice.gaps")), advice)
+        self.assertNotIn(escape(self.texts.text("reading.advice.contents")), advice)
+
+    def test_reading_that_states_everything_gets_a_sentence_instead_of_a_list(self):
+        html = self.reading_html(jev.Reading("jev-1.14.0", dict.fromkeys(self.PROBABILITIES, 0.9), 1))
+        advice = block(html, '<div class="reading-advice">', "</div>")
+        self.assertNotIn("<li>", advice)
+        self.assertNotIn("<h4>", advice)
+        self.assertIn(escape(self.texts.text("reading.advice.none")), advice)
+
+    def test_reading_says_what_it_is_not_and_names_the_model(self):
+        for sentence in ("Πρόταση ΤΝ, χωρίς βαθμό", "Μοντέλο jev-1.14.0, 18/11/2026",
+                         self.texts.text("reading.note.texts"), self.texts.text("reading.note.scores")):
+            self.assertIn(escape(sentence), self.reading)
+
+    def test_heading_of_the_reading_can_take_the_focus(self):
+        self.assertIn(f'<h3 tabindex="-1">{escape(self.texts.text("reading.result.title"))}</h3>', self.reading)
+
+    def test_name_of_the_model_is_shown_as_text(self):
+        html = self.reading_html(jev.Reading("<script>alert(1)</script>", self.PROBABILITIES, 1))
+        self.assertNotIn("<script>", html)
+        self.assertIn("&lt;script&gt;", html)
+
+    def test_terms_have_a_section_on_the_reading_and_name_the_person_in_charge(self):
+        greek, english = pages.terms_main_html(self.texts), pages.terms_main_html(load_texts("en"))
+        for terms in (greek, english):
+            self.assertIn('<h2 id="reading">', terms)
+            self.assertIn("TypeSafe AI", terms)
+        self.assertIn("Υπεύθυνος της σελίδας είναι ο Μιχαήλ Σκανδαλίδης", greek)
+        self.assertIn("Michail Skandalidis", english)
+
+    def test_guide_explains_the_reading_with_the_limits_of_the_bands(self):
+        greek, english = pages.guide_main_html(self.texts), pages.guide_main_html(load_texts("en"))
+        self.assertIn("<h2>Η δεύτερη ανάγνωση</h2>", greek)
+        self.assertIn("από 0,70 και πάνω γράφει «Μάλλον ναι», έως 0,30 «Μάλλον όχι»", greek)
+        self.assertIn("<h2>The second reading</h2>", english)
+        self.assertIn("from 0.70 upwards it writes “Likely”, up to 0.30 “Unlikely”", english)
 
 
 if __name__ == "__main__":
