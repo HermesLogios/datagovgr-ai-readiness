@@ -1,6 +1,6 @@
 # Python libraries of the project.
 # Versions are pinned so that every run gives the same results.
-# New libraries (e.g. streamlit) are added as the project progresses.
+# New libraries are added as the project progresses.
 
 requests==2.34.2   # calls to the data.gov.gr API
 pandas==3.0.6      # processing of data tables

@@ -4,14 +4,14 @@ Quality and AI-readiness assessment of the open datasets published on [data.gov.
 
 Internship project of the MSc in Electronic Governance (University of the Aegean) at the Open Technologies Alliance (GFOSS / ΕΕΛΛΑΚ), supervised by Mr Alexandros Melidis. October – December 2026.
 
-> **Περίληψη στα ελληνικά.** Μελέτη της ποιότητας και της ετοιμότητας για τεχνητή νοημοσύνη (ΤΝ) των ανοιχτών δεδομένων του data.gov.gr, στο πλαίσιο πρακτικής άσκησης του ΠΜΣ «Ηλεκτρονική Διακυβέρνηση» του Πανεπιστημίου Αιγαίου στην ΕΕΛΛΑΚ. Αξιολογούνται 36 σύνολα δεδομένων σε τρία επίπεδα (ποιότητα, μεταδεδομένα και νομικό καθεστώς, ετοιμότητα για ΤΝ), ελέγχεται η συμμόρφωση των συνόλων υψηλής αξίας με τον Κανονισμό (ΕΕ) 2023/138 και εντοπίζονται τα σύνολα που γίνονται «έτοιμα για ΤΝ» με μικρή προσπάθεια. Ο κώδικας, τα δεδομένα και κάθε απόφαση καταγράφονται σε αυτό το αποθετήριο, ώστε η εργασία να μπορεί να επαναληφθεί. Τα παραδοτέα προς τον επιβλέποντα συντάσσονται στα ελληνικά· το αποθετήριο τηρείται στα αγγλικά.
+> **Περίληψη στα ελληνικά.** Μελέτη της ποιότητας και της ετοιμότητας για τεχνητή νοημοσύνη (ΤΝ) των ανοιχτών δεδομένων του data.gov.gr, στο πλαίσιο πρακτικής άσκησης του ΠΜΣ «Ηλεκτρονική Διακυβέρνηση» του Πανεπιστημίου Αιγαίου στην ΕΕΛΛΑΚ. Αξιολογούνται 36 σύνολα δεδομένων σε τρία επίπεδα (ποιότητα, μεταδεδομένα και νομικό καθεστώς, ετοιμότητα για ΤΝ), ελέγχεται η συμμόρφωση των συνόλων υψηλής αξίας με τον Κανονισμό (ΕΕ) 2023/138 και εντοπίζονται τα σύνολα που γίνονται «έτοιμα για ΤΝ» με μικρή προσπάθεια. Το αποθετήριο περιέχει και εργαλείο αξιολόγησης, ως εντολή και ως δημόσια σελίδα, που εφαρμόζει σε οποιοδήποτε σύνολο της πύλης τους εννέα ελέγχους των μεταδεδομένων. Ο κώδικας, τα δεδομένα και κάθε απόφαση καταγράφονται σε αυτό το αποθετήριο, ώστε η εργασία να μπορεί να επαναληφθεί. Τα παραδοτέα προς τον επιβλέποντα συντάσσονται στα ελληνικά· το αποθετήριο τηρείται στα αγγλικά.
 
 ## Scope
 
 - Assessment of a sample of 36 data.gov.gr datasets on three levels: data quality; metadata and legal status; AI-readiness.
 - Compliance check of the high-value datasets against Implementing Regulation (EU) 2023/138, reported separately from the scores as a compliance table (yes or no for each requirement).
 - Identification of the datasets that can become "AI-ready" with little effort, and of the data missing from the portal.
-- An open assessment tool that applies the same criteria to any dataset: at minimum a command-line run for one dataset; a web application if time allows.
+- An open assessment tool for any dataset of the portal, as a command and as a public page: it scores the nine criteria that the metadata decide and lists the other fourteen as a checklist (see [Assessment tool](#assessment-tool)).
 
 The methodology and every decision are recorded in this repository, so that the work can be reproduced or continued by others.
 
@@ -26,6 +26,10 @@ The methodology and every decision are recorded in this repository, so that the 
 | Folder or file | Content |
 | --- | --- |
 | `scripts/` | The scripts of the analysis, numbered in the order they run (`00_`, `01_`, ...), and helper scripts without a number |
+| `aiready/` | Library and command of the assessment tool |
+| `web/` | Public page of the assessment tool, with its own `README.md` |
+| `tests/` | Tests of the assessment tool |
+| `assessments/` | Reports written by the command of the tool; they stay outside the repository |
 | `data/raw/` | Raw data downloaded from the portal, unmodified |
 | `data/processed/` | Processed tables and scores |
 | `data/reference/` | Reference lists used by the checks, e.g. the EU file-type vocabulary, with their source and date |
@@ -59,6 +63,20 @@ git status
 
 If the results are identical to the published ones, `git status` shows no changed files.
 
+## Assessment tool
+
+The tool applies the checks of `04_metadata_checks.py` to any dataset of the portal, given by its name, its identifier or its address. It scores the nine criteria that the metadata decide (M1, M2, M3, M4, M6, M7, M9, Q6 and the metadata part of Q5) and lists the other fourteen as a checklist without a score, because they need the files or judgement (`DECISIONS.md` #53).
+
+```powershell
+python -m aiready troxaia-atyxhmata
+python -m aiready https://data.gov.gr/dataset/troxaia-atyxhmata --lang el --out assessments --format md json xlsx
+python -m aiready troxaia-atyxhmata --snapshot data\raw\catalog_2026-10-24.jsonl.gz
+```
+
+The first command reads the metadata from the portal and prints the summary. `--lang` prints the summary in plain language, in Greek or English; `--out` writes a report per dataset; `--snapshot` reads the stored snapshot instead of the portal, which gives the scores of the published table.
+
+The public page (`web/`) runs the same checks inside the browser of the visitor and explains every finding in plain Greek or English. `web/README.md` describes how the page is built and published; `python web\preview.py` serves it on the local computer. The tests of the tool run with `python -m unittest discover -s tests`.
+
 ## Licences
 
 - **Code:** EUPL-1.2 (file `LICENSE`).
@@ -67,7 +85,7 @@ If the results are identical to the published ones, `git status` shows no change
 
 ## Status
 
-Phases 1 and 2 (catalogue snapshot, first profile, selection of the sample and assessment criteria) are complete. Phase 3, the assessment, is in progress: the automated checks of the metadata are complete for the whole catalogue (`04_metadata_checks.py`, all the criteria that the metadata allow, each rule approved and its proposed scores examined on the 36 datasets of the sample); the files of the 36 datasets have been downloaded and tested (`05_resource_download.py`, Q1) and their examination with `06_file_checks.py` is complete for AI1, Q2, Q3, Q4 and AI6 (each rule approved before it was coded, the proposed scores reviewed one by one on the 36 datasets, the differences and the manual look at the records recorded in `DECISIONS.md` #38 to #42); of the manual criteria, M8 (personal data), M5 (free access), M10 (API and bulk download, tested with `07_api_checks.py`), AI2 (documentation of the structure, reviewed with the evidence of `08_documentation_checks.py`), AI3 (historical depth, reviewed with the evidence of `09_history_checks.py`), AI4 (description in Croissant or with a datasheet, reviewed with the evidence of `10_croissant_checks.py`), AI5 (suitability for retrieval, reviewed with the evidence of `11_retrieval_checks.py`) and AI7 (declared limitations, reviewed with the evidence of `12_limitation_checks.py`) are complete (`DECISIONS.md` #43 to #50); S17, whose listed resources deliver no data, was examined again on 16 criteria after its list was exported by hand from an application of its publisher (`DECISIONS.md` #51); version 1.2 of the criteria records the rules under which every criterion was applied (`DECISIONS.md` #52); the assessment workbook and the table of compliance of the high-value datasets with Regulation (EU) 2023/138 follow (November 2026).
+Phases 1 and 2 (catalogue snapshot, first profile, selection of the sample and assessment criteria) are complete. Phase 3, the assessment, is in progress: the automated checks of the metadata are complete for the whole catalogue (`04_metadata_checks.py`, all the criteria that the metadata allow, each rule approved and its proposed scores examined on the 36 datasets of the sample); the files of the 36 datasets have been downloaded and tested (`05_resource_download.py`, Q1) and their examination with `06_file_checks.py` is complete for AI1, Q2, Q3, Q4 and AI6 (each rule approved before it was coded, the proposed scores reviewed one by one on the 36 datasets, the differences and the manual look at the records recorded in `DECISIONS.md` #38 to #42); of the manual criteria, M8 (personal data), M5 (free access), M10 (API and bulk download, tested with `07_api_checks.py`), AI2 (documentation of the structure, reviewed with the evidence of `08_documentation_checks.py`), AI3 (historical depth, reviewed with the evidence of `09_history_checks.py`), AI4 (description in Croissant or with a datasheet, reviewed with the evidence of `10_croissant_checks.py`), AI5 (suitability for retrieval, reviewed with the evidence of `11_retrieval_checks.py`) and AI7 (declared limitations, reviewed with the evidence of `12_limitation_checks.py`) are complete (`DECISIONS.md` #43 to #50); S17, whose listed resources deliver no data, was examined again on 16 criteria after its list was exported by hand from an application of its publisher (`DECISIONS.md` #51); version 1.2 of the criteria records the rules under which every criterion was applied (`DECISIONS.md` #52); the assessment workbook and the table of compliance of the high-value datasets with Regulation (EU) 2023/138 follow (November 2026). The assessment tool is available as a command and as a public page (`DECISIONS.md` #53).
 
 | Script | Function | Output |
 | --- | --- | --- |
