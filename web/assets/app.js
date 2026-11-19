@@ -541,3 +541,65 @@ if (form && region) {
   });
   showAddress();
 }
+
+/* Page of the criteria. Every criterion is a card whose rules open under it: a click anywhere on the card opens
+   or closes it, the button above the cards opens or closes them all, an address with the code of a criterion
+   after the # opens its card, and on paper every card is printed open. Without this script the cards still open
+   from the line of their rules, and the button stays hidden. */
+
+const criterionCards = Array.from(document.querySelectorAll(".criterion-more"));
+const toggleAll = document.querySelector("[data-toggle-all]");
+
+function showToggleState() {
+  const allOpen = criterionCards.every((card) => card.open);
+  toggleAll.setAttribute("aria-expanded", String(allOpen));
+  toggleAll.querySelector("span").textContent = allOpen ? toggleAll.dataset.closeLabel : toggleAll.dataset.openLabel;
+}
+
+function openCriterionOfAddress() {
+  let name = "";
+  try {
+    name = decodeURIComponent(location.hash.slice(1));
+  } catch (error) {
+    return;
+  }
+  const section = name ? document.getElementById(name) : null;
+  if (section && section.classList.contains("criterion")) {
+    section.querySelector(".criterion-more").open = true;
+    section.scrollIntoView({ block: "start" });
+  }
+}
+
+if (criterionCards.length && toggleAll) {
+  let closedBeforePrint = [];
+  toggleAll.hidden = false;
+  toggleAll.addEventListener("click", () => {
+    const openThem = !criterionCards.every((card) => card.open);
+    criterionCards.forEach((card) => { card.open = openThem; });
+    showToggleState();
+  });
+  document.addEventListener("toggle", (event) => {
+    if (event.target.matches(".criterion-more")) {
+      showToggleState();
+    }
+  }, true);
+  document.addEventListener("click", (event) => {
+    const section = event.target.closest(".criterion");
+    if (!section || event.target.closest("a, button, summary, .criterion-body") || String(window.getSelection())) {
+      return;
+    }
+    const card = section.querySelector(".criterion-more");
+    card.open = !card.open;
+  });
+  window.addEventListener("hashchange", openCriterionOfAddress);
+  window.addEventListener("beforeprint", () => {
+    closedBeforePrint = criterionCards.filter((card) => !card.open);
+    closedBeforePrint.forEach((card) => { card.open = true; });
+  });
+  window.addEventListener("afterprint", () => {
+    closedBeforePrint.forEach((card) => { card.open = false; });
+    closedBeforePrint = [];
+  });
+  openCriterionOfAddress();
+  showToggleState();
+}

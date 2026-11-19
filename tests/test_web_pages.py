@@ -13,7 +13,7 @@ from html import escape
 from aiready import jev
 from aiready.criteria import result_kind
 from aiready.metadata_checks import CHECK_IDS
-from aiready.plain_language import CHECKLIST_FILES, criterion_title
+from aiready.plain_language import CHECKLIST_FILES, criterion_title, level_key
 from aiready.second_reading import build_reading_model, figure_of
 from aiready.texts import load_texts
 from sample_pages import CRITERIA, EXAMPLE, UNMARKED, page_model
@@ -796,19 +796,44 @@ class CriteriaPageTest(unittest.TestCase):
         self.assertIn(f"Η δεύτερη γνώμη ΤΝ έχει {asked['AI7']} ερωτήσεις για αυτό το κριτήριο.", self.section("AI7"))
         self.assertIn('<a href="/en/second-opinion/#how">', self.section("AI7", self.english))
 
-    def test_table_lists_every_criterion_with_its_code_its_two_names_and_its_treatment(self):
-        table = block(self.page, '<table class="criteria-table">', "</table>")
-        self.assertEqual(re.findall(r'<th scope="col"[^>]*>([^<]+)</th>', table),
-                         ["Κωδικός", "Κριτήριο", "Όνομα στη μελέτη", "Στην εφαρμογή"])
-        rows = re.findall(r'<tr><th scope="row"><a class="code-tag" href="#(\w+)"[^>]*>\w+</a></th><td>([^<]+)</td>'
-                          r'<td class="criteria-study" lang="en">([^<]+)</td><td>([^<]+)</td></tr>', table)
-        self.assertEqual([row[0] for row in rows], list(CRITERIA))
-        for code, name, study, kind in rows:
-            self.assertEqual((name, study, kind),
-                             (escape(criterion_title(code, self.texts)), escape(CRITERIA[code].name), self.KINDS[self.kind_of(code)]))
+    def test_page_has_no_table_of_the_criteria(self):
+        for page in (self.page, self.english):
+            self.assertNotIn("<table", page)
+            self.assertNotIn('id="all"', page)
+
+    def test_criteria_of_a_level_stand_in_one_grid_under_the_heading_of_the_level(self):
+        chunks = self.page.split('<h2 id="level-')[1:]
+        self.assertEqual(len(chunks), 3)
+        for chunk, level in zip(chunks, ("Q", "M", "AI")):
+            after_heading = chunk[chunk.index("</h2>") + len("</h2>"):]
+            self.assertTrue(after_heading.startswith('<div class="criteria-grid">'), level)
+            self.assertEqual(re.findall(r'<section class="criterion" id="(\w+)"', chunk),
+                             [code for code in CRITERIA if level_key(code) == level])
+        self.assertEqual(self.page.count('<div class="criteria-grid">'), 3)
+
+    def test_every_criterion_shows_its_names_and_opens_its_rules_under_them(self):
+        toggle = f'<summary><span>Πώς βαθμολογείται</span>{icons.line_icon("chevron-down")}</summary>'
+        for code in CRITERIA:
+            head, opened = self.section(code).split('<details class="criterion-more">')
+            for part in (f'<h3 id="name-{code}">', '<p class="criterion-study">', '<span class="badge badge--kind">'):
+                self.assertIn(part, head, code)
+            self.assertTrue(opened.startswith(toggle), code)
+            for field in ("question", "score_2", "score_1", "score_0"):
+                self.assertIn(escape(self.texts.text(f"criterion.{code}.{field}")), opened, f"{code} {field}")
+            self.assertIn('<div class="criterion-app">', opened)
+        self.assertNotIn("<details open", self.page)
+        self.assertIn("<summary><span>How it is scored</span>", self.english)
+
+    def test_button_that_opens_all_the_criteria_waits_for_the_script(self):
+        tools = block(self.page, '<div class="criteria-tools">', "</div>")
+        self.assertIn('<button type="button" class="criteria-toggle" data-toggle-all aria-expanded="false" '
+                      'data-open-label="Άνοιγμα όλων" data-close-label="Κλείσιμο όλων" hidden>', tools)
+        self.assertIn("<span>Άνοιγμα όλων</span>", tools)
+        self.assertLess(self.page.index('<div class="criteria-tools">'), self.page.index('<h2 id="level-Q">'))
+        self.assertIn('data-open-label="Open all" data-close-label="Close all"', self.english)
 
     def test_scale_names_the_criteria_of_every_treatment_and_the_core_ones(self):
-        scale = self.page[self.page.index('<h2 id="scale">'):self.page.index('<h2 id="all">')]
+        scale = self.page[self.page.index('<h2 id="scale">'):self.page.index('<div class="criteria-tools">')]
         by_kind = {kind: ", ".join(code for code in CRITERIA if self.kind_of(code) == kind) for kind in self.KINDS}
         self.assertEqual(by_kind["by rule"], "M2, M3, M9")
         self.assertEqual(by_kind["proposal"], "Q5, Q6, M1, M4, M6, M7")

@@ -44,10 +44,15 @@ carries the code of its criterion in the study (M1, Q5, AI7 and so on). The code
 criterion on the page of the criteria; inside a result it opens a new tab, because a result exists
 only in the open page.
 
-The page of the criteria shows how a score is read, a table of the 23 criteria with the name of
-each in the application and in the study, and one card per criterion: its question, the rule of
-every score, the case in which it does not apply, and what the application does with it. The
-English rules are those of `criteria/criteria.csv`; the Greek rules are their translation in
+The page of the criteria shows how a score is read and one card per criterion, three, two or one
+in a row as the width allows. A closed card shows the code of the criterion, its name in the
+application and in the study, and how the application treats it; its line "How it is scored"
+opens the question, the rule of every score, the case in which it does not apply, and what the
+application does with it. A card that opens grows alone, so the cards next to it keep their
+place. With the script of the page a click anywhere on a card opens or closes it, a button opens
+or closes all the cards, an address with the code of a criterion after the # opens its card, and
+on paper every card is printed open; without the script the cards open from their line and the
+button stays hidden. The English rules are those of `criteria/criteria.csv`; the Greek rules are their translation in
 `aiready/locales/el.json` (keys `criterion.<code>.*`). `tests/test_criteria_texts.py` checks that
 both languages hold every rule of the file, that the English rules are the texts of the file, and
 that every Greek rule carries the numbers and the names of formats and standards of the English

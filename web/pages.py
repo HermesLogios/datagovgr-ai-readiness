@@ -751,8 +751,8 @@ def guide_main_html(texts: Texts) -> str:
 
 
 def criterion_section_html(criterion: Criterion, texts: Texts) -> str:
-    """One criterion on the page of the criteria: its code and names, how the application treats it, its question,
-    the rule of every score, and what the application does with it."""
+    """One criterion on the page of the criteria, as a card: its code and names and how the application treats it,
+    then a closed box that opens on its question, the rule of every score and what the application does with it."""
     code = escape(criterion.id)
     kind = criterion_kind(criterion)
     badges = [f'<span class="badge badge--kind">{escape(texts.text(f"criteria.kind.{KIND_KEYS[kind]}"))}</span>']
@@ -781,20 +781,23 @@ def criterion_section_html(criterion: Criterion, texts: Texts) -> str:
                    f'<a href="{page_path(OPINION_PAGE, texts.language)}#how">{escape(texts.text("criteria.opinion_link"))}</a>'
                    f"</span></p>")
     return (
-        f'<section class="criterion" id="{code}" aria-labelledby="name-{code}">'
+        f'<section class="criterion" id="{code}" aria-labelledby="name-{code}"><div class="criterion-top">'
         f'<div class="criterion-head"><span class="code-tag code-tag--plain">{code}</span>'
         f'<h3 id="name-{code}">{escape(criterion_title(criterion.id, texts))}</h3></div>'
         f'<p class="criterion-study">{escape(texts.text("criteria.study"))} <span lang="en">{escape(criterion.name)}</span></p>'
-        f'<p class="criterion-badges">{"".join(badges)}</p>'
+        f'<p class="criterion-badges">{"".join(badges)}</p></div>'
+        f'<details class="criterion-more"><summary><span>{escape(texts.text("criteria.more"))}</span>'
+        f'{line_icon("chevron-down")}</summary><div class="criterion-body">'
         f'<p class="criterion-question">{escape(texts.text(f"criterion.{criterion.id}.question"))}</p>'
         f'<dl class="criterion-scores">{scores}</dl>'
         f'<div class="criterion-app"><p class="criterion-app-title">{escape(texts.text("criteria.app.title"))}</p>'
-        f"<p>{escape(application)}</p></div>{opinion}</section>"
+        f"<p>{escape(application)}</p></div>{opinion}</div></details></section>"
     )
 
 
 def criteria_main_html(texts: Texts, criteria: dict[str, Criterion]) -> str:
-    """Page of the criteria: how a score is read, a table of all the criteria, and every criterion under its level."""
+    """Page of the criteria: how a score is read, then the cards of the criteria in one grid per level, with a button
+    that opens or closes them all once the script of the page runs."""
     kinds = {code: criterion_kind(criterion) for code, criterion in criteria.items()}
 
     def codes(selected) -> str:
@@ -812,24 +815,17 @@ def criteria_main_html(texts: Texts, criteria: dict[str, Criterion]) -> str:
         for label, explanation, listed in treatments
     )
     statuses = {status: texts.quoted(texts.text(f"status.{status}")) for status in ("met", "partly", "not_met", "not_measured")}
-    rows = "".join(
-        f'<tr><th scope="row"><a class="code-tag" href="#{escape(code)}">{escape(code)}</a></th>'
-        f"<td>{escape(criterion_title(code, texts))}</td>"
-        f'<td class="criteria-study" lang="en">{escape(criterion.name)}</td>'
-        f'<td>{escape(texts.text(f"criteria.kind.{KIND_KEYS[kinds[code]]}"))}</td></tr>'
-        for code, criterion in criteria.items()
-    )
-    headings = "".join(
-        f'<th scope="col"{extra}>{escape(texts.text(f"criteria.table.{key}"))}</th>'
-        for key, extra in (("code", ""), ("name", ""), ("study", ' class="criteria-study"'), ("app", ""))
-    )
+    open_all = escape(texts.text("criteria.open_all"))
+    tools = (f'<div class="criteria-tools"><button type="button" class="criteria-toggle" data-toggle-all aria-expanded="false" '
+             f'data-open-label="{open_all}" data-close-label="{escape(texts.text("criteria.close_all"))}" hidden>'
+             f'<span>{open_all}</span>{line_icon("chevron-down")}</button></div>')
     levels = []
     for level in dict.fromkeys(level_key(code) for code in criteria):
         members = [code for code in criteria if level_key(code) == level]
         heading = texts.text("criteria.level.range", level=texts.text(f"criteria.level.{level}"), first=members[0],
                              last=members[-1])
-        levels.append(f'<h2 id="level-{escape(level)}">{escape(heading)}</h2>'
-                      + "".join(criterion_section_html(criteria[code], texts) for code in members))
+        levels.append(f'<h2 id="level-{escape(level)}">{escape(heading)}</h2><div class="criteria-grid">'
+                      + "".join(criterion_section_html(criteria[code], texts) for code in members) + "</div>")
     return (
         f'<article class="wrap article criteria-page"><h1>{escape(texts.text("criteria.heading", count=len(criteria)))}</h1>'
         f'<p class="lead">{escape(texts.text("criteria.lead"))}</p>'
@@ -838,9 +834,7 @@ def criteria_main_html(texts: Texts, criteria: dict[str, Criterion]) -> str:
         f'<p>{escape(texts.text("criteria.scale.kinds"))}</p><ul class="kinds">{treatment_items}</ul>'
         f'<p>{escape(texts.text("criteria.scale.core", codes=codes(lambda code: criteria[code].core)))}</p>'
         f'<p>{escape(texts.text("criteria.scale.high_value", codes=codes(lambda code: criteria[code].applies_to == "high-value")))}</p>'
-        f'<h2 id="all">{escape(texts.text("criteria.table.title"))}</h2>'
-        f'<div class="table-wrap"><table class="criteria-table"><thead><tr>{headings}</tr></thead><tbody>{rows}</tbody>'
-        f"</table></div>{''.join(levels)}"
+        f"{tools}{''.join(levels)}"
         f'<h2 id="source">{escape(texts.text("criteria.source.title"))}</h2>'
         f'<p>{escape(texts.text("criteria.source.text", version=CRITERIA_VERSION))}</p>'
         f'<p class="know-link"><a href="{CRITERIA_TEXT_URL}" {NEW_TAB}>{escape(texts.text("criteria.source.link"))}'

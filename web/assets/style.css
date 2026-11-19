@@ -1059,29 +1059,37 @@ body[data-view="result"] .field .button { padding: 11px 20px; }
 .glossary { display: grid; gap: 12px; margin-top: 14px; }
 .glossary li { padding: 14px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
 
-/* Page of the criteria: how a score is read, the table of the criteria and one card per criterion */
+/* Page of the criteria: how a score is read, then the cards of the criteria, three, two or one in a row as the width
+   allows. A card shows its code, names and treatment; its rules open under it. A card that opens grows alone. */
 
-.criteria-page { max-width: 52rem; }
-.kinds { display: grid; gap: 10px; margin-top: 14px; }
+.criteria-page { max-width: none; }
+.criteria-page > h1, .criteria-page > .lead, .criteria-page > p { max-width: 46rem; }
+.kinds { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
 .kinds li { padding: 14px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
-.table-wrap {
-  margin-top: 16px;
-  overflow-x: auto;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-card);
+.criteria-tools { display: flex; justify-content: flex-end; margin-top: 36px; }
+.criteria-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1.5px solid #B6C3DA;
+  border-radius: var(--radius-control);
   background: var(--surface);
-  box-shadow: var(--shadow-card);
+  color: var(--navy);
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background-color 0.12s ease;
 }
-.criteria-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; line-height: 1.4; }
-.criteria-table th, .criteria-table td { padding: 10px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
-.criteria-table thead th { color: var(--ink-soft); font-size: 0.82rem; font-weight: 800; white-space: nowrap; }
-.criteria-table tbody th { width: 1%; }
-.criteria-table tbody tr:last-child th, .criteria-table tbody tr:last-child td { border-bottom: 0; }
-.criteria-table td:nth-child(2) { font-weight: 650; }
-.criteria-table td.criteria-study { color: var(--ink-soft); }
+.criteria-toggle:hover { border-color: var(--teal); background: var(--tint-teal); }
+.criteria-toggle[hidden] { display: none; }
+.criteria-toggle .icon { width: 18px; height: 18px; transition: transform 0.2s ease; }
+.criteria-toggle[aria-expanded="true"] .icon { transform: rotate(180deg); }
+.article .criteria-tools + h2 { margin-top: 4px; }
+.criteria-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 16px; margin-top: 16px; }
 .criterion {
-  margin-top: 16px;
-  padding: 24px 26px;
+  padding: 20px 22px 0;
   border: 1px solid var(--line);
   border-radius: var(--radius-card);
   background: var(--surface);
@@ -1089,16 +1097,41 @@ body[data-view="result"] .field .button { padding: 11px 20px; }
   scroll-margin-top: 20px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+.criteria-page:has(.criteria-toggle:not([hidden])) .criterion-top { cursor: pointer; }
+.criterion:hover { border-color: #B6C3DA; }
 .criterion:target { border-color: var(--teal); box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.18), var(--shadow-card); }
-.criterion-head { display: flex; align-items: center; gap: 12px; }
-.criterion-head .code-tag { padding: 3px 10px; font-size: 0.9rem; }
-.criterion-head h3 { font-size: 1.28rem; letter-spacing: -0.015em; }
-.criterion .criterion-study { margin-top: 6px; color: var(--ink-soft); font-size: 0.9rem; }
-.criterion .criterion-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.criterion-top { display: flex; flex-direction: column; min-height: 8.75rem; }
+.criterion-head { display: flex; align-items: flex-start; gap: 10px; }
+.criterion-head .code-tag { margin-top: 0.1em; padding: 2px 9px; font-size: 0.86rem; }
+.criterion-head h3 { font-size: 1.12rem; line-height: 1.3; letter-spacing: -0.01em; }
+.criterion .criterion-study { margin-top: 6px; color: var(--ink-soft); font-size: 0.88rem; }
+.criterion .criterion-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 10px; }
 .criterion-badges .badge { margin-left: 0; }
 .badge--kind { background: var(--tint-teal); color: var(--teal-ink); }
 .badge--scope { background: var(--tint-slate); color: var(--ink-soft); }
-.criterion .criterion-question { margin-top: 16px; font-weight: 700; }
+.criterion-more > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 14px -22px 0;
+  padding: 12px 22px;
+  border-top: 1px solid var(--line);
+  border-radius: 0 0 var(--radius-card) var(--radius-card);
+  color: var(--teal-ink);
+  font-size: 0.94rem;
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+.criterion-more > summary::-webkit-details-marker { display: none; }
+.criterion-more > summary:hover { background: var(--tint-teal); }
+.criterion-more > summary:focus-visible { outline-offset: -3px; }
+.criterion-more[open] > summary { border-radius: 0; }
+.criterion-more > summary .icon { flex: none; transition: transform 0.2s ease; }
+.criterion-more[open] > summary .icon { transform: rotate(180deg); }
+.criterion-body { padding-bottom: 20px; cursor: auto; }
+.criterion .criterion-question { margin-top: 14px; font-weight: 700; }
 .criterion-scores { display: grid; gap: 10px; margin: 12px 0 0; }
 .score-row { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr); gap: 12px; align-items: start; }
 .score-row dt { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; font-variant-numeric: tabular-nums; }
@@ -1171,6 +1204,20 @@ body[data-view="result"] .field .button { padding: 11px 20px; }
   .site-nav { order: 3; width: 100%; }
 }
 
+/* Closed cards of a row end together: the top part of a card is as tall as the tallest one can be at the width. */
+@media (max-width: 1099px) {
+  .criteria-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .criterion-top { min-height: 7.5rem; }
+}
+
+@media (max-width: 899px) {
+  .criterion-top { min-height: 8.75rem; }
+}
+
+@media (max-width: 759px) {
+  .criterion-top { min-height: 10.2rem; }
+}
+
 @media (max-width: 960px) {
   .hero-inner { grid-template-columns: minmax(0, 1fr); gap: 48px; padding-block: 44px 64px; }
   .preview, .question-card { max-width: 26rem; }
@@ -1183,6 +1230,12 @@ body[data-view="result"] .field .button { padding: 11px 20px; }
   .notes-inner { grid-template-columns: minmax(0, 1fr); }
   .explain-inner { grid-template-columns: minmax(0, 1fr); }
   .key-figure { max-width: 30rem; }
+  .kinds { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 679px) {
+  .criteria-grid { grid-template-columns: minmax(0, 1fr); }
+  .criterion-top { min-height: 0; }
 }
 
 @media (max-width: 860px) {
@@ -1219,12 +1272,8 @@ body[data-view="result"] .field .button { padding: 11px 20px; }
   .legend, .know-block { padding: 24px 22px; }
   .explain-inner { padding: 26px 22px; }
   .explain-side { padding: 18px; }
-  .criterion { padding: 20px 18px; }
-  .criteria-table th, .criteria-table td { padding: 8px 8px; }
-  .criteria-table { font-size: 0.82rem; }
-  .criteria-table thead th { white-space: normal; }
-  .criteria-table .code-tag { min-width: 0; padding: 1px 5px; }
-  .criteria-table th:last-child, .criteria-table td:last-child { display: none; }
+  .criterion { padding: 18px 18px 0; }
+  .criterion-more > summary { margin-inline: -18px; padding-inline: 18px; }
   .result-head { padding: 26px 22px 24px; border-radius: 18px; }
   .result-bar { gap: 8px; margin-inline: -16px; padding: 8px 16px; }
   .result-bar::after { right: 16px; left: 16px; }
@@ -1255,7 +1304,11 @@ body[data-view="result"] .field .button { padding: 11px 20px; }
 /* On paper every panel is printed, one after the other, without the bars of the screen */
 
 @media print {
-  .site-header, .hero, .result-bar, .panel-next, .footer-links { display: none; }
+  .site-header, .hero, .result-bar, .panel-next, .footer-links, .criteria-tools { display: none; }
   .tab-panel[hidden] { display: block; }
   .result { animation: none; }
+  .criteria-grid { grid-template-columns: minmax(0, 1fr); }
+  .criterion { break-inside: avoid; box-shadow: none; }
+  .criterion-top { min-height: 0; }
+  .criterion-more > summary .icon { display: none; }
 }
