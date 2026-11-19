@@ -6,5 +6,5 @@ so that a visitor can tell which version of the page is on the screen.
 
 from datetime import date
 
-VERSION = "1.0"
+VERSION = "1.1"
 RELEASED = date(2026, 11, 19)

@@ -87,7 +87,8 @@ class ExampleDatasetTest(unittest.TestCase):
         self.assertEqual((check.title, check.status_label, check.kind_label, check.core, check.effort_label),
                          ("Τίτλος και περιγραφή", "Εν μέρει", "Πρόταση.", True, "Συνήθως χαμηλή προσπάθεια."))
         self.assertEqual((check.score, check.reason), (1, "description of 76 characters (minimum 100)"))
-        self.assertEqual(check.rule, CRITERIA["M1"].score_1)
+        self.assertEqual(check.rule, "Υπάρχουν όλα, αλλά η περιγραφή επαναλαμβάνει τον τίτλο ή έχει λιγότερους από 100 χαρακτήρες.")
+        self.assertEqual(page_model(EXAMPLE, "en").checks[0].rule, CRITERIA["M1"].score_1)
         self.assertEqual(check.criterion_name, "Mandatory metadata")
         self.assertTrue(check.why.startswith("Ο τίτλος και η περιγραφή"))
         self.assertFalse(check.generic)
@@ -122,8 +123,10 @@ class ExampleDatasetTest(unittest.TestCase):
         files, judgement = self.model.checklist_files, self.model.checklist_judgement
         self.assertEqual([item.criterion_id for item in files], ["Q1", "AI1", "Q2", "Q3", "Q4", "AI6"])
         self.assertEqual([item.criterion_id for item in judgement], ["AI2", "M5", "M8", "M10", "AI3", "AI4", "AI5", "AI7"])
-        self.assertEqual((files[0].question, files[0].if_not),
-                         ("Κατεβαίνουν και ανοίγουν όλα τα αρχεία;", "Διορθώστε τον σύνδεσμο ή ανεβάστε ξανά το αρχείο."))
+        self.assertEqual((files[0].name, files[0].question, files[0].if_not),
+                         ("Διαθεσιμότητα αρχείων", "Κατεβαίνουν και ανοίγουν όλα τα αρχεία;",
+                          "Διορθώστε τον σύνδεσμο ή ανεβάστε ξανά το αρχείο."))
+        self.assertEqual(page_model(EXAMPLE, "en").checklist_judgement[-1].name, "Declared limitations")
         self.assertEqual([item.criterion_id for item in files + judgement if item.core], ["Q1", "AI1", "AI2"])
 
     def test_english_page_of_the_same_dataset(self):
@@ -134,6 +137,13 @@ class ExampleDatasetTest(unittest.TestCase):
         self.assertEqual(model.checks[2].finding,
                          "In 6 of the 11 files that declare a format, the format is typed freely (“xl”, “xlx”) "
                          "and not with a term of the catalogue.")
+
+
+class RuleOfAScoreTest(unittest.TestCase):
+    def test_check_without_a_score_has_no_rule(self):
+        model = page_model(UNMARKED)
+        marking = next(check for check in model.checks if check.criterion_id == "M9")
+        self.assertEqual((marking.score, marking.rule), (None, ""))
 
 
 class UnmarkedDatasetTest(unittest.TestCase):

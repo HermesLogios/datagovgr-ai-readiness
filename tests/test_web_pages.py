@@ -11,13 +11,17 @@ from datetime import date
 from html import escape
 
 from aiready import jev
-from aiready.second_reading import build_reading_model
+from aiready.criteria import result_kind
+from aiready.metadata_checks import CHECK_IDS
+from aiready.plain_language import CHECKLIST_FILES, criterion_title
+from aiready.second_reading import build_reading_model, figure_of
 from aiready.texts import load_texts
-from sample_pages import EXAMPLE, UNMARKED, page_model
+from sample_pages import CRITERIA, EXAMPLE, UNMARKED, page_model
 from web import icons, pages, release
 
 STATUS_ICON = 'class="status-icon status-icon--'
 COUNT_WORDS = {"el": {4: "τέσσερις", 5: "πέντε", 6: "έξι"}, "en": {4: "four", 5: "five", 6: "six"}}
+NEW_TAB = 'target="_blank" rel="noopener noreferrer"'
 
 
 def block(html: str, opening: str, closing: str) -> str:
@@ -41,6 +45,8 @@ class AddressTest(unittest.TestCase):
         self.assertEqual(pages.page_path("terms", "en"), "/en/terms/")
         self.assertEqual(pages.page_path("opinion", "el"), "/second-opinion/")
         self.assertEqual(pages.page_path("opinion", "en"), "/en/second-opinion/")
+        self.assertEqual(pages.page_path("criteria", "el"), "/criteria/")
+        self.assertEqual(pages.page_path("criteria", "en"), "/en/criteria/")
 
     def test_unknown_page_or_language_is_refused(self):
         with self.assertRaises(KeyError):
@@ -82,11 +88,19 @@ class DocumentTest(unittest.TestCase):
         self.assertEqual(navigation.count('class="nav-repeated"'), 1)
         self.assertIn(f'<a href="/terms/">{self.texts.text("footer.terms")}</a>', block(self.document, "<footer", "</footer>"))
 
-    def test_navigation_lists_the_four_pages_with_the_check_first(self):
+    def test_navigation_lists_the_five_pages_with_the_check_first(self):
         navigation = block(self.document, '<nav class="site-nav"', "</nav>")
-        self.assertEqual(re.findall(r'<a href="([^"]+)"', navigation), ["/", "/second-opinion/", "/guide/", "/terms/"])
+        self.assertEqual(re.findall(r'<a href="([^"]+)"', navigation),
+                         ["/", "/second-opinion/", "/guide/", "/criteria/", "/terms/"])
         self.assertIn('<a href="/">Έλεγχος</a>', navigation)
         self.assertIn('<a href="/second-opinion/" data-opinion-link>Δεύτερη γνώμη ΤΝ</a>', navigation)
+        self.assertIn('<a href="/criteria/">Κριτήρια</a>', navigation)
+
+    def test_page_of_the_criteria_is_marked_in_the_navigation_and_named_in_the_title(self):
+        english = pages.document_html("criteria", load_texts("en"), "", criteria_version="1.2")
+        self.assertIn('<a href="/en/criteria/" aria-current="page">Criteria</a>', english)
+        self.assertIn("<title>Criteria | Data readiness check</title>", english)
+        self.assertIn('<a href="/criteria/" lang="el" hreflang="el">Ελληνικά</a>', english)
         english = pages.document_html("opinion", load_texts("en"), "", criteria_version="1.2")
         self.assertIn('<a href="/en/second-opinion/" data-opinion-link aria-current="page">AI second opinion</a>', english)
         self.assertIn("<title>AI second opinion | Data readiness check</title>", english)
@@ -215,11 +229,40 @@ class ResultTest(unittest.TestCase):
             self.assertIn(f"<h4>{check.title}</h4>", card)
             self.assertIn(f">{check.status_label}</span>", card)
 
-    def test_details_give_the_code_the_reason_and_the_rule(self):
-        self.assertIn("Κριτήριο M1, Mandatory metadata. Βαθμός 1 από 2.", self.result)
-        self.assertIn("Αιτιολογία του ελέγχου: description of 76 characters (minimum 100)", self.result)
-        self.assertIn("Κανόνας για τον βαθμό 1: All are present, but the description repeats the title", self.result)
+    def test_every_check_carries_the_code_of_its_criterion_before_its_name(self):
+        cards = re.findall(r'<article class="check .*?</article>', self.result, re.DOTALL)
+        for card, check in zip(cards, self.model.checks):
+            code = check.criterion_id
+            tag = (f'<a class="code-tag" href="/criteria/#{code}" {NEW_TAB} '
+                   f'title="Κριτήριο {code}: πώς βαθμολογείται (ανοίγει σε νέα καρτέλα)">{code}</a>')
+            self.assertIn(f'<div class="check-name">{tag}<h4>{check.title}</h4></div>', card)
+
+    def test_code_of_a_criterion_leads_to_the_page_of_the_language(self):
+        english = pages.result_html(page_model(EXAMPLE, "en"), load_texts("en"))
+        self.assertIn(f'<a class="code-tag" href="/en/criteria/#M1" {NEW_TAB} '
+                      'title="Criterion M1: how it is scored (opens in a new tab)">M1</a>', english)
+
+    def test_details_give_the_code_the_reason_and_the_rule_in_the_language_of_the_page(self):
+        self.assertIn("Κριτήριο M1 της μελέτης, «Mandatory metadata». Βαθμός 1 από 2.", self.result)
+        self.assertIn("Αιτιολογία του ελέγχου, όπως τη γράφει ο κώδικας: description of 76 characters (minimum 100)", self.result)
+        self.assertIn("Κανόνας για τον βαθμό 1: Υπάρχουν όλα, αλλά η περιγραφή επαναλαμβάνει τον τίτλο ή έχει λιγότερους "
+                      "από 100 χαρακτήρες.", self.result)
         self.assertEqual(self.result.count('<details class="check-details">'), 9)
+        english = pages.result_html(page_model(EXAMPLE, "en"), load_texts("en"))
+        self.assertIn("Criterion M1, Mandatory metadata. Score 1 out of 2.", english)
+        self.assertIn(f"Rule for score 1: {CRITERIA['M1'].score_1}", english)
+
+    def test_details_lead_to_all_the_scores_of_the_criterion(self):
+        self.assertEqual(self.result.count('<p class="check-rules">'), 9)
+        self.assertIn(f'<p class="check-rules"><a href="/criteria/#M1" {NEW_TAB}>'
+                      "Όλοι οι βαθμοί του κριτηρίου M1, στη σελίδα «Κριτήρια»", self.result)
+        self.assertNotIn("criteria.csv", self.result)
+
+    def test_checks_and_checklist_say_what_the_codes_are(self):
+        note = escape(self.texts.text("codes.note"))
+        self.assertIn("M1", note)
+        for name in ("checks", "checklist"):
+            self.assertEqual(panel(self.result, name).count(f'<p class="block-intro">{note}</p>'), 1, name)
 
     def test_priorities_are_numbered_in_order_and_lead_to_their_check(self):
         fixes = block(self.result, '<ol class="fixes">', "</ol>")
@@ -274,6 +317,20 @@ class ResultTest(unittest.TestCase):
         self.assertEqual(checklist.count("Αν όχι:"), 14)
         self.assertEqual(checklist.count("Βασικό κριτήριο."), 3)
         self.assertEqual(checklist.count("<fieldset"), 2)
+
+    def test_every_row_of_the_checklist_names_its_criterion_with_its_code_above_the_question(self):
+        checklist = block(self.result, '<section id="by-hand"', "</section>")
+        rows = re.findall(r'<div class="tick">.*?</div>', checklist, re.DOTALL)
+        items = self.model.checklist_files + self.model.checklist_judgement
+        self.assertEqual(len(rows), len(items))
+        for row, item in zip(rows, items):
+            code = item.criterion_id
+            self.assertIn(f'<p class="tick-name"><a class="code-tag" href="/criteria/#{code}" {NEW_TAB} ', row)
+            self.assertIn(f">{code}</a><span>{escape(item.name)}</span>", row)
+            self.assertLess(row.index('<p class="tick-name">'), row.index(f'<label for="tick-{code}">'))
+            self.assertNotIn("<a", block(row, "<label", "</label>"))
+            self.assertEqual("Βασικό κριτήριο." in block(row, '<p class="tick-name">', "</p>"), item.core, code)
+        self.assertIn("<span>Διαθεσιμότητα αρχείων</span>", rows[0])
 
     def test_report_is_offered_in_three_formats_from_a_menu_next_to_the_tabs(self):
         bar = self.result[self.result.index('<div class="result-bar">'):self.result.index('<div class="tab-panel"')]
@@ -362,12 +419,19 @@ class OtherPagesTest(unittest.TestCase):
             self.assertIn(texts.text("terms.liability.text"), terms)
             self.assertEqual(terms.count("<h2 id="), 9)
 
+    def test_guide_leads_to_the_page_of_the_criteria(self):
+        greek, english = pages.guide_main_html(load_texts("el")), pages.guide_main_html(load_texts("en"))
+        self.assertIn('<p class="know-link"><a href="/criteria/">', greek)
+        self.assertIn('<p class="know-link"><a href="/en/criteria/">', english)
+        self.assertIn("στη σελίδα «Κριτήρια»", greek)
+
     def test_no_page_leaves_a_field_of_a_text_unfilled(self):
         for language in ("el", "en"):
             texts = load_texts(language)
             model = page_model(EXAMPLE, language)
             parts = (pages.home_main_html(texts, model), pages.result_html(model, texts, example=True),
-                     pages.opinion_main_html(texts), pages.guide_main_html(texts), pages.terms_main_html(texts))
+                     pages.opinion_main_html(texts), pages.guide_main_html(texts), pages.terms_main_html(texts),
+                     pages.criteria_main_html(texts, CRITERIA))
             for part in parts:
                 document = pages.document_html("home", texts, part, criteria_version="1.2")
                 self.assertIsNone(re.search(r"\{[a-z_]+\}", document), language)
@@ -402,6 +466,24 @@ class ReadingTest(unittest.TestCase):
         marks = [preview.index(words) for words in ("Τίτλος και περιγραφή", "Λέει τι περιέχουν", "Περιορισμοί των δεδομένων",
                                                     "Αναφέρει περιοχή", "Λέει πόσο ακριβή είναι")]
         self.assertEqual(marks, sorted(marks))
+
+    def test_questions_stand_under_the_code_of_their_criterion(self):
+        preview = block(self.result, '<div class="reading-preview">', "</div>")
+        for code, name in (("M1", "Τίτλος και περιγραφή"), ("AI7", "Περιορισμοί των δεδομένων")):
+            heading = f'<h4 class="reading-group"><a class="code-tag" href="/criteria/#{code}" {NEW_TAB} '
+            self.assertIn(heading, preview)
+            self.assertIn(heading, self.reading)
+            self.assertIn(f">{code}</a><span>{name}</span></h4>", preview)
+            self.assertIn(f">{code}</a><span>{name}</span></h4>", self.reading)
+
+    def test_offer_leads_to_the_way_to_a_key_without_leaving_the_result(self):
+        line = block(self.result, '<p class="reading-help">', "</p>")
+        self.assertIn(f'<a href="/second-opinion/#key" {NEW_TAB}>Δεν έχετε κλειδί; Δείτε πώς αποκτάτε ένα', line)
+        self.assertNotIn("data-opinion-link", line)
+        self.assertLess(self.result.index("</form>"), self.result.index('<p class="reading-help">'))
+        self.assertLess(self.result.index('<p class="reading-help">'), self.result.index('<ul class="reading-facts">'))
+        english = pages.result_html(page_model(EXAMPLE, "en"), load_texts("en"))
+        self.assertIn(f'<a href="/en/second-opinion/#key" {NEW_TAB}>No key yet? See how to get one', english)
 
     def test_offer_stands_in_two_columns_with_the_form_first(self):
         columns = block(self.result, '<div class="reading-columns">', "</form>")
@@ -552,7 +634,7 @@ class OpinionPageTest(unittest.TestCase):
 
     def test_texts_that_count_the_statements_agree_with_the_statements_of_the_model(self):
         english = load_texts("en")
-        for key in ("reading.offer.preview", "opinion.lead", "opinion.step.3.title"):
+        for key in ("reading.offer.preview", "opinion.lead", "opinion.step.3.title", "opinion.how.sent"):
             self.assertIn(COUNT_WORDS["el"][len(jev.STATEMENTS)], self.texts.text(key), key)
             self.assertIn(COUNT_WORDS["en"][len(jev.STATEMENTS)], english.text(key).lower(), key)
 
@@ -569,6 +651,190 @@ class OpinionPageTest(unittest.TestCase):
         self.assertIn('<a href="/en/terms/#reading">', self.english)
 
     def test_page_carries_no_inline_style(self):
+        self.assertNotIn("style=", self.page)
+
+    def test_page_explains_how_the_model_works_and_then_how_to_get_a_key(self):
+        marks = [self.page.index(mark) for mark in ('<ol class="steps steps--three">', '<section class="explain" id="how">',
+                                                    '<section class="explain explain--key" id="key">',
+                                                    '<section class="notes">')]
+        self.assertEqual(marks, sorted(marks))
+        self.assertIn('<section class="explain" id="how">', self.english)
+        self.assertIn('<section class="explain explain--key" id="key">', self.english)
+
+    def test_page_says_what_the_model_does_with_the_texts(self):
+        section = block(self.page, '<section class="explain" id="how">', "</section>")
+        self.assertIn("<h2>Πώς δουλεύει το Jev</h2>", section)
+        for key in ("opinion.how.model", "opinion.how.sent", "opinion.how.scores", "opinion.how.criteria"):
+            self.assertIn(escape(self.texts.text(key)), section, key)
+        self.assertIn("έναν αριθμό από 0 έως 1", section)
+        self.assertIn(f"από {figure_of(jev.LIKELY, self.texts)} και πάνω «Μάλλον ναι», "
+                      f"έως {figure_of(jev.UNLIKELY, self.texts)} «Μάλλον όχι»", section)
+        self.assertIn("«Αβέβαιο»", section)
+
+    def test_example_of_a_statement_is_a_statement_that_the_model_receives(self):
+        self.assertIn(jev.STATEMENTS[0].instructions, load_texts("en").text("opinion.how.sent"))
+
+    def test_page_names_the_criteria_of_the_questions_with_their_codes_and_their_numbers(self):
+        section = block(self.page, '<section class="explain" id="how">', "</section>")
+        rows = re.findall(r'<li><a class="code-tag" href="/criteria/#(\w+)" title="[^"]+">\w+</a><span>([^<]+)</span></li>', section)
+        self.assertEqual(rows, [("M1", "Τίτλος και περιγραφή: μία ερώτηση"), ("AI7", "Δηλωμένοι περιορισμοί: 4 ερωτήσεις")])
+        self.assertNotIn("target=", block(section, '<ul class="explain-criteria">', "</ul>"))
+        counts = {code: sum(statement.criterion == code for statement in jev.STATEMENTS) for code in ("M1", "AI7")}
+        self.assertEqual(counts, {"M1": 1, "AI7": 4})
+
+    def test_page_gives_four_steps_to_a_key_with_the_address_of_the_console(self):
+        section = block(self.page, '<section class="explain explain--key" id="key">', "</section>")
+        self.assertIn("<h2>Πώς αποκτάτε κλειδί</h2>", section)
+        steps = block(section, '<ol class="key-steps">', "</ol>")
+        self.assertEqual(re.findall(r'<li><span class="step-number">(\d)</span>', steps), ["1", "2", "3", "4"])
+        self.assertIn(f'<a href="https://console.typesafe.ai/keys" {NEW_TAB}>console.typesafe.ai/keys', steps)
+        for words in ("«API Keys»", "«Create key»", "«Το κλειδί σας για το Jev»", "«Δεύτερη γνώμη ΤΝ»"):
+            self.assertIn(words, steps)
+        english = block(self.english, '<ol class="key-steps">', "</ol>")
+        for words in ("“API Keys”", "“Create key”", "“Your key for Jev”", "“AI second opinion”"):
+            self.assertIn(words, english)
+
+    def test_page_says_who_charges_the_use_and_when_the_steps_were_checked(self):
+        section = block(self.page, '<section class="explain explain--key" id="key">', "</section>")
+        self.assertIn(f'<a href="https://docs.typesafe.ai/models" {NEW_TAB}>', section)
+        for key in ("opinion.key.lead", "opinion.key.care", "opinion.key.cost"):
+            self.assertIn(escape(self.texts.text(key)), section, key)
+        self.assertIn(f"Τα βήματα ελέγχθηκαν στις {self.texts.date(pages.KEY_STEPS_CHECKED)}.", section)
+        self.assertIn(f"The steps were checked on {load_texts('en').date(pages.KEY_STEPS_CHECKED)}.", self.english)
+
+    def test_sketch_of_the_console_holds_only_the_two_names_and_the_numbers_of_their_steps(self):
+        figure = block(self.page, '<figure class="key-figure">', "</figure>")
+        self.assertEqual(sorted(re.findall(r"<text[^>]*>([^<]+)</text>", figure)), ["2", "3", "API Keys", "Create key"])
+        self.assertIn('aria-hidden="true"', block(figure, "<svg", ">"))
+        caption = block(figure, "<figcaption>", "</figcaption>")
+        self.assertIn("Σχέδιο της κονσόλας, όχι φωτογραφία της.", caption)
+        self.assertIn("Το 2 δείχνει το «API Keys»", caption)
+        self.assertIn("το 3 το «Create key»", caption)
+        for mark in ("<image", "href=", "style=", "<script"):
+            self.assertNotIn(mark, figure)
+        self.assertEqual(figure, block(self.english, '<figure class="key-figure">', "</figure>").replace(
+            block(block(self.english, '<figure class="key-figure">', "</figure>"), "<figcaption>", "</figcaption>"), caption))
+
+
+class CriteriaPageTest(unittest.TestCase):
+    KINDS = {"by rule": "Βαθμός από κανόνα", "proposal": "Πρόταση βαθμού", "files": "Λίστα ελέγχου: θέλει τα αρχεία",
+             "judgement": "Λίστα ελέγχου: θέλει κρίση ανθρώπου"}
+
+    @classmethod
+    def setUpClass(cls):
+        cls.texts = load_texts("el")
+        cls.page = pages.criteria_main_html(cls.texts, CRITERIA)
+        cls.english = pages.criteria_main_html(load_texts("en"), CRITERIA)
+
+    @staticmethod
+    def kind_of(code: str) -> str:
+        if code in CHECK_IDS:
+            return result_kind(CRITERIA[code])
+        return "files" if code in CHECKLIST_FILES else "judgement"
+
+    def section(self, code: str, page: str | None = None) -> str:
+        return block(page or self.page, f'<section class="criterion" id="{code}"', "</section>")
+
+    def test_heading_names_the_number_of_the_criteria(self):
+        self.assertEqual(len(CRITERIA), 23)
+        self.assertIn(f"<h1>Τα {len(CRITERIA)} κριτήρια και πώς βαθμολογούνται</h1>", self.page)
+        self.assertIn(f"<h1>The {len(CRITERIA)} criteria and how they are scored</h1>", self.english)
+
+    def test_every_criterion_has_a_section_under_its_code_in_the_order_of_the_criteria_file(self):
+        for page in (self.page, self.english):
+            self.assertEqual(re.findall(r'<section class="criterion" id="(\w+)"', page), list(CRITERIA))
+
+    def test_sections_stand_under_the_three_levels_with_their_first_and_last_code(self):
+        self.assertEqual(re.findall(r'<h2 id="level-(\w+)">([^<]+)</h2>', self.page),
+                         [("Q", "Ποιότητα (Q1 έως Q6)"), ("M", "Μεταδεδομένα και νομικό καθεστώς (M1 έως M10)"),
+                          ("AI", "Ετοιμότητα για ΤΝ (AI1 έως AI7)")])
+        self.assertLess(self.page.index('<h2 id="level-M">'), self.page.index('<section class="criterion" id="M1"'))
+        self.assertLess(self.page.index('<section class="criterion" id="Q6"'), self.page.index('<h2 id="level-M">'))
+
+    def test_section_gives_the_name_the_question_and_the_rule_of_every_score(self):
+        for code, criterion in CRITERIA.items():
+            section = self.section(code)
+            self.assertIn(f'<h3 id="name-{code}">{escape(criterion_title(code, self.texts))}</h3>', section)
+            self.assertIn(f'<span class="code-tag code-tag--plain">{code}</span>', section)
+            self.assertIn(f'<span lang="en">{escape(criterion.name)}</span>', section)
+            for field in ("question", "score_2", "score_1", "score_0"):
+                self.assertIn(escape(self.texts.text(f"criterion.{code}.{field}")), section, f"{code} {field}")
+            self.assertEqual(re.findall(r"</span>(\d)</dt>", section), ["2", "1", "0"], code)
+            self.assertEqual("<dt>Δεν εφαρμόζεται</dt>" in section, bool(criterion.not_applicable), code)
+            if criterion.not_applicable:
+                self.assertIn(escape(self.texts.text(f"criterion.{code}.not_applicable")), section, code)
+
+    def test_score_is_shown_with_the_sign_that_a_result_uses_for_it(self):
+        section = self.section("M1")
+        signs = re.findall(r'<dt><svg class="status-icon status-icon--(\w+)"', section)
+        self.assertEqual(signs, ["met", "partly", "not_met"])
+
+    def test_section_says_how_the_application_treats_the_criterion(self):
+        for code, criterion in CRITERIA.items():
+            section = self.section(code)
+            self.assertIn(f'<span class="badge badge--kind">{self.KINDS[self.kind_of(code)]}</span>', section, code)
+            self.assertEqual('<span class="badge">Βασικό κριτήριο</span>' in section, criterion.core, code)
+            self.assertEqual('<span class="badge badge--scope">Μόνο για σύνολα υψηλής αξίας</span>' in section,
+                             criterion.applies_to == "high-value", code)
+
+    def test_section_says_what_the_application_checks_or_why_it_gives_no_score(self):
+        tab = self.texts.quoted(self.texts.text("tabs.checklist"))
+        for code in CRITERIA:
+            section = self.section(code)
+            kind = self.kind_of(code)
+            if code in CHECK_IDS:
+                self.assertIn(escape(self.texts.text(f"criterion.{code}.how")), section, code)
+            else:
+                self.assertIn(escape(self.texts.text(f"criteria.app.{kind}", tab=tab)), section, code)
+        self.assertIn("στην καρτέλα «Λίστα ελέγχου» του αποτελέσματος", self.section("Q1"))
+
+    def test_criteria_of_the_second_opinion_say_how_many_questions_it_asks_about_them(self):
+        asked = {code: sum(statement.criterion == code for statement in jev.STATEMENTS) for code in CRITERIA}
+        for code, count in asked.items():
+            self.assertEqual('<a href="/second-opinion/#how">' in self.section(code), count > 0, code)
+        self.assertIn("Η δεύτερη γνώμη ΤΝ έχει μία ερώτηση για αυτό το κριτήριο.", self.section("M1"))
+        self.assertIn(f"Η δεύτερη γνώμη ΤΝ έχει {asked['AI7']} ερωτήσεις για αυτό το κριτήριο.", self.section("AI7"))
+        self.assertIn('<a href="/en/second-opinion/#how">', self.section("AI7", self.english))
+
+    def test_table_lists_every_criterion_with_its_code_its_two_names_and_its_treatment(self):
+        table = block(self.page, '<table class="criteria-table">', "</table>")
+        self.assertEqual(re.findall(r'<th scope="col"[^>]*>([^<]+)</th>', table),
+                         ["Κωδικός", "Κριτήριο", "Όνομα στη μελέτη", "Στην εφαρμογή"])
+        rows = re.findall(r'<tr><th scope="row"><a class="code-tag" href="#(\w+)"[^>]*>\w+</a></th><td>([^<]+)</td>'
+                          r'<td class="criteria-study" lang="en">([^<]+)</td><td>([^<]+)</td></tr>', table)
+        self.assertEqual([row[0] for row in rows], list(CRITERIA))
+        for code, name, study, kind in rows:
+            self.assertEqual((name, study, kind),
+                             (escape(criterion_title(code, self.texts)), escape(CRITERIA[code].name), self.KINDS[self.kind_of(code)]))
+
+    def test_scale_names_the_criteria_of_every_treatment_and_the_core_ones(self):
+        scale = self.page[self.page.index('<h2 id="scale">'):self.page.index('<h2 id="all">')]
+        by_kind = {kind: ", ".join(code for code in CRITERIA if self.kind_of(code) == kind) for kind in self.KINDS}
+        self.assertEqual(by_kind["by rule"], "M2, M3, M9")
+        self.assertEqual(by_kind["proposal"], "Q5, Q6, M1, M4, M6, M7")
+        checklist = ", ".join(code for code in CRITERIA if code not in CHECK_IDS)
+        for codes in (by_kind["by rule"], by_kind["proposal"], checklist):
+            self.assertIn(f"Κριτήρια: {codes}.", scale)
+        self.assertIn("Βασικά κριτήρια είναι τα Q1, Q6, M1, M4, AI1, AI2.", scale)
+        self.assertEqual(", ".join(code for code, criterion in CRITERIA.items() if criterion.core), "Q1, Q6, M1, M4, AI1, AI2")
+        self.assertIn("Τα M9, M10 ισχύουν μόνο για τα σύνολα υψηλής αξίας.", scale)
+        self.assertIn("το 2 φαίνεται ως «Εντάξει», το 1 ως «Εν μέρει» και το 0 ως «Όχι»", scale)
+        self.assertIn("γράφει «Δεν μετριέται»", scale)
+
+    def test_english_page_gives_the_rules_of_the_criteria_file(self):
+        for code, criterion in CRITERIA.items():
+            section = self.section(code, self.english)
+            for text in (criterion.question, criterion.score_2, criterion.score_1, criterion.score_0, criterion.not_applicable):
+                self.assertIn(escape(text), section, code)
+
+    def test_page_leads_to_the_full_text_of_the_criteria_in_the_repository(self):
+        self.assertIn('<a href="https://github.com/HermesLogios/datagovgr-ai-readiness/blob/main/criteria/criteria.md" '
+                      f"{NEW_TAB}>", self.page)
+        self.assertIn("έκδοση 1.2", self.page[self.page.index('<h2 id="source">'):])
+
+    def test_no_address_of_the_page_is_used_twice_and_no_style_is_written_inline(self):
+        addresses = re.findall(r' id="([^"]+)"', self.page)
+        self.assertEqual(len(addresses), len(set(addresses)))
         self.assertNotIn("style=", self.page)
 
 

@@ -1,24 +1,36 @@
-"""HTML of the public pages: home, result of a check with its tabs, second opinion of a model, guide and terms of use.
+"""HTML of the public pages: home, result of a check with its tabs, second opinion of a model, guide, criteria and
+terms of use.
 
 Every text is escaped before it enters the HTML: titles, publishers and values of the metadata
 come from the portal and are shown as plain text. A status is always given by a word, a shape
 and a colour. The pages carry no inline script or style and load only files of the site.
 """
 
+from datetime import date
 from html import escape
 
 from aiready import jev
-from aiready.plain_language import STATUS_KEYS, CheckExplanation, ChecklistItem, PageModel
+from aiready.criteria import CRITERIA_VERSION, Criterion
+from aiready.plain_language import (STATUS_KEYS, CheckExplanation, ChecklistItem, PageModel, criterion_kind,
+                                    criterion_title, level_key)
 from aiready.second_reading import ReadingModel, ReadingRow, figure_of
 from aiready.texts import DEFAULT_LANGUAGE, LANGUAGES, Texts
 from web import release
 from web.icons import SVG_ATTRIBUTES, band_icon, line_icon, mark_icon, status_icon
 
 REPOSITORY_URL = "https://github.com/HermesLogios/datagovgr-ai-readiness"
+CRITERIA_TEXT_URL = f"{REPOSITORY_URL}/blob/main/criteria/criteria.md"
+CONSOLE_URL = "https://console.typesafe.ai/keys"       # page of the keys in the console of TypeSafe AI
+PRICES_URL = "https://docs.typesafe.ai/models"         # models and prices of TypeSafe AI
+KEY_STEPS_CHECKED = date(2026, 11, 19)                 # day on which the steps to a key were checked in the console
 OPINION_PAGE = "opinion"
-PAGE_FOLDERS = {"home": "", OPINION_PAGE: "second-opinion/", "guide": "guide/", "terms": "terms/"}
-PAGE_TITLES = {OPINION_PAGE: "opinion.title", "guide": "guide.title", "terms": "terms.title", "missing": "missing.title"}
-NAVIGATION = (("home", "nav.check"), (OPINION_PAGE, "nav.opinion"), ("guide", "nav.how"), ("terms", "nav.terms"))
+CRITERIA_PAGE = "criteria"
+PAGE_FOLDERS = {"home": "", OPINION_PAGE: "second-opinion/", "guide": "guide/", CRITERIA_PAGE: "criteria/",
+                "terms": "terms/"}
+PAGE_TITLES = {OPINION_PAGE: "opinion.title", "guide": "guide.title", CRITERIA_PAGE: "criteria.title",
+               "terms": "terms.title", "missing": "missing.title"}
+NAVIGATION = (("home", "nav.check"), (OPINION_PAGE, "nav.opinion"), ("guide", "nav.how"), (CRITERIA_PAGE, "nav.criteria"),
+              ("terms", "nav.terms"))
 REPEATED_IN_FOOTER = ("terms",)                   # pages that the footer links too; narrow screens leave them out of the header
 MISSING_PAGE = "missing"
 OPINION_TAB = "second-opinion"                    # name of the tab of the second opinion; an address ending in #second-opinion opens it
@@ -27,6 +39,9 @@ COUNTED_STATUSES = ("met", "partly", "not_met", "not_measured", "not_judged")
 LEGEND_STATUSES = ("met", "partly", "not_met", "not_measured")
 STEPS = (1, 2, 3, 4)
 OPINION_STEPS = (1, 2, 3)
+KEY_STEPS = (1, 2, 3, 4)
+SCORE_STATUSES = ((2, "met"), (1, "partly"), (0, "not_met"))     # each score with the status that shows it in a result
+KIND_KEYS = {"by rule": "by_rule", "proposal": "proposal", "files": "files", "judgement": "judgement"}
 TERMS_SECTIONS = ("what", "result", "use", "data", "reading", "personal", "licences", "liability", "contact")
 GLOSSARY = ("metadata", "format", "licence", "hvd")
 EFFORT_CLASSES = {"Low": "low", "Medium": "medium", "High": "high"}
@@ -40,6 +55,38 @@ READING_MESSAGES = (("waiting", "reading.waiting"), ("key-missing", "reading.err
                     ("key", "reading.error.key"), ("limit", "reading.error.limit"),
                     ("service", "reading.error.service"), ("engine", "reading.error.engine"))
 METER_WIDTH = 100                                 # units of the drawing of a meter, from probability 0 to probability 1
+# Sketch of the page of the keys in the console of TypeSafe AI: the menu on the left, the list of the keys and the
+# button above it. Only the two names that a visitor presses are written, each with the number of its step.
+KEY_SKETCH = (
+    f'<svg class="key-sketch" viewBox="0 0 440 260" {SVG_ATTRIBUTES}>'
+    '<rect class="sketch-frame" x="0.5" y="0.5" width="439" height="259" rx="14" />'
+    '<path class="sketch-side" d="M1 53H128V259H15A14 14 0 0 1 1 245Z" />'
+    '<path class="sketch-rule" d="M1 52.5H439M128.5 53V259M176 104.5H416M176 140.5H416M176 176.5H416M176 212.5H416" />'
+    '<rect class="sketch-bar sketch-bar--dark" x="18" y="21" width="70" height="12" rx="6" />'
+    '<rect class="sketch-bar" x="18" y="72" width="80" height="10" rx="5" />'
+    '<rect class="sketch-bar" x="18" y="98" width="64" height="10" rx="5" />'
+    '<rect class="sketch-active" x="8" y="119" width="112" height="32" rx="8" />'
+    '<text class="sketch-label" x="20" y="141">API Keys</text>'
+    '<rect class="sketch-bar" x="18" y="166" width="72" height="10" rx="5" />'
+    '<rect class="sketch-bar" x="18" y="192" width="58" height="10" rx="5" />'
+    '<rect class="sketch-bar" x="18" y="218" width="66" height="10" rx="5" />'
+    '<rect class="sketch-bar sketch-bar--dark" x="176" y="74" width="120" height="14" rx="7" />'
+    '<rect class="sketch-bar" x="176" y="117" width="84" height="10" rx="5" />'
+    '<rect class="sketch-bar" x="280" y="117" width="118" height="10" rx="5" />'
+    '<rect class="sketch-bar" x="176" y="153" width="70" height="10" rx="5" />'
+    '<rect class="sketch-bar" x="280" y="153" width="118" height="10" rx="5" />'
+    '<rect class="sketch-bar" x="176" y="189" width="92" height="10" rx="5" />'
+    '<rect class="sketch-bar" x="280" y="189" width="118" height="10" rx="5" />'
+    '<rect class="sketch-button" x="292" y="11" width="132" height="32" rx="16" />'
+    '<text class="sketch-button-label" x="358" y="33" text-anchor="middle">Create key</text>'
+    '<rect class="sketch-ring" x="4" y="115" width="120" height="40" rx="11" />'
+    '<rect class="sketch-ring" x="286" y="5" width="144" height="44" rx="22" />'
+    '<circle class="sketch-marker" cx="146" cy="135" r="13" />'
+    '<text class="sketch-marker-label" x="146" y="140.5" text-anchor="middle">2</text>'
+    '<circle class="sketch-marker" cx="266" cy="27" r="13" />'
+    '<text class="sketch-marker-label" x="266" y="32.5" text-anchor="middle">3</text>'
+    "</svg>"
+)
 
 
 def page_path(page: str, language: str) -> str:
@@ -47,6 +94,27 @@ def page_path(page: str, language: str) -> str:
     if language not in LANGUAGES:
         raise ValueError(f"unknown language: {language}")
     return ("/" if language == DEFAULT_LANGUAGE else f"/{language}/") + PAGE_FOLDERS[page]
+
+
+def new_tab_note(texts: Texts) -> str:
+    """Words for screen readers at the end of a link that opens in a new tab."""
+    return f'<span class="visually-hidden"> {escape(texts.text("new_tab"))}</span>'
+
+
+def code_tag_html(code: str, texts: Texts, new_tab: bool = True) -> str:
+    """Code of a criterion of the study, as a link to its rules on the page of the criteria.
+
+    Inside a result the link opens a new tab, so that the result, which exists only in the open page, stays where it is.
+    """
+    target = f" {NEW_TAB}" if new_tab else ""
+    title = texts.text("code.title" if new_tab else "code.title_same", id=code)
+    return (f'<a class="code-tag" href="{page_path(CRITERIA_PAGE, texts.language)}#{escape(code)}"{target} '
+            f'title="{escape(title)}">{escape(code)}</a>')
+
+
+def text_with_link(texts: Texts, key: str, link: str, **values) -> str:
+    """Text of a key with the HTML of a link in the place of its field {link}, if it has one; the rest is escaped."""
+    return link.join(escape(part) for part in texts.text(key, link="\0", **values).split("\0"))
 
 
 def document_html(page: str, texts: Texts, main: str, *, criteria_version: str, assets_version: str = "",
@@ -354,7 +422,8 @@ def checks_html(model: PageModel, texts: Texts) -> str:
         for group in dict.fromkeys(check.group for check in model.checks)
     )
     return (f'<section id="nine-checks" class="block"><h2>{escape(texts.text("checks.title"))}</h2>'
-            f'<p class="block-intro">{escape(texts.text("checks.intro"))}</p>{groups}</section>')
+            f'<p class="block-intro">{escape(texts.text("checks.intro"))}</p>'
+            f'<p class="block-intro">{escape(texts.text("codes.note"))}</p>{groups}</section>')
 
 
 def check_html(check: CheckExplanation, texts: Texts) -> str:
@@ -370,17 +439,21 @@ def check_html(check: CheckExplanation, texts: Texts) -> str:
     details = [criterion, texts.text("details.why", why=check.why), texts.text("details.reason", reason=check.reason)]
     if check.rule:
         details.append(texts.text("details.rule", score=check.score, rule=check.rule))
-    details.append(texts.text("details.source"))
     lines = "".join(f"<p>{escape(line)}</p>" for line in details)
+    code = escape(check.criterion_id)
+    rules = (f'<p class="check-rules"><a href="{page_path(CRITERIA_PAGE, texts.language)}#{code}" {NEW_TAB}>'
+             f'{escape(texts.text("details.rules", id=check.criterion_id, page=texts.quoted(texts.text("nav.criteria"))))}'
+             f"{new_tab_note(texts)}</a></p>")
     return (
-        f'<article class="check check--{status}" id="check-{escape(check.criterion_id)}">{status_icon(status)}'
-        f'<div class="check-main"><div class="check-head"><h4>{escape(check.title)}</h4>'
+        f'<article class="check check--{status}" id="check-{code}">{status_icon(status)}'
+        f'<div class="check-main"><div class="check-head"><div class="check-name">'
+        f"{code_tag_html(check.criterion_id, texts)}<h4>{escape(check.title)}</h4></div>"
         f'<span class="status-chip status-chip--{status}">{escape(check.status_label)}</span></div>'
         f'<p class="check-finding">{escape(check.finding)}</p>{action}'
         f'<details class="check-details"><summary><span class="check-meta">'
         f'{escape(" ".join(label for label in labels if label))}</span>'
         f'<span class="check-toggle">{escape(texts.text("card.details"))}{line_icon("chevron-down")}</span></summary>'
-        f'<div class="check-details-box">{lines}</div></details></div></article>'
+        f'<div class="check-details-box">{lines}{rules}</div></details></div></article>'
     )
 
 
@@ -391,10 +464,16 @@ def reading_head_html(texts: Texts, tag_key: str, source: str = "") -> str:
             f"{escape(texts.text(tag_key))}</span>{named}</div>")
 
 
+def reading_group_html(criterion: str, texts: Texts) -> str:
+    """Heading of the statements of one criterion in the panel of the second reading, with the code of the criterion."""
+    return (f'<h4 class="reading-group">{code_tag_html(criterion, texts)}'
+            f'<span>{escape(texts.text(f"reading.group.{criterion}"))}</span></h4>')
+
+
 def reading_preview_html(texts: Texts) -> str:
     """The five statements under their criterion, each with an empty meter: what a reading will answer."""
     groups = "".join(
-        f'<h4 class="reading-group">{escape(texts.text(f"reading.group.{criterion}"))}</h4><ul class="reading-rows">'
+        f'{reading_group_html(criterion, texts)}<ul class="reading-rows">'
         + "".join(
             f'<li class="reading-ask-row"><span class="reading-name">{escape(texts.text(f"reading.row.{statement.key}"))}</span>'
             f"{reading_meter_html(None)}</li>"
@@ -428,7 +507,10 @@ def reading_offer_html(texts: Texts) -> str:
         f'<input id="reading-key" name="key" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" '
         f'aria-describedby="reading-status">'
         f'</span><button type="submit" class="button button--primary">{escape(texts.text("reading.offer.submit"))}</button>'
-        f'</form><p class="reading-status" id="reading-status" role="status"></p><ul class="reading-facts">{facts}</ul>'
+        f'</form><p class="reading-status" id="reading-status" role="status"></p>'
+        f'<p class="reading-help"><a href="{page_path(OPINION_PAGE, texts.language)}#key" {NEW_TAB}>'
+        f'{escape(texts.text("reading.offer.help"))}{new_tab_note(texts)}{line_icon("external-link")}</a></p>'
+        f'<ul class="reading-facts">{facts}</ul>'
         f'<p class="reading-terms"><a href="{page_path("terms", texts.language)}#reading">'
         f'{escape(texts.text("reading.offer.terms"))}</a></p></div>{reading_preview_html(texts)}</div></div>'
     )
@@ -475,7 +557,7 @@ def reading_row_html(row: ReadingRow) -> str:
 def reading_result_html(model: ReadingModel, texts: Texts) -> str:
     """Panel of a second reading: the statements under their criterion, what to add, and what the reading is not."""
     groups = "".join(
-        f'<h4 class="reading-group">{escape(texts.text(f"reading.group.{criterion}"))}</h4><ul class="reading-rows">'
+        f'{reading_group_html(criterion, texts)}<ul class="reading-rows">'
         + "".join(reading_row_html(row) for row in model.rows if row.criterion == criterion)
         + "</ul>"
         for criterion in dict.fromkeys(row.criterion for row in model.rows)
@@ -498,11 +580,13 @@ def reading_result_html(model: ReadingModel, texts: Texts) -> str:
 
 
 def checklist_group_html(legend: str, items: tuple[ChecklistItem, ...], texts: Texts) -> str:
+    """Criteria of one group of the checklist: the code and the name of each, then its question with a box and an advice."""
     rows = "".join(
-        f'<div class="tick"><input type="checkbox" id="tick-{escape(item.criterion_id)}">'
-        f'<label for="tick-{escape(item.criterion_id)}">{escape(item.question)}'
+        f'<div class="tick"><p class="tick-name">{code_tag_html(item.criterion_id, texts)}<span>{escape(item.name)}</span>'
         + (f' <span class="badge">{escape(texts.text("checklist.core"))}</span>' if item.core else "")
-        + f'</label><p class="tick-hint"><span>{escape(texts.text("checklist.if_not"))}</span> {escape(item.if_not)}</p></div>'
+        + f'</p><input type="checkbox" id="tick-{escape(item.criterion_id)}">'
+        f'<label for="tick-{escape(item.criterion_id)}">{escape(item.question)}</label>'
+        f'<p class="tick-hint"><span>{escape(texts.text("checklist.if_not"))}</span> {escape(item.if_not)}</p></div>'
         for item in items
     )
     return f"<fieldset><legend>{escape(legend)}</legend>{rows}</fieldset>"
@@ -513,6 +597,7 @@ def checklist_html(model: PageModel, texts: Texts) -> str:
     return (
         f'<section id="by-hand" class="block"><h2>{escape(texts.text("checklist.title"))}</h2>'
         f'<p class="block-intro">{escape(texts.text("checklist.intro"))}</p>'
+        f'<p class="block-intro">{escape(texts.text("codes.note"))}</p>'
         f'{checklist_group_html(texts.text("checklist.files"), model.checklist_files, texts)}'
         f'{checklist_group_html(texts.text("checklist.judgement"), model.checklist_judgement, texts)}</section>'
     )
@@ -534,13 +619,68 @@ def report_menu_html(texts: Texts) -> str:
     )
 
 
+def statement_counts() -> dict[str, int]:
+    """Number of statements of the model for each criterion, in the order of the statements."""
+    counts: dict[str, int] = {}
+    for statement in jev.STATEMENTS:
+        counts[statement.criterion] = counts.get(statement.criterion, 0) + 1
+    return counts
+
+
+def opinion_how_html(texts: Texts) -> str:
+    """How the model works: what it reads, what it answers, how the page shows the answer, and the criteria it serves."""
+    bands = texts.text(
+        "opinion.how.bands", likely=figure_of(jev.LIKELY, texts), unlikely=figure_of(jev.UNLIKELY, texts),
+        likely_word=texts.quoted(texts.text("reading.band.likely")),
+        unlikely_word=texts.quoted(texts.text("reading.band.unlikely")),
+        unsure_word=texts.quoted(texts.text("reading.band.unsure")),
+    )
+    paragraphs = "".join(f"<p>{escape(text)}</p>" for text in (
+        texts.text("opinion.how.model"), texts.text("opinion.how.sent"), bands, texts.text("opinion.how.scores")))
+    rows = "".join(
+        f"<li>{code_tag_html(code, texts, new_tab=False)}<span>"
+        f'{escape(texts.counted("opinion.how.count", count, name=criterion_title(code, texts), n=count))}</span></li>'
+        for code, count in statement_counts().items()
+    )
+    return (
+        f'<section class="explain" id="how"><div class="wrap explain-inner"><div class="explain-text">'
+        f'<h2>{escape(texts.text("opinion.how.title"))}</h2>{paragraphs}</div>'
+        f'<div class="explain-side"><p class="explain-side-title">{escape(texts.text("opinion.how.criteria"))}</p>'
+        f'<ul class="explain-criteria">{rows}</ul></div></div></section>'
+    )
+
+
+def opinion_key_html(texts: Texts) -> str:
+    """How to get a key in the console of TypeSafe AI, in four steps next to a sketch of the console."""
+    console = (f'<a href="{CONSOLE_URL}" {NEW_TAB}>{escape(CONSOLE_URL.removeprefix("https://"))}'
+               f"{new_tab_note(texts)}</a>")
+    places = {"field": texts.quoted(texts.text("reading.offer.key")), "tab": texts.quoted(texts.text("tabs.opinion")),
+              "button": texts.quoted(texts.text("reading.offer.submit"))}
+    steps = "".join(
+        f'<li><span class="step-number">{number}</span>'
+        f'<p>{text_with_link(texts, f"opinion.key.step.{number}", console, **places)}</p></li>'
+        for number in KEY_STEPS
+    )
+    prices = f'<a href="{PRICES_URL}" {NEW_TAB}>{escape(texts.text("opinion.key.prices"))}{new_tab_note(texts)}</a>'
+    return (
+        f'<section class="explain explain--key" id="key"><div class="wrap explain-inner"><div class="explain-text">'
+        f'<h2>{escape(texts.text("opinion.key.title"))}</h2><p>{escape(texts.text("opinion.key.lead"))}</p>'
+        f'<ol class="key-steps">{steps}</ol><p>{escape(texts.text("opinion.key.care"))}</p>'
+        f'<p>{escape(texts.text("opinion.key.cost"))} {prices}.</p>'
+        f'<p class="explain-note">{escape(texts.text("opinion.key.checked", date=texts.date(KEY_STEPS_CHECKED)))}</p></div>'
+        f'<figure class="key-figure">{KEY_SKETCH}<figcaption>{escape(texts.text("opinion.key.figure"))}</figcaption></figure>'
+        f"</div></section>"
+    )
+
+
 def opinion_main_html(texts: Texts) -> str:
-    """Page of the second opinion: what it is, the form that leads to it, the five statements, the steps, and
-    what is needed and how far to trust the answer."""
+    """Page of the second opinion: what it is, the form that leads to it, the five statements, the steps, how the
+    model works, how to get a key, and what is needed and how far to trust the answer."""
     language = texts.language
     home = page_path("home", language)
     questions = "".join(
-        f'<p class="question-group">{escape(texts.text(f"reading.group.{criterion}"))}</p><ul class="questions">'
+        f'<p class="question-group">{code_tag_html(criterion, texts, new_tab=False)}'
+        f'<span>{escape(texts.text(f"reading.group.{criterion}"))}</span></p><ul class="questions">'
         + "".join(f"<li>{escape(texts.text(f'reading.row.{statement.key}'))}</li>"
                   for statement in jev.STATEMENTS if statement.criterion == criterion)
         + "</ul>"
@@ -569,6 +709,7 @@ def opinion_main_html(texts: Texts) -> str:
         f"</div></section>"
         f'<section class="how"><div class="wrap"><h2>{escape(texts.text("opinion.steps.title"))}</h2>'
         f'<ol class="steps steps--three">{steps}</ol></div></section>'
+        f"{opinion_how_html(texts)}{opinion_key_html(texts)}"
         f'<section class="notes"><div class="wrap notes-inner">'
         f'<div class="know-block"><h2>{escape(texts.text("opinion.need.title"))}</h2><ul class="know">{needs}</ul>'
         f'<p class="know-link"><a href="{page_path("terms", language)}#reading">{escape(texts.text("reading.offer.terms"))}</a></p></div>'
@@ -596,13 +737,114 @@ def guide_main_html(texts: Texts) -> str:
         f'<p class="lead">{escape(texts.text("guide.intro"))}</p>'
         f'{heading("guide.steps.title")}{steps_html(texts)}'
         f'{heading("guide.read.title")}{paragraph("guide.read.marks")}<div class="article-legend">{legend}</div>'
-        f'{paragraph("guide.read.kinds")}{paragraph("guide.read.core")}{paragraph("guide.read.details")}'
+        f'{paragraph("guide.read.kinds")}{paragraph("guide.read.core")}'
+        f'{paragraph("guide.read.details", page=texts.quoted(texts.text("nav.criteria")))}'
+        f'<p class="know-link"><a href="{page_path(CRITERIA_PAGE, texts.language)}">'
+        f'{escape(texts.text("guide.read.criteria_link"))}</a></p>'
         f'{heading("guide.reading.title")}'
         f'{paragraph("guide.reading.text", likely=figure_of(jev.LIKELY, texts), unlikely=figure_of(jev.UNLIKELY, texts))}'
         f'{paragraph("guide.reading.trial")}'
         f'{heading("guide.after.title")}{paragraph("guide.after.text")}'
         f'{heading("guide.limits.title")}{paragraph("guide.limits.text")}'
         f'{heading("guide.words.title")}<ul class="glossary">{words}</ul></article>'
+    )
+
+
+def criterion_section_html(criterion: Criterion, texts: Texts) -> str:
+    """One criterion on the page of the criteria: its code and names, how the application treats it, its question,
+    the rule of every score, and what the application does with it."""
+    code = escape(criterion.id)
+    kind = criterion_kind(criterion)
+    badges = [f'<span class="badge badge--kind">{escape(texts.text(f"criteria.kind.{KIND_KEYS[kind]}"))}</span>']
+    if criterion.core:
+        badges.append(f'<span class="badge">{escape(texts.text("criteria.core"))}</span>')
+    if criterion.applies_to == "high-value":
+        badges.append(f'<span class="badge badge--scope">{escape(texts.text("criteria.high_value"))}</span>')
+    scores = "".join(
+        f'<div class="score-row"><dt>{status_icon(status)}<span class="visually-hidden">'
+        f'{escape(texts.text("criteria.score"))} </span>{score}</dt>'
+        f'<dd>{escape(texts.text(f"criterion.{criterion.id}.score_{score}"))}</dd></div>'
+        for score, status in SCORE_STATUSES
+    )
+    if criterion.not_applicable:
+        scores += (f'<div class="score-row score-row--na"><dt>{escape(texts.text("criteria.not_applicable"))}</dt>'
+                   f'<dd>{escape(texts.text(f"criterion.{criterion.id}.not_applicable"))}</dd></div>')
+    if kind in ("files", "judgement"):
+        application = texts.text(f"criteria.app.{kind}", tab=texts.quoted(texts.text("tabs.checklist")))
+    else:
+        application = texts.text(f"criterion.{criterion.id}.how")
+    asked = statement_counts().get(criterion.id, 0)
+    opinion = ""
+    if asked:
+        opinion = (f'<p class="criterion-opinion">{line_icon("text-search")}<span>'
+                   f'{escape(texts.counted("criteria.opinion", asked, n=asked))} '
+                   f'<a href="{page_path(OPINION_PAGE, texts.language)}#how">{escape(texts.text("criteria.opinion_link"))}</a>'
+                   f"</span></p>")
+    return (
+        f'<section class="criterion" id="{code}" aria-labelledby="name-{code}">'
+        f'<div class="criterion-head"><span class="code-tag code-tag--plain">{code}</span>'
+        f'<h3 id="name-{code}">{escape(criterion_title(criterion.id, texts))}</h3></div>'
+        f'<p class="criterion-study">{escape(texts.text("criteria.study"))} <span lang="en">{escape(criterion.name)}</span></p>'
+        f'<p class="criterion-badges">{"".join(badges)}</p>'
+        f'<p class="criterion-question">{escape(texts.text(f"criterion.{criterion.id}.question"))}</p>'
+        f'<dl class="criterion-scores">{scores}</dl>'
+        f'<div class="criterion-app"><p class="criterion-app-title">{escape(texts.text("criteria.app.title"))}</p>'
+        f"<p>{escape(application)}</p></div>{opinion}</section>"
+    )
+
+
+def criteria_main_html(texts: Texts, criteria: dict[str, Criterion]) -> str:
+    """Page of the criteria: how a score is read, a table of all the criteria, and every criterion under its level."""
+    kinds = {code: criterion_kind(criterion) for code, criterion in criteria.items()}
+
+    def codes(selected) -> str:
+        return ", ".join(code for code in criteria if selected(code))
+
+    tab = texts.quoted(texts.text("tabs.checklist"))
+    treatments = (
+        ("criteria.kind.by_rule", "criteria.kind.by_rule.text", codes(lambda code: kinds[code] == "by rule")),
+        ("criteria.kind.proposal", "criteria.kind.proposal.text", codes(lambda code: kinds[code] == "proposal")),
+        ("tabs.checklist", "criteria.kind.checklist.text", codes(lambda code: kinds[code] in ("files", "judgement"))),
+    )
+    treatment_items = "".join(
+        f'<li><strong>{escape(texts.text(label))}.</strong> {escape(texts.text(explanation, tab=tab))} '
+        f'{escape(texts.text("criteria.codes", codes=listed))}</li>'
+        for label, explanation, listed in treatments
+    )
+    statuses = {status: texts.quoted(texts.text(f"status.{status}")) for status in ("met", "partly", "not_met", "not_measured")}
+    rows = "".join(
+        f'<tr><th scope="row"><a class="code-tag" href="#{escape(code)}">{escape(code)}</a></th>'
+        f"<td>{escape(criterion_title(code, texts))}</td>"
+        f'<td class="criteria-study" lang="en">{escape(criterion.name)}</td>'
+        f'<td>{escape(texts.text(f"criteria.kind.{KIND_KEYS[kinds[code]]}"))}</td></tr>'
+        for code, criterion in criteria.items()
+    )
+    headings = "".join(
+        f'<th scope="col"{extra}>{escape(texts.text(f"criteria.table.{key}"))}</th>'
+        for key, extra in (("code", ""), ("name", ""), ("study", ' class="criteria-study"'), ("app", ""))
+    )
+    levels = []
+    for level in dict.fromkeys(level_key(code) for code in criteria):
+        members = [code for code in criteria if level_key(code) == level]
+        heading = texts.text("criteria.level.range", level=texts.text(f"criteria.level.{level}"), first=members[0],
+                             last=members[-1])
+        levels.append(f'<h2 id="level-{escape(level)}">{escape(heading)}</h2>'
+                      + "".join(criterion_section_html(criteria[code], texts) for code in members))
+    return (
+        f'<article class="wrap article criteria-page"><h1>{escape(texts.text("criteria.heading", count=len(criteria)))}</h1>'
+        f'<p class="lead">{escape(texts.text("criteria.lead"))}</p>'
+        f'<h2 id="scale">{escape(texts.text("criteria.scale.title"))}</h2>'
+        f'<p>{escape(texts.text("criteria.scale.scores", **statuses))}</p>'
+        f'<p>{escape(texts.text("criteria.scale.kinds"))}</p><ul class="kinds">{treatment_items}</ul>'
+        f'<p>{escape(texts.text("criteria.scale.core", codes=codes(lambda code: criteria[code].core)))}</p>'
+        f'<p>{escape(texts.text("criteria.scale.high_value", codes=codes(lambda code: criteria[code].applies_to == "high-value")))}</p>'
+        f'<h2 id="all">{escape(texts.text("criteria.table.title"))}</h2>'
+        f'<div class="table-wrap"><table class="criteria-table"><thead><tr>{headings}</tr></thead><tbody>{rows}</tbody>'
+        f"</table></div>{''.join(levels)}"
+        f'<h2 id="source">{escape(texts.text("criteria.source.title"))}</h2>'
+        f'<p>{escape(texts.text("criteria.source.text", version=CRITERIA_VERSION))}</p>'
+        f'<p class="know-link"><a href="{CRITERIA_TEXT_URL}" {NEW_TAB}>{escape(texts.text("criteria.source.link"))}'
+        f"{new_tab_note(texts)}</a></p></article>"
     )
 
 

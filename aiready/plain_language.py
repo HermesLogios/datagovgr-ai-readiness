@@ -12,7 +12,7 @@ from dataclasses import dataclass, replace
 from datetime import date
 
 from aiready.assessment import NOT_JUDGED, Assessment, ScoredResult
-from aiready.criteria import Criterion, effort_levels
+from aiready.criteria import Criterion, effort_levels, result_kind
 from aiready.texts import Texts
 
 # The nine checks in the two groups of the page, and the fourteen unscored criteria in the order of the checklist.
@@ -122,8 +122,8 @@ class CheckExplanation:
     why: str               # why the check matters
     score: int | None
     reason: str            # reason of the check, as the script gives it
-    rule: str              # rule of the criterion for this score, from criteria.csv
-    criterion_name: str
+    rule: str              # rule of the criterion for this score in the language of the texts; empty without a score
+    criterion_name: str    # name of the criterion in the study, from criteria.csv
     case: str
     generic: bool          # True when the general text of the status was used
 
@@ -138,6 +138,7 @@ class FixItem:
 @dataclass(frozen=True)
 class ChecklistItem:
     criterion_id: str
+    name: str              # name of the criterion in the application
     question: str
     if_not: str
     core: bool
@@ -244,7 +245,7 @@ def explain_check(result: ScoredResult, texts: Texts, criteria: dict[str, Criter
         why=texts.text(f"check.{code}.why"),
         score=result.score,
         reason=result.reason,
-        rule={0: criterion.score_0, 1: criterion.score_1, 2: criterion.score_2}.get(result.score, ""),
+        rule=texts.text(f"criterion.{code}.score_{result.score}") if result.score is not None else "",
         criterion_name=criterion.name,
         case=case or "",
         generic=generic,
@@ -302,10 +303,33 @@ def fix_note(check: CheckExplanation, texts: Texts) -> str:
 
 def checklist_items(codes: tuple[str, ...], texts: Texts, criteria: dict[str, Criterion]) -> tuple[ChecklistItem, ...]:
     return tuple(
-        ChecklistItem(code, texts.text(f"checklist.{code}.question"), texts.text(f"checklist.{code}.if_not"),
-                      criteria[code].core)
+        ChecklistItem(code, criterion_title(code, texts), texts.text(f"checklist.{code}.question"),
+                      texts.text(f"checklist.{code}.if_not"), criteria[code].core)
         for code in codes
     )
+
+
+def criterion_title(code: str, texts: Texts) -> str:
+    """Name of a criterion in the application: the name of its check, or its name in the checklist."""
+    key = f"check.{code}.title"
+    return texts.text(key) if texts.has(key) else texts.text(f"checklist.{code}.name")
+
+
+def level_key(code: str) -> str:
+    """Letters of the code of a criterion, which name its level in the study: Q, M or AI."""
+    return re.match(r"[A-Z]+", code).group()
+
+
+def criterion_kind(criterion: Criterion) -> str:
+    """How the application treats a criterion: 'by rule', 'proposal', 'files' or 'judgement'.
+
+    The last two are the criteria of the checklist, which need the files of the dataset or the judgement of a person.
+    """
+    if criterion.id in CHECKLIST_FILES:
+        return "files"
+    if criterion.id in CHECKLIST_JUDGEMENT:
+        return "judgement"
+    return result_kind(criterion)
 
 
 def lower_initial(text: str) -> str:

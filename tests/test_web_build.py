@@ -22,8 +22,9 @@ from web import build
 
 ENGINE_TEXT = "engine file "
 PAGES = (("index.html", "el"), ("second-opinion/index.html", "el"), ("guide/index.html", "el"),
-         ("terms/index.html", "el"), ("404.html", "el"), ("en/index.html", "en"), ("en/second-opinion/index.html", "en"),
-         ("en/guide/index.html", "en"), ("en/terms/index.html", "en"))
+         ("criteria/index.html", "el"), ("terms/index.html", "el"), ("404.html", "el"), ("en/index.html", "en"),
+         ("en/second-opinion/index.html", "en"), ("en/guide/index.html", "en"), ("en/criteria/index.html", "en"),
+         ("en/terms/index.html", "en"))
 BARE_RUN = """
 import json, sys
 sys.path[:0] = [sys.argv[1] + "/web/shims", sys.argv[1]]
@@ -96,6 +97,13 @@ class BuildTest(unittest.TestCase):
         for path, language in PAGES:
             with self.subTest(path=path):
                 self.assertIn(f'<html lang="{language}">', self.text_of(path))
+
+    def test_page_of_the_criteria_holds_every_criterion_of_the_criteria_file(self):
+        from aiready.criteria import load_criteria
+        for path in ("criteria/index.html", "en/criteria/index.html"):
+            page = self.text_of(path)
+            for code in load_criteria():
+                self.assertIn(f'<section class="criterion" id="{code}"', page, path)
 
     def test_home_page_holds_the_example_and_what_the_script_needs(self):
         home = self.text_of("index.html")

@@ -201,13 +201,14 @@ def write_page(path: Path, document: str) -> None:
 
 
 def write_pages(output: Path, portal: str, indexing: bool, versions: dict[str, str]) -> None:
-    """Writes the home page, the page of the second opinion, the guide and the terms in both languages, and the
-    page of an unknown address."""
-    from aiready.criteria import CRITERIA_VERSION
+    """Writes the home page, the page of the second opinion, the guide, the page of the criteria and the terms in
+    both languages, and the page of an unknown address."""
+    from aiready.criteria import CRITERIA_VERSION, load_criteria
     from aiready.texts import DEFAULT_LANGUAGE, LANGUAGES, load_texts
     from web import browser, pages
 
     record = json.loads(EXAMPLE_RECORD.read_text(encoding="utf-8"))
+    criteria = load_criteria()
     for language in LANGUAGES:
         texts = load_texts(language)
         _, example, _ = browser.explained(record, browser.example_source(EXAMPLE_DATE), language)
@@ -230,7 +231,7 @@ def write_pages(output: Path, portal: str, indexing: bool, versions: dict[str, s
             "example-date": EXAMPLE_DATE,
         }
         mains = {"home": home, pages.OPINION_PAGE: pages.opinion_main_html(texts), "guide": pages.guide_main_html(texts),
-                 "terms": pages.terms_main_html(texts)}
+                 pages.CRITERIA_PAGE: pages.criteria_main_html(texts, criteria), "terms": pages.terms_main_html(texts)}
         for page, main in mains.items():
             document = pages.document_html(
                 page, texts, main, criteria_version=CRITERIA_VERSION, assets_version=versions["assets"],

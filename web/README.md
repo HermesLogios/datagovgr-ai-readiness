@@ -19,9 +19,9 @@ with Pyodide, so the scores are those of `scripts/04_metadata_checks.py`.
 
 ## Pages and tabs
 
-The site has four pages in each language: the check (`/`), the second opinion
-(`/second-opinion/`), the guide (`/guide/`) and the terms (`/terms/`). The English pages stand
-under `/en/`.
+The site has five pages in each language: the check (`/`), the second opinion
+(`/second-opinion/`), the guide (`/guide/`), the criteria (`/criteria/`) and the terms
+(`/terms/`). The English pages stand under `/en/`.
 
 A result is shown on the page of the check. Its head names the dataset and shows the nine checks
 at a glance. Under the head a bar holds three tabs and the menu of the report files, and stays at
@@ -36,6 +36,23 @@ the top of the window while a panel is read.
 The address of the page keeps the dataset and the open tab, so a link opens the same view. The
 form of the page of the second opinion leads to a result with that tab open. On paper all three
 panels are printed.
+
+## Codes of the criteria
+
+Every check, every row of the checklist and every group of statements of the second opinion
+carries the code of its criterion in the study (M1, Q5, AI7 and so on). The code leads to the
+criterion on the page of the criteria; inside a result it opens a new tab, because a result exists
+only in the open page.
+
+The page of the criteria shows how a score is read, a table of the 23 criteria with the name of
+each in the application and in the study, and one card per criterion: its question, the rule of
+every score, the case in which it does not apply, and what the application does with it. The
+English rules are those of `criteria/criteria.csv`; the Greek rules are their translation in
+`aiready/locales/el.json` (keys `criterion.<code>.*`). `tests/test_criteria_texts.py` checks that
+both languages hold every rule of the file, that the English rules are the texts of the file, and
+that every Greek rule carries the numbers and the names of formats and standards of the English
+one. The texts on what the application checks for the nine criteria scored from the metadata
+(keys `criterion.<code>.how`) follow `scripts/04_metadata_checks.py`.
 
 ## Version
 
@@ -59,6 +76,9 @@ visitor. It gives no score and changes none.
   the Authorization header and returns the reply. Any other field is dropped.
 - The key is kept nowhere: the page does not store it, it is never part of an address, the relay
   writes nothing, and `wrangler.jsonc` switches off the logs and the traces of the Worker.
+- The page of the second opinion explains how the model works and how a key is issued in the
+  console of TypeSafe AI, with a drawing of the console made for the page. The steps in the
+  console were checked on 19 November 2026 (`KEY_STEPS_CHECKED` in `pages.py`).
 - The model is named by its version (`jev-1.14.0`). `python -m aiready.jev_trial` repeats the
   trial of the model on the 36 datasets of the sample before a new version is adopted.
 
@@ -68,7 +88,7 @@ visitor. It gives no score and changes none.
 | --- | --- |
 | `build.py` | builds the site into `web/dist` |
 | `preview.py` | builds the site and serves it on this computer, the two relays included |
-| `pages.py` | HTML of the home page, the result with its tabs, the page of the second opinion, the guide and the terms |
+| `pages.py` | HTML of the home page, the result with its tabs, the page of the second opinion, the guide, the page of the criteria and the terms |
 | `release.py` | version of the page and its day, as the footer shows them |
 | `icons.py` | status icons, line icons and the mark of the tool as inline SVG |
 | `browser.py` | entry points that the page calls inside the browser |
@@ -144,3 +164,6 @@ reading.
   descriptions of the 36 datasets of the sample (`DECISIONS.md` #54).
 - The plain-language texts follow the wording of the reasons of `scripts/04_metadata_checks.py`;
   the tests of `tests/test_plain_language.py` show a change of that wording.
+- A change of the rules in `criteria/criteria.csv` makes `tests/test_criteria_texts.py` fail until
+  the copy of the rules in `aiready/locales/en.json` is updated; the Greek translation of the
+  changed rules has to be written again at the same time.
