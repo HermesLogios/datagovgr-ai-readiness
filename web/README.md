@@ -17,11 +17,37 @@ with Pyodide, so the scores are those of `scripts/04_metadata_checks.py`.
 - `pages.py` and `icons.py` produce all HTML. Every text comes from `aiready/locales`.
 - The site stores nothing: no cookies, no browser storage, no history of checks.
 
-## Second reading of the description
+## Pages and tabs
 
-Below the nine checks a visitor may ask Jev, a model of TypeSafe AI, to read the description of
-the dataset (`DECISIONS.md` #54). The reading is optional and needs a key of the visitor. It gives
-no score and changes none.
+The site has four pages in each language: the check (`/`), the second opinion
+(`/second-opinion/`), the guide (`/guide/`) and the terms (`/terms/`). The English pages stand
+under `/en/`.
+
+A result is shown on the page of the check. Its head names the dataset and shows the nine checks
+at a glance. Under the head a bar holds three tabs and the menu of the report files, and stays at
+the top of the window while a panel is read.
+
+| Tab | Address ends in | Holds |
+| --- | --- | --- |
+| Checks | `#checks` | what to correct first, and the nine checks |
+| AI second opinion | `#second-opinion` | the offer of a second opinion, and its answer |
+| Checklist | `#checklist` | the fourteen criteria that need the files or human judgement |
+
+The address of the page keeps the dataset and the open tab, so a link opens the same view. The
+form of the page of the second opinion leads to a result with that tab open. On paper all three
+panels are printed.
+
+## Version
+
+The footer of every page shows the version of the page and its day, from `release.py`. Both
+change with every published change, so the footer of the published site tells whether a change
+has arrived.
+
+## Second opinion of a model
+
+In the tab of the second opinion a visitor may ask Jev, a model of TypeSafe AI, to read the
+description of the dataset (`DECISIONS.md` #54). The reading is optional and needs a key of the
+visitor. It gives no score and changes none.
 
 - `aiready/jev.py` holds the five statements, selects the texts that are sent (the title, the
   description and the descriptions of the resources that say more than a name) and reads the
@@ -42,14 +68,15 @@ no score and changes none.
 | --- | --- |
 | `build.py` | builds the site into `web/dist` |
 | `preview.py` | builds the site and serves it on this computer, the two relays included |
-| `pages.py` | HTML of the home page, the result, the guide and the terms |
+| `pages.py` | HTML of the home page, the result with its tabs, the page of the second opinion, the guide and the terms |
+| `release.py` | version of the page and its day, as the footer shows them |
 | `icons.py` | status icons, line icons and the mark of the tool as inline SVG |
 | `browser.py` | entry points that the page calls inside the browser |
 | `shims/pandas.py` | reader of CSV tables that stands in for pandas inside the browser |
 | `assets/` | stylesheet, script, typeface and licence texts |
 | `example/` | catalogue record of the example, without contact details |
 | `functions/api/record.js` | relay to the catalogue |
-| `functions/api/reading.js` | relay to the model of the second reading |
+| `functions/api/reading.js` | relay to the model of the second opinion |
 | `worker.js` | entry of the site on Cloudflare Workers: the two relays, and the files of the build for every other address |
 | `wrangler.jsonc` | settings of the Worker: its name, the folder of the build, the entry, and no logs |
 
@@ -84,9 +111,11 @@ with the files of the build.
 | Deploy command | `npx wrangler deploy` |
 | Root directory | `web` |
 
-Every push to the production branch builds and publishes the site. Two build variables change
-the build: `SITE_PUBLIC=1` lets search engines list the site (the default asks them not to),
-and `DATAGOVGR_BASE_URL` sets another address for the portal.
+Every push to the production branch builds and publishes the site, as long as the GitHub
+application of Cloudflare has access to the repository. A build can also be started by hand with
+a Deploy Hook of the Worker; the address of a hook is a secret and is kept out of the repository.
+Two build variables change the build: `SITE_PUBLIC=1` lets search engines list the site (the
+default asks them not to), and `DATAGOVGR_BASE_URL` sets another address for the portal.
 
 The Worker keeps no logs and no traces (`observability` in `wrangler.jsonc`), because a request
 of the second reading carries the key of a visitor in its body.
@@ -110,8 +139,8 @@ reading.
 ## Limits
 
 - The relays have no rate limit of their own.
-- The second reading is not part of the downloaded reports.
-- The model of the second reading is trained mainly on English; it was tried on the Greek
+- The second opinion is not part of the downloaded reports.
+- The model of the second opinion is trained mainly on English; it was tried on the Greek
   descriptions of the 36 datasets of the sample (`DECISIONS.md` #54).
 - The plain-language texts follow the wording of the reasons of `scripts/04_metadata_checks.py`;
   the tests of `tests/test_plain_language.py` show a change of that wording.

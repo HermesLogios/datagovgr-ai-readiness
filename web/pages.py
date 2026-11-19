@@ -1,4 +1,4 @@
-"""HTML of the public pages: home, result of a check, second reading of a description, guide and terms of use.
+"""HTML of the public pages: home, result of a check with its tabs, second opinion of a model, guide and terms of use.
 
 Every text is escaped before it enters the HTML: titles, publishers and values of the metadata
 come from the portal and are shown as plain text. A status is always given by a word, a shape
@@ -11,15 +11,22 @@ from aiready import jev
 from aiready.plain_language import STATUS_KEYS, CheckExplanation, ChecklistItem, PageModel
 from aiready.second_reading import ReadingModel, ReadingRow, figure_of
 from aiready.texts import DEFAULT_LANGUAGE, LANGUAGES, Texts
+from web import release
 from web.icons import SVG_ATTRIBUTES, band_icon, line_icon, mark_icon, status_icon
 
 REPOSITORY_URL = "https://github.com/HermesLogios/datagovgr-ai-readiness"
-PAGE_FOLDERS = {"home": "", "guide": "guide/", "terms": "terms/"}
-PAGE_TITLES = {"guide": "guide.title", "terms": "terms.title", "missing": "missing.title"}
+OPINION_PAGE = "opinion"
+PAGE_FOLDERS = {"home": "", OPINION_PAGE: "second-opinion/", "guide": "guide/", "terms": "terms/"}
+PAGE_TITLES = {OPINION_PAGE: "opinion.title", "guide": "guide.title", "terms": "terms.title", "missing": "missing.title"}
+NAVIGATION = (("home", "nav.check"), (OPINION_PAGE, "nav.opinion"), ("guide", "nav.how"), ("terms", "nav.terms"))
+REPEATED_IN_FOOTER = ("terms",)                   # pages that the footer links too; narrow screens leave them out of the header
 MISSING_PAGE = "missing"
+OPINION_TAB = "second-opinion"                    # name of the tab of the second opinion; an address ending in #second-opinion opens it
+TABS = (("checks", "tabs.checks"), (OPINION_TAB, "tabs.opinion"), ("checklist", "tabs.checklist"))
 COUNTED_STATUSES = ("met", "partly", "not_met", "not_measured", "not_judged")
 LEGEND_STATUSES = ("met", "partly", "not_met", "not_measured")
 STEPS = (1, 2, 3, 4)
+OPINION_STEPS = (1, 2, 3)
 TERMS_SECTIONS = ("what", "result", "use", "data", "reading", "personal", "licences", "liability", "contact")
 GLOSSARY = ("metadata", "format", "licence", "hvd")
 EFFORT_CLASSES = {"Low": "low", "Medium": "medium", "High": "high"}
@@ -73,13 +80,20 @@ def document_html(page: str, texts: Texts, main: str, *, criteria_version: str, 
 
 
 def header_html(texts: Texts, page: str) -> str:
-    """Name of the tool, the two other pages and the switch between the languages."""
+    """Name of the tool, the pages of the site and the switch between the languages.
+
+    The link of the second opinion carries a mark: on a page that shows a result, the script of the page
+    opens the tab of the second opinion instead of leaving the result. A link that the footer repeats
+    carries a class, so that the stylesheet can leave it out of the header where the header is narrow.
+    """
     language = texts.language
     linked_page = "home" if page == MISSING_PAGE else page
 
     def page_link(target: str, key: str) -> str:
+        mark = " data-opinion-link" if target == OPINION_PAGE else ""
+        repeated = ' class="nav-repeated"' if target in REPEATED_IN_FOOTER else ""
         current = ' aria-current="page"' if target == page else ""
-        return f'<a href="{page_path(target, language)}"{current}>{escape(texts.text(key))}</a>'
+        return f'<a href="{page_path(target, language)}"{mark}{repeated}{current}>{escape(texts.text(key))}</a>'
 
     def language_link(other: str) -> str:
         current = ' aria-current="true"' if other == language else ""
@@ -90,19 +104,23 @@ def header_html(texts: Texts, page: str) -> str:
         f'<header class="site-header"><div class="wrap site-header-inner">'
         f'<a class="brand" href="{page_path("home", language)}">{mark_icon()}<span>{escape(texts.text("app.name"))}</span></a>'
         f'<nav class="site-nav" aria-label="{escape(texts.text("nav.pages"))}">'
-        f'{page_link("guide", "nav.how")}{page_link("terms", "nav.terms")}</nav>'
+        f'{"".join(page_link(target, key) for target, key in NAVIGATION)}</nav>'
         f'<div class="language" role="group" aria-label="{escape(texts.text("nav.language"))}">'
         f'{"".join(language_link(other) for other in LANGUAGES)}</div></div></header>'
     )
 
 
 def footer_html(texts: Texts, criteria_version: str) -> str:
+    """Credit of the study, the two links, and the version of the page with the day of that version."""
+    version = texts.text("footer.version", version=release.VERSION, date=texts.date(release.RELEASED))
     return (
         f'<footer class="site-footer"><div class="wrap site-footer-inner">'
         f'<p>{escape(texts.text("footer.credit", criteria_version=criteria_version))}</p>'
-        f'<ul class="footer-links"><li><a href="{REPOSITORY_URL}" {NEW_TAB}>{line_icon("code-xml")}'
+        f'<div class="footer-row"><ul class="footer-links"><li><a href="{REPOSITORY_URL}" {NEW_TAB}>{line_icon("code-xml")}'
         f'{escape(texts.text("footer.source"))}</a></li>'
         f'<li><a href="{page_path("terms", texts.language)}">{escape(texts.text("footer.terms"))}</a></li></ul>'
+        f'<p class="site-version"><span class="visually-hidden">{escape(texts.text("footer.version_label"))}: </span>'
+        f"{escape(version)}</p></div>"
         f"</div></footer>"
     )
 
@@ -135,29 +153,25 @@ def check_rows_html(model: PageModel, texts: Texts, linked: bool) -> str:
                 rows.append(f'<span class="preview-row">{row}</span>')
         title = escape(texts.text(f"checks.group.{group}"))
         if linked:
-            parts.append(f'<p class="index-group">{title}</p><ol class="index-checks">{"".join(rows)}</ol>')
+            parts.append(f'<div class="index-part"><p class="index-group">{title}</p>'
+                         f'<ol class="index-checks">{"".join(rows)}</ol></div>')
         else:
             parts.append(f'<span class="index-group">{title}</span>{"".join(rows)}')
     return "".join(parts)
 
 
 def index_html(model: PageModel, texts: Texts) -> str:
-    """Summary of a result that also leads to each of its parts."""
+    """Card in the head of a result: the nine checks at a glance, each leading to its own card."""
     statuses = [STATUS_KEYS[check.status] for check in model.checks]
     counts = "".join(
         f'<li>{status_icon(status)}<span><strong>{statuses.count(status)}</strong> {escape(texts.text(f"status.{status}"))}</span></li>'
         for status in COUNTED_STATUSES if status in statuses
     )
-    sections = "".join(
-        f'<li><a href="#{target}">{escape(texts.text(key))}</a></li>'
-        for target, key in (("fixes", "fix.title"), ("reading", "reading.title"), ("checklist", "checklist.title"),
-                            ("report-files", "download.title"))
-    )
     title = escape(texts.text("index.title"))
     return (
         f'<nav class="index" aria-label="{title}"><p class="index-title">{title}</p>{meter_html(model)}'
-        f'<ul class="index-counts">{counts}</ul>{check_rows_html(model, texts, linked=True)}'
-        f'<ul class="index-sections">{sections}</ul></nav>'
+        f'<ul class="index-counts">{counts}</ul>'
+        f'<div class="index-parts">{check_rows_html(model, texts, linked=True)}</div></nav>'
     )
 
 
@@ -173,14 +187,20 @@ def preview_html(model: PageModel, texts: Texts) -> str:
     )
 
 
-def check_form_html(texts: Texts) -> str:
+def check_form_html(texts: Texts, action: str = "", submit: str = "form.submit") -> str:
+    """Form of the address of a dataset.
+
+    On the home page the script of the page sends it. With an action, the browser sends it to that address
+    with the address of the dataset in the query.
+    """
+    target = f' action="{escape(action)}"' if action else ""
     return (
-        f'<form class="check-form" id="check-form" method="get" novalidate>'
+        f'<form class="check-form" id="check-form" method="get"{target} novalidate>'
         f'<label for="dataset-address">{escape(texts.text("form.label"))}</label>'
         f'<span class="field">{line_icon("link")}'
         f'<input id="dataset-address" name="dataset" type="text" inputmode="url" autocomplete="off" autocapitalize="none" '
         f'spellcheck="false" placeholder="{escape(texts.text("form.placeholder"))}">'
-        f'<button type="submit" class="button button--primary">{escape(texts.text("form.submit"))}</button></span></form>'
+        f'<button type="submit" class="button button--primary">{escape(texts.text(submit))}</button></span></form>'
     )
 
 
@@ -210,7 +230,9 @@ def home_main_html(texts: Texts, example: PageModel) -> str:
         f'<h1>{escape(texts.text("home.title"))}</h1><p class="lead">{escape(texts.text("home.lead"))}</p>'
         f"{check_form_html(texts)}"
         f'<p class="example-prompt">{escape(texts.text("form.example_prompt"))} '
-        f'<a href="?example=1" data-example>{escape(texts.text("form.example"))}</a></p></div>'
+        f'<a href="?example=1" data-example>{escape(texts.text("form.example"))}</a></p>'
+        f'<p class="opinion-prompt"><a href="{page_path(OPINION_PAGE, texts.language)}">{line_icon("text-search")}'
+        f'<span>{escape(texts.text("home.opinion"))}</span></a></p></div>'
         f"{preview_html(example, texts)}</div></section>"
         f'<div class="wrap"><div id="result" class="result-region" aria-live="polite"></div></div>'
         f'<section class="how"><div class="wrap"><h2>{escape(texts.text("how.title"))}</h2>{steps_html(texts)}</div></section>'
@@ -233,31 +255,78 @@ def error_html(texts: Texts, code: str) -> str:
             f'<p>{escape(texts.text(f"error.{code}"))}</p></div>')
 
 
+def tab_counts(model: PageModel) -> dict[str, int]:
+    """How many checks and how many criteria of the checklist a result holds, by the name of their tab."""
+    return {"checks": len(model.checks), "checklist": len(model.checklist_files) + len(model.checklist_judgement)}
+
+
+def tabs_html(model: PageModel, texts: Texts) -> str:
+    """Bar under the head of a result: the three tabs and, next to them, the menu of the files of the report.
+
+    The first tab is the open one. The script of the page opens the others and keeps the address of the
+    page in step with the open tab. The link of a tab names the tab and not its panel: no part of the page
+    carries that name, so the browser does not move the page by itself and the script alone shows the panel.
+    """
+    counts = tab_counts(model)
+    tabs = []
+    for position, (name, key) in enumerate(TABS):
+        selected = position == 0
+        icon = line_icon("text-search") if name == OPINION_TAB else ""
+        count = f'<span class="tab-count">{counts[name]}</span>' if name in counts else ""
+        order = "" if selected else ' tabindex="-1"'
+        tabs.append(
+            f'<a class="tab" role="tab" id="tab-{name}" href="#{name}" aria-controls="panel-{name}" '
+            f'aria-selected="{str(selected).lower()}"{order}>{icon}<span>{escape(texts.text(key))}</span>{count}</a>'
+        )
+    return (f'<div class="result-bar"><div class="tabs" role="tablist" aria-label="{escape(texts.text("tabs.label"))}">'
+            f'{"".join(tabs)}</div>{report_menu_html(texts)}</div>')
+
+
+def panel_html(name: str, content: str, shown: bool) -> str:
+    """Panel of a tab. Every panel but the open one is hidden on the screen; all of them are printed."""
+    hidden = "" if shown else " hidden"
+    return (f'<div class="tab-panel" role="tabpanel" id="panel-{name}" aria-labelledby="tab-{name}" tabindex="0"{hidden}>'
+            f"{content}</div>")
+
+
+def panel_next_html(model: PageModel, texts: Texts, names: tuple[str, ...]) -> str:
+    """Links at the end of a panel to the tabs that come after it, each with a line on what the tab holds."""
+    keys, counts = dict(TABS), tab_counts(model)
+    links = "".join(
+        f'<a href="#{name}"><strong>{escape(texts.text(keys[name]))}</strong>'
+        f'<span>{escape(texts.text(f"tabs.next.{name}", count=counts.get(name, 0)))}</span></a>'
+        for name in names
+    )
+    return f'<nav class="panel-next" aria-label="{escape(texts.text("tabs.next"))}">{links}</nav>'
+
+
 def result_html(model: PageModel, texts: Texts, example: bool = False) -> str:
-    """Whole result of one dataset: who it is, the summary, the priorities, the checks, the offer of a second
-    reading, the checklist and the files."""
+    """Whole result of one dataset: the head with the summary and the nine checks at a glance, the tabs, and
+    one panel per tab: the priorities with the checks, the second opinion of a model, and the checklist."""
     facts = [("calendar-days", model.source_sentence), ("badge-check", model.marking_sentence)]
     if example:
         facts.append(("info", texts.text("result.example_note")))
     fact_rows = "".join(f"<li>{line_icon(icon)}<span>{escape(sentence)}</span></li>" for icon, sentence in facts if sentence)
     note = f'<p class="result-note">{escape(model.summary_note)}</p>' if model.summary_note else ""
     head = (
-        f'<header class="result-head"><h1>{escape(model.title)}</h1>'
+        f'<header class="result-head"><div class="result-summary"><h1>{escape(model.title)}</h1>'
         f'<p class="result-publisher">{line_icon("landmark")}<span>{escape(model.publisher)}</span></p>'
         f'<p class="result-headline">{escape(model.headline)}</p>{note}'
         f'<ul class="result-facts">{fact_rows}</ul>'
         f'<a class="button button--ghost" href="{escape(model.url)}" {NEW_TAB}>{escape(texts.text("result.open"))}'
-        f'{line_icon("external-link")}</a></header>'
+        f'{line_icon("external-link")}</a></div>{index_html(model, texts)}</header>'
     )
-    body = (
-        f'<p class="group-note">{escape(model.group_note)}</p>{fixes_html(model, texts)}{checks_html(model, texts)}'
-        f"{reading_section_html(texts)}{checklist_html(model, texts)}{report_files_html(texts)}"
-        f'<p class="result-disclaimer">{escape(texts.text("footer.disclaimer", criteria_version=model.criteria_version))}</p>'
-    )
+    panels = {
+        "checks": f'<p class="group-note">{escape(model.group_note)}</p>{fixes_html(model, texts)}'
+                  f'{checks_html(model, texts)}{panel_next_html(model, texts, (OPINION_TAB, "checklist"))}',
+        OPINION_TAB: f'{reading_section_html(texts)}{panel_next_html(model, texts, ("checklist",))}',
+        "checklist": checklist_html(model, texts),
+    }
     return (
-        f'<article class="result" data-dataset="{escape(model.name)}">{head}'
-        f'<div class="result-layout"><aside class="result-aside">{index_html(model, texts)}</aside>'
-        f'<div class="result-body">{body}</div></div></article>'
+        f'<article class="result" data-dataset="{escape(model.name)}">{head}{tabs_html(model, texts)}'
+        + "".join(panel_html(name, panels[name], shown=position == 0) for position, (name, _) in enumerate(TABS))
+        + f'<p class="result-disclaimer">{escape(texts.text("footer.disclaimer", criteria_version=model.criteria_version))}</p>'
+        f"</article>"
     )
 
 
@@ -284,7 +353,7 @@ def checks_html(model: PageModel, texts: Texts) -> str:
         + "".join(check_html(check, texts) for check in model.checks if check.group == group)
         for group in dict.fromkeys(check.group for check in model.checks)
     )
-    return (f'<section id="checks" class="block"><h2>{escape(texts.text("checks.title"))}</h2>'
+    return (f'<section id="nine-checks" class="block"><h2>{escape(texts.text("checks.title"))}</h2>'
             f'<p class="block-intro">{escape(texts.text("checks.intro"))}</p>{groups}</section>')
 
 
@@ -322,8 +391,25 @@ def reading_head_html(texts: Texts, tag_key: str, source: str = "") -> str:
             f"{escape(texts.text(tag_key))}</span>{named}</div>")
 
 
+def reading_preview_html(texts: Texts) -> str:
+    """The five statements under their criterion, each with an empty meter: what a reading will answer."""
+    groups = "".join(
+        f'<h4 class="reading-group">{escape(texts.text(f"reading.group.{criterion}"))}</h4><ul class="reading-rows">'
+        + "".join(
+            f'<li class="reading-ask-row"><span class="reading-name">{escape(texts.text(f"reading.row.{statement.key}"))}</span>'
+            f"{reading_meter_html(None)}</li>"
+            for statement in jev.STATEMENTS if statement.criterion == criterion
+        )
+        + "</ul>"
+        for criterion in dict.fromkeys(statement.criterion for statement in jev.STATEMENTS)
+    )
+    return (f'<div class="reading-preview"><p class="reading-preview-title">{escape(texts.text("reading.offer.preview"))}</p>'
+            f"{groups}</div>")
+
+
 def reading_offer_html(texts: Texts) -> str:
-    """Offer of a second reading: the field of the key, the button, and what is sent and what is not kept.
+    """Offer of a second opinion in two columns: the field of the key with the button and what is sent and
+    what is not kept, and next to them the five statements that the model will answer.
 
     The script of the page sends the form itself. The method is POST so that, if the form were ever sent by
     the browser, the key would not become part of an address.
@@ -334,7 +420,7 @@ def reading_offer_html(texts: Texts) -> str:
     )
     return (
         f'<div class="reading">{reading_head_html(texts, "reading.offer.tag")}'
-        f'<h3>{escape(texts.text("reading.offer.title"))}</h3>'
+        f'<div class="reading-columns"><div class="reading-ask"><h3>{escape(texts.text("reading.offer.title"))}</h3>'
         f'<p class="reading-lead">{escape(texts.text("reading.offer.lead"))}</p>'
         f'<form class="reading-form" id="reading-form" method="post" novalidate{messages}>'
         f'<label for="reading-key">{escape(texts.text("reading.offer.key"))}</label>'
@@ -344,30 +430,36 @@ def reading_offer_html(texts: Texts) -> str:
         f'</span><button type="submit" class="button button--primary">{escape(texts.text("reading.offer.submit"))}</button>'
         f'</form><p class="reading-status" id="reading-status" role="status"></p><ul class="reading-facts">{facts}</ul>'
         f'<p class="reading-terms"><a href="{page_path("terms", texts.language)}#reading">'
-        f'{escape(texts.text("reading.offer.terms"))}</a></p></div>'
+        f'{escape(texts.text("reading.offer.terms"))}</a></p></div>{reading_preview_html(texts)}</div></div>'
     )
 
 
 def reading_section_html(texts: Texts) -> str:
-    """Section of the second reading inside a result; the script of the page puts the reading in the place of the offer."""
-    return (f'<section id="reading" class="block"><h2>{escape(texts.text("reading.title"))}</h2>'
+    """Section of the second opinion inside its tab; the script of the page puts the reading in the place of the offer.
+
+    The dark panel carries its own heading, so the heading of the section is kept for the outline of the
+    page and for screen readers only.
+    """
+    return (f'<section id="reading" class="block"><h2 class="visually-hidden">{escape(texts.text("reading.title"))}</h2>'
             f"{reading_offer_html(texts)}</section>")
 
 
-def reading_meter_html(probability: float) -> str:
+def reading_meter_html(probability: float | None) -> str:
     """Bar of a probability on a track from 0 to 1, cut at the two limits of the bands.
 
-    The bar is an SVG drawing, because the pages carry no inline style that could give it a width. Its
-    value stands next to it as text, so the drawing is hidden from screen readers.
+    Without a probability the track stays empty. The bar is an SVG drawing, because the pages carry no
+    inline style that could give it a width. Its value stands next to it as text, so the drawing is hidden
+    from screen readers.
     """
+    fill = ("" if probability is None else
+            f'<line class="reading-fill" x1="0" y1="5" x2="{round(probability * METER_WIDTH)}" y2="5" />')
     marks = "".join(
         f'<line class="reading-mark" x1="{round(limit * METER_WIDTH)}" y1="-3" x2="{round(limit * METER_WIDTH)}" y2="13" />'
         for limit in (jev.UNLIKELY, jev.LIKELY)
     )
     return (
         f'<svg class="reading-meter" viewBox="0 0 {METER_WIDTH} 10" preserveAspectRatio="none" {SVG_ATTRIBUTES}>'
-        f'<line class="reading-track" x1="0" y1="5" x2="{METER_WIDTH}" y2="5" />'
-        f'<line class="reading-fill" x1="0" y1="5" x2="{round(probability * METER_WIDTH)}" y2="5" />{marks}</svg>'
+        f'<line class="reading-track" x1="0" y1="5" x2="{METER_WIDTH}" y2="5" />{fill}{marks}</svg>'
     )
 
 
@@ -419,25 +511,70 @@ def checklist_group_html(legend: str, items: tuple[ChecklistItem, ...], texts: T
 def checklist_html(model: PageModel, texts: Texts) -> str:
     """The fourteen criteria without a score, as questions with a box to tick and an advice."""
     return (
-        f'<section id="checklist" class="block"><h2>{escape(texts.text("checklist.title"))}</h2>'
+        f'<section id="by-hand" class="block"><h2>{escape(texts.text("checklist.title"))}</h2>'
         f'<p class="block-intro">{escape(texts.text("checklist.intro"))}</p>'
         f'{checklist_group_html(texts.text("checklist.files"), model.checklist_files, texts)}'
         f'{checklist_group_html(texts.text("checklist.judgement"), model.checklist_judgement, texts)}</section>'
     )
 
 
-def report_files_html(texts: Texts) -> str:
-    """Buttons of the three files of the report; the script of the page prepares the file that is asked for."""
+def report_menu_html(texts: Texts) -> str:
+    """Menu of the three files of the report, next to the tabs; the script of the page prepares the file that is asked for."""
     buttons = "".join(
         f'<button type="button" class="button button--file" data-format="{name}">{line_icon(icon)}'
         f"<span>{escape(texts.text(key))}</span></button>"
         for name, key, icon in REPORT_FORMATS
     )
     return (
-        f'<section id="report-files" class="block"><h2>{escape(texts.text("download.title"))}</h2>'
-        f'<div class="file-buttons" data-preparing="{escape(texts.text("download.preparing"))}" '
+        f'<details class="report-menu"><summary class="button button--report">{line_icon("download")}'
+        f'<span>{escape(texts.text("download.menu"))}</span>{line_icon("chevron-down")}</summary>'
+        f'<div class="report-menu-box"><div class="file-buttons" data-preparing="{escape(texts.text("download.preparing"))}" '
         f'data-failed="{escape(texts.text("download.failed"))}">{buttons}</div>'
-        f'<p class="file-status" role="status"></p><p class="block-intro">{escape(texts.text("download.note"))}</p></section>'
+        f'<p class="file-status" role="status"></p><p class="report-note">{escape(texts.text("download.note"))}</p></div></details>'
+    )
+
+
+def opinion_main_html(texts: Texts) -> str:
+    """Page of the second opinion: what it is, the form that leads to it, the five statements, the steps, and
+    what is needed and how far to trust the answer."""
+    language = texts.language
+    home = page_path("home", language)
+    questions = "".join(
+        f'<p class="question-group">{escape(texts.text(f"reading.group.{criterion}"))}</p><ul class="questions">'
+        + "".join(f"<li>{escape(texts.text(f'reading.row.{statement.key}'))}</li>"
+                  for statement in jev.STATEMENTS if statement.criterion == criterion)
+        + "</ul>"
+        for criterion in dict.fromkeys(statement.criterion for statement in jev.STATEMENTS)
+    )
+    words = {
+        "tab": texts.quoted(texts.text("tabs.opinion")), "button": texts.quoted(texts.text("reading.offer.submit")),
+        "likely": texts.quoted(texts.text("reading.band.likely")), "unsure": texts.quoted(texts.text("reading.band.unsure")),
+        "unlikely": texts.quoted(texts.text("reading.band.unlikely")),
+    }
+    steps = "".join(
+        f'<li><span class="step-number">{number}</span><h3>{escape(texts.text(f"opinion.step.{number}.title"))}</h3>'
+        f'<p>{escape(texts.text(f"opinion.step.{number}.text", **words))}</p></li>'
+        for number in OPINION_STEPS
+    )
+    needs = "".join(f"<li>{escape(texts.text(key))}</li>"
+                    for key in ("opinion.need.key", "reading.offer.sent", "reading.offer.key_use", "reading.offer.scores"))
+    return (
+        f'<section class="hero hero--page"><div class="wrap hero-inner"><div class="hero-copy">'
+        f'<p class="hero-kind">{line_icon("text-search")}<span>{escape(texts.text("opinion.kind"))}</span></p>'
+        f'<h1>{escape(texts.text("opinion.heading"))}</h1><p class="lead">{escape(texts.text("opinion.lead"))}</p>'
+        f'{check_form_html(texts, action=f"{home}#{OPINION_TAB}", submit="opinion.submit")}'
+        f'<p class="example-prompt">{escape(texts.text("form.example_prompt"))} '
+        f'<a href="{home}?example=1#{OPINION_TAB}">{escape(texts.text("form.example"))}</a></p></div>'
+        f'<div class="question-card"><p class="question-title">{escape(texts.text("reading.offer.preview"))}</p>{questions}</div>'
+        f"</div></section>"
+        f'<section class="how"><div class="wrap"><h2>{escape(texts.text("opinion.steps.title"))}</h2>'
+        f'<ol class="steps steps--three">{steps}</ol></div></section>'
+        f'<section class="notes"><div class="wrap notes-inner">'
+        f'<div class="know-block"><h2>{escape(texts.text("opinion.need.title"))}</h2><ul class="know">{needs}</ul>'
+        f'<p class="know-link"><a href="{page_path("terms", language)}#reading">{escape(texts.text("reading.offer.terms"))}</a></p></div>'
+        f'<div class="know-block"><h2>{escape(texts.text("opinion.trust.title"))}</h2>'
+        f'<p>{escape(texts.text("opinion.trust.lead"))}</p><p>{escape(texts.text("guide.reading.trial"))}</p></div>'
+        f"</div></section>"
     )
 
 

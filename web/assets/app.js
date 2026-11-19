@@ -2,8 +2,9 @@
    Reads the address typed in the form, asks the catalogue of data.gov.gr for the metadata of the
    dataset and runs the checks of the study inside the browser, with the Python files of the
    repository. Nothing is stored. Nothing is sent anywhere but to the portal, with one exception:
-   when the visitor asks for the second reading of the description, the texts of the description
-   and the key that the visitor typed go to the relay of the site, which passes them to the model. */
+   when the visitor asks for the second opinion on the description, the texts of the description
+   and the key that the visitor typed go to the relay of the site, which passes them to the model.
+   A result has three tabs; the address of the page keeps the name of the open tab after the #. */
 
 const settings = document.body.dataset;
 const region = document.getElementById("result");
@@ -16,6 +17,8 @@ const READING_TIMEOUT = 45000;  // milliseconds to wait for the second reading, 
 const KEY_SHAPE = /^[\x21-\x7e]{8,300}$/;   // a key as the relay of the site accepts it: no space inside, 8 to 300 characters
 const EXCEL_TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 const TEXT_TYPES = { md: "text/markdown;charset=utf-8", json: "application/json" };
+const OPINION_TAB = "second-opinion";
+const TAB_KEYS = { ArrowRight: 1, ArrowLeft: -1, Home: "first", End: "last" };
 
 let engine = null;         // promise of the Python runtime with the checks loaded
 let engineLoaded = false;
@@ -112,13 +115,124 @@ async function portalReply(kind, value) {
   return reply.text();
 }
 
-function showResult(html, title) {
-  region.innerHTML = html;
+function tabs() {
+  return [...region.querySelectorAll('.tab[role="tab"]')];
+}
+
+function tabName(tab) {
+  return tab.getAttribute("href").slice(1);
+}
+
+function panelOf(tab) {
+  return document.getElementById(tab.getAttribute("aria-controls"));
+}
+
+/* Distance of an element from the top of the page, as the page is laid out. The position that the browser
+   reports for an element moves with the animation of a result that has just arrived; this one does not. */
+function pageTop(element) {
+  let top = 0;
+  for (let node = element; node; node = node.offsetParent) {
+    top += node.offsetTop;
+  }
+  return top;
+}
+
+/* Scrolls the page to the start of the open panel: the bar of the tabs at the top of the window and the
+   panel right under it. Without this, a tab opened from far down a long panel would show the middle of
+   the new panel, and a tab opened from the top of the page would show nothing of it. */
+function revealPanel() {
+  const bar = region.querySelector(".result-bar");
+  const panel = region.querySelector('[role="tabpanel"]:not([hidden])');
+  if (!bar || !panel) {
+    return;
+  }
+  const gap = parseFloat(getComputedStyle(panel).marginTop) || 0;
+  window.scrollTo({ top: Math.max(0, Math.round(pageTop(panel) - gap - bar.offsetHeight)) });
+}
+
+/* Opens a tab and hides the panels of the others. */
+function openTab(chosen) {
+  for (const tab of tabs()) {
+    const selected = tab === chosen;
+    tab.setAttribute("aria-selected", String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+    panelOf(tab).hidden = !selected;
+  }
+}
+
+/* Opens the tab with the name, moves the focus to it and shows the start of its panel. Unless the address
+   of the page already names the tab, the name is written in the address without a new entry in the
+   history. Returns false when no tab has the name. */
+function chooseTab(name, writeAddress = true) {
+  const chosen = tabs().find((tab) => tabName(tab) === name);
+  if (!chosen) {
+    return false;
+  }
+  openTab(chosen);
+  if (writeAddress) {
+    history.replaceState(null, "", `${location.pathname}${location.search}#${name}`);
+  }
+  carryQuery();
+  chosen.focus({ preventScroll: true });
+  revealPanel();
+  return true;
+}
+
+/* Follows the part of the address after the #: the name of a tab, or a place inside the panel of a tab. */
+function showHash() {
+  if (!shown) {
+    return;
+  }
+  let name = "";
+  try {
+    name = decodeURIComponent(location.hash.slice(1));
+  } catch (error) {
+    name = "";
+  }
+  const all = tabs();
+  carryQuery();
+  if (!name) {
+    if (all.length) {
+      openTab(all[0]);
+    }
+    return;
+  }
+  if (chooseTab(name, false)) {
+    return;
+  }
+  const target = document.getElementById(name);
+  if (!target || !region.contains(target)) {
+    return;
+  }
+  const hiddenIn = all.find((tab) => panelOf(tab).hidden && panelOf(tab).contains(target));
+  if (hiddenIn) {
+    openTab(hiddenIn);
+  }
+  target.scrollIntoView();
+}
+
+/* The region of the result announces what arrives in it, which suits the progress of a check and its
+   failures. Once a result stands in it the announcements stop: the focus goes to the name of the dataset
+   instead, and a screen reader is not read a whole panel every time a tab opens. */
+function announceArrivals(announced) {
+  region.setAttribute("aria-live", announced ? "polite" : "off");
+}
+
+/* Common end of showing a result: the top of the page, the focus on the name of the dataset, and the tab
+   that the address of the page names. */
+function settleResult(title) {
   document.title = `${title} | ${pageTitle}`;
   window.scrollTo(0, 0);
   const heading = region.querySelector("h1");
   heading.tabIndex = -1;
   heading.focus({ preventScroll: true });
+  showHash();
+}
+
+function showResult(html, title) {
+  announceArrivals(false);
+  region.innerHTML = html;
+  settleResult(title);
 }
 
 async function check(text) {
@@ -128,6 +242,7 @@ async function check(text) {
   document.body.dataset.view = "result";
   document.title = pageTitle;
   window.scrollTo(0, 0);
+  announceArrivals(true);
   region.replaceChildren(template(engineLoaded ? "progress-loading" : "progress-preparing"));
   let failure = "error-engine";
   try {
@@ -166,23 +281,24 @@ function showExample() {
   shown = { example: true, assessed: false };
   document.body.dataset.view = "result";
   field.value = "";
+  announceArrivals(false);
   region.replaceChildren(template("example-result"));
-  document.title = `${region.querySelector("h1").textContent} | ${pageTitle}`;
-  window.scrollTo(0, 0);
+  settleResult(region.querySelector("h1").textContent);
 }
 
 function showHome() {
   latestRun += 1;
   shown = null;
   delete document.body.dataset.view;
+  announceArrivals(true);
   region.replaceChildren();
   document.title = pageTitle;
 }
 
-/* The links of the language switch keep the dataset that is on the page. */
+/* The links of the language switch keep the dataset that is on the page and the tab that is open. */
 function carryQuery() {
   for (const link of document.querySelectorAll(".language a")) {
-    link.href = new URL(link.href).pathname + location.search;
+    link.href = new URL(link.href).pathname + location.search + location.hash;
   }
 }
 
@@ -239,8 +355,10 @@ async function downloadReport(button) {
       return;
     }
     const format = button.dataset.format;
-    saveFile(await reportFile(checks, format), checks.browser.report_name(format));
+    const file = await reportFile(checks, format);
     status.textContent = "";
+    closeReportMenu(true);
+    saveFile(file, checks.browser.report_name(format));
   } catch (error) {
     status.classList.add("is-error");
     status.textContent = buttons.dataset.failed;
@@ -249,13 +367,27 @@ async function downloadReport(button) {
   }
 }
 
-/* Puts the reading in the place of the offer and moves the focus to its heading. */
+/* Puts the reading in the place of the offer, marks its tab as answered and moves the focus to its heading. */
 function showReading(offer, html) {
   const holder = document.createElement("template");
   holder.innerHTML = html;
   const reading = holder.content.firstElementChild;
   offer.replaceWith(reading);
+  const tab = tabs().find((candidate) => tabName(candidate) === OPINION_TAB);
+  if (tab) {
+    tab.dataset.answered = "";
+  }
   reading.querySelector("h3").focus();
+}
+
+function closeReportMenu(focusBack) {
+  const menu = region.querySelector(".report-menu[open]");
+  if (menu) {
+    menu.open = false;
+    if (focusBack) {
+      menu.querySelector("summary").focus();
+    }
+  }
 }
 
 /* Second reading of the description of the dataset on the page. The key that the visitor typed is
@@ -339,9 +471,21 @@ if (form && region) {
   });
   field.addEventListener("focus", () => loadedEngine().catch(() => {}), { once: true });
   document.addEventListener("click", (event) => {
+    if (!event.target.closest(".report-menu")) {
+      closeReportMenu(false);
+    }
     if (event.target.closest("a[data-example]")) {
       event.preventDefault();
       goTo("?example=1");
+      return;
+    }
+    const link = event.target.closest('a[href^="#"]');
+    if (link && shown && region.contains(link) && chooseTab(link.getAttribute("href").slice(1))) {
+      event.preventDefault();
+      return;
+    }
+    if (event.target.closest("a[data-opinion-link]") && shown && chooseTab(OPINION_TAB)) {
+      event.preventDefault();
       return;
     }
     const button = event.target.closest("button[data-format]");
@@ -349,6 +493,38 @@ if (form && region) {
       downloadReport(button);
     }
   });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeReportMenu(true);
+    }
+  });
+  region.addEventListener("keydown", (event) => {
+    const tab = event.target.closest('.tab[role="tab"]');
+    if (!tab) {
+      return;
+    }
+    if (event.key === " ") {
+      event.preventDefault();
+      chooseTab(tabName(tab));
+      return;
+    }
+    const move = TAB_KEYS[event.key];
+    if (move === undefined) {
+      return;
+    }
+    event.preventDefault();
+    const all = tabs();
+    const places = { first: 0, last: all.length - 1 };
+    const place = move in places ? places[move] : (all.indexOf(tab) + move + all.length) % all.length;
+    chooseTab(tabName(all[place]));
+  });
+  window.addEventListener("hashchange", showHash);
+  /* The menu of the report opens under its button, which may stand at the bottom of the window. */
+  region.addEventListener("toggle", (event) => {
+    if (event.target.matches(".report-menu") && event.target.open) {
+      event.target.querySelector(".report-menu-box").scrollIntoView({ block: "nearest" });
+    }
+  }, true);
   region.addEventListener("submit", (event) => {
     const readingForm = event.target.closest("#reading-form");
     if (readingForm) {

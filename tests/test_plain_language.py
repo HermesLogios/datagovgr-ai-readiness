@@ -104,7 +104,7 @@ class ExampleDatasetTest(unittest.TestCase):
         self.assertEqual(model.strip_label, "9 έλεγχοι: 5 εντάξει, 4 εν μέρει, 0 όχι, 0 χωρίς αποτέλεσμα")
         self.assertIn("Δεν είναι ακόμη εντάξει: τίτλος και περιγραφή, μορφότυπος αρχείων. Ώσπου να διορθωθούν, "
                       "το σύνολο δεν μπορεί να χαρακτηριστεί «Έτοιμο».", model.group_note)
-        self.assertTrue(model.group_note.endswith("είναι στη λίστα ελέγχου πιο κάτω."))
+        self.assertTrue(model.group_note.endswith("(διαθεσιμότητα, δομή, τεκμηρίωση) είναι στη λίστα ελέγχου."))
 
     def test_priorities_follow_the_order_of_the_problems(self):
         self.assertEqual([(item.criterion_id, item.action) for item in self.model.fix_first], [

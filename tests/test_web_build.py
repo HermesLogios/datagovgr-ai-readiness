@@ -21,8 +21,9 @@ from aiready.texts import load_texts
 from web import build
 
 ENGINE_TEXT = "engine file "
-PAGES = (("index.html", "el"), ("guide/index.html", "el"), ("terms/index.html", "el"), ("404.html", "el"),
-         ("en/index.html", "en"), ("en/guide/index.html", "en"), ("en/terms/index.html", "en"))
+PAGES = (("index.html", "el"), ("second-opinion/index.html", "el"), ("guide/index.html", "el"),
+         ("terms/index.html", "el"), ("404.html", "el"), ("en/index.html", "en"), ("en/second-opinion/index.html", "en"),
+         ("en/guide/index.html", "en"), ("en/terms/index.html", "en"))
 BARE_RUN = """
 import json, sys
 sys.path[:0] = [sys.argv[1] + "/web/shims", sys.argv[1]]
@@ -128,7 +129,7 @@ class BuildTest(unittest.TestCase):
                 archive.extractall(folder)
             self.assertNotIn("aiready/portal.py", names)
             self.assertNotIn("aiready/jev_trial.py", names)
-            for name in ("aiready/jev.py", "aiready/second_reading.py"):
+            for name in ("aiready/jev.py", "aiready/second_reading.py", "web/release.py"):
                 self.assertIn(name, names)
             done = subprocess.run(
                 [sys.executable, "-S", "-X", "utf8", "-c", BARE_RUN, folder, str(build.EXAMPLE_RECORD)],

@@ -54,7 +54,7 @@ CHECK_FILES = (
     "aiready/report_excel.py", "aiready/second_reading.py", "aiready/texts.py", "aiready/locales/el.json",
     "aiready/locales/en.json",
     "scripts/04_metadata_checks.py", "criteria/criteria.csv", "data/reference/eu_file_type.csv",
-    "web/__init__.py", "web/browser.py", "web/icons.py", "web/pages.py", "web/shims/pandas.py",
+    "web/__init__.py", "web/browser.py", "web/icons.py", "web/pages.py", "web/release.py", "web/shims/pandas.py",
 )
 
 
@@ -201,7 +201,8 @@ def write_page(path: Path, document: str) -> None:
 
 
 def write_pages(output: Path, portal: str, indexing: bool, versions: dict[str, str]) -> None:
-    """Writes the home page, the guide and the terms in both languages, and the page of an unknown address."""
+    """Writes the home page, the page of the second opinion, the guide and the terms in both languages, and the
+    page of an unknown address."""
     from aiready.criteria import CRITERIA_VERSION
     from aiready.texts import DEFAULT_LANGUAGE, LANGUAGES, load_texts
     from web import browser, pages
@@ -228,7 +229,8 @@ def write_pages(output: Path, portal: str, indexing: bool, versions: dict[str, s
             "example-record": f"/example/{EXAMPLE_RECORD.name}",
             "example-date": EXAMPLE_DATE,
         }
-        mains = {"home": home, "guide": pages.guide_main_html(texts), "terms": pages.terms_main_html(texts)}
+        mains = {"home": home, pages.OPINION_PAGE: pages.opinion_main_html(texts), "guide": pages.guide_main_html(texts),
+                 "terms": pages.terms_main_html(texts)}
         for page, main in mains.items():
             document = pages.document_html(
                 page, texts, main, criteria_version=CRITERIA_VERSION, assets_version=versions["assets"],
