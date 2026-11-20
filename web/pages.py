@@ -8,6 +8,7 @@ and a colour. The pages carry no inline script or style and load only files of t
 
 from datetime import date
 from html import escape
+from urllib.parse import quote, urlencode
 
 from aiready import jev
 from aiready.criteria import CRITERIA_VERSION, Criterion
@@ -19,6 +20,10 @@ from web import release
 from web.icons import SVG_ATTRIBUTES, band_icon, line_icon, mark_icon, status_icon
 
 REPOSITORY_URL = "https://github.com/HermesLogios/datagovgr-ai-readiness"
+SITE_ADDRESS = "https://datagovgr-ai-readiness.hermeslogios.workers.dev"   # published address of the site
+SOCIAL_IMAGE_PATH = "/assets/social-preview.png"
+SOCIAL_IMAGE_SIZE = (1200, 630)
+PREVIEW_LOCALES = {"el": "el_GR", "en": "en_GB"}
 CRITERIA_TEXT_URL = f"{REPOSITORY_URL}/blob/main/criteria/criteria.md"
 CONSOLE_URL = "https://console.typesafe.ai/keys"       # page of the keys in the console of TypeSafe AI
 PRICES_URL = "https://docs.typesafe.ai/models"         # models and prices of TypeSafe AI
@@ -96,6 +101,32 @@ def page_path(page: str, language: str) -> str:
     return ("/" if language == DEFAULT_LANGUAGE else f"/{language}/") + PAGE_FOLDERS[page]
 
 
+def issue_address(title: str, lines: tuple[str, ...]) -> str:
+    """Address of a new issue in the repository of the site, with its title and body already written."""
+    return f"{REPOSITORY_URL}/issues/new?" + urlencode({"title": title, "body": "\n".join(lines)}, quote_via=quote)
+
+
+def issue_lines(texts: Texts, *facts: str) -> tuple[str, ...]:
+    """Body of an issue about a mistake: the facts that locate it, the version, two questions and the warning."""
+    return (*facts, texts.text("report.version", version=release.VERSION), "", texts.text("report.seen"), "",
+            texts.text("report.expected"), "", texts.text("report.public"))
+
+
+def link_preview_html(texts: Texts, title: str, address: str) -> str:
+    """What social networks show for a shared link of a page: its title, the description, its address and the
+    picture of the mark."""
+    width, height = SOCIAL_IMAGE_SIZE
+    facts = (
+        ("property", "og:type", "website"), ("property", "og:site_name", texts.text("app.name")),
+        ("property", "og:title", title), ("property", "og:description", texts.text("home.lead")),
+        ("property", "og:url", address), ("property", "og:locale", PREVIEW_LOCALES[texts.language]),
+        ("property", "og:image", f"{SITE_ADDRESS}{SOCIAL_IMAGE_PATH}"), ("property", "og:image:width", str(width)),
+        ("property", "og:image:height", str(height)), ("property", "og:image:alt", texts.text("preview.image_alt")),
+        ("name", "twitter:card", "summary_large_image"),
+    )
+    return "".join(f'<meta {kind}="{key}" content="{escape(value)}">\n' for kind, key, value in facts)
+
+
 def new_tab_note(texts: Texts) -> str:
     """Words for screen readers at the end of a link that opens in a new tab."""
     return f'<span class="visually-hidden"> {escape(texts.text("new_tab"))}</span>'
@@ -135,17 +166,20 @@ def document_html(page: str, texts: Texts, main: str, *, criteria_version: str, 
         f'<link rel="preload" href="/assets/fonts/{name}" as="font" type="font/woff2" crossorigin>\n' for name in FONT_FILES
     )
     attributes = "".join(f' data-{key}="{escape(value)}"' for key, value in (settings or {}).items())
+    address = f"{SITE_ADDRESS}{page_path(linked_page, texts.language)}"
     return (
         f'<!DOCTYPE html>\n<html lang="{texts.language}">\n<head>\n<meta charset="utf-8">\n'
         f'<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>{escape(title)}</title>\n'
         f'<meta name="description" content="{escape(texts.text("home.lead"))}">\n{robots}{alternates}'
+        f'{link_preview_html(texts, title, address)}'
         f'<link rel="icon" href="/favicon.ico" sizes="32x32">\n'
         f'<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">\n'
         f'<link rel="apple-touch-icon" href="/apple-touch-icon.png">\n{fonts}'
         f'<link rel="stylesheet" href="/assets/style.css{version}">\n'
         f'<script type="module" src="/assets/app.js{version}"></script>\n</head>\n'
         f'<body{attributes}>\n<a class="skip-link" href="#main">{escape(texts.text("nav.skip"))}</a>\n'
-        f'{header_html(texts, page)}\n<main id="main">{main}</main>\n{footer_html(texts, criteria_version)}\n</body>\n</html>\n'
+        f'{header_html(texts, page)}\n<main id="main">{main}</main>\n{footer_html(texts, criteria_version, address)}\n'
+        f'</body>\n</html>\n'
     )
 
 
@@ -180,14 +214,18 @@ def header_html(texts: Texts, page: str) -> str:
     )
 
 
-def footer_html(texts: Texts, criteria_version: str) -> str:
-    """Credit of the study, the two links, and the version of the page with the day of that version."""
+def footer_html(texts: Texts, criteria_version: str, address: str = "") -> str:
+    """Credit of the study, the links to the code, to an issue about a mistake on the page at the given address
+    and to the terms, and the version of the page with the day of that version."""
     version = texts.text("footer.version", version=release.VERSION, date=texts.date(release.RELEASED))
+    facts = (texts.text("report.page", address=address),) if address else ()
+    report = issue_address(texts.text("report.title"), issue_lines(texts, *facts))
     return (
         f'<footer class="site-footer"><div class="wrap site-footer-inner">'
         f'<p>{escape(texts.text("footer.credit", criteria_version=criteria_version))}</p>'
         f'<div class="footer-row"><ul class="footer-links"><li><a href="{REPOSITORY_URL}" {NEW_TAB}>{line_icon("code-xml")}'
         f'{escape(texts.text("footer.source"))}</a></li>'
+        f'<li><a href="{escape(report)}" {NEW_TAB}>{escape(texts.text("footer.report"))}{new_tab_note(texts)}</a></li>'
         f'<li><a href="{page_path("terms", texts.language)}">{escape(texts.text("footer.terms"))}</a></li></ul>'
         f'<p class="site-version"><span class="visually-hidden">{escape(texts.text("footer.version_label"))}: </span>'
         f"{escape(version)}</p></div>"
@@ -395,9 +433,18 @@ def result_html(model: PageModel, texts: Texts, example: bool = False) -> str:
     return (
         f'<article class="result" data-dataset="{escape(model.name)}">{head}{tabs_html(model, texts)}'
         + "".join(panel_html(name, panels[name], shown=position == 0) for position, (name, _) in enumerate(TABS))
-        + f'<p class="result-disclaimer">{escape(texts.text("footer.disclaimer", criteria_version=model.criteria_version))}</p>'
-        f"</article>"
+        + f'<p class="result-disclaimer">{escape(texts.text("footer.disclaimer", criteria_version=model.criteria_version))} '
+        f"{result_report_html(model, texts)}</p></article>"
     )
+
+
+def result_report_html(model: PageModel, texts: Texts) -> str:
+    """Link that opens an issue about a mistake in the result of the dataset, with its addresses already written;
+    it follows the sentence on the limits of the result."""
+    page = f"{SITE_ADDRESS}{page_path('home', texts.language)}?dataset={quote(model.name)}"
+    report = issue_address(texts.text("report.result_title", dataset=model.name), issue_lines(
+        texts, texts.text("report.dataset", address=model.url), texts.text("report.page", address=page)))
+    return f'<a href="{escape(report)}" {NEW_TAB}>{escape(texts.text("report.result_link"))}{new_tab_note(texts)}</a>'
 
 
 def fixes_html(model: PageModel, texts: Texts) -> str:

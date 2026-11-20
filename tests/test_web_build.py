@@ -125,6 +125,7 @@ class BuildTest(unittest.TestCase):
         self.assertEqual((self.site / "assets" / "favicon.svg").read_text(encoding="utf-8"), icons.favicon_svg())
         self.assertEqual((self.site / "favicon.ico").read_bytes(), icon_images.favicon_ico())
         self.assertEqual((self.site / "apple-touch-icon.png").read_bytes(), icon_images.touch_icon_png())
+        self.assertEqual((self.site / "assets" / "social-preview.png").read_bytes(), icon_images.social_image_png())
 
     def test_engine_files_come_from_the_archive_and_nothing_else(self):
         folder = self.site / "engine" / build.ENGINE_VERSION

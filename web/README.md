@@ -102,10 +102,10 @@ visitor. It gives no score and changes none.
 | --- | --- |
 | `build.py` | builds the site into `web/dist` |
 | `preview.py` | builds the site and serves it on this computer, the three relays included |
-| `pages.py` | HTML of the home page, the result with its tabs, the page of the second opinion, the guide, the page of the criteria and the terms |
+| `pages.py` | HTML of the home page, the result with its tabs, the page of the second opinion, the guide, the page of the criteria and the terms; in the head of every page the tags of a shared link (Open Graph), and in the footer and under every result a link that opens an issue about a mistake on GitHub, with the page, the dataset and the version already written |
 | `release.py` | version of the page and its day, as the footer shows them |
 | `icons.py` | status icons, line icons and the mark of the tool (a gauge of readiness) as inline SVG, and the SVG icon of the browser tab |
-| `icon_images.py` | PNG and ICO copies of the mark, written with the standard library: `favicon.ico` (16 and 32 px) for browsers without SVG icons and `apple-touch-icon.png` (180 px) for the home screen of phones, both at the root of the site |
+| `icon_images.py` | PNG and ICO copies of the mark, written with the standard library: `favicon.ico` (16 and 32 px) for browsers without SVG icons and `apple-touch-icon.png` (180 px) for the home screen of phones, both at the root of the site, and `assets/social-preview.png` (1200 by 630 px), the picture that social networks show for a shared link |
 | `browser.py` | entry points that the page calls inside the browser |
 | `shims/pandas.py` | reader of CSV tables that stands in for pandas inside the browser |
 | `assets/` | stylesheet, script, typeface and licence texts |

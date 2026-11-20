@@ -1,4 +1,5 @@
-"""PNG and ICO copies of the mark of the tool, for phones and for browsers that do not show SVG icons.
+"""PNG and ICO copies of the mark of the tool, for phones, for browsers that do not show SVG icons, and for the
+picture that social networks show next to a shared link of the site.
 
 The shapes and measures are those of web.icons. Each pixel is the average of 4 by 4 samples, so that the
 edges stay smooth. The files are written with the standard library alone, because the site is built
@@ -16,6 +17,8 @@ GRID = 32
 SAMPLES = 4
 TOUCH_ICON_SIZE = 180
 FAVICON_SIZES = (16, 32)
+SOCIAL_IMAGE_SIZE = (1200, 630)     # the size that social networks expect for a large picture
+SOCIAL_MARK_SIZE = 420
 
 
 def rgb(colour: str) -> tuple[int, int, int]:
@@ -88,13 +91,32 @@ def png_chunk(kind: bytes, body: bytes) -> bytes:
     return struct.pack(">I", len(body)) + kind + body + struct.pack(">I", zlib.crc32(kind + body))
 
 
-@functools.cache
-def mark_png(size: int, rounded: bool) -> bytes:
-    """The mark as a PNG of 8-bit RGBA pixels, rows written without filters."""
-    raw = b"".join(b"\x00" + row for row in pixel_rows(size, rounded))
-    header = struct.pack(">IIBBBBB", size, size, 8, 6, 0, 0, 0)
+def png_bytes(width: int, height: int, rows: list[bytes]) -> bytes:
+    """A PNG of 8-bit RGBA pixels from its rows, written without filters."""
+    raw = b"".join(b"\x00" + row for row in rows)
+    header = struct.pack(">IIBBBBB", width, height, 8, 6, 0, 0, 0)
     return (b"\x89PNG\r\n\x1a\n" + png_chunk(b"IHDR", header) + png_chunk(b"IDAT", zlib.compress(raw, 9))
             + png_chunk(b"IEND", b""))
+
+
+@functools.cache
+def mark_png(size: int, rounded: bool) -> bytes:
+    """The mark as a square PNG on its tile."""
+    return png_bytes(size, size, pixel_rows(size, rounded))
+
+
+@functools.cache
+def social_image_png() -> bytes:
+    """Picture of a shared link of the site: the mark on the dark ground, in the middle of 1200 by 630 pixels.
+    The square of the mark has the colour of the ground, so only the gauge stands out."""
+    width, height = SOCIAL_IMAGE_SIZE
+    mark = pixel_rows(SOCIAL_MARK_SIZE, rounded=False)
+    left, top = (width - SOCIAL_MARK_SIZE) // 2, (height - SOCIAL_MARK_SIZE) // 2
+    ground = bytes(NAVY_RGB + (255,))
+    rows = [ground * left + mark[row - top] + ground * (width - left - SOCIAL_MARK_SIZE)
+            if top <= row < top + SOCIAL_MARK_SIZE else ground * width
+            for row in range(height)]
+    return png_bytes(width, height, rows)
 
 
 def touch_icon_png() -> bytes:
