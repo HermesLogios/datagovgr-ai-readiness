@@ -60,6 +60,13 @@ test("a request for the relay of the catalogue is answered with the reply of the
   assert.deepEqual(fileRequests, []);
 });
 
+test("a request for the relay of the columns is answered with the structure of the tables", async () => {
+  const answer = await worker.fetch(request("/api/fields?resource=0c5a6f2e-1b7d-4c1e-9a43-2f6b8d0e9a11"), env);
+  assert.equal(answer.status, 200);
+  assert.ok(outsideCalls[0].address.includes("datastore_search?resource_id=0c5a6f2e-1b7d-4c1e-9a43-2f6b8d0e9a11&limit=0"));
+  assert.deepEqual(fileRequests, []);
+});
+
 test("the relay of the catalogue answers only to GET", async () => {
   const answer = await worker.fetch(request("/api/record?name=troxaia-atyxhmata", "POST", "{}"), env);
   assert.equal(answer.status, 405);

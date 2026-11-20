@@ -473,7 +473,8 @@ def reading_group_html(criterion: str, texts: Texts) -> str:
 
 
 def reading_preview_html(texts: Texts) -> str:
-    """The five statements under their criterion, each with an empty meter: what a reading will answer."""
+    """The statements under their criterion, each with an empty meter, and the question of the category: what a
+    reading will answer."""
     groups = "".join(
         f'{reading_group_html(criterion, texts)}<ul class="reading-rows">'
         + "".join(
@@ -484,13 +485,16 @@ def reading_preview_html(texts: Texts) -> str:
         + "</ul>"
         for criterion in dict.fromkeys(statement.criterion for statement in jev.STATEMENTS)
     )
+    category = (f'{reading_group_html(jev.CATEGORY_QUESTION.criterion, texts)}<ul class="reading-rows">'
+                f'<li class="reading-ask-row"><span class="reading-name">'
+                f'{escape(texts.text(f"reading.row.{jev.CATEGORY_QUESTION.key}"))}</span></li></ul>')
     return (f'<div class="reading-preview"><p class="reading-preview-title">{escape(texts.text("reading.offer.preview"))}</p>'
-            f"{groups}</div>")
+            f"{groups}{category}</div>")
 
 
 def reading_offer_html(texts: Texts) -> str:
     """Offer of a second opinion in two columns: the field of the key with the button and what is sent and
-    what is not kept, and next to them the five statements that the model will answer.
+    what is not kept, and next to them the questions that the model will answer.
 
     The script of the page sends the form itself. The method is POST so that, if the form were ever sent by
     the browser, the key would not become part of an address.
@@ -571,13 +575,19 @@ def reading_result_html(model: ReadingModel, texts: Texts) -> str:
         advice_box = f'<h4>{escape(texts.text("reading.advice.title"))}</h4><ul>{items}</ul>'
     else:
         advice_box = f'<p>{escape(texts.text("reading.advice.none"))}</p>'
-    notes = "".join(f'<p class="reading-note">{escape(texts.text(f"reading.note.{note}"))}</p>' for note in ("texts", "scores"))
+    hint = ""
+    if model.hint:
+        detail = f'<p class="reading-lead">{escape(model.hint_detail)}</p>' if model.hint_detail else ""
+        hint = (f'{reading_group_html(jev.CATEGORY_QUESTION.criterion, texts)}<p class="reading-lead">{escape(model.hint)}</p>'
+                f'{detail}<p class="reading-note">{escape(texts.text("reading.hvd.disclaimer"))}</p>')
+    note_keys = ("texts", "scores", "new") + (() if model.columns_read else ("no_columns",))
+    notes = "".join(f'<p class="reading-note">{escape(texts.text(f"reading.note.{note}"))}</p>' for note in note_keys)
     return (
         f'<div class="reading">{reading_head_html(texts, "reading.result.tag", model.source)}'
         f'<h3 tabindex="-1">{escape(texts.text("reading.result.title"))}</h3>'
         f'<p class="reading-lead">{escape(texts.text("reading.result.lead"))}</p>{groups}'
         f'<p class="reading-scale" aria-hidden="true"><span class="reading-scale-bands">{scale}</span></p>'
-        f'<div class="reading-advice">{advice_box}</div>{notes}</div>'
+        f'{hint}<div class="reading-advice">{advice_box}</div>{notes}</div>'
     )
 
 
@@ -622,10 +632,13 @@ def report_menu_html(texts: Texts) -> str:
 
 
 def statement_counts() -> dict[str, int]:
-    """Number of statements of the model for each criterion, in the order of the statements."""
+    """Number of questions of the model for each criterion: the statements in their order, then the question of
+    the category of high-value data."""
     counts: dict[str, int] = {}
     for statement in jev.STATEMENTS:
         counts[statement.criterion] = counts.get(statement.criterion, 0) + 1
+    category = jev.CATEGORY_QUESTION.criterion
+    counts[category] = counts.get(category, 0) + 1
     return counts
 
 
@@ -676,7 +689,7 @@ def opinion_key_html(texts: Texts) -> str:
 
 
 def opinion_main_html(texts: Texts) -> str:
-    """Page of the second opinion: what it is, the form that leads to it, the five statements, the steps, how the
+    """Page of the second opinion: what it is, the form that leads to it, the questions, the steps, how the
     model works, how to get a key, and what is needed and how far to trust the answer."""
     language = texts.language
     home = page_path("home", language)
@@ -687,6 +700,10 @@ def opinion_main_html(texts: Texts) -> str:
                   for statement in jev.STATEMENTS if statement.criterion == criterion)
         + "</ul>"
         for criterion in dict.fromkeys(statement.criterion for statement in jev.STATEMENTS)
+    ) + (
+        f'<p class="question-group">{code_tag_html(jev.CATEGORY_QUESTION.criterion, texts, new_tab=False)}'
+        f'<span>{escape(texts.text(f"reading.group.{jev.CATEGORY_QUESTION.criterion}"))}</span></p>'
+        f'<ul class="questions"><li>{escape(texts.text(f"reading.row.{jev.CATEGORY_QUESTION.key}"))}</li></ul>'
     )
     words = {
         "tab": texts.quoted(texts.text("tabs.opinion")), "button": texts.quoted(texts.text("reading.offer.submit")),

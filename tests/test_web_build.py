@@ -148,7 +148,7 @@ class BuildTest(unittest.TestCase):
                 [sys.executable, "-S", "-X", "utf8", "-c", BARE_RUN, folder, str(build.EXAMPLE_RECORD)],
                 capture_output=True, text=True, encoding="utf-8",
             )
-        self.assertEqual(done.stdout.strip(), "True Τροχαία ατυχήματα True True 5", done.stderr)
+        self.assertEqual(done.stdout.strip(), "True Τροχαία ατυχήματα True True 9", done.stderr)
 
     def test_headers_allow_only_the_site_and_the_portal_and_keep_search_engines_out(self):
         headers = self.text_of("_headers")

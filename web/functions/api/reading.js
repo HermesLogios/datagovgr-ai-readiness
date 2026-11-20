@@ -12,7 +12,10 @@ const MAX_BODY_BYTES = 4 * MAX_BODY;   // a character takes at most four bytes
 const MAX_TEXT = 8000;                 // characters of one text of the state
 const MAX_STATEMENT = 2000;            // characters of the instructions or of one criterion of a question
 const MAX_RESOURCE_DESCRIPTIONS = 20;
-const MAX_QUESTIONS = 10;
+const MAX_QUESTIONS = 12;
+const MAX_OPTIONS = 10;                 // options of a question of choice
+const MAX_COLUMNS = 100;                // names of columns in the state
+const MAX_COLUMN = 300;                 // characters of the name of a column with its dictionary
 const KEY = /^[\x21-\x7e]{8,300}$/;
 const MODEL = /^jev-[a-z0-9.]{1,20}$/;
 const QUESTION_NAME = /^[a-z][a-z_]{0,29}$/;
@@ -38,20 +41,40 @@ function isStatement(value) {
   return isText(value, MAX_STATEMENT) && value.length > 0;
 }
 
-/* The texts of a dataset as the page sends them, or null. */
+/* The texts of a dataset as the page sends them, with the names of the columns when there are any, or null. */
 function cleanState(state) {
   if (!isTable(state)) {
     return null;
   }
-  const { title, description, resource_descriptions: resources } = state;
+  const { title, description, resource_descriptions: resources, columns } = state;
   if (!isText(title, MAX_TEXT) || !isText(description, MAX_TEXT) || !Array.isArray(resources)
       || resources.length > MAX_RESOURCE_DESCRIPTIONS || !resources.every((text) => isText(text, MAX_TEXT))) {
     return null;
   }
-  return { title, description, resource_descriptions: resources };
+  if (columns === undefined) {
+    return { title, description, resource_descriptions: resources };
+  }
+  if (!Array.isArray(columns) || columns.length > MAX_COLUMNS || !columns.every((text) => isText(text, MAX_COLUMN))) {
+    return null;
+  }
+  return { title, description, resource_descriptions: resources, columns };
 }
 
-/* The questions of a request, each a statement whose probability is asked for, or null. */
+/* The options of a question of choice, each a name with what it covers, or null. */
+function cleanOptions(options) {
+  if (!isTable(options)) {
+    return null;
+  }
+  const names = Object.keys(options);
+  if (names.length < 2 || names.length > MAX_OPTIONS
+      || !names.every((name) => QUESTION_NAME.test(name) && isStatement(options[name]))) {
+    return null;
+  }
+  return Object.fromEntries(names.map((name) => [name, options[name]]));
+}
+
+/* The questions of a request, each a statement whose probability is asked for or a question of choice
+   with its options, or null. */
 function cleanQuestions(questions) {
   if (!isTable(questions)) {
     return null;
@@ -63,7 +86,18 @@ function cleanQuestions(questions) {
   const clean = {};
   for (const name of names) {
     const question = questions[name];
-    if (!QUESTION_NAME.test(name) || !isTable(question) || question.type !== "noul" || !isStatement(question.instructions)) {
+    if (!QUESTION_NAME.test(name) || !isTable(question) || !isStatement(question.instructions)) {
+      return null;
+    }
+    if (question.type === "choice") {
+      const options = cleanOptions(question.criteria);
+      if (options === null) {
+        return null;
+      }
+      clean[name] = { type: "choice", instructions: question.instructions, criteria: options };
+      continue;
+    }
+    if (question.type !== "noul") {
       return null;
     }
     clean[name] = { type: "noul", instructions: question.instructions };

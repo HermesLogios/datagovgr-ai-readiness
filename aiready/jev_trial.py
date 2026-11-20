@@ -1,7 +1,8 @@
 """Trial of the readings of Jev on the 36 datasets of the sample, next to the review of the study.
 
-Every dataset of the sample is read from the stored snapshot. Its texts are sent to the model with the five
-statements of aiready/jev.py, and the probabilities returned are set next to what the study found:
+Every dataset of the sample is read from the stored snapshot. Its texts are sent to the model with the questions
+of aiready/jev.py, and the probabilities of the five statements that the review of the study answered are set
+next to what the study found (the questions added on 20 November 2026 are asked but not compared):
   - contents: the rule of M1, confirmed on the 36 datasets (DECISIONS.md #23): a description of at least 100
     characters that does not repeat the title;
   - coverage, gaps, collection, errors: the four questions of AI7 as answered in the review (DECISIONS.md #50),
@@ -46,6 +47,8 @@ from aiready.snapshot import iter_snapshot_records
 ROOT = Path(__file__).resolve().parent.parent
 SNAPSHOT = ROOT / "data" / "raw" / "catalog_2026-10-24.jsonl.gz"
 SAMPLE_FILE = ROOT / "data" / "processed" / "sample.csv"
+# The statements that the review of the study answered; only these are compared and written to the workbook.
+TRIAL_STATEMENTS = tuple(statement for statement in jev.STATEMENTS if statement.key in jev.TRIED)
 METADATA_TABLE = ROOT / "data" / "processed" / "metadata_checks_2026-10-24.csv"
 DECISIONS_FILE = ROOT / "DECISIONS.md"
 REFERENCE_FILE = Path(__file__).resolve().parent / "jev_trial_reference.csv"
@@ -388,7 +391,7 @@ def write_workbook(path: Path, answers: list[Answer], reference: dict[str, dict[
     summary = workbook.create_sheet("Summary")
     summary.append(["Statement", "Criterion", "Compared", "Agreed", "Yes in the reference", "Yes by Jev",
                     "Jev yes, reference no", "Jev no, reference yes", "Unsure", "Not compared"])
-    criteria = {statement.key: statement.criterion for statement in jev.STATEMENTS}
+    criteria = {statement.key: statement.criterion for statement in TRIAL_STATEMENTS}
     for item in summaries:
         summary.append([item.key, criteria[item.key], item.compared, item.agreed, item.reference_yes, item.model_yes,
                         ", ".join(item.model_yes_only), ", ".join(item.reference_yes_only), ", ".join(item.unsure),
@@ -397,7 +400,7 @@ def write_workbook(path: Path, answers: list[Answer], reference: dict[str, dict[
 
     datasets = workbook.create_sheet("Datasets")
     header = ["ID", "Dataset", "AI7 score (review)", "M1 score (rule, confirmed)"]
-    for statement in jev.STATEMENTS:
+    for statement in TRIAL_STATEMENTS:
         header += [f"{statement.key}: Jev", f"{statement.key}: reference", f"{statement.key}: compared"]
     datasets.append(header + ["Answers of yes by Jev (AI7)", "Input tokens", "Error"])
     for answer in answers:
@@ -407,7 +410,7 @@ def write_workbook(path: Path, answers: list[Answer], reference: dict[str, dict[
         if answer.reading:
             probabilities = answer.reading.probabilities
             yes_answers = sum(probabilities[key] >= jev.YES_THRESHOLD for key in AI7_KEYS)
-        for statement in jev.STATEMENTS:
+        for statement in TRIAL_STATEMENTS:
             value = reference[sample_id][statement.key]
             expected = expected_answer(value)
             if not answer.reading:
@@ -423,7 +426,7 @@ def write_workbook(path: Path, answers: list[Answer], reference: dict[str, dict[
         link = datasets.cell(row=datasets.max_row, column=2)
         link.hyperlink = answer.dataset.url
         link.style = "Hyperlink"
-    finish_sheet(datasets, widths=(6, 46, 10, 12) + (10, 13, 13) * len(jev.STATEMENTS) + (12, 10, 40))
+    finish_sheet(datasets, widths=(6, 46, 10, 12) + (10, 13, 13) * len(TRIAL_STATEMENTS) + (12, 10, 40))
     for row in datasets.iter_rows(min_row=2):
         for cell in row:
             if cell.value == "different":
@@ -438,7 +441,7 @@ def write_workbook(path: Path, answers: list[Answer], reference: dict[str, dict[
 
     statements = workbook.create_sheet("Statements")
     statements.append(["Statement", "Criterion", "Text of the statement", "Counts as true", "Counts as false"])
-    for statement in jev.STATEMENTS:
+    for statement in TRIAL_STATEMENTS:
         statements.append([statement.key, statement.criterion, statement.instructions, statement.when_true,
                            statement.when_false])
     finish_sheet(statements, widths=(14, 10, 50, MAX_WIDTH, MAX_WIDTH))
@@ -448,8 +451,8 @@ def write_workbook(path: Path, answers: list[Answer], reference: dict[str, dict[
 def parse_arguments(argv: list[str] | None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog="python -m aiready.jev_trial",
-        description="Asks Jev five statements about the texts of every dataset of the sample and sets the "
-                    "answers next to the review of the study.",
+        description="Asks Jev the questions about the texts of every dataset of the sample and sets the "
+                    "answers to the five statements of the review next to the review of the study.",
     )
     parser.add_argument("--dry-run", action="store_true",
                         help="write the requests in a file; ask nothing and need no key")
@@ -481,7 +484,7 @@ def main(argv: list[str] | None = None, environ=None) -> int:
         requests_file = arguments.out / REQUESTS_FILE_NAME
         characters = write_requests(requests_file, datasets, address)
         print(f"Requests written for {len(datasets)} datasets: {characters:,} characters of texts, "
-              f"{len(jev.STATEMENTS)} statements each. Nothing was sent.")
+              f"{len(jev.request_body(jev.publisher_texts({}))['questions'])} questions each. Nothing was sent.")
         print(f"Written: {requests_file}")
         return 0
 
@@ -520,7 +523,7 @@ def main(argv: list[str] | None = None, environ=None) -> int:
     print(f"Answered: {len(answered)} of {len(answers)} datasets, {tokens:,} input tokens")
     reference = statement_reference([answer.dataset.sample_id for answer in answers], REFERENCE_FILE, METADATA_TABLE)
     probabilities = {answer.dataset.sample_id: answer.reading.probabilities for answer in answered}
-    summaries = [statement_summary(statement.key, probabilities, reference) for statement in jev.STATEMENTS]
+    summaries = [statement_summary(statement.key, probabilities, reference) for statement in TRIAL_STATEMENTS]
     print(f"Agreement with the reference (a probability of {jev.YES_THRESHOLD} or more counts as yes)")
     for item in summaries:
         print(f"  {item.key:<11}{item.agreed} of {item.compared}"

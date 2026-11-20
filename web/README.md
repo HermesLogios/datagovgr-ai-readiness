@@ -71,9 +71,18 @@ In the tab of the second opinion a visitor may ask Jev, a model of TypeSafe AI, 
 description of the dataset (`DECISIONS.md` #54). The reading is optional and needs a key of the
 visitor. It gives no score and changes none.
 
-- `aiready/jev.py` holds the five statements, selects the texts that are sent (the title, the
-  description and the descriptions of the resources that say more than a name) and reads the
-  reply. `aiready/second_reading.py` turns the probabilities into the rows of the page.
+- `aiready/jev.py` holds the statements and the question of choice on the category of high-value
+  data, selects the texts that are sent (the title, the description and the descriptions of the
+  resources that say more than a name) and reads the reply. Five statements were compared with the
+  review of the study (`aiready/jev_trial.py`); the four added on 20 November 2026 (M2, M8, AI2)
+  and the category (M9) are not compared yet, and the page says so.
+  `aiready/second_reading.py` turns the probabilities into the rows of the page and the hint of the
+  category.
+- When the DataStore of the portal holds tables of the dataset, the page first asks the relay
+  `functions/api/fields.js` for the columns of at most three of them. The relay asks the portal
+  for the structure of each table only (`datastore_search` with `limit=0`) and passes on the names,
+  the types and the data dictionary of the columns, never a row. The names go to the model with
+  the texts, and the statement on the names of the columns is asked only then.
 - `browser.py` builds the request for the dataset on the page. `assets/app.js` sends it, with the
   key that the visitor typed, in the body of a POST request to the relay
   `functions/api/reading.js`. The address of the model does not accept calls from a web page.
@@ -92,7 +101,7 @@ visitor. It gives no score and changes none.
 | File | Purpose |
 | --- | --- |
 | `build.py` | builds the site into `web/dist` |
-| `preview.py` | builds the site and serves it on this computer, the two relays included |
+| `preview.py` | builds the site and serves it on this computer, the three relays included |
 | `pages.py` | HTML of the home page, the result with its tabs, the page of the second opinion, the guide, the page of the criteria and the terms |
 | `release.py` | version of the page and its day, as the footer shows them |
 | `icons.py` | status icons, line icons and the mark of the tool (a gauge of readiness) as inline SVG, and the SVG icon of the browser tab |
@@ -103,7 +112,8 @@ visitor. It gives no score and changes none.
 | `example/` | catalogue record of the example, without contact details |
 | `functions/api/record.js` | relay to the catalogue |
 | `functions/api/reading.js` | relay to the model of the second opinion |
-| `worker.js` | entry of the site on Cloudflare Workers: the two relays, and the files of the build for every other address |
+| `functions/api/fields.js` | relay to the structure of the tables in the DataStore of the portal |
+| `worker.js` | entry of the site on Cloudflare Workers: the three relays, and the files of the build for every other address |
 | `wrangler.jsonc` | settings of the Worker: its name, the folder of the build, the entry, and no logs |
 
 ## Commands
@@ -114,6 +124,7 @@ python web/preview.py
 python -m unittest discover -s tests
 node --test tests/js/record_relay.test.mjs
 node --test tests/js/reading_relay.test.mjs
+node --test tests/js/fields_relay.test.mjs
 node --test tests/js/site_worker.test.mjs
 ```
 

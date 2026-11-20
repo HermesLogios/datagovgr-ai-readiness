@@ -99,14 +99,14 @@ test("anything but a request of the page is refused without a call to the model"
     changed((request) => { request.state.resource_descriptions = Array(21).fill("text"); }),
     changed((request) => { request.state.description = "α".repeat(8001); }),
     changed((request) => { request.questions = {}; }),
-    changed((request) => { request.questions.contents.type = "choice"; }),
+    changed((request) => { request.questions.contents.type = "score"; }),
     changed((request) => { request.questions.contents.instructions = ""; }),
     changed((request) => { request.questions.contents.criteria = { true: "only one side" }; }),
     changed((request) => { request.questions["Bad Name"] = request.questions.contents; }),
     changed((request) => { request.questions = JSON.parse('{"__proto__": {"type": "noul", "instructions": "A statement."}}'); }),
     changed((request) => {
-      for (let number = 0; number < 10; number += 1) {
-        request.questions[`statement_${"abcdefghij"[number]}`] = request.questions.contents;
+      for (let number = 0; number < 12; number += 1) {
+        request.questions[`statement_${"abcdefghijkl"[number]}`] = request.questions.contents;
       }
     }),
     { key: KEY, request: modelRequest(), padding: "x".repeat(60000) },
@@ -165,4 +165,36 @@ test("no answer of the relay repeats the key", async () => {
 test("the address of the model can be set for a trial", async () => {
   await relay({ key: KEY, request: modelRequest() }, { TYPESAFE_API_URL: "http://127.0.0.1:9/v1/systemone" });
   assert.equal(calls[0].address, "http://127.0.0.1:9/v1/systemone");
+});
+
+test("a question of choice with its options and the names of the columns in the state are passed on", async () => {
+  const sent = modelRequest();
+  sent.state.columns = ["Δήμος: Ο δήμος του ατυχήματος", "Πλήθος"];
+  sent.questions.hvd_category = {
+    type: "choice",
+    instructions: "Which thematic category of high-value datasets do the data belong to?",
+    criteria: { statistics: "Official statistics.", none: "None of these categories." },
+  };
+  await relay({ key: KEY, request: sent });
+  const passed = JSON.parse(calls[0].options.body);
+  assert.deepEqual(passed.state.columns, sent.state.columns);
+  assert.deepEqual(passed.questions.hvd_category, sent.questions.hvd_category);
+});
+
+test("a question of choice without options or with options that are not named texts is refused", async () => {
+  for (const criteria of [undefined, {}, { statistics: 3 }, { "Bad Name": "Official statistics." }]) {
+    const sent = modelRequest();
+    sent.questions.hvd_category = { type: "choice", instructions: "Which category?", criteria };
+    assert.equal((await relay({ key: KEY, request: sent })).status, 400);
+  }
+  assert.equal(calls.length, 0);
+});
+
+test("columns that are not a short list of short texts are refused", async () => {
+  for (const columns of ["Δήμος", [3], new Array(101).fill("Δήμος"), ["x".repeat(301)]]) {
+    const sent = modelRequest();
+    sent.state.columns = columns;
+    assert.equal((await relay({ key: KEY, request: sent })).status, 400);
+  }
+  assert.equal(calls.length, 0);
 });

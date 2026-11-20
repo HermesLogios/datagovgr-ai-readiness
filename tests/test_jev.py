@@ -12,7 +12,7 @@ from aiready.snapshot import iter_snapshot_records
 ROOT = Path(__file__).resolve().parent.parent
 SNAPSHOT = ROOT / "data" / "raw" / "catalog_2026-10-24.jsonl.gz"
 LIMITATION_TABLE = ROOT / "data" / "processed" / "limitation_checks_2026-10-24.csv"
-STATEMENT_KEYS = ("contents", "coverage", "gaps", "collection", "errors")
+STATEMENT_KEYS = ("contents", "frequency", "personal", "fields", "coverage", "gaps", "collection", "errors")
 
 
 def dataset_record(**fields) -> dict:
@@ -106,20 +106,23 @@ class PublisherTextsTest(unittest.TestCase):
 
 
 class RequestTest(unittest.TestCase):
-    def test_request_states_five_statements_about_the_texts(self):
+    def test_request_states_the_statements_about_the_texts_and_the_question_of_the_category(self):
         body = jev.request_body(jev.publisher_texts(dataset_record()))
         self.assertEqual(set(body), {"model", "state", "questions"})
         self.assertEqual(body["model"], "jev-1.14.0")
         self.assertEqual(set(body["state"]), {"title", "description", "resource_descriptions"})
-        self.assertEqual(tuple(body["questions"]), STATEMENT_KEYS)
-        for question in body["questions"].values():
+        self.assertEqual(tuple(body["questions"]), STATEMENT_KEYS + ("hvd_category",))
+        for key in STATEMENT_KEYS:
+            question = body["questions"][key]
             self.assertEqual(question["type"], "noul")
             self.assertEqual(set(question["criteria"]), {"true", "false"})
             self.assertTrue(question["instructions"])
+        self.assertEqual(body["questions"]["hvd_category"]["type"], "choice")
 
     def test_statements_follow_the_criteria_of_the_study(self):
         criteria = {statement.key: statement.criterion for statement in jev.STATEMENTS}
-        self.assertEqual(criteria, {"contents": "M1", "coverage": "AI7", "gaps": "AI7", "collection": "AI7", "errors": "AI7"})
+        self.assertEqual(criteria, {"contents": "M1", "frequency": "M2", "personal": "M8", "fields": "AI2", "names": "AI2",
+                                    "coverage": "AI7", "gaps": "AI7", "collection": "AI7", "errors": "AI7"})
 
     def test_fields_about_persons_and_other_metadata_are_not_sent(self):
         record = dataset_record(
@@ -136,7 +139,8 @@ class RequestTest(unittest.TestCase):
 
 class ReadingTest(unittest.TestCase):
     def test_reading_of_a_reply(self):
-        probabilities = {"contents": 0.94, "coverage": 0.81, "gaps": 0.03, "collection": 0.55, "errors": 0}
+        probabilities = {"contents": 0.94, "frequency": 0.2, "personal": 0.1, "fields": 0.66, "coverage": 0.81,
+                         "gaps": 0.03, "collection": 0.55, "errors": 0}
         reading = jev.reading_in_reply(reply_with(probabilities))
         self.assertEqual(reading.model, "jev-1.14.0")
         self.assertEqual(reading.probabilities, probabilities)
@@ -144,7 +148,7 @@ class ReadingTest(unittest.TestCase):
 
     def test_reply_without_one_of_the_answers_is_refused(self):
         with self.assertRaisesRegex(jev.JevReplyError, "errors"):
-            jev.reading_in_reply(reply_with({"contents": 0.9, "coverage": 0.8, "gaps": 0.1, "collection": 0.5}))
+            jev.reading_in_reply(reply_with({key: 0.5 for key in STATEMENT_KEYS if key != "errors"}))
 
     def test_reply_with_another_kind_of_answer_is_refused(self):
         reply = reply_with({key: 0.5 for key in STATEMENT_KEYS})

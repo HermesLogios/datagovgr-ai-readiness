@@ -130,7 +130,7 @@ class ReadingEntryTest(unittest.TestCase):
     def test_reading_of_a_reply_is_the_html_of_the_panel_in_the_language_asked(self):
         greek = json.loads(browser.reading_result(self.reply, "el", TODAY))
         self.assertTrue(greek["ok"])
-        self.assertEqual(greek["html"].count('class="reading-row reading-row--likely"'), 5)
+        self.assertEqual(greek["html"].count('class="reading-row reading-row--likely"'), len(jev.STATEMENTS))
         self.assertIn("Μοντέλο jev-1.14.0, 17/11/2026", greek["html"])
         self.assertIn("Model jev-1.14.0, 17 November 2026", json.loads(browser.reading_result(self.reply, "en", TODAY))["html"])
 

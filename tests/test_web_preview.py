@@ -129,13 +129,13 @@ class PreviewTest(unittest.TestCase):
             changed(lambda request: request["state"].update(resource_descriptions=["text"] * 21)),
             changed(lambda request: request["state"].update(description="α" * 8001)),
             changed(lambda request: request.update(questions={})),
-            changed(lambda request: request["questions"]["contents"].update(type="choice")),
+            changed(lambda request: request["questions"]["contents"].update(type="score")),
             changed(lambda request: request["questions"]["contents"].update(instructions="")),
             changed(lambda request: request["questions"]["contents"].update(criteria={"true": "only one side"})),
             changed(lambda request: request["questions"].update({"Bad Name": request["questions"]["contents"]})),
             changed(lambda request: request["questions"].update({"__proto__": request["questions"]["contents"]})),
             changed(lambda request: request["questions"].update(
-                {f"statement_{letter}": request["questions"]["contents"] for letter in "abcdefghij"})),
+                {f"statement_{letter}": request["questions"]["contents"] for letter in "abcdefghijkl"})),
             {"key": KEY, "request": model_request(), "padding": "x" * 60000},
         ]
         for sent in refused:

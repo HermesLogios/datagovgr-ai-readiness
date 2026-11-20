@@ -89,11 +89,21 @@ def assess_example(record_text: str, language: str, snapshot_date: str) -> str:
     return result(json.loads(record_text), example_source(snapshot_date), language, example=True)
 
 
-def reading_request() -> str:
-    """Request to the model for the texts of the last dataset that was assessed, as JSON text."""
+def field_request() -> str:
+    """Identifiers of the tables of the last dataset that was assessed whose columns the relay of the site is
+    asked for, as JSON text: at most three tables that the DataStore of the portal holds."""
     if "record" not in _last:
         raise LookupError("no dataset has been assessed yet")
-    return json.dumps(jev.request_body(jev.publisher_texts(_last["record"])), ensure_ascii=False)
+    return json.dumps(jev.datastore_tables(_last["record"]))
+
+
+def reading_request(fields_text: str = "") -> str:
+    """Request to the model for the texts of the last dataset that was assessed, with the names of the columns
+    that the relay of the site returned, as JSON text."""
+    if "record" not in _last:
+        raise LookupError("no dataset has been assessed yet")
+    columns = jev.column_texts(fields_text)
+    return json.dumps(jev.request_body(jev.publisher_texts(_last["record"]), columns=columns), ensure_ascii=False)
 
 
 def reading_result(reply_text: str, language: str, today: str) -> str:
@@ -103,7 +113,9 @@ def reading_result(reply_text: str, language: str, today: str) -> str:
     except ValueError:
         return json.dumps({"ok": False, "code": "service"})
     texts = load_texts(language)
-    model = build_reading_model(reading, texts, date.fromisoformat(today))
+    assessment = _last.get("assessment")
+    marked = bool(assessment and assessment.dataset.high_value_marked)
+    model = build_reading_model(reading, texts, date.fromisoformat(today), marked=marked)
     return json.dumps({"ok": True, "html": pages.reading_result_html(model, texts)}, ensure_ascii=False)
 
 

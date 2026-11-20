@@ -24,7 +24,14 @@ class ModelStub(BaseHTTPRequestHandler):
         if self.server.replies:
             status, headers, reply = self.server.replies.pop(0)
         else:
-            answers = {key: {"type": "noul", "noul": 0.9 if key == "contents" else 0.1} for key in body["questions"]}
+            answers = {}
+            for key, question in body["questions"].items():
+                if question.get("type") == "choice":
+                    options = list(question["criteria"])
+                    answers[key] = {"type": "choice", "choice": options[0], "confidence": 0.8,
+                                    "probabilities": {option: 0.8 if option == options[0] else 0.0 for option in options}}
+                else:
+                    answers[key] = {"type": "noul", "noul": 0.9 if key == "contents" else 0.1}
             status, headers, reply = 200, {}, {"model": body["model"], "answers": answers, "usage": {"input_tokens": 700}}
         content = reply.encode("utf-8") if isinstance(reply, str) else json.dumps(reply).encode("utf-8")
         self.answer(status, headers, content)

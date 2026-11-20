@@ -14,6 +14,7 @@ const pageTitle = document.title;
 
 const PORTAL_TIMEOUT = 20000;   // milliseconds to wait for the portal, or for the relay of the site
 const READING_TIMEOUT = 45000;  // milliseconds to wait for the second reading, longer than the relay waits for the model
+const FIELDS_TIMEOUT = 20000;   // milliseconds to wait for the columns of the tables, longer than the relay waits for the portal
 const KEY_SHAPE = /^[\x21-\x7e]{8,300}$/;   // a key as the relay of the site accepts it: no space inside, 8 to 300 characters
 const EXCEL_TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 const TEXT_TYPES = { md: "text/markdown;charset=utf-8", json: "application/json" };
@@ -390,6 +391,23 @@ function closeReportMenu(focusBack) {
   }
 }
 
+/* Names of the columns of up to three tables of the dataset in the DataStore of the portal, as the relay of
+   the site returns them, or an empty text when the dataset has no such table or the relay does not answer.
+   Only the structure of the tables comes back, never a row. */
+async function tableColumns(checks) {
+  const tables = JSON.parse(checks.browser.field_request());
+  if (!tables.length) {
+    return "";
+  }
+  const query = tables.map((table) => `resource=${encodeURIComponent(table)}`).join("&");
+  try {
+    const reply = await fetch(`${settings.fields}?${query}`, { cache: "no-store", signal: AbortSignal.timeout(FIELDS_TIMEOUT) });
+    return reply.ok ? await reply.text() : "";
+  } catch (error) {
+    return "";
+  }
+}
+
 /* Second reading of the description of the dataset on the page. The key that the visitor typed is
    sent once, in the body of the request to the relay of the site, and is stored nowhere. The
    messages of the form are data attributes written by the build. */
@@ -423,7 +441,11 @@ async function readDescription(readingForm) {
     if (state !== shown) {
       return;
     }
-    const request = JSON.parse(checks.browser.reading_request());
+    const columns = await tableColumns(checks);
+    if (state !== shown) {
+      return;
+    }
+    const request = JSON.parse(checks.browser.reading_request(columns));
     failure = "service";
     const reply = await fetch(settings.reading, {
       method: "POST",

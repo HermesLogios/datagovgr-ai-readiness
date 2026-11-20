@@ -40,6 +40,7 @@ PORTAL_VARIABLE = "DATAGOVGR_BASE_URL"
 PUBLIC_VARIABLE = "SITE_PUBLIC"
 PROXY_PATH = "/api/record"                        # relay of the site to the catalogue of the portal
 READING_PATH = "/api/reading"                     # relay of the site to the model of the second reading
+FIELDS_PATH = "/api/fields"                       # relay of the site to the columns of the tables in the DataStore
 ENGINE_VERSION = "314.0.8"
 ENGINE_FILES = ("pyodide.mjs", "pyodide.asm.mjs", "pyodide.asm.wasm", "python_stdlib.zip", "pyodide-lock.json")
 USER_AGENT = "datagovgr-ai-readiness/0.1 (site build)"
@@ -223,7 +224,7 @@ def write_pages(output: Path, portal: str, indexing: bool, versions: dict[str, s
             f'<template id="{name}">{content}</template>' for name, content in templates.items()
         )
         settings = {
-            "language": language, "portal": portal, "proxy": PROXY_PATH, "reading": READING_PATH,
+            "language": language, "portal": portal, "proxy": PROXY_PATH, "reading": READING_PATH, "fields": FIELDS_PATH,
             "engine": f"/engine/{ENGINE_VERSION}/",
             "checks": f"/engine/checks.zip?v={versions['checks']}",
             "excel": f"/engine/excel.zip?v={versions['excel']}",

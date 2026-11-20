@@ -112,7 +112,7 @@ class ModelCallTest(unittest.TestCase):
         self.assertEqual(headers["Authorization"], f"Bearer {TRIAL_KEY}")
         self.assertEqual(received, self.body)
         self.assertEqual(waits, [0.0])
-        self.assertEqual(set(reply["answers"]), set(STATEMENT_KEYS))
+        self.assertEqual(set(reply["answers"]), set(self.body["questions"]))
 
     def test_refused_key_is_reported(self):
         with model_stub(replies=[(401, {}, {"detail": "invalid key"})]) as (_, url):
@@ -209,7 +209,7 @@ class PublishedTrialTest(unittest.TestCase):
         cls.probabilities = jev_trial.stored_probabilities(jev_trial.PUBLISHED_ANSWERS)
         reference = jev_trial.statement_reference(sorted(cls.probabilities), jev_trial.REFERENCE_FILE, jev_trial.METADATA_TABLE)
         cls.summaries = {statement.key: jev_trial.statement_summary(statement.key, cls.probabilities, reference)
-                         for statement in jev.STATEMENTS}
+                         for statement in jev_trial.TRIAL_STATEMENTS}
         cls.reference = reference
 
     def test_agreement_with_the_reference_is_the_one_of_the_decision(self):
@@ -255,12 +255,15 @@ class PublishedTrialTest(unittest.TestCase):
                 self.assertIn(sentence, trial)
 
     def test_answers_are_those_of_the_statements_of_the_code_and_hold_no_key(self):
+        """The published trial asked the five statements that the review answered; their wording in the code and
+        the texts sent are still those of the trial. The questions added later are not part of it."""
         datasets = jev_trial.sample_datasets(jev_trial.SAMPLE_FILE, jev_trial.SNAPSHOT)
         entries = {entry["sample_id"]: entry for entry in self.stored["datasets"]}
         self.assertEqual(sorted(entries), [dataset.sample_id for dataset in datasets])
         for dataset in datasets:
-            self.assertEqual(entries[dataset.sample_id]["request"], jev.request_body(jev.publisher_texts(dataset.record)),
-                             dataset.sample_id)
+            expected = jev.request_body(jev.publisher_texts(dataset.record))
+            expected["questions"] = {key: expected["questions"][key] for key in jev.TRIED}
+            self.assertEqual(entries[dataset.sample_id]["request"], expected, dataset.sample_id)
         self.assertEqual({entry["model"] for entry in entries.values()}, {jev.MODEL})
         self.assertNotIn("Bearer", jev_trial.PUBLISHED_ANSWERS.read_text(encoding="utf-8"))
 

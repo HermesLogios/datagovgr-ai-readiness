@@ -43,7 +43,12 @@ MAX_BODY_CHARACTERS = 60000                 # body of a request of the second re
 MAX_BODY_BYTES = 4 * MAX_BODY_CHARACTERS    # a character takes at most four bytes
 MAX_TEXT_CHARACTERS = 8000                  # one text of the state
 MAX_STATEMENT_CHARACTERS = 2000             # the instructions or one criterion of a question
-MAX_QUESTIONS = 10
+MAX_QUESTIONS = 12
+MAX_OPTIONS = 10                            # options of a question of choice
+MAX_COLUMNS = 100                           # names of columns in the state
+MAX_COLUMN_CHARACTERS = 300                 # the name of a column with its dictionary
+MAX_TABLES = 3                              # tables whose columns one request may ask for
+MAX_TABLE_COLUMNS = 100                     # columns passed on for one table
 KEY_PATTERN = re.compile(r"[\x21-\x7e]{8,300}")
 MODEL_PATTERN = re.compile(r"jev-[a-z0-9.]{1,20}")
 QUESTION_NAME_PATTERN = re.compile(r"[a-z][a-z_]{0,29}")
@@ -82,17 +87,41 @@ def model_state(state) -> dict | None:
             or not isinstance(resources, list) or len(resources) > jev.MAX_RESOURCE_DESCRIPTIONS
             or not all(is_text(text, MAX_TEXT_CHARACTERS) for text in resources)):
         return None
-    return {"title": title, "description": description, "resource_descriptions": resources}
+    clean = {"title": title, "description": description, "resource_descriptions": resources}
+    if "columns" not in state:
+        return clean
+    columns = state["columns"]
+    if (not isinstance(columns, list) or len(columns) > MAX_COLUMNS
+            or not all(is_text(text, MAX_COLUMN_CHARACTERS) for text in columns)):
+        return None
+    return {**clean, "columns": columns}
+
+
+def choice_options(options) -> dict | None:
+    """The options of a question of choice, each a name with what it covers, or None."""
+    if (not isinstance(options, dict) or not 2 <= len(options) <= MAX_OPTIONS
+            or not all(QUESTION_NAME_PATTERN.fullmatch(name) and is_statement(text) for name, text in options.items())):
+        return None
+    return dict(options)
 
 
 def model_questions(questions) -> dict | None:
-    """The questions of a request, each a statement whose probability is asked for, or None."""
+    """The questions of a request, each a statement whose probability is asked for or a question of choice with
+    its options, or None."""
     if not isinstance(questions, dict) or not 1 <= len(questions) <= MAX_QUESTIONS:
         return None
     clean = {}
     for name, question in questions.items():
-        if (not QUESTION_NAME_PATTERN.fullmatch(name) or not isinstance(question, dict) or question.get("type") != "noul"
+        if (not QUESTION_NAME_PATTERN.fullmatch(name) or not isinstance(question, dict)
                 or not is_statement(question.get("instructions"))):
+            return None
+        if question.get("type") == "choice":
+            options = choice_options(question.get("criteria"))
+            if options is None:
+                return None
+            clean[name] = {"type": "choice", "instructions": question["instructions"], "criteria": options}
+            continue
+        if question.get("type") != "noul":
             return None
         clean[name] = {"type": "noul", "instructions": question["instructions"]}
         if "criteria" in question:
@@ -113,6 +142,21 @@ def model_request(request) -> dict | None:
     return {"model": request["model"], "state": state, "questions": questions}
 
 
+def table_columns(reply) -> list[dict]:
+    """Name, type, label and notes of each column of a reply of the DataStore, without its internal column _id."""
+    result = reply.get("result") if isinstance(reply, dict) and reply.get("success") is True else None
+    fields = result.get("fields") if isinstance(result, dict) and isinstance(result.get("fields"), list) else []
+    columns = []
+    for field in fields:
+        if not isinstance(field, dict) or not isinstance(field.get("id"), str) or field["id"] == "_id":
+            continue
+        info = field.get("info") if isinstance(field.get("info"), dict) else {}
+        columns.append({key: value[:MAX_COLUMN_CHARACTERS] if isinstance(value, str) else ""
+                        for key, value in (("id", field["id"]), ("type", field.get("type")),
+                                           ("label", info.get("label")), ("notes", info.get("notes")))})
+    return columns[:MAX_TABLE_COLUMNS]
+
+
 def sent_by_the_page(body: bytes) -> tuple[str, dict] | None:
     """Key and request of the body of a POST request of the page, or None for anything else."""
     try:
@@ -127,7 +171,7 @@ def sent_by_the_page(body: bytes) -> tuple[str, dict] | None:
 
 
 class PreviewHandler(SimpleHTTPRequestHandler):
-    """Serves the files of the site and answers the two relays."""
+    """Serves the files of the site and answers the three relays."""
 
     extensions_map = {**SimpleHTTPRequestHandler.extensions_map, **FILE_TYPES}
 
@@ -141,6 +185,8 @@ class PreviewHandler(SimpleHTTPRequestHandler):
         parts = urlsplit(self.path)
         if parts.path == build.PROXY_PATH:
             self.relay(parse_qs(parts.query))
+        elif parts.path == build.FIELDS_PATH:
+            self.relay_fields(parse_qs(parts.query))
         elif parts.path == build.READING_PATH:
             self.refuse_method("POST")
         else:
@@ -211,6 +257,25 @@ class PreviewHandler(SimpleHTTPRequestHandler):
             self.answer_error(502, "portal")
             return
         self.answer(200, JSON_TYPE, reply.content)
+
+    def relay_fields(self, query: dict[str, list[str]]) -> None:
+        """Asks the DataStore for the structure of at most three tables and passes on their columns, never a row."""
+        tables = query.get("resource", [])
+        if (not 1 <= len(tables) <= MAX_TABLES or len(set(tables)) != len(tables)
+                or not all(UUID_PATTERN.fullmatch(table) for table in tables)):
+            self.answer_error(400, "request")
+            return
+        columns = {}
+        for table in tables:
+            try:
+                reply = requests.get(
+                    self.portal + "/api/3/action/datastore_search", params={"resource_id": table, "limit": 0},
+                    headers={"User-Agent": USER_AGENT, "Accept": "application/json"}, timeout=RELAY_TIMEOUT_SECONDS,
+                )
+                columns[table] = table_columns(reply.json()) if reply.status_code == 200 else []
+            except (requests.RequestException, ValueError):
+                columns[table] = []
+        self.answer(200, JSON_TYPE, json.dumps({"columns": columns}, ensure_ascii=False).encode("utf-8"))
 
     def relay_reading(self, body: bytes) -> None:
         """Passes a request of the second reading to the model with the key of the visitor; nothing is kept."""

@@ -20,7 +20,8 @@ from sample_pages import CRITERIA, EXAMPLE, UNMARKED, page_model
 from web import icons, pages, release
 
 STATUS_ICON = 'class="status-icon status-icon--'
-COUNT_WORDS = {"el": {4: "τέσσερις", 5: "πέντε", 6: "έξι"}, "en": {4: "four", 5: "five", 6: "six"}}
+COUNT_WORDS = {"el": {4: "τέσσερις", 5: "πέντε", 6: "έξι", 9: "εννέα", 10: "δέκα"},
+               "en": {4: "four", 5: "five", 6: "six", 9: "nine", 10: "ten"}}
 NEW_TAB = 'target="_blank" rel="noopener noreferrer"'
 
 
@@ -464,14 +465,14 @@ class ReadingTest(unittest.TestCase):
         self.assertIn("<h3>Δεύτερη γνώμη από μοντέλο ΤΝ</h3>", opinion)
         self.assertEqual(self.result.count('<form class="reading-form"'), 1)
 
-    def test_offer_shows_the_five_statements_with_empty_meters_under_their_criterion(self):
+    def test_offer_shows_the_statements_with_empty_meters_under_their_criterion_and_the_category(self):
         preview = block(self.result, '<div class="reading-preview">', "</div>")
-        self.assertIn('<p class="reading-preview-title">Οι πέντε ερωτήσεις</p>', preview)
-        self.assertEqual(preview.count('<li class="reading-ask-row">'), 5)
-        self.assertEqual(preview.count('<svg class="reading-meter"'), 5)
+        self.assertIn('<p class="reading-preview-title">Οι ερωτήσεις</p>', preview)
+        self.assertEqual(preview.count('<li class="reading-ask-row">'), len(jev.STATEMENTS) + 1)
+        self.assertEqual(preview.count('<svg class="reading-meter"'), len(jev.STATEMENTS))
         self.assertNotIn("reading-fill", preview)
         marks = [preview.index(words) for words in ("Τίτλος και περιγραφή", "Λέει τι περιέχουν", "Περιορισμοί των δεδομένων",
-                                                    "Αναφέρει περιοχή", "Λέει πόσο ακριβή είναι")]
+                                                    "Αναφέρει περιοχή", "Λέει πόσο ακριβή είναι", "Σήμανση υψηλής αξίας")]
         self.assertEqual(marks, sorted(marks))
 
     def test_questions_stand_under_the_code_of_their_criterion(self):
@@ -632,18 +633,20 @@ class OpinionPageTest(unittest.TestCase):
         self.assertIn('<a href="/?example=1#second-opinion">Δοκιμάστε με το παράδειγμα «Τροχαία ατυχήματα»</a>', self.page)
         self.assertIn('<a href="/en/?example=1#second-opinion">', self.english)
 
-    def test_page_lists_the_five_statements_under_their_criterion(self):
+    def test_page_lists_the_statements_under_their_criterion_and_the_category(self):
         card = block(self.page, '<div class="question-card">', "</div>")
-        self.assertEqual(card.count("<li>"), 5)
-        for statement in jev.STATEMENTS:
-            self.assertIn(escape(self.texts.text(f"reading.row.{statement.key}")), card)
+        self.assertEqual(card.count("<li>"), len(jev.STATEMENTS) + 1)
+        for key in [statement.key for statement in jev.STATEMENTS] + [jev.CATEGORY_QUESTION.key]:
+            self.assertIn(escape(self.texts.text(f"reading.row.{key}")), card)
         self.assertLess(card.index("Τίτλος και περιγραφή"), card.index("Περιορισμοί των δεδομένων"))
 
-    def test_texts_that_count_the_statements_agree_with_the_statements_of_the_model(self):
+    def test_texts_that_count_the_questions_agree_with_the_questions_of_the_model(self):
         english = load_texts("en")
-        for key in ("reading.offer.preview", "opinion.lead", "opinion.step.3.title", "opinion.how.sent"):
-            self.assertIn(COUNT_WORDS["el"][len(jev.STATEMENTS)], self.texts.text(key), key)
-            self.assertIn(COUNT_WORDS["en"][len(jev.STATEMENTS)], english.text(key).lower(), key)
+        counted = {"opinion.lead": len(jev.STATEMENTS) + 1, "guide.reading.text": len(jev.STATEMENTS) + 1,
+                   "opinion.how.sent": len(jev.STATEMENTS)}
+        for key, count in counted.items():
+            self.assertIn(COUNT_WORDS["el"][count], self.texts.text(key, likely="", unlikely=""), key)
+            self.assertIn(COUNT_WORDS["en"][count], english.text(key, likely="", unlikely="").lower(), key)
 
     def test_page_has_three_numbered_steps(self):
         steps = block(self.page, '<ol class="steps steps--three">', "</ol>")
@@ -684,10 +687,12 @@ class OpinionPageTest(unittest.TestCase):
     def test_page_names_the_criteria_of_the_questions_with_their_codes_and_their_numbers(self):
         section = block(self.page, '<section class="explain" id="how">', "</section>")
         rows = re.findall(r'<li><a class="code-tag" href="/criteria/#(\w+)" title="[^"]+">\w+</a><span>([^<]+)</span></li>', section)
-        self.assertEqual(rows, [("M1", "Τίτλος και περιγραφή: μία ερώτηση"), ("AI7", "Δηλωμένοι περιορισμοί: 4 ερωτήσεις")])
+        self.assertEqual([code for code, _ in rows], ["M1", "M2", "M8", "AI2", "AI7", "M9"])
+        self.assertEqual(rows[0], ("M1", "Τίτλος και περιγραφή: μία ερώτηση"))
+        self.assertEqual(rows[3], ("AI2", "Τεκμηρίωση της δομής: 2 ερωτήσεις"))
+        self.assertEqual(rows[4], ("AI7", "Δηλωμένοι περιορισμοί: 4 ερωτήσεις"))
         self.assertNotIn("target=", block(section, '<ul class="explain-criteria">', "</ul>"))
-        counts = {code: sum(statement.criterion == code for statement in jev.STATEMENTS) for code in ("M1", "AI7")}
-        self.assertEqual(counts, {"M1": 1, "AI7": 4})
+        self.assertEqual(pages.statement_counts(), {"M1": 1, "M2": 1, "M8": 1, "AI2": 2, "AI7": 4, "M9": 1})
 
     def test_page_gives_four_steps_to_a_key_with_the_address_of_the_console(self):
         section = block(self.page, '<section class="explain explain--key" id="key">', "</section>")
@@ -796,7 +801,7 @@ class CriteriaPageTest(unittest.TestCase):
         self.assertIn("στην καρτέλα «Λίστα ελέγχου» του αποτελέσματος", self.section("Q1"))
 
     def test_criteria_of_the_second_opinion_say_how_many_questions_it_asks_about_them(self):
-        asked = {code: sum(statement.criterion == code for statement in jev.STATEMENTS) for code in CRITERIA}
+        asked = {code: pages.statement_counts().get(code, 0) for code in CRITERIA}
         for code, count in asked.items():
             self.assertEqual('<a href="/second-opinion/#how">' in self.section(code), count > 0, code)
         self.assertIn("Η δεύτερη γνώμη ΤΝ έχει μία ερώτηση για αυτό το κριτήριο.", self.section("M1"))
