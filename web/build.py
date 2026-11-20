@@ -253,6 +253,7 @@ def build_site(output: Path = DIST, cache: Path = CACHE, downloads: Downloads = 
     The folder is emptied first; a folder that is not empty and was not written by an earlier
     build is left alone and RuntimeError is raised.
     """
+    from web.icon_images import favicon_ico, touch_icon_png
     from web.icons import favicon_svg
 
     portal = (portal or os.environ.get(PORTAL_VARIABLE) or DEFAULT_PORTAL).rstrip("/")
@@ -268,6 +269,8 @@ def build_site(output: Path = DIST, cache: Path = CACHE, downloads: Downloads = 
 
     shutil.copytree(ASSETS, output / "assets")
     (output / "assets" / "favicon.svg").write_text(favicon_svg(), encoding="utf-8", newline="\n")
+    (output / "favicon.ico").write_bytes(favicon_ico())
+    (output / "apple-touch-icon.png").write_bytes(touch_icon_png())
     (output / "example").mkdir()
     shutil.copyfile(EXAMPLE_RECORD, output / "example" / EXAMPLE_RECORD.name)
     engine = output / "engine"

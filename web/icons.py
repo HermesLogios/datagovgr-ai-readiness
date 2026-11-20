@@ -3,8 +3,10 @@
 The line icons are those of the Lucide set (ISC licence, web/assets/icons-LICENSE.txt). The status
 icons, the icons of the bands of the second reading and the mark of the tool are drawn here. Each
 status and each band has its own shape, so that it is told apart without colour; the colour comes
-from the stylesheet through currentColor.
+from the stylesheet through currentColor. The mark is a gauge of readiness; web/icon_images.py
+makes its PNG and ICO copies from the same measures.
 """
+import math
 
 LINE_ICONS = {
     "external-link": '<path d="M15 3h6v6" /><path d="M10 14 21 3" /><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />',
@@ -44,8 +46,17 @@ BAND_DRAWINGS = {
                 'stroke-linecap="round" />',
 }
 
-# Nine cells for the nine checks: five met, one partly met, three still to be read.
-MARK_CELLS = ("#22B8D6", "#22B8D6", "#22B8D6", "#22B8D6", "#22B8D6", "#F59E0B", "#5B6B94", "#5B6B94", "#5B6B94")
+# Mark of the tool: a gauge of readiness on a grid of 32 by 32. Three arcs stand for the three scores
+# of a criterion (0, 1 and 2), from the dim arc on the left to the bright arc on the right, and a gold
+# needle points into the bright arc. Angles are in degrees, from three o'clock, anticlockwise.
+NAVY, GOLD = "#0D1B3E", "#F59E0B"
+TILE_RADIUS = 7
+GAUGE_CENTRE = (16, 17.5)
+GAUGE_RADIUS, GAUGE_WIDTH = 10.5, 3.6
+GAUGE_ARCS = (("#5B6B94", 210), ("#0891B2", 127), ("#22B8D6", 44))   # colour and angle where the arc starts
+GAUGE_ARC_SPAN = 74
+NEEDLE_ANGLE, NEEDLE_LENGTH, NEEDLE_WIDTH = 38, 7.6, 2.6
+HUB_RADIUS = 2.6
 SVG_ATTRIBUTES = 'aria-hidden="true" focusable="false"'
 
 
@@ -67,20 +78,35 @@ def band_icon(band: str) -> str:
             f'{SVG_ATTRIBUTES}>{BAND_DRAWINGS[band]}</svg>')
 
 
-def mark_cells() -> str:
-    cells = []
-    for position, colour in enumerate(MARK_CELLS):
-        row, column = divmod(position, 3)
-        cells.append(f'<rect x="{5 + column * 8}" y="{5 + row * 8}" width="6" height="6" rx="1.6" fill="{colour}" />')
-    return "".join(cells)
+def gauge_point(angle: float, distance: float) -> tuple[float, float]:
+    """Point of the grid at a distance from the centre of the gauge, rounded to two decimals."""
+    radians = math.radians(angle)
+    x, y = GAUGE_CENTRE
+    return round(x + distance * math.cos(radians), 2), round(y - distance * math.sin(radians), 2)
+
+
+def mark_drawing() -> str:
+    """Arcs, needle and hub of the gauge, drawn in this order."""
+    shapes = []
+    for colour, start in GAUGE_ARCS:
+        x1, y1 = gauge_point(start, GAUGE_RADIUS)
+        x2, y2 = gauge_point(start - GAUGE_ARC_SPAN, GAUGE_RADIUS)
+        shapes.append(f'<path d="M{x1:g} {y1:g}A{GAUGE_RADIUS:g} {GAUGE_RADIUS:g} 0 0 1 {x2:g} {y2:g}" fill="none" '
+                      f'stroke="{colour}" stroke-width="{GAUGE_WIDTH:g}" />')
+    x, y = GAUGE_CENTRE
+    tip_x, tip_y = gauge_point(NEEDLE_ANGLE, NEEDLE_LENGTH)
+    shapes.append(f'<path d="M{x:g} {y:g}L{tip_x:g} {tip_y:g}" stroke="{GOLD}" stroke-width="{NEEDLE_WIDTH:g}" '
+                  f'stroke-linecap="round" />')
+    shapes.append(f'<circle cx="{x:g}" cy="{y:g}" r="{HUB_RADIUS:g}" fill="{GOLD}" />')
+    return "".join(shapes)
 
 
 def mark_icon() -> str:
-    """Mark of the tool next to its name."""
-    return f'<svg class="brand-mark" viewBox="0 0 32 32" width="32" height="32" {SVG_ATTRIBUTES}>{mark_cells()}</svg>'
+    """Mark of the tool next to its name, on the dark header."""
+    return f'<svg class="brand-mark" viewBox="0 0 32 32" width="32" height="32" {SVG_ATTRIBUTES}>{mark_drawing()}</svg>'
 
 
 def favicon_svg() -> str:
-    """The mark on the dark ground of the page, as the icon of the browser tab."""
+    """The mark on a dark rounded tile, as the icon of the browser tab."""
     return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">'
-            f'<rect width="32" height="32" rx="7" fill="#0D1B3E" />{mark_cells()}</svg>\n')
+            f'<rect width="32" height="32" rx="{TILE_RADIUS}" fill="{NAVY}" />{mark_drawing()}</svg>\n')

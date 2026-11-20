@@ -68,6 +68,13 @@ class DocumentTest(unittest.TestCase):
         self.assertIn('<html lang="en">', english)
         self.assertIn("<title>Data readiness check</title>", english)
 
+    def test_head_links_the_icon_of_old_browsers_before_the_svg_icon_and_the_icon_of_phones(self):
+        head = block(self.document, "<head>", "</head>")
+        self.assertIn('<link rel="icon" href="/favicon.ico" sizes="32x32">', head)
+        self.assertIn('<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">', head)
+        self.assertIn('<link rel="apple-touch-icon" href="/apple-touch-icon.png">', head)
+        self.assertLess(head.index('href="/favicon.ico"'), head.index('href="/assets/favicon.svg"'))
+
     def test_main_part_follows_a_link_that_skips_the_header(self):
         self.assertLess(self.document.index('<a class="skip-link" href="#main">'), self.document.index("<header"))
         self.assertIn('<main id="main"><p>main part</p></main>', self.document)

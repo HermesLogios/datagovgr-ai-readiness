@@ -18,7 +18,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 from aiready.texts import load_texts
-from web import build
+from web import build, icon_images, icons
 
 ENGINE_TEXT = "engine file "
 PAGES = (("index.html", "el"), ("second-opinion/index.html", "el"), ("guide/index.html", "el"),
@@ -120,6 +120,11 @@ class BuildTest(unittest.TestCase):
         for path in ("assets/style.css", "assets/app.js", "assets/favicon.svg", "assets/fonts/manrope-greek-wght-normal.woff2",
                      "example/troxaia-atyxhmata.json"):
             self.assertTrue((self.site / path).is_file(), path)
+
+    def test_icons_of_the_tab_and_of_phones_are_written_where_browsers_look_for_them(self):
+        self.assertEqual((self.site / "assets" / "favicon.svg").read_text(encoding="utf-8"), icons.favicon_svg())
+        self.assertEqual((self.site / "favicon.ico").read_bytes(), icon_images.favicon_ico())
+        self.assertEqual((self.site / "apple-touch-icon.png").read_bytes(), icon_images.touch_icon_png())
 
     def test_engine_files_come_from_the_archive_and_nothing_else(self):
         folder = self.site / "engine" / build.ENGINE_VERSION
