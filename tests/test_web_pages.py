@@ -377,9 +377,9 @@ class HomeTest(unittest.TestCase):
 
     def test_form_has_a_labelled_field_for_the_address_and_one_button(self):
         form = block(self.home, "<form", "</form>")
-        self.assertIn('<label for="dataset-address">Διεύθυνση του συνόλου</label>', form)
+        self.assertIn('<label for="dataset-address">Σύνολο του data.gov.gr: σύνδεσμος ή λέξεις</label>', form)
         self.assertIn('<input id="dataset-address" name="dataset" type="text"', form)
-        self.assertIn('placeholder="https://data.gov.gr/dataset/..."', form)
+        self.assertIn('placeholder="π.χ. τροχαία ατυχήματα ή https://data.gov.gr/dataset/..."', form)
         self.assertEqual(form.count("<button"), 1)
         self.assertIn(">Έλεγχος</button>", form)
 
@@ -425,7 +425,7 @@ class OtherPagesTest(unittest.TestCase):
             self.assertEqual(block(guide, '<ol class="steps">', "</ol>").count("<li"), 4)
             terms = pages.terms_main_html(texts)
             self.assertIn(texts.text("terms.liability.text"), terms)
-            self.assertEqual(terms.count("<h2 id="), 9)
+            self.assertEqual(terms.count("<h2 id="), 10)
 
     def test_guide_leads_to_the_page_of_the_criteria(self):
         greek, english = pages.guide_main_html(load_texts("el")), pages.guide_main_html(load_texts("en"))
@@ -442,7 +442,8 @@ class OtherPagesTest(unittest.TestCase):
                      pages.criteria_main_html(texts, CRITERIA))
             for part in parts:
                 document = pages.document_html("home", texts, part, criteria_version="1.2")
-                self.assertIsNone(re.search(r"\{[a-z_]+\}", document), language)
+                shown = re.sub(r' data-[a-z-]+="[^"]*"', "", document)   # texts that the script of the page fills in
+                self.assertIsNone(re.search(r"\{[a-z_]+\}", shown), language)
 
 
 class ReadingTest(unittest.TestCase):
@@ -596,8 +597,8 @@ class ReadingTest(unittest.TestCase):
         self.assertIn("Michail Skandalidis", english)
 
     def test_terms_name_their_own_version_apart_from_the_version_of_the_application(self):
-        self.assertIn('<p class="article-note">Όροι χρήσης, έκδοση 2, Νοέμβριος 2026.', pages.terms_main_html(self.texts))
-        self.assertIn('<p class="article-note">Terms of use, version 2, November 2026.',
+        self.assertIn('<p class="article-note">Όροι χρήσης, έκδοση 3, Νοέμβριος 2026.', pages.terms_main_html(self.texts))
+        self.assertIn('<p class="article-note">Terms of use, version 3, November 2026.',
                       pages.terms_main_html(load_texts("en")))
         self.assertIn("<h2 id=\"reading\">Δεύτερη γνώμη από μοντέλο ΤΝ</h2>", pages.terms_main_html(self.texts))
 

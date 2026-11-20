@@ -18,7 +18,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 from aiready.texts import load_texts
-from web import build, icon_images, icons
+from web import build, icon_images, icons, release
 
 ENGINE_TEXT = "engine file "
 PAGES = (("index.html", "el"), ("second-opinion/index.html", "el"), ("guide/index.html", "el"),
@@ -110,11 +110,13 @@ class BuildTest(unittest.TestCase):
         self.assertIn('<template id="example-result"><article class="result"', home)
         for attribute in ('data-language="el"', 'data-portal="https://data.gov.gr"', 'data-proxy="/api/record"',
                           'data-reading="/api/reading"', f'data-engine="/engine/{build.ENGINE_VERSION}/"',
-                          'data-example-date="2026-10-24"'):
+                          'data-example-date="2026-10-24"', f'data-version="{release.VERSION}"', 'data-locale="el-GR"'):
             self.assertIn(attribute, home)
-        for name in ("progress-preparing", "progress-loading", "error-engine", "error-portal"):
+        for name in ("progress-preparing", "progress-loading", "error-engine", "error-portal", "search-loading",
+                     "search-list", "search-item", "suggestion-item", "recent-item", "stored-bar"):
             self.assertIn(f'<template id="{name}">', home)
         self.assertIn(load_texts("en").text("result.example_note"), self.text_of("en/index.html"))
+        self.assertIn('data-locale="en-GB"', self.text_of("en/index.html"))
 
     def test_assets_and_the_example_record_are_copied(self):
         for path in ("assets/style.css", "assets/app.js", "assets/favicon.svg", "assets/fonts/manrope-greek-wght-normal.woff2",

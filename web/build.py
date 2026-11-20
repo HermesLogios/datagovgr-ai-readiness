@@ -206,7 +206,7 @@ def write_pages(output: Path, portal: str, indexing: bool, versions: dict[str, s
     both languages, and the page of an unknown address."""
     from aiready.criteria import CRITERIA_VERSION, load_criteria
     from aiready.texts import DEFAULT_LANGUAGE, LANGUAGES, load_texts
-    from web import browser, pages
+    from web import browser, pages, release
 
     record = json.loads(EXAMPLE_RECORD.read_text(encoding="utf-8"))
     criteria = load_criteria()
@@ -219,12 +219,19 @@ def write_pages(output: Path, portal: str, indexing: bool, versions: dict[str, s
             "progress-loading": pages.progress_html(texts, "form.loading"),
             "error-engine": pages.error_html(texts, "engine"),
             "error-portal": pages.error_html(texts, "portal"),
+            "search-loading": pages.progress_html(texts, "search.loading"),
+            "search-list": pages.search_list_html(texts),
+            "search-item": pages.search_item_html(),
+            "suggestion-item": pages.suggestion_item_html(),
+            "recent-item": pages.recent_item_html(texts),
+            "stored-bar": pages.stored_bar_html(texts),
         }
         home = pages.home_main_html(texts, example) + "".join(
             f'<template id="{name}">{content}</template>' for name, content in templates.items()
         )
         settings = {
             "language": language, "portal": portal, "proxy": PROXY_PATH, "reading": READING_PATH, "fields": FIELDS_PATH,
+            "version": release.VERSION, "locale": pages.DISPLAY_LOCALES[language],
             "engine": f"/engine/{ENGINE_VERSION}/",
             "checks": f"/engine/checks.zip?v={versions['checks']}",
             "excel": f"/engine/excel.zip?v={versions['excel']}",

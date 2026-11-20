@@ -47,7 +47,8 @@ OPINION_STEPS = (1, 2, 3)
 KEY_STEPS = (1, 2, 3, 4)
 SCORE_STATUSES = ((2, "met"), (1, "partly"), (0, "not_met"))     # each score with the status that shows it in a result
 KIND_KEYS = {"by rule": "by_rule", "proposal": "proposal", "files": "files", "judgement": "judgement"}
-TERMS_SECTIONS = ("what", "result", "use", "data", "reading", "personal", "licences", "liability", "contact")
+TERMS_SECTIONS = ("what", "result", "use", "data", "storage", "reading", "personal", "licences", "liability", "contact")
+DISPLAY_LOCALES = {"el": "el-GR", "en": "en-GB"}   # how the script of the page writes dates and numbers
 GLOSSARY = ("metadata", "format", "licence", "hvd")
 EFFORT_CLASSES = {"Low": "low", "Medium": "medium", "High": "high"}
 REPORT_FORMATS = (("xlsx", "download.excel", "file-spreadsheet"), ("md", "download.markdown", "file-text"),
@@ -295,21 +296,83 @@ def preview_html(model: PageModel, texts: Texts) -> str:
     )
 
 
-def check_form_html(texts: Texts, action: str = "", submit: str = "form.submit") -> str:
-    """Form of the address of a dataset.
+def check_form_html(texts: Texts, action: str = "", submit: str = "form.submit", suggestions: bool = False) -> str:
+    """Form of the address of a dataset, or of words to search for in the catalogue.
 
-    On the home page the script of the page sends it. With an action, the browser sends it to that address
-    with the address of the dataset in the query.
+    On the home page the script of the page sends it, and with suggestions the field is a combobox: the script
+    shows under it the datasets that match the words typed. With an action, the browser sends the form to that
+    address with the text in the query.
     """
     target = f' action="{escape(action)}"' if action else ""
+    combobox = (' role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions"'
+                if suggestions else "")
+    listing = ""
+    if suggestions:
+        texts_of_list = {"status-one": "search.status_one", "status-many": "search.status_many",
+                         "status-none": "search.status_none", "modified": "search.modified",
+                         "files-one": "search.files_one", "files-many": "search.files_many"}
+        data = "".join(f' data-{name}="{escape(texts.entries[key])}"' for name, key in texts_of_list.items())
+        listing = (f'<ul id="search-suggestions" class="suggestions" role="listbox" '
+                   f'aria-label="{escape(texts.text("search.suggestions"))}"{data} hidden></ul>'
+                   f'<p id="search-status" class="visually-hidden" role="status"></p>')
     return (
         f'<form class="check-form" id="check-form" method="get"{target} novalidate>'
         f'<label for="dataset-address">{escape(texts.text("form.label"))}</label>'
-        f'<span class="field">{line_icon("link")}'
-        f'<input id="dataset-address" name="dataset" type="text" inputmode="url" autocomplete="off" autocapitalize="none" '
-        f'spellcheck="false" placeholder="{escape(texts.text("form.placeholder"))}">'
-        f'<button type="submit" class="button button--primary">{escape(texts.text(submit))}</button></span></form>'
+        f'<span class="field">{line_icon("search")}'
+        f'<input id="dataset-address" name="dataset" type="text" autocomplete="off" autocapitalize="none" '
+        f'spellcheck="false" enterkeyhint="search"{combobox} placeholder="{escape(texts.text("form.placeholder"))}">'
+        f'<button type="submit" class="button button--primary">{escape(texts.text(submit))}</button></span>{listing}</form>'
     )
+
+
+def recent_html(texts: Texts) -> str:
+    """Place of the recent checks of the visitor, next to the example. The script of the page fills it from the
+    storage of the browser and shows it, in place of the example, once there is a check."""
+    listing = (f'<ol class="recent-list" data-summary="{escape(texts.entries["recent.summary"])}" '
+               f'data-remove="{escape(texts.entries["recent.remove"])}"></ol>')
+    return (
+        f'<section class="recent" id="recent" aria-labelledby="recent-title" hidden>'
+        f'<div class="recent-head">{line_icon("history")}<h2 id="recent-title">{escape(texts.text("recent.title"))}</h2>'
+        f'<button type="button" class="recent-clear" data-recent-clear data-confirm="{escape(texts.text("recent.confirm"))}">'
+        f'{escape(texts.text("recent.clear"))}</button></div>{listing}'
+        f'<p class="recent-note">{escape(texts.text("recent.note"))}</p></section>'
+    )
+
+
+def recent_item_html(texts: Texts) -> str:
+    """Template of one recent check: the link that opens it as it was, and the button that removes it."""
+    return (
+        f'<li class="recent-item"><a class="recent-open" data-goto href=""><span class="recent-title"></span>'
+        f'<span class="recent-meta"></span><span class="recent-badge" hidden>'
+        f'<span aria-hidden="true">{escape(texts.text("recent.badge"))}</span>'
+        f'<span class="visually-hidden">{escape(texts.text("recent.reading"))}</span></span></a>'
+        f'<button type="button" class="recent-remove" data-recent-remove="" aria-label="">{line_icon("x")}</button></li>'
+    )
+
+
+def search_list_html(texts: Texts) -> str:
+    """Template of the list of datasets found for words, with the texts that the script fills in."""
+    texts_of_list = {"title": "search.title", "count-one": "search.count_one", "count-all": "search.count_all",
+                     "count-some": "search.count_some", "none": "search.none", "error": "search.error",
+                     "modified": "search.modified", "files-one": "search.files_one", "files-many": "search.files_many"}
+    data = "".join(f' data-{name}="{escape(texts.entries[key])}"' for name, key in texts_of_list.items())
+    return (f'<section class="search-results" aria-labelledby="search-title"{data}>'
+            f'<h2 id="search-title" tabindex="-1"></h2><p class="search-count"></p><ol class="search-list"></ol></section>')
+
+
+def search_item_html() -> str:
+    return '<li class="search-item"><a class="search-link" data-goto href=""></a><p class="search-meta"></p></li>'
+
+
+def suggestion_item_html() -> str:
+    return ('<li class="suggestion" role="option" aria-selected="false"><span class="suggestion-title"></span>'
+            '<span class="suggestion-meta"></span></li>')
+
+
+def stored_bar_html(texts: Texts) -> str:
+    """Bar above a check that the browser kept: when it was made, and the way to check the dataset again now."""
+    return (f'<div class="stored-bar">{line_icon("history")}<p class="stored-text" data-text="{escape(texts.entries["stored.text"])}"></p>'
+            f'<a class="button button--dark stored-again" data-goto href="">{escape(texts.text("stored.again"))}</a></div>')
 
 
 def steps_html(texts: Texts) -> str:
@@ -336,12 +399,12 @@ def home_main_html(texts: Texts, example: PageModel) -> str:
     return (
         f'<section class="hero"><div class="wrap hero-inner"><div class="hero-copy">'
         f'<h1>{escape(texts.text("home.title"))}</h1><p class="lead">{escape(texts.text("home.lead"))}</p>'
-        f"{check_form_html(texts)}"
+        f"{check_form_html(texts, suggestions=True)}"
         f'<p class="example-prompt">{escape(texts.text("form.example_prompt"))} '
         f'<a href="?example=1" data-example>{escape(texts.text("form.example"))}</a></p>'
         f'<p class="opinion-prompt"><a href="{page_path(OPINION_PAGE, texts.language)}">{line_icon("text-search")}'
         f'<span>{escape(texts.text("home.opinion"))}</span></a></p></div>'
-        f"{preview_html(example, texts)}</div></section>"
+        f'<div class="hero-side">{preview_html(example, texts)}{recent_html(texts)}</div></div></section>'
         f'<div class="wrap"><div id="result" class="result-region" aria-live="polite"></div></div>'
         f'<section class="how"><div class="wrap"><h2>{escape(texts.text("how.title"))}</h2>{steps_html(texts)}</div></section>'
         f'<section class="notes"><div class="wrap notes-inner">{legend_html(texts)}'

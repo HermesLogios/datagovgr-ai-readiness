@@ -9,13 +9,48 @@ with Pyodide, so the scores are those of `scripts/04_metadata_checks.py`.
 - `build.py` writes the site into `web/dist`: the pages in Greek and English, the Python files
   of the checks packed for the browser, the Python runtime (Pyodide) and the library of the
   Excel report. Each fetched file is checked against a pinned SHA-256 and kept in `web/.cache`.
-- `assets/app.js` reads the address typed in the form and asks the catalogue for the record of
-  the dataset, with one call to the action `package_search`. The portal is called directly from
-  the browser. A browser that is refused asks the relay `functions/api/record.js`, which passes
-  the same question to the portal and keeps nothing.
+- `assets/app.js` reads what is typed in the form. For an address or the name of a dataset it asks
+  the catalogue for the record of the dataset, with one call to the action `package_search`. The
+  portal is called directly from the browser. A browser that is refused asks the relay
+  `functions/api/record.js`, which passes the same question to the portal and keeps nothing.
+  Words are searched for in the catalogue (see [Search and recent checks](#search-and-recent-checks)).
 - `browser.py` receives the reply as text and returns the HTML of the result and the reports.
 - `pages.py` and `icons.py` produce all HTML. Every text comes from `aiready/locales`.
-- The site stores nothing: no cookies, no browser storage, no history of checks.
+- The site sets no cookies and keeps no history of checks on the server. The ten latest checks of
+  a visitor are kept only in the storage of the browser of that visitor (see below).
+
+## Search and recent checks
+
+The field of the home page takes an address, the name of a dataset or words.
+
+- Words go to the relay `functions/api/record.js` as `?q=<words>&rows=<number>`. The relay asks
+  the catalogue with `package_search` and passes on, for each dataset found, only its name, title,
+  publisher, day of the last change and number of files. It accepts from 2 to 100 characters and at
+  most 20 datasets, and leaves out the signs of the search language of the portal.
+- While the visitor types (3 characters or more, after a pause of 300 ms), up to 8 datasets are
+  proposed under the field, which is a combobox: the arrow keys move through the proposals, Enter
+  checks the chosen one and Escape closes them. Enter without a proposal lists up to 20 datasets at
+  `?search=<words>`, and every dataset of the list leads to its check. Words sent from the form of
+  the page of the second opinion become a search too, and its datasets open at that tab.
+- `assets/search.js` decides what is words and what names a dataset, and reads the reply of the
+  relay; `assets/recent.js` keeps the recent checks. Both touch no page and are tested with Node.
+- After a check the page keeps, in `localStorage` under the key `datagovgr-ai-readiness.recent`, the
+  record of the catalogue without the contact details that its metadata name, the result as it was
+  shown, its day and time, the number of checks met, the ticks of the checklist and, once it is asked
+  for, the second opinion. `browser.py` writes that record: the people named as author or maintainer
+  and their e-mail addresses are left out, a contact point keeps only a placeholder name, the e-mail
+  address of the publisher and the description of the organisation are left out, and every other
+  e-mail address is masked by as many characters. On the 22,805 datasets of the snapshot of
+  24 October 2026 the nine checks give the same results on the kept record as on the full one, and no
+  e-mail address is left in it (checked on 21 November 2026). A new check of the same
+  dataset takes the place of the old one, and at most ten checks are kept; when the storage is
+  full, the oldest are left out. The key of the model is never part of it, and the example is not
+  kept.
+- The home page lists the recent checks in the place of the example. A kept check opens at
+  `?dataset=<name>&saved=1` as it was first shown, under a bar with its day and time and a link
+  that checks the dataset again now; it opens without the Python runtime, which loads only for a
+  report or a new second opinion, from the kept reply of the catalogue. A check opens in the
+  language in which it was made. Each check can be deleted, and so can all of them.
 
 ## Pages and tabs
 
@@ -108,9 +143,9 @@ visitor. It gives no score and changes none.
 | `icon_images.py` | PNG and ICO copies of the mark, written with the standard library: `favicon.ico` (16 and 32 px) for browsers without SVG icons and `apple-touch-icon.png` (180 px) for the home screen of phones, both at the root of the site, and `assets/social-preview.png` (1200 by 630 px), the picture that social networks show for a shared link |
 | `browser.py` | entry points that the page calls inside the browser |
 | `shims/pandas.py` | reader of CSV tables that stands in for pandas inside the browser |
-| `assets/` | stylesheet, script, typeface and licence texts |
+| `assets/` | stylesheet, script (`app.js`, with the modules `search.js` and `recent.js`), typeface and licence texts |
 | `example/` | catalogue record of the example, without contact details |
-| `functions/api/record.js` | relay to the catalogue |
+| `functions/api/record.js` | relay to the catalogue: the record of one dataset, or the datasets found for words |
 | `functions/api/reading.js` | relay to the model of the second opinion |
 | `functions/api/fields.js` | relay to the structure of the tables in the DataStore of the portal |
 | `worker.js` | entry of the site on Cloudflare Workers: the three relays, and the files of the build for every other address |
@@ -123,6 +158,9 @@ python web/build.py
 python web/preview.py
 python -m unittest discover -s tests
 node --test tests/js/record_relay.test.mjs
+node --test tests/js/search_relay.test.mjs
+node --test tests/js/search.test.mjs
+node --test tests/js/recent.test.mjs
 node --test tests/js/reading_relay.test.mjs
 node --test tests/js/fields_relay.test.mjs
 node --test tests/js/site_worker.test.mjs

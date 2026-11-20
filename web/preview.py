@@ -60,6 +60,56 @@ FILE_TYPES = {
 }
 
 
+SEARCH_SIGNS = re.compile(r'[+!(){}\[\]^"~*?:\\/&|]')   # signs of the search language of the portal
+MIN_SEARCH_CHARACTERS, MAX_SEARCH_CHARACTERS = 2, 100
+MAX_SEARCH_ROWS, DEFAULT_SEARCH_ROWS = 20, 8
+
+
+def search_request(query: dict[str, list[str]]) -> tuple[str, int] | None:
+    """Words and number of datasets of a search of the relay; None unless the request is a search and nothing
+    else. The signs of the search language of the portal are left out of the words."""
+    words, rows = query.get("q", []), query.get("rows", [])
+    if len(words) != 1 or len(rows) > 1 or "name" in query or "id" in query or len(words[0]) > MAX_SEARCH_CHARACTERS:
+        return None
+    text = " ".join(SEARCH_SIGNS.sub(" ", words[0]).split())
+    count = int(rows[0]) if rows and rows[0].isdigit() else (DEFAULT_SEARCH_ROWS if not rows else 0)
+    if len(text) < MIN_SEARCH_CHARACTERS or not 1 <= count <= MAX_SEARCH_ROWS:
+        return None
+    return text, count
+
+
+def plain_title(value) -> str:
+    """A title of the portal, which may be given in more than one language."""
+    if isinstance(value, str):
+        return value
+    if isinstance(value, dict):
+        return next((text for text in (value.get("el"), value.get("en"), *value.values()) if isinstance(text, str) and text), "")
+    return ""
+
+
+def found_datasets(reply) -> dict | None:
+    """The datasets of a reply of the search, each with the five facts that the list of the page shows."""
+    result = reply.get("result") if isinstance(reply, dict) and reply.get("success") is True else None
+    if not isinstance(result, dict) or not isinstance(result.get("results"), list):
+        return None
+    datasets = []
+    for item in result["results"]:
+        if not isinstance(item, dict) or not isinstance(item.get("name"), str):
+            continue
+        organization = item.get("organization")
+        resources = item.get("num_resources")
+        datasets.append({
+            "name": item["name"],
+            "title": plain_title(item.get("title")) or item["name"],
+            "organization": plain_title(organization.get("title")) if isinstance(organization, dict) else "",
+            "modified": item["metadata_modified"] if isinstance(item.get("metadata_modified"), str) else "",
+            "resources": resources if isinstance(resources, int) and not isinstance(resources, bool)
+            else len(item["resources"]) if isinstance(item.get("resources"), list) else 0,
+        })
+    count = result.get("count")
+    return {"count": count if isinstance(count, int) and not isinstance(count, bool) else len(datasets), "results": datasets}
+
+
 def catalogue_filter(query: dict[str, list[str]]) -> str | None:
     """Filter of the catalogue search for a request of the relay; None unless it names one dataset."""
     names, identifiers = query.get("name", []), query.get("id", [])
@@ -240,7 +290,11 @@ class PreviewHandler(SimpleHTTPRequestHandler):
         self.end_headers()
 
     def relay(self, query: dict[str, list[str]]) -> None:
-        """Asks the catalogue for one dataset and passes its reply on; nothing is kept."""
+        """Asks the catalogue for one dataset and passes its reply on, or searches it by words and passes on the five
+        facts of each dataset found; nothing is kept."""
+        if "q" in query:
+            self.relay_search(query)
+            return
         wanted = catalogue_filter(query)
         if wanted is None:
             self.answer_error(400, "request")
@@ -257,6 +311,25 @@ class PreviewHandler(SimpleHTTPRequestHandler):
             self.answer_error(502, "portal")
             return
         self.answer(200, JSON_TYPE, reply.content)
+
+    def relay_search(self, query: dict[str, list[str]]) -> None:
+        search = search_request(query)
+        if search is None:
+            self.answer_error(400, "request")
+            return
+        words, count = search
+        try:
+            reply = requests.get(
+                self.portal + "/api/3/action/package_search", params={"q": words, "rows": count},
+                headers={"User-Agent": USER_AGENT, "Accept": "application/json"}, timeout=RELAY_TIMEOUT_SECONDS,
+            )
+            found = found_datasets(reply.json()) if reply.status_code == 200 else None
+            if found is None:
+                raise ValueError(f"HTTP {reply.status_code}")
+        except (requests.RequestException, ValueError):
+            self.answer_error(502, "portal")
+            return
+        self.answer(200, JSON_TYPE, json.dumps(found, ensure_ascii=False).encode("utf-8"))
 
     def relay_fields(self, query: dict[str, list[str]]) -> None:
         """Asks the DataStore for the structure of at most three tables and passes on their columns, never a row."""

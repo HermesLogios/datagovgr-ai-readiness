@@ -11,6 +11,7 @@ import unittest
 import urllib.error
 import urllib.request
 from pathlib import Path
+from urllib.parse import quote
 
 from aiready import jev
 from fake_model import model_stub
@@ -18,6 +19,9 @@ from fake_portal import FakePortal, found_reply
 from web import preview
 
 REPLY = found_reply([{"name": "troxaia-atyxhmata", "type": "dataset"}])
+SEARCH_REPLY = found_reply([{"name": "troxaia-atyxhmata", "title": "Τροχαία ατυχήματα", "notes": "Μεγάλη περιγραφή.",
+                             "organization": {"title": "ΕΛΣΤΑΤ"}, "metadata_modified": "2026-03-12T10:20:00",
+                             "num_resources": 4}])
 KEY = "ts-trial-key-0123456789"
 
 
@@ -48,7 +52,8 @@ class PreviewTest(unittest.TestCase):
         (site / "404.html").write_text("<p>no such page</p>", encoding="utf-8")
         (site / "assets").mkdir()
         (site / "assets" / "app.js").write_text("export {};", encoding="utf-8")
-        replies = {'name:"troxaia-atyxhmata"': (200, REPLY), 'name:"portal-in-trouble"': (503, "busy")}
+        replies = {'name:"troxaia-atyxhmata"': (200, REPLY), 'name:"portal-in-trouble"': (503, "busy"),
+                   "q=τροχαία ατυχήματα": (200, SEARCH_REPLY)}
         cls.portal = cls.enterClassContext(FakePortal(replies))
         cls.model, model_address = cls.enterClassContext(model_stub())
         cls.server = preview.preview_server(site, port=0, portal=cls.portal.url, model=model_address)
@@ -70,6 +75,22 @@ class PreviewTest(unittest.TestCase):
     def test_unknown_address_gets_the_page_of_the_site(self):
         status, _, body = answer_of(self.address + "/no/such/page")
         self.assertEqual((status, body), (404, "<p>no such page</p>"))
+
+    def test_search_by_words_passes_on_only_the_five_facts_of_each_dataset(self):
+        before = len(self.portal.requests)
+        status, _, body = answer_of(self.address + "/api/record?q=" + quote('τροχαία: ατυχήματα"') + "&rows=8")
+        self.assertEqual(status, 200)
+        self.assertEqual(json.loads(body), {"count": 1, "results": [
+            {"name": "troxaia-atyxhmata", "title": "Τροχαία ατυχήματα", "organization": "ΕΛΣΤΑΤ",
+             "modified": "2026-03-12T10:20:00", "resources": 4}]})
+        self.assertEqual(self.portal.requests[before]["query"], {"q": "τροχαία ατυχήματα", "rows": "8"})
+
+    def test_search_that_is_too_short_or_asks_too_many_datasets_is_refused_unasked(self):
+        before = len(self.portal.requests)
+        for query in ("q=%CE%B1", "q=" + quote("ατυχήματα") + "&rows=21", "q=" + quote("ατυχήματα") + "&name=troxaia-atyxhmata"):
+            status, _, body = answer_of(self.address + "/api/record?" + query)
+            self.assertEqual((status, json.loads(body)), (400, {"error": "request"}), query)
+        self.assertEqual(len(self.portal.requests), before)
 
     def test_relay_asks_the_portal_once_and_passes_its_reply_on(self):
         before = len(self.portal.requests)

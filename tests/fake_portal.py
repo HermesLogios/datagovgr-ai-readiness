@@ -11,7 +11,8 @@ from urllib.parse import parse_qs, urlsplit
 
 
 class FakePortal:
-    """Serves prepared replies, keyed by the value of the fq parameter of the request."""
+    """Serves prepared replies, keyed by the value of the fq parameter of the request, or by q= and the words of a
+    search."""
 
     def __init__(self, replies: dict[str, tuple[int, str]]):
         self.replies = replies
@@ -23,7 +24,8 @@ class FakePortal:
                 parts = urlsplit(self.path)
                 query = {key: values[0] for key, values in parse_qs(parts.query).items()}
                 portal.requests.append({"path": parts.path, "query": query, "user_agent": self.headers.get("User-Agent")})
-                status, body = portal.replies.get(query.get("fq", ""), (200, found_reply([])))
+                key = query["fq"] if "fq" in query else f"q={query.get('q', '')}"
+                status, body = portal.replies.get(key, (200, found_reply([])))
                 payload = body.encode("utf-8")
                 self.send_response(status)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
