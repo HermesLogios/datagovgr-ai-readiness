@@ -204,7 +204,7 @@ def write_page(path: Path, document: str) -> None:
 def write_pages(output: Path, portal: str, indexing: bool, versions: dict[str, str]) -> None:
     """Writes the home page, the page of the second opinion, the guide, the page of the criteria and the terms in
     both languages, and the page of an unknown address."""
-    from aiready.criteria import CRITERIA_VERSION, load_criteria
+    from aiready.criteria import load_criteria
     from aiready.texts import DEFAULT_LANGUAGE, LANGUAGES, load_texts
     from web import browser, pages, release
 
@@ -242,14 +242,14 @@ def write_pages(output: Path, portal: str, indexing: bool, versions: dict[str, s
                  pages.CRITERIA_PAGE: pages.criteria_main_html(texts, criteria), "terms": pages.terms_main_html(texts)}
         for page, main in mains.items():
             document = pages.document_html(
-                page, texts, main, criteria_version=CRITERIA_VERSION, assets_version=versions["assets"],
-                indexing=indexing, settings=settings if page == "home" else {"language": language},
+                page, texts, main, assets_version=versions["assets"], indexing=indexing,
+                settings=settings if page == "home" else {"language": language},
             )
             write_page(output / pages.page_path(page, language).lstrip("/") / "index.html", document)
         if language == DEFAULT_LANGUAGE:
             missing = pages.document_html(
-                pages.MISSING_PAGE, texts, pages.missing_main_html(texts), criteria_version=CRITERIA_VERSION,
-                assets_version=versions["assets"], settings={"language": language},
+                pages.MISSING_PAGE, texts, pages.missing_main_html(texts), assets_version=versions["assets"],
+                settings={"language": language},
             )
             write_page(output / "404.html", missing)
 

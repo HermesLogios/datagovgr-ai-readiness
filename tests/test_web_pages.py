@@ -60,12 +60,12 @@ class DocumentTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.texts = load_texts("el")
-        cls.document = pages.document_html("guide", cls.texts, "<p>main part</p>", criteria_version="1.2")
+        cls.document = pages.document_html("guide", cls.texts, "<p>main part</p>")
 
     def test_document_declares_its_language_and_its_name(self):
         self.assertTrue(self.document.startswith('<!DOCTYPE html>\n<html lang="el">'))
         self.assertIn("<title>Οδηγός χρήσης | Έλεγχος ετοιμότητας δεδομένων</title>", self.document)
-        english = pages.document_html("home", load_texts("en"), "", criteria_version="1.2")
+        english = pages.document_html("home", load_texts("en"), "")
         self.assertIn('<html lang="en">', english)
         self.assertIn("<title>Data readiness check</title>", english)
 
@@ -105,25 +105,31 @@ class DocumentTest(unittest.TestCase):
         self.assertIn('<a href="/criteria/">Κριτήρια</a>', navigation)
 
     def test_page_of_the_criteria_is_marked_in_the_navigation_and_named_in_the_title(self):
-        english = pages.document_html("criteria", load_texts("en"), "", criteria_version="1.2")
+        english = pages.document_html("criteria", load_texts("en"), "")
         self.assertIn('<a href="/en/criteria/" aria-current="page">Criteria</a>', english)
         self.assertIn("<title>Criteria | Data readiness check</title>", english)
         self.assertIn('<a href="/criteria/" lang="el" hreflang="el">Ελληνικά</a>', english)
-        english = pages.document_html("opinion", load_texts("en"), "", criteria_version="1.2")
+        english = pages.document_html("opinion", load_texts("en"), "")
         self.assertIn('<a href="/en/second-opinion/" data-opinion-link aria-current="page">AI second opinion</a>', english)
         self.assertIn("<title>AI second opinion | Data readiness check</title>", english)
 
     def test_footer_shows_the_version_of_the_application_and_its_day(self):
         footer = block(self.document, "<footer", "</footer>")
-        self.assertRegex(release.VERSION, r"^\d+\.\d+$")
+        self.assertRegex(release.VERSION, r"^\d+\.\d+(\.\d+)?$")
         self.assertIn('<p class="site-version"><span class="visually-hidden">Έκδοση της εφαρμογής: </span>'
                       f"v{release.VERSION} · {self.texts.date(release.RELEASED)}</p>", footer)
-        english = pages.document_html("home", load_texts("en"), "", criteria_version="1.2")
+        english = pages.document_html("home", load_texts("en"), "")
         self.assertIn(f"v{release.VERSION} · {load_texts('en').date(release.RELEASED)}</p>", english)
+
+    def test_only_number_at_the_foot_of_a_page_is_the_version_of_the_application(self):
+        for language in ("el", "en"):
+            footer = block(pages.document_html("home", load_texts(language), ""), "<footer", "</footer>")
+            self.assertNotRegex(block(footer, "<p>", "</p>"), r"\d", language)
+            self.assertEqual(len(re.findall(r">[^<]*\d[^<]*<", footer)), 1, language)
 
     def test_footer_names_the_study_and_links_the_code_and_the_terms(self):
         footer = block(self.document, "<footer", "</footer>")
-        self.assertIn("Κριτήρια αξιολόγησης, έκδοση 1.2.", footer)
+        self.assertTrue(block(footer, "<p>", "</p>").endswith("του Πανεπιστημίου Αιγαίου στην ΕΕΛΛΑΚ.</p>"))
         self.assertIn('href="https://github.com/HermesLogios/datagovgr-ai-readiness" target="_blank" rel="noopener noreferrer"',
                       footer)
         self.assertIn('<a href="/terms/">Όροι χρήσης και δεδομένα</a>', footer)
@@ -353,6 +359,13 @@ class ResultTest(unittest.TestCase):
     def test_result_ends_with_what_the_result_is_not(self):
         self.assertIn("Το αποτέλεσμα είναι ενδεικτικό και δεν είναι επίσημη αξιολόγηση.", self.result)
 
+    def test_note_under_a_result_names_no_version_of_the_criteria(self):
+        for language in ("el", "en"):
+            texts = load_texts(language)
+            note = block(pages.result_html(page_model(EXAMPLE, language), texts), '<p class="result-disclaimer">', "<a ")
+            self.assertEqual(note, f'<p class="result-disclaimer">{escape(texts.text("result.disclaimer"))} <a ')
+            self.assertNotRegex(note, r"\d", language)
+
 
 class StatusIconTest(unittest.TestCase):
     def test_every_status_has_its_own_drawing_hidden_from_screen_readers(self):
@@ -441,7 +454,7 @@ class OtherPagesTest(unittest.TestCase):
                      pages.opinion_main_html(texts), pages.guide_main_html(texts), pages.terms_main_html(texts),
                      pages.criteria_main_html(texts, CRITERIA))
             for part in parts:
-                document = pages.document_html("home", texts, part, criteria_version="1.2")
+                document = pages.document_html("home", texts, part)
                 shown = re.sub(r' data-[a-z-]+="[^"]*"', "", document)   # texts that the script of the page fills in
                 self.assertIsNone(re.search(r"\{[a-z_]+\}", shown), language)
 

@@ -149,8 +149,8 @@ def text_with_link(texts: Texts, key: str, link: str, **values) -> str:
     return link.join(escape(part) for part in texts.text(key, link="\0", **values).split("\0"))
 
 
-def document_html(page: str, texts: Texts, main: str, *, criteria_version: str, assets_version: str = "",
-                  indexing: bool = False, settings: dict[str, str] | None = None) -> str:
+def document_html(page: str, texts: Texts, main: str, *, assets_version: str = "", indexing: bool = False,
+                  settings: dict[str, str] | None = None) -> str:
     """Whole document of a page: head, header, the main part and the footer.
 
     The settings become data attributes of the body, where the script of the page reads them.
@@ -179,7 +179,7 @@ def document_html(page: str, texts: Texts, main: str, *, criteria_version: str, 
         f'<link rel="stylesheet" href="/assets/style.css{version}">\n'
         f'<script type="module" src="/assets/app.js{version}"></script>\n</head>\n'
         f'<body{attributes}>\n<a class="skip-link" href="#main">{escape(texts.text("nav.skip"))}</a>\n'
-        f'{header_html(texts, page)}\n<main id="main">{main}</main>\n{footer_html(texts, criteria_version, address)}\n'
+        f'{header_html(texts, page)}\n<main id="main">{main}</main>\n{footer_html(texts, address)}\n'
         f'</body>\n</html>\n'
     )
 
@@ -215,7 +215,7 @@ def header_html(texts: Texts, page: str) -> str:
     )
 
 
-def footer_html(texts: Texts, criteria_version: str, address: str = "") -> str:
+def footer_html(texts: Texts, address: str = "") -> str:
     """Credit of the study, the links to the code, to an issue about a mistake on the page at the given address
     and to the terms, and the version of the page with the day of that version."""
     version = texts.text("footer.version", version=release.VERSION, date=texts.date(release.RELEASED))
@@ -223,7 +223,7 @@ def footer_html(texts: Texts, criteria_version: str, address: str = "") -> str:
     report = issue_address(texts.text("report.title"), issue_lines(texts, *facts))
     return (
         f'<footer class="site-footer"><div class="wrap site-footer-inner">'
-        f'<p>{escape(texts.text("footer.credit", criteria_version=criteria_version))}</p>'
+        f'<p>{escape(texts.text("footer.credit"))}</p>'
         f'<div class="footer-row"><ul class="footer-links"><li><a href="{REPOSITORY_URL}" {NEW_TAB}>{line_icon("code-xml")}'
         f'{escape(texts.text("footer.source"))}</a></li>'
         f'<li><a href="{escape(report)}" {NEW_TAB}>{escape(texts.text("footer.report"))}{new_tab_note(texts)}</a></li>'
@@ -496,7 +496,7 @@ def result_html(model: PageModel, texts: Texts, example: bool = False) -> str:
     return (
         f'<article class="result" data-dataset="{escape(model.name)}">{head}{tabs_html(model, texts)}'
         + "".join(panel_html(name, panels[name], shown=position == 0) for position, (name, _) in enumerate(TABS))
-        + f'<p class="result-disclaimer">{escape(texts.text("footer.disclaimer", criteria_version=model.criteria_version))} '
+        + f'<p class="result-disclaimer">{escape(texts.text("result.disclaimer"))} '
         f"{result_report_html(model, texts)}</p></article>"
     )
 

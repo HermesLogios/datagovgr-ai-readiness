@@ -31,8 +31,8 @@ class PreviewTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.texts = load_texts("el")
-        cls.document = pages.document_html("criteria", cls.texts, "<p>κείμενο</p>", criteria_version="1.2")
-        cls.english = pages.document_html("guide", load_texts("en"), "<p>text</p>", criteria_version="1.2")
+        cls.document = pages.document_html("criteria", cls.texts, "<p>κείμενο</p>")
+        cls.english = pages.document_html("guide", load_texts("en"), "<p>text</p>")
 
     def test_shared_link_shows_the_title_the_description_and_the_address_of_the_page(self):
         title = re.search(r"<title>([^<]+)</title>", self.document)[1]
@@ -62,7 +62,7 @@ class ReportLinkTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.texts = load_texts("el")
-        cls.document = pages.document_html("criteria", cls.texts, "<p>κείμενο</p>", criteria_version="1.2")
+        cls.document = pages.document_html("criteria", cls.texts, "<p>κείμενο</p>")
         cls.model = page_model(EXAMPLE)
         cls.result = pages.result_html(cls.model, cls.texts)
 
