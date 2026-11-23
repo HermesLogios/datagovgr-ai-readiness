@@ -1,0 +1,25 @@
+sample_id,in_annex,annex_point,category_by_content,marking,reason
+S01,yes,1.1 Cadastral parcels,Geospatial,correct,Cadastral parcels of the operating cadastre.
+S02,yes,1.1 Administrative units,Geospatial,not marked,Boundaries of all the municipalities of the country (DECISIONS.md #17).
+S03,doubtful,6.1 Transport networks,Mobility,,"GTFS feed of the metro, the electric railway and the tram of Athens: the stops and the lines resemble a transport network, while timetables stay outside the INSPIRE specification of the theme; the publisher declares the geospatial category."
+S04,yes,2.1 Water (Directive 2000/60/EC) and environmental information,Earth observation and environment,other category,Register of water abstraction points; the publisher declares the geospatial category.
+S05,no,,,,"List of care units for the elderly, with address and contact details: none of the seven geospatial datasets of point 1.1."
+S06,no,,,,Road accidents per year: not among the statistical datasets listed in point 4.1.
+S07,no,,,,Deliveries of raw milk per month and regional unit: not among the statistical datasets listed in point 4.1.
+S08,no,,,,Number of teachers of secondary education by specialty: not among the statistical datasets listed in point 4.1.
+S09,no,,,,Waiting list of doctors for specialisation: not among the statistical datasets listed in point 4.1 (DECISIONS.md #32).
+S10,yes,4.1 Harmonised indices of consumer prices,Statistics,correct,Harmonised index of consumer prices of the national statistical authority.
+S11,doubtful,6.1 Transport networks,Mobility,,"GTFS feed of the buses and trolleybuses of Athens: as S03, declared in the mobility category."
+S12,doubtful,6.1 Transport networks,Mobility,,"GTFS feeds of the urban buses of Thessaloniki: as S03, declared in the mobility category."
+S13,doubtful,6.1 Transport networks,Mobility,,"GTFS feed of the urban transport of Thessaloniki: as S03, declared in the mobility category."
+S14,doubtful,"3.1, 2.1 and 6.1 in part",,,"Snapshots of the smart-city service of a municipality: weather observations and forecasts, environmental measurements, quality of coastal waters, parking, sensors. The weather and environmental parts correspond to other categories than the declared one (Mobility), and the occupancy of parking places is not a transport network."
+S15,doubtful,6.1 Transport networks,Mobility,,"Locations of the parking areas of a municipality: infrastructure related to the road network, published as a local list of points."
+S16,yes,2.1 Protected sites,Earth observation and environment,other category,Designated Natura 2000 sites; the publisher declares the geospatial category (DECISIONS.md #17).
+S17,yes,"2.1 Energy resources, Production and industrial facilities and environmental information",Earth observation and environment,correct with one more category,Licensed stations of electricity production from renewable sources; the second declared category (Geospatial) does not correspond.
+S18,yes,2.1 Land cover,Earth observation and environment,not marked,CORINE Land Cover changes 2012-2018 (DECISIONS.md #17).
+S19,yes,3.1 Observations data measured by weather stations,Meteorological,correct,Observations of a station of the national meteorological service.
+S20,yes,3.1 Climate data: validated observations,Meteorological,correct,"Daily meteorological parameters of 54 stations, 2010-2023."
+S21,yes,3.1 Climate data: validated observations,Meteorological,other category,Rainfall records of 56 stations (DECISIONS.md #17); the publisher declares the categories Earth observation and environment and Geospatial.
+S22,no,,,,Provisional ranking tables of investment plans: neither basic company information nor company documents and accounts (point 5.1).
+S23,yes,5.1 Basic company information,Companies and company ownership,not marked,Business register data of a chamber of commerce (DECISIONS.md #17).
+S24,yes,2.1 Environmental information (Directive 2003/4/EC),Earth observation and environment,correct with one more category,Decisions approving environmental terms; the second declared category (Companies and company ownership) does not correspond.

@@ -41,7 +41,7 @@ class ExcelReportTest(unittest.TestCase):
         self.assertEqual(values["Διεύθυνση"], "https://data.gov.gr/dataset/troxaia-atyxhmata")
         self.assertEqual(values["Σύνοψη"], "5 από τους 9 ελέγχους είναι εντάξει. Οι άλλοι 4 πληρούνται εν μέρει.")
         self.assertIn("στιγμιότυπο της 24/10/2026", values["Μεταδεδομένα"])
-        self.assertIn("έκδοση 1.2", values["Κριτήρια"])
+        self.assertIn("έκδοση 1.3", values["Κριτήρια"])
 
     def test_checks_sheet_has_one_row_per_check(self):
         rows = rows_of(self.workbook["Έλεγχοι"])

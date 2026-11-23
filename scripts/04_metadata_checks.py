@@ -153,7 +153,10 @@ Method notes:
     verified against the content of the files in the download test of the sample (Step 2), which
     can change the score in either direction: a file declared CSV that is a PDF counts as PDF, a
     TXT file that holds a delimited table counts as CSV, a TIFF with georeferencing counts as
-    GeoTIFF.
+    GeoTIFF. A file that the portal has also loaded in its DataStore (datastore_active) is rated
+    3 stars whatever its declared format, since the portal serves its records as JSON through the
+    DataStore API (DECISIONS.md #56); the resources rated in this way are counted in the column
+    q6_stars_3_datastore.
 
 Usage (from the project root, with the .venv activated):
     python scripts\04_metadata_checks.py
@@ -342,6 +345,7 @@ NAME_HINTS = [             # a format named in the resource name or at the end o
 STARS = {3: "3 stars or more: open structured format", 2: "2 stars: vendor-specific structured format",
          1: "1 star: unstructured format or map view", 0: "undetermined"}
 Q6_SCORE = {3: 2, 2: 1, 1: 0}
+DATASTORE_NEXT_TO_FILE = "DataStore table of the portal next to a file"   # start of the reason of such a resource
 
 # M7: persistent identifiers. The portal gives every dataset and resource a permanent identifier
 # and URI; the criterion is decided by the addresses of the resources (DECISIONS.md #33).
@@ -673,8 +677,8 @@ def format_hint(resource: dict) -> tuple[int, str] | None:
     return None
 
 
-def format_stars(resource: dict) -> tuple[int, str]:
-    """The level of a resource on the 5-star scale, from the metadata: (3, 2, 1 or 0 = undetermined, reason)."""
+def declared_stars(resource: dict) -> tuple[int, str]:
+    """The level of a resource from its address and its declared format: (3, 2, 1 or 0 = undetermined, reason)."""
     mode, _, _ = distribution_mode(resource)
     if mode == "none":
         return 0, "no address"
@@ -735,6 +739,18 @@ def format_stars(resource: dict) -> tuple[int, str]:
     if declared:
         return 0, f"format {declared} not classed"
     return 0, "no format declared"
+
+
+def format_stars(resource: dict) -> tuple[int, str]:
+    """The level of a resource on the 5-star scale, from the metadata: (3, 2, 1 or 0 = undetermined, reason).
+
+    A file that the portal has also loaded in its DataStore reaches 3 stars whatever its declared format: the portal
+    serves its records as JSON through the DataStore API (DECISIONS.md #56).
+    """
+    level, reason = declared_stars(resource)
+    if level < 3 and reason != "no address" and resource.get("datastore_active"):
+        return 3, f"{DATASTORE_NEXT_TO_FILE} ({reason})"
+    return level, reason
 
 
 def address_host(resource: dict) -> str:
@@ -1113,6 +1129,7 @@ def check_q6(dataset: dict) -> dict:
         "q6_resources": len(resources),
         "q6_levels": "; ".join(f"{count} {reason}" for reason, count in grouped.most_common()),
         "q6_stars_3": counts[3],
+        "q6_stars_3_datastore": sum(1 for _, reason in levels if reason.startswith(DATASTORE_NEXT_TO_FILE)),
         "q6_stars_2": counts[2],
         "q6_stars_1": counts[1],
         "q6_undetermined": undetermined,
@@ -1224,11 +1241,16 @@ def build_summary(frame: pd.DataFrame, date: str, snapshot_name: str) -> str:
             no_resources = int((frame["q6_resources"] == 0).sum())
             undetermined = n - len(subset) - no_resources
             provisional = int(frame["q6_provisional"].sum())
-            lines += ["", f"Rated from the declared formats, pending the content check of the sample. Counted over the "
+            through_datastore = int(((frame["q6_best_stars"] == 3) & (frame["q6_stars_3_datastore"] > 0)
+                                     & (frame["q6_stars_3"] == frame["q6_stars_3_datastore"])).sum())
+            lines += ["", "Rated from the declared formats and the DataStore tables of the portal; the content of the "
+                      "files is verified only in the sample (DECISIONS.md #35, #56). Counted over the "
                       f"{fmt_int(len(subset))} datasets whose best resource has a known level; {fmt_int(undetermined)} "
                       "datasets are undetermined (compressed archives whose content is not named, or no format) and "
                       f"{fmt_int(no_resources)} have no resources. {fmt_int(provisional)} of the rated datasets are "
-                      "provisional: an archive with unknown content could raise their level."]
+                      "provisional: an archive with unknown content could raise their level. "
+                      f"{fmt_int(through_datastore)} datasets reach 3 stars only through the DataStore of the portal, "
+                      "which serves as JSON the records of files uploaded in a vendor-specific format."]
         total = len(subset)
         scores = subset[f"{key}_score"].value_counts()
         lines += ["", "| Proposed score | Datasets | Share |", "| --- | ---: | ---: |"]

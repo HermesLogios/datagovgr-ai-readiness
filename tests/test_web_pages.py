@@ -881,7 +881,7 @@ class CriteriaPageTest(unittest.TestCase):
     def test_page_leads_to_the_full_text_of_the_criteria_in_the_repository(self):
         self.assertIn('<a href="https://github.com/HermesLogios/datagovgr-ai-readiness/blob/main/criteria/criteria.md" '
                       f"{NEW_TAB}>", self.page)
-        self.assertIn("έκδοση 1.2", self.page[self.page.index('<h2 id="source">'):])
+        self.assertIn("έκδοση 1.3", self.page[self.page.index('<h2 id="source">'):])
 
     def test_no_address_of_the_page_is_used_twice_and_no_style_is_written_inline(self):
         addresses = re.findall(r' id="([^"]+)"', self.page)

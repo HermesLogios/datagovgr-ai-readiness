@@ -353,18 +353,18 @@ Sample: 8 datasets with 2, 12 datasets with 1, 2 datasets with 0, 14 not determi
 | S01 | [Γεωτεμάχια (όρια και ΚΑΕΚ) των περιοχών του "Λειτουργούντος Κτηματολογίου"](https://data.gov.gr/dataset/geotemachia-oria-kai-kaek-ton-periochon-toy-leitoyrgoyntos-ktimatologioy) | 1 | 2 stars: vendor-specific structured format: 13 at 2 stars |
 | S02 | [Καλλικρατικοί Δήμοι](https://data.gov.gr/dataset/gis-ypen-wfd-wms-kallikratikoi_dimoi) | 2 | 3 stars or more: open structured format: 4 at 3 stars, 1 at 2 stars, 2 at 1 star |
 | S03 | [Δρομολόγια Σταθερών Συγκοινωνιών (ΜΕΤΡΟ, ΗΣΑΠ, ΤΡΑΜ)](https://data.gov.gr/dataset/dromologia-statheron-sygkoinonion-metro-isap-tram) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
-| S04 | [Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης](https://data.gov.gr/dataset/simeia-ydrolipsias-tis-geovasis-emsy-ethniko-mitroo-simeion-ydrolipsias-periochi-anatolikis-makedoni) | 1 | 2 stars: vendor-specific structured format: 4 at 2 stars |
+| S04 | [Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης](https://data.gov.gr/dataset/simeia-ydrolipsias-tis-geovasis-emsy-ethniko-mitroo-simeion-ydrolipsias-periochi-anatolikis-makedoni) | 2 | 3 stars or more: open structured format: 2 at 3 stars, 2 at 2 stars |
 | S05 | [Λίστα με Μονάδες Φροντίδας Ηλικιωμένων](https://data.gov.gr/dataset/attica-43-lista-me-monades-frontidas-hlikiwmenwn) | 0 | 1 star: unstructured format or map view: 2 at 1 star |
 | S06 | [Τροχαία ατυχήματα](https://data.gov.gr/dataset/troxaia-atyxhmata) | 1 | 2 stars: vendor-specific structured format: 12 at 2 stars |
 | S07 | [Διαχείριση Στοιχείων Παραγωγής Νωπού Γάλακτος](https://data.gov.gr/dataset/diacheirisi-stoicheion-paragogis-nopoy-galaktos) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
-| S08 | ["ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ ΔΗΜΟΣΙΑΣ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ ΔΙΕΥΘΥΝΣΗ ΕΚΠΑΙΔΕΥΣΗΣ ΓΙΑ ΤΟ ΣΧΟΛΙΚΟ ΕΤΟΣ 2024-2025 "](https://data.gov.gr/dataset/arithmos-ekpaideytikon-deyterovathmia-eidikotita-schesi-ergasias-2025) | 1 | 2 stars: vendor-specific structured format: 1 at 2 stars |
+| S08 | ["ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ ΔΗΜΟΣΙΑΣ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ ΔΙΕΥΘΥΝΣΗ ΕΚΠΑΙΔΕΥΣΗΣ ΓΙΑ ΤΟ ΣΧΟΛΙΚΟ ΕΤΟΣ 2024-2025 "](https://data.gov.gr/dataset/arithmos-ekpaideytikon-deyterovathmia-eidikotita-schesi-ergasias-2025) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
 | S09 | [Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής](https://data.gov.gr/dataset/attica-92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020) | 1 | 2 stars: vendor-specific structured format: 6 at 2 stars |
 | S10 | [ΕΝΑΡΜΟΝΙΣΜΕΝΟΣ ΔΕΙΚΤΗΣ ΤΙΜΩΝ ΚΑΤΑΝΑΛΩΤΗ (ΕνΔΤΚ)](https://data.gov.gr/dataset/enarmonismenos-deiktis-timon-katanaloti-endtk) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
 | S11 | [Δρομολόγια Οδικών Συγκοινωνιών (Λεωφορεία, Τρόλεϊ)](https://data.gov.gr/dataset/dromologia-odikon-sygkoinonion-leoforeia-trolei) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
 | S12 | [Δεδομένα αστικών συγκοινωνιών Π.Ε. Θεσσαλονίκης](https://data.gov.gr/dataset/dedomena-astikon-sygkoinonion-p-e-thessalonikis) | 2 | 3 stars or more: open structured format: 12 at 3 stars |
 | S13 | [Σύνολα Δεδομένων Οργανισμού Αστικών Συγκοινωνιών - GTFS](https://data.gov.gr/dataset/oasth-gtfs) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
 | S14 | [Υπηρεσίες Δήμου Πατρέων](https://data.gov.gr/dataset/ypiresies-dimoy-patreon) | 2 | 3 stars or more: open structured format: 131 at 3 stars |
-| S15 | [ΧΩΡΟΙ - ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ](https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-prosvasi) | 2 | 3 stars or more: open structured format: 2 at 3 stars, 1 at 2 stars |
+| S15 | [ΧΩΡΟΙ - ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ](https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-prosvasi) | 2 | 3 stars or more: open structured format: 3 at 3 stars |
 | S16 | [Θεσμοθετημένες περιοχές NATURA 2000](https://data.gov.gr/dataset/thesmothetimenes-perioches-natura-2000) | 1 | 2 stars: vendor-specific structured format: 1 at 2 stars |
 | S17 | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) | 1 | 2 stars: vendor-specific structured format: 1 at 2 stars, 1 at 1 star |
 | S18 | [Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018](https://data.gov.gr/dataset/gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012_2018) | 2 | 3 stars or more: open structured format: 4 at 3 stars, 1 at 2 stars, 2 at 1 star |
@@ -375,7 +375,7 @@ Sample: 8 datasets with 2, 12 datasets with 1, 2 datasets with 0, 14 not determi
 | S23 | [Athens Business Open Data - STIRData model](https://data.gov.gr/dataset/athens-business-open-data-stirdata-model) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
 | S24 | [ΑΠΟΦΑΣΕΙΣ ΕΓΚΡΙΣΗΣ ΠΕΡΙΒΑΛΛΟΝΤΙΚΩΝ ΟΡΩΝ (ΛΕΣΒΟΣ-ΛΗΜΝΟΣ)](https://data.gov.gr/dataset/apofaseis-egkrisis-perivallontikon-oron-lesvos-limnos) | 2 | 3 stars or more: open structured format: 7 at 3 stars |
 | S25 | [ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΦΕΒΡΟΥΑΡΙΟΥ 2017](https://data.gov.gr/dataset/statistika-diatrofhs-febroyarioy-2017) | 1 | 2 stars: vendor-specific structured format: 1 at 2 stars |
-| S26 | [ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΜΑΡΤΙΟΣ 2020](https://data.gov.gr/dataset/statistika-ix8yoskalas-8essalonikhs-martios-2020) | 1 | 2 stars: vendor-specific structured format: 1 at 2 stars |
+| S26 | [ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΜΑΡΤΙΟΣ 2020](https://data.gov.gr/dataset/statistika-ix8yoskalas-8essalonikhs-martios-2020) | 2 | 3 stars or more: open structured format: 1 at 3 stars |
 | S27 | [ΤΡΟΠΟΠΟΙΗΣΗ ΡΥΜΟΤΟΜΙΚΟΥ (ΦΕΚ 463/Δ/1998-07-03)](https://data.gov.gr/dataset/gis-agrinio-wms-only-agriniotrm-trm_ras_123107fs000463_1998_geo) | 0 | 1 star: unstructured format or map view: 3 at 1 star |
 | S28 | [Σχέδιο ΠΕ περιοχής Ατσαλένιο / Μωσαϊκό](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliopef-pef_ras_atsalenio_mosaic_geo) | 0 | 1 star: unstructured format or map view: 3 at 1 star |
 | S29 | [ΠΙΝΑΚΕΣ ΤΙΜΟΛΗΨΙΩΝ ΣΥΡΟΥ](https://data.gov.gr/dataset/pinakes-timolhpsiwn-syroy) | 1 | 2 stars: vendor-specific structured format: 1 at 2 stars |
@@ -387,4 +387,4 @@ Sample: 8 datasets with 2, 12 datasets with 1, 2 datasets with 0, 14 not determi
 | S35 | [Συνεδριάσεις Επιτροπής Αθλητισμού & Παιδείας Περιφέρειας Αττικής](https://data.gov.gr/dataset/attica-443-synedriaseis-epitrophs-athlhtismoy-paideias-perifereias-attikhs) | 0 | 1 star: unstructured format or map view: 1 at 1 star |
 | S36 | [Διάγραμμα Τροποποίησης - T1936A404_69912_500_01](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliotsp-t1936a404_69912_500_01) | 0 | 1 star: unstructured format or map view: 3 at 1 star |
 
-Sample: 14 datasets with 2, 12 datasets with 1, 9 datasets with 0, 1 not determined.
+Sample: 17 datasets with 2, 9 datasets with 1, 9 datasets with 0, 1 not determined.

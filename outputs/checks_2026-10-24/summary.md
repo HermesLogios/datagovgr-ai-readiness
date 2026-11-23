@@ -309,31 +309,31 @@ Metadata part only: the declared frequency against the last upload known to the 
 
 ## Q6 Format (5-star scale)
 
-Rated from the declared formats, pending the content check of the sample. Counted over the 22,172 datasets whose best resource has a known level; 560 datasets are undetermined (compressed archives whose content is not named, or no format) and 73 have no resources. 647 of the rated datasets are provisional: an archive with unknown content could raise their level.
+Rated from the declared formats and the DataStore tables of the portal; the content of the files is verified only in the sample (DECISIONS.md #35, #56). Counted over the 22,172 datasets whose best resource has a known level; 560 datasets are undetermined (compressed archives whose content is not named, or no format) and 73 have no resources. 646 of the rated datasets are provisional: an archive with unknown content could raise their level. 609 datasets reach 3 stars only through the DataStore of the portal, which serves as JSON the records of files uploaded in a vendor-specific format.
 
 | Proposed score | Datasets | Share |
 | --- | ---: | ---: |
-| 2 | 6,605 | 29.8% |
-| 1 | 5,324 | 24.0% |
+| 2 | 7,214 | 32.5% |
+| 1 | 4,715 | 21.3% |
 | 0 | 10,243 | 46.2% |
 
 | Reason | Datasets |
 | --- | ---: |
 | 1 star | 10,243 |
-| 3 stars or more | 6,605 |
-| 2 stars | 5,324 |
+| 3 stars or more | 7,214 |
+| 2 stars | 4,715 |
 
 | Level of the resources | Resources | Datasets with at least one |
 | --- | ---: | ---: |
-| 3 stars or more: open structured format | 21,603 | 6,605 |
-| 2 stars: vendor-specific structured format | 22,034 | 9,928 |
+| 3 stars or more: open structured format | 22,336 | 7,214 |
+| 2 stars: vendor-specific structured format | 21,301 | 9,294 |
 | 1 star: unstructured format or map view | 41,315 | 15,072 |
 | undetermined | 1,767 | 734 |
 
 | Best level of the dataset | Datasets | Share |
 | --- | ---: | ---: |
-| 3 stars or more: open structured format | 6,605 | 29.0% |
-| 2 stars: vendor-specific structured format | 5,324 | 23.3% |
+| 3 stars or more: open structured format | 7,214 | 31.6% |
+| 2 stars: vendor-specific structured format | 4,715 | 20.7% |
 | 1 star: unstructured format or map view | 10,243 | 44.9% |
 | undetermined | 560 | 2.5% |
 | no resources | 73 | 0.3% |
@@ -341,8 +341,8 @@ Rated from the declared formats, pending the content check of the sample. Counte
 | How the level of the resources was decided (most frequent) | Resources |
 | --- | ---: |
 | map view (WMS): a picture of the map, not the data | 31,713 |
-| vendor-specific format XLSX | 9,812 |
-| vendor-specific format XLS | 6,524 |
+| vendor-specific format XLSX | 9,415 |
+| vendor-specific format XLS | 6,188 |
 | unstructured format PDF | 5,361 |
 | WFS download in csv | 4,343 |
 | WFS download in shape-zip | 4,321 |
@@ -356,12 +356,12 @@ Rated from the declared formats, pending the content check of the sample. Counte
 | vendor-specific format .xls (address) | 591 |
 | open format ODS | 525 |
 | vendor-specific format .xlsx (address) | 443 |
+| DataStore table of the portal next to a file (vendor-specific format XLSX) | 397 |
 | unstructured format JPEG | 369 |
 | unstructured format DOCX | 348 |
+| DataStore table of the portal next to a file (vendor-specific format XLS) | 336 |
 | unstructured format .pdf (address) | 335 |
 | data service | 332 |
 | archive (RAR) with unknown content | 303 |
 | open format JSON | 278 |
 | open format XML | 267 |
-| unstructured format TXT | 178 |
-| OAI-PMH request (XML) | 156 |

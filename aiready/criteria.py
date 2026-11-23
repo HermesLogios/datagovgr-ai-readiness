@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CRITERIA_FILE = ROOT / "criteria" / "criteria.csv"
-CRITERIA_VERSION = "1.2"
+CRITERIA_VERSION = "1.3"
 
 # Criteria that are not scored from the metadata, grouped by what their assessment needs.
 NEEDS_FILES = ("Q1", "Q2", "Q3", "Q4", "AI1", "AI6")
