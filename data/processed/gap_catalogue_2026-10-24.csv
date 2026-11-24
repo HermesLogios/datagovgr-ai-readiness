@@ -1,0 +1,10 @@
+﻿criterion,level,name,counted_over,datasets,score_2,score_1,score_0,not_determined,below_two,share_below_two,provisional
+Q5,Quality,Timeliness,every dataset of the snapshot,22805,3520,900,3408,14977,4308,55.0,yes
+Q6,Quality,Format (5-star scale),every dataset of the snapshot,22805,7214,4715,10243,633,14958,67.5,
+M1,Metadata and legal status,Mandatory metadata,every dataset of the snapshot,22805,9130,12928,747,0,13675,60.0,
+M2,Metadata and legal status,Recommended metadata,every dataset of the snapshot,22805,7775,14718,312,0,15030,65.9,
+M3,Metadata and legal status,Controlled vocabularies,every dataset of the snapshot,22805,22053,671,81,0,752,3.3,
+M4,Metadata and legal status,Licence,every dataset of the snapshot,22805,21855,377,573,0,950,4.2,
+M6,Metadata and legal status,Mode of distribution,every dataset of the snapshot,22805,13974,8732,99,0,8831,38.7,
+M7,Metadata and legal status,Persistent identifier,every dataset of the snapshot,22805,22405,301,99,0,400,1.8,
+M9,Metadata and legal status,High-value designation,datasets with a high-value marking,1302,1122,180,0,0,180,13.8,

@@ -1,0 +1,31 @@
+name,group_by_reviewer,note
+gis-chania-wms-only-chaniaaer-aer96,both readings,"Georeferenced aerial photograph of 1983: orthoimagery, in a historical version, which point 2.1 includes expressly."
+gis-dytiki-lesvos-wms-lesvosvec-fld_poi_istorika_simvada_plimmiron,both readings,Historical floods of the Preliminary Flood Risk Assessment (Directive 2007/60/EC): natural risk zones and data of an EU act on water.
+gis-dytiki-lesvos-wms-lesvosvec-trn_lin_odiko_diktio_agr_das,both readings,Agricultural and forest roads: road network (point 6.1).
+gis-heraklion-wms-herakliovect-tps_pol_egkekrimeni_poleodomiki_enotita,both readings,Planning units of the Local Town Plan as vector polygons: land use (point 2.1).
+gis-heraklion-wms-only-herakliopef-pef_ras_atsalenio_mosaic_geo,broad reading only,"By its description, a mosaic of the scanned sheets of a draft implementation act: a scan of a single act (question 1)."
+gis-messolonghi-wms-mesvec-roa_lin_odiko_diktyo,both readings,Road network of the municipality (point 6.1).
+gis-perifereia-kritis-wms-civilpro-cprot_las_limania,both readings,Ports: part of the water transport network (point 6.1).
+gis-raaey-wms-rae_status-v_hydro_grouped7,both readings,Sites of small hydroelectric stations and water intakes at the stage of application: energy stations (proposal p2).
+gis-raaey-wms-rae_status-v_sdi_r_sithya_13,both readings,Combined heat and power installations with an operating licence: energy stations (proposal p2).
+gis-ypen-3311a5df-0ce2-4936-8378-94dff1c4de79,both readings,"Waters designated for the protection of aquatic species (Directive 2000/60/EC), INSPIRE theme area management, restriction and regulation zones."
+gis-chania-wms-only-chaniaand-and_ras_astanad_23_geo,broad reading only,"Scanned diagram of an urban land readjustment, an act for one area (question 1)."
+gis-chania-wms-only-chaniarym-rym_ras_kato_souda_epektasi_b_georef,broad reading only,"Scanned sheet of an approved street plan (GeoTIFF image, map view only) (question 1)."
+gis-heraklion-wms-only-herakliotsp-t1966d44_41185__16,broad reading only,"Scanned diagram of an amendment of the town plan, Government Gazette of 1966 (question 1)."
+gis-heraklion-wms-only-herakliotsp-t1968d199_31398__9,broad reading only,"Scanned diagram of an amendment of the town plan, Government Gazette of 1968 (question 1)."
+gis-keratsini-drapetsona-wms-only-rasrym-a_1985_06_11,broad reading only,"Scanned amendment of the town plan, with a Government Gazette sheet number in its tags (question 1)."
+gis-keratsini-drapetsona-wms-only-rasrym-a_1988_03_16_p2,broad reading only,"Scanned sheet of an amendment of the town plan, with a Government Gazette sheet number in its tags (question 1)."
+gis-maroussi-wms-only-maroussispm-spm_015797fs000116_2003e,broad reading only,Scanned diagram of Government Gazette 116/D/2003 (approval of a town-planning study and amendment of the plan) (question 1).
+gis-oraiokastro-wms-only-oraiokastro_trp-trp_ras_066037fs000403_2004e,broad reading only,Scanned amendment of the town plan in a single block (question 1).
+gis-papagou-cholargou-wms-only-papxol_rym-a_024346fs000685_1996e,broad reading only,Scanned street-plan diagram accompanying Government Gazette 685/D/1996 (question 1).
+gis-per-kritis-wms-only-ypenras-ypen_ras_12_arithmos_imeron_ana_etos_me_pr_meg_10_imeres-df80e969f9,broad reading only,"Borderline. Gridded climate index from the Ministry of Environment, not measurements of weather stations (point 3.1): state of the atmosphere (Article 2(1)(a)). Station measurements would be both readings."
+gis-agrinio-wms-agriniovec-oik_pol_oikismos_elstat_plithysmos,both readings,"Borderline. Settlements of ELSTAT (polygons with population, no description): names of settlements, hence geographical names (point 1.1), as in part 4a; counted only as population, it would be neither."
+gis-agrinio-wms-only-agrmel-mel_01_orizontiografia_odou_griva_n,broad reading only,Borderline. Scanned drawing of a study for the reconstruction of one street: neither an act nor a dataset of the road network; as a works project affecting land and landscape it is environmental information (Article 2(1)(c)).
+gis-chania-wms-chaniavec-mbm_poi_panoramic360_heron,neither,Points of street-level panoramic photographs: neither orthoimagery nor environmental information.
+gis-chania-wms-chaniavec-ugs_poi_tourist_services,neither,Services for tourists: points of interest.
+gis-chania-wms-only-chaniatop-top_ras_dianomi_1946_44_geo,neither,Borderline. Scanned sheet of a 1946 survey of the Old Town at 1:200: neither an act nor a dataset of buildings; built structures are environmental information only when affected by the environment (Article 2(1)(f)).
+gis-corfu-wms-corfu-kep_points,neither,Citizen service centres: public services.
+gis-ilion-wms-ilionvec-trp_lin_diadromes_leoforeion,neither,"Bus routes: public transport lines, not the transport network of point 6.1 (proposal p4)."
+gis-perifereia-kritis-wms-civilpro-cprot_las_dexamenes_v,neither,"Borderline. Tanks of the civil protection layer, without a description: as water tanks, water supply infrastructure (proposal p4); fuel tanks would be storage facilities (both readings)."
+gis-perifereia-kritis-wms-culture_athletics-cltath_poly_sports_facilities,neither,Sports facilities (source OSM): neither in the list nor environmental information.
+gis-perifereia-kritis-wms-socialintegration-parke_cre_1_genikos_roma_metanastes,neither,Population and social groups: neither in the list nor environmental information.

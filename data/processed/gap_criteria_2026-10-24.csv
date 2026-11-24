@@ -1,0 +1,24 @@
+﻿criterion,level,name,core,applies_to,applicable,score_2,score_1,score_0,not_applicable,not_measured,below_two,share_below_two,effort_low,effort_medium,effort_high,provisional,provisional_reason,datasets_below_two
+Q1,Quality,Availability,yes,all,36,29,3,4,0,0,7,19.4,3,4,0,,,S12 S14 S17 S21 S28 S34 S36
+Q2,Quality,Completeness,no,all,30,16,9,5,6,0,14,46.7,0,14,0,,,S04 S05 S08 S10 S14 S16 S17 S18 S19 S23 S24 S26 S29 S34
+Q3,Quality,Consistency,no,all,30,18,11,1,6,0,12,40.0,0,12,0,,,S04 S05 S06 S09 S14 S15 S21 S24 S26 S31 S32 S34
+Q4,Quality,Plausibility of values,no,all,30,20,6,4,6,0,10,33.3,0,7,3,,,S03 S04 S09 S12 S14 S15 S19 S20 S23 S34
+Q5,Quality,Timeliness,no,all,22,8,12,2,0,14,14,63.6,0,0,0,yes,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),S01 S04 S06 S08 S10 S11 S12 S14 S15 S16 S20 S22 S24 S31
+Q6,Quality,Format (5-star scale),yes,all,36,18,10,8,0,0,18,50.0,0,18,0,,,S01 S05 S06 S09 S16 S17 S21 S22 S25 S27 S28 S29 S30 S31 S32 S33 S35 S36
+M1,Metadata and legal status,Mandatory metadata,yes,all,36,23,11,2,0,0,13,36.1,13,0,0,,,S04 S06 S09 S12 S14 S19 S25 S26 S28 S29 S30 S31 S35
+M2,Metadata and legal status,Recommended metadata,no,all,36,17,19,0,0,0,19,52.8,19,0,0,,,S01 S02 S04 S08 S11 S13 S14 S16 S17 S18 S20 S21 S23 S27 S28 S30 S33 S35 S36
+M3,Metadata and legal status,Controlled vocabularies,no,all,36,31,4,1,0,0,5,13.9,5,0,0,,,S04 S05 S06 S11 S35
+M4,Metadata and legal status,Licence,yes,all,36,30,0,6,0,0,6,16.7,6,0,0,,,S01 S03 S05 S09 S11 S35
+M5,Metadata and legal status,Free access,no,all,33,33,0,0,3,0,0,0.0,0,0,0,,,
+M6,Metadata and legal status,Mode of distribution,no,all,36,27,6,3,0,0,9,25.0,0,9,0,,,S05 S17 S27 S28 S30 S33 S34 S35 S36
+M7,Metadata and legal status,Persistent identifier,no,all,36,33,3,0,0,0,3,8.3,3,0,0,,,S09 S12 S14
+M8,Metadata and legal status,Personal data,no,all,33,28,5,0,3,0,5,15.2,0,5,0,,,S07 S23 S24 S29 S35
+M9,Metadata and legal status,High-value designation,no,high-value,24,21,0,3,12,0,3,12.5,3,0,0,,,S02 S18 S23
+M10,Metadata and legal status,API and bulk download,no,high-value,24,9,15,0,12,0,15,62.5,1,1,13,,,S01 S02 S03 S05 S06 S09 S11 S12 S13 S14 S16 S17 S20 S22 S23
+AI1,AI-readiness,Machine-readable structure,yes,all,36,18,8,10,0,0,18,50.0,0,18,0,,,S05 S06 S08 S21 S22 S24 S25 S26 S27 S28 S29 S30 S31 S32 S33 S34 S35 S36
+AI2,AI-readiness,Documentation of the structure,yes,all,30,7,23,0,6,0,23,76.7,23,0,0,,,S02 S04 S05 S08 S09 S10 S12 S14 S15 S16 S17 S18 S19 S20 S22 S23 S24 S25 S26 S29 S31 S32 S34
+AI3,AI-readiness,Historical depth,no,all,29,5,13,11,7,0,24,82.8,0,24,0,,,S01 S03 S04 S05 S06 S08 S09 S11 S12 S13 S14 S15 S16 S17 S18 S21 S23 S24 S25 S26 S29 S31 S32 S34
+AI4,AI-readiness,Description in Croissant or a datasheet,no,all,36,4,28,4,0,0,32,88.9,32,0,0,,,S01 S02 S03 S04 S05 S08 S09 S10 S11 S12 S14 S15 S16 S17 S18 S19 S20 S22 S23 S24 S25 S26 S27 S28 S29 S30 S31 S32 S33 S34 S35 S36
+AI5,AI-readiness,Suitability for retrieval (RAG),no,all,36,11,19,6,0,0,25,69.4,0,25,0,,,S01 S05 S06 S08 S09 S12 S16 S17 S18 S21 S22 S23 S24 S25 S26 S27 S28 S29 S30 S31 S32 S33 S34 S35 S36
+AI6,AI-readiness,Linkage through common identifiers,no,all,36,19,13,4,0,0,17,47.2,0,17,0,,,S05 S06 S07 S09 S14 S19 S20 S21 S24 S25 S26 S28 S29 S32 S34 S35 S36
+AI7,AI-readiness,Declared limitations,no,all,36,1,14,21,0,0,35,97.2,35,0,0,,,S01 S02 S03 S04 S05 S06 S07 S08 S09 S10 S11 S12 S13 S14 S15 S16 S17 S18 S19 S21 S22 S23 S24 S25 S26 S27 S28 S29 S30 S31 S32 S33 S34 S35 S36

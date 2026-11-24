@@ -102,7 +102,7 @@ Low: metadata and documentation only. Medium: a change in the file itself. High:
 | Q1 | 7 | 3 | 4 | 0 | 0 |
 | Q2 | 14 | 0 | 14 | 0 | 0 |
 | Q3 | 12 | 0 | 12 | 0 | 0 |
-| Q4 | 10 | 0 | 0 | 0 | 10 |
+| Q4 | 10 | 0 | 7 | 3 | 0 |
 | Q5 | 0 | 0 | 0 | 0 | 0 |
 | Q6 | 18 | 0 | 18 | 0 | 0 |
 | M1 | 13 | 13 | 0 | 0 | 0 |
@@ -110,11 +110,11 @@ Low: metadata and documentation only. Medium: a change in the file itself. High:
 | M3 | 5 | 5 | 0 | 0 | 0 |
 | M4 | 6 | 6 | 0 | 0 | 0 |
 | M5 | 0 | 0 | 0 | 0 | 0 |
-| M6 | 9 | 0 | 0 | 0 | 9 |
+| M6 | 9 | 0 | 9 | 0 | 0 |
 | M7 | 3 | 3 | 0 | 0 | 0 |
 | M8 | 5 | 0 | 5 | 0 | 0 |
 | M9 | 3 | 3 | 0 | 0 | 0 |
-| M10 | 15 | 0 | 0 | 0 | 15 |
+| M10 | 15 | 1 | 1 | 13 | 0 |
 | AI1 | 18 | 0 | 18 | 0 | 0 |
 | AI2 | 23 | 23 | 0 | 0 | 0 |
 | AI3 | 24 | 0 | 24 | 0 | 0 |
@@ -126,4 +126,4 @@ Low: metadata and documentation only. Medium: a change in the file itself. High:
 ## Open points
 
 - Q5: provisional, metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36); 14 datasets are not measured from the metadata.
-- Effort of the fix still open: 34 scores below 2 in criteria that name two levels.
+- Effort of the fix still open: 0 scores below 2 in criteria that name two levels.

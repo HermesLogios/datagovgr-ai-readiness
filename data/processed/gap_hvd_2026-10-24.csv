@@ -1,0 +1,13 @@
+﻿sample_id,title,address,annex_point,requirements_not_met,requirements_partly_met,gaps
+S01,"Γεωτεμάχια (όρια και ΚΑΕΚ) των περιοχών του ""Λειτουργούντος Κτηματολογίου""",https://data.gov.gr/dataset/geotemachia-oria-kai-kaek-ton-periochon-toy-leitoyrgoyntos-ktimatologioy,1.1 Cadastral parcels,Open licence; API; Point of contact,,3
+S02,Καλλικρατικοί Δήμοι,https://data.gov.gr/dataset/gis-ypen-wfd-wms-kallikratikoi_dimoi,1.1 Administrative units,Terms of use and documentation of the API; Point of contact; Marked as a high-value dataset,,3
+S04,Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης,https://data.gov.gr/dataset/simeia-ydrolipsias-tis-geovasis-emsy-ethniko-mitroo-simeion-ydrolipsias-periochi-anatolikis-makedoni,2.1 Water (Directive 2000/60/EC) and environmental information,,Documentation of the structure,1
+S10,ΕΝΑΡΜΟΝΙΣΜΕΝΟΣ ΔΕΙΚΤΗΣ ΤΙΜΩΝ ΚΑΤΑΝΑΛΩΤΗ (ΕνΔΤΚ),https://data.gov.gr/dataset/enarmonismenos-deiktis-timon-katanaloti-endtk,4.1 Harmonised indices of consumer prices,,Documentation of the structure,1
+S16,Θεσμοθετημένες περιοχές NATURA 2000,https://data.gov.gr/dataset/thesmothetimenes-perioches-natura-2000,2.1 Protected sites,API; Point of contact,Documentation of the structure,3
+S17,Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ,https://data.gov.gr/dataset/apd-kritis-harv2-__,"2.1 Energy resources, Production and industrial facilities and environmental information",API,Documentation of the structure,2
+S18,Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018,https://data.gov.gr/dataset/gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012_2018,2.1 Land cover,Point of contact; Marked as a high-value dataset,Documentation of the structure,3
+S19,Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ,https://data.gov.gr/dataset/emy-station-189,3.1 Observations data measured by weather stations,,Documentation of the structure,1
+S20,Ημερήσιες μετεωρολογικές παράμετροι για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς,https://data.gov.gr/dataset/stations-data,3.1 Climate data: validated observations,API; Point of contact,Documentation of the structure,3
+S21,Βροχομετρικά στοιχεία 56 σταθμών της Νήσου Κρήτης,https://data.gov.gr/dataset/apd-kritis-harv2-56,3.1 Climate data: validated observations,,,0
+S23,Athens Business Open Data - STIRData model,https://data.gov.gr/dataset/athens-business-open-data-stirdata-model,5.1 Basic company information,API; Point of contact; Marked as a high-value dataset,Documentation of the structure,4
+S24,ΑΠΟΦΑΣΕΙΣ ΕΓΚΡΙΣΗΣ ΠΕΡΙΒΑΛΛΟΝΤΙΚΩΝ ΟΡΩΝ (ΛΕΣΒΟΣ-ΛΗΜΝΟΣ),https://data.gov.gr/dataset/apofaseis-egkrisis-perivallontikon-oron-lesvos-limnos,2.1 Environmental information (Directive 2003/4/EC),,Documentation of the structure,1

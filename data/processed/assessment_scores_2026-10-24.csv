@@ -14,7 +14,7 @@ S01,M6,Mode of distribution,Metadata and legal status,no,2,automatic,#34 and #51
 S01,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S01,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S01,M9,High-value designation,Metadata and legal status,no,2,automatic,#28 and #32,,,
-S01,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,,open
+S01,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,high,recorded (#59)
 S01,AI1,Machine-readable structure,AI-readiness,yes,2,reviewed,#38,,,
 S01,AI2,Documentation of the structure,AI-readiness,yes,2,reviewed,#46,,,
 S01,AI3,Historical depth,AI-readiness,no,0,reviewed,#47,,medium,usual case of the criterion
@@ -37,7 +37,7 @@ S02,M6,Mode of distribution,Metadata and legal status,no,2,automatic,#34 and #51
 S02,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S02,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S02,M9,High-value designation,Metadata and legal status,no,0,automatic,#28 and #32,,low,usual case of the criterion
-S02,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,,open
+S02,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,low,recorded (#59)
 S02,AI1,Machine-readable structure,AI-readiness,yes,2,reviewed,#38,,,
 S02,AI2,Documentation of the structure,AI-readiness,yes,1,reviewed,#46,,low,usual case of the criterion
 S02,AI3,Historical depth,AI-readiness,no,n/a,reviewed,#47,,,
@@ -48,7 +48,7 @@ S02,AI7,Declared limitations,AI-readiness,no,1,reviewed,#50,,low,usual case of t
 S03,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S03,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S03,Q3,Consistency,Quality,no,2,reviewed,#40,,,
-S03,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,,open
+S03,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,medium,recorded (#59)
 S03,Q5,Timeliness,Quality,no,2,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
 S03,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S03,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
@@ -60,7 +60,7 @@ S03,M6,Mode of distribution,Metadata and legal status,no,2,automatic,#34 and #51
 S03,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S03,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S03,M9,High-value designation,Metadata and legal status,no,2,automatic,#28 and #32,,,
-S03,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,,open
+S03,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,high,recorded (#59)
 S03,AI1,Machine-readable structure,AI-readiness,yes,2,reviewed,#38,,,
 S03,AI2,Documentation of the structure,AI-readiness,yes,2,reviewed,#46,,,
 S03,AI3,Historical depth,AI-readiness,no,0,reviewed,#47,,medium,usual case of the criterion
@@ -71,7 +71,7 @@ S03,AI7,Declared limitations,AI-readiness,no,1,reviewed,#50,,low,usual case of t
 S04,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S04,Q2,Completeness,Quality,no,1,reviewed,#39,,medium,usual case of the criterion
 S04,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
-S04,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,,open
+S04,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,medium,recorded (#59)
 S04,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
 S04,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S04,M1,Mandatory metadata,Metadata and legal status,yes,1,automatic,#23,,low,usual case of the criterion
@@ -102,11 +102,11 @@ S05,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24
 S05,M3,Controlled vocabularies,Metadata and legal status,no,1,automatic,#25,,low,usual case of the criterion
 S05,M4,Licence,Metadata and legal status,yes,0,automatic,#31,,low,usual case of the criterion
 S05,M5,Free access,Metadata and legal status,no,2,reviewed,#44,,,
-S05,M6,Mode of distribution,Metadata and legal status,no,1,automatic,#34 and #51,,,open
+S05,M6,Mode of distribution,Metadata and legal status,no,1,automatic,#34 and #51,,medium,recorded (#59)
 S05,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S05,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S05,M9,High-value designation,Metadata and legal status,no,2,automatic,#28 and #32,,,
-S05,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,,open
+S05,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,high,recorded (#59)
 S05,AI1,Machine-readable structure,AI-readiness,yes,1,reviewed,#38,,medium,usual case of the criterion
 S05,AI2,Documentation of the structure,AI-readiness,yes,1,reviewed,#46,,low,usual case of the criterion
 S05,AI3,Historical depth,AI-readiness,no,0,reviewed,#47,,medium,usual case of the criterion
@@ -129,7 +129,7 @@ S06,M6,Mode of distribution,Metadata and legal status,no,2,automatic,#34 and #51
 S06,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S06,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S06,M9,High-value designation,Metadata and legal status,no,2,automatic,#28 and #32,,,
-S06,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,,open
+S06,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,high,recorded (#59)
 S06,AI1,Machine-readable structure,AI-readiness,yes,1,reviewed,#38,,medium,usual case of the criterion
 S06,AI2,Documentation of the structure,AI-readiness,yes,2,reviewed,#46,,,
 S06,AI3,Historical depth,AI-readiness,no,1,reviewed,#47,,medium,usual case of the criterion
@@ -186,7 +186,7 @@ S08,AI7,Declared limitations,AI-readiness,no,0,reviewed,#50,,low,usual case of t
 S09,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S09,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S09,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
-S09,Q4,Plausibility of values,Quality,no,0,reviewed,#41,,,open
+S09,Q4,Plausibility of values,Quality,no,0,reviewed,#41,,medium,recorded (#59)
 S09,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
 S09,Q6,Format (5-star scale),Quality,yes,1,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S09,M1,Mandatory metadata,Metadata and legal status,yes,1,automatic,#23,,low,usual case of the criterion
@@ -198,7 +198,7 @@ S09,M6,Mode of distribution,Metadata and legal status,no,2,automatic,#34 and #51
 S09,M7,Persistent identifier,Metadata and legal status,no,1,automatic,#33,,low,usual case of the criterion
 S09,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S09,M9,High-value designation,Metadata and legal status,no,2,automatic,#28 and #32,,,
-S09,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,,open
+S09,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,high,recorded (#59)
 S09,AI1,Machine-readable structure,AI-readiness,yes,2,reviewed,#38,,,
 S09,AI2,Documentation of the structure,AI-readiness,yes,1,reviewed,#46,,low,usual case of the criterion
 S09,AI3,Historical depth,AI-readiness,no,1,reviewed,#47,,medium,usual case of the criterion
@@ -244,7 +244,7 @@ S11,M6,Mode of distribution,Metadata and legal status,no,2,automatic,#34 and #51
 S11,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S11,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S11,M9,High-value designation,Metadata and legal status,no,2,automatic,#28 and #32,,,
-S11,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,,open
+S11,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,high,recorded (#59)
 S11,AI1,Machine-readable structure,AI-readiness,yes,2,reviewed,#38,,,
 S11,AI2,Documentation of the structure,AI-readiness,yes,2,reviewed,#46,,,
 S11,AI3,Historical depth,AI-readiness,no,0,reviewed,#47,,medium,usual case of the criterion
@@ -255,7 +255,7 @@ S11,AI7,Declared limitations,AI-readiness,no,1,reviewed,#50,,low,usual case of t
 S12,Q1,Availability,Quality,yes,1,reviewed,#37,,low,recorded (#57)
 S12,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S12,Q3,Consistency,Quality,no,2,reviewed,#40,,,
-S12,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,,open
+S12,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,high,recorded (#59)
 S12,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
 S12,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S12,M1,Mandatory metadata,Metadata and legal status,yes,0,automatic,#23,,low,usual case of the criterion
@@ -267,7 +267,7 @@ S12,M6,Mode of distribution,Metadata and legal status,no,2,automatic,#34 and #51
 S12,M7,Persistent identifier,Metadata and legal status,no,1,automatic,#33,,low,usual case of the criterion
 S12,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S12,M9,High-value designation,Metadata and legal status,no,2,automatic,#28 and #32,,,
-S12,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,,open
+S12,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,high,recorded (#59)
 S12,AI1,Machine-readable structure,AI-readiness,yes,2,reviewed,#38,,,
 S12,AI2,Documentation of the structure,AI-readiness,yes,1,reviewed,#46,,low,usual case of the criterion
 S12,AI3,Historical depth,AI-readiness,no,1,reviewed,#47,,medium,usual case of the criterion
@@ -290,7 +290,7 @@ S13,M6,Mode of distribution,Metadata and legal status,no,2,automatic,#34 and #51
 S13,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S13,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S13,M9,High-value designation,Metadata and legal status,no,2,automatic,#28 and #32,,,
-S13,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,,open
+S13,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,medium,recorded (#59)
 S13,AI1,Machine-readable structure,AI-readiness,yes,2,reviewed,#38,,,
 S13,AI2,Documentation of the structure,AI-readiness,yes,2,reviewed,#46,,,
 S13,AI3,Historical depth,AI-readiness,no,0,reviewed,#47,,medium,usual case of the criterion
@@ -301,7 +301,7 @@ S13,AI7,Declared limitations,AI-readiness,no,0,reviewed,#50,,low,usual case of t
 S14,Q1,Availability,Quality,yes,1,reviewed,#37,,low,recorded (#57)
 S14,Q2,Completeness,Quality,no,1,reviewed,#39,,medium,usual case of the criterion
 S14,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
-S14,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,,open
+S14,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,high,recorded (#59)
 S14,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
 S14,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S14,M1,Mandatory metadata,Metadata and legal status,yes,0,automatic,#23,,low,usual case of the criterion
@@ -313,7 +313,7 @@ S14,M6,Mode of distribution,Metadata and legal status,no,2,automatic,#34 and #51
 S14,M7,Persistent identifier,Metadata and legal status,no,1,automatic,#33,,low,usual case of the criterion
 S14,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S14,M9,High-value designation,Metadata and legal status,no,2,automatic,#28 and #32,,,
-S14,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,,open
+S14,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,high,recorded (#59)
 S14,AI1,Machine-readable structure,AI-readiness,yes,2,reviewed,#38,,,
 S14,AI2,Documentation of the structure,AI-readiness,yes,1,reviewed,#46,,low,usual case of the criterion
 S14,AI3,Historical depth,AI-readiness,no,1,reviewed,#47,,medium,usual case of the criterion
@@ -324,7 +324,7 @@ S14,AI7,Declared limitations,AI-readiness,no,1,reviewed,#50,,low,usual case of t
 S15,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S15,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S15,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
-S15,Q4,Plausibility of values,Quality,no,0,reviewed,#41,,,open
+S15,Q4,Plausibility of values,Quality,no,0,reviewed,#41,,medium,recorded (#59)
 S15,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
 S15,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S15,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
@@ -359,7 +359,7 @@ S16,M6,Mode of distribution,Metadata and legal status,no,2,automatic,#34 and #51
 S16,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S16,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S16,M9,High-value designation,Metadata and legal status,no,2,automatic,#28 and #32,,,
-S16,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,,open
+S16,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,high,recorded (#59)
 S16,AI1,Machine-readable structure,AI-readiness,yes,2,reviewed,#38,,,
 S16,AI2,Documentation of the structure,AI-readiness,yes,1,reviewed,#46,,low,usual case of the criterion
 S16,AI3,Historical depth,AI-readiness,no,0,reviewed,#47,,medium,usual case of the criterion
@@ -378,11 +378,11 @@ S17,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24
 S17,M3,Controlled vocabularies,Metadata and legal status,no,2,automatic,#25,,,
 S17,M4,Licence,Metadata and legal status,yes,2,automatic,#31,,,
 S17,M5,Free access,Metadata and legal status,no,2,reviewed,#51,,,
-S17,M6,Mode of distribution,Metadata and legal status,no,1,reviewed,#51,,,open
+S17,M6,Mode of distribution,Metadata and legal status,no,1,reviewed,#51,,medium,recorded (#59)
 S17,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S17,M8,Personal data,Metadata and legal status,no,2,reviewed,#51,,,
 S17,M9,High-value designation,Metadata and legal status,no,2,automatic,#28 and #32,,,
-S17,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#51,,,open
+S17,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#51,,high,recorded (#59)
 S17,AI1,Machine-readable structure,AI-readiness,yes,2,reviewed,#51,,,
 S17,AI2,Documentation of the structure,AI-readiness,yes,1,reviewed,#51,,low,usual case of the criterion
 S17,AI3,Historical depth,AI-readiness,no,0,reviewed,#51,,medium,usual case of the criterion
@@ -416,7 +416,7 @@ S18,AI7,Declared limitations,AI-readiness,no,1,reviewed,#50,,low,usual case of t
 S19,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S19,Q2,Completeness,Quality,no,0,reviewed,#39,,medium,usual case of the criterion
 S19,Q3,Consistency,Quality,no,2,reviewed,#40,,,
-S19,Q4,Plausibility of values,Quality,no,0,reviewed,#41,,,open
+S19,Q4,Plausibility of values,Quality,no,0,reviewed,#41,,high,recorded (#59)
 S19,Q5,Timeliness,Quality,no,2,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
 S19,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S19,M1,Mandatory metadata,Metadata and legal status,yes,1,automatic,#23,,low,usual case of the criterion
@@ -439,7 +439,7 @@ S19,AI7,Declared limitations,AI-readiness,no,0,reviewed,#50,,low,usual case of t
 S20,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S20,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S20,Q3,Consistency,Quality,no,2,reviewed,#40,,,
-S20,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,,open
+S20,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,medium,recorded (#59)
 S20,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
 S20,Q6,Format (5-star scale),Quality,yes,2,reviewed,#56,,,
 S20,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
@@ -451,7 +451,7 @@ S20,M6,Mode of distribution,Metadata and legal status,no,2,automatic,#34 and #51
 S20,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S20,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S20,M9,High-value designation,Metadata and legal status,no,2,automatic,#28 and #32,,,
-S20,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,,open
+S20,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,high,recorded (#59)
 S20,AI1,Machine-readable structure,AI-readiness,yes,2,reviewed,#38,,,
 S20,AI2,Documentation of the structure,AI-readiness,yes,1,reviewed,#46,,low,usual case of the criterion
 S20,AI3,Historical depth,AI-readiness,no,2,reviewed,#47,,,
@@ -497,7 +497,7 @@ S22,M6,Mode of distribution,Metadata and legal status,no,2,automatic,#34 and #51
 S22,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S22,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S22,M9,High-value designation,Metadata and legal status,no,2,automatic,#28 and #32,,,
-S22,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,,open
+S22,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,high,recorded (#59)
 S22,AI1,Machine-readable structure,AI-readiness,yes,0,reviewed,#38,,medium,usual case of the criterion
 S22,AI2,Documentation of the structure,AI-readiness,yes,1,reviewed,#46,,low,usual case of the criterion
 S22,AI3,Historical depth,AI-readiness,no,n/a,reviewed,#47,,,
@@ -508,7 +508,7 @@ S22,AI7,Declared limitations,AI-readiness,no,1,reviewed,#50,,low,usual case of t
 S23,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S23,Q2,Completeness,Quality,no,1,reviewed,#39,,medium,usual case of the criterion
 S23,Q3,Consistency,Quality,no,2,reviewed,#40,,,
-S23,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,,open
+S23,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,medium,recorded (#59)
 S23,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
 S23,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S23,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
@@ -520,7 +520,7 @@ S23,M6,Mode of distribution,Metadata and legal status,no,2,automatic,#34 and #51
 S23,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S23,M8,Personal data,Metadata and legal status,no,1,reviewed,#43,,medium,usual case of the criterion
 S23,M9,High-value designation,Metadata and legal status,no,0,automatic,#28 and #32,,low,usual case of the criterion
-S23,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,,open
+S23,M10,API and bulk download,Metadata and legal status,no,1,reviewed,#45,,high,recorded (#59)
 S23,AI1,Machine-readable structure,AI-readiness,yes,2,reviewed,#38,,,
 S23,AI2,Documentation of the structure,AI-readiness,yes,1,reviewed,#46,,low,usual case of the criterion
 S23,AI3,Historical depth,AI-readiness,no,0,reviewed,#47,,medium,usual case of the criterion
@@ -608,7 +608,7 @@ S27,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24
 S27,M3,Controlled vocabularies,Metadata and legal status,no,2,automatic,#25,,,
 S27,M4,Licence,Metadata and legal status,yes,2,automatic,#31,,,
 S27,M5,Free access,Metadata and legal status,no,2,reviewed,#44,,,
-S27,M6,Mode of distribution,Metadata and legal status,no,1,automatic,#34 and #51,,,open
+S27,M6,Mode of distribution,Metadata and legal status,no,1,automatic,#34 and #51,,medium,recorded (#59)
 S27,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S27,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S27,M9,High-value designation,Metadata and legal status,no,n/a,not applicable to the group,#28 and #32,,,
@@ -631,7 +631,7 @@ S28,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24
 S28,M3,Controlled vocabularies,Metadata and legal status,no,2,automatic,#25,,,
 S28,M4,Licence,Metadata and legal status,yes,2,automatic,#31,,,
 S28,M5,Free access,Metadata and legal status,no,n/a,reviewed,#44,,,
-S28,M6,Mode of distribution,Metadata and legal status,no,0,reviewed,#55,,,open
+S28,M6,Mode of distribution,Metadata and legal status,no,0,reviewed,#55,,medium,recorded (#59)
 S28,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S28,M8,Personal data,Metadata and legal status,no,n/a,reviewed,#43,,,
 S28,M9,High-value designation,Metadata and legal status,no,n/a,not applicable to the group,#28 and #32,,,
@@ -677,7 +677,7 @@ S30,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24
 S30,M3,Controlled vocabularies,Metadata and legal status,no,2,automatic,#25,,,
 S30,M4,Licence,Metadata and legal status,yes,2,automatic,#31,,,
 S30,M5,Free access,Metadata and legal status,no,2,reviewed,#44,,,
-S30,M6,Mode of distribution,Metadata and legal status,no,1,automatic,#34 and #51,,,open
+S30,M6,Mode of distribution,Metadata and legal status,no,1,automatic,#34 and #51,,medium,recorded (#59)
 S30,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S30,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S30,M9,High-value designation,Metadata and legal status,no,n/a,not applicable to the group,#28 and #32,,,
@@ -746,7 +746,7 @@ S33,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24
 S33,M3,Controlled vocabularies,Metadata and legal status,no,2,automatic,#25,,,
 S33,M4,Licence,Metadata and legal status,yes,2,automatic,#31,,,
 S33,M5,Free access,Metadata and legal status,no,2,reviewed,#44,,,
-S33,M6,Mode of distribution,Metadata and legal status,no,1,automatic,#34 and #51,,,open
+S33,M6,Mode of distribution,Metadata and legal status,no,1,automatic,#34 and #51,,medium,recorded (#59)
 S33,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S33,M8,Personal data,Metadata and legal status,no,2,reviewed,#43,,,
 S33,M9,High-value designation,Metadata and legal status,no,n/a,not applicable to the group,#28 and #32,,,
@@ -761,7 +761,7 @@ S33,AI7,Declared limitations,AI-readiness,no,0,reviewed,#50,,low,usual case of t
 S34,Q1,Availability,Quality,yes,0,reviewed,#37,,medium,recorded (#57)
 S34,Q2,Completeness,Quality,no,0,reviewed,#39,,medium,usual case of the criterion
 S34,Q3,Consistency,Quality,no,0,reviewed,#40,,medium,usual case of the criterion
-S34,Q4,Plausibility of values,Quality,no,0,reviewed,#41,,,open
+S34,Q4,Plausibility of values,Quality,no,0,reviewed,#41,,medium,recorded (#59)
 S34,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
 S34,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S34,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
@@ -769,7 +769,7 @@ S34,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24
 S34,M3,Controlled vocabularies,Metadata and legal status,no,2,automatic,#25,,,
 S34,M4,Licence,Metadata and legal status,yes,2,automatic,#31,,,
 S34,M5,Free access,Metadata and legal status,no,n/a,reviewed,#44,,,
-S34,M6,Mode of distribution,Metadata and legal status,no,0,reviewed,#55,,,open
+S34,M6,Mode of distribution,Metadata and legal status,no,0,reviewed,#55,,medium,recorded (#59)
 S34,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S34,M8,Personal data,Metadata and legal status,no,n/a,reviewed,#43,,,
 S34,M9,High-value designation,Metadata and legal status,no,n/a,not applicable to the group,#28 and #32,,,
@@ -792,7 +792,7 @@ S35,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24
 S35,M3,Controlled vocabularies,Metadata and legal status,no,0,automatic,#25,,low,usual case of the criterion
 S35,M4,Licence,Metadata and legal status,yes,0,automatic,#31,,low,usual case of the criterion
 S35,M5,Free access,Metadata and legal status,no,2,reviewed,#44,,,
-S35,M6,Mode of distribution,Metadata and legal status,no,1,automatic,#34 and #51,,,open
+S35,M6,Mode of distribution,Metadata and legal status,no,1,automatic,#34 and #51,,medium,recorded (#59)
 S35,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S35,M8,Personal data,Metadata and legal status,no,1,reviewed,#43,,medium,usual case of the criterion
 S35,M9,High-value designation,Metadata and legal status,no,n/a,not applicable to the group,#28 and #32,,,
@@ -815,7 +815,7 @@ S36,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24
 S36,M3,Controlled vocabularies,Metadata and legal status,no,2,automatic,#25,,,
 S36,M4,Licence,Metadata and legal status,yes,2,automatic,#31,,,
 S36,M5,Free access,Metadata and legal status,no,n/a,reviewed,#44,,,
-S36,M6,Mode of distribution,Metadata and legal status,no,0,reviewed,#55,,,open
+S36,M6,Mode of distribution,Metadata and legal status,no,0,reviewed,#55,,medium,recorded (#59)
 S36,M7,Persistent identifier,Metadata and legal status,no,2,automatic,#33,,,
 S36,M8,Personal data,Metadata and legal status,no,n/a,reviewed,#43,,,
 S36,M9,High-value designation,Metadata and legal status,no,n/a,not applicable to the group,#28 and #32,,,
