@@ -3,7 +3,7 @@ S01,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S01,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S01,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S01,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S01,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S01,Q5,Timeliness,Quality,no,1,reviewed,#63,,low,recorded (#63)
 S01,Q6,Format (5-star scale),Quality,yes,1,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S01,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S01,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -26,7 +26,7 @@ S02,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S02,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S02,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S02,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S02,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S02,Q5,Timeliness,Quality,no,not measurable,reviewed,#63,,,
 S02,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S02,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S02,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -49,7 +49,7 @@ S03,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S03,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S03,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S03,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,medium,recorded (#59)
-S03,Q5,Timeliness,Quality,no,2,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S03,Q5,Timeliness,Quality,no,2,reviewed,#63,,,
 S03,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S03,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S03,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -72,7 +72,7 @@ S04,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S04,Q2,Completeness,Quality,no,1,reviewed,#39,,medium,usual case of the criterion
 S04,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
 S04,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,medium,recorded (#59)
-S04,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S04,Q5,Timeliness,Quality,no,1,reviewed,#63,,low,recorded (#63)
 S04,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S04,M1,Mandatory metadata,Metadata and legal status,yes,1,automatic,#23,,low,usual case of the criterion
 S04,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -95,7 +95,7 @@ S05,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S05,Q2,Completeness,Quality,no,1,reviewed,#39,,medium,usual case of the criterion
 S05,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
 S05,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S05,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S05,Q5,Timeliness,Quality,no,not measurable,reviewed,#63,,,
 S05,Q6,Format (5-star scale),Quality,yes,0,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S05,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S05,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -118,7 +118,7 @@ S06,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S06,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S06,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
 S06,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S06,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S06,Q5,Timeliness,Quality,no,1,reviewed,#63,,low,recorded (#63)
 S06,Q6,Format (5-star scale),Quality,yes,1,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S06,M1,Mandatory metadata,Metadata and legal status,yes,1,automatic,#23,,low,usual case of the criterion
 S06,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -141,7 +141,7 @@ S07,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S07,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S07,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S07,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S07,Q5,Timeliness,Quality,no,2,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S07,Q5,Timeliness,Quality,no,1,reviewed,#63,,high,recorded (#63)
 S07,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S07,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S07,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -164,7 +164,7 @@ S08,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S08,Q2,Completeness,Quality,no,0,reviewed,#39,,medium,usual case of the criterion
 S08,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S08,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S08,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S08,Q5,Timeliness,Quality,no,1,reviewed,#63,,low,recorded (#63)
 S08,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S08,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S08,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -187,7 +187,7 @@ S09,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S09,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S09,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
 S09,Q4,Plausibility of values,Quality,no,0,reviewed,#41,,medium,recorded (#59)
-S09,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S09,Q5,Timeliness,Quality,no,1,reviewed,#63,,low,recorded (#63)
 S09,Q6,Format (5-star scale),Quality,yes,1,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S09,M1,Mandatory metadata,Metadata and legal status,yes,1,automatic,#23,,low,usual case of the criterion
 S09,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -210,7 +210,7 @@ S10,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S10,Q2,Completeness,Quality,no,0,reviewed,#39,,medium,usual case of the criterion
 S10,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S10,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S10,Q5,Timeliness,Quality,no,0,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S10,Q5,Timeliness,Quality,no,0,reviewed,#63,,high,recorded (#63)
 S10,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S10,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S10,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -233,7 +233,7 @@ S11,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S11,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S11,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S11,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S11,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S11,Q5,Timeliness,Quality,no,1,reviewed,#63,,low,recorded (#63)
 S11,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S11,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S11,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -256,7 +256,7 @@ S12,Q1,Availability,Quality,yes,1,reviewed,#37,,low,recorded (#57)
 S12,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S12,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S12,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,high,recorded (#59)
-S12,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S12,Q5,Timeliness,Quality,no,1,reviewed,#63,,low,recorded (#63)
 S12,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S12,M1,Mandatory metadata,Metadata and legal status,yes,0,automatic,#23,,low,usual case of the criterion
 S12,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -279,7 +279,7 @@ S13,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S13,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S13,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S13,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S13,Q5,Timeliness,Quality,no,2,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S13,Q5,Timeliness,Quality,no,2,reviewed,#63,,,
 S13,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S13,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S13,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -302,7 +302,7 @@ S14,Q1,Availability,Quality,yes,1,reviewed,#37,,low,recorded (#57)
 S14,Q2,Completeness,Quality,no,1,reviewed,#39,,medium,usual case of the criterion
 S14,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
 S14,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,high,recorded (#59)
-S14,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S14,Q5,Timeliness,Quality,no,1,reviewed,#63,,low,recorded (#63)
 S14,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S14,M1,Mandatory metadata,Metadata and legal status,yes,0,automatic,#23,,low,usual case of the criterion
 S14,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -325,7 +325,7 @@ S15,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S15,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S15,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
 S15,Q4,Plausibility of values,Quality,no,0,reviewed,#41,,medium,recorded (#59)
-S15,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S15,Q5,Timeliness,Quality,no,1,reviewed,#63,,low,recorded (#63)
 S15,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S15,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S15,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -348,7 +348,7 @@ S16,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S16,Q2,Completeness,Quality,no,0,reviewed,#39,,medium,usual case of the criterion
 S16,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S16,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S16,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S16,Q5,Timeliness,Quality,no,1,reviewed,#63,,low,recorded (#63)
 S16,Q6,Format (5-star scale),Quality,yes,1,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S16,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S16,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -371,7 +371,7 @@ S17,Q1,Availability,Quality,yes,0,reviewed,#51,,medium,recorded (#57)
 S17,Q2,Completeness,Quality,no,1,reviewed,#51,,medium,usual case of the criterion
 S17,Q3,Consistency,Quality,no,2,reviewed,#51,,,
 S17,Q4,Plausibility of values,Quality,no,2,reviewed,#51,,,
-S17,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S17,Q5,Timeliness,Quality,no,not measurable,reviewed,#63,,,
 S17,Q6,Format (5-star scale),Quality,yes,1,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S17,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S17,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -394,7 +394,7 @@ S18,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S18,Q2,Completeness,Quality,no,1,reviewed,#39,,medium,usual case of the criterion
 S18,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S18,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S18,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S18,Q5,Timeliness,Quality,no,not measurable,reviewed,#63,,,
 S18,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S18,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S18,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -417,7 +417,7 @@ S19,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S19,Q2,Completeness,Quality,no,0,reviewed,#39,,medium,usual case of the criterion
 S19,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S19,Q4,Plausibility of values,Quality,no,0,reviewed,#41,,high,recorded (#59)
-S19,Q5,Timeliness,Quality,no,2,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S19,Q5,Timeliness,Quality,no,2,reviewed,#63,,,
 S19,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S19,M1,Mandatory metadata,Metadata and legal status,yes,1,automatic,#23,,low,usual case of the criterion
 S19,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -440,7 +440,7 @@ S20,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S20,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S20,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S20,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,medium,recorded (#59)
-S20,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S20,Q5,Timeliness,Quality,no,0,reviewed,#63,,low,recorded (#63)
 S20,Q6,Format (5-star scale),Quality,yes,2,reviewed,#56,,,
 S20,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S20,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -463,7 +463,7 @@ S21,Q1,Availability,Quality,yes,1,reviewed,#37,,low,recorded (#57)
 S21,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S21,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
 S21,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S21,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S21,Q5,Timeliness,Quality,no,0,reviewed,#63,,low,recorded (#63)
 S21,Q6,Format (5-star scale),Quality,yes,1,reviewed,#56,,medium,usual case of the criterion
 S21,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S21,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -486,7 +486,7 @@ S22,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S22,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S22,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S22,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S22,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S22,Q5,Timeliness,Quality,no,0,reviewed,#63,,low,recorded (#63)
 S22,Q6,Format (5-star scale),Quality,yes,0,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S22,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S22,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -509,7 +509,7 @@ S23,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S23,Q2,Completeness,Quality,no,1,reviewed,#39,,medium,usual case of the criterion
 S23,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S23,Q4,Plausibility of values,Quality,no,1,reviewed,#41,,medium,recorded (#59)
-S23,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S23,Q5,Timeliness,Quality,no,not measurable,reviewed,#63,,,
 S23,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S23,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S23,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -532,7 +532,7 @@ S24,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S24,Q2,Completeness,Quality,no,1,reviewed,#39,,medium,usual case of the criterion
 S24,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
 S24,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S24,Q5,Timeliness,Quality,no,1,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S24,Q5,Timeliness,Quality,no,1,reviewed,#63,,low,recorded (#63)
 S24,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S24,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S24,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -555,7 +555,7 @@ S25,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S25,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S25,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S25,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S25,Q5,Timeliness,Quality,no,2,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S25,Q5,Timeliness,Quality,no,2,reviewed,#63,,,
 S25,Q6,Format (5-star scale),Quality,yes,1,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S25,M1,Mandatory metadata,Metadata and legal status,yes,1,automatic,#23,,low,usual case of the criterion
 S25,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -578,7 +578,7 @@ S26,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S26,Q2,Completeness,Quality,no,1,reviewed,#39,,medium,usual case of the criterion
 S26,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
 S26,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S26,Q5,Timeliness,Quality,no,2,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S26,Q5,Timeliness,Quality,no,2,reviewed,#63,,,
 S26,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S26,M1,Mandatory metadata,Metadata and legal status,yes,1,automatic,#23,,low,usual case of the criterion
 S26,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -601,7 +601,7 @@ S27,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S27,Q2,Completeness,Quality,no,n/a,reviewed,#39,,,
 S27,Q3,Consistency,Quality,no,n/a,reviewed,#40,,,
 S27,Q4,Plausibility of values,Quality,no,n/a,reviewed,#41,,,
-S27,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S27,Q5,Timeliness,Quality,no,not measurable,reviewed,#63,,,
 S27,Q6,Format (5-star scale),Quality,yes,0,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S27,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S27,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -624,7 +624,7 @@ S28,Q1,Availability,Quality,yes,0,reviewed,#37,,medium,recorded (#57)
 S28,Q2,Completeness,Quality,no,n/a,reviewed,#39,,,
 S28,Q3,Consistency,Quality,no,n/a,reviewed,#40,,,
 S28,Q4,Plausibility of values,Quality,no,n/a,reviewed,#41,,,
-S28,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S28,Q5,Timeliness,Quality,no,not measurable,reviewed,#63,,,
 S28,Q6,Format (5-star scale),Quality,yes,0,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S28,M1,Mandatory metadata,Metadata and legal status,yes,1,automatic,#23,,low,usual case of the criterion
 S28,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -647,7 +647,7 @@ S29,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S29,Q2,Completeness,Quality,no,1,reviewed,#39,,medium,usual case of the criterion
 S29,Q3,Consistency,Quality,no,2,reviewed,#40,,,
 S29,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S29,Q5,Timeliness,Quality,no,2,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S29,Q5,Timeliness,Quality,no,2,reviewed,#63,,,
 S29,Q6,Format (5-star scale),Quality,yes,1,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S29,M1,Mandatory metadata,Metadata and legal status,yes,1,automatic,#23,,low,usual case of the criterion
 S29,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -670,7 +670,7 @@ S30,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S30,Q2,Completeness,Quality,no,n/a,reviewed,#39,,,
 S30,Q3,Consistency,Quality,no,n/a,reviewed,#40,,,
 S30,Q4,Plausibility of values,Quality,no,n/a,reviewed,#41,,,
-S30,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S30,Q5,Timeliness,Quality,no,not measurable,reviewed,#63,,,
 S30,Q6,Format (5-star scale),Quality,yes,0,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S30,M1,Mandatory metadata,Metadata and legal status,yes,1,automatic,#23,,low,usual case of the criterion
 S30,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -693,7 +693,7 @@ S31,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S31,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S31,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
 S31,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S31,Q5,Timeliness,Quality,no,0,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S31,Q5,Timeliness,Quality,no,0,reviewed,#63,,low,recorded (#63)
 S31,Q6,Format (5-star scale),Quality,yes,1,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S31,M1,Mandatory metadata,Metadata and legal status,yes,1,automatic,#23,,low,usual case of the criterion
 S31,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -716,7 +716,7 @@ S32,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S32,Q2,Completeness,Quality,no,2,reviewed,#39,,,
 S32,Q3,Consistency,Quality,no,1,reviewed,#40,,medium,usual case of the criterion
 S32,Q4,Plausibility of values,Quality,no,2,reviewed,#41,,,
-S32,Q5,Timeliness,Quality,no,2,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S32,Q5,Timeliness,Quality,no,2,reviewed,#63,,,
 S32,Q6,Format (5-star scale),Quality,yes,1,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S32,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S32,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -739,7 +739,7 @@ S33,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S33,Q2,Completeness,Quality,no,n/a,reviewed,#39,,,
 S33,Q3,Consistency,Quality,no,n/a,reviewed,#40,,,
 S33,Q4,Plausibility of values,Quality,no,n/a,reviewed,#41,,,
-S33,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S33,Q5,Timeliness,Quality,no,not measurable,reviewed,#63,,,
 S33,Q6,Format (5-star scale),Quality,yes,0,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S33,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S33,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -762,7 +762,7 @@ S34,Q1,Availability,Quality,yes,0,reviewed,#37,,medium,recorded (#57)
 S34,Q2,Completeness,Quality,no,0,reviewed,#39,,medium,usual case of the criterion
 S34,Q3,Consistency,Quality,no,0,reviewed,#40,,medium,usual case of the criterion
 S34,Q4,Plausibility of values,Quality,no,0,reviewed,#41,,medium,recorded (#59)
-S34,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S34,Q5,Timeliness,Quality,no,not measurable,reviewed,#63,,,
 S34,Q6,Format (5-star scale),Quality,yes,2,automatic,"#35, #51 and #56",,,
 S34,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S34,M2,Recommended metadata,Metadata and legal status,no,2,automatic,#21 and #24,,,
@@ -785,7 +785,7 @@ S35,Q1,Availability,Quality,yes,2,reviewed,#37,,,
 S35,Q2,Completeness,Quality,no,n/a,reviewed,#39,,,
 S35,Q3,Consistency,Quality,no,n/a,reviewed,#40,,,
 S35,Q4,Plausibility of values,Quality,no,n/a,reviewed,#41,,,
-S35,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S35,Q5,Timeliness,Quality,no,not measurable,reviewed,#63,,,
 S35,Q6,Format (5-star scale),Quality,yes,0,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S35,M1,Mandatory metadata,Metadata and legal status,yes,1,automatic,#23,,low,usual case of the criterion
 S35,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion
@@ -808,7 +808,7 @@ S36,Q1,Availability,Quality,yes,0,reviewed,#37,,medium,recorded (#57)
 S36,Q2,Completeness,Quality,no,n/a,reviewed,#39,,,
 S36,Q3,Consistency,Quality,no,n/a,reviewed,#40,,,
 S36,Q4,Plausibility of values,Quality,no,n/a,reviewed,#41,,,
-S36,Q5,Timeliness,Quality,no,,automatic,#36,metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36),,
+S36,Q5,Timeliness,Quality,no,not measurable,reviewed,#63,,,
 S36,Q6,Format (5-star scale),Quality,yes,0,automatic,"#35, #51 and #56",,medium,usual case of the criterion
 S36,M1,Mandatory metadata,Metadata and legal status,yes,2,automatic,#23,,,
 S36,M2,Recommended metadata,Metadata and legal status,no,1,automatic,#21 and #24,,low,usual case of the criterion

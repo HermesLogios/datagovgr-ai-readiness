@@ -83,6 +83,16 @@ class GapsOfACriterion(unittest.TestCase):
     def test_share_rounds_half_up(self):
         self.assertEqual((GAPS.share(1, 16), GAPS.share(1, 8), GAPS.share(0, 0)), (6.3, 12.5, None))
 
+    def test_not_measurable_scores_are_counted_apart_and_left_out_of_the_share(self):
+        final = [row for row in RECORDS if row["criterion"] != "Q5"] + [
+            record("S01", "Q5", "1", "low"), record("S02", "Q5", "not measurable"), record("S25", "Q5", "2")]
+        rows = {row["criterion"]: row for row in GAPS.criterion_gaps(CRITERIA, final)}
+        q5 = rows["Q5"]
+        self.assertEqual((q5["provisional"], q5["applicable"], q5["not_measurable"], q5["below_two"],
+                          q5["share_below_two"], q5["effort_low"]), ("", 2, 1, 1, 50.0, 1))
+        total = GAPS.totals(list(rows.values()))
+        self.assertEqual((total["applicable"], total["below_two"], total["low"]), (10, 4, 2))
+
 
 class GapsOfTheCatalogue(unittest.TestCase):
     def test_undetermined_scores_apart_and_m9_over_the_marked_datasets(self):
@@ -102,6 +112,11 @@ class GapsOfTheCatalogue(unittest.TestCase):
         metadata = [{"q1_score": "2", "q5_score": "2.0", "m4_score": "2", "m10_score": "1", "m9_marked": "False"}]
         rows = GAPS.catalogue_gaps(CRITERIA, metadata, {"Q5"})
         self.assertEqual([(row["criterion"], row["provisional"]) for row in rows], [("Q5", "yes"), ("M4", "")])
+
+    def test_timeliness_of_the_catalogue_is_its_metadata_part(self):
+        metadata = [{"q5_score": "1.0", "m4_score": "2", "m9_marked": "False"}]
+        rows = {row["criterion"]: row for row in GAPS.catalogue_gaps(CRITERIA, metadata, set())}
+        self.assertEqual((rows["Q5"]["note"], rows["Q5"]["provisional"], rows["M4"]["note"]), ("metadata part", "", ""))
 
 
 class PathToTheReadyGroup(unittest.TestCase):

@@ -14,6 +14,7 @@ Datasets: those to which the criterion applies. Share: the scores below 2 of the
 | AI4 Description in Croissant or a datasheet | AI-readiness | no | 36 | 4 | 28 | 4 | 32 | 88.9% | 32 | 0 | 0 |
 | AI3 Historical depth | AI-readiness | no | 29 | 5 | 13 | 11 | 24 | 82.8% | 0 | 24 | 0 |
 | AI2 Documentation of the structure | AI-readiness | yes | 30 | 7 | 23 | 0 | 23 | 76.7% | 23 | 0 | 0 |
+| Q5 Timeliness | Quality | no | 24 | 7 | 12 | 5 | 17 | 70.8% | 15 | 0 | 2 |
 | AI5 Suitability for retrieval (RAG) | AI-readiness | no | 36 | 11 | 19 | 6 | 25 | 69.4% | 0 | 25 | 0 |
 | M10 API and bulk download | Metadata and legal status | no | 24 | 9 | 15 | 0 | 15 | 62.5% | 1 | 1 | 13 |
 | M2 Recommended metadata | Metadata and legal status | no | 36 | 17 | 19 | 0 | 19 | 52.8% | 19 | 0 | 0 |
@@ -33,9 +34,9 @@ Datasets: those to which the criterion applies. Share: the scores below 2 of the
 | M7 Persistent identifier | Metadata and legal status | no | 36 | 33 | 3 | 0 | 3 | 8.3% | 3 | 0 | 0 |
 | M5 Free access | Metadata and legal status | no | 33 | 33 | 0 | 0 | 0 | 0.0% | 0 | 0 | 0 |
 
-All the criteria that are not provisional: 313 scores below 2 of 731 (42.8%); effort of the fix low 143, medium 154, high 16.
+All the criteria that are not provisional: 330 scores below 2 of 755 (43.7%); effort of the fix low 158, medium 154, high 18.
 
-Q5 Timeliness is provisional and left out of the totals: 8 datasets with 2, 12 with 1, 2 with 0, 14 not measured. Reason: metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36).
+Q5 Timeliness: 12 datasets not measurable, left out of its datasets and of the totals (DECISIONS.md #63).
 
 ### Catalogue (22,805 datasets)
 
@@ -46,7 +47,7 @@ The nine criteria that the metadata decide (`04_metadata_checks.py`); the other 
 | Q6 Format (5-star scale) | every dataset of the snapshot | 22,805 | 7,214 | 4,715 | 10,243 | 633 | 14,958 | 67.5% |
 | M2 Recommended metadata | every dataset of the snapshot | 22,805 | 7,775 | 14,718 | 312 | 0 | 15,030 | 65.9% |
 | M1 Mandatory metadata | every dataset of the snapshot | 22,805 | 9,130 | 12,928 | 747 | 0 | 13,675 | 60.0% |
-| Q5 Timeliness (provisional) | every dataset of the snapshot | 22,805 | 3,520 | 900 | 3,408 | 14,977 | 4,308 | 55.0% |
+| Q5 Timeliness (metadata part) | every dataset of the snapshot | 22,805 | 3,520 | 900 | 3,408 | 14,977 | 4,308 | 55.0% |
 | M6 Mode of distribution | every dataset of the snapshot | 22,805 | 13,974 | 8,732 | 99 | 0 | 8,831 | 38.7% |
 | M9 High-value designation | datasets with a high-value marking | 1,302 | 1,122 | 180 | 0 | 0 | 180 | 13.8% |
 | M4 Licence | every dataset of the snapshot | 22,805 | 21,855 | 377 | 573 | 0 | 950 | 4.2% |
@@ -63,37 +64,37 @@ Rule of the groups (DECISIONS.md #20): Ready, every core criterion scores 2; Alm
 
 | Dataset | Title | Group | Core below 2, low effort | Core below 2, medium or high effort | Other below 2, low | Other below 2, medium | Other below 2, high |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| S07 | [Διαχείριση Στοιχείων Παραγωγής Νωπού Γάλακτος](https://data.gov.gr/dataset/diacheirisi-stoicheion-paragogis-nopoy-galaktos) | Ready | - | - | AI7 | M8 AI6 | - |
+| S07 | [Διαχείριση Στοιχείων Παραγωγής Νωπού Γάλακτος](https://data.gov.gr/dataset/diacheirisi-stoicheion-paragogis-nopoy-galaktos) | Ready | - | - | AI7 | M8 AI6 | Q5 |
 | S13 | [Σύνολα Δεδομένων Οργανισμού Αστικών Συγκοινωνιών - GTFS](https://data.gov.gr/dataset/oasth-gtfs) | Ready | - | - | M2 AI7 | M10 AI3 | - |
 | S02 | [Καλλικρατικοί Δήμοι](https://data.gov.gr/dataset/gis-ypen-wfd-wms-kallikratikoi_dimoi) | Almost ready | AI2 | - | M2 M9 M10 AI4 AI7 | - | - |
 | S03 | [Δρομολόγια Σταθερών Συγκοινωνιών (ΜΕΤΡΟ, ΗΣΑΠ, ΤΡΑΜ)](https://data.gov.gr/dataset/dromologia-statheron-sygkoinonion-metro-isap-tram) | Almost ready | M4 | - | AI4 AI7 | Q4 AI3 | M10 |
-| S04 | [Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης](https://data.gov.gr/dataset/simeia-ydrolipsias-tis-geovasis-emsy-ethniko-mitroo-simeion-ydrolipsias-periochi-anatolikis-makedoni) | Almost ready | M1 AI2 | - | M2 M3 AI4 AI7 | Q2 Q3 Q4 AI3 | - |
-| S10 | [ΕΝΑΡΜΟΝΙΣΜΕΝΟΣ ΔΕΙΚΤΗΣ ΤΙΜΩΝ ΚΑΤΑΝΑΛΩΤΗ (ΕνΔΤΚ)](https://data.gov.gr/dataset/enarmonismenos-deiktis-timon-katanaloti-endtk) | Almost ready | AI2 | - | AI4 AI7 | Q2 | - |
-| S11 | [Δρομολόγια Οδικών Συγκοινωνιών (Λεωφορεία, Τρόλεϊ)](https://data.gov.gr/dataset/dromologia-odikon-sygkoinonion-leoforeia-trolei) | Almost ready | M4 | - | M2 M3 AI4 AI7 | AI3 | M10 |
-| S12 | [Δεδομένα αστικών συγκοινωνιών Π.Ε. Θεσσαλονίκης](https://data.gov.gr/dataset/dedomena-astikon-sygkoinonion-p-e-thessalonikis) | Almost ready | Q1 M1 AI2 | - | M7 AI4 AI7 | AI3 AI5 | Q4 M10 |
-| S14 | [Υπηρεσίες Δήμου Πατρέων](https://data.gov.gr/dataset/ypiresies-dimoy-patreon) | Almost ready | Q1 M1 AI2 | - | M2 M7 AI4 AI7 | Q2 Q3 AI3 AI6 | Q4 M10 |
-| S15 | [ΧΩΡΟΙ - ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ](https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-prosvasi) | Almost ready | AI2 | - | AI4 AI7 | Q3 Q4 AI3 | - |
+| S04 | [Σημεία Υδροληψίας της Γεωβάσης ΕΜΣΥ (Εθνικό Μητρώο Σημείων Υδροληψίας) - περιοχή Ανατολικής Μακεδονίας & Θράκης](https://data.gov.gr/dataset/simeia-ydrolipsias-tis-geovasis-emsy-ethniko-mitroo-simeion-ydrolipsias-periochi-anatolikis-makedoni) | Almost ready | M1 AI2 | - | Q5 M2 M3 AI4 AI7 | Q2 Q3 Q4 AI3 | - |
+| S10 | [ΕΝΑΡΜΟΝΙΣΜΕΝΟΣ ΔΕΙΚΤΗΣ ΤΙΜΩΝ ΚΑΤΑΝΑΛΩΤΗ (ΕνΔΤΚ)](https://data.gov.gr/dataset/enarmonismenos-deiktis-timon-katanaloti-endtk) | Almost ready | AI2 | - | AI4 AI7 | Q2 | Q5 |
+| S11 | [Δρομολόγια Οδικών Συγκοινωνιών (Λεωφορεία, Τρόλεϊ)](https://data.gov.gr/dataset/dromologia-odikon-sygkoinonion-leoforeia-trolei) | Almost ready | M4 | - | Q5 M2 M3 AI4 AI7 | AI3 | M10 |
+| S12 | [Δεδομένα αστικών συγκοινωνιών Π.Ε. Θεσσαλονίκης](https://data.gov.gr/dataset/dedomena-astikon-sygkoinonion-p-e-thessalonikis) | Almost ready | Q1 M1 AI2 | - | Q5 M7 AI4 AI7 | AI3 AI5 | Q4 M10 |
+| S14 | [Υπηρεσίες Δήμου Πατρέων](https://data.gov.gr/dataset/ypiresies-dimoy-patreon) | Almost ready | Q1 M1 AI2 | - | Q5 M2 M7 AI4 AI7 | Q2 Q3 AI3 AI6 | Q4 M10 |
+| S15 | [ΧΩΡΟΙ - ΘΕΣΕΙΣ ΣΤΑΘΜΕΥΣΗΣ](https://data.gov.gr/dataset/https-www-nafpaktos-gr-el-prosvasi) | Almost ready | AI2 | - | Q5 AI4 AI7 | Q3 Q4 AI3 | - |
 | S18 | [Κάλυψη γης - Μεταβολές Corine Land Cover 2012 - 2018](https://data.gov.gr/dataset/gis-syros-ermoupolis-wms-syros-lcv_pol_corine_land_cover_2012_2018) | Almost ready | AI2 | - | M2 M9 AI4 AI7 | Q2 AI3 AI5 | - |
 | S19 | [Μετεωρολογικά Δεδομένα σταθμού ΠΑΡΝΗΘΑ](https://data.gov.gr/dataset/emy-station-189) | Almost ready | M1 AI2 | - | AI4 AI7 | Q2 AI6 | Q4 |
-| S20 | [Ημερήσιες μετεωρολογικές παράμετροι για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς](https://data.gov.gr/dataset/stations-data) | Almost ready | AI2 | - | M2 AI4 | Q4 AI6 | M10 |
+| S20 | [Ημερήσιες μετεωρολογικές παράμετροι για την περίοδο 2010-2023 από 54 μετεωρολογικούς σταθμούς](https://data.gov.gr/dataset/stations-data) | Almost ready | AI2 | - | Q5 M2 AI4 | Q4 AI6 | M10 |
 | S23 | [Athens Business Open Data - STIRData model](https://data.gov.gr/dataset/athens-business-open-data-stirdata-model) | Almost ready | AI2 | - | M2 M9 AI4 AI7 | Q2 Q4 M8 AI3 AI5 | M10 |
-| S01 | [Γεωτεμάχια (όρια και ΚΑΕΚ) των περιοχών του "Λειτουργούντος Κτηματολογίου"](https://data.gov.gr/dataset/geotemachia-oria-kai-kaek-ton-periochon-toy-leitoyrgoyntos-ktimatologioy) | Not yet | M4 | Q6 | M2 AI4 AI7 | AI3 AI5 | M10 |
+| S01 | [Γεωτεμάχια (όρια και ΚΑΕΚ) των περιοχών του "Λειτουργούντος Κτηματολογίου"](https://data.gov.gr/dataset/geotemachia-oria-kai-kaek-ton-periochon-toy-leitoyrgoyntos-ktimatologioy) | Not yet | M4 | Q6 | Q5 M2 AI4 AI7 | AI3 AI5 | M10 |
 | S05 | [Λίστα με Μονάδες Φροντίδας Ηλικιωμένων](https://data.gov.gr/dataset/attica-43-lista-me-monades-frontidas-hlikiwmenwn) | Not yet | M4 AI2 | Q6 AI1 | M3 AI4 AI7 | Q2 Q3 M6 AI3 AI5 AI6 | M10 |
-| S06 | [Τροχαία ατυχήματα](https://data.gov.gr/dataset/troxaia-atyxhmata) | Not yet | M1 | Q6 AI1 | M3 AI7 | Q3 AI3 AI5 AI6 | M10 |
-| S08 | ["ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ ΔΗΜΟΣΙΑΣ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ ΔΙΕΥΘΥΝΣΗ ΕΚΠΑΙΔΕΥΣΗΣ ΓΙΑ ΤΟ ΣΧΟΛΙΚΟ ΕΤΟΣ 2024-2025 "](https://data.gov.gr/dataset/arithmos-ekpaideytikon-deyterovathmia-eidikotita-schesi-ergasias-2025) | Not yet | AI2 | AI1 | M2 AI4 AI7 | Q2 AI3 AI5 | - |
-| S09 | [Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής](https://data.gov.gr/dataset/attica-92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020) | Not yet | M1 M4 AI2 | Q6 | M7 AI4 AI7 | Q3 Q4 AI3 AI5 AI6 | M10 |
-| S16 | [Θεσμοθετημένες περιοχές NATURA 2000](https://data.gov.gr/dataset/thesmothetimenes-perioches-natura-2000) | Not yet | AI2 | Q6 | M2 AI4 AI7 | Q2 AI3 AI5 | M10 |
+| S06 | [Τροχαία ατυχήματα](https://data.gov.gr/dataset/troxaia-atyxhmata) | Not yet | M1 | Q6 AI1 | Q5 M3 AI7 | Q3 AI3 AI5 AI6 | M10 |
+| S08 | ["ΑΡΙΘΜΟΣ ΕΚΠΑΙΔΕΥΤΙΚΩΝ ΔΗΜΟΣΙΑΣ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ, ΑΝΑ ΕΙΔΙΚΟΤΗΤΑ ΚΑΙ ΣΧΕΣΗ ΕΡΓΑΣΙΑΣ, ΑΝΑ ΠΕΡΙΦΕΡΕΙΑΚΗ ΔΙΕΥΘΥΝΣΗ ΕΚΠΑΙΔΕΥΣΗΣ ΓΙΑ ΤΟ ΣΧΟΛΙΚΟ ΕΤΟΣ 2024-2025 "](https://data.gov.gr/dataset/arithmos-ekpaideytikon-deyterovathmia-eidikotita-schesi-ergasias-2025) | Not yet | AI2 | AI1 | Q5 M2 AI4 AI7 | Q2 AI3 AI5 | - |
+| S09 | [Λίστα αναμονής ιατρών για ειδίκευση στα νοσοκομεία Αττικής](https://data.gov.gr/dataset/attica-92-lista-anamonhs-iatrwn-gia-eidikeysh-sta-nosokomeia-attikhs-2020) | Not yet | M1 M4 AI2 | Q6 | Q5 M7 AI4 AI7 | Q3 Q4 AI3 AI5 AI6 | M10 |
+| S16 | [Θεσμοθετημένες περιοχές NATURA 2000](https://data.gov.gr/dataset/thesmothetimenes-perioches-natura-2000) | Not yet | AI2 | Q6 | Q5 M2 AI4 AI7 | Q2 AI3 AI5 | M10 |
 | S17 | [Σταθμοί Παραγωγής Ηλεκτρικής Ενέργειας από ΑΠΕ](https://data.gov.gr/dataset/apd-kritis-harv2-__) | Not yet | AI2 | Q1 Q6 | M2 AI4 AI7 | Q2 M6 AI3 AI5 | M10 |
-| S21 | [Βροχομετρικά στοιχεία 56 σταθμών της Νήσου Κρήτης](https://data.gov.gr/dataset/apd-kritis-harv2-56) | Not yet | Q1 | Q6 AI1 | M2 AI7 | Q3 AI3 AI5 AI6 | - |
-| S22 | [Προσωρινοί πίνακες κατάταξης - Γ.Πρ. 21487- 13-03-2024 - Έκδοση προσωρινού πίνακα κατάταξης επενδυτικών σχεδίων που υποβλήθηκαν προς υπαγωγή στο καθεστώς ενίσχυσης "Ενίσχυση Τουριστικών Επενδύσεων" (β΄ κύκλος) στο Υπουργείο Ανάπτυξης](https://data.gov.gr/dataset/prosorinoi-pinakes-katataxis-g-pr-21487-13-03-2024-ekdosi-prosorinoy-pinaka-katataxis-ependytikon-sc) | Not yet | AI2 | Q6 AI1 | AI4 AI7 | AI5 | M10 |
-| S24 | [ΑΠΟΦΑΣΕΙΣ ΕΓΚΡΙΣΗΣ ΠΕΡΙΒΑΛΛΟΝΤΙΚΩΝ ΟΡΩΝ (ΛΕΣΒΟΣ-ΛΗΜΝΟΣ)](https://data.gov.gr/dataset/apofaseis-egkrisis-perivallontikon-oron-lesvos-limnos) | Not yet | AI2 | AI1 | AI4 AI7 | Q2 Q3 M8 AI3 AI5 AI6 | - |
+| S21 | [Βροχομετρικά στοιχεία 56 σταθμών της Νήσου Κρήτης](https://data.gov.gr/dataset/apd-kritis-harv2-56) | Not yet | Q1 | Q6 AI1 | Q5 M2 AI7 | Q3 AI3 AI5 AI6 | - |
+| S22 | [Προσωρινοί πίνακες κατάταξης - Γ.Πρ. 21487- 13-03-2024 - Έκδοση προσωρινού πίνακα κατάταξης επενδυτικών σχεδίων που υποβλήθηκαν προς υπαγωγή στο καθεστώς ενίσχυσης "Ενίσχυση Τουριστικών Επενδύσεων" (β΄ κύκλος) στο Υπουργείο Ανάπτυξης](https://data.gov.gr/dataset/prosorinoi-pinakes-katataxis-g-pr-21487-13-03-2024-ekdosi-prosorinoy-pinaka-katataxis-ependytikon-sc) | Not yet | AI2 | Q6 AI1 | Q5 AI4 AI7 | AI5 | M10 |
+| S24 | [ΑΠΟΦΑΣΕΙΣ ΕΓΚΡΙΣΗΣ ΠΕΡΙΒΑΛΛΟΝΤΙΚΩΝ ΟΡΩΝ (ΛΕΣΒΟΣ-ΛΗΜΝΟΣ)](https://data.gov.gr/dataset/apofaseis-egkrisis-perivallontikon-oron-lesvos-limnos) | Not yet | AI2 | AI1 | Q5 AI4 AI7 | Q2 Q3 M8 AI3 AI5 AI6 | - |
 | S25 | [ΣΤΑΤΙΣΤΙΚΑ ΔΙΑΤΡΟΦΗΣ ΦΕΒΡΟΥΑΡΙΟΥ 2017](https://data.gov.gr/dataset/statistika-diatrofhs-febroyarioy-2017) | Not yet | M1 AI2 | Q6 AI1 | AI4 AI7 | AI3 AI5 AI6 | - |
 | S26 | [ΣΤΑΤΙΣΤΙΚΑ ΙΧΘΥΟΣΚΑΛΑΣ ΘΕΣΣΑΛΟΝΙΚΗΣ ΜΑΡΤΙΟΣ 2020](https://data.gov.gr/dataset/statistika-ix8yoskalas-8essalonikhs-martios-2020) | Not yet | M1 AI2 | AI1 | AI4 AI7 | Q2 Q3 AI3 AI5 AI6 | - |
 | S27 | [ΤΡΟΠΟΠΟΙΗΣΗ ΡΥΜΟΤΟΜΙΚΟΥ (ΦΕΚ 463/Δ/1998-07-03)](https://data.gov.gr/dataset/gis-agrinio-wms-only-agriniotrm-trm_ras_123107fs000463_1998_geo) | Not yet | - | Q6 AI1 | M2 AI4 AI7 | M6 AI5 | - |
 | S28 | [Σχέδιο ΠΕ περιοχής Ατσαλένιο \| Μωσαϊκό](https://data.gov.gr/dataset/gis-heraklion-wms-only-herakliopef-pef_ras_atsalenio_mosaic_geo) | Not yet | M1 | Q1 Q6 AI1 | M2 AI4 AI7 | M6 AI5 AI6 | - |
 | S29 | [ΠΙΝΑΚΕΣ ΤΙΜΟΛΗΨΙΩΝ ΣΥΡΟΥ](https://data.gov.gr/dataset/pinakes-timolhpsiwn-syroy) | Not yet | M1 AI2 | Q6 AI1 | AI4 AI7 | Q2 M8 AI3 AI5 AI6 | - |
 | S30 | [Διάγραμμα Τροποποιήσεως του Ρυμοτομικού Σχεδίου της Πόλης Χανίων](https://data.gov.gr/dataset/gis-chania-wms-only-chaniatsp-tsp_ras_fek_2003_739_d_200_geo) | Not yet | M1 | Q6 AI1 | M2 AI4 AI7 | M6 AI5 | - |
-| S31 | [ΠΡΟΓΡΑΜΜΑΤΙΚΕΣ ΣΥΜΒΑΣΕΙΣ ΠΕΡΙΦΕΡΕΙΑΣ ΑΤΤΙΚΗΣ](https://data.gov.gr/dataset/programmatikes-symbaseis-perifereias-attikhs) | Not yet | M1 AI2 | Q6 AI1 | AI4 AI7 | Q3 AI3 AI5 | - |
+| S31 | [ΠΡΟΓΡΑΜΜΑΤΙΚΕΣ ΣΥΜΒΑΣΕΙΣ ΠΕΡΙΦΕΡΕΙΑΣ ΑΤΤΙΚΗΣ](https://data.gov.gr/dataset/programmatikes-symbaseis-perifereias-attikhs) | Not yet | M1 AI2 | Q6 AI1 | Q5 AI4 AI7 | Q3 AI3 AI5 | - |
 | S32 | [Περιβαλλοντικοί έλεγχοι έτους 2014 από τη Δ/νση Περιβάλλοντος & Χωρικού Σχεδιασμού Π.Δ.Ε.](https://data.gov.gr/dataset/periballontikoi-elegxoi-etoys-2014-apo-th-d-nsh-periballontos-and-xwrikoy-sxediasmoy-p-d-e) | Not yet | AI2 | Q6 AI1 | AI4 AI7 | Q3 AI3 AI5 AI6 | - |
 | S33 | [Διάγραμμα - ΦΕΚ 130/Δ/2001-02-21](https://data.gov.gr/dataset/gis-maroussi-wms-only-maroussirym-rym_015784fs000130_2001e) | Not yet | - | Q6 AI1 | M2 AI4 AI7 | M6 AI5 | - |
 | S34 | [Αποθετήριο ΤΕΧΝΗ](https://data.gov.gr/dataset/ekt-searchculture-dataset-__-15) | Not yet | AI2 | Q1 AI1 | AI4 AI7 | Q2 Q3 Q4 M6 AI3 AI5 AI6 | - |

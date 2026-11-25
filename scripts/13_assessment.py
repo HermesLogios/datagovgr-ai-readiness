@@ -5,15 +5,18 @@ the score per level, the effort of the fix and the readiness group.
 
 What it does, in order:
   1. Reads the criteria (criteria/criteria.csv), the sample (data/processed/sample.csv), the table of
-     04_metadata_checks.py (data/processed/metadata_checks_YYYY-MM-DD.csv, the newest one), the scores given by the
+     04_metadata_checks.py of the snapshot on which the study rests, 24 October 2026 (DECISIONS.md #26:
+     data/processed/metadata_checks_2026-10-24.csv, or the table given with --checks), the scores given by the
      reviewer (criteria/sample_scores.csv) and the recorded effort of the fix (criteria/sample_effort.csv).
   2. Gives every dataset its score in each criterion:
        - the score of criteria/sample_scores.csv, where the reviewer judged the criterion or corrected an automated
-         score after the download test of the sample;
+         score after the download test of the sample; "not measurable" where the reviewer found nothing to measure
+         (DECISIONS.md #63), which stays out of the score of its level and has no effort of the fix, like n/a;
        - "n/a" where the criterion does not apply to the group of the dataset (column applies_to);
        - otherwise the automated score of 04_metadata_checks.py.
-  3. Marks as provisional the automated score of Q5, which is the metadata part of the criterion (DECISIONS.md #36):
-     it stays out of the score of its level until the reviewer records the final scores.
+  3. Marks as provisional the automated score of a criterion listed in PROVISIONAL, whose automated score covers one
+     part of its rule (DECISIONS.md #36): it stays out of the score of its level until the reviewer records the final
+     scores.
   4. Computes the score per level: the sum of the scores divided by the maximum possible score (2 for each
      applicable criterion), as a percentage. The three levels are reported separately.
   5. Records the effort of the fix for every score below 2: the level of criteria/sample_effort.csv where one is
@@ -63,16 +66,19 @@ SCORES_FILE = ROOT / "criteria" / "sample_scores.csv"
 EFFORT_FILE = ROOT / "criteria" / "sample_effort.csv"
 SAMPLE_FILE = PROCESSED_DIR / "sample.csv"
 
+BASE_DATE = "2026-10-24"            # snapshot of the catalogue on which the study rests (DECISIONS.md #26)
 NOT_APPLICABLE = "n/a"
+NOT_MEASURABLE = "not measurable"   # a score of the reviewer where nothing can be measured (DECISIONS.md #63)
+REVIEWED_SCORES = ("0", "1", "2", NOT_APPLICABLE, NOT_MEASURABLE)
 EFFORTS = ("low", "medium", "high")
 READY, ALMOST_READY, NOT_YET = "Ready", "Almost ready", "Not yet"
 GROUPS = (READY, ALMOST_READY, NOT_YET)
 LEVEL_COLUMNS = {"Quality": "quality_percent", "Metadata and legal status": "metadata_percent",
                  "AI-readiness": "ai_readiness_percent"}
 # Criteria whose automated score covers one part of the rule: provisional until the reviewer records the final scores.
-PROVISIONAL = {"Q5": "metadata part of the criterion; the final scores follow the second snapshot (DECISIONS.md #36)"}
+PROVISIONAL: dict[str, str] = {}
 
-SCORE_FILLS = {2: "E2EFDA", 1: "FFF2CC", 0: "F8CBAD", NOT_APPLICABLE: "EDEDED"}
+SCORE_FILLS = {2: "E2EFDA", 1: "FFF2CC", 0: "F8CBAD", NOT_APPLICABLE: "EDEDED", NOT_MEASURABLE: "D9D9D9"}
 HEADER_FILL = "DDEBF7"
 
 
@@ -90,11 +96,13 @@ def read_table(path: Path) -> list[dict]:
         return list(csv.DictReader(handle))
 
 
-def newest_checks() -> Path:
-    files = sorted(PROCESSED_DIR.glob("metadata_checks_????-??-??.csv"))
-    if not files:
-        raise SystemExit("No table of metadata checks in data/processed. Run 04_metadata_checks.py first.")
-    return files[-1]
+def base_checks() -> Path:
+    """The table of the metadata checks of the snapshot on which the study rests."""
+    path = PROCESSED_DIR / f"metadata_checks_{BASE_DATE}.csv"
+    if not path.exists():
+        raise SystemExit(f"File not found: {relative(path)}. Run 04_metadata_checks.py on the snapshot of {BASE_DATE} "
+                         "first.")
+    return path
 
 
 def usual_efforts(typical_fix: str) -> list[str]:
@@ -155,7 +163,7 @@ def assess(criteria: list[dict], sample: list[dict], checks: dict[str, dict], re
             provisional = ""
             if (sample_id, code) in reviewed:
                 row = reviewed[(sample_id, code)]
-                score = NOT_APPLICABLE if row["score"] == NOT_APPLICABLE else int(row["score"])
+                score = row["score"] if row["score"] in (NOT_APPLICABLE, NOT_MEASURABLE) else int(row["score"])
                 basis, decision = "reviewed", row["decision"]
             elif criterion["applies_to"] not in ("all", dataset["group"]):
                 score, basis, decision = NOT_APPLICABLE, "not applicable to the group", rules
@@ -244,7 +252,8 @@ def build_summary(criteria: list[dict], rows: list[dict], records: list[dict], d
         f"Scores of the {len(rows)} datasets of the sample in the {len(criteria)} criteria of `criteria/criteria.csv`: the "
         f"scores given by the reviewer (`{relative(SCORES_FILE)}`) and, for the criteria checked on the metadata, the "
         f"automated scores of `04_metadata_checks.py` (`{checks_name}`). Scale: 2 fully met, 1 partly met, 0 not met, "
-        "n/a not applicable. The rules of every criterion and the reviews of the scores are recorded in `DECISIONS.md`.",
+        "n/a not applicable, not measurable nothing to measure (DECISIONS.md #63). The rules of every criterion and the "
+        "reviews of the scores are recorded in `DECISIONS.md`.",
         "", "## Readiness groups", "",
         "The six core criteria decide the group (DECISIONS.md #20): Ready, all of them score 2; Almost ready, every core "
         "criterion below 2 can be fixed with low effort; Not yet, at least one needs medium or high effort.", "",
@@ -278,8 +287,8 @@ def build_summary(criteria: list[dict], rows: list[dict], records: list[dict], d
                      f"{row['readiness_group']} |")
 
     lines += ["", "## Scores by criterion", "",
-              "| Criterion | Name | Core | 2 | 1 | 0 | n/a | Not measured | Basis |",
-              "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |"]
+              "| Criterion | Name | Core | 2 | 1 | 0 | n/a | Not measurable | Not measured | Basis |",
+              "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |"]
     for criterion in criteria:
         mine = [record for record in records if record["criterion"] == criterion["id"]]
         counts = Counter(shown(record["score"]) for record in mine)
@@ -288,7 +297,7 @@ def build_summary(criteria: list[dict], rows: list[dict], records: list[dict], d
         if any(record["provisional"] for record in mine):
             basis += " (provisional)"
         lines.append(f"| {criterion['id']} | {criterion['name']} | {criterion['core']} | {counts['2']} | {counts['1']} | "
-                     f"{counts['0']} | {counts[NOT_APPLICABLE]} | {counts['']} | {basis} |")
+                     f"{counts['0']} | {counts[NOT_APPLICABLE]} | {counts[NOT_MEASURABLE]} | {counts['']} | {basis} |")
 
     lines += ["", "## Effort of the fix for the scores below 2", "",
               "Low: metadata and documentation only. Medium: a change in the file itself. High: a change in a system or in "
@@ -390,8 +399,8 @@ def write_workbook(path: Path, criteria: list[dict], rows: list[dict], records: 
     sheet.column_dimensions["A"].width = 140
     notes = [
         f"Assessment of the sample, snapshot of {date}.",
-        "Scale: 2 fully met, 1 partly met, 0 not met, n/a not applicable. An empty score is a criterion that is not "
-        "measured yet.",
+        "Scale: 2 fully met, 1 partly met, 0 not met, n/a not applicable, not measurable nothing to measure "
+        "(DECISIONS.md #63). An empty score is a criterion that is not measured yet.",
         "Score per level: the sum of the scores divided by the maximum possible score (2 for each applicable criterion), "
         "as a percentage. The three levels are not combined into one number.",
     ] + [f"{code} is provisional and left out of the score of its level: {reason}." for code, reason in PROVISIONAL.items()
@@ -415,10 +424,11 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Assessment of the datasets of the sample: scores, score per level, "
                                                  "effort of the fix and readiness group.")
     parser.add_argument("--checks", type=Path, default=None,
-                        help="table of the metadata checks (default: the newest in data/processed)")
+                        help=f"table of the metadata checks (default: the snapshot of {BASE_DATE}, on which the "
+                             "study rests)")
     args = parser.parse_args()
 
-    checks_file = args.checks or newest_checks()
+    checks_file = args.checks or base_checks()
     found = re.search(r"(\d{4}-\d{2}-\d{2})", checks_file.name)
     if not found:
         raise SystemExit(f"No date in the name of {relative(checks_file)}")
@@ -428,7 +438,7 @@ def main() -> int:
     checks = {row["name"]: row for row in read_table(checks_file) if row.get("sample_id")}
     sample_ids = {row["sample_id"] for row in sample}
     codes = {criterion["id"] for criterion in criteria}
-    reviewed = load_recorded(SCORES_FILE, "score", ("0", "1", "2", NOT_APPLICABLE), sample_ids, codes)
+    reviewed = load_recorded(SCORES_FILE, "score", REVIEWED_SCORES, sample_ids, codes)
     efforts = load_recorded(EFFORT_FILE, "effort", EFFORTS, sample_ids, codes)
 
     records = assess(criteria, sample, checks, reviewed, efforts)

@@ -8,11 +8,13 @@ What it does, in order:
      the newest, and assessment_scores_YYYY-MM-DD.csv), the table of 04_metadata_checks.py and the two tables of
      14_hvd_compliance.py of the same date.
   2. Gaps by criterion in the sample: for each of the 23 criteria, the scores 2, 1 and 0 of the 36 datasets, the scores
-     below 2, their share of the datasets to which the criterion applies and the effort of their fix. A provisional
+     below 2, their share of the datasets to which the criterion applies and the effort of their fix. A score that the
+     reviewer found not measurable (DECISIONS.md #63) is counted apart and left out of the share. A provisional
      criterion is listed and left out of the totals.
   3. Gaps by criterion in the catalogue: the same counts for the nine criteria that the metadata decide, over every
      dataset of the snapshot. A score that could not be determined is counted apart; M9 is counted over the datasets that
-     carry a high-value marking, as in the report of 04_metadata_checks.py.
+     carry a high-value marking, as in the report of 04_metadata_checks.py; Q5 is its metadata part (DECISIONS.md #36),
+     since the dates inside the data are read in the sample only.
   4. What each dataset of the sample lacks for the ready group: its core criteria below 2 by effort, which decide its
      group, and its other scores below 2 by effort; the datasets one core criterion away from the ready group are named.
   5. Gaps of compliance of the high-value datasets: the requirements of Implementing Regulation (EU) 2023/138 answered
@@ -58,10 +60,11 @@ CRITERIA_FILE = ROOT / "criteria" / "criteria.csv"
 
 EFFORTS = ("low", "medium", "high")
 SCORES = ("2", "1", "0")
-NOT_APPLICABLE, NOT_MEASURED = "n/a", ""
+NOT_APPLICABLE, NOT_MEASURED, NOT_MEASURABLE = "n/a", "", "not measurable"
 READY, ALMOST_READY, NOT_YET = "Ready", "Almost ready", "Not yet"
 GROUPS = (READY, ALMOST_READY, NOT_YET)
 CATALOGUE_CRITERIA = ("Q5", "Q6", "M1", "M2", "M3", "M4", "M6", "M7", "M9")
+CATALOGUE_NOTES = {"Q5": "metadata part"}   # criteria that the catalogue measures in part only (DECISIONS.md #36)
 MARKED_ONLY = "M9"
 YES, PARTLY, NO = "yes", "partly", "no"
 ANSWERS = (YES, PARTLY, NO, "not applicable", "not asked by the Annex")
@@ -108,9 +111,10 @@ def newest(prefix: str) -> Path:
 
 
 def score_value(text: str) -> str:
-    """A score as 2, 1 or 0, n/a for a criterion that does not apply, or an empty text where no score exists."""
+    """A score as 2, 1 or 0, n/a for a criterion that does not apply, not measurable where the reviewer found nothing to
+    measure, or an empty text where no score exists."""
     text = (text or "").strip()
-    if text in (NOT_MEASURED, NOT_APPLICABLE):
+    if text in (NOT_MEASURED, NOT_APPLICABLE, NOT_MEASURABLE):
         return text
     try:
         value = float(text)
@@ -157,6 +161,7 @@ def criterion_gaps(criteria: list[dict], records: list[dict]) -> list[dict]:
             "applies_to": criterion["applies_to"], "applicable": applicable,
             "score_2": scores["2"], "score_1": scores["1"], "score_0": scores["0"],
             "not_applicable": scores[NOT_APPLICABLE], "not_measured": scores[NOT_MEASURED],
+            "not_measurable": scores[NOT_MEASURABLE],
             "below_two": len(below), "share_below_two": share(len(below), applicable),
             "effort_low": efforts["low"], "effort_medium": efforts["medium"], "effort_high": efforts["high"],
             "provisional": "yes" if reasons else "", "provisional_reason": "; ".join(reasons),
@@ -189,8 +194,8 @@ def catalogue_gaps(criteria: list[dict], metadata_all: list[dict], provisional: 
         marked_only = code == MARKED_ONLY
         counted = [record for record in metadata_all if record["m9_marked"] == "True"] if marked_only else metadata_all
         scores = Counter(score_value(record[column]) for record in counted)
-        if scores[NOT_APPLICABLE]:
-            raise SystemExit(f"{code}: n/a is not a score of the metadata checks")
+        if scores[NOT_APPLICABLE] or scores[NOT_MEASURABLE]:
+            raise SystemExit(f"{code}: n/a and not measurable are not scores of the metadata checks")
         determined = sum(scores[score] for score in SCORES)
         below = scores["1"] + scores["0"]
         rows.append({
@@ -198,7 +203,7 @@ def catalogue_gaps(criteria: list[dict], metadata_all: list[dict], provisional: 
             "counted_over": "datasets with a high-value marking" if marked_only else "every dataset of the snapshot",
             "datasets": len(counted), "score_2": scores["2"], "score_1": scores["1"], "score_0": scores["0"],
             "not_determined": scores[NOT_MEASURED], "below_two": below, "share_below_two": share(below, determined),
-            "provisional": "yes" if code in provisional else "",
+            "provisional": "yes" if code in provisional else "", "note": CATALOGUE_NOTES.get(code, ""),
         })
     return rows
 
@@ -343,6 +348,9 @@ def build_summary(date: str, gaps: list[dict], catalogue: list[dict], snapshot_s
               f"({percent(total['share_below_two'])}); effort of the fix low {total['low']}, medium {total['medium']}, high "
               f"{total['high']}."]
     for row in gaps:
+        if row["not_measurable"] and not row["provisional"]:
+            lines += ["", f"{row['criterion']} {row['name']}: {row['not_measurable']} datasets not measurable, left out of "
+                      "its datasets and of the totals (DECISIONS.md #63)."]
         if row["provisional"]:
             lines += ["", f"{row['criterion']} {row['name']} is provisional and left out of the totals: {row['score_2']} "
                       f"datasets with 2, {row['score_1']} with 1, {row['score_0']} with 0, {row['not_measured']} not "
@@ -355,7 +363,8 @@ def build_summary(date: str, gaps: list[dict], catalogue: list[dict], snapshot_s
               "| Criterion | Counted over | Datasets | 2 | 1 | 0 | Not determined | Below 2 | Share |",
               "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |"]
     for row in by_share(catalogue):
-        name = f"{row['criterion']} {row['name']}" + (" (provisional)" if row["provisional"] else "")
+        name = (f"{row['criterion']} {row['name']}" + (f" ({row['note']})" if row["note"] else "")
+                + (" (provisional)" if row["provisional"] else ""))
         lines.append(f"| {name} | {row['counted_over']} | {row['datasets']:,} | {row['score_2']:,} | {row['score_1']:,} | "
                      f"{row['score_0']:,} | {row['not_determined']:,} | {row['below_two']:,} | "
                      f"{percent(row['share_below_two'])} |")
@@ -446,7 +455,8 @@ def write_workbook(path: Path, date: str, gaps: list[dict], catalogue: list[dict
         ("criterion", "Criterion", 9), ("level", "Level", 22), ("name", "Name", 34), ("core", "Core", 7),
         ("applies_to", "Applies to", 12), ("applicable", "Datasets to which it applies", 12),
         ("score_2", "Score 2", 8), ("score_1", "Score 1", 8), ("score_0", "Score 0", 8),
-        ("not_applicable", "Not applicable", 11), ("not_measured", "Not measured", 10), ("below_two", "Below 2", 8),
+        ("not_applicable", "Not applicable", 11), ("not_measured", "Not measured", 10),
+        ("not_measurable", "Not measurable", 11), ("below_two", "Below 2", 8),
         ("share_below_two", "Share below 2 (%)", 11), ("effort_low", "Low effort", 8),
         ("effort_medium", "Medium effort", 9), ("effort_high", "High effort", 8), ("provisional", "Provisional", 11),
         ("datasets_below_two", "Datasets below 2", 60)], gaps, first=True)
@@ -454,7 +464,8 @@ def write_workbook(path: Path, date: str, gaps: list[dict], catalogue: list[dict
         ("criterion", "Criterion", 9), ("level", "Level", 22), ("name", "Name", 34), ("counted_over", "Counted over", 30),
         ("datasets", "Datasets", 10), ("score_2", "Score 2", 9), ("score_1", "Score 1", 9), ("score_0", "Score 0", 9),
         ("not_determined", "Not determined", 11), ("below_two", "Below 2", 9),
-        ("share_below_two", "Share below 2 (%)", 11), ("provisional", "Provisional", 11)], catalogue)
+        ("share_below_two", "Share below 2 (%)", 11), ("provisional", "Provisional", 11), ("note", "Note", 16)],
+        catalogue)
     sheet_of(workbook, "Datasets", [
         ("sample_id", "Dataset", 9), ("title", "Title", 40), ("organisation", "Organisation", 28),
         ("address", "Address", 32), ("sample_group", "Group of the sample", 12), ("readiness_group", "Readiness group", 12),
@@ -484,9 +495,10 @@ def write_workbook(path: Path, date: str, gaps: list[dict], catalogue: list[dict
         "documentation only; medium, a change in the file itself; high, a change in a system or in the source of the data.",
         "Nothing is judged in this workbook: the scores, the effort of the fix and the answers on compliance come from "
         "13_assessment.py, 04_metadata_checks.py and 14_hvd_compliance.py (DECISIONS.md #57 to #60).",
-        "Sheet Criteria: the 23 criteria in the sample; a provisional criterion is listed and left out of the totals. Sheet "
-        "Catalogue: the nine criteria that the metadata decide, over the datasets of the snapshot; M9 is counted over the "
-        "datasets that carry a high-value marking.",
+        "Sheet Criteria: the 23 criteria in the sample; a score that the reviewer found not measurable is counted apart "
+        "and left out of the share (DECISIONS.md #63), and a provisional criterion is listed and left out of the totals. "
+        "Sheet Catalogue: the nine criteria that the metadata decide, over the datasets of the snapshot; M9 is counted "
+        "over the datasets that carry a high-value marking, and Q5 is its metadata part (DECISIONS.md #36).",
         "Sheet Datasets: what each dataset of the sample lacks for the ready group. The core criteria below 2 decide the "
         "group (DECISIONS.md #20): Ready, every core criterion scores 2; Almost ready, every core criterion below 2 can be "
         "fixed with low effort; Not yet, at least one needs medium or high effort.",

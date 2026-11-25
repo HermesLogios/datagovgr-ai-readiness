@@ -3,6 +3,7 @@ readiness group and the choice of the score of a dataset in a criterion."""
 import importlib.util
 import unittest
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -36,8 +37,9 @@ SAMPLE = [
 ]
 CHECKS = {"first": {"q5_score": "1.0", "m4_score": "0.0", "m9_score": "2.0"},
           "second": {"q5_score": "", "m4_score": "2.0", "m9_score": "0.0"}}
-REVIEWED = {("S01", "Q1"): {"score": "1", "decision": "#37"}, ("S02", "Q1"): {"score": "2", "decision": "#37"}}
-EFFORTS = {("S01", "Q1"): {"effort": "low", "decision": "#57"}}
+REVIEWED = {("S01", "Q1"): {"score": "1", "decision": "#37"}, ("S02", "Q1"): {"score": "2", "decision": "#37"},
+            ("S01", "Q5"): {"score": "1", "decision": "#63"}, ("S02", "Q5"): {"score": "not measurable", "decision": "#63"}}
+EFFORTS = {("S01", "Q1"): {"effort": "low", "decision": "#57"}, ("S01", "Q5"): {"effort": "low", "decision": "#63"}}
 
 
 class UsualEffort(unittest.TestCase):
@@ -96,12 +98,18 @@ class ScoreOfADataset(unittest.TestCase):
         record = self.records[("S02", "M9")]
         self.assertEqual((record["score"], record["basis"]), ("n/a", "not applicable to the group"))
 
-    def test_provisional_criterion_has_no_effort_and_stays_out_of_its_level(self):
-        self.assertTrue(self.records[("S01", "Q5")]["provisional"])
-        self.assertEqual(self.records[("S01", "Q5")]["effort"], "")
-        self.assertIsNone(self.records[("S02", "Q5")]["score"])
-        self.assertEqual(self.rows["S01"]["quality_percent"], 50.0)
+    def test_final_score_of_the_reviewer_replaces_the_automated_one(self):
+        record = self.records[("S01", "Q5")]
+        self.assertEqual((record["score"], record["basis"], record["decision"], record["provisional"]),
+                         (1, "reviewed", "#63", ""))
+        self.assertEqual((record["effort"], record["effort_basis"]), ("low", "recorded (#63)"))
+
+    def test_not_measurable_stays_out_of_its_level_without_effort(self):
+        record = self.records[("S02", "Q5")]
+        self.assertEqual((record["score"], record["basis"], record["effort"], record["effort_basis"]),
+                         ("not measurable", "reviewed", "", ""))
         self.assertEqual(self.rows["S02"]["quality_percent"], 100.0)
+        self.assertEqual(self.rows["S01"]["quality_percent"], 50.0)
 
     def test_levels_and_groups(self):
         first, second = self.rows["S01"], self.rows["S02"]
@@ -122,6 +130,36 @@ class ScoreOfADataset(unittest.TestCase):
     def test_run_stops_on_an_effort_for_a_score_that_is_not_below_two(self):
         with self.assertRaises(SystemExit):
             ASSESSMENT.assess(CRITERIA, SAMPLE, CHECKS, REVIEWED, {**EFFORTS, ("S02", "Q1"): {"effort": "low", "decision": "#57"}})
+
+    def test_run_stops_on_an_effort_for_a_score_that_is_not_measurable(self):
+        with self.assertRaises(SystemExit):
+            ASSESSMENT.assess(CRITERIA, SAMPLE, CHECKS, REVIEWED, {**EFFORTS, ("S02", "Q5"): {"effort": "low", "decision": "#63"}})
+
+
+class ProvisionalCriterion(unittest.TestCase):
+    def test_provisional_criterion_has_no_effort_and_stays_out_of_its_level(self):
+        reviewed = {key: value for key, value in REVIEWED.items() if key[1] == "Q1"}
+        efforts = {("S01", "Q1"): EFFORTS[("S01", "Q1")]}
+        with mock.patch.dict(ASSESSMENT.PROVISIONAL, {"Q5": "metadata part of the criterion"}):
+            records = ASSESSMENT.assess(CRITERIA, SAMPLE, CHECKS, reviewed, efforts)
+        by_key = {(record["sample_id"], record["criterion"]): record for record in records}
+        rows = {row["sample_id"]: row for row in ASSESSMENT.dataset_rows(CRITERIA, SAMPLE, records)}
+        self.assertTrue(by_key[("S01", "Q5")]["provisional"])
+        self.assertEqual(by_key[("S01", "Q5")]["effort"], "")
+        self.assertIsNone(by_key[("S02", "Q5")]["score"])
+        self.assertEqual(rows["S01"]["quality_percent"], 50.0)
+        self.assertEqual(rows["S02"]["quality_percent"], 100.0)
+
+    def test_no_criterion_is_provisional_after_the_final_scores_of_q5(self):
+        self.assertEqual(ASSESSMENT.PROVISIONAL, {})
+
+
+class FilesOfTheStudy(unittest.TestCase):
+    def test_metadata_checks_of_the_snapshot_on_which_the_study_rests(self):
+        self.assertEqual(ASSESSMENT.base_checks().name, "metadata_checks_2026-10-24.csv")
+
+    def test_the_reviewer_may_record_a_score_as_not_measurable(self):
+        self.assertIn("not measurable", ASSESSMENT.REVIEWED_SCORES)
 
 
 if __name__ == "__main__":
